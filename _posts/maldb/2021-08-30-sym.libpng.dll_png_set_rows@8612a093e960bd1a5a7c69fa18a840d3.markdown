@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_set_rows @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_set\_rows
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1001b152][similar_1_ref] (sim.: 0.78099303887592)
+2. [sym.libpng.dll\_png\_destroy\_info\_struct][similar_2_ref] (sim.: 0.7756526467731208)
+3. [fcn.1000819a][similar_3_ref] (sim.: 0.7633548911725129)
+4. [sym.libpng.dll\_png\_set\_hIST][similar_4_ref] (sim.: 0.7631964687292639)
+5. [fcn.1000ca85][similar_5_ref] (sim.: 0.7604999290176906)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov ecx,dword[ebp+8]
+test ecx,ecx
+je 0x10019a15
+push esi
+mov esi,dword[ebp+0xc]
+test esi,esi
+je 0x10019a14
+mov eax,dword[esi+0x108]
+push edi
+mov edi,dword[ebp+0x10]
+test eax,eax
+je 0x10019a02
+cmp eax,edi
+je 0x10019a02
+push 0
+push 0x40
+push esi
+push ecx
+call sym.libpng.dll_png_free_data
+add esp,0x10
+mov dword[esi+0x108],edi
+test edi,edi
+pop edi
+je 0x10019a14
+or dword[esi+8],0x8000
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001b152@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/sym.libpng.dll_png_destroy_info_struct@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.1000819a@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/sym.libpng.dll_png_set_hIST@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.1000ca85@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

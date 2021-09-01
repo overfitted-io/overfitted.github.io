@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.00405dd8 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405dd8
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.01003ccc][similar_1_ref] (sim.: 0.8013699216817729)
+2. [fcn.00410aac][similar_2_ref] (sim.: 0.7951246243776855)
+3. [fcn.0040341e][similar_3_ref] (sim.: 0.7895234898033212)
+4. [fcn.0040341e][similar_4_ref] (sim.: 0.7895234898033212)
+5. [fcn.0040341e][similar_5_ref] (sim.: 0.7895234898033212)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x1000
+call fcn.00411a40
+push esi
+mov esi,0x800
+lea eax,[ebp-0x1000]
+push esi
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryW]
+test eax,eax
+je 0x405e1b
+push esi
+lea eax,[ebp-0x1000]
+push eax
+push dword[ebp+8]
+push eax
+call fcn.00403425
+lea eax,[ebp-0x1000]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+pop esi
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.01003ccc@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.00410aac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.0040341e@57989f43bf24a9272122210a17558c3d
+[similar_4_ref]: /report/fcn.0040341e@3a783d6a0e3505903843983e413a529e
+[similar_5_ref]: /report/fcn.0040341e@d287262b3c4caae6c69c406382125319
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

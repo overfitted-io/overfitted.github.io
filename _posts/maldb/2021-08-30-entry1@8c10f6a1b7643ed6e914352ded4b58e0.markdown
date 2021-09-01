@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "entry1 @ 8c10f6a1b7643ed6e914352ded4b58e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** entry1
+- **Origin (md5):** 8c10f6a1b7643ed6e914352ded4b58e0
+- **VirusTotal:** [virustotal.com/gui/file/8c10f6a1b7643ed6e914352ded4b58e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0041a784][similar_1_ref] (sim.: 0.8998215110933107)
+2. [entry1][similar_2_ref] (sim.: 0.8907072402602287)
+3. [entry1][similar_3_ref] (sim.: 0.890297922201468)
+4. [fcn.00418cc9][similar_4_ref] (sim.: 0.8818911451299132)
+5. [fcn.0041310b][similar_5_ref] (sim.: 0.8789192254719284)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+sub esp,0xc
+mov ebx,dword[ebp+0xc]
+call sub.msvcrt.dll___p__winmajor
+cmp dword[eax],3
+ja 0x41a349
+mov dword[0x433a44],1
+mov dword[esp],0x41f3b4
+call sub.kernel32.dll_LoadLibraryA
+test eax,eax
+push ebx
+mov dword[0x42f450],eax
+je 0x41a2eb
+mov dword[esp+4],str.__mingwthr_remove_key_dtor
+mov dword[esp],eax
+call sub.kernel32.dll_GetProcAddress
+mov dword[0x433a34],eax
+mov eax,dword[0x42f450]
+push ecx
+push ecx
+mov dword[esp+4],0x41f3dc
+mov dword[esp],eax
+call sub.kernel32.dll_GetProcAddress
+push edx
+push edx
+mov dword[0x433a24],eax
+mov eax,dword[0x42f450]
+test eax,eax
+je 0x41a306
+cmp dword[0x433a34],0
+je 0x41a306
+cmp dword[0x433a24],0
+jne 0x41a33d
+test eax,eax
+mov dword[0x433a24],0
+mov dword[0x433a34],0
+je 0x41a327
+mov dword[esp],eax
+call sub.kernel32.dll_FreeLibrary
+push eax
+mov dword[0x42f450],0
+mov dword[0x41c464],0
+jmp 0x41a39a
+mov dword[0x41c464],1
+jmp 0x41a39a
+cmp dword[0x41c464],2
+je 0x41a35c
+mov dword[0x41c464],2
+cmp ebx,2
+je 0x41a380
+dec ebx
+jne 0x41a39a
+mov eax,dword[ebp+0x10]
+mov dword[esp+4],1
+mov dword[esp+8],eax
+mov eax,dword[ebp+8]
+mov dword[esp],eax
+call fcn.0041aa47
+jmp 0x41a39a
+mov ebx,0x436030
+jmp 0x41a392
+mov eax,dword[ebx]
+test eax,eax
+je 0x41a38f
+call eax
+add ebx,4
+cmp ebx,0x436030
+jne 0x41a387
+mov eax,1
+mov ebx,dword[ebp-4]
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041a784@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_2_ref]: /report/entry1@799ea8d6698cf889f1eb7e76fbecd6be
+[similar_3_ref]: /report/entry1@f616ef24fa8f527114071d9f6d523e5d
+[similar_4_ref]: /report/fcn.00418cc9@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_5_ref]: /report/fcn.0041310b@8c10f6a1b7643ed6e914352ded4b58e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/8c10f6a1b7643ed6e914352ded4b58e0

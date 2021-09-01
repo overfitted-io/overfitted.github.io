@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "loc.783a3870 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** loc.783a3870
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [loc.005b3936][similar_1_ref] (sim.: 0.8857503822520735)
+2. [loc.0049c33c][similar_2_ref] (sim.: 0.8841368069789011)
+3. [fcn.5e2e17a8][similar_3_ref] (sim.: 0.8839827767267434)
+4. [fcn.782486b0][similar_4_ref] (sim.: 0.8766164271932586)
+5. [loc.00444703][similar_5_ref] (sim.: 0.8764799182735967)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x783ebb08],eax
+mov dword[0x783ebb04],ecx
+mov dword[0x783ebb00],edx
+mov dword[0x783ebafc],ebx
+mov dword[0x783ebaf8],esi
+mov dword[0x783ebaf4],edi
+mov word[0x783ebb20],ss
+mov word[0x783ebb14],cs
+mov word[0x783ebaf0],ds
+mov word[0x783ebaec],es
+mov word[0x783ebae8],fs
+mov word[0x783ebae4],gs
+pushfd 
+pop dword[0x783ebb18]
+mov eax,dword[ebp]
+mov dword[0x783ebb0c],eax
+mov eax,dword[ebp+4]
+mov dword[0x783ebb10],eax
+lea eax,[ebp+8]
+mov dword[0x783ebb1c],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x783eba58],0x10001
+mov eax,dword[0x783ebb10]
+mov dword[0x783eba0c],eax
+mov dword[0x783eba00],0xc0000409
+mov dword[0x783eba04],1
+mov ecx,dword[0x783e90cc]
+mov dword[ebp-0x328],ecx
+mov edx,dword[0x783e90d0]
+mov dword[ebp-0x324],edx
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x783eba50],eax
+push 1
+call sub.MSVCR80D.dll__crt_debugger_hook
+add esp,4
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x781fa4d0
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x783eba50],0
+jne 0x783a3966
+push 1
+call sub.MSVCR80D.dll__crt_debugger_hook
+add esp,4
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.005b3936@b38ce64a273c3fc98fc78af14b8bdcc0
+[similar_2_ref]: /report/loc.0049c33c@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.5e2e17a8@40fe084e371a76111a4f0884be244b87
+[similar_4_ref]: /report/fcn.782486b0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/loc.00444703@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

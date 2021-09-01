@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.0042980b @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0042980b
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10014610][similar_1_ref] (sim.: 0.8600013849092762)
+2. [fcn.00428d93][similar_2_ref] (sim.: 0.8375744208240441)
+3. [fcn.0040308e][similar_3_ref] (sim.: 0.8315549181902687)
+4. [fcn.0040312d][similar_4_ref] (sim.: 0.8287016825554867)
+5. [fcn.00402007][similar_5_ref] (sim.: 0.8272602849676416)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[ebp+0x10],0
+jne 0x429838
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+push eax
+push dword[ebp+0xc]
+push 1
+push dword[ebp+8]
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegSetValueA]
+neg eax
+sbb eax,eax
+inc eax
+jmp 0x429886
+push esi
+lea eax,[ebp+8]
+push eax
+push dword[ebp+8]
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+test eax,eax
+jne 0x429883
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+inc eax
+push eax
+push dword[ebp+0xc]
+push 1
+push 0
+push dword[ebp+0x10]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+push dword[ebp+8]
+mov esi,eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test eax,eax
+jne 0x429883
+test esi,esi
+jne 0x429883
+inc eax
+jmp 0x429885
+xor eax,eax
+pop esi
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10014610@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.0040308e@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.0040312d@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.00402007@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

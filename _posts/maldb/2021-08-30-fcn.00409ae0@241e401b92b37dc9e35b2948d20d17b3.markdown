@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.00409ae0 @ 241e401b92b37dc9e35b2948d20d17b3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00409ae0
+- **Origin (md5):** 241e401b92b37dc9e35b2948d20d17b3
+- **VirusTotal:** [virustotal.com/gui/file/241e401b92b37dc9e35b2948d20d17b3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00409bc0][similar_1_ref] (sim.: 0.9102569681848454)
+2. [fcn.00409c34][similar_2_ref] (sim.: 0.8738516899400974)
+3. [fcn.00409bec][similar_3_ref] (sim.: 0.8727893583648143)
+4. [fcn.00409bec][similar_4_ref] (sim.: 0.8727893583648143)
+5. [fcn.0040a0d4][similar_5_ref] (sim.: 0.8455668615450729)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push 0xa
+push 0x2b67
+push 0
+call sub.kernel32.dll_FindResourceA
+mov ebx,eax
+test ebx,ebx
+jne 0x409afa
+call fcn.00409994
+push ebx
+push 0
+call sub.kernel32.dll_SizeofResource
+cmp eax,0x2c
+je 0x409b0c
+call fcn.00409994
+push ebx
+push 0
+call sub.kernel32.dll_LoadResource
+mov ebx,eax
+test ebx,ebx
+jne 0x409b1f
+call fcn.00409994
+push ebx
+call sub.kernel32.dll_LockResource
+mov ebx,eax
+test ebx,ebx
+jne 0x409b30
+call fcn.00409994
+mov eax,ebx
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409bc0@e1cfd2251920da7635928443c90c6b4d
+[similar_2_ref]: /report/fcn.00409c34@7610eb4a4e290563f87db1cc0480b6e7
+[similar_3_ref]: /report/fcn.00409bec@e9398015e0cb217dd733ec66460ced7d
+[similar_4_ref]: /report/fcn.00409bec@e4a72fe437dbc99d650504e450f93aae
+[similar_5_ref]: /report/fcn.0040a0d4@4f80ac3d231aa2cc69a16e7195916d21
+[virustotal_ref]: https://www.virustotal.com/gui/file/241e401b92b37dc9e35b2948d20d17b3

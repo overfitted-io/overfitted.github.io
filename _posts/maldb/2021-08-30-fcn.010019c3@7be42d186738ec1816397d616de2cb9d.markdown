@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.010019c3 @ 7be42d186738ec1816397d616de2cb9d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.010019c3
+- **Origin (md5):** 7be42d186738ec1816397d616de2cb9d
+- **VirusTotal:** [virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004049e7][similar_1_ref] (sim.: 0.8642053853161669)
+2. [fcn.004049e7][similar_2_ref] (sim.: 0.8642053853161669)
+3. [fcn.004049ae][similar_3_ref] (sim.: 0.8640857147100839)
+4. [fcn.00406b38][similar_4_ref] (sim.: 0.8636066148853029)
+5. [fcn.00404992][similar_5_ref] (sim.: 0.8627802758322175)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x14
+push esi
+lea eax,[ebp-4]
+push eax
+push 0x28
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+xor esi,esi
+test eax,eax
+jne 0x10019f1
+push esi
+push 0x10
+push esi
+push esi
+push 0x4f5
+jmp 0x1001a46
+lea eax,[ebp-0x10]
+push eax
+push 0x1001274
+push esi
+call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueA]
+push esi
+push esi
+push esi
+lea eax,[ebp-0x14]
+push eax
+push esi
+push dword[ebp-4]
+mov dword[ebp-0x14],1
+mov dword[ebp-8],2
+call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
+test eax,eax
+push esi
+jne 0x1001a30
+push 0x10
+push esi
+push esi
+push 0x4f6
+jmp 0x1001a46
+push 2
+call dword[sym.imp.USER32.dll_ExitWindowsEx]
+test eax,eax
+jne 0x1001a50
+push esi
+push 0x10
+push esi
+push esi
+push 0x4f7
+push esi
+call fcn.01003ebe
+xor eax,eax
+jmp 0x1001a53
+xor eax,eax
+inc eax
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004049e7@e7582fc3dadb394a1457ab7e7fbbe9a7
+[similar_2_ref]: /report/fcn.004049e7@6c8b5339bada4cbd03f0f446da640707
+[similar_3_ref]: /report/fcn.004049ae@13efdafd5b4f5d3a5dcb240b696c267c
+[similar_4_ref]: /report/fcn.00406b38@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.00404992@510c8408eb3f0420e19240592ddc0b5b
+[virustotal_ref]: https://www.virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d

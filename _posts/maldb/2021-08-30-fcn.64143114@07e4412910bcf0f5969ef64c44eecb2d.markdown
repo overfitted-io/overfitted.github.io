@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.64143114 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64143114
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000ad02][similar_1_ref] (sim.: 0.8683251182641724)
+2. [fcn.0044e772][similar_2_ref] (sim.: 0.8584721624723535)
+3. [fcn.640673c0][similar_3_ref] (sim.: 0.8057868722087862)
+4. [fcn.00411934][similar_4_ref] (sim.: 0.7820199388448836)
+5. [fcn.00414694][similar_5_ref] (sim.: 0.7816439559038222)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+push 1
+mov dword[0x641beb1c],eax
+call sub.MSVCR120.dll__crt_debugger_hook
+push dword[ebp+8]
+call sub.MSVCR120.dll___crtUnhandledException
+cmp dword[0x641beb1c],0
+pop ecx
+pop ecx
+jne 0x64143144
+push 1
+call sub.MSVCR120.dll__crt_debugger_hook
+pop ecx
+push 0xc0000409
+call sub.MSVCR120.dll___crtTerminateProcess
+pop ecx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000ad02@b7467517f3ef2950fbbab46c56c44481
+[similar_2_ref]: /report/fcn.0044e772@3dfcfb1d918b690c00de324bcfcdc082
+[similar_3_ref]: /report/fcn.640673c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.00411934@90aa43862e75a7f78f2655241632f0e5
+[similar_5_ref]: /report/fcn.00414694@fd17dad7a5809016e438b746adc04679
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

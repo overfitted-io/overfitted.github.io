@@ -1,0 +1,156 @@
+---
+layout: post
+title:  "fcn.00683fd0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00683fd0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00683010][similar_1_ref] (sim.: 0.9298367347122494)
+2. [fcn.0068f270][similar_2_ref] (sim.: 0.9282342158077959)
+3. [fcn.00698c20][similar_3_ref] (sim.: 0.9281741528317822)
+4. [fcn.0068bfa0][similar_4_ref] (sim.: 0.9277580425293468)
+5. [fcn.006821a0][similar_5_ref] (sim.: 0.924363343648112)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push ebx
+sub esp,0x24
+mov ebx,dword[esp+0x34]
+mov esi,dword[esp+0x38]
+cmp dword[ebx+8],0xc
+je 0x683fff
+mov dword[esp+8],0x45d
+mov dword[esp+4],0x7b7204
+mov dword[esp],str.handle__type__UV_TCP
+call fcn.006b2490
+mov eax,dword[esi+0x3c]
+cmp eax,0xffffffff
+je 0x684090
+mov edx,dword[esi+0x20]
+test edx,edx
+js 0x68404b
+lea edx,[ebx+0x90]
+mov dword[esp+0x10],4
+mov dword[esp+8],0x700b
+mov dword[esp+4],0xffff
+mov dword[esp],eax
+mov dword[esp+0xc],edx
+call dword[sym.imp.WS2_32.dll_setsockopt]
+sub esp,0x14
+test eax,eax
+je 0x684150
+mov eax,dword[esi+0x3c]
+mov dword[esp],eax
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp,4
+test byte[ebx+0x2d],8
+mov dword[esi+0x3c],0xffffffff
+jne 0x684182
+mov eax,dword[ebx+0x3c]
+test eax,eax
+je 0x684101
+sub eax,1
+mov edx,dword[ebx+0x2c]
+test eax,eax
+mov dword[ebx+0x3c],eax
+jne 0x684089
+test dl,1
+jne 0x684125
+add esp,0x24
+pop ebx
+pop esi
+ret 
+mov eax,dword[ebx+0x2c]
+test ah,8
+je 0x684068
+mov edx,eax
+and dh,0xf7
+sub dword[ebx+0x40],1
+mov dword[ebx+0x2c],edx
+jne 0x684190
+test al,1
+jne 0x6840d0
+test al,0x40
+je 0x6840d0
+mov edx,eax
+and edx,0xfffff7bf
+test al,0x20
+mov dword[ebx+0x2c],edx
+je 0x6840d0
+mov eax,dword[ebx+4]
+sub dword[eax+4],1
+nop 
+lea esi,[esi]
+mov ecx,dword[ebx+0x88]
+test ecx,ecx
+je 0x684068
+mov eax,dword[esi+0x20]
+mov dword[esp],eax
+call fcn.0068fff0
+mov esi,dword[ebx+0x88]
+mov dword[esp],eax
+call fcn.0066e3a0
+mov dword[esp],ebx
+mov dword[esp+4],eax
+call esi
+jmp 0x684068
+mov dword[esp+8],0x485
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7383
+call fcn.006b2490
+mov eax,dword[ebx+0x3c]
+jmp 0x684073
+test dl,8
+jne 0x684089
+mov eax,dword[esp+0x30]
+or edx,8
+mov dword[ebx+0x2c],edx
+mov eax,dword[eax+0x2c]
+mov dword[ebx+0x28],eax
+mov eax,dword[esp+0x30]
+mov dword[eax+0x2c],ebx
+add esp,0x24
+pop ebx
+pop esi
+ret 
+mov eax,dword[ebx+0xa0]
+mov dword[esi+0x168],eax
+mov eax,dword[ebx+0x88]
+mov dword[ebx+0xa0],esi
+test eax,eax
+je 0x684068
+mov dword[esp+4],0
+mov dword[esp],ebx
+call eax
+jmp 0x684068
+mov edx,esi
+mov eax,ebx
+call fcn.00681ac0
+jmp 0x684068
+jns 0x6840d0
+mov dword[esp+8],0x466
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b74b9
+call fcn.006b2490
+jmp 0x6840d0
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00683010@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.00698c20@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

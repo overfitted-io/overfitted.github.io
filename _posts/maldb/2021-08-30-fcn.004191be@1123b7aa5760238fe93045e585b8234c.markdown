@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.004191be @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004191be
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00410917][similar_1_ref] (sim.: 0.917817465845488)
+2. [fcn.00437faa][similar_2_ref] (sim.: 0.9130232042850744)
+3. [fcn.00417ec1][similar_3_ref] (sim.: 0.9118891936690015)
+4. [fcn.004188c3][similar_4_ref] (sim.: 0.9092394597259904)
+5. [fcn.00417371][similar_5_ref] (sim.: 0.9092271843582321)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+call fcn.0041a8b5
+test eax,eax
+jne 0x4191cf
+call fcn.00418fa7
+xor eax,eax
+ret 
+push esi
+push edi
+push 0x42e3e4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+test edi,edi
+je 0x41924d
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x42f690
+push edi
+call esi
+push 0x42f684
+push edi
+mov dword[0x538e28],eax
+call esi
+push 0x42f678
+push edi
+mov dword[0x538e2c],eax
+call esi
+push 0x42f670
+push edi
+mov dword[0x538e30],eax
+call esi
+cmp dword[0x538e2c],0
+mov dword[0x538e34],eax
+jne 0x41924d
+mov eax,dword[sym.imp.KERNEL32.dll_TlsGetValue]
+mov dword[0x538e2c],eax
+mov eax,dword[sym.imp.KERNEL32.dll_TlsSetValue]
+mov dword[0x538e30],eax
+mov eax,dword[sym.imp.KERNEL32.dll_TlsFree]
+mov dword[0x538e28],0x418f9e
+mov dword[0x538e34],eax
+push fcn.00419048
+call dword[0x538e28]
+cmp eax,0xffffffff
+mov dword[0x437378],eax
+je 0x4192a3
+xor edi,edi
+push 0x8c
+inc edi
+push edi
+call fcn.0041db87
+mov esi,eax
+test esi,esi
+pop ecx
+pop ecx
+je 0x4192a3
+push esi
+push dword[0x437378]
+call dword[0x538e30]
+test eax,eax
+je 0x4192a3
+mov dword[esi+0x54],0x437920
+mov dword[esi+0x14],edi
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+or dword[esi+4],0xffffffff
+mov dword[esi],eax
+mov eax,edi
+jmp 0x4192aa
+call fcn.00418fa7
+xor eax,eax
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e
+[similar_2_ref]: /report/fcn.00437faa@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_3_ref]: /report/fcn.00417ec1@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_4_ref]: /report/fcn.004188c3@f5b8476c36459986b226c45654aeb016
+[similar_5_ref]: /report/fcn.00417371@e16f74a2849182d98050864255e902f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

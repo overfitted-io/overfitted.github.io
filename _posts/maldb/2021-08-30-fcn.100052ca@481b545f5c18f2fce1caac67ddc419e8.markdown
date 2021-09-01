@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.100052ca @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100052ca
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10001637][similar_1_ref] (sim.: 0.8474239520349041)
+2. [fcn.00557903][similar_2_ref] (sim.: 0.8188466113023)
+3. [fcn.10007207][similar_3_ref] (sim.: 0.8132162017782429)
+4. [fcn.1000d0a7][similar_4_ref] (sim.: 0.8097124285705126)
+5. [fcn.100145d9][similar_5_ref] (sim.: 0.8051958900908509)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x10063670],0
+jne 0x10005337
+push 0x10050d8c
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+mov dword[0x10063670],eax
+jne 0x100052ec
+jmp fcn.100073a7
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CreateActCtxW
+push eax
+call esi
+push str.ReleaseActCtx
+push dword[0x10063670]
+mov dword[0x10063660],eax
+call esi
+push str.ActivateActCtx
+push dword[0x10063670]
+mov dword[0x10063664],eax
+call esi
+push str.DeactivateActCtx
+push dword[0x10063670]
+mov dword[0x10063668],eax
+call esi
+mov dword[0x1006366c],eax
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001637@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00557903@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.10007207@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.1000d0a7@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.100145d9@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

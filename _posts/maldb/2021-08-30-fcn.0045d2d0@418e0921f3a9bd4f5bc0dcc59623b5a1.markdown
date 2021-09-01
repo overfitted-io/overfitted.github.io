@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.0045d2d0 @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0045d2d0
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004297f0][similar_1_ref] (sim.: 0.8712013393827862)
+2. [fcn.00529120][similar_2_ref] (sim.: 0.8236687058835812)
+3. [fcn.00404fe9][similar_3_ref] (sim.: 0.8178213999078809)
+4. [fcn.458e5cc0][similar_4_ref] (sim.: 0.8097353097042321)
+5. [fcn.00456ec0][similar_5_ref] (sim.: 0.803925323123247)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push edi
+mov edi,ecx
+mov eax,dword[edi]
+lea ecx,[eax+0x20]
+push ecx
+push 4
+push eax
+push 0x45d240
+push 0
+push 0
+call fcn.0043f9aa
+mov ebx,eax
+add esp,0x18
+test ebx,ebx
+jne 0x45d2f9
+pop edi
+xor al,al
+pop ebx
+ret 
+mov edx,dword[edi]
+push esi
+add edx,4
+mov eax,1
+lock xadd dword[edx],eax
+mov esi,dword[edi]
+mov eax,dword[esi+8]
+test eax,eax
+je 0x45d31d
+cmp eax,0xffffffff
+je 0x45d31d
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[esi+8],ebx
+mov ecx,dword[edi]
+mov edx,dword[ecx+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+pop esi
+pop edi
+mov al,1
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004297f0@38d41d729f8f30faf0dd96f0c7acba4b
+[similar_2_ref]: /report/fcn.00529120@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.00404fe9@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.458e5cc0@284c9c9722cef7520dddfe58806fd72f
+[similar_5_ref]: /report/fcn.00456ec0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

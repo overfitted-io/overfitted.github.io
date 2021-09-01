@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.00476b02 @ 912f1d013a0d6151bc7a7cef6da1b2a0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00476b02
+- **Origin (md5):** 912f1d013a0d6151bc7a7cef6da1b2a0
+- **VirusTotal:** [virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00404a24][similar_1_ref] (sim.: 0.8386156072720217)
+2. [fcn.0040530c][similar_2_ref] (sim.: 0.8369246231882558)
+3. [fcn.004298de][similar_3_ref] (sim.: 0.8315508200767667)
+4. [fcn.00600192][similar_4_ref] (sim.: 0.8279893127978021)
+5. [fcn.0042ce5c][similar_5_ref] (sim.: 0.8270484162941374)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+push edi
+xor edi,edi
+cmp dword[esi],edi
+je 0x476b44
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x476b60
+push str.RegOpenKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x476b60
+push edi
+push dword[esi]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push edi
+push dword[ebp+0xc]
+push reloc.OLEAUT32.dll_SysReAllocString
+call eax
+jmp 0x476b63
+cmp dword[esi+4],edi
+je 0x476b60
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push edi
+push dword[ebp+0xc]
+push reloc.OLEAUT32.dll_SysReAllocString
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+jmp 0x476b63
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404a24@e16f74a2849182d98050864255e902f8
+[similar_2_ref]: /report/fcn.0040530c@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_3_ref]: /report/fcn.004298de@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.00600192@52d540e8e13e0f0bbb8946b2363a382d
+[similar_5_ref]: /report/fcn.0042ce5c@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0

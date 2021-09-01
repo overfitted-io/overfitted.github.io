@@ -1,0 +1,150 @@
+---
+layout: post
+title:  "fcn.00404ba4 @ 4c8869bb42f854640703b6ddda29ee38"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00404ba4
+- **Origin (md5):** 4c8869bb42f854640703b6ddda29ee38
+- **VirusTotal:** [virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00401c59][similar_1_ref] (sim.: 0.9362662811123847)
+2. [fcn.00406cfe][similar_2_ref] (sim.: 0.9322439020759865)
+3. [fcn.00403389][similar_3_ref] (sim.: 0.9264658229134365)
+4. [fcn.0040567b][similar_4_ref] (sim.: 0.9256300876070555)
+5. [fcn.00405242][similar_5_ref] (sim.: 0.9249651260026724)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x74
+push ebx
+push esi
+push edi
+push 0x40
+lea eax,[ebp-0x74]
+mov esi,ecx
+push eax
+push esi
+call dword[sym.imp.USER32.dll_GetClassNameA]
+test eax,eax
+je 0x404c06
+push str.STATIC
+lea eax,[ebp-0x74]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcmpiA]
+test eax,eax
+jne 0x404c06
+push 0xfffffffffffffff0
+push esi
+call dword[sym.imp.USER32.dll_GetWindowLongW]
+test al,0xe
+jne 0x404c06
+mov edx,esi
+lea ecx,[ebp-0x18]
+call fcn.00404af5
+mov ecx,dword[ebp-0x18]
+push 5
+mov edx,0x41dda0
+call fcn.00403786
+test eax,eax
+je 0x404c0d
+push dword[ebp-0x18]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+pop ecx
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+push esi
+call dword[sym.imp.USER32.dll_GetParent]
+xor edi,edi
+mov dword[ebp-4],eax
+cmp eax,edi
+je 0x404bfd
+push str.riched20
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+lea edx,[ebp-0x34]
+mov ecx,esi
+call fcn.004038d4
+push esi
+call dword[sym.imp.USER32.dll_GetMenu]
+push 0x419
+mov ebx,eax
+call dword[sym.imp.KERNEL32.dll_SetThreadLocale]
+mov eax,dword[ebp-0x28]
+sub eax,dword[ebp-0x30]
+push edi
+push edi
+push ebx
+push dword[ebp-4]
+push eax
+mov eax,dword[ebp-0x2c]
+sub eax,dword[ebp-0x34]
+push eax
+push dword[ebp-0x30]
+push dword[ebp-0x34]
+push 0x50000804
+push 0x41da3c
+push 0x41dd7c
+push edi
+call dword[sym.imp.USER32.dll_CreateWindowExW]
+mov ebx,eax
+cmp ebx,edi
+je 0x404bfd
+push esi
+call dword[sym.imp.USER32.dll_DestroyWindow]
+mov esi,dword[sym.imp.USER32.dll_SendMessageW]
+push edi
+push 0x22
+push 0x459
+push ebx
+call esi
+push 0xf
+call dword[sym.imp.USER32.dll_GetSysColor]
+push eax
+push edi
+push 0x443
+push ebx
+call esi
+mov eax,0xfde9
+push eax
+lea edx,[ebp-0x18]
+lea ecx,[ebp-0x24]
+mov dword[ebp-8],eax
+mov dword[ebp-0xc],edi
+call fcn.0040438b
+push dword[ebp-0x24]
+lea eax,[ebp-0xc]
+push eax
+push 0x461
+push ebx
+call esi
+push dword[ebp-0x24]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp-0x18]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+pop ecx
+pop ecx
+mov eax,ebx
+jmp 0x404c08
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401c59@4c8869bb42f854640703b6ddda29ee38
+[similar_2_ref]: /report/fcn.00406cfe@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00403389@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.0040567b@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.00405242@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38

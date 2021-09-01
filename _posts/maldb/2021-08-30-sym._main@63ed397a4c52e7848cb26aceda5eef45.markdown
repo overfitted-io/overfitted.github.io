@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "sym._main @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_main
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [main][similar_1_ref] (sim.: 1.0)
+2. [fcn.00412422][similar_2_ref] (sim.: 0.8991845674940855)
+3. [fcn.00452b80][similar_3_ref] (sim.: 0.8956729490551834)
+4. [sym.\_\_\_cxa\_allocate\_dependent\_exception][similar_4_ref] (sim.: 0.8956176814411494)
+5. [sym.\_\_\_cxa\_allocate\_exception][similar_5_ref] (sim.: 0.8952241866539659)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+lea ecx,[esp+4]
+and esp,0xfffffff0
+push dword[ecx-4]
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+push ecx
+sub esp,0x68
+mov dword[ebp-0x44],0x415950
+mov dword[ebp-0x40],0x415f5a
+lea eax,[ebp-0x3c]
+lea ebx,[ebp-0x18]
+mov dword[eax],ebx
+mov edx,0x401dea
+mov dword[eax+4],edx
+mov dword[eax+8],esp
+lea eax,[ebp-0x5c]
+mov dword[esp],eax
+call dbg._Unwind_SjLj_Register
+call dbg.__main
+mov dword[esp],1
+mov eax,dword[sym.imp.KERNEL32.dll_Sleep]
+mov dword[ebp-0x58],1
+call eax
+sub esp,4
+mov dword[ebp-0x20],0x457000
+mov dword[esp],0x10
+call sym._malloc
+mov dword[ebp-0x24],eax
+mov eax,dword[ebp-0x24]
+mov byte[eax],0x6e
+mov dword[ebp-0x1c],1
+jmp 0x401d90
+mov edx,dword[ebp-0x1c]
+mov eax,dword[ebp-0x24]
+add edx,eax
+mov ecx,dword[ebp-0x1c]
+mov eax,dword[ebp-0x20]
+add eax,ecx
+movzx eax,byte[eax]
+mov byte[edx],al
+add dword[ebp-0x1c],1
+cmp dword[ebp-0x1c],0xf
+jle 0x401d77
+mov dword[ebp-0x28],0x3a600
+lea eax,[ebp-0x28]
+mov dword[esp+0xc],eax
+mov dword[esp+8],0x417020
+mov dword[esp+4],0x10
+mov eax,dword[ebp-0x24]
+mov dword[esp],eax
+mov dword[ebp-0x58],1
+call sym EncryptData(unsigned char*,int,unsigned char*,unsigned long*)
+xor eax,1
+test al,al
+je 0x401dd4
+mov eax,1
+jmp 0x401de5
+mov dword[ebp-0x58],1
+call sym RRRRRR()
+mov eax,0
+mov dword[ebp-0x60],eax
+jmp 0x401dff
+lea eax,[ebp-0x5c]
+mov dword[esp],eax
+call sym.__Unwind_SjLj_Unregister
+mov eax,dword[ebp-0x60]
+lea esp,[ebp-0x10]
+pop ecx
+pop ebx
+pop esi
+pop edi
+pop ebp
+lea esp,[ecx-4]
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/main@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/fcn.00412422@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_3_ref]: /report/fcn.00452b80@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym.___cxa_allocate_dependent_exception@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym.___cxa_allocate_exception@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

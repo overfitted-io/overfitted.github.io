@@ -1,0 +1,160 @@
+---
+layout: post
+title:  "fcn.0068fd90 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0068fd90
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0068f270][similar_1_ref] (sim.: 0.9369146747648436)
+2. [fcn.006821a0][similar_2_ref] (sim.: 0.9288178175268781)
+3. [fcn.00698c20][similar_3_ref] (sim.: 0.9251741867095179)
+4. [sym.xmrig.exe\_MHD\_create\_response\_for\_upgrade][similar_4_ref] (sim.: 0.9216030412747244)
+5. [fcn.00683fd0][similar_5_ref] (sim.: 0.9210005853876209)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push ebx
+sub esp,0x434
+lea eax,[esp+0x2c]
+mov dword[esp],0x202
+mov dword[esp+4],eax
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+sub esp,8
+test eax,eax
+jne 0x68ffdb
+mov dword[esp+8],0x83c154
+mov dword[esp+4],0
+mov dword[esp],str.0.0.0.0
+call fcn.0066c520
+test eax,eax
+jne 0x68ffaa
+mov dword[esp+8],0x83c138
+mov dword[esp+4],0
+mov dword[esp],0x7b855b
+call fcn.0066c590
+test eax,eax
+jne 0x68ffaa
+mov dword[esp+8],0
+mov dword[esp+4],1
+mov dword[esp],2
+mov esi,dword[sym.imp.WS2_32.dll_socket]
+call esi
+sub esp,0xc
+cmp eax,0xffffffff
+mov ebx,eax
+je 0x68ff40
+lea eax,[esp+0x28]
+mov dword[esp+0x28],0x274
+mov dword[esp+8],0x2005
+mov dword[esp+4],0xffff
+mov dword[esp],ebx
+mov dword[esp+0x10],eax
+lea eax,[esp+0x1bc]
+mov dword[esp+0xc],eax
+call dword[sym.imp.WS2_32.dll_getsockopt]
+sub esp,0x14
+cmp eax,0xffffffff
+je 0x68ffaf
+test byte[esp+0x1be],2
+je 0x68ff20
+mov dword[esp],ebx
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp,4
+cmp eax,0xffffffff
+je 0x68ffc5
+mov dword[esp+8],0
+mov dword[esp+4],1
+mov dword[esp],0x17
+call esi
+sub esp,0xc
+cmp eax,0xffffffff
+mov ebx,eax
+je 0x68ff80
+lea eax,[esp+0x28]
+mov dword[esp+0x28],0x274
+mov dword[esp+8],0x2005
+mov dword[esp+4],0xffff
+mov dword[esp],ebx
+mov dword[esp+0x10],eax
+lea eax,[esp+0x1bc]
+mov dword[esp+0xc],eax
+call dword[sym.imp.WS2_32.dll_getsockopt]
+sub esp,0x14
+cmp eax,0xffffffff
+je 0x68ffaf
+test byte[esp+0x1be],2
+je 0x68ff30
+mov dword[esp],ebx
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp,4
+cmp eax,0xffffffff
+je 0x68ffc5
+add esp,0x434
+pop ebx
+pop esi
+ret 
+mov dword[0x83c168],1
+jmp 0x68fe7b
+mov dword[0x83c164],1
+jmp 0x68ff01
+mov ebx,dword[sym.imp.WS2_32.dll_WSAGetLastError]
+call ebx
+lea edx,[eax-0x273b]
+cmp edx,1
+jbe 0x68fe90
+sub eax,0x273e
+cmp eax,1
+jbe 0x68fe90
+call ebx
+mov dword[esp+4],0x7b8575
+mov dword[esp],eax
+call fcn.0066e2e0
+mov esi,esi
+lea edi,[edi]
+mov ebx,dword[sym.imp.WS2_32.dll_WSAGetLastError]
+call ebx
+lea edx,[eax-0x273b]
+cmp edx,1
+jbe 0x68ff16
+sub eax,0x273e
+cmp eax,1
+ja 0x68ff65
+add esp,0x434
+pop ebx
+pop esi
+ret 
+call sub.msvcrt.dll_abort
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[esp+4],0x7b855e
+mov dword[esp],eax
+call fcn.0066e2e0
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[esp+4],0x7b8569
+mov dword[esp],eax
+call fcn.0066e2e0
+mov dword[esp+4],str.WSAStartup
+mov dword[esp],eax
+call fcn.0066e2e0
+nop 
+lea esi,[esi]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.00698c20@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym.xmrig.exe_MHD_create_response_for_upgrade@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

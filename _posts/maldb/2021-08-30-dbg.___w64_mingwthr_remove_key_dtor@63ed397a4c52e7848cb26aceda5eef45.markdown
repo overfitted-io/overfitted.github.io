@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "dbg.___w64_mingwthr_remove_key_dtor @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** dbg.\_\_\_w64\_mingwthr\_remove\_key\_dtor
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0041a784][similar_1_ref] (sim.: 0.8363635610934347)
+2. [fcn.0041a53e][similar_2_ref] (sim.: 0.8355013256017113)
+3. [entry1][similar_3_ref] (sim.: 0.8338744694051528)
+4. [sym.\_leaveOnceObject][similar_4_ref] (sim.: 0.8285683610574376)
+5. [sym.\_pop\_pthread\_mem][similar_5_ref] (sim.: 0.8284434824321125)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+sub esp,0x14
+mov eax,dword[0x45a3a4]
+mov ebx,dword[ebp+8]
+test eax,eax
+jne 0x40a550
+xor eax,eax
+mov ebx,dword[ebp-4]
+leave 
+ret 
+mov dword[esp],0x45a3a8
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov edx,dword[0x45a3a0]
+sub esp,4
+test edx,edx
+je 0x40a581
+mov eax,dword[edx]
+cmp eax,ebx
+jne 0x40a57a
+jmp 0x40a5b8
+mov ecx,dword[eax]
+cmp ecx,ebx
+je 0x40a598
+mov edx,eax
+mov eax,dword[edx+8]
+test eax,eax
+jne 0x40a572
+mov dword[esp],0x45a3a8
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp,4
+xor eax,eax
+mov ebx,dword[ebp-4]
+leave 
+ret 
+mov ecx,dword[eax+8]
+mov dword[edx+8],ecx
+mov dword[esp],eax
+call sym._free
+mov dword[esp],0x45a3a8
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp,4
+jmp 0x40a591
+mov eax,dword[edx+8]
+mov dword[0x45a3a0],eax
+mov eax,edx
+jmp 0x40a59e
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041a784@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_2_ref]: /report/fcn.0041a53e@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_3_ref]: /report/entry1@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_4_ref]: /report/sym._leaveOnceObject@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym._pop_pthread_mem@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

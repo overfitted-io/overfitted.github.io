@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "main @ 912f1d013a0d6151bc7a7cef6da1b2a0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** main
+- **Origin (md5):** 912f1d013a0d6151bc7a7cef6da1b2a0
+- **VirusTotal:** [virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [main][similar_1_ref] (sim.: 0.9998900981078187)
+2. [main][similar_2_ref] (sim.: 0.9998900981078187)
+3. [fcn.00471d09][similar_3_ref] (sim.: 0.9055498769137142)
+4. [fcn.00428940][similar_4_ref] (sim.: 0.9030706320814857)
+5. [fcn.00426aa0][similar_5_ref] (sim.: 0.9024030474947339)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x278
+mov eax,dword[0x4b8744]
+xor eax,esp
+mov dword[esp+0x274],eax
+push ebx
+push edi
+push 6
+xor ebx,ebx
+push ebx
+call dword[sym.imp.ole32.dll_CoInitializeEx]
+call fcn.00474b1c
+test eax,eax
+setne al
+mov byte[0x4be240],al
+test al,al
+jne 0x474df9
+push 0x104
+lea eax,[esp+0x74]
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+lea eax,[esp+0x70]
+mov dword[esp+0x18],0x3c
+mov dword[esp+0x1c],0x100
+mov dword[esp+0x20],ebx
+mov dword[esp+0x24],0x4ae89c
+mov dword[esp+0x28],eax
+call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
+mov dword[esp+0x2c],eax
+lea edi,[esp+0x38]
+push 7
+pop ecx
+xor eax,eax
+mov dword[esp+0x30],ebx
+mov dword[esp+0x34],5
+rep stosd dword es:[edi],eax
+lea eax,[esp+0x18]
+push eax
+call dword[sym.imp.SHELL32.dll_ShellExecuteExW]
+neg eax
+sbb al,al
+inc al
+je 0x474e5e
+lea eax,[esp+0x70]
+push eax
+push 2
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+jne 0x474e5e
+lea eax,[esp+0x10]
+mov dword[esp+0x10],8
+push eax
+mov dword[esp+0x18],0x8ff
+call dword[sym.imp.COMCTL32.dll_InitCommonControlsEx]
+call fcn.004740d7
+test eax,eax
+je 0x474e58
+jmp 0x474e46
+lea eax,[esp+0x54]
+push eax
+call dword[sym.imp.USER32.dll_TranslateMessage]
+lea eax,[esp+0x54]
+push eax
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+push ebx
+push ebx
+push ebx
+lea eax,[esp+0x60]
+push eax
+call dword[sym.imp.USER32.dll_GetMessageA]
+test eax,eax
+jne 0x474e30
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+call dword[sym.imp.ole32.dll_CoUninitialize]
+mov ecx,dword[esp+0x27c]
+xor eax,eax
+pop edi
+pop ebx
+xor ecx,esp
+call fcn.0047b6bc
+mov esp,ebp
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/main@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_2_ref]: /report/main@152885a790b99953ce23874f0947b7bd
+[similar_3_ref]: /report/fcn.00471d09@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00428940@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00426aa0@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0

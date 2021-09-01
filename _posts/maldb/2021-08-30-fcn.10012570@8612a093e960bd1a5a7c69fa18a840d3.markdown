@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.10012570 @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10012570
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1001bad0][similar_1_ref] (sim.: 0.8752487482165804)
+2. [fcn.10009e60][similar_2_ref] (sim.: 0.8670712757736612)
+3. [fcn.1001b420][similar_3_ref] (sim.: 0.8639645926888023)
+4. [sym.libpng.dll\_png\_set\_tRNS][similar_4_ref] (sim.: 0.8613450728464948)
+5. [fcn.1000a280][similar_5_ref] (sim.: 0.858800704057805)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+mov edi,dword[esi+0x298]
+xor ecx,ecx
+cmp edi,ecx
+je 0x100125b0
+cmp ebx,dword[esi+0x29c]
+jbe 0x100125db
+mov eax,dword[esi+0x258]
+mov dword[esi+0x298],ecx
+mov dword[esi+0x29c],ecx
+push edi
+cmp eax,ecx
+je 0x100125a7
+push esi
+call eax
+add esp,8
+jmp 0x100125b0
+call dword[sym.imp.MSVCR100.dll_free]
+add esp,4
+lea eax,[ebx-1]
+cmp eax,0xfffffffe
+ja 0x100125eb
+mov eax,dword[esi+0x254]
+push ebx
+test eax,eax
+je 0x100125e0
+push esi
+call eax
+add esp,8
+mov edi,eax
+test edi,edi
+je 0x100125ed
+mov dword[esi+0x298],edi
+mov dword[esi+0x29c],ebx
+mov eax,edi
+pop edi
+pop ebp
+ret 
+call dword[sym.imp.MSVCR100.dll_malloc]
+add esp,4
+jmp 0x100125c9
+xor edi,edi
+mov eax,dword[ebp+8]
+cmp eax,2
+jge 0x100125db
+push str.insufficient_memory_to_read_chunk
+push esi
+test eax,eax
+je 0x1001260c
+call sym.libpng.dll_png_chunk_warning
+add esp,8
+mov eax,edi
+pop edi
+pop ebp
+ret 
+call sym.libpng.dll_png_chunk_error
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001bad0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/fcn.10009e60@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.1001b420@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/sym.libpng.dll_png_set_tRNS@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.1000a280@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

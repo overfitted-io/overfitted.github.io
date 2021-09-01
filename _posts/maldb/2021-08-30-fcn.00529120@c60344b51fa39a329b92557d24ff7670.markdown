@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.00529120 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00529120
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006827a0][similar_1_ref] (sim.: 0.8298467258243439)
+2. [fcn.00479480][similar_2_ref] (sim.: 0.8292917919270281)
+3. [fcn.0045d3d0][similar_3_ref] (sim.: 0.8284599318043636)
+4. [fcn.004b8218][similar_4_ref] (sim.: 0.8249448508390074)
+5. [fcn.100c9180][similar_5_ref] (sim.: 0.8242849027832025)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+mov edi,eax
+mov eax,dword[edi]
+test eax,eax
+jne 0x52912d
+xor al,al
+pop edi
+ret 
+cmp dword[eax+4],0
+je 0x529129
+push esi
+lea ecx,[eax+0xc]
+push ecx
+push 4
+push eax
+push 0x528fe0
+push 0
+push 0
+call fcn.0057553b
+mov edx,dword[edi]
+mov dword[edx+0x10],eax
+mov eax,dword[edi]
+add esp,0x18
+cmp dword[eax+0x10],0
+jne 0x529182
+or esi,0xffffffff
+mov dword[eax+0x10],esi
+mov edi,dword[edi]
+mov eax,dword[edi+0x10]
+cmp eax,esi
+je 0x529172
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[edi+0x10],esi
+pop esi
+mov byte[edi+8],0
+mov dword[edi+0xc],0
+xor al,al
+pop edi
+ret 
+mov byte[eax+8],1
+mov eax,dword[edi]
+mov ecx,dword[eax+0x10]
+push ecx
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+cmp eax,0xffffffff
+jne 0x5291a4
+mov esi,dword[edi]
+call fcn.00529070
+mov edx,dword[edi]
+mov byte[edx+8],0
+pop esi
+mov al,1
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006827a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00479480@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.0045d3d0@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.004b8218@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_5_ref]: /report/fcn.100c9180@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

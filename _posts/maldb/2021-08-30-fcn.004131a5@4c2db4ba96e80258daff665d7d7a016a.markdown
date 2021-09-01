@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.004131a5 @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004131a5
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004073c1][similar_1_ref] (sim.: 0.8347496443108038)
+2. [fcn.00425ffa][similar_2_ref] (sim.: 0.8154155226909872)
+3. [fcn.00428d93][similar_3_ref] (sim.: 0.8109222258272512)
+4. [fcn.0046568b][similar_4_ref] (sim.: 0.8086863444296998)
+5. [fcn.00403834][similar_5_ref] (sim.: 0.8084426964038073)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push esi
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov esi,ecx
+and dword[esi+4],0
+and dword[esi],0
+push str.riched32.dll
+call edi
+push str.riched20.dll
+mov dword[esi],eax
+call edi
+push 0
+mov dword[esi+4],eax
+call dword[sym.imp.ole32.dll_OleInitialize]
+lea eax,[ebp-8]
+push eax
+mov dword[ebp-8],8
+mov dword[ebp-4],0x7ff
+call dword[sym.imp.COMCTL32.dll_InitCommonControlsEx]
+push 0x42d720
+call dword[sym.imp.SHELL32.dll_SHGetMalloc]
+pop edi
+mov eax,esi
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004073c1@6c5b0418e4a4c57d99cda47d2717045d
+[similar_2_ref]: /report/fcn.00425ffa@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.0046568b@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.00403834@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

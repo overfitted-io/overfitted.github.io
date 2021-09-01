@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.00515080 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00515080
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004bfe20][similar_1_ref] (sim.: 0.8701022860543405)
+2. [sym.xmrig.exe\_MHD\_create\_response\_from\_fd64][similar_2_ref] (sim.: 0.8651150526771264)
+3. [fcn.004bf420][similar_3_ref] (sim.: 0.8619535668105521)
+4. [fcn.004bf5c0][similar_4_ref] (sim.: 0.8579565021627653)
+5. [sym.xmrig.exe\_MHD\_create\_response\_from\_fd][similar_5_ref] (sim.: 0.8557871107595092)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x38
+mov ebx,dword[esp+0x40]
+lea eax,[esp+0x2c]
+mov dword[esp+0x2c],0
+mov dword[esp],5
+mov dword[esp+8],eax
+mov dword[esp+4],ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+sub esp,0xc
+test eax,eax
+jne 0x5150b5
+add esp,0x38
+pop ebx
+ret 
+mov dword[esp+8],0x2eb
+mov dword[esp+4],0x76c4c0
+mov dword[esp],8
+call fcn.00517a60
+test eax,eax
+je 0x5150f0
+mov edx,dword[0x83a00c]
+mov dword[eax],ebx
+mov dword[0x83a00c],eax
+mov dword[eax+4],edx
+add esp,0x38
+mov eax,1
+pop ebx
+ret 
+mov dword[esp+0x10],0x2ec
+mov dword[esp+0xc],0x76c4c0
+mov dword[esp+8],0x41
+mov dword[esp+4],0x72
+mov dword[esp],0xf
+call fcn.004f6fb0
+xor eax,eax
+jmp 0x5150b0
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004bfe20@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/sym.xmrig.exe_MHD_create_response_from_fd64@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.004bf420@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.004bf5c0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/sym.xmrig.exe_MHD_create_response_from_fd@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.0050a0c0 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0050a0c0
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100b3250][similar_1_ref] (sim.: 0.8145467985195523)
+2. [fcn.00517120][similar_2_ref] (sim.: 0.8117786746309277)
+3. [fcn.10007210][similar_3_ref] (sim.: 0.8086823032344408)
+4. [fcn.005171a0][similar_4_ref] (sim.: 0.8073485570170142)
+5. [fcn.004c23a0][similar_5_ref] (sim.: 0.804529927674027)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edx,dword[esp+4]
+mov eax,dword[esp+8]
+push esi
+lea ecx,[esp+0xc]
+push ecx
+push 0x8004667e
+push edx
+mov dword[esp+0x18],eax
+call dword[sym.imp.WS2_32.dll_ioctlsocket]
+mov esi,eax
+test esi,esi
+jge 0x50a101
+push 0x233
+push str..crypto_bio_b_sock.c
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push eax
+push 5
+push 2
+call fcn.00443760
+add esp,0x14
+xor eax,eax
+test esi,esi
+sete al
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100b3250@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/fcn.00517120@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.10007210@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.005171a0@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.004c23a0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

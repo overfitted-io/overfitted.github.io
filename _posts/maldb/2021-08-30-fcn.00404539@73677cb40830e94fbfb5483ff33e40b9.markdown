@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.00404539 @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00404539
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00402626][similar_1_ref] (sim.: 0.8597224285999243)
+2. [fcn.0040a47a][similar_2_ref] (sim.: 0.8564019226485489)
+3. [fcn.00403f74][similar_3_ref] (sim.: 0.8557068560367616)
+4. [fcn.0040312d][similar_4_ref] (sim.: 0.8554397007764756)
+5. [fcn.00456ec0][similar_5_ref] (sim.: 0.8550991114962381)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+mov esi,eax
+call fcn.00403f4f
+test eax,eax
+jne 0x4045c3
+add esi,8
+cmp dword[esi],eax
+je 0x404555
+mov eax,0x2748
+jmp 0x4045c3
+push 0
+push 1
+push 2
+call dword[sym.imp.WS2_32.dll_socket]
+mov edi,eax
+cmp edi,0xffffffff
+jne 0x404571
+pop edi
+pop esi
+pop ebx
+jmp dword[sym.imp.WS2_32.dll_WSAGetLastError]
+call dword[sym.imp.WS2_32.dll_WSACreateEvent]
+mov ebx,eax
+test ebx,ebx
+jne 0x404590
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push edi
+mov esi,eax
+call dword[sym.imp.WS2_32.dll_closesocket]
+mov eax,esi
+jmp 0x4045c3
+push 0x3ff
+push ebx
+push edi
+call dword[sym.imp.WS2_32.dll_WSAEventSelect]
+cmp eax,0xffffffff
+jne 0x4045ba
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push edi
+mov esi,eax
+call dword[sym.imp.WS2_32.dll_closesocket]
+push ebx
+call dword[sym.imp.WS2_32.dll_WSACloseEvent]
+jmp 0x40458c
+push ebx
+push edi
+call fcn.00403cf4
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402626@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040a47a@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_3_ref]: /report/fcn.00403f74@ea9c1e2eeb951a8e6185c6674c228f98
+[similar_4_ref]: /report/fcn.0040312d@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.00456ec0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.00406f74 @ e1cfd2251920da7635928443c90c6b4d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406f74
+- **Origin (md5):** e1cfd2251920da7635928443c90c6b4d
+- **VirusTotal:** [virustotal.com/gui/file/e1cfd2251920da7635928443c90c6b4d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00406ed4][similar_1_ref] (sim.: 0.9416663567362438)
+2. [fcn.00406fa0][similar_2_ref] (sim.: 0.8916233109235352)
+3. [fcn.00406fa0][similar_3_ref] (sim.: 0.8916233109235352)
+4. [fcn.00406fa0][similar_4_ref] (sim.: 0.8916233109235352)
+5. [fcn.0040cd88][similar_5_ref] (sim.: 0.8861137862614136)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+add esp,0xfffffff4
+push ebx
+mov ebx,eax
+push edx
+call sub.kernel32.dll_SetErrorMode
+mov dword[ebp-0xc],eax
+xor eax,eax
+push ebp
+push 0x406fe6
+push dword fs:[eax]
+mov dword fs:[eax],esp
+fnstcw word[ebp-2]
+xor eax,eax
+push ebp
+push 0x406fc8
+push dword fs:[eax]
+mov dword fs:[eax],esp
+mov eax,ebx
+call fcn.004033e8
+push eax
+call sub.kernel32.dll_LoadLibraryA
+mov dword[ebp-8],eax
+xor eax,eax
+pop edx
+pop ecx
+pop ecx
+mov dword fs:[eax],edx
+push 0x406fcf
+fnclex 
+fldcw word[ebp-2]
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406ed4@241e401b92b37dc9e35b2948d20d17b3
+[similar_2_ref]: /report/fcn.00406fa0@e9398015e0cb217dd733ec66460ced7d
+[similar_3_ref]: /report/fcn.00406fa0@e4a72fe437dbc99d650504e450f93aae
+[similar_4_ref]: /report/fcn.00406fa0@7610eb4a4e290563f87db1cc0480b6e7
+[similar_5_ref]: /report/fcn.0040cd88@2ba145d6678d721baeb8d825fab7c600
+[virustotal_ref]: https://www.virustotal.com/gui/file/e1cfd2251920da7635928443c90c6b4d

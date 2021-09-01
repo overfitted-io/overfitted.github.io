@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.0042ce30 @ 38d41d729f8f30faf0dd96f0c7acba4b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0042ce30
+- **Origin (md5):** 38d41d729f8f30faf0dd96f0c7acba4b
+- **VirusTotal:** [virustotal.com/gui/file/38d41d729f8f30faf0dd96f0c7acba4b][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0041cc92][similar_1_ref] (sim.: 0.9077366188947369)
+2. [fcn.00420780][similar_2_ref] (sim.: 0.9057351173358292)
+3. [fcn.0041655c][similar_3_ref] (sim.: 0.9040258909551551)
+4. [fcn.0041576b][similar_4_ref] (sim.: 0.9025919306844064)
+5. [fcn.0040d880][similar_5_ref] (sim.: 0.8971759606411662)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+mov eax,dword[0x443008]
+xor eax,ebp
+mov dword[ebp-4],eax
+and dword[ebp-8],0
+lea eax,[ebp-8]
+push eax
+push 0x43a01c
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+test eax,eax
+je 0x42ce7d
+push esi
+push str.CorExitProcess
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x42ce7c
+push dword[ebp+8]
+mov ecx,esi
+call dword[0x4381b8]
+call esi
+pop esi
+cmp dword[ebp-8],0
+je 0x42ce8c
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.00425206
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041cc92@b41633237f937bbe6f9bcfbdce811f10
+[similar_2_ref]: /report/fcn.00420780@d32515577b2cd57bf3dd6c5e3c37e219
+[similar_3_ref]: /report/fcn.0041655c@64e5091c15839d4b2093890f73869f28
+[similar_4_ref]: /report/fcn.0041576b@d59f9c4f445b9f980173dec064f55091
+[similar_5_ref]: /report/fcn.0040d880@a7fde220a04c8ad1ded25e571c4daa50
+[virustotal_ref]: https://www.virustotal.com/gui/file/38d41d729f8f30faf0dd96f0c7acba4b

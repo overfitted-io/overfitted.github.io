@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "fcn.00411004 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00411004
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00407ebe][similar_1_ref] (sim.: 0.7821222209277046)
+2. [fcn.100091ae][similar_2_ref] (sim.: 0.7630553304591647)
+3. [fcn.10004033][similar_3_ref] (sim.: 0.7625053294762495)
+4. [fcn.0041ca0a][similar_4_ref] (sim.: 0.760073402676771)
+5. [fcn.0042c1da][similar_5_ref] (sim.: 0.7536399526337976)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+call fcn.0041c41f
+cmp byte[eax+0x14],0
+jne 0x411031
+push esi
+call fcn.0041bef3
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x410e70
+push 0xffffffffffffffff
+call dword[sym.imp.USER32.dll_SetWindowsHookExA]
+mov dword[esi+0x2c],eax
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407ebe@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_2_ref]: /report/fcn.100091ae@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.10004033@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.0041ca0a@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.0042c1da@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

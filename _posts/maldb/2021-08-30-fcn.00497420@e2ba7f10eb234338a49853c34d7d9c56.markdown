@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "fcn.00497420 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00497420
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0042d3f0][similar_1_ref] (sim.: 0.8789914547224013)
+2. [fcn.00454a20][similar_2_ref] (sim.: 0.8772350810637063)
+3. [fcn.004344bc][similar_3_ref] (sim.: 0.876322416008611)
+4. [fcn.0040a6f0][similar_4_ref] (sim.: 0.8728518356229722)
+5. [fcn.00475640][similar_5_ref] (sim.: 0.8728159391843342)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,4
+call fcn.004f5100
+push ebp
+mov ebp,dword[esp+0x14]
+push esi
+mov esi,dword[esp+0x14]
+push edi
+xor edi,edi
+mov dword[esp+0xc],edi
+jmp 0x497440
+mov al,byte[esi]
+test al,al
+js 0x49745e
+movzx eax,al
+cmp byte[eax+0x537148],0xe0
+jne 0x49745e
+cmp ebp,edi
+jle 0x49745e
+add esi,1
+sub ebp,1
+jmp 0x497440
+cmp ebp,3
+jle 0x497486
+mov al,byte[esi+ebp-1]
+test al,al
+jns 0x49746f
+or al,0xff
+jmp 0x497478
+movzx ecx,al
+mov al,byte[ecx+0x537148]
+or al,0x13
+cmp al,0xf3
+jne 0x497486
+sub ebp,1
+cmp ebp,3
+jg 0x497463
+mov edx,ebp
+and edx,reloc.WS2_32.dll_closesocket
+jns 0x497495
+dec edx
+or edx,0xfffffffc
+inc edx
+je 0x49749f
+pop edi
+pop esi
+or eax,0xffffffff
+pop ebp
+pop ecx
+ret 
+cmp ebp,edi
+push ebx
+jle 0x49756c
+mov edx,dword[esp+0x18]
+lea esp,[esp]
+mov al,byte[esi]
+test al,al
+jns 0x4974ba
+or al,0xff
+jmp 0x4974c3
+movzx eax,al
+mov al,byte[eax+0x537148]
+add esi,1
+movzx ecx,al
+mov al,byte[esi]
+test al,al
+jns 0x4974d3
+or al,0xff
+jmp 0x4974dc
+movzx eax,al
+mov al,byte[eax+0x537148]
+add esi,1
+movzx ebx,al
+mov al,byte[esi]
+test al,al
+mov dword[esp+0x1c],ebx
+jns 0x4974f0
+or al,0xff
+jmp 0x4974f9
+movzx eax,al
+mov al,byte[eax+0x537148]
+movzx eax,al
+add esi,1
+mov dword[esp+0x20],eax
+mov al,byte[esi]
+test al,al
+jns 0x49750d
+or al,0xff
+jmp 0x497516
+movzx eax,al
+mov al,byte[eax+0x537148]
+add esi,1
+test cl,cl
+movzx eax,al
+js 0x497576
+test bl,bl
+js 0x497576
+test byte[esp+0x20],0x80
+jne 0x497576
+test al,al
+js 0x497576
+shl ecx,6
+or ecx,dword[esp+0x1c]
+add dword[esp+0x10],3
+shl ecx,6
+or ecx,dword[esp+0x20]
+add edx,1
+shl ecx,6
+or ecx,eax
+mov eax,ecx
+shr eax,0x10
+mov byte[edx-1],al
+mov eax,ecx
+shr eax,8
+mov byte[edx],al
+add edx,1
+mov byte[edx],cl
+add edi,4
+add edx,1
+cmp edi,ebp
+jl 0x4974b0
+mov eax,dword[esp+0x10]
+pop ebx
+pop edi
+pop esi
+pop ebp
+pop ecx
+ret 
+pop ebx
+pop edi
+pop esi
+or eax,0xffffffff
+pop ebp
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042d3f0@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.004344bc@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.0040a6f0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00475640@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

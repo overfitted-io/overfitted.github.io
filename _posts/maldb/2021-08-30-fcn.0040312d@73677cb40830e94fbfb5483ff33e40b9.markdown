@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.0040312d @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040312d
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00405a95][similar_1_ref] (sim.: 0.8694835657792758)
+2. [fcn.0040308e][similar_2_ref] (sim.: 0.8686920986364528)
+3. [fcn.00406434][similar_3_ref] (sim.: 0.8669864865642145)
+4. [fcn.00401b74][similar_4_ref] (sim.: 0.8648658646089071)
+5. [fcn.00402007][similar_5_ref] (sim.: 0.8637713647399079)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+xor ebx,ebx
+cmp byte[ebp+8],bl
+je 0x403152
+push ebx
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_CreateDirectoryA]
+test eax,eax
+jne 0x40314e
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+jmp 0x4031bc
+xor eax,eax
+jmp 0x4031bc
+push esi
+push ebx
+push 0x80
+push 2
+push ebx
+push ebx
+push 0x40000000
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov esi,eax
+cmp esi,0xffffffff
+jne 0x40317a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+jmp 0x4031bb
+push ebx
+lea eax,[ebp+8]
+push eax
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push esi
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+jne 0x4031a5
+push edi
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,edi
+pop edi
+jmp 0x4031bb
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[ebp+8]
+sub eax,dword[ebp+0x14]
+neg eax
+sbb eax,eax
+and eax,0x570
+pop esi
+pop ebx
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405a95@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.0040308e@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00406434@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.00402007@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

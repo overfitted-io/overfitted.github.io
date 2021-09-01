@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.006acb80 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006acb80
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006b64a0][similar_1_ref] (sim.: 0.8550084312486324)
+2. [fcn.006b0e20][similar_2_ref] (sim.: 0.8437934883044438)
+3. [fcn.006b8540][similar_3_ref] (sim.: 0.8395451201270696)
+4. [fcn.006b8810][similar_4_ref] (sim.: 0.8336413512542307)
+5. [fcn.006b86a0][similar_5_ref] (sim.: 0.8330297837050469)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x18
+mov eax,dword[esp+0x24]
+cmp eax,1
+je 0x6acc20
+jb 0x6acbc0
+cmp eax,2
+je 0x6acbb0
+cmp eax,3
+jne 0x6acbb5
+mov eax,dword[0x83b654]
+test eax,eax
+je 0x6acbb5
+call fcn.006ac9f0
+jmp 0x6acbb5
+call fcn.006ac450
+add esp,0x18
+mov eax,1
+pop ebx
+ret 
+mov eax,dword[0x83b654]
+test eax,eax
+jne 0x6acc52
+mov eax,dword[0x83b654]
+cmp eax,1
+jne 0x6acbb5
+mov eax,dword[0x83b650]
+test eax,eax
+je 0x6acbf1
+mov ebx,dword[eax+8]
+mov dword[esp],eax
+call sub.msvcrt.dll_free
+test ebx,ebx
+mov eax,ebx
+jne 0x6acbe0
+mov dword[0x83b650],0
+mov dword[0x83b654],0
+mov dword[esp],0x83b658
+call dword[sym.imp.KERNEL32.dll_DeleteCriticalSection]
+sub esp,4
+jmp 0x6acbb5
+mov eax,dword[0x83b654]
+test eax,eax
+je 0x6acc40
+mov dword[0x83b654],1
+add esp,0x18
+mov eax,1
+pop ebx
+ret 
+mov dword[esp],0x83b658
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+sub esp,4
+jmp 0x6acc29
+call fcn.006ac9f0
+jmp 0x6acbcd
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006b0e20@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006b8540@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006b8810@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.006b86a0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

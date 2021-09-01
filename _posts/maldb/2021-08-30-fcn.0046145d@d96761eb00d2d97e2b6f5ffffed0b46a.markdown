@@ -1,0 +1,201 @@
+---
+layout: post
+title:  "fcn.0046145d @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0046145d
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00461276][similar_1_ref] (sim.: 0.9681623989047308)
+2. [fcn.00460219][similar_2_ref] (sim.: 0.9173139670671718)
+3. [fcn.00471d09][similar_3_ref] (sim.: 0.9156078806762411)
+4. [fcn.00460fe6][similar_4_ref] (sim.: 0.9105614807853418)
+5. [fcn.00461121][similar_5_ref] (sim.: 0.9085155545377076)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x100
+push esi
+mov esi,dword[ebp+8]
+push edi
+mov edi,ecx
+cmp byte[esi],0
+jne 0x46148e
+cmp byte[esi+1],0
+jne 0x46148e
+cmp byte[esi+2],0
+jne 0x46148e
+cmp byte[esi+3],0
+jne 0x46148e
+cmp byte[esi+4],0
+je 0x46164a
+cmp dword[edi+0x20],0
+push ebx
+je 0x4615cc
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_GetParent]
+test eax,eax
+je 0x4615cc
+lea eax,[ebp-0x100]
+push eax
+call dword[sym.imp.USER32.dll_GetKeyboardState]
+test eax,eax
+je 0x461518
+cmp byte[esi],0
+mov ecx,0x80
+mov al,byte[ebp-0xf0]
+je 0x4614d6
+xor al,cl
+xor byte[ebp-0x60],cl
+mov byte[ebp-0xf0],al
+cmp byte[esi+1],0
+je 0x4614e7
+xor al,cl
+xor byte[ebp-0x5f],cl
+mov byte[ebp-0xf0],al
+cmp byte[esi+2],0
+je 0x4614f3
+xor byte[ebp-0xef],cl
+cmp byte[esi+3],0
+je 0x4614ff
+xor byte[ebp-0xee],cl
+cmp byte[esi+4],0
+je 0x46150b
+xor byte[ebp-0xa5],cl
+lea eax,[ebp-0x100]
+push eax
+call dword[sym.imp.USER32.dll_SetKeyboardState]
+cmp byte[esi],0
+mov ebx,dword[sym.imp.USER32.dll_PostMessageW]
+jne 0x461529
+cmp byte[esi+1],0
+je 0x461542
+movzx eax,byte[edi+0x26]
+shl eax,0x10
+or eax,0xc0000001
+push eax
+push 0x10
+push 0x101
+push dword[edi+0x20]
+call ebx
+cmp byte[esi+2],0
+je 0x461561
+movzx eax,byte[edi+0x24]
+shl eax,0x10
+or eax,0xc0000001
+push eax
+push 0x11
+push 0x101
+push dword[edi+0x20]
+call ebx
+mov al,byte[esi+3]
+test al,al
+je 0x4615a7
+cmp byte[esi+2],0
+jne 0x46158a
+cmp byte[edi+0x1c],0
+jne 0x46158a
+movzx eax,byte[edi+0x25]
+shl eax,0x10
+or eax,0xe0000001
+push eax
+push 0x12
+push 0x105
+jmp 0x4615a2
+test al,al
+je 0x4615a7
+movzx eax,byte[edi+0x25]
+shl eax,0x10
+or eax,0xc0000001
+push eax
+push 0x12
+push 0x101
+push dword[edi+0x20]
+call ebx
+cmp byte[esi+4],0
+je 0x461642
+movzx eax,byte[edi+0x29]
+shl eax,0x10
+or eax,0xc0000001
+push eax
+push 0x5b
+push 0x101
+push dword[edi+0x20]
+call ebx
+jmp 0x461642
+cmp byte[esi],0
+push 2
+pop ebx
+je 0x4615e7
+movzx eax,byte[edi+0x27]
+push ecx
+push ebx
+push eax
+push 0xa0
+mov ecx,edi
+call fcn.004617d7
+cmp byte[esi+1],0
+je 0x461600
+movzx eax,byte[edi+0x28]
+push ecx
+push ebx
+push eax
+push 0xa1
+mov ecx,edi
+call fcn.004617d7
+cmp byte[esi+2],0
+je 0x461616
+movzx eax,byte[edi+0x24]
+push ecx
+push ebx
+push eax
+push 0x11
+mov ecx,edi
+call fcn.004617d7
+cmp byte[esi+3],0
+je 0x46162c
+movzx eax,byte[edi+0x25]
+push ecx
+push ebx
+push eax
+push 0x12
+mov ecx,edi
+call fcn.004617d7
+cmp byte[esi+4],0
+je 0x461642
+movzx eax,byte[edi+0x29]
+push ecx
+push ebx
+push eax
+push 0x5b
+mov ecx,edi
+call fcn.004617d7
+mov ecx,edi
+call fcn.004601e5
+pop ebx
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00461276@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00460219@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.00471d09@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00460fe6@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.00461121@d96761eb00d2d97e2b6f5ffffed0b46a
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "loc.00444703 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** loc.00444703
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [loc.004f89ff][similar_1_ref] (sim.: 0.9113809801628834)
+2. [loc.0040f7cc][similar_2_ref] (sim.: 0.9086163472598345)
+3. [loc.00436ab0][similar_3_ref] (sim.: 0.9059310014694009)
+4. [loc.0049c33c][similar_4_ref] (sim.: 0.9051998486914987)
+5. [loc.00414132][similar_5_ref] (sim.: 0.9049845269779141)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x46b158],eax
+mov dword[0x46b154],ecx
+mov dword[0x46b150],edx
+mov dword[0x46b14c],ebx
+mov dword[0x46b148],esi
+mov dword[0x46b144],edi
+mov word[0x46b170],ss
+mov word[0x46b164],cs
+mov word[0x46b140],ds
+mov word[0x46b13c],es
+mov word[0x46b138],fs
+mov word[0x46b134],gs
+pushfd 
+pop dword[0x46b168]
+mov eax,dword[ebp]
+mov dword[0x46b15c],eax
+mov eax,dword[ebp+4]
+mov dword[0x46b160],eax
+lea eax,[ebp+8]
+mov dword[0x46b16c],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x46b0a8],0x10001
+mov eax,dword[0x46b160]
+mov dword[0x46b05c],eax
+mov dword[0x46b050],0xc0000409
+mov dword[0x46b054],1
+mov eax,dword[0x4672d8]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x4672dc]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x46b0a0],eax
+push 1
+call fcn.00441370
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x45b8c0
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x46b0a0],0
+jne 0x4447f3
+push 1
+call fcn.00441370
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.004f89ff@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/loc.0040f7cc@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/loc.00436ab0@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_4_ref]: /report/loc.0049c33c@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/loc.00414132@505be53c36227b94e2fcc406f247f6e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

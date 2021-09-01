@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "fcn.00409c8b @ d4e56c7d970c209a3a2b3c4b4cc5e586"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00409c8b
+- **Origin (md5):** d4e56c7d970c209a3a2b3c4b4cc5e586
+- **VirusTotal:** [virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040b9e9][similar_1_ref] (sim.: 0.842084053223545)
+2. [fcn.00414579][similar_2_ref] (sim.: 0.8132531417180041)
+3. [fcn.004b5e24][similar_3_ref] (sim.: 0.8123923481551056)
+4. [fcn.0041ae3f][similar_4_ref] (sim.: 0.8065614536061612)
+5. [fcn.1000e9f2][similar_5_ref] (sim.: 0.790936769779083)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+call fcn.0040d142
+mov esi,eax
+mov eax,dword[esi+0xcc]
+test eax,eax
+je 0x409cb4
+mov eax,dword[eax+0x1c]
+test eax,eax
+je 0x409cb4
+push 0
+push 0
+push 0x401
+push eax
+call dword[sym.imp.USER32.dll_SendMessageA]
+cmp dword[esp+8],0
+mov esi,dword[esi+0x108]
+je 0x409cde
+test esi,esi
+je 0x409cde
+push 1
+call dword[sym.imp.USER32.dll_GetKeyState]
+test ax,ax
+jl 0x409cde
+mov eax,dword[esi]
+push 0xffffffffffffffff
+mov ecx,esi
+call dword[eax+0xdc]
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040b9e9@a2475448bf4050c1583e1970984a4d00
+[similar_2_ref]: /report/fcn.00414579@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.004b5e24@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.0041ae3f@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.1000e9f2@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586

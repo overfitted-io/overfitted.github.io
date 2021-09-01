@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "fcn.00411940 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00411940
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040efb0][similar_1_ref] (sim.: 0.8800321194198173)
+2. [fcn.00410cf0][similar_2_ref] (sim.: 0.8474069619393436)
+3. [fcn.0044fc60][similar_3_ref] (sim.: 0.8362563650689608)
+4. [fcn.00411130][similar_4_ref] (sim.: 0.8346676630680159)
+5. [fcn.00403520][similar_5_ref] (sim.: 0.8335914149822988)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x4c65e8],0
+je 0x411956
+cmp byte[esp+4],0
+jne 0x411956
+mov al,byte[0x4c64b5]
+ret 
+push ebx
+push esi
+mov esi,dword[sym.imp.USER32.dll_GetAsyncKeyState]
+push 0xa0
+xor bl,bl
+call esi
+mov ecx,0x8000
+test cx,ax
+je 0x411973
+mov bl,0x10
+push 0xa1
+call esi
+mov edx,0x8000
+test dx,ax
+je 0x411987
+or bl,0x20
+push 0xa2
+call esi
+mov ecx,0x8000
+test cx,ax
+je 0x41199b
+or bl,1
+push 0xa3
+call esi
+mov edx,0x8000
+test dx,ax
+je 0x4119af
+or bl,2
+push 0xa4
+call esi
+mov ecx,0x8000
+test cx,ax
+je 0x4119c3
+or bl,4
+push 0xa5
+call esi
+mov edx,0x8000
+test dx,ax
+je 0x4119d7
+or bl,8
+push 0x5b
+call esi
+mov ecx,0x8000
+test cx,ax
+je 0x4119e8
+or bl,0x40
+push 0x5c
+call esi
+mov edx,0x8000
+test dx,ax
+je 0x4119f9
+or bl,0x80
+cmp dword[0x4c65e8],0
+je 0x411a36
+mov al,bl
+not al
+and al,byte[0x4c64b5]
+je 0x411a36
+mov cl,byte[0x4c64b7]
+not al
+and byte[0x4c64b5],al
+and byte[0x4c64b6],al
+and cl,al
+mov al,cl
+mov byte[0x4c64b7],cl
+mov ecx,0x4c64d8
+call fcn.00411a40
+pop esi
+mov al,bl
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040efb0@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00410cf0@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.0044fc60@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.00411130@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00403520@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.100b3250 @ 89dc67d2f980e8488f97b1bf8cb24258"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100b3250
+- **Origin (md5):** 89dc67d2f980e8488f97b1bf8cb24258
+- **VirusTotal:** [virustotal.com/gui/file/89dc67d2f980e8488f97b1bf8cb24258][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00426d40][similar_1_ref] (sim.: 0.869419086896236)
+2. [fcn.1000cae0][similar_2_ref] (sim.: 0.8596315870839633)
+3. [fcn.004c23a0][similar_3_ref] (sim.: 0.8569043210074987)
+4. [fcn.100cbce0][similar_4_ref] (sim.: 0.853855258157388)
+5. [fcn.00426c00][similar_5_ref] (sim.: 0.853462607657477)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x124
+lea eax,[esp+0xc]
+push eax
+push 0x8004667e
+push esi
+mov dword[esp+0x18],1
+call sub.WS2_32.dll_ioctlsocket
+cmp eax,0xffffffff
+jne 0x100b327c
+or eax,eax
+add esp,0x124
+ret 
+mov ecx,dword[esp+0x128]
+push 0x10
+push ecx
+push esi
+call sub.WS2_32.dll_connect
+cmp eax,0xffffffff
+jne 0x100b3306
+call sub.WS2_32.dll_WSAGetLastError
+cmp eax,0x2733
+je 0x100b32a4
+cmp eax,0x2726
+jne 0x100b3306
+mov edx,dword[esp+0x12c]
+lea eax,[esp+0x10]
+push eax
+push 0
+lea ecx,[esp+0x20]
+push ecx
+push 0
+push 0
+mov dword[esp+0x30],esi
+mov dword[esp+0x2c],1
+mov dword[esp+0x24],edx
+mov dword[esp+0x28],0
+call sub.WS2_32.dll_select
+test eax,eax
+jle 0x100b3306
+lea edx,[esp+8]
+push edx
+lea eax,[esp+4]
+push eax
+push 0x1007
+push 0xffff
+push esi
+mov dword[esp+0x14],0xffffffff
+mov dword[esp+0x1c],4
+call sub.WS2_32.dll_getsockopt
+lea ecx,[esp+4]
+push ecx
+push 0x8004667e
+push esi
+mov dword[esp+0x10],0
+call sub.WS2_32.dll_ioctlsocket
+add esp,0x124
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00426d40@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.1000cae0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.004c23a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.100cbce0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/89dc67d2f980e8488f97b1bf8cb24258

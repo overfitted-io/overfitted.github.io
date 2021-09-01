@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.00552eda @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00552eda
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0055c1e4][similar_1_ref] (sim.: 0.8752143316522627)
+2. [fcn.0040f74b][similar_2_ref] (sim.: 0.8540292097946249)
+3. [fcn.00456ec0][similar_3_ref] (sim.: 0.8532236838457603)
+4. [fcn.005755fa][similar_4_ref] (sim.: 0.8502572188527376)
+5. [fcn.1000d0a7][similar_5_ref] (sim.: 0.8466787973692034)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+mov eax,ecx
+mov ecx,dword[ebp+8]
+push ebx
+xor ebx,ebx
+mov dword[eax],ecx
+mov dword[eax+4],ebx
+mov dword[ebp-4],eax
+cmp byte[0x60d874],bl
+jne 0x552f8c
+push esi
+push edi
+push 0x5b7c6c
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,eax
+cmp edi,ebx
+jne 0x552f14
+call fcn.005546ed
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CreateActCtxW
+push edi
+call esi
+push str.ReleaseActCtx
+push edi
+mov dword[0x60d864],eax
+call esi
+push str.ActivateActCtx
+push edi
+mov dword[0x60d868],eax
+call esi
+push str.DeactivateActCtx
+push edi
+mov dword[0x60d86c],eax
+call esi
+pop edi
+mov dword[0x60d870],eax
+pop esi
+cmp dword[0x60d864],ebx
+je 0x552f6e
+cmp dword[0x60d868],ebx
+je 0x552f0f
+cmp dword[0x60d86c],ebx
+je 0x552f0f
+cmp eax,ebx
+jne 0x552f82
+jmp 0x552f0f
+cmp dword[0x60d868],ebx
+jne 0x552f0f
+cmp dword[0x60d86c],ebx
+jne 0x552f0f
+cmp eax,ebx
+jne 0x552f0f
+mov eax,dword[ebp-4]
+mov byte[0x60d874],1
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0055c1e4@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0040f74b@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.00456ec0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.005755fa@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.1000d0a7@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

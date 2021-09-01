@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.00408da0 @ 0403abd1e9e066fc89cddd5736647282"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00408da0
+- **Origin (md5):** 0403abd1e9e066fc89cddd5736647282
+- **VirusTotal:** [virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00401840][similar_1_ref] (sim.: 0.8998578059596503)
+2. [fcn.00402ff0][similar_2_ref] (sim.: 0.8995182601805359)
+3. [fcn.0040d9ac][similar_3_ref] (sim.: 0.8938705095650863)
+4. [fcn.00518200][similar_4_ref] (sim.: 0.8925223156002904)
+5. [fcn.00408f95][similar_5_ref] (sim.: 0.8882303575350883)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+lea eax,[esp]
+push esi
+mov esi,dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+push eax
+push 0x20006
+push 0
+push str.SOFTWAREMicrosoftInternet_ExplorerMAINFeatureControl
+push 0x80000002
+call esi
+test eax,eax
+jne 0x408e1f
+mov edx,dword[esp+4]
+lea ecx,[esp+8]
+push ecx
+push str.FEATURE_BROWSER_EMULATION
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+mov esi,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test eax,eax
+jne 0x408e0f
+mov edx,dword[esp+4]
+mov eax,dword[esp+0x10]
+lea ecx,[esp+0x10]
+push 4
+push ecx
+push 4
+push 0
+push str.clickWorker.exe
+push edx
+mov dword[esp+0x28],eax
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+mov eax,dword[esp+8]
+push eax
+call esi
+mov ecx,dword[esp+4]
+push ecx
+call esi
+mov al,1
+pop esi
+add esp,8
+ret 4
+lea edx,[esp+4]
+push edx
+push 0x20006
+push 0
+push str.SOFTWAREWow6432NodeMicrosoftInternet_ExplorerMAINFeatureControl
+push 0x80000002
+call esi
+test eax,eax
+jne 0x408e94
+mov ecx,dword[esp+4]
+lea eax,[esp+8]
+push eax
+push str.FEATURE_BROWSER_EMULATION
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+mov esi,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test eax,eax
+jne 0x408e84
+mov ecx,dword[esp+4]
+mov edx,dword[esp+0x10]
+lea eax,[esp+0x10]
+push 4
+push eax
+push 4
+push 0
+push str.clickWorker.exe
+push ecx
+mov dword[esp+0x28],edx
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+mov edx,dword[esp+8]
+push edx
+call esi
+mov eax,dword[esp+4]
+push eax
+call esi
+mov al,1
+pop esi
+add esp,8
+ret 4
+xor al,al
+pop esi
+add esp,8
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401840@a2475448bf4050c1583e1970984a4d00
+[similar_2_ref]: /report/fcn.00402ff0@0403abd1e9e066fc89cddd5736647282
+[similar_3_ref]: /report/fcn.0040d9ac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.00518200@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.00408f95@fbf34fa6d7da2b8e1de5133a8ca34847
+[virustotal_ref]: https://www.virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282

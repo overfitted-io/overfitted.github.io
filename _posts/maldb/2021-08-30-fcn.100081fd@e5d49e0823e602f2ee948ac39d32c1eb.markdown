@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.100081fd @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100081fd
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000819a][similar_1_ref] (sim.: 0.8840507181362374)
+2. [fcn.00600244][similar_2_ref] (sim.: 0.8657318092728047)
+3. [fcn.00600192][similar_3_ref] (sim.: 0.8574879796448239)
+4. [fcn.10018bac][similar_4_ref] (sim.: 0.8496738637793755)
+5. [fcn.10008ccf][similar_5_ref] (sim.: 0.8388305685034002)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+cmp dword[esi],0
+je 0x1000823e
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x1000824c
+push str.RegOpenKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x1000824c
+push 0
+push dword[esi]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x1000824f
+cmp dword[esi+4],0
+je 0x1000824c
+pop esi
+pop ebp
+jmp dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+xor eax,eax
+inc eax
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000819a@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.00600244@52d540e8e13e0f0bbb8946b2363a382d
+[similar_3_ref]: /report/fcn.00600192@52d540e8e13e0f0bbb8946b2363a382d
+[similar_4_ref]: /report/fcn.10018bac@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.10008ccf@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

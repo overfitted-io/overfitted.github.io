@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "fcn.00507cf0 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00507cf0
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.005072f0][similar_1_ref] (sim.: 0.7572869321411259)
+2. [fcn.005577ce][similar_2_ref] (sim.: 0.7375626739104677)
+3. [fcn.10004033][similar_3_ref] (sim.: 0.7251157925129811)
+4. [fcn.1000d752][similar_4_ref] (sim.: 0.7229079718092699)
+5. [fcn.1000fd84][similar_5_ref] (sim.: 0.7224773663275958)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esi+0x1c]
+cmp eax,0xffffffff
+je 0x507d1a
+mov ecx,dword[esi+0x20]
+cmp dword[ecx],6
+jne 0x507d09
+push 2
+push eax
+call dword[sym.imp.WS2_32.dll_shutdown]
+mov edx,dword[esi+0x1c]
+push edx
+call dword[sym.imp.WS2_32.dll_closesocket]
+mov dword[esi+0x1c],0xffffffff
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005072f0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.005577ce@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.10004033@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.1000d752@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.1000fd84@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.10019f4a @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10019f4a
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10019fc1][similar_1_ref] (sim.: 0.9400392586371521)
+2. [fcn.10001ba5][similar_2_ref] (sim.: 0.8551419614469061)
+3. [fcn.0040f213][similar_3_ref] (sim.: 0.8545351655437674)
+4. [fcn.00437bbe][similar_4_ref] (sim.: 0.8520665454502478)
+5. [fcn.0049bc05][similar_5_ref] (sim.: 0.8518332565445965)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push dword[0x10034b6c]
+mov esi,dword[sym.imp.KERNEL32.dll_TlsGetValue]
+call esi
+test eax,eax
+je 0x10019f7e
+mov eax,dword[0x10034b68]
+cmp eax,0xffffffff
+je 0x10019f7e
+push eax
+push dword[0x10034b6c]
+call esi
+call eax
+test eax,eax
+je 0x10019f7e
+mov eax,dword[eax+0x1f8]
+jmp 0x10019fa4
+push str.KERNEL32.DLL
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov esi,eax
+test esi,esi
+je 0x10019fb2
+call fcn.10019ede
+test eax,eax
+je 0x10019fb2
+push str.EncodePointer
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x10019fb2
+push dword[esp+8]
+call eax
+mov dword[esp+8],eax
+mov eax,dword[esp+8]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10019fc1@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.10001ba5@dc3e2cdf680078d293de3e2d92ba613c
+[similar_3_ref]: /report/fcn.0040f213@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.00437bbe@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_5_ref]: /report/fcn.0049bc05@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00405d20 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405d20
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00405a95][similar_1_ref] (sim.: 0.8403842278393534)
+2. [fcn.00405920][similar_2_ref] (sim.: 0.8326629076828787)
+3. [fcn.00405bb7][similar_3_ref] (sim.: 0.8315502508943359)
+4. [fcn.00450054][similar_4_ref] (sim.: 0.8245630053189082)
+5. [fcn.0048532e][similar_5_ref] (sim.: 0.8236141402612119)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push esi
+mov esi,ecx
+push edi
+cmp dword[esi+8],0
+je 0x405d93
+mov ebx,dword[ebp+0xc]
+xor edi,edi
+test ebx,ebx
+je 0x405d56
+mov eax,dword[esi+0xc]
+cmp eax,dword[esi+8]
+je 0x405d66
+mov ecx,dword[esi+4]
+mov eax,dword[esi+0xc]
+mov al,byte[ecx+eax]
+mov ecx,dword[ebp+8]
+mov byte[edi+ecx],al
+inc edi
+inc dword[esi+0xc]
+cmp edi,ebx
+jb 0x405d37
+add dword[esi+0x10],edi
+mov eax,edi
+pop edi
+adc dword[esi+0x14],0
+pop esi
+pop ebx
+pop ebp
+ret 8
+push 0
+lea eax,[ebp+0xc]
+push eax
+push 0x10000
+push dword[esi+4]
+push dword[esi]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x405d56
+mov eax,dword[ebp+0xc]
+test eax,eax
+je 0x405d56
+mov dword[esi+8],eax
+mov dword[esi+0xc],0
+jmp 0x405d3f
+mov dword[esi+8],0
+mov dword[esi+0xc],0
+call fcn.00405dae
+mov dword[esi+0x10],eax
+mov dword[esi+0x14],edx
+jmp 0x405d2e
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405a95@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.00405920@4c2db4ba96e80258daff665d7d7a016a
+[similar_3_ref]: /report/fcn.00405bb7@4c2db4ba96e80258daff665d7d7a016a
+[similar_4_ref]: /report/fcn.00450054@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0048532e@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

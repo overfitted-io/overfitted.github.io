@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0046b66b @ 27ac6b5c7fa1ad11790cdc733c25a701"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0046b66b
+- **Origin (md5):** 27ac6b5c7fa1ad11790cdc733c25a701
+- **VirusTotal:** [virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0046e8cd][similar_1_ref] (sim.: 0.8538620598874365)
+2. [fcn.0046c280][similar_2_ref] (sim.: 0.849528703286765)
+3. [fcn.00416337][similar_3_ref] (sim.: 0.8480068138168262)
+4. [fcn.0046e796][similar_4_ref] (sim.: 0.8439073437633583)
+5. [fcn.0046e796][similar_5_ref] (sim.: 0.8439073437633583)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+mov eax,dword[0x4eb948]
+xor eax,dword[0x4e11d0]
+push esi
+je 0x46b69f
+mov esi,dword[ebp+8]
+push 0
+push esi
+push 0x46b6f7
+call fcn.0046c839
+add esp,0xc
+mov dword[esi],eax
+test eax,eax
+je 0x46b6e8
+push esi
+call fcn.0046b624
+pop ecx
+jmp 0x46b6f2
+lea eax,[ebp-4]
+push eax
+push 0
+push 2
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+mov esi,dword[ebp+8]
+test eax,eax
+je 0x46b6c3
+cmp dword[ebp-4],0
+je 0x46b6c3
+cmp dword[ebp-4],0x400000
+je 0x46b6d2
+lea eax,[ebp-4]
+push eax
+push dword[esi+4]
+push 5
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+push 0
+push esi
+push 0x46b792
+mov dword[esi],esi
+call dword[sym.imp.KERNEL32.dll_QueueUserWorkItem]
+test eax,eax
+jne 0x46b6f0
+and dword[esi],eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+jmp 0x46b6f2
+xor eax,eax
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046e8cd@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_2_ref]: /report/fcn.0046c280@2fcce874fb2a3a396274d2df89c397e3
+[similar_3_ref]: /report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.0046e796@2a380710d2016aed75cfad6eacab1d1a
+[similar_5_ref]: /report/fcn.0046e796@6f3954a480bef11309decb3759df55ad
+[virustotal_ref]: https://www.virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701

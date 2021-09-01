@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.64096890 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64096890
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.6408caa0][similar_1_ref] (sim.: 0.8977322985218115)
+2. [fcn.6408caf0][similar_2_ref] (sim.: 0.8903148269196638)
+3. [fcn.640968e0][similar_3_ref] (sim.: 0.8881419160717104)
+4. [fcn.64096940][similar_4_ref] (sim.: 0.8754672858108993)
+5. [fcn.64057990][similar_5_ref] (sim.: 0.862712372368219)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edx,dword[ecx]
+mov eax,dword[edx]
+test eax,eax
+je 0x640968ab
+cmp eax,0xffffffff
+je 0x640968d2
+or eax,0xffffffff
+lock xadd dword[edx],eax
+setne al
+test al,al
+jne 0x640968d2
+push esi
+mov esi,dword[ecx]
+mov ecx,dword[esi+0xc]
+test ecx,ecx
+je 0x640968c7
+call fcn.64097770
+push 8
+push dword[esi+0xc]
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QMapDataBase::freeTree_struct_QMapNodeBase___int_]
+push esi
+call dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QMapDataBase::freeData_struct_QMapDataBase__]
+add esp,4
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6408caa0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.6408caf0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.640968e0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.64096940@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.64057990@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

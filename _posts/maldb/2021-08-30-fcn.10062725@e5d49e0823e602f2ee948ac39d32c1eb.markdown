@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.10062725 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10062725
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100ba87a][similar_1_ref] (sim.: 0.8395994011582236)
+2. [fcn.101034b0][similar_2_ref] (sim.: 0.8370319520219635)
+3. [fcn.100072a0][similar_3_ref] (sim.: 0.832231543291297)
+4. [fcn.10002290][similar_4_ref] (sim.: 0.8301413156777961)
+5. [fcn.100ee778][similar_5_ref] (sim.: 0.8294658858598727)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[ebp+8],0
+je 0x10062754
+cmp dword[0x101a1d8c],0
+jne 0x100627a0
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x1006386a
+push 7
+call dword[sym.imp.USER32.dll_SetWindowsHookExW]
+mov dword[0x101a1d8c],eax
+jmp 0x100627a0
+mov eax,dword[0x101a1d8c]
+test eax,eax
+je 0x100627a0
+push esi
+push eax
+call dword[sym.imp.USER32.dll_UnhookWindowsHookEx]
+and dword[0x101a1d8c],0
+and dword[0x101a1d90],0
+mov esi,dword[0x101a1dfc]
+test esi,esi
+je 0x1006279f
+push edi
+mov edi,dword[esi+8]
+test edi,edi
+je 0x100627a4
+push dword[edi+0x20]
+call fcn.1000df1a
+test eax,eax
+je 0x10062798
+mov ecx,edi
+call fcn.1005e092
+mov esi,dword[esi]
+test esi,esi
+jne 0x1006277e
+pop edi
+pop esi
+pop ebp
+ret 4
+call fcn.10009c74
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100ba87a@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.101034b0@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.100072a0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.10002290@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.100ee778@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

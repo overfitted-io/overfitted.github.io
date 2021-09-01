@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.0040f74b @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040f74b
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00552eda][similar_1_ref] (sim.: 0.8540292097946249)
+2. [fcn.004130c2][similar_2_ref] (sim.: 0.8502656332663401)
+3. [fcn.00403033][similar_3_ref] (sim.: 0.8451765541795021)
+4. [fcn.004a1fcc][similar_4_ref] (sim.: 0.8429267657578907)
+5. [fcn.00403b24][similar_5_ref] (sim.: 0.8429178295937265)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+push ebx
+push ebp
+mov ebp,ecx
+xor ebx,ebx
+mov dword[ebp],eax
+mov dword[ebp+4],ebx
+cmp byte[0x468ab8],bl
+push edi
+jne 0x40f7f3
+push str.KERNEL32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+cmp edi,ebx
+jne 0x40f77e
+call fcn.0040e77b
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CreateActCtxA
+push edi
+call esi
+push str.ReleaseActCtx
+push edi
+mov dword[0x468aa8],eax
+call esi
+push str.ActivateActCtx
+push edi
+mov dword[0x468aac],eax
+call esi
+push str.DeactivateActCtx
+push edi
+mov dword[0x468ab0],eax
+call esi
+cmp dword[0x468aa8],ebx
+mov dword[0x468ab4],eax
+pop esi
+je 0x40f7d8
+cmp dword[0x468aac],ebx
+je 0x40f779
+cmp dword[0x468ab0],ebx
+je 0x40f779
+cmp eax,ebx
+jne 0x40f7ec
+jmp 0x40f779
+cmp dword[0x468aac],ebx
+jne 0x40f779
+cmp dword[0x468ab0],ebx
+jne 0x40f779
+cmp eax,ebx
+jne 0x40f779
+mov byte[0x468ab8],1
+pop edi
+mov eax,ebp
+pop ebp
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00552eda@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.004130c2@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.00403033@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.004a1fcc@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_5_ref]: /report/fcn.00403b24@1c48774da6a3dd4bf3ea41716a332c61
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

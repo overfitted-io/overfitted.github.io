@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.0069e360 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0069e360
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006850b0][similar_1_ref] (sim.: 0.8566585764929859)
+2. [fcn.0068db60][similar_2_ref] (sim.: 0.8565093178868735)
+3. [fcn.006b64a0][similar_3_ref] (sim.: 0.8512419424035765)
+4. [sym.xmrig.exe\_MHD\_create\_response\_from\_fd][similar_4_ref] (sim.: 0.8501409823139874)
+5. [sym.xmrig.exe\_MHD\_create\_response\_from\_fd64][similar_5_ref] (sim.: 0.8498328838641768)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push ebx
+sub esp,0x14
+mov dword[esp],0x14
+mov esi,dword[esp+0x20]
+call sub.msvcrt.dll_malloc
+test eax,eax
+mov ebx,eax
+je 0x69e3a5
+cmp esi,0x8000
+ja 0x69e3b0
+mov dword[esp],esi
+call sub.msvcrt.dll_malloc
+test eax,eax
+mov dword[ebx],eax
+je 0x69e3e7
+mov dword[ebx+0x10],0
+mov dword[ebx+8],0
+mov dword[ebx+0xc],esi
+mov dword[ebx+4],esi
+add esp,0x14
+mov eax,ebx
+pop ebx
+pop esi
+ret 
+mov dword[esp+0xc],4
+mov dword[esp+8],0x3000
+mov dword[esp+4],esi
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[ebx],eax
+sub eax,1
+sub esp,0x10
+cmp eax,0xfffffffd
+ja 0x69e383
+mov dword[ebx+0x10],1
+jmp 0x69e398
+mov dword[esp],ebx
+xor ebx,ebx
+call sub.msvcrt.dll_free
+jmp 0x69e3a5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006850b0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068db60@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym.xmrig.exe_MHD_create_response_from_fd@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/sym.xmrig.exe_MHD_create_response_from_fd64@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

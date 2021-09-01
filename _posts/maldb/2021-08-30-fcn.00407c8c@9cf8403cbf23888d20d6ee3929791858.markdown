@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.00407c8c @ 9cf8403cbf23888d20d6ee3929791858"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00407c8c
+- **Origin (md5):** 9cf8403cbf23888d20d6ee3929791858
+- **VirusTotal:** [virustotal.com/gui/file/9cf8403cbf23888d20d6ee3929791858][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00407c8c][similar_1_ref] (sim.: 1.0)
+2. [fcn.00407d70][similar_2_ref] (sim.: 0.921052115370359)
+3. [fcn.00407d70][similar_3_ref] (sim.: 0.921052115370359)
+4. [fcn.00407d70][similar_4_ref] (sim.: 0.921052115370359)
+5. [fcn.00407d70][similar_5_ref] (sim.: 0.921052115370359)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+sub esp,4
+fnstcw word[esp+2]
+fnstcw word[esp]
+or word[esp],0xf00
+fldcw word[esp]
+mov word[esp],cx
+fld1 
+test dword[eax+4],0x80000000
+je 0x407cd6
+push dword[eax+4]
+push dword[eax]
+and dword[esp+4],0x7fffffff
+push 0x7fffffff
+push 0xffffffff
+fild qword[esp+8]
+fild qword[esp]
+fadd st(2)
+faddp st(1)
+add esp,0x10
+jmp 0x407cd8
+fild qword[eax]
+fild word[esp]
+fld st(1)
+sub esi,2
+fprem 
+fistp word[esi]
+fdiv st(1),st(0)
+mov ax,word[esi]
+add ax,0x30
+cmp ax,0x3a
+jb 0x407cf7
+add ax,7
+mov word[esi],ax
+fld st(1)
+fcom st(3)
+wait 
+fnstsw ax
+sahf 
+jae 0x407cdd
+fldcw word[esp+2]
+add esp,4
+ffree st(3)
+ffree st(2)
+ffree st(1)
+ffree st(0)
+pop ecx
+sub ecx,esi
+shr ecx,1
+or edx,edx
+js 0x407d36
+sub edx,ecx
+jbe 0x407d36
+sub esi,edx
+mov ax,0x30
+sub esi,edx
+add ecx,edx
+jmp 0x407d30
+mov word[esi+edx*2],ax
+dec edx
+jne 0x407d2c
+mov word[esi],ax
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407c8c@f79e0131d9be8aa2ee0d6ec62854ce89
+[similar_2_ref]: /report/fcn.00407d70@c4f32fc9d3680d79e17e52694f7c500f
+[similar_3_ref]: /report/fcn.00407d70@5a9e6257062d8fd09bc1612cd995b797
+[similar_4_ref]: /report/fcn.00407d70@a8c51c88e2272f2397cc463a3ffa4544
+[similar_5_ref]: /report/fcn.00407d70@6e87b7ccbd19229e0b0b6b0b21948a18
+[virustotal_ref]: https://www.virustotal.com/gui/file/9cf8403cbf23888d20d6ee3929791858

@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "fcn.00446290 @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00446290
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004b4900][similar_1_ref] (sim.: 0.8688454648424412)
+2. [fcn.0045eaa0][similar_2_ref] (sim.: 0.8517128744604751)
+3. [fcn.004cddb0][similar_3_ref] (sim.: 0.8416235846369999)
+4. [fcn.00414e52][similar_4_ref] (sim.: 0.8194498308424982)
+5. [fcn.0042af20][similar_5_ref] (sim.: 0.81237643001979)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x194
+mov eax,dword[0x4cfec0]
+xor eax,esp
+mov dword[esp+0x190],eax
+lea eax,[esp]
+push eax
+push 0x202
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+jne 0x4462e2
+mov eax,dword[esp]
+cmp al,2
+jne 0x4462dc
+shr eax,8
+cmp al,2
+jne 0x4462dc
+xor eax,eax
+mov ecx,dword[esp+0x190]
+xor ecx,esp
+call fcn.0047641d
+add esp,0x194
+ret 
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+mov ecx,dword[esp+0x190]
+xor ecx,esp
+mov eax,2
+call fcn.0047641d
+add esp,0x194
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004b4900@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0045eaa0@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.004cddb0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00414e52@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_5_ref]: /report/fcn.0042af20@e2ba7f10eb234338a49853c34d7d9c56
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

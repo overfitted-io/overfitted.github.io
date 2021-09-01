@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "fcn.00404d94 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00404d94
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00404d61][similar_1_ref] (sim.: 0.9118960048854239)
+2. [fcn.00404c95][similar_2_ref] (sim.: 0.8555150984758134)
+3. [fcn.0047c304][similar_3_ref] (sim.: 0.7835501668374343)
+4. [fcn.00481072][similar_4_ref] (sim.: 0.7823509943194047)
+5. [fcn.00404b8b][similar_5_ref] (sim.: 0.7741884249697993)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+cmp dword[esi+8],0
+jne 0x404dbd
+push 0x48fb14
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov dword[esi],eax
+test eax,eax
+je 0x404dbd
+push str.Wow64RevertWow64FsRedirection
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[esi+8],eax
+xor eax,eax
+cmp dword[esi+8],eax
+pop esi
+setne al
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404d61@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00404c95@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.0047c304@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00481072@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.00404b8b@5f763449465a14d1cdb5ea67e2f984d0
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

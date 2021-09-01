@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.0041235e @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041235e
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00564734][similar_1_ref] (sim.: 0.8828113044203478)
+2. [fcn.00420e5a][similar_2_ref] (sim.: 0.8794795001977201)
+3. [fcn.004088f4][similar_3_ref] (sim.: 0.8710022583412281)
+4. [fcn.004052a4][similar_4_ref] (sim.: 0.8670050988297028)
+5. [fcn.00428d93][similar_5_ref] (sim.: 0.8663100132451678)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+mov eax,dword[0x4672d8]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+mov ebx,dword[ebp+0xc]
+push esi
+mov esi,ecx
+cmp dword[esi+0x54],0
+push edi
+mov edi,dword[ebp+8]
+je 0x4123af
+push edi
+call fcn.004122af
+mov esi,eax
+test esi,esi
+je 0x4123d4
+push 4
+lea eax,[ebp+0x10]
+push eax
+push 4
+push 0
+push ebx
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+push esi
+mov edi,eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+test edi,edi
+sete al
+jmp 0x4123d4
+push dword[ebp+0x10]
+lea eax,[ebp-0x14]
+push 0x454254
+push 0x10
+push eax
+call fcn.0043680e
+add esp,0x10
+push dword[esi+0x68]
+lea eax,[ebp-0x14]
+push eax
+push ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_WritePrivateProfileStringA]
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.0043779f
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00564734@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.00420e5a@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

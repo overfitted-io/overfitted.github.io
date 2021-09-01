@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.64096940 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64096940
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.640968e0][similar_1_ref] (sim.: 0.9121105866618484)
+2. [fcn.6409ab00][similar_2_ref] (sim.: 0.8793041920090232)
+3. [fcn.64096890][similar_3_ref] (sim.: 0.8754672858108993)
+4. [fcn.640978f0][similar_4_ref] (sim.: 0.8739294118010279)
+5. [fcn.64097970][similar_5_ref] (sim.: 0.8698064345131666)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+mov edi,ecx
+mov ecx,dword[esp+8]
+mov eax,dword[edi]
+cmp eax,dword[ecx]
+je 0x640969a3
+push esi
+push ecx
+lea ecx,[esp+0x10]
+call fcn.6408ca30
+mov esi,dword[edi]
+mov eax,dword[esp+0xc]
+mov dword[edi],eax
+mov eax,dword[esi]
+test eax,eax
+je 0x64096979
+cmp eax,0xffffffff
+je 0x6409699c
+or eax,0xffffffff
+lock xadd dword[esi],eax
+setne al
+test al,al
+jne 0x6409699c
+mov ecx,dword[esi+0xc]
+test ecx,ecx
+je 0x64096992
+call fcn.6408ccb0
+push 4
+push dword[esi+0xc]
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QMapDataBase::freeTree_struct_QMapNodeBase___int_]
+push esi
+call dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QMapDataBase::freeData_struct_QMapDataBase__]
+add esp,4
+pop esi
+mov eax,edi
+pop edi
+ret 4
+mov eax,edi
+pop edi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.640968e0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.6409ab00@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.64096890@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.640978f0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.64097970@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

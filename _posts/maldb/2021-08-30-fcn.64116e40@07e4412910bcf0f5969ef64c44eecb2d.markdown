@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "fcn.64116e40 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64116e40
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.640d2b70][similar_1_ref] (sim.: 0.8726439796856053)
+2. [fcn.00497420][similar_2_ref] (sim.: 0.8723740638905297)
+3. [fcn.640630c0][similar_3_ref] (sim.: 0.8589804613558364)
+4. [fcn.1001f7c0][similar_4_ref] (sim.: 0.8589429332608967)
+5. [fcn.10016140][similar_5_ref] (sim.: 0.8578068451289512)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,4
+call fcn.64142a00
+push ebp
+push esi
+mov esi,dword[esp+0x14]
+xor ebp,ebp
+movzx eax,byte[esi]
+and eax,0x7f
+cmp byte[eax+0x6417ffd0],0xe0
+mov eax,dword[esp+0x18]
+jne 0x64116e7b
+test eax,eax
+jle 0x64116e7b
+movzx ecx,byte[esi+1]
+inc esi
+and ecx,0x7f
+dec eax
+cmp byte[ecx+0x6417ffd0],0xe0
+je 0x64116e65
+cmp eax,3
+jle 0x64116e9c
+movzx ecx,byte[esi+eax-1]
+and ecx,0x7f
+mov cl,byte[ecx+0x6417ffd0]
+or cl,0x13
+cmp cl,0xf3
+jne 0x64116e9c
+dec eax
+cmp eax,3
+jg 0x64116e80
+mov ecx,eax
+and ecx,reloc.WS2_32.dll_closesocket
+jns 0x64116eab
+dec ecx
+or ecx,0xfffffffc
+inc ecx
+je 0x64116eb4
+pop esi
+or eax,0xffffffff
+pop ebp
+pop ecx
+ret 
+push ebx
+xor ebx,ebx
+push edi
+test eax,eax
+jle 0x64116f5a
+mov edi,dword[esp+0x18]
+movzx ecx,byte[esi]
+lea esi,[esi+4]
+and ecx,0x7f
+movzx edx,byte[ecx+0x6417ffd0]
+movzx ecx,byte[esi-3]
+and ecx,0x7f
+movzx ecx,byte[ecx+0x6417ffd0]
+mov dword[esp+0x10],ecx
+movzx ecx,byte[esi-2]
+and ecx,0x7f
+movzx ecx,byte[ecx+0x6417ffd0]
+mov dword[esp+0x20],ecx
+movzx ecx,byte[esi-1]
+and ecx,0x7f
+movzx ecx,byte[ecx+0x6417ffd0]
+mov dword[esp+0x1c],ecx
+test dl,dl
+js 0x64116f62
+mov ecx,dword[esp+0x10]
+test cl,cl
+js 0x64116f62
+test byte[esp+0x20],0x80
+jne 0x64116f62
+test byte[esp+0x1c],0x80
+jne 0x64116f62
+shl edx,6
+add ebx,4
+or edx,ecx
+add ebp,3
+shl edx,6
+or edx,dword[esp+0x20]
+shl edx,6
+or edx,dword[esp+0x1c]
+mov ecx,edx
+shr ecx,0x10
+mov byte[edi],cl
+mov ecx,edx
+shr ecx,8
+mov byte[edi+1],cl
+mov byte[edi+2],dl
+add edi,3
+cmp ebx,eax
+jl 0x64116ec4
+pop edi
+pop ebx
+pop esi
+mov eax,ebp
+pop ebp
+pop ecx
+ret 
+pop edi
+pop ebx
+pop esi
+or eax,0xffffffff
+pop ebp
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.640d2b70@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.00497420@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.640630c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.1001f7c0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.10016140@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_image_begin_read_from_file @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_image\_begin\_read\_from\_file
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1001bad0][similar_1_ref] (sim.: 0.9024166889003262)
+2. [sym.libpng.dll\_png\_image\_write\_to\_file][similar_2_ref] (sim.: 0.8987279029434532)
+3. [sym.libpng.dll\_png\_image\_write\_to\_stdio][similar_3_ref] (sim.: 0.8878296531037808)
+4. [fcn.10009e60][similar_4_ref] (sim.: 0.8841549259529493)
+5. [fcn.1000a280][similar_5_ref] (sim.: 0.879084184026758)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+mov ebx,dword[ebp+8]
+push edi
+test ebx,ebx
+je 0x1000a149
+cmp dword[ebx+4],1
+jne 0x1000a178
+mov eax,dword[ebp+0xc]
+test eax,eax
+je 0x1000a16a
+push 0x1002c4b0
+push eax
+call dword[sym.imp.MSVCR100.dll_fopen]
+mov edi,eax
+add esp,8
+test edi,edi
+je 0x1000a14f
+push esi
+mov esi,ebx
+call fcn.10009e60
+pop esi
+test eax,eax
+je 0x1000a13f
+mov eax,dword[ebx]
+mov ecx,dword[eax]
+push ebx
+mov dword[ecx+0x60],edi
+mov eax,dword[ebx]
+or dword[eax+0x14],2
+push 0x10009fb0
+push ebx
+call fcn.10005f20
+add esp,0xc
+pop edi
+pop ebx
+pop ebp
+ret 
+push edi
+call dword[sym.imp.MSVCR100.dll_fclose]
+add esp,4
+pop edi
+xor eax,eax
+pop ebx
+pop ebp
+ret 
+call dword[sym.imp.MSVCR100.dll__errno]
+mov edx,dword[eax]
+push edx
+call dword[sym.imp.MSVCR100.dll_strerror]
+add esp,4
+call fcn.100054b0
+pop edi
+pop ebx
+pop ebp
+ret 
+mov eax,str.png_image_begin_read_from_file:_invalid_argument
+call fcn.100054b0
+pop edi
+pop ebx
+pop ebp
+ret 
+mov eax,str.png_image_begin_read_from_file:_incorrect_PNG_IMAGE_VERSION
+call fcn.100054b0
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001bad0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_image_write_to_file@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/sym.libpng.dll_png_image_write_to_stdio@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.10009e60@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.1000a280@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

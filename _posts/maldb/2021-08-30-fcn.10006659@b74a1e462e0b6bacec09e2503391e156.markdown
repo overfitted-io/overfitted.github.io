@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.10006659 @ b74a1e462e0b6bacec09e2503391e156"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10006659
+- **Origin (md5):** b74a1e462e0b6bacec09e2503391e156
+- **VirusTotal:** [virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000e1b0][similar_1_ref] (sim.: 0.8954697414410017)
+2. [fcn.10011192][similar_2_ref] (sim.: 0.8834797238079981)
+3. [fcn.1000a0e6][similar_3_ref] (sim.: 0.8675033801024029)
+4. [fcn.00402644][similar_4_ref] (sim.: 0.8614866000579218)
+5. [fcn.0040d5f0][similar_5_ref] (sim.: 0.8568655976294542)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+push ebx
+push edi
+lea ebx,[eax*4+0x1001ebdc]
+mov eax,dword[ebx]
+mov edx,dword[0x1001e004]
+or edi,0xffffffff
+mov ecx,edx
+xor edx,eax
+and ecx,0x1f
+ror edx,cl
+cmp edx,edi
+jne 0x10006684
+xor eax,eax
+jmp 0x100066d5
+test edx,edx
+je 0x1000668c
+mov eax,edx
+jmp 0x100066d5
+push esi
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call fcn.10006593
+pop ecx
+pop ecx
+test eax,eax
+je 0x100066bb
+push dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x100066bb
+push esi
+call fcn.10006576
+pop ecx
+xchg dword[ebx],eax
+mov eax,esi
+jmp 0x100066d4
+mov eax,dword[0x1001e004]
+push 0x20
+and eax,0x1f
+pop ecx
+sub ecx,eax
+ror edi,cl
+xor edi,dword[0x1001e004]
+xchg dword[ebx],edi
+xor eax,eax
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000e1b0@b74a1e462e0b6bacec09e2503391e156
+[similar_2_ref]: /report/fcn.10011192@f306bc4e89ecdab5df7aa72172ee5f69
+[similar_3_ref]: /report/fcn.1000a0e6@f306bc4e89ecdab5df7aa72172ee5f69
+[similar_4_ref]: /report/fcn.00402644@70e9569a63e2c5481707e2ba7c663021
+[similar_5_ref]: /report/fcn.0040d5f0@617bd594ba13d0dcc08a315774c342d4
+[virustotal_ref]: https://www.virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156

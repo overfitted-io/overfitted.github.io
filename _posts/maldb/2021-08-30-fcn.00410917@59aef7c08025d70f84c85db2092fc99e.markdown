@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.00410917 @ 59aef7c08025d70f84c85db2092fc99e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00410917
+- **Origin (md5):** 59aef7c08025d70f84c85db2092fc99e
+- **VirusTotal:** [virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004191be][similar_1_ref] (sim.: 0.917817465845488)
+2. [fcn.0040f568][similar_2_ref] (sim.: 0.9141253217122729)
+3. [fcn.00417233][similar_3_ref] (sim.: 0.9102794698636111)
+4. [fcn.00417233][similar_4_ref] (sim.: 0.9102794698636111)
+5. [fcn.00417233][similar_5_ref] (sim.: 0.9102794698636111)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+call fcn.0040ed85
+test eax,eax
+jne 0x410928
+call fcn.00410742
+xor eax,eax
+ret 
+push esi
+push edi
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+test edi,edi
+je 0x4109a6
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.FlsAlloc
+push edi
+call esi
+push str.FlsGetValue
+push edi
+mov dword[0x436668],eax
+call esi
+push str.FlsSetValue
+push edi
+mov dword[0x43666c],eax
+call esi
+push str.FlsFree
+push edi
+mov dword[0x436670],eax
+call esi
+cmp dword[0x43666c],0
+mov dword[0x436674],eax
+jne 0x4109a6
+mov eax,dword[sym.imp.KERNEL32.dll_TlsGetValue]
+mov dword[0x43666c],eax
+mov eax,dword[sym.imp.KERNEL32.dll_TlsSetValue]
+mov dword[0x436670],eax
+mov eax,dword[sym.imp.KERNEL32.dll_TlsFree]
+mov dword[0x436668],0x410739
+mov dword[0x436674],eax
+push 0x4107d0
+call dword[0x436668]
+cmp eax,0xffffffff
+mov dword[0x433520],eax
+je 0x4109fc
+xor edi,edi
+push 0x8c
+inc edi
+push edi
+call fcn.0040ecca
+mov esi,eax
+test esi,esi
+pop ecx
+pop ecx
+je 0x4109fc
+push esi
+push dword[0x433520]
+call dword[0x436670]
+test eax,eax
+je 0x4109fc
+mov dword[esi+0x54],0x433528
+mov dword[esi+0x14],edi
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+or dword[esi+4],0xffffffff
+mov dword[esi],eax
+mov eax,edi
+jmp 0x410a03
+call fcn.00410742
+xor eax,eax
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004191be@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040f568@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.00417233@44a756939733df3681808b122b91651f
+[similar_4_ref]: /report/fcn.00417233@6e426bd8e348fab7a17ba317fb0f2d87
+[similar_5_ref]: /report/fcn.00417233@c6d5547a6b11db0106596d8a93b709be
+[virustotal_ref]: https://www.virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e

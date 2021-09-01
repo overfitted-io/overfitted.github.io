@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.1000310c @ dc3e2cdf680078d293de3e2d92ba613c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1000310c
+- **Origin (md5):** dc3e2cdf680078d293de3e2d92ba613c
+- **VirusTotal:** [virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10001db0][similar_1_ref] (sim.: 0.9357172382532281)
+2. [fcn.1001fe25][similar_2_ref] (sim.: 0.9153473848503959)
+3. [fcn.00401788][similar_3_ref] (sim.: 0.908844162527776)
+4. [fcn.004039b6][similar_4_ref] (sim.: 0.9077874848313058)
+5. [fcn.10026b1e][similar_5_ref] (sim.: 0.8924040489775369)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x10
+mov eax,dword[0x1000e03c]
+and dword[ebp-8],0
+and dword[ebp-4],0
+push ebx
+push edi
+mov edi,0xbb40e64e
+mov ebx,0xffff0000
+cmp eax,edi
+je 0x1000313e
+test ebx,eax
+je 0x1000313e
+not eax
+mov dword[0x1000e040],eax
+jmp 0x1000319e
+push esi
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov esi,dword[ebp-4]
+xor esi,dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+xor esi,eax
+lea eax,[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[ebp-0xc]
+xor eax,dword[ebp-0x10]
+xor esi,eax
+cmp esi,edi
+jne 0x10003184
+mov esi,0xbb40e64f
+jmp 0x1000318f
+test ebx,esi
+jne 0x1000318f
+mov eax,esi
+shl eax,0x10
+or esi,eax
+mov dword[0x1000e03c],esi
+not esi
+mov dword[0x1000e040],esi
+pop esi
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001db0@aa9c32ee21744d1f55f879ae83c2dc54
+[similar_2_ref]: /report/fcn.1001fe25@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.00401788@c6071f3181599e93b0f87f002ef98d72
+[similar_4_ref]: /report/fcn.004039b6@e38ba004520fa1a86a35b63e8d5843ef
+[similar_5_ref]: /report/fcn.10026b1e@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c

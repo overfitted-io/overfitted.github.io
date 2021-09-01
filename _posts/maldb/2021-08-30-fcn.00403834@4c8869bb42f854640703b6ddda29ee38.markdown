@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.00403834 @ 4c8869bb42f854640703b6ddda29ee38"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00403834
+- **Origin (md5):** 4c8869bb42f854640703b6ddda29ee38
+- **VirusTotal:** [virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004128c6][similar_1_ref] (sim.: 0.8676701505546374)
+2. [fcn.004088f4][similar_2_ref] (sim.: 0.861723123817055)
+3. [fcn.00406b38][similar_3_ref] (sim.: 0.8609373674712881)
+4. [fcn.004126cb][similar_4_ref] (sim.: 0.8608244511633844)
+5. [fcn.00401b74][similar_5_ref] (sim.: 0.8578120246890718)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x2c
+push esi
+push edi
+xor esi,esi
+push esi
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+push esi
+push esi
+push esi
+push esi
+push esi
+push esi
+push esi
+push 0x41dc68
+push str.tooltips_class32
+push 0x80
+call dword[sym.imp.USER32.dll_CreateWindowExW]
+mov edi,eax
+lea eax,[ebp-0x10]
+push eax
+call dword[sym.imp.USER32.dll_GetDesktopWindow]
+push eax
+call dword[sym.imp.USER32.dll_GetWindowRect]
+mov eax,dword[ebp-4]
+sub eax,dword[ebp-0xc]
+push 4
+cdq 
+sub eax,edx
+push esi
+sar eax,1
+push esi
+push eax
+mov eax,dword[ebp-8]
+sub eax,dword[ebp-0x10]
+cdq 
+sub eax,edx
+sar eax,1
+push eax
+push esi
+push edi
+call dword[sym.imp.USER32.dll_SetWindowPos]
+cmp edi,esi
+je 0x4038d0
+push esi
+push 1
+push 1
+push edi
+call dword[sym.imp.USER32.dll_SetTimer]
+push esi
+push esi
+push esi
+lea eax,[ebp-0x2c]
+push eax
+call dword[sym.imp.USER32.dll_GetMessageW]
+lea eax,[ebp-0x2c]
+push eax
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+push 1
+push edi
+call dword[sym.imp.USER32.dll_KillTimer]
+mov dword[0x42272c],edi
+pop edi
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004128c6@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.00406b38@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.004126cb@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38

@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.10001637 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10001637
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000d0a7][similar_1_ref] (sim.: 0.8808397987755452)
+2. [fcn.100052ca][similar_2_ref] (sim.: 0.8474239520349041)
+3. [fcn.00552eda][similar_3_ref] (sim.: 0.846311181409875)
+4. [fcn.00403602][similar_4_ref] (sim.: 0.8413999718326728)
+5. [fcn.0055c1e4][similar_5_ref] (sim.: 0.8408818545522581)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+push ebx
+push ebp
+mov ebp,ecx
+xor ebx,ebx
+mov dword[ebp],eax
+mov dword[ebp+4],ebx
+cmp byte[0x10063658],bl
+push edi
+jne 0x100016df
+push 0x10050d8c
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,eax
+cmp edi,ebx
+jne 0x1000166a
+call fcn.100073a7
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CreateActCtxW
+push edi
+call esi
+push str.ReleaseActCtx
+push edi
+mov dword[0x10063648],eax
+call esi
+push str.ActivateActCtx
+push edi
+mov dword[0x1006364c],eax
+call esi
+push str.DeactivateActCtx
+push edi
+mov dword[0x10063650],eax
+call esi
+cmp dword[0x10063648],ebx
+mov dword[0x10063654],eax
+pop esi
+je 0x100016c4
+cmp dword[0x1006364c],ebx
+je 0x10001665
+cmp dword[0x10063650],ebx
+je 0x10001665
+cmp eax,ebx
+jne 0x100016d8
+jmp 0x10001665
+cmp dword[0x1006364c],ebx
+jne 0x10001665
+cmp dword[0x10063650],ebx
+jne 0x10001665
+cmp eax,ebx
+jne 0x10001665
+mov byte[0x10063658],1
+pop edi
+mov eax,ebp
+pop ebp
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000d0a7@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.100052ca@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.00552eda@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00403602@a2475448bf4050c1583e1970984a4d00
+[similar_5_ref]: /report/fcn.0055c1e4@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

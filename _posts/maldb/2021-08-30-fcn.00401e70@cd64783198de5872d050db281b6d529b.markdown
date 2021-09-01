@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.00401e70 @ cd64783198de5872d050db281b6d529b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401e70
+- **Origin (md5):** cd64783198de5872d050db281b6d529b
+- **VirusTotal:** [virustotal.com/gui/file/cd64783198de5872d050db281b6d529b][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00402c90][similar_1_ref] (sim.: 0.882731988848611)
+2. [fcn.00401940][similar_2_ref] (sim.: 0.8811933179833364)
+3. [fcn.00401940][similar_3_ref] (sim.: 0.8811933179833364)
+4. [fcn.00401940][similar_4_ref] (sim.: 0.8811933179833364)
+5. [fcn.00401940][similar_5_ref] (sim.: 0.8811933179833364)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov dword[ebp-8],0
+jmp 0x401e88
+mov eax,dword[ebp-8]
+add eax,1
+mov dword[ebp-8],eax
+cmp dword[ebp-8],3
+jae 0x401eef
+push 0
+mov ecx,dword[ebp+0x14]
+push ecx
+mov edx,dword[ebp+0x10]
+push edx
+mov eax,dword[ebp+0x18]
+push eax
+push 7
+mov ecx,dword[ebp+0xc]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov dword[ebp-0xc],eax
+cmp dword[ebp-0xc],0xffffffff
+jne 0x401ebb
+mov byte[ebp-1],1
+jmp 0x401ebf
+mov byte[ebp-1],0
+mov al,byte[ebp-1]
+mov byte[ebp-2],al
+movzx ecx,byte[ebp-2]
+test ecx,ecx
+jne 0x401ed2
+mov eax,dword[ebp-0xc]
+jmp 0x401ef2
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x20
+je 0x401ee2
+mov eax,dword[ebp-0xc]
+jmp 0x401ef2
+push 0xfa
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x401e7f
+or eax,0xffffffff
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402c90@2fcce874fb2a3a396274d2df89c397e3
+[similar_2_ref]: /report/fcn.00401940@d9b85b9b67587bbf2112c62164413bd8
+[similar_3_ref]: /report/fcn.00401940@368dd66411b8b6ce2bcd15b0e14af5c0
+[similar_4_ref]: /report/fcn.00401940@d701bfe1b2c669cec1fe384fdc108bfb
+[similar_5_ref]: /report/fcn.00401940@adc325bca51b67a67785e7e986af8b4d
+[virustotal_ref]: https://www.virustotal.com/gui/file/cd64783198de5872d050db281b6d529b

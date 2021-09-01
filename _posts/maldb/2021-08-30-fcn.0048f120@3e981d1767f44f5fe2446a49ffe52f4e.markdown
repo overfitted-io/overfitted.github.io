@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.0048f120 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0048f120
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004d1eae][similar_1_ref] (sim.: 0.8615898876963705)
+2. [fcn.0045d810][similar_2_ref] (sim.: 0.8510912893005085)
+3. [fcn.0048f350][similar_3_ref] (sim.: 0.8503932344809594)
+4. [fcn.00468420][similar_4_ref] (sim.: 0.8494505829981329)
+5. [fcn.00501e1f][similar_5_ref] (sim.: 0.8470921281641014)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+push esi
+mov esi,ecx
+push edi
+mov ecx,dword[esi+0x1c]
+test ecx,ecx
+je 0x48f1ff
+mov eax,esi
+neg eax
+sbb eax,eax
+and eax,ecx
+push eax
+call dword[sym.imp.USER32.dll_IsWindow]
+test eax,eax
+je 0x48f1ff
+mov edi,dword[esp+0x14]
+mov eax,dword[edi+4]
+cmp eax,0x200
+jne 0x48f18c
+lea eax,[esp+8]
+push eax
+call dword[sym.imp.USER32.dll_GetCursorPos]
+mov ecx,dword[esi+0x3c]
+mov eax,dword[esp+8]
+cmp ecx,eax
+jne 0x48f17c
+mov edx,dword[esi+0x40]
+mov eax,dword[esp+0xc]
+cmp edx,eax
+je 0x48f1ff
+mov eax,dword[edi+8]
+test eax,eax
+jne 0x48f1e0
+mov dword[esi+0x48],0
+jmp 0x48f1e0
+cmp eax,0x100
+je 0x48f1d9
+cmp eax,0x104
+je 0x48f1d9
+cmp eax,0x101
+je 0x48f1d9
+cmp eax,0x105
+je 0x48f1d9
+cmp eax,0x201
+je 0x48f1d9
+cmp eax,0x204
+je 0x48f1d9
+cmp eax,0x207
+je 0x48f1d9
+cmp eax,0xa1
+je 0x48f1d9
+cmp eax,0xa4
+je 0x48f1d9
+cmp eax,0xa7
+je 0x48f1d9
+cmp eax,0x20a
+jne 0x48f1ff
+mov dword[esi+0x48],1
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+mov dword[esi+0x44],eax
+mov eax,dword[esi+0x1c]
+push eax
+call dword[sym.imp.USER32.dll_IsWindowVisible]
+cmp eax,1
+jne 0x48f1ff
+mov ecx,esi
+call fcn.0048fb60
+pop edi
+pop esi
+add esp,8
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004d1eae@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.0045d810@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.0048f350@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.00468420@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00501e1f@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

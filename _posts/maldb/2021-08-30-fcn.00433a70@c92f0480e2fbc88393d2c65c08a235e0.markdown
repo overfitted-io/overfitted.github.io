@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.00433a70 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00433a70
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00515080][similar_1_ref] (sim.: 0.8499669927312552)
+2. [fcn.00419e00][similar_2_ref] (sim.: 0.8397403307280982)
+3. [sym.\_pthread\_rwlock\_init][similar_3_ref] (sim.: 0.836461156907575)
+4. [fcn.0069e360][similar_4_ref] (sim.: 0.8341273381864248)
+5. [fcn.00433480][similar_5_ref] (sim.: 0.8290351285962172)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x18
+cmp byte[esp+0x24],0
+mov ebx,dword[esp+0x20]
+mov dword[ebx+4],0
+mov eax,dword[ebx+0xc]
+je 0x433ac0
+mov dword[esp+0xc],4
+mov dword[esp+8],0x20003000
+mov dword[esp+4],eax
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+sub esp,0x10
+test eax,eax
+mov dword[ebx],eax
+je 0x433ae0
+mov eax,dword[ebx+8]
+mov dword[ebx+4],eax
+add esp,0x18
+pop ebx
+ret 
+mov dword[esp+4],0x1000
+mov dword[esp],eax
+call dword[sym.imp.msvcrt.dll__aligned_malloc]
+mov dword[ebx],eax
+add esp,0x18
+pop ebx
+ret 
+mov dword[esp+0x20],ebx
+mov dword[esp+0x24],0
+add esp,0x18
+pop ebx
+jmp fcn.00433a70
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00515080@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00419e00@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/sym._pthread_rwlock_init@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/fcn.0069e360@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00433480@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

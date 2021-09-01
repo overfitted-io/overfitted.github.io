@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.10001fef @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10001fef
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000d5f1][similar_1_ref] (sim.: 0.873191656506928)
+2. [fcn.10012a80][similar_2_ref] (sim.: 0.8693499881491328)
+3. [fcn.10026603][similar_3_ref] (sim.: 0.8638351985495261)
+4. [fcn.10025f4a][similar_4_ref] (sim.: 0.8605465478415295)
+5. [sym.Apollo\_32.dll\_findProcessId][similar_5_ref] (sim.: 0.8569522651409226)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x230
+mov eax,dword[0x10062200]
+xor eax,ebp
+mov dword[ebp-4],eax
+cmp dword[ebp+8],0x800
+push ebx
+push esi
+mov esi,ecx
+mov ebx,edx
+lea eax,[ebp-0xc]
+jne 0x1000202c
+push 0x10051010
+push 4
+push eax
+call fcn.10022de2
+push eax
+call fcn.10001a24
+add esp,0x10
+jmp 0x1000203e
+push 4
+push eax
+push 3
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_GetLocaleInfoW]
+test eax,eax
+je 0x100020a9
+push edi
+call fcn.100235eb
+mov edi,dword[eax]
+call fcn.100235eb
+and dword[eax],0
+lea eax,[ebp-0xc]
+push eax
+push ebx
+push esi
+push 0x111
+mov esi,0x112
+lea eax,[ebp-0x230]
+push esi
+push eax
+call fcn.100234cd
+add esp,0x18
+mov ebx,eax
+call fcn.100235eb
+cmp dword[eax],0
+je 0x10002089
+call fcn.100235eb
+push dword[eax]
+call fcn.10001c36
+pop ecx
+jmp 0x10002090
+call fcn.100235eb
+mov dword[eax],edi
+cmp ebx,0xffffffff
+pop edi
+je 0x100020a9
+cmp ebx,esi
+jae 0x100020a9
+lea eax,[ebp-0x230]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+jmp 0x100020ab
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.1002288b
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000d5f1@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10012a80@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.10026603@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.10025f4a@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/sym.Apollo_32.dll_findProcessId@f306bc4e89ecdab5df7aa72172ee5f69
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

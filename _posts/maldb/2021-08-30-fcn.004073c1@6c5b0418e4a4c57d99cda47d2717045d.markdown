@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.004073c1 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004073c1
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004131a5][similar_1_ref] (sim.: 0.8347496443108038)
+2. [fcn.0040acf9][similar_2_ref] (sim.: 0.8055544750222766)
+3. [fcn.0040673c][similar_3_ref] (sim.: 0.8030093188645575)
+4. [fcn.0041c7a3][similar_4_ref] (sim.: 0.8006206119843271)
+5. [fcn.00410917][similar_5_ref] (sim.: 0.7917898224609222)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+push edi
+xor edi,edi
+push str.Cryptdll.dll
+mov dword[esi],edi
+mov dword[esi+4],edi
+mov dword[esi+8],edi
+mov dword[esi+0xc],edi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+cmp eax,edi
+mov dword[esi],eax
+je 0x40740c
+mov edi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.MD5Init
+push eax
+call edi
+push str.MD5Update
+push dword[esi]
+mov dword[esi+4],eax
+call edi
+push str.MD5Final
+push dword[esi]
+mov dword[esi+8],eax
+call edi
+mov dword[esi+0xc],eax
+pop edi
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004131a5@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.0040acf9@4c2db4ba96e80258daff665d7d7a016a
+[similar_3_ref]: /report/fcn.0040673c@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.0041c7a3@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

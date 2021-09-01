@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "fcn.005b235b @ b38ce64a273c3fc98fc78af14b8bdcc0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005b235b
+- **Origin (md5):** b38ce64a273c3fc98fc78af14b8bdcc0
+- **VirusTotal:** [virustotal.com/gui/file/b38ce64a273c3fc98fc78af14b8bdcc0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00496300][similar_1_ref] (sim.: 0.9347889301676586)
+2. [fcn.0054bf3b][similar_2_ref] (sim.: 0.9309774901401277)
+3. [fcn.0054bf3b][similar_3_ref] (sim.: 0.9309774901401277)
+4. [fcn.00402eeb][similar_4_ref] (sim.: 0.9229781575684988)
+5. [fcn.0041f1bb][similar_5_ref] (sim.: 0.9226363682619696)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x24
+mov eax,dword[0x5bd3c0]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+push ebx
+mov dword[ebp-0x20],eax
+mov eax,dword[ebp+0xc]
+push esi
+push edi
+mov dword[ebp-0x1c],eax
+call fcn.005b12b3
+and dword[ebp-0x14],0
+cmp dword[0x45af264],0
+mov dword[ebp-0x18],eax
+jne 0x5b240e
+push str.USER32.DLL
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov ebx,eax
+test ebx,ebx
+je 0x5b24b6
+mov edi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.MessageBoxW
+push ebx
+call edi
+test eax,eax
+je 0x5b24b6
+mov esi,dword[sym.imp.KERNEL32.dll_EncodePointer]
+push eax
+call esi
+push str.GetActiveWindow
+push ebx
+mov dword[0x45af264],eax
+call edi
+push eax
+call esi
+push str.GetLastActivePopup
+push ebx
+mov dword[0x45af268],eax
+call edi
+push eax
+call esi
+push str.GetUserObjectInformationW
+push ebx
+mov dword[0x45af26c],eax
+call edi
+push eax
+call esi
+mov dword[0x45af274],eax
+test eax,eax
+je 0x5b240e
+push str.GetProcessWindowStation
+push ebx
+call edi
+push eax
+call esi
+mov dword[0x45af270],eax
+mov eax,dword[0x45af270]
+mov ecx,dword[ebp-0x18]
+mov esi,dword[sym.imp.KERNEL32.dll_DecodePointer]
+cmp eax,ecx
+je 0x5b2467
+cmp dword[0x45af274],ecx
+je 0x5b2467
+push eax
+call esi
+push dword[0x45af274]
+mov edi,eax
+call esi
+mov ebx,eax
+test edi,edi
+je 0x5b2467
+test ebx,ebx
+je 0x5b2467
+call edi
+test eax,eax
+je 0x5b245e
+lea ecx,[ebp-0x24]
+push ecx
+push 0xc
+lea ecx,[ebp-0x10]
+push ecx
+push 1
+push eax
+call ebx
+test eax,eax
+je 0x5b245e
+test byte[ebp-8],1
+jne 0x5b2467
+or dword[ebp+0x10],0x200000
+jmp 0x5b249a
+mov eax,dword[0x45af268]
+cmp eax,dword[ebp-0x18]
+je 0x5b249a
+push eax
+call esi
+test eax,eax
+je 0x5b249a
+call eax
+mov dword[ebp-0x14],eax
+test eax,eax
+je 0x5b249a
+mov eax,dword[0x45af26c]
+cmp eax,dword[ebp-0x18]
+je 0x5b249a
+push eax
+call esi
+test eax,eax
+je 0x5b249a
+push dword[ebp-0x14]
+call eax
+mov dword[ebp-0x14],eax
+push dword[0x45af264]
+call esi
+test eax,eax
+je 0x5b24b6
+push dword[ebp+0x10]
+push dword[ebp-0x1c]
+push dword[ebp-0x20]
+push dword[ebp-0x14]
+call eax
+jmp 0x5b24b8
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.005b26c6
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00496300@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.0054bf3b@9a2108de6665bf53e42d7cbbbe5a0866
+[similar_3_ref]: /report/fcn.0054bf3b@90c53de31ca36ce245bc69453e4bdaaf
+[similar_4_ref]: /report/fcn.00402eeb@4b23380b9a3d725ff34b4863334d2fd1
+[similar_5_ref]: /report/fcn.0041f1bb@20a93604f17ee6f3c2aa7b1f7a497fcf
+[virustotal_ref]: https://www.virustotal.com/gui/file/b38ce64a273c3fc98fc78af14b8bdcc0

@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.0044dee9 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0044dee9
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0044df72][similar_1_ref] (sim.: 0.9194042895444111)
+2. [fcn.0044e2a4][similar_2_ref] (sim.: 0.9140483303021287)
+3. [fcn.0044e000][similar_3_ref] (sim.: 0.8931094083049483)
+4. [fcn.0044e583][similar_4_ref] (sim.: 0.8868989639383758)
+5. [fcn.0044dd82][similar_5_ref] (sim.: 0.8868825525116201)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[0x5e0884]
+push esi
+test eax,eax
+jne 0x44df21
+push 0x585ae4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x44df50
+push str.CompareStringEx
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+push esi
+call dword[sym.imp.KERNEL32.dll_EncodePointer]
+mov dword[0x5e0884],eax
+jmp 0x44df2a
+push eax
+call dword[sym.imp.KERNEL32.dll_DecodePointer]
+mov esi,eax
+test esi,esi
+je 0x44df50
+xor eax,eax
+mov ecx,esi
+push eax
+push eax
+push eax
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call fcn.00553897
+call esi
+jmp 0x44df6f
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call fcn.0044e7dc
+pop ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_CompareStringW]
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0044df72@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.0044e2a4@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.0044e000@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.0044e583@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0044dd82@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

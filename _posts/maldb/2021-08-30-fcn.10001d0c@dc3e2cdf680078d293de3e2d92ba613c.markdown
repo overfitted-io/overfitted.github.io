@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.10001d0c @ dc3e2cdf680078d293de3e2d92ba613c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10001d0c
+- **Origin (md5):** dc3e2cdf680078d293de3e2d92ba613c
+- **VirusTotal:** [virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1002833d][similar_1_ref] (sim.: 0.9184961874351364)
+2. [fcn.00403b97][similar_2_ref] (sim.: 0.9169436759504187)
+3. [fcn.1001a0db][similar_3_ref] (sim.: 0.9153172940725525)
+4. [fcn.1010d74f][similar_4_ref] (sim.: 0.9035195842101802)
+5. [fcn.00403318][similar_5_ref] (sim.: 0.8975996031244363)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+push 0x1000cd18
+call fcn.10002f24
+mov esi,str.KERNEL32.DLL
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+jne 0x10001d2f
+push esi
+call fcn.1000228f
+pop ecx
+mov dword[ebp-0x1c],eax
+mov esi,dword[ebp+8]
+mov dword[esi+0x5c],0x1000b240
+xor edi,edi
+inc edi
+mov dword[esi+0x14],edi
+test eax,eax
+je 0x10001d6a
+push str.EncodePointer
+push eax
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+call ebx
+mov dword[esi+0x1f8],eax
+push str.DecodePointer
+push dword[ebp-0x1c]
+call ebx
+mov dword[esi+0x1fc],eax
+mov dword[esi+0x70],edi
+mov byte[esi+0xc8],0x43
+mov byte[esi+0x14b],0x43
+mov dword[esi+0x68],0x1000e520
+push 0xd
+call fcn.1000337b
+pop ecx
+and dword[ebp-4],0
+push dword[esi+0x68]
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+mov dword[ebp-4],0xfffffffe
+call fcn.10001de1
+push 0xc
+call fcn.1000337b
+pop ecx
+mov dword[ebp-4],edi
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x6c],eax
+test eax,eax
+jne 0x10001dc0
+mov eax,dword[0x1000e510]
+mov dword[esi+0x6c],eax
+push dword[esi+0x6c]
+call fcn.10004438
+pop ecx
+mov dword[ebp-4],0xfffffffe
+call fcn.10001dea
+call fcn.10002f69
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1002833d@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00403b97@eb7f7fa38880dd66bab8caf5987e5b1a
+[similar_3_ref]: /report/fcn.1001a0db@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.1010d74f@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.00403318@e38ba004520fa1a86a35b63e8d5843ef
+[virustotal_ref]: https://www.virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c

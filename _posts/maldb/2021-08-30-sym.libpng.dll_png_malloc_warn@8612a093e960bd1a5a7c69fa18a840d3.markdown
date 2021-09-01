@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_malloc_warn @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_malloc\_warn
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.libpng.dll\_png\_malloc][similar_1_ref] (sim.: 0.882727454361912)
+2. [sym.libpng.dll\_png\_create\_info\_struct][similar_2_ref] (sim.: 0.8283913453214481)
+3. [sym.libpng.dll\_png\_calloc][similar_3_ref] (sim.: 0.816835196482722)
+4. [sym.libpng.dll\_png\_malloc\_default][similar_4_ref] (sim.: 0.8156069577152244)
+5. [fcn.10007210][similar_5_ref] (sim.: 0.7971300248362444)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+test esi,esi
+je 0x10007514
+mov ecx,dword[ebp+0xc]
+lea eax,[ecx-1]
+cmp eax,0xfffffffe
+ja 0x10007506
+mov eax,dword[esi+0x254]
+push ecx
+test eax,eax
+je 0x100074f9
+push esi
+call eax
+add esp,8
+jmp 0x10007502
+call dword[sym.imp.MSVCR100.dll_malloc]
+add esp,4
+test eax,eax
+jne 0x10007516
+push str.Out_of_memory
+push esi
+call sym.libpng.dll_png_warning
+add esp,8
+xor eax,eax
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.libpng.dll_png_malloc@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_create_info_struct@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/sym.libpng.dll_png_calloc@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/sym.libpng.dll_png_malloc_default@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.10007210@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.0040bb40 @ 0403abd1e9e066fc89cddd5736647282"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040bb40
+- **Origin (md5):** 0403abd1e9e066fc89cddd5736647282
+- **VirusTotal:** [virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040673c][similar_1_ref] (sim.: 0.742546719866069)
+2. [fcn.0040b9e9][similar_2_ref] (sim.: 0.7406079137519178)
+3. [fcn.005072f0][similar_3_ref] (sim.: 0.7361094752735566)
+4. [fcn.00404b24][similar_4_ref] (sim.: 0.7339940708238653)
+5. [fcn.0047c304][similar_5_ref] (sim.: 0.7329907539802858)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+mov eax,dword[esi+0xc]
+test eax,eax
+je 0x40bb7a
+mov eax,dword[esi+8]
+test eax,eax
+je 0x40bb7a
+push 2
+push eax
+call dword[sym.imp.WSOCK32.dll_shutdown]
+push 0x32
+call dword[sym.imp.KERNEL32.dll_Sleep]
+mov eax,dword[esi+8]
+push eax
+call dword[sym.imp.WSOCK32.dll_closesocket]
+mov dword[esi+8],0
+mov dword[esi+0xc],0
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040673c@470263fe7e7cc115b95cd041d643e3b5
+[similar_2_ref]: /report/fcn.0040b9e9@a2475448bf4050c1583e1970984a4d00
+[similar_3_ref]: /report/fcn.005072f0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.00404b24@fca52b995e756cff97168f6fef94b37d
+[similar_5_ref]: /report/fcn.0047c304@d96761eb00d2d97e2b6f5ffffed0b46a
+[virustotal_ref]: https://www.virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282

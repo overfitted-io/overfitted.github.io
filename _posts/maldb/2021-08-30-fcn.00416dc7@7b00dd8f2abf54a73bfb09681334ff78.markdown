@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.00416dc7 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00416dc7
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004145db][similar_1_ref] (sim.: 0.8805135054606955)
+2. [fcn.0041c21b][similar_2_ref] (sim.: 0.8596229260246406)
+3. [fcn.0042e63c][similar_3_ref] (sim.: 0.8383944988703902)
+4. [fcn.00411336][similar_4_ref] (sim.: 0.8298903441712935)
+5. [fcn.10011737][similar_5_ref] (sim.: 0.8272413311926949)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push 0xc
+call fcn.0042afd6
+push 0x4160ff
+mov ecx,0x46a458
+call fcn.00427df6
+mov esi,eax
+test esi,esi
+jne 0x416de9
+call fcn.0040e77b
+cmp dword[esi+8],0
+jne 0x416e27
+push str.hhctrl.ocx
+call fcn.00414365
+test eax,eax
+pop ecx
+mov dword[esi+4],eax
+jne 0x416e05
+xor eax,eax
+jmp 0x416e41
+push str.HtmlHelpA
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+mov dword[esi+8],eax
+jne 0x416e27
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+and dword[esi+4],0
+jmp 0x416e01
+push 0xc
+call fcn.0042b043
+push dword[esp+0x14]
+push dword[esp+0x14]
+push dword[esp+0x14]
+push dword[esp+0x14]
+call dword[esi+8]
+pop esi
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004145db@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.0041c21b@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0042e63c@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.00411336@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.10011737@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

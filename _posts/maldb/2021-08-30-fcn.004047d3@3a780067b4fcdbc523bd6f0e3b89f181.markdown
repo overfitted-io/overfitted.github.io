@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.004047d3 @ 3a780067b4fcdbc523bd6f0e3b89f181"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004047d3
+- **Origin (md5):** 3a780067b4fcdbc523bd6f0e3b89f181
+- **VirusTotal:** [virustotal.com/gui/file/3a780067b4fcdbc523bd6f0e3b89f181][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004047d3][similar_1_ref] (sim.: 1.0)
+2. [fcn.004047d3][similar_2_ref] (sim.: 1.0)
+3. [fcn.004047d3][similar_3_ref] (sim.: 1.0)
+4. [fcn.0040487a][similar_4_ref] (sim.: 0.9583422588516429)
+5. [fcn.0040487a][similar_5_ref] (sim.: 0.9583422588516429)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x38
+push esi
+mov esi,dword[sym.imp.USER32.dll_SendMessageA]
+push edi
+mov edi,dword[ebp+8]
+push 0
+push 9
+push 0x110a
+push edi
+call esi
+cmp dword[ebp+0xc],0
+je 0x404832
+call dword[sym.imp.USER32.dll_GetMessagePos]
+movsx ecx,ax
+shr eax,0x10
+movsx eax,ax
+mov dword[ebp-0xc],eax
+lea eax,[ebp-0x10]
+push eax
+push edi
+mov dword[ebp-0x10],ecx
+call dword[sym.imp.USER32.dll_ScreenToClient]
+lea eax,[ebp-0x10]
+push eax
+push 0
+push 0x1111
+push edi
+call esi
+test byte[ebp-8],0x66
+jne 0x40482f
+or eax,0xffffffff
+jmp 0x40484d
+mov eax,dword[ebp-4]
+mov dword[ebp-0x34],eax
+lea eax,[ebp-0x38]
+push eax
+push 0
+push 0x110c
+push edi
+mov dword[ebp-0x38],4
+call esi
+mov eax,dword[ebp-0x14]
+pop edi
+pop esi
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004047d3@024d69b3dfb503973cce5c1700f282aa
+[similar_2_ref]: /report/fcn.004047d3@cce7ba37a5ac487b09e8c8d292223615
+[similar_3_ref]: /report/fcn.004047d3@983fe9598b69120a048e4bbfe8d8764c
+[similar_4_ref]: /report/fcn.0040487a@999ae3491971c32d67bd4c32561ea381
+[similar_5_ref]: /report/fcn.0040487a@5bfd33ece1aeef8bda2c7fc886262ed9
+[virustotal_ref]: https://www.virustotal.com/gui/file/3a780067b4fcdbc523bd6f0e3b89f181

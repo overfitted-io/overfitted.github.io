@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "fcn.004a71c2 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004a71c2
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004fe6e6][similar_1_ref] (sim.: 0.8916975987171328)
+2. [fcn.0051ecee][similar_2_ref] (sim.: 0.875290877202836)
+3. [fcn.0069da46][similar_3_ref] (sim.: 0.8632698296409782)
+4. [fcn.004043b6][similar_4_ref] (sim.: 0.8499879671038314)
+5. [fcn.00401ba6][similar_5_ref] (sim.: 0.8494369700516622)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push 0
+and dword[esi],0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+cmp word[eax],0x5a4d
+jne 0x4a71ed
+mov ecx,dword[eax+0x3c]
+test ecx,ecx
+je 0x4a71ed
+add eax,ecx
+mov cl,byte[eax+0x1a]
+mov byte[esi],cl
+mov al,byte[eax+0x1b]
+mov byte[esi+1],al
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004fe6e6@557dcbbf2711fedc520328fbbc657056
+[similar_2_ref]: /report/fcn.0051ecee@da37d90419c1292c0f16cbfd1f66402d
+[similar_3_ref]: /report/fcn.0069da46@0fb0e1c162f9df68f5d89a2b2a71a217
+[similar_4_ref]: /report/fcn.004043b6@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_5_ref]: /report/fcn.00401ba6@1c48774da6a3dd4bf3ea41716a332c61
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

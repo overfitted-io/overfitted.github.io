@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "fcn.782ca750 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.782ca750
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.7828a200][similar_1_ref] (sim.: 0.9264085062426515)
+2. [fcn.782cc1c0][similar_2_ref] (sim.: 0.9262780448863174)
+3. [sym.MFC80D.DLL\_Ordinal\_1556][similar_3_ref] (sim.: 0.9183544894689801)
+4. [sym.MFC80D.DLL\_Ordinal\_8702][similar_4_ref] (sim.: 0.9154885610659905)
+5. [sym.MFC80D.DLL\_Ordinal\_1500][similar_5_ref] (sim.: 0.913244805978146)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x130
+mov eax,dword[0x783e90cc]
+xor eax,ebp
+mov dword[ebp-0x10],eax
+cmp dword[ebp+0xc],0x800
+jne 0x782ca781
+push 0x781e49bc
+push 4
+lea eax,[ebp-0xc]
+push eax
+call fcn.782321f0
+add esp,0xc
+jmp 0x782ca7c3
+push 4
+lea ecx,[ebp-0xc]
+push ecx
+push 3
+mov edx,dword[ebp+0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetLocaleInfoA]
+mov dword[ebp-0x12c],eax
+cmp dword[ebp-0x12c],0
+jne 0x782ca7a9
+xor eax,eax
+jmp 0x782ca86d
+cmp dword[ebp-0x12c],4
+je 0x782ca7c3
+push 0x3d
+push 0x781e4974
+call sym.MFC80D.DLL_Ordinal_1363
+test eax,eax
+je 0x782ca7c3
+int3 
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx,dword[eax]
+mov dword[ebp-0x130],ecx
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov dword[eax],0
+lea edx,[ebp-0xc]
+push edx
+mov eax,dword[ebp+8]
+push eax
+push 0x111
+push 0x112
+lea ecx,[ebp-0x128]
+push ecx
+call dword[sym.imp.MSVCR80D.dll__snprintf_s]
+add esp,0x14
+mov dword[ebp-4],eax
+call dword[sym.imp.MSVCR80D.dll__errno]
+cmp dword[eax],0
+je 0x782ca820
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov edx,dword[eax]
+push edx
+call fcn.7821eb00
+add esp,4
+jmp 0x782ca82e
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx,dword[ebp-0x130]
+mov dword[eax],ecx
+xor edx,edx
+jne 0x782ca7c3
+cmp dword[ebp-4],0xffffffff
+je 0x782ca841
+cmp dword[ebp-4],0x112
+jb 0x782ca85a
+xor eax,eax
+jne 0x782ca856
+push 0x44
+push 0x781e4974
+call sym.MFC80D.DLL_Ordinal_1363
+test eax,eax
+je 0x782ca856
+int3 
+xor eax,eax
+jmp 0x782ca86d
+lea edx,[ebp-0x128]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov dword[ebp-8],eax
+mov eax,dword[ebp-8]
+mov ecx,dword[ebp-0x10]
+xor ecx,ebp
+call fcn.783a2cd0
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.7828a200@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/fcn.782cc1c0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/sym.MFC80D.DLL_Ordinal_1556@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/sym.MFC80D.DLL_Ordinal_8702@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/sym.MFC80D.DLL_Ordinal_1500@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

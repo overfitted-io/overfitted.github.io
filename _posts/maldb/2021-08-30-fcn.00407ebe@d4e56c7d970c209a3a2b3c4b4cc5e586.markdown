@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "fcn.00407ebe @ d4e56c7d970c209a3a2b3c4b4cc5e586"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00407ebe
+- **Origin (md5):** d4e56c7d970c209a3a2b3c4b4cc5e586
+- **VirusTotal:** [virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004b8a08][similar_1_ref] (sim.: 0.8260857959943626)
+2. [fcn.10007207][similar_2_ref] (sim.: 0.799499038004368)
+3. [fcn.004177f6][similar_3_ref] (sim.: 0.7975756946795878)
+4. [fcn.00409857][similar_4_ref] (sim.: 0.7964019646162164)
+5. [fcn.00414582][similar_5_ref] (sim.: 0.7950242016241387)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+call fcn.0040d374
+cmp byte[eax+0x14],0
+jne 0x407f1c
+push esi
+call fcn.0040d142
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x408216
+push 0xffffffffffffffff
+call dword[sym.imp.USER32.dll_SetWindowsHookExA]
+push 0x40c97a
+mov ecx,0x935660
+mov dword[esi+0x30],eax
+call fcn.0040cfda
+mov esi,eax
+cmp dword[esi+0x14],0
+je 0x407f0c
+call fcn.0040d374
+push dword[eax+8]
+call dword[esi+0x14]
+push 0x40c98f
+mov ecx,0x93565c
+call fcn.0040cf45
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004b8a08@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_2_ref]: /report/fcn.10007207@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.004177f6@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.00409857@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_5_ref]: /report/fcn.00414582@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586

@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.0068db60 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0068db60
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0068bd30][similar_1_ref] (sim.: 0.8653437217187141)
+2. [fcn.0069e360][similar_2_ref] (sim.: 0.8565093178868735)
+3. [fcn.006850b0][similar_3_ref] (sim.: 0.8539677665512163)
+4. [fcn.006b64a0][similar_4_ref] (sim.: 0.8537203334621587)
+5. [sym.xmrig.exe\_MHD\_create\_response\_from\_buffer][similar_5_ref] (sim.: 0.8514709529546227)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x140
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov dword[esp+4],0
+mov dword[esp],2
+mov edi,eax
+mov dword[esp+0x18],0x128
+call sub.KERNEL32.dll_CreateToolhelp32Snapshot
+sub esp,8
+mov ebx,eax
+lea esi,[esp+0x18]
+mov dword[esp],eax
+mov dword[esp+4],esi
+call sub.KERNEL32.dll_Process32First
+sub esp,8
+test eax,eax
+jne 0x68dbc3
+jmp 0x68dbe5
+mov dword[esp+4],esi
+mov dword[esp],ebx
+call sub.KERNEL32.dll_Process32Next
+sub esp,8
+test eax,eax
+je 0x68dbe5
+cmp dword[esp+0x20],edi
+jne 0x68dbb0
+mov esi,dword[esp+0x30]
+mov dword[esp],ebx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+sub esp,4
+mov eax,esi
+add esp,0x140
+pop ebx
+pop esi
+pop edi
+ret 
+mov esi,0xffffffff
+jmp 0x68dbcd
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068bd30@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0069e360@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006850b0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/sym.xmrig.exe_MHD_create_response_from_buffer@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

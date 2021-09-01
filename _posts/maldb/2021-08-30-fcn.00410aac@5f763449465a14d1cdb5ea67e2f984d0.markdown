@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.00410aac @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00410aac
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00406b38][similar_1_ref] (sim.: 0.863169681992273)
+2. [fcn.0040c039][similar_2_ref] (sim.: 0.8580739719301156)
+3. [fcn.004052a4][similar_3_ref] (sim.: 0.8529433899576959)
+4. [fcn.00403b0c][similar_4_ref] (sim.: 0.8514437555208028)
+5. [fcn.004064eb][similar_5_ref] (sim.: 0.8505926380592284)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x1008
+call fcn.00411a40
+cmp byte[0x448738],0
+je 0x410b36
+cmp word[0x45cf40],0
+je 0x410b36
+push esi
+lea eax,[ebp-0x1008]
+push eax
+push 0x45cf40
+call fcn.0040f746
+lea eax,[ebp-8]
+xor esi,esi
+push eax
+lea eax,[ebp-4]
+push eax
+push esi
+push 0x20006
+push esi
+push esi
+push esi
+push str.SoftwareWinRAR_SFX
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+test eax,eax
+jne 0x410b35
+push dword[ebp+8]
+call fcn.00416ce5
+pop ecx
+lea eax,[eax*2+2]
+push eax
+push dword[ebp+8]
+lea eax,[ebp-0x1008]
+push 1
+push esi
+push eax
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop esi
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406b38@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.0040c039@4c2db4ba96e80258daff665d7d7a016a
+[similar_3_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.004064eb@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

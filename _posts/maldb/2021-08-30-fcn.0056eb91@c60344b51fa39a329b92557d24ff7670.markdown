@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.0056eb91 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0056eb91
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10007207][similar_1_ref] (sim.: 0.8537581082028185)
+2. [fcn.004239f9][similar_2_ref] (sim.: 0.8508056450975943)
+3. [fcn.0042e63c][similar_3_ref] (sim.: 0.8466000604662712)
+4. [fcn.00552eda][similar_4_ref] (sim.: 0.8411688268475109)
+5. [fcn.0055fb49][similar_5_ref] (sim.: 0.8388553658846368)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_SetErrorMode]
+push 0
+call esi
+or eax,0x8001
+push eax
+call esi
+call fcn.0055825b
+mov esi,dword[ebp+8]
+mov ecx,eax
+mov dword[eax+8],esi
+mov dword[eax+0xc],esi
+call fcn.005579ff
+call fcn.0055825b
+mov eax,dword[eax+4]
+test eax,eax
+je 0x56ebe0
+mov ecx,dword[ebp+0x10]
+mov dword[eax+0x48],ecx
+mov ecx,dword[ebp+0x14]
+mov dword[eax+0x4c],ecx
+mov ecx,eax
+mov dword[eax+0x44],esi
+call fcn.0056e9fc
+call fcn.0055825b
+cmp byte[eax+0x14],0
+pop esi
+jne 0x56ebf1
+call fcn.005577ce
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x56ec11
+push str.NotifyWinEvent
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[0x60f374],eax
+xor eax,eax
+inc eax
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10007207@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.004239f9@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0042e63c@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.00552eda@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.0055fb49@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

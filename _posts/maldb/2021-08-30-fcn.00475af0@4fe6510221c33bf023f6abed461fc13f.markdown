@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.00475af0 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00475af0
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00401aef][similar_1_ref] (sim.: 0.8196240006663336)
+2. [fcn.004b7a07][similar_2_ref] (sim.: 0.7932900735121156)
+3. [fcn.00437bbe][similar_3_ref] (sim.: 0.7910437760760799)
+4. [sym.tpop2.exe\_public꞉\_static\_bool\_\_\_cdecl\_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin\_wchar\_t\_const\_\_][similar_4_ref] (sim.: 0.7903123197342146)
+5. [fcn.00401b2f][similar_5_ref] (sim.: 0.7882655397129341)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push edi
+push str.uxtheme
+mov edi,1
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov esi,eax
+test esi,esi
+je 0x475b32
+push str.SetWindowTheme
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x475b2b
+mov ecx,dword[esp+0xc]
+push 0x4ab02c
+push 0x4ab02c
+push ecx
+call eax
+mov edi,eax
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,edi
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401aef@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.004b7a07@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_3_ref]: /report/fcn.00437bbe@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_4_ref]: /report/sym.tpop2.exe_public꞉_static_bool___cdecl_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin_wchar_t_const__@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.00401b2f@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

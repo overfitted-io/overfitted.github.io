@@ -1,0 +1,159 @@
+---
+layout: post
+title:  "sym.___shmem_winpthreads_grab @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_\_\_shmem\_winpthreads\_grab
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [dbg.\_\_shmem\_grab][similar_1_ref] (sim.: 0.9663919640684007)
+2. [fcn.0041310b][similar_2_ref] (sim.: 0.9245302895982627)
+3. [fcn.005235a0][similar_3_ref] (sim.: 0.9196827146168276)
+4. [fcn.006821a0][similar_4_ref] (sim.: 0.9180165468870461)
+5. [fcn.0068fd90][similar_5_ref] (sim.: 0.9142957633911862)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x2c
+mov edi,dword[ebp+8]
+mov dword[esp],edi
+call sym._strlen
+mov ebx,eax
+lea eax,[eax+0x40]
+and eax,0xfffffff0
+call fcn.0040a9b0
+mov edx,0x326d
+sub esp,eax
+lea eax,[esp+0x1b]
+mov dword[esp+4],edi
+lea esi,[esp+0xc]
+mov dword[esp+8],ebx
+mov dword[esp],eax
+mov word[esp+0x18],dx
+mov dword[esp+0xc],0x2d636367
+mov dword[esp+0x10],0x656d6873
+mov dword[esp+0x14],0x64742d6d
+mov byte[esp+0x1a],0x2d
+call sym._memcpy
+lea eax,[ebx+0x10]
+lea edx,[esi+eax]
+mov dword[ebp-0x1c],eax
+lea eax,[ebx+0x30]
+mov dword[edx],0x61616161
+mov dword[edx+4],0x61616161
+mov dword[edx+8],0x61616161
+mov dword[edx+0xc],0x61616161
+mov dword[edx+0x10],0x61616161
+mov dword[edx+0x14],0x61616161
+mov dword[edx+0x18],0x61616161
+mov dword[edx+0x1c],0x61616161
+mov dword[ebp-0x20],eax
+mov byte[esp+ebx+0x3c],0
+mov byte[esp+ebx+0x1b],0
+mov dword[esp+8],esi
+mov dword[esp+4],0
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_CreateMutexA]
+mov byte[esi+ebx+0xf],0x2d
+sub esp,0xc
+mov edi,eax
+mov dword[esp+4],0xffffffff
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+sub esp,8
+test eax,eax
+je 0x4112ce
+int3 
+mov dword[esp],esi
+call dword[sym.imp.KERNEL32.dll_FindAtomA]
+sub esp,4
+test ax,ax
+jne 0x411367
+mov eax,dword[ebp+0xc]
+mov dword[esp],eax
+call sym._malloc
+mov ebx,eax
+mov eax,dword[ebp-0x1c]
+lea edx,[esi+eax]
+mov eax,0x20
+nop 
+lea esi,[esi]
+bt ebx,eax
+jae 0x411308
+mov byte[edx],0x41
+add edx,1
+sub eax,1
+jne 0x411300
+mov dword[esp],esi
+call dword[sym.imp.KERNEL32.dll_AddAtomA]
+sub esp,4
+test ax,ax
+je 0x411364
+mov ecx,dword[ebp-0x1c]
+mov edx,esi
+movzx eax,ax
+mov dword[esp],ecx
+mov ecx,dword[ebp-0x20]
+call sym._get_ptr_from_atom_1
+cmp eax,ebx
+mov esi,eax
+je 0x41137e
+mov dword[esp],ebx
+call sym._free
+mov dword[esp],edi
+call dword[sym.imp.KERNEL32.dll_ReleaseMutex]
+sub esp,4
+mov dword[esp],edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,esi
+sub esp,4
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+int3 
+mov ecx,dword[ebp-0x1c]
+mov edx,esi
+movzx eax,ax
+mov dword[esp],ecx
+mov ecx,dword[ebp-0x20]
+call sym._get_ptr_from_atom_1
+mov esi,eax
+jmp 0x411342
+mov eax,dword[ebp+0xc]
+mov dword[esp+4],0
+mov dword[esp],ebx
+mov dword[esp+8],eax
+call sym._memset
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x411342
+mov dword[esp],ebx
+call dword[ebp+0x10]
+jmp 0x411342
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/dbg.__shmem_grab@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/fcn.0041310b@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_3_ref]: /report/fcn.005235a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

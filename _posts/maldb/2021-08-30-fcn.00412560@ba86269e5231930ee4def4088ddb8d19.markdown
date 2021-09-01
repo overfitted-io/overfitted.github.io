@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.00412560 @ ba86269e5231930ee4def4088ddb8d19"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00412560
+- **Origin (md5):** ba86269e5231930ee4def4088ddb8d19
+- **VirusTotal:** [virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00437bbe][similar_1_ref] (sim.: 0.8018201260118152)
+2. [fcn.004537f0][similar_2_ref] (sim.: 0.794965746588492)
+3. [main][similar_3_ref] (sim.: 0.794143353866927)
+4. [main][similar_4_ref] (sim.: 0.794143353866927)
+5. [main][similar_5_ref] (sim.: 0.794143353866927)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push str.qbclient.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+je 0x4125ac
+push str.GetClassObject
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x4125ac
+push 0x44b7fc
+push 0x43d1a8
+call eax
+test eax,eax
+jne 0x4125ac
+call fcn.00404310
+mov ecx,dword[0x44b7fc]
+push eax
+push ecx
+mov edx,dword[ecx]
+call dword[edx+0x14]
+mov eax,dword[0x44b7fc]
+push eax
+mov ecx,dword[eax]
+call dword[ecx+0x10]
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00437bbe@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_2_ref]: /report/fcn.004537f0@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/main@0606e50385fe518042f9ea006b816a98
+[similar_4_ref]: /report/main@8fe319558c6f221efde51f3acc33b19c
+[similar_5_ref]: /report/main@41d541db4a17e11df1b616218be77825
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19

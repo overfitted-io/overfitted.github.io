@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "fcn.7828a200 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.7828a200
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.MFC80D.DLL\_Ordinal\_1556][similar_1_ref] (sim.: 0.931428069181937)
+2. [sym.MFC80D.DLL\_Ordinal\_2202][similar_2_ref] (sim.: 0.9291292978689654)
+3. [sym.MFC80D.DLL\_Ordinal\_434][similar_3_ref] (sim.: 0.9280510434151795)
+4. [sym.MFC80D.DLL\_Ordinal\_8703][similar_4_ref] (sim.: 0.9279912175985119)
+5. [fcn.782ca750][similar_5_ref] (sim.: 0.9264085062426515)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x58
+mov eax,dword[0x783e90cc]
+xor eax,ebp
+mov dword[ebp-8],eax
+lea eax,[ebp+0x18]
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+0xc]
+push ecx
+mov ecx,dword[ebp+8]
+call sym.MFC80D.DLL_Ordinal_6991
+mov dword[ebp-0x50],eax
+cmp dword[ebp-0x50],0
+jne 0x7828a23c
+push 0x66
+push 0x781dbce0
+call sym.MFC80D.DLL_Ordinal_1363
+test eax,eax
+je 0x7828a23c
+int3 
+mov dword[ebp-0x4c],0x40
+mov eax,dword[ebp+8]
+cmp dword[eax],0
+je 0x7828a2a0
+mov ecx,dword[ebp-4]
+add ecx,4
+mov dword[ebp-4],ecx
+mov edx,dword[ebp-4]
+mov eax,dword[edx-4]
+mov dword[ebp-0x54],eax
+push 0x40
+lea ecx,[ebp-0x48]
+push ecx
+mov edx,dword[ebp-0x50]
+push edx
+call dword[sym.imp.USER32.dll_GetWindowTextA]
+mov eax,dword[ebp-0x54]
+push eax
+mov ecx,dword[ebp+0x10]
+push ecx
+push 0x40
+lea edx,[ebp-0x48]
+push edx
+call dword[sym.imp.MSVCR80D.dll__snscanf_s]
+add esp,0x10
+cmp eax,1
+je 0x7828a29e
+push 0xffffffffffffffff
+push 0
+mov eax,dword[ebp+0x14]
+push eax
+call sym.MFC80D.DLL_Ordinal_1492
+mov ecx,dword[ebp+8]
+call sym.MFC80D.DLL_Ordinal_3105
+jmp 0x7828a30a
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx,dword[eax]
+mov dword[ebp-0x58],ecx
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov dword[eax],0
+mov edx,dword[ebp-4]
+push edx
+mov eax,dword[ebp+0x10]
+push eax
+push 0x3f
+push 0x40
+lea ecx,[ebp-0x48]
+push ecx
+call dword[sym.imp.MSVCR80D.dll__vsnprintf_s]
+add esp,0x14
+call dword[sym.imp.MSVCR80D.dll__errno]
+cmp dword[eax],0
+je 0x7828a2ee
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov edx,dword[eax]
+push edx
+call fcn.7821eb00
+add esp,4
+jmp 0x7828a2f9
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx,dword[ebp-0x58]
+mov dword[eax],ecx
+xor edx,edx
+jne 0x7828a2a0
+lea eax,[ebp-0x48]
+push eax
+mov ecx,dword[ebp-0x50]
+push ecx
+call sym.MFC80D.DLL_Ordinal_1545
+mov dword[ebp-4],0
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.783a2cd0
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.MFC80D.DLL_Ordinal_1556@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/sym.MFC80D.DLL_Ordinal_2202@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/sym.MFC80D.DLL_Ordinal_434@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/sym.MFC80D.DLL_Ordinal_8703@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/fcn.782ca750@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

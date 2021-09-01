@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.1000865c @ dc3e2cdf680078d293de3e2d92ba613c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1000865c
+- **Origin (md5):** dc3e2cdf680078d293de3e2d92ba613c
+- **VirusTotal:** [virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1011f088][similar_1_ref] (sim.: 0.836665341618263)
+2. [fcn.100324cc][similar_2_ref] (sim.: 0.8280275998026495)
+3. [fcn.1002596d][similar_3_ref] (sim.: 0.8219488073323289)
+4. [fcn.00440bf3][similar_4_ref] (sim.: 0.8203264856224693)
+5. [fcn.004a7d83][similar_5_ref] (sim.: 0.8187270071008339)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x18
+fld qword[0x1000ca50]
+fstp qword[ebp-0x10]
+fld qword[0x1000ca48]
+fstp qword[ebp-0x18]
+fld qword[ebp-0x18]
+fdiv qword[ebp-0x10]
+fmul qword[ebp-0x10]
+fsubr qword[ebp-0x18]
+fstp qword[ebp-8]
+fld1 
+fcomp qword[ebp-8]
+fnstsw ax
+test ah,5
+jp 0x10008658
+xor eax,eax
+inc eax
+leave 
+ret 
+xor eax,eax
+leave 
+ret 
+push str.KERNEL32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+test eax,eax
+je 0x10008680
+push 0x1000ca58
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x10008680
+push 0
+call eax
+ret 
+jmp 0x1000861e
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1011f088@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/fcn.100324cc@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.1002596d@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.00440bf3@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.004a7d83@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/dc3e2cdf680078d293de3e2d92ba613c

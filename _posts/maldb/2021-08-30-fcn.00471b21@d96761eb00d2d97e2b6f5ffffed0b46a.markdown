@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "fcn.00471b21 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00471b21
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00471d09][similar_1_ref] (sim.: 0.9157428053714705)
+2. [fcn.00471a5b][similar_2_ref] (sim.: 0.9154747489056689)
+3. [fcn.004725e2][similar_3_ref] (sim.: 0.9011444807900467)
+4. [fcn.0044cde0][similar_4_ref] (sim.: 0.8973292604425376)
+5. [fcn.0047d56e][similar_5_ref] (sim.: 0.8886405198811214)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+push ebx
+push esi
+mov esi,ecx
+xor ebx,ebx
+push edi
+push ebx
+mov eax,dword[esi+0x54]
+and eax,0x80000000
+push eax
+push ebx
+push ebx
+push dword[esi+0x20]
+push dword[esi+4]
+call dword[sym.imp.WININET.dll_InternetOpenUrlW]
+mov edi,eax
+mov ecx,esi
+test edi,edi
+jne 0x471b58
+push ebx
+push 0xdeadbeef
+push 0x29
+jmp 0x471bd1
+push dword[ebp+8]
+push edi
+call fcn.004727ae
+push ebx
+push ebx
+push ebx
+push ebx
+push edi
+call dword[sym.imp.WININET.dll_HttpSendRequestW]
+test eax,eax
+je 0x471bc7
+push edi
+call fcn.00471cc8
+cmp eax,0xc8
+jne 0x471bc7
+lea eax,[ebp+8]
+mov dword[ebp+8],ebx
+push eax
+lea eax,[ebp-4]
+mov dword[ebp-4],0x20
+push eax
+lea eax,[ebp-0x24]
+push eax
+push 5
+push edi
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+xor eax,eax
+mov word[ebp-6],ax
+lea eax,[ebp-0x24]
+push eax
+call fcn.004237d3
+pop ecx
+mov ecx,esi
+mov dword[esi+0x10],eax
+mov dword[esi+0x14],edx
+cmp byte[ebp+0xc],bl
+je 0x471bc1
+push edi
+call fcn.004725e2
+jmp 0x471bd6
+push 1
+push ebx
+push ebx
+jmp 0x471bd1
+push ebx
+push 0xdeadbeef
+push 0x2a
+mov ecx,esi
+call fcn.00472777
+mov bl,al
+test edi,edi
+je 0x471be3
+push edi
+call dword[sym.imp.WININET.dll_InternetCloseHandle]
+pop edi
+pop esi
+mov al,bl
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00471d09@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00471a5b@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.004725e2@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.0044cde0@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0047d56e@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

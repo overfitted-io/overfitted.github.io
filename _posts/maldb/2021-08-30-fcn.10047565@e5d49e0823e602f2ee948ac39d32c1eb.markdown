@@ -1,0 +1,130 @@
+---
+layout: post
+title:  "fcn.10047565 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10047565
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0052197d][similar_1_ref] (sim.: 0.8938887708347422)
+2. [fcn.00414324][similar_2_ref] (sim.: 0.8924825107756273)
+3. [fcn.00414324][similar_3_ref] (sim.: 0.8924825107756273)
+4. [fcn.00414324][similar_4_ref] (sim.: 0.8924825107756273)
+5. [fcn.01006205][similar_5_ref] (sim.: 0.8913933327623564)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov eax,dword[0x1019a040]
+xor eax,ebp
+mov dword[ebp-4],eax
+cmp dword[ebp+8],0
+push ebx
+push esi
+push edi
+mov dword[ebp-0xc],ecx
+jne 0x10047588
+xor eax,eax
+jmp 0x10047648
+cmp dword[ebp+0xc],0
+je 0x10047581
+call fcn.1000b62f
+push dword[ebp+0xc]
+push dword[ebp+8]
+mov esi,dword[eax+0xc]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x10047581
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov edi,eax
+test edi,edi
+je 0x10047581
+push edi
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-8],eax
+test eax,eax
+je 0x1004765e
+push eax
+call fcn.10124d70
+pop ecx
+lea ebx,[eax+1]
+lea ecx,[ebx+ebx]
+lea eax,[ecx+8]
+cmp eax,ecx
+jbe 0x10047614
+lea eax,[ebx*2+8]
+cmp eax,0x400
+ja 0x100475fc
+call fcn.10127320
+mov esi,esp
+test esi,esi
+je 0x1004765e
+mov dword[esi],0xcccc
+jmp 0x1004760f
+push eax
+call fcn.10121e28
+mov esi,eax
+pop ecx
+test esi,esi
+je 0x1004765e
+mov dword[esi],0xdddd
+add esi,8
+jmp 0x10047616
+xor esi,esi
+test esi,esi
+je 0x1004765e
+push ebx
+push dword[ebp-8]
+push esi
+call fcn.10013a79
+test eax,eax
+je 0x10047636
+mov ecx,dword[ebp-0xc]
+push eax
+call fcn.10048f29
+xor ebx,ebx
+inc ebx
+jmp 0x10047638
+xor ebx,ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+push esi
+call fcn.10048f45
+pop ecx
+mov eax,ebx
+lea esp,[ebp-0x18]
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.10121853
+mov esp,ebp
+pop ebp
+ret 8
+call fcn.10009c74
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0052197d@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.00414324@152885a790b99953ce23874f0947b7bd
+[similar_3_ref]: /report/fcn.00414324@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_4_ref]: /report/fcn.00414324@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_5_ref]: /report/fcn.01006205@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

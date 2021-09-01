@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.0040c178 @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040c178
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0041997e][similar_1_ref] (sim.: 0.9280876228727345)
+2. [fcn.004174a0][similar_2_ref] (sim.: 0.8880321682126717)
+3. [fcn.0040514a][similar_3_ref] (sim.: 0.8871313516385116)
+4. [fcn.00403708][similar_4_ref] (sim.: 0.8851012960943239)
+5. [fcn.00408cff][similar_5_ref] (sim.: 0.8843129594548704)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x620
+mov eax,dword[0x4a83f0]
+xor eax,ebp
+mov dword[ebp-4],eax
+push edi
+xor eax,eax
+xor edi,edi
+push 0x400
+mov word[ebp-0x614],ax
+lea eax,[ebp-0x612]
+push edi
+push eax
+mov dword[ebp-0x61c],edi
+mov dword[ebp-0x618],edi
+call fcn.0043fe30
+xor eax,eax
+push 0x208
+mov word[ebp-0x210],ax
+lea eax,[ebp-0x20e]
+push edi
+push eax
+mov dword[ebp-0x620],0x400
+call fcn.0043fe30
+add esp,0x18
+call fcn.0040b7d9
+neg eax
+sbb eax,eax
+and eax,0x200
+lea ecx,[ebp-0x618]
+push ecx
+inc eax
+push eax
+push edi
+push 0x4912b8
+push reloc.WS2_32.dll_bind
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x40c272
+lea eax,[ebp-0x620]
+push eax
+lea eax,[ebp-0x614]
+push eax
+push edi
+push edi
+push 0x48fcac
+push dword[ebp-0x618]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x40c266
+push 0x104
+lea eax,[ebp-0x614]
+push eax
+lea eax,[ebp-0x210]
+push 0x105
+push eax
+mov dword[ebp-0x61c],1
+call fcn.0044844d
+lea eax,[ebp-0x210]
+push eax
+call fcn.0043eef2
+add esp,0x14
+mov dword[ebx],eax
+push dword[ebp-0x618]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov ecx,dword[ebp-4]
+mov eax,dword[ebp-0x61c]
+xor ecx,ebp
+pop edi
+call fcn.0043e257
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.004174a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.00403708@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00408cff@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

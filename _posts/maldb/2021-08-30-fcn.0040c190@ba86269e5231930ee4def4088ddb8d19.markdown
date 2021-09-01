@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.0040c190 @ ba86269e5231930ee4def4088ddb8d19"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040c190
+- **Origin (md5):** ba86269e5231930ee4def4088ddb8d19
+- **VirusTotal:** [virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00428bb0][similar_1_ref] (sim.: 0.8538216574212211)
+2. [fcn.004cc6e0][similar_2_ref] (sim.: 0.8529199016960501)
+3. [fcn.0040ba80][similar_3_ref] (sim.: 0.8478793359250669)
+4. [sym.libpng.dll\_png\_set\_tRNS][similar_4_ref] (sim.: 0.8467424509377183)
+5. [fcn.10013deb][similar_5_ref] (sim.: 0.8467365504131853)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+mov ecx,dword[ebp+8]
+test ecx,ecx
+je 0x40c1c9
+cmp word[ecx],0
+jne 0x40c1a7
+xor edx,edx
+jmp 0x40c1c0
+mov edx,ecx
+push edi
+lea edi,[edx+2]
+lea ecx,[ecx]
+mov ax,word[edx]
+add edx,2
+test ax,ax
+jne 0x40c1b0
+sub edx,edi
+sar edx,1
+pop edi
+push edx
+push ecx
+mov ecx,esi
+call fcn.00401de0
+mov eax,dword[esi+0x18]
+test eax,eax
+je 0x40c1e5
+push eax
+mov dword[esi+0x1c],0
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov dword[esi+0x18],0
+cmp dword[esi+0x10],0
+jne 0x40c1f5
+mov eax,2
+pop esi
+pop ebp
+ret 4
+cmp dword[esi+0x14],8
+jb 0x40c1ff
+mov eax,dword[esi]
+jmp 0x40c201
+mov eax,esi
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[esi+0x18],eax
+test eax,eax
+jne 0x40c21a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+pop esi
+pop ebp
+ret 4
+push str.ShouldRedirect
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[esi+0x1c],eax
+test eax,eax
+je 0x40c20f
+xor eax,eax
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00428bb0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.004cc6e0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.0040ba80@0403abd1e9e066fc89cddd5736647282
+[similar_4_ref]: /report/sym.libpng.dll_png_set_tRNS@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.10013deb@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19

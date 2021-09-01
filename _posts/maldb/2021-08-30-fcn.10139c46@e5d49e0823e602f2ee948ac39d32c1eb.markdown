@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.10139c46 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10139c46
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1000a380][similar_1_ref] (sim.: 0.8684222397596204)
+2. [fcn.00423714][similar_2_ref] (sim.: 0.8401889603200818)
+3. [fcn.00404b24][similar_3_ref] (sim.: 0.8352920182491458)
+4. [fcn.006056ff][similar_4_ref] (sim.: 0.8333225901202157)
+5. [fcn.0047b47e][similar_5_ref] (sim.: 0.8280383573505923)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+call fcn.10139c99
+mov eax,0x10000000
+mov dword[esi],0x38
+lea ecx,[esi+0x14]
+mov dword[esi+8],eax
+mov dword[esi+4],eax
+mov dword[esi+0xc],0xc00
+mov dword[esi+0x10],0x1017b274
+call fcn.10001ad0
+test eax,eax
+jns 0x10139c95
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x10139c8e
+push str.ERROR_:_Unable_to_initialize_critical_section_in_CAtlBaseModule_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[0x101a547c],1
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000a380@b7467517f3ef2950fbbab46c56c44481
+[similar_2_ref]: /report/fcn.00423714@ba86269e5231930ee4def4088ddb8d19
+[similar_3_ref]: /report/fcn.00404b24@fca52b995e756cff97168f6fef94b37d
+[similar_4_ref]: /report/fcn.006056ff@52d540e8e13e0f0bbb8946b2363a382d
+[similar_5_ref]: /report/fcn.0047b47e@fb9b7d22bc1c143ac66b0575cbdd088d
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

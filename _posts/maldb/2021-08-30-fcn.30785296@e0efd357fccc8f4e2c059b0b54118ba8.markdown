@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.30785296 @ e0efd357fccc8f4e2c059b0b54118ba8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.30785296
+- **Origin (md5):** e0efd357fccc8f4e2c059b0b54118ba8
+- **VirusTotal:** [virustotal.com/gui/file/e0efd357fccc8f4e2c059b0b54118ba8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.782486b0][similar_1_ref] (sim.: 0.8729404573274531)
+2. [fcn.10028621][similar_2_ref] (sim.: 0.8630359430937745)
+3. [fcn.783a66f0][similar_3_ref] (sim.: 0.8581482502373395)
+4. [fcn.100016ef][similar_4_ref] (sim.: 0.8568071615665552)
+5. [fcn.01006205][similar_5_ref] (sim.: 0.8538049234577546)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+0xc]
+cmp esi,1
+jne 0x307852c8
+inc dword[0x307882fc]
+cmp dword[0x30788300],0
+jne 0x307852ea
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+cmp al,3
+jne 0x307852e4
+test eax,0x80000000
+je 0x307852e4
+inc dword[0x30788300]
+jmp 0x307852ea
+test esi,esi
+jne 0x307852a6
+cmp dword[0x307882fc],0
+jle 0x307852dd
+dec dword[0x307882fc]
+jmp 0x307852a6
+xor eax,eax
+jmp 0x307853df
+dec dword[0x30788300]
+cmp esi,1
+jne 0x30785382
+cmp dword[0x30788300],0
+jl 0x30785312
+cmp dword[0x307882fc],1
+jne 0x307853da
+cmp dword[0x30788300],0
+jge 0x30785330
+push 0x80
+call dword[sym.imp.MSVCRT20.dll_malloc]
+add esp,4
+mov dword[0x3078600c],eax
+test eax,eax
+jne 0x30785359
+xor eax,eax
+jmp 0x307853df
+cmp dword[0x307882fc],1
+jne 0x30785359
+push 0x80
+push 0x2000
+call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
+mov dword[0x3078600c],eax
+test eax,eax
+jne 0x30785359
+xor eax,eax
+jmp 0x307853df
+mov eax,dword[0x3078600c]
+push 0x3078830c
+push 0x30788308
+mov dword[eax],0
+mov eax,dword[0x3078600c]
+mov dword[0x30786008],eax
+call sub.MSVCRT20.dll__initterm
+add esp,8
+jmp 0x307853da
+test esi,esi
+jne 0x307853da
+cmp dword[0x30788300],0
+jl 0x30785398
+cmp dword[0x307882fc],0
+jne 0x307853da
+cmp dword[0x3078600c],0
+je 0x307853da
+mov esi,dword[0x30786008]
+sub esi,4
+cmp dword[0x3078600c],esi
+ja 0x307853c5
+mov eax,dword[esi]
+test eax,eax
+je 0x307853ba
+call eax
+sub esi,4
+cmp dword[0x3078600c],esi
+jbe 0x307853b2
+cmp dword[0x30788300],0
+jle 0x307853da
+mov eax,dword[0x3078600c]
+push eax
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+mov eax,1
+pop esi
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.782486b0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/fcn.10028621@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.783a66f0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/fcn.100016ef@aa9c32ee21744d1f55f879ae83c2dc54
+[similar_5_ref]: /report/fcn.01006205@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/e0efd357fccc8f4e2c059b0b54118ba8

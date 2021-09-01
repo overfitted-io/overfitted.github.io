@@ -1,0 +1,150 @@
+---
+layout: post
+title:  "fcn.14000a1a4 @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.14000a1a4
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.14000c5e0][similar_1_ref] (sim.: 0.9220371187692264)
+2. [fcn.140015e00][similar_2_ref] (sim.: 0.9003590849264861)
+3. [[...]꞉꞉writeDatagram\_char\_const\_\_\_long\_long\_\_\_int64\_\_\_class\_QHostAddress\_const\_\_\_unsigned\_short\_int\_][similar_3_ref] (sim.: 0.899378345652663)
+4. [fcn.100bb0a0][similar_4_ref] (sim.: 0.8978579455434181)
+5. [fcn.140015a60][similar_5_ref] (sim.: 0.8952809056831985)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rsi
+mov qword[rax+0x18],rdi
+push rbp
+push r12
+push r13
+push r14
+push r15
+lea rbp,[rax-0x198]
+sub rsp,0x270
+xor r13d,r13d
+mov r12d,r8d
+mov rsi,rdx
+cmp dword[0x14001e5bc],r13d
+mov r15,rcx
+jne 0x14000a1f1
+xor ecx,ecx
+mov dword[0x14001e5bc],1
+call qword[sym.imp.OLE32.DLL_CoInitialize]
+xor edx,edx
+lea rcx,[rsp+0x20]
+lea r8d,[rdx+0x40]
+call sub.msvcrt.dll_memset
+lea rcx,[0x140017600]
+mov ebx,r13d
+call qword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov edi,0x104
+mov r14,rax
+test rax,rax
+je 0x14000a332
+lea rdx,str.SHBrowseForFolderW
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+lea rdx,[0x140017630]
+mov rcx,r14
+mov r13,rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+lea rdx,[0x1400175f4]
+test rsi,rsi
+lea r8d,[rdi-1]
+lea rcx,[rsp+0x60]
+cmovne rdx,rsi
+mov qword[rbp+0x1b8],rax
+call sub.msvcrt.dll_wcsncpy
+lea rcx,[rsp+0x60]
+xor esi,esi
+mov word[rbp+0x166],si
+call sub.msvcrt.dll_wcslen
+lea ecx,[rsi+0x5c]
+cmp eax,3
+jle 0x14000a291
+cdqe 
+cmp word[rsp+rax*2+0x5e],cx
+jne 0x14000a291
+mov word[rsp+rax*2+0x5e],si
+mov qword[rsp+0x38],r15
+call fcn.14000a9cc
+mov ecx,1
+mov qword[rsp+0x20],rax
+lea rax,[0x14000a148]
+mov dword[rsp+0x40],0x50
+mov qword[rsp+0x48],rax
+lea rax,[rsp+0x60]
+mov qword[rsp+0x50],rax
+call fcn.14000aab4
+lea rcx,[rsp+0x20]
+call r13
+xor ecx,ecx
+mov r15,rax
+call fcn.14000aab4
+xor r13d,r13d
+test r15,r15
+je 0x14000a325
+mov edx,r12d
+mov ecx,edi
+call fcn.1400112e0
+mov rcx,r15
+mov rdx,rax
+mov rsi,rax
+mov word[rax],r13w
+call qword[rbp+0x1b8]
+mov rcx,r15
+call qword[sym.imp.OLE32.DLL_CoTaskMemFree]
+mov rcx,rsi
+call sub.msvcrt.dll_wcslen
+lea ecx,[r13+0x5c]
+mov rbx,rax
+cdqe 
+cmp word[rsi+rax*2-2],cx
+je 0x14000a325
+mov dword[rsi+rax*2],ecx
+inc ebx
+mov rcx,r14
+call qword[sym.imp.KERNEL32.dll_FreeLibrary]
+test ebx,ebx
+jne 0x14000a340
+mov edx,r12d
+mov ecx,edi
+call fcn.1400112e0
+mov word[rax],r13w
+sub edi,ebx
+mov ecx,edi
+call fcn.1400114b0
+lea r11,[rsp+0x270]
+mov rbx,qword[r11+0x30]
+mov rsi,qword[r11+0x38]
+mov rdi,qword[r11+0x40]
+mov rsp,r11
+pop r15
+pop r14
+pop r13
+pop r12
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14000c5e0@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.140015e00@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/[...]꞉꞉writeDatagram_char_const___long_long___int64___class_QHostAddress_const___unsigned_short_int_@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.100bb0a0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.140015a60@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.640d4050 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.640d4050
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0044e390][similar_1_ref] (sim.: 0.8149333872265749)
+2. [fcn.6409d3c0][similar_2_ref] (sim.: 0.784741939983863)
+3. [fcn.10004e20][similar_3_ref] (sim.: 0.7817984509882983)
+4. [fcn.10004680][similar_4_ref] (sim.: 0.7770662492855934)
+5. [fcn.0041d9d0][similar_5_ref] (sim.: 0.7766651464265845)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+mov ebp,dword[esp+0xc]
+push esi
+push ebp
+call fcn.640d45d0
+add eax,7
+add esp,4
+cdq 
+and edx,7
+lea esi,[edx+eax]
+sar esi,3
+mov ebx,esi
+test esi,esi
+je 0x640d40a6
+push edi
+mov edi,dword[esp+0x18]
+dec esi
+mov eax,esi
+mov ecx,esi
+cdq 
+and edx,3
+add eax,edx
+mov edx,dword[ebp]
+sar eax,2
+and ecx,reloc.WS2_32.dll_closesocket
+jns 0x640d4096
+dec ecx
+or ecx,0xfffffffc
+inc ecx
+mov edx,dword[edx+eax*4]
+shl ecx,3
+shr edx,cl
+mov byte[edi],dl
+inc edi
+test esi,esi
+jne 0x640d4078
+pop edi
+pop esi
+pop ebp
+mov eax,ebx
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0044e390@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.6409d3c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.10004e20@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.10004680@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.0041d9d0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

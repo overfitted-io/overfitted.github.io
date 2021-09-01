@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.10004680 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10004680
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10004e20][similar_1_ref] (sim.: 0.8465920729394918)
+2. [fcn.00401190][similar_2_ref] (sim.: 0.8375473087675886)
+3. [fcn.10001cb0][similar_3_ref] (sim.: 0.8354605341941682)
+4. [sym.Apollo\_32.dll\_findProcessId][similar_4_ref] (sim.: 0.835372614481352)
+5. [fcn.100ea580][similar_5_ref] (sim.: 0.8327107379798164)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebx
+push ebp
+mov ebp,dword[esp+0x10]
+push esi
+push edi
+xor edi,edi
+push edi
+mov ecx,0x10035aa8
+call fcn.10012ae2
+mov esi,eax
+test esi,esi
+mov dword[esp+0x10],1
+je 0x100046f1
+test edi,edi
+jne 0x100046f1
+mov eax,ebp
+shr eax,4
+add eax,1
+push edi
+movzx ecx,ax
+push ecx
+push 6
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceExW]
+mov ebx,eax
+test ebx,ebx
+je 0x100046d5
+push esi
+mov eax,ebp
+call fcn.10004620
+mov edi,eax
+add esp,4
+test edi,edi
+jne 0x100046f9
+mov ebx,dword[esp+0x10]
+push ebx
+mov ecx,0x10035aa8
+call fcn.10012ae2
+mov esi,eax
+add ebx,1
+test esi,esi
+mov dword[esp+0x10],ebx
+jne 0x100046a4
+pop edi
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+pop ecx
+ret 
+pop edi
+mov eax,esi
+pop esi
+pop ebp
+pop ebx
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10004e20@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.00401190@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.10001cb0@f306bc4e89ecdab5df7aa72172ee5f69
+[similar_4_ref]: /report/sym.Apollo_32.dll_findProcessId@f306bc4e89ecdab5df7aa72172ee5f69
+[similar_5_ref]: /report/fcn.100ea580@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

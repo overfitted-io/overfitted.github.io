@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "fcn.00409bfb @ a7fde220a04c8ad1ded25e571c4daa50"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00409bfb
+- **Origin (md5):** a7fde220a04c8ad1ded25e571c4daa50
+- **VirusTotal:** [virustotal.com/gui/file/a7fde220a04c8ad1ded25e571c4daa50][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00409bfb][similar_1_ref] (sim.: 1.0)
+2. [fcn.00409bfb][similar_2_ref] (sim.: 1.0)
+3. [fcn.00409654][similar_3_ref] (sim.: 0.9565620127331614)
+4. [fcn.00408503][similar_4_ref] (sim.: 0.954829079904243)
+5. [fcn.00408503][similar_5_ref] (sim.: 0.954829079904243)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x324
+push ebx
+push esi
+push 0x17
+call sub.KERNEL32.dll_IsProcessorFeaturePresent
+test eax,eax
+je 0x409c16
+mov ecx,dword[ebp+8]
+int 0x29
+xor esi,esi
+lea eax,[ebp-0x324]
+push 0x2cc
+push esi
+push eax
+mov dword[0x4269dc],esi
+call fcn.0040bf50
+add esp,0xc
+mov dword[ebp-0x274],eax
+mov dword[ebp-0x278],ecx
+mov dword[ebp-0x27c],edx
+mov dword[ebp-0x280],ebx
+mov dword[ebp-0x284],esi
+mov dword[ebp-0x288],edi
+mov word[ebp-0x25c],ss
+mov word[ebp-0x268],cs
+mov word[ebp-0x28c],ds
+mov word[ebp-0x290],es
+mov word[ebp-0x294],fs
+mov word[ebp-0x298],gs
+pushfd 
+pop dword[ebp-0x264]
+mov eax,dword[ebp+4]
+mov dword[ebp-0x26c],eax
+lea eax,[ebp+4]
+mov dword[ebp-0x260],eax
+mov dword[ebp-0x324],0x10001
+mov eax,dword[eax-4]
+push 0x50
+mov dword[ebp-0x270],eax
+lea eax,[ebp-0x58]
+push esi
+push eax
+call fcn.0040bf50
+mov eax,dword[ebp+4]
+add esp,0xc
+mov dword[ebp-0x58],0x40000015
+mov dword[ebp-0x54],1
+mov dword[ebp-0x4c],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+push esi
+lea ebx,[eax-1]
+neg ebx
+lea eax,[ebp-0x58]
+mov dword[ebp-8],eax
+lea eax,[ebp-0x324]
+sbb bl,bl
+mov dword[ebp-4],eax
+inc bl
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+test eax,eax
+jne 0x409d10
+movzx eax,bl
+neg eax
+sbb eax,eax
+and dword[0x4269dc],eax
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409bfb@0b073c89b077a27e3496540be7574e33
+[similar_2_ref]: /report/fcn.00409bfb@339149a6ceaff8ec9831ebc6113adb23
+[similar_3_ref]: /report/fcn.00409654@d59f9c4f445b9f980173dec064f55091
+[similar_4_ref]: /report/fcn.00408503@617bd594ba13d0dcc08a315774c342d4
+[similar_5_ref]: /report/fcn.00408503@b8b9b802e96d8e813c605554cf6f7018
+[virustotal_ref]: https://www.virustotal.com/gui/file/a7fde220a04c8ad1ded25e571c4daa50

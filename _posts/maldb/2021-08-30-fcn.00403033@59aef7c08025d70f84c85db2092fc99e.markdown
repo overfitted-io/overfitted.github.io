@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00403033 @ 59aef7c08025d70f84c85db2092fc99e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00403033
+- **Origin (md5):** 59aef7c08025d70f84c85db2092fc99e
+- **VirusTotal:** [virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004130c2][similar_1_ref] (sim.: 0.914014340624634)
+2. [fcn.00403602][similar_2_ref] (sim.: 0.9036159942275896)
+3. [fcn.00401930][similar_3_ref] (sim.: 0.8897567909780999)
+4. [fcn.0040f568][similar_4_ref] (sim.: 0.8889934983656033)
+5. [fcn.0055c1e4][similar_5_ref] (sim.: 0.8888206756068543)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x435eac],ebx
+je 0x40304b
+xor eax,eax
+cmp dword[0x435ea0],ebx
+pop ebx
+setne al
+ret 
+push esi
+push edi
+call fcn.00402fe6
+push str.USER32
+mov dword[0x435eb0],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+cmp edi,ebx
+je 0x4030f3
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x4288b4
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435e90],eax
+je 0x4030f3
+push str.MonitorFromWindow
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435e94],eax
+je 0x4030f3
+push str.MonitorFromRect
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435e98],eax
+je 0x4030f3
+push str.MonitorFromPoint
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435e9c],eax
+je 0x4030f3
+push str.EnumDisplayMonitors
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435ea4],eax
+je 0x4030f3
+push str.GetMonitorInfoA
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435ea0],eax
+je 0x4030f3
+push str.EnumDisplayDevicesA
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x435ea8],eax
+je 0x4030f3
+xor eax,eax
+inc eax
+mov dword[0x435eac],eax
+jmp 0x403129
+mov dword[0x435e90],ebx
+mov dword[0x435e94],ebx
+mov dword[0x435e98],ebx
+mov dword[0x435e9c],ebx
+mov dword[0x435ea0],ebx
+mov dword[0x435ea4],ebx
+mov dword[0x435ea8],ebx
+mov dword[0x435eac],1
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004130c2@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.00403602@a2475448bf4050c1583e1970984a4d00
+[similar_3_ref]: /report/fcn.00401930@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_4_ref]: /report/fcn.0040f568@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.0055c1e4@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e

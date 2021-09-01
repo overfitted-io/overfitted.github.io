@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "fcn.64076450 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64076450
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.640673c0][similar_1_ref] (sim.: 0.7649959769298423)
+2. [fcn.64143114][similar_2_ref] (sim.: 0.7622659123730928)
+3. [fcn.0041bb9a][similar_3_ref] (sim.: 0.7564121366904288)
+4. [fcn.00557903][similar_4_ref] (sim.: 0.7555309094782633)
+5. [fcn.006071a5][similar_5_ref] (sim.: 0.753156413186056)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp byte[0x641b9d94],0
+jne 0x6407647c
+push str.iphlpapi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push str.ConvertInterfaceLuidToNameW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[0x641b9d90],eax
+mov byte[0x641b9d94],1
+push dword[esp+4]
+call fcn.64075b90
+mov eax,dword[esp+8]
+add esp,4
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.640673c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.64143114@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.0041bb9a@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.00557903@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.006071a5@52d540e8e13e0f0bbb8946b2363a382d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

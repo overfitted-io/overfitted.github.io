@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.1000a380 @ b7467517f3ef2950fbbab46c56c44481"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1000a380
+- **Origin (md5):** b7467517f3ef2950fbbab46c56c44481
+- **VirusTotal:** [virustotal.com/gui/file/b7467517f3ef2950fbbab46c56c44481][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00404b24][similar_1_ref] (sim.: 0.8723023753633662)
+2. [fcn.10139c46][similar_2_ref] (sim.: 0.8684222397596204)
+3. [fcn.00423714][similar_3_ref] (sim.: 0.8440596474954758)
+4. [fcn.005542ac][similar_4_ref] (sim.: 0.8289222786929304)
+5. [fcn.006056ff][similar_5_ref] (sim.: 0.8281997395424815)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+call fcn.1000a3d3
+mov eax,0x10000000
+mov dword[esi],0x38
+lea ecx,[esi+0x14]
+mov dword[esi+8],eax
+mov dword[esi+4],eax
+mov dword[esi+0xc],0xc00
+mov dword[esi+0x10],0x1001b74c
+call fcn.10001360
+test eax,eax
+jns 0x1000a3cf
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x1000a3c8
+push str.ERROR_:_Unable_to_initialize_critical_section_in_CAtlBaseModule_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[0x10027c18],1
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404b24@fca52b995e756cff97168f6fef94b37d
+[similar_2_ref]: /report/fcn.10139c46@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.00423714@ba86269e5231930ee4def4088ddb8d19
+[similar_4_ref]: /report/fcn.005542ac@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.006056ff@52d540e8e13e0f0bbb8946b2363a382d
+[virustotal_ref]: https://www.virustotal.com/gui/file/b7467517f3ef2950fbbab46c56c44481

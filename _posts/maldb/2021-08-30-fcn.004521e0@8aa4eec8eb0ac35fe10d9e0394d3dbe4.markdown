@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.004521e0 @ 8aa4eec8eb0ac35fe10d9e0394d3dbe4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004521e0
+- **Origin (md5):** 8aa4eec8eb0ac35fe10d9e0394d3dbe4
+- **VirusTotal:** [virustotal.com/gui/file/8aa4eec8eb0ac35fe10d9e0394d3dbe4][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004614b4][similar_1_ref] (sim.: 0.8898949789859326)
+2. [fcn.0045817c][similar_2_ref] (sim.: 0.8592413745821308)
+3. [fcn.00455a18][similar_3_ref] (sim.: 0.8535491897915807)
+4. [fcn.00425c08][similar_4_ref] (sim.: 0.8054445089766393)
+5. [fcn.00409078][similar_5_ref] (sim.: 0.7999321289159897)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+mov eax,dword[0x471be8]
+cmp byte[eax+0xa5],0
+jne 0x452251
+cmp dword[0x471c00],0
+jne 0x452212
+call sub.kernel32.dll_GetCurrentThreadId_1
+push eax
+push 0
+mov eax,0x45219c
+push eax
+push 3
+call sub.user32.dll_SetWindowsHookExA
+mov dword[0x471c00],eax
+cmp dword[0x471bfc],0
+jne 0x45222d
+push 0
+push 0
+push 0
+push 0
+call sub.kernel32.dll_CreateEventA
+mov dword[0x471bfc],eax
+cmp dword[0x471c04],0
+jne 0x452251
+push esp
+push 0
+push 0
+push 0x452140
+push 0x3e8
+push 0
+call sub.kernel32.dll_CreateThread_1
+mov dword[0x471c04],eax
+pop edx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004614b4@6635b2bf1f4673ef3a7d242a02608d58
+[similar_2_ref]: /report/fcn.0045817c@27f3ad32e2eddc62e5434f19748fa0be
+[similar_3_ref]: /report/fcn.00455a18@2ba145d6678d721baeb8d825fab7c600
+[similar_4_ref]: /report/fcn.00425c08@8aa4eec8eb0ac35fe10d9e0394d3dbe4
+[similar_5_ref]: /report/fcn.00409078@e1cfd2251920da7635928443c90c6b4d
+[virustotal_ref]: https://www.virustotal.com/gui/file/8aa4eec8eb0ac35fe10d9e0394d3dbe4

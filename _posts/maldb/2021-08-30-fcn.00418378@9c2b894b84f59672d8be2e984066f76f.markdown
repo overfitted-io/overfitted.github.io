@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "fcn.00418378 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00418378
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004191be][similar_1_ref] (sim.: 0.8803690469597497)
+2. [fcn.004f9d56][similar_2_ref] (sim.: 0.8800111829927364)
+3. [fcn.0040f568][similar_3_ref] (sim.: 0.8781134623637177)
+4. [fcn.0049bda9][similar_4_ref] (sim.: 0.8770033953552352)
+5. [fcn.00437faa][similar_5_ref] (sim.: 0.8766024158190862)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword fs:[0x2c]
+mov edx,dword[0x5e36e0]
+push ebx
+push esi
+mov ebx,ecx
+mov esi,dword[eax+edx*4]
+push edi
+and dword[ebx+0x38],0
+mov eax,dword[0x5df974]
+cmp eax,dword[esi+4]
+jg 0x4183ff
+cmp dword[0x5df970],0
+je 0x418430
+mov eax,dword[0x5df97c]
+cmp eax,dword[esi+4]
+jg 0x418435
+mov edi,dword[0x5df978]
+test edi,edi
+je 0x4183f6
+mov esi,dword[0x5df980]
+test esi,esi
+je 0x4183f6
+cmp dword[ebp+8],0
+jne 0x4183e2
+push dword[ebx+0x20]
+mov ecx,esi
+call fcn.00553897
+call esi
+jmp 0x4183f8
+push dword[ebp+0xc]
+mov ecx,edi
+push dword[ebx+0x20]
+call fcn.00553897
+call edi
+mov dword[ebx+0x38],eax
+jmp 0x4183f8
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 8
+mov edi,0x5df974
+push edi
+call fcn.00553793
+cmp dword[0x5df974],0xffffffff
+pop ecx
+jne 0x4183a0
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push edi
+mov dword[0x5df970],eax
+call fcn.00553754
+pop ecx
+jmp 0x4183a0
+call fcn.0040f785
+mov esi,0x5df97c
+push esi
+call fcn.00553793
+cmp dword[0x5df97c],0xffffffff
+pop ecx
+jne 0x4183ba
+push str.RegisterTouchWindow
+push dword[0x5df970]
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.UnregisterTouchWindow
+push dword[0x5df970]
+mov dword[0x5df978],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push esi
+mov dword[0x5df980],eax
+call fcn.00553754
+pop ecx
+jmp 0x4183ba
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004191be@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.004f9d56@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0040f568@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.0049bda9@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00437faa@46f6c2adf1fd4d1453ed312ca79dd9bf
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

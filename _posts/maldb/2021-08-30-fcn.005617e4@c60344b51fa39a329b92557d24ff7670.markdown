@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.005617e4 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005617e4
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0046132c][similar_1_ref] (sim.: 0.8578779170418147)
+2. [fcn.00415c2c][similar_2_ref] (sim.: 0.855576854769559)
+3. [fcn.00562204][similar_3_ref] (sim.: 0.847545235324541)
+4. [fcn.100383cd][similar_4_ref] (sim.: 0.8402635801367643)
+5. [fcn.00552eda][similar_5_ref] (sim.: 0.8331905208235144)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+xor ebx,ebx
+xor edi,edi
+mov dword[ebp-4],ecx
+cmp dword[ebp+8],ebx
+je 0x56182b
+call fcn.0055825b
+mov esi,dword[eax+0xc]
+push 0xf0
+push dword[ebp+8]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x56182b
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov ebx,eax
+test ebx,ebx
+je 0x561847
+push ebx
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov edi,eax
+mov ecx,dword[ebp-4]
+push edi
+call fcn.0056135c
+mov esi,eax
+test edi,edi
+je 0x561845
+test ebx,ebx
+je 0x561845
+push ebx
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,esi
+pop edi
+pop esi
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046132c@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.00415c2c@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.00562204@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.100383cd@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.00552eda@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

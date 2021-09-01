@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.0040673c @ 470263fe7e7cc115b95cd041d643e3b5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040673c
+- **Origin (md5):** 470263fe7e7cc115b95cd041d643e3b5
+- **VirusTotal:** [virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004073c1][similar_1_ref] (sim.: 0.8030093188645575)
+2. [fcn.004131a5][similar_2_ref] (sim.: 0.79480043703783)
+3. [fcn.004064ec][similar_3_ref] (sim.: 0.7911844590002345)
+4. [fcn.004064ec][similar_4_ref] (sim.: 0.7911844590002345)
+5. [fcn.00406391][similar_5_ref] (sim.: 0.7887903448869111)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push edi
+push 0
+push 2
+mov esi,ecx
+call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+push 4
+push 0x3000
+mov edi,0x22c
+mov dword[esi+4],eax
+push edi
+push 0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[esi],eax
+test eax,eax
+je 0x40677b
+mov dword[eax],edi
+cmp dword[esi+4],0xffffffff
+je 0x40677b
+push dword[esi]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_Process32FirstW]
+pop edi
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004073c1@6c5b0418e4a4c57d99cda47d2717045d
+[similar_2_ref]: /report/fcn.004131a5@4c2db4ba96e80258daff665d7d7a016a
+[similar_3_ref]: /report/fcn.004064ec@e7582fc3dadb394a1457ab7e7fbbe9a7
+[similar_4_ref]: /report/fcn.004064ec@6c8b5339bada4cbd03f0f446da640707
+[similar_5_ref]: /report/fcn.00406391@999ae3491971c32d67bd4c32561ea381
+[virustotal_ref]: https://www.virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5

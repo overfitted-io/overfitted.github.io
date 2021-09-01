@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.004043ea @ f616ef24fa8f527114071d9f6d523e5d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004043ea
+- **Origin (md5):** f616ef24fa8f527114071d9f6d523e5d
+- **VirusTotal:** [virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004018fa][similar_1_ref] (sim.: 0.9155643002747869)
+2. [fcn.0041a53e][similar_2_ref] (sim.: 0.9031498812486056)
+3. [fcn.00412422][similar_3_ref] (sim.: 0.8949736799797818)
+4. [fcn.00403d56][similar_4_ref] (sim.: 0.8939196774407365)
+5. [sym.\_pthread\_cond\_init][similar_5_ref] (sim.: 0.8932494651284291)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+mov esi,edx
+push ebx
+mov ebx,eax
+sub esp,0x34
+test ecx,ecx
+je 0x4044a6
+lea eax,[ebp-0x2c]
+mov dword[ebp-0x30],ecx
+mov dword[esp+8],0x1c
+mov dword[esp+4],eax
+mov dword[esp],ebx
+call sub.kernel32.dll_VirtualQuery
+mov ecx,dword[ebp-0x30]
+sub esp,0xc
+test eax,eax
+jne 0x40443b
+mov dword[esp+8],ebx
+mov dword[esp+4],0x1c
+mov dword[esp],str.__VirtualQuery_failed_for__d_bytes_at_address__p
+call fcn.004043a8
+mov eax,dword[ebp-0x18]
+cmp eax,4
+je 0x404472
+cmp eax,0x40
+je 0x404472
+lea eax,[ebp-0x10]
+mov dword[esp+0xc],eax
+mov eax,dword[ebp-0x20]
+mov dword[ebp-0x30],ecx
+mov dword[esp+8],0x40
+mov dword[esp+4],eax
+mov eax,dword[ebp-0x2c]
+mov dword[esp],eax
+call sub.kernel32.dll_VirtualProtect
+mov ecx,dword[ebp-0x30]
+sub esp,0x10
+mov edi,ebx
+rep movsb byte es:[edi],byte ptr[esi]
+mov eax,dword[ebp-0x18]
+cmp eax,4
+je 0x4044a6
+cmp eax,0x40
+je 0x4044a6
+lea eax,[ebp-0x10]
+mov dword[esp+0xc],eax
+mov eax,dword[ebp-0x10]
+mov dword[esp+8],eax
+mov eax,dword[ebp-0x20]
+mov dword[esp+4],eax
+mov eax,dword[ebp-0x2c]
+mov dword[esp],eax
+call sub.kernel32.dll_VirtualProtect
+sub esp,0x10
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004018fa@799ea8d6698cf889f1eb7e76fbecd6be
+[similar_2_ref]: /report/fcn.0041a53e@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_3_ref]: /report/fcn.00412422@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_4_ref]: /report/fcn.00403d56@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_5_ref]: /report/sym._pthread_cond_init@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d

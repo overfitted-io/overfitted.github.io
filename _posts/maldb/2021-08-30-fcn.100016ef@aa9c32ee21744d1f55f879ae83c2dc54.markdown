@@ -1,0 +1,176 @@
+---
+layout: post
+title:  "fcn.100016ef @ aa9c32ee21744d1f55f879ae83c2dc54"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100016ef
+- **Origin (md5):** aa9c32ee21744d1f55f879ae83c2dc54
+- **VirusTotal:** [virustotal.com/gui/file/aa9c32ee21744d1f55f879ae83c2dc54][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10002023][similar_1_ref] (sim.: 0.9195012877169991)
+2. [fcn.10005830][similar_2_ref] (sim.: 0.9139926547740193)
+3. [fcn.1003a241][similar_3_ref] (sim.: 0.9133331620641592)
+4. [fcn.100162b0][similar_4_ref] (sim.: 0.9121778355660515)
+5. [fcn.10024164][similar_5_ref] (sim.: 0.9118295148911285)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+8]
+push ebp
+xor ebp,ebp
+cmp eax,ebp
+jne 0x10001708
+cmp dword[0x10003090],ebp
+jle 0x1000173c
+dec dword[0x10003090]
+cmp eax,1
+mov ecx,dword[sym.imp.MSVCR80.dll__adjust_fdiv]
+mov ecx,dword[ecx]
+push ebx
+push esi
+push edi
+mov dword[0x100033d4],ecx
+jne 0x100017f6
+mov eax,dword fs:[0x18]
+mov esi,dword[eax+4]
+mov ebx,dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+mov dword[esp+0x18],ebp
+mov edi,0x100033dc
+jmp 0x10001752
+xor eax,eax
+jmp 0x100018ae
+cmp eax,esi
+je 0x1000175d
+push 0x3e8
+call dword[sym.imp.KERNEL32.dll_Sleep]
+push ebp
+push esi
+push edi
+call ebx
+cmp eax,ebp
+jne 0x10001743
+jmp 0x10001765
+mov dword[esp+0x18],1
+mov eax,dword[0x100033d8]
+test eax,eax
+push 2
+pop esi
+je 0x1000177a
+push 0x1f
+call sub.MSVCR80.dll__amsg_exit
+jmp 0x100017b6
+push 0x100020e4
+push 0x100020dc
+mov dword[0x100033d8],1
+call sub.MSVCR80.dll__initterm_e
+test eax,eax
+pop ecx
+pop ecx
+je 0x100017a0
+xor eax,eax
+jmp 0x100018ab
+push 0x100020d8
+push 0x100020d4
+call sub.MSVCR80.dll__initterm
+pop ecx
+mov dword[0x100033d8],esi
+cmp dword[esp+0x1c],ebp
+pop ecx
+jne 0x100017c5
+push ebp
+push edi
+call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
+cmp dword[0x100033e8],ebp
+je 0x100017eb
+push 0x100033e8
+call fcn.10001c40
+test eax,eax
+pop ecx
+je 0x100017eb
+push dword[esp+0x1c]
+push esi
+push dword[esp+0x1c]
+call dword[0x100033e8]
+inc dword[0x10003090]
+jmp 0x100018a8
+cmp eax,ebp
+jne 0x100018a8
+mov esi,dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+mov edi,0x100033dc
+jmp 0x10001816
+push 0x3e8
+call dword[sym.imp.KERNEL32.dll_Sleep]
+push ebp
+push 1
+push edi
+call esi
+test eax,eax
+jne 0x1000180b
+mov eax,dword[0x100033d8]
+cmp eax,2
+je 0x10001834
+push 0x1f
+call sub.MSVCR80.dll__amsg_exit
+pop ecx
+jmp 0x100018a8
+push dword[0x100033e4]
+mov ebx,dword[sym.imp.MSVCR80.dll__decode_pointer]
+call ebx
+mov ebp,eax
+test ebp,ebp
+pop ecx
+je 0x10001895
+push dword[0x100033e0]
+call ebx
+pop ecx
+mov esi,eax
+jmp 0x10001876
+cmp dword[esi],0
+je 0x10001876
+mov eax,dword[esi]
+mov dword[esp+0x18],eax
+call dword[sym.imp.MSVCR80.dll__encoded_null]
+cmp dword[esp+0x18],eax
+je 0x10001876
+push dword[esp+0x18]
+call ebx
+pop ecx
+call eax
+sub esi,4
+cmp esi,ebp
+jae 0x10001856
+push ebp
+call dword[sym.imp.MSVCR80.dll_free]
+pop ecx
+call dword[sym.imp.MSVCR80.dll__encoded_null]
+mov dword[0x100033e0],eax
+mov dword[0x100033e4],eax
+push 0
+push edi
+mov dword[0x100033d8],0
+call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10002023@dc3e2cdf680078d293de3e2d92ba613c
+[similar_2_ref]: /report/fcn.10005830@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.1003a241@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.100162b0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.10024164@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/aa9c32ee21744d1f55f879ae83c2dc54

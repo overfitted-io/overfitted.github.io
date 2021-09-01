@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.0045151b @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0045151b
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00405a14][similar_1_ref] (sim.: 0.8568300711593964)
+2. [fcn.00450119][similar_2_ref] (sim.: 0.8399122238222102)
+3. [fcn.0040508d][similar_3_ref] (sim.: 0.8377035493448527)
+4. [fcn.0044e583][similar_4_ref] (sim.: 0.8319136359309283)
+5. [fcn.0044e2a4][similar_5_ref] (sim.: 0.831281103495542)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+mov edi,ecx
+mov ecx,dword[edi+8]
+test ecx,ecx
+je 0x451534
+push dword[ebp+8]
+push dword[edi]
+call fcn.0042ce5c
+jmp 0x45159d
+cmp byte[0x5e0ae8],0
+push esi
+jne 0x451572
+push 0x587618
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x451563
+push str.RegDeleteKeyExW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+mov dword[0x5e0ae4],esi
+jmp 0x451569
+mov esi,dword[0x5e0ae4]
+mov byte[0x5e0ae8],1
+jmp 0x451578
+mov esi,dword[0x5e0ae4]
+test esi,esi
+je 0x451591
+push 0
+push dword[edi+4]
+mov ecx,esi
+push dword[ebp+8]
+push dword[edi]
+call fcn.00553897
+call esi
+jmp 0x45159c
+push dword[ebp+8]
+push dword[edi]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+pop esi
+pop edi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405a14@f5b8476c36459986b226c45654aeb016
+[similar_2_ref]: /report/fcn.00450119@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.0040508d@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_4_ref]: /report/fcn.0044e583@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0044e2a4@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

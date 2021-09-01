@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.006b6570 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006b6570
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006acb80][similar_1_ref] (sim.: 0.8226560923936315)
+2. [fcn.006b64a0][similar_2_ref] (sim.: 0.8124884830676735)
+3. [fcn.00515080][similar_3_ref] (sim.: 0.8004784681586)
+4. [fcn.0069e400][similar_4_ref] (sim.: 0.7879759396921255)
+5. [fcn.004bf5c0][similar_5_ref] (sim.: 0.7849422352812736)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x18
+mov ebx,dword[esp+0x20]
+test ebx,ebx
+je 0x6b65a5
+cmp dword[ebx+4],9
+jg 0x6b65b0
+xor eax,eax
+call fcn.006b6390
+mov eax,dword[ebx+4]
+cmp dword[0x83c008],2
+mov edx,dword[eax*4+0x83bfe0]
+mov dword[eax*4+0x83bfe0],ebx
+mov dword[ebx],edx
+je 0x6b65c0
+add esp,0x18
+pop ebx
+ret 
+add esp,0x18
+pop ebx
+jmp sub.msvcrt.dll_free
+mov dword[esp],0x83c020
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp,4
+jmp 0x6b65a5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006acb80@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.00515080@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0069e400@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.004bf5c0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

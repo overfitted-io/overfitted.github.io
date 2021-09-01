@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "sym._pthread_rwlock_init @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_rwlock\_init
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.\_pthread\_mutex\_init][similar_1_ref] (sim.: 0.9040375212494918)
+2. [sym.\_pthread\_rwlock\_timedrdlock][similar_2_ref] (sim.: 0.892165447702531)
+3. [fcn.00433480][similar_3_ref] (sim.: 0.8913636214394669)
+4. [sym.\_pthread\_cond\_init][similar_4_ref] (sim.: 0.8876092087483186)
+5. [sym.\_pthread\_rwlock\_tryrdlock][similar_5_ref] (sim.: 0.8860442985729826)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov eax,0x16
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov esi,dword[esp+0x30]
+test esi,esi
+je 0x412090
+mov dword[esi],0
+mov dword[esp+4],0x20
+mov dword[esp],1
+call sym._calloc
+mov ebx,eax
+mov eax,0xc
+test ebx,ebx
+je 0x412090
+lea edi,[ebx+0x14]
+mov dword[esp+4],0
+mov dword[esp],edi
+mov dword[ebx],0xdeadb0ef
+mov dword[ebx+0x10],0
+mov dword[ebx+0xc],0
+mov dword[ebx+8],0
+call sym._pthread_mutex_init
+test eax,eax
+mov ebp,eax
+jne 0x412098
+lea ebp,[ebx+0x18]
+mov dword[esp+4],0
+mov dword[esp],ebp
+call sym._pthread_mutex_init
+test eax,eax
+jne 0x4120b0
+lea eax,[ebx+0x1c]
+mov dword[esp+4],0
+mov dword[esp],eax
+call sym._pthread_cond_init
+test eax,eax
+jne 0x4120d0
+mov dword[ebx],0xbab1f0ed
+xor eax,eax
+mov dword[esi],ebx
+lea esi,[esi]
+add esp,0x1c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov dword[esp],ebx
+call sym._free
+add esp,0x1c
+mov eax,ebp
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov dword[esp+0xc],eax
+mov dword[esp],edi
+call sym._pthread_mutex_destroy
+mov dword[esp],ebx
+call sym._free
+mov edx,dword[esp+0xc]
+mov eax,edx
+jmp 0x412090
+mov dword[esp],edi
+mov dword[esp+0xc],eax
+call sym._pthread_mutex_destroy
+mov dword[esp],ebp
+jmp 0x4120b7
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pthread_mutex_init@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_rwlock_timedrdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/fcn.00433480@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym._pthread_cond_init@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym._pthread_rwlock_tryrdlock@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

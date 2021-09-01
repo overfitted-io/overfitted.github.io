@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.01004819 @ 7be42d186738ec1816397d616de2cb9d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.01004819
+- **Origin (md5):** 7be42d186738ec1816397d616de2cb9d
+- **VirusTotal:** [virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.010044bd][similar_1_ref] (sim.: 0.8647219088857752)
+2. [fcn.00406434][similar_2_ref] (sim.: 0.8466401783412711)
+3. [fcn.01002e55][similar_3_ref] (sim.: 0.8452214531869211)
+4. [fcn.00486656][similar_4_ref] (sim.: 0.8449715441542894)
+5. [fcn.004088f4][similar_5_ref] (sim.: 0.8446663959667452)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ebx
+push esi
+mov esi,dword[ebp+8]
+push edi
+push 5
+push dword[ebp+0xc]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+xor ebx,ebx
+cmp eax,ebx
+je 0x100486b
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov edi,eax
+cmp edi,ebx
+je 0x100486b
+cmp dword[ebp+0x18],ebx
+jne 0x100484c
+push ebx
+jmp 0x100484f
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push edi
+push esi
+call dword[sym.imp.USER32.dll_DialogBoxIndirectParamA]
+push edi
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+cmp esi,0xffffffff
+jne 0x100487e
+push ebx
+push 0x10
+push ebx
+push ebx
+push 0x4fb
+push ebx
+call fcn.01003ebe
+mov esi,dword[ebp+0x1c]
+pop edi
+mov eax,esi
+pop esi
+pop ebx
+pop ebp
+ret 0x18
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.010044bd@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.00406434@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.01002e55@7be42d186738ec1816397d616de2cb9d
+[similar_4_ref]: /report/fcn.00486656@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d

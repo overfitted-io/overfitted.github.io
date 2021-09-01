@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "fcn.004810a5 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004810a5
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0045fdba][similar_1_ref] (sim.: 0.9061449097132823)
+2. [fcn.00402b1c][similar_2_ref] (sim.: 0.9019114920610914)
+3. [fcn.00457d24][similar_3_ref] (sim.: 0.8958373289412084)
+4. [fcn.00402320][similar_4_ref] (sim.: 0.8950790166749816)
+5. [fcn.00402500][similar_5_ref] (sim.: 0.893825876176135)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+lea ecx,[ebp+0x10]
+push ebx
+push esi
+push edi
+call fcn.00407faf
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call dword[sym.imp.USER32.dll_CharUpperBuffW]
+mov edi,dword[ebp+0xc]
+push 2
+pop esi
+and dword[edi],0
+cmp dword[ebp+0x14],esi
+jae 0x4810d3
+mov esi,dword[ebp+0x14]
+lea ecx,[ebp-0x10]
+call fcn.004077c7
+mov eax,dword[ebp+0x14]
+lea ecx,[ebp-0x10]
+push esi
+sub eax,esi
+push eax
+lea eax,[ebp+0x10]
+push eax
+call fcn.004079ab
+mov esi,0x4bb094
+lea ecx,[ebp-0x10]
+mov edx,esi
+call fcn.00420d27
+lea ecx,[ebp-0x10]
+mov bl,al
+call fcn.00405a64
+test bl,bl
+je 0x481125
+push esi
+lea ecx,[ebp+0x10]
+call fcn.00407886
+mov eax,dword[0x4c7428]
+cmp byte[eax+0x34],0
+je 0x481125
+mov dword[edi],0x100
+mov edx,str.HKEY_LOCAL_MACHINE
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x48120f
+mov edx,str.HKLM
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x48120f
+mov edx,str.HKEY_CLASSES_ROOT
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x481204
+mov edx,str.HKCR
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x481204
+mov edx,str.HKEY_CURRENT_CONFIG
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811f9
+mov edx,str.HKCC
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811f9
+mov edx,str.HKEY_CURRENT_USER
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811ee
+mov edx,str.HKCU
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811ee
+mov edx,str.HKEY_USERS
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811e3
+mov edx,0x4bb198
+lea ecx,[ebp+0x10]
+call fcn.00420d27
+test al,al
+jne 0x4811e3
+xor ebx,ebx
+jmp 0x48121a
+mov eax,dword[ebp+8]
+mov dword[eax],reloc.WSOCK32.dll_closesocket
+jmp 0x481218
+mov eax,dword[ebp+8]
+mov dword[eax],reloc.WSOCK32.dll_accept
+jmp 0x481218
+mov eax,dword[ebp+8]
+mov dword[eax],0x80000005
+jmp 0x481218
+mov eax,dword[ebp+8]
+mov dword[eax],0x80000000
+jmp 0x481218
+mov eax,dword[ebp+8]
+mov dword[eax],reloc.WSOCK32.dll_bind
+mov bl,1
+lea ecx,[ebp+0x10]
+call fcn.00405a64
+pop edi
+pop esi
+mov al,bl
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0x18
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045fdba@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00402b1c@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.00457d24@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.00402500@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

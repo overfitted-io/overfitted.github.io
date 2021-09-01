@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "sym.Qt5Network.dll_public_virtual꞉_void___thiscall_QNetworkDiskCache꞉꞉destructor_void_ @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.Qt5Network.dll\_public\_virtual꞉\_void\_\_\_thiscall\_QNetworkDiskCache꞉꞉destructor\_void\_
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.6403f960][similar_1_ref] (sim.: 0.9418729604722628)
+2. [fcn.64064650][similar_2_ref] (sim.: 0.9415383381211753)
+3. [fcn.6403bf80][similar_3_ref] (sim.: 0.9411890688088675)
+4. [fcn.6403eac0][similar_4_ref] (sim.: 0.9409011099307346)
+5. [fcn.64064570][similar_5_ref] (sim.: 0.9406407231981886)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x14
+push ebx
+push esi
+mov esi,ecx
+mov dword[esp+0xc],esi
+mov eax,dword[esi+4]
+mov dword[esi],vtable.QNetworkDiskCache.0
+mov ebx,dword[eax+0x68]
+mov eax,dword[ebx+8]
+mov dword[esp+0x10],ebx
+lea edx,[ebx+8]
+test eax,eax
+je 0x64056eb3
+cmp eax,0xffffffff
+je 0x64056eb3
+mov eax,1
+lock xadd dword[edx],eax
+test byte[ebx+0x20],1
+jne 0x64056ec6
+lea ecx,[esp+0x10]
+call fcn.64057990
+mov ebx,dword[esp+0x10]
+push edi
+mov ecx,ebx
+call dword[sym.imp.Qt5Core.dll_public:_struct_QHashData::Node____thiscall_QHashData::firstNode_void_]
+mov edi,eax
+cmp edi,ebx
+je 0x64056f45
+push ebp
+push edi
+mov esi,edi
+call dword[sym.imp.Qt5Core.dll_public:_static_struct_QHashData::Node____cdecl_QHashData::nextNode_struct_QHashData::Node__]
+mov esi,dword[esi+0xc]
+add esp,4
+mov edi,eax
+test esi,esi
+je 0x64056f3c
+lea ecx,[esp+0x10]
+call sym public: void __thiscall QNetworkCacheMetaData::constructor(void)
+mov edx,dword[esi]
+mov ecx,dword[eax]
+mov dword[esi],ecx
+lea ecx,[esp+0x10]
+mov dword[eax],edx
+call sym public: void __thiscall QNetworkCacheMetaData::~destructor(void)
+mov eax,dword[esi+4]
+lea ecx,[esi+4]
+call dword[eax+0x34]
+mov ecx,dword[esi+0xc]
+test ecx,ecx
+je 0x64056f1c
+mov eax,dword[ecx]
+push 1
+call dword[eax+0xc]
+lea ecx,[esi+4]
+mov dword[esi+0xc],0
+call dword[sym.imp.Qt5Core.dll_public_virtual:_void___thiscall_QBuffer::destructor_void_]
+mov ecx,esi
+call sym public: void __thiscall QNetworkCacheMetaData::~destructor(void)
+push esi
+call sub.MSVCR120.dll_void___cdecl_operator_delete_void__
+add esp,4
+cmp edi,ebx
+jne 0x64056ed6
+mov esi,dword[esp+0x14]
+pop ebp
+mov eax,dword[ebx+8]
+lea ecx,[ebx+8]
+pop edi
+test eax,eax
+je 0x64056f63
+cmp eax,0xffffffff
+je 0x64056f70
+or eax,0xffffffff
+lock xadd dword[ecx],eax
+setne al
+test al,al
+jne 0x64056f70
+push sym.Qt5Network.dll_public_virtual:_void___thiscall_QNetworkReply::ignoreSslErrors_void_
+mov ecx,ebx
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QHashData::free_helper_void____cdecl___struct_QHashData::Node___]
+mov ecx,esi
+pop esi
+pop ebx
+add esp,0x14
+jmp sym public virtual: void __thiscall QAbstractNetworkCache::~destructor(void)
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6403f960@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.64064650@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.6403bf80@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.6403eac0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.64064570@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

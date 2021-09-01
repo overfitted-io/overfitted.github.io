@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.004321d4 @ 2ba145d6678d721baeb8d825fab7c600"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004321d4
+- **Origin (md5):** 2ba145d6678d721baeb8d825fab7c600
+- **VirusTotal:** [virustotal.com/gui/file/2ba145d6678d721baeb8d825fab7c600][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00434190][similar_1_ref] (sim.: 0.9150005630225408)
+2. [fcn.0043db88][similar_2_ref] (sim.: 0.891730004170195)
+3. [fcn.0042efd0][similar_3_ref] (sim.: 0.8800926045394672)
+4. [fcn.004237b0][similar_4_ref] (sim.: 0.8537715409081861)
+5. [fcn.00425d90][similar_5_ref] (sim.: 0.8386386591604705)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0
+push ebx
+push esi
+mov esi,eax
+xor eax,eax
+push ebp
+push 0x432251
+push dword fs:[eax]
+mov dword fs:[eax],esp
+mov eax,esi
+call fcn.00431c34
+call sub.kernel32.dll_GetTickCount
+mov ebx,eax
+push 0
+call sub.kernel32.dll_Sleep
+call sub.kernel32.dll_GetTickCount
+sub eax,ebx
+cmp eax,0x3e8
+jbe 0x4321f9
+lea ecx,[ebp-4]
+xor edx,edx
+mov eax,esi
+call fcn.00431834
+cmp dword[ebp-4],0
+je 0x43223b
+push 0
+push 9
+mov eax,dword[ebp-4]
+call fcn.00404354
+push eax
+mov eax,dword[esi+0x1c]
+mov edx,dword[eax]
+call dword[edx+0xc]
+push eax
+call sub.user32.dll_WinHelpA
+xor eax,eax
+pop edx
+pop ecx
+pop ecx
+mov dword fs:[eax],edx
+push 0x432258
+lea eax,[ebp-4]
+call fcn.00403e94
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00434190@27f3ad32e2eddc62e5434f19748fa0be
+[similar_2_ref]: /report/fcn.0043db88@6635b2bf1f4673ef3a7d242a02608d58
+[similar_3_ref]: /report/fcn.0042efd0@8aa4eec8eb0ac35fe10d9e0394d3dbe4
+[similar_4_ref]: /report/fcn.004237b0@2ba145d6678d721baeb8d825fab7c600
+[similar_5_ref]: /report/fcn.00425d90@8aa4eec8eb0ac35fe10d9e0394d3dbe4
+[virustotal_ref]: https://www.virustotal.com/gui/file/2ba145d6678d721baeb8d825fab7c600

@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00411469 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00411469
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00456ec0][similar_1_ref] (sim.: 0.8469745445602649)
+2. [fcn.004130c2][similar_2_ref] (sim.: 0.8435252990294084)
+3. [fcn.00415930][similar_3_ref] (sim.: 0.8433359699801652)
+4. [fcn.00415930][similar_4_ref] (sim.: 0.8433359699801652)
+5. [fcn.00415930][similar_5_ref] (sim.: 0.8433359699801652)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x45ff60]
+push ebx
+xor ebx,ebx
+inc ebx
+cmp eax,ebx
+jne 0x41147a
+xor al,al
+pop ebx
+ret 
+test eax,eax
+je 0x411482
+mov al,bl
+pop ebx
+ret 
+push esi
+push str.KERNEL32.DLL
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+jne 0x411498
+mov esi,ebx
+jmp 0x4114c2
+push str.AcquireSRWLockExclusive
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x411494
+push str.ReleaseSRWLockExclusive
+push esi
+mov dword[0x45ff64],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x411494
+mov dword[0x45ff68],eax
+mov ecx,esi
+mov edx,0x45ff60
+xor eax,eax
+lock cmpxchg dword[edx],ecx
+test eax,eax
+jne 0x4114d7
+cmp esi,ebx
+je 0x4114db
+cmp eax,ebx
+jne 0x4114df
+xor al,al
+jmp 0x4114e1
+mov al,bl
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00456ec0@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.004130c2@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.00415930@d9b85b9b67587bbf2112c62164413bd8
+[similar_4_ref]: /report/fcn.00415930@835812ed365516de32516b9bf14b0450
+[similar_5_ref]: /report/fcn.00415930@368dd66411b8b6ce2bcd15b0e14af5c0
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

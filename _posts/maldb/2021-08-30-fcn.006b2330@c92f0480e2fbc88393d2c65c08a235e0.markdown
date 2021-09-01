@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.006b2330 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006b2330
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006823d0][similar_1_ref] (sim.: 0.9168713423498335)
+2. [fcn.005235a0][similar_2_ref] (sim.: 0.9090412988626955)
+3. [fcn.0068f270][similar_3_ref] (sim.: 0.9084762145453631)
+4. [fcn.005be170][similar_4_ref] (sim.: 0.9067620267911668)
+5. [fcn.0068fd90][similar_5_ref] (sim.: 0.9059130911955773)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x23c
+mov ebx,dword[esp+0x254]
+mov dword[esp],0x4000
+mov esi,dword[esp+0x250]
+call sub.msvcrt.dll_malloc
+test ebx,ebx
+mov ebp,eax
+je 0x6b2440
+cmp word[ebx],0
+mov eax,str._unknown_
+cmove ebx,eax
+test esi,esi
+je 0x6b2435
+cmp word[esi],0
+mov eax,0x7be374
+cmove esi,eax
+lea edi,[esp+0x26]
+mov dword[esp+8],0x104
+mov dword[esp],0
+mov dword[esp+4],edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+sub esp,0xc
+test eax,eax
+je 0x6b2420
+mov eax,dword[esp+0x258]
+mov dword[esp+0x18],esi
+mov dword[esp+0x10],ebx
+mov dword[esp+0xc],edi
+mov dword[esp+8],0x7be378
+mov dword[esp+4],0x1fff
+mov dword[esp+0x14],eax
+mov dword[esp],ebp
+call sub.msvcrt.dll__snwprintf
+mov eax,dword[0x83b638]
+test eax,eax
+je 0x6b2467
+mov dword[esp+0xc],0x12012
+mov dword[esp+8],0x7be40c
+mov dword[esp+4],ebp
+mov dword[esp],0
+call dword[sym.imp.USER32.dll_MessageBoxW]
+sub esp,0x10
+cmp eax,3
+je 0x6b244f
+cmp eax,5
+jne 0x6b244a
+add esp,0x23c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov dword[esp+4],str._unknown_
+mov dword[esp],edi
+call sub.msvcrt.dll_wcscpy
+jmp 0x6b23a2
+mov esi,0x7be374
+jmp 0x6b237e
+mov ebx,str._unknown_
+jmp 0x6b236a
+call sub.msvcrt.dll_abort
+mov dword[esp],0x16
+call sub.msvcrt.dll_raise
+mov dword[esp],3
+call sub.msvcrt.dll__exit
+mov eax,dword[sym.imp.msvcrt.dll__iob]
+mov dword[esp+8],ebp
+mov dword[esp+4],0x7be400
+add eax,0x40
+mov dword[esp],eax
+call sub.msvcrt.dll_fwprintf
+call sub.msvcrt.dll_abort
+nop 
+lea esi,[esi]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006823d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.005235a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.005be170@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

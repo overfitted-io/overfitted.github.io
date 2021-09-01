@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "sym.tpop2.exe_public꞉_static_bool___cdecl_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin_wchar_t_const__ @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.tpop2.exe\_public꞉\_static\_bool\_\_\_cdecl\_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin\_wchar\_t\_const\_\_
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.Install.exe\_public꞉\_static\_bool\_\_\_cdecl\_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin\_wchar\_t\_const\_\_][similar_1_ref] (sim.: 0.8909103150651766)
+2. [fcn.004b7a07][similar_2_ref] (sim.: 0.856219338411111)
+3. [fcn.00403b24][similar_3_ref] (sim.: 0.8249803109044483)
+4. [fcn.0040ce3e][similar_4_ref] (sim.: 0.8246525377152785)
+5. [fcn.00482679][similar_5_ref] (sim.: 0.8210164485651268)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[esp+4],0
+push edi
+jne 0x416b78
+xor al,al
+pop edi
+ret 
+push esi
+push dword[esp+0xc]
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+je 0x416bb6
+push str.CreateControl
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x416bb6
+mov edi,sym.tpop2.exe_class_DuiLib::CStdPtrArray_DuiLib::CPaintManagerUI::m_aPlugins
+push esi
+mov ecx,edi
+call sym public: int __thiscall DuiLib::CStdPtrArray::Find(void *)const
+test eax,eax
+jge 0x416bb2
+push esi
+mov ecx,edi
+call sym public: bool __thiscall DuiLib::CStdPtrArray::Add(void *)
+mov al,1
+jmp 0x416bb8
+xor al,al
+pop esi
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.Install.exe_public꞉_static_bool___cdecl_DuiLib꞉꞉CPaintManagerUI꞉꞉LoadPlugin_wchar_t_const__@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.004b7a07@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_3_ref]: /report/fcn.00403b24@1c48774da6a3dd4bf3ea41716a332c61
+[similar_4_ref]: /report/fcn.0040ce3e@a2475448bf4050c1583e1970984a4d00
+[similar_5_ref]: /report/fcn.00482679@27ac6b5c7fa1ad11790cdc733c25a701
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

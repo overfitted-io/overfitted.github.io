@@ -1,0 +1,144 @@
+---
+layout: post
+title:  "fcn.0041310b @ 8c10f6a1b7643ed6e914352ded4b58e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041310b
+- **Origin (md5):** 8c10f6a1b7643ed6e914352ded4b58e0
+- **VirusTotal:** [virustotal.com/gui/file/8c10f6a1b7643ed6e914352ded4b58e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00418cc9][similar_1_ref] (sim.: 0.9294680278199288)
+2. [sym.\_\_\_shmem\_winpthreads\_grab][similar_2_ref] (sim.: 0.9245302895982627)
+3. [dbg.\_\_shmem\_grab][similar_3_ref] (sim.: 0.9166509643989882)
+4. [fcn.00403b03][similar_4_ref] (sim.: 0.9129281318463773)
+5. [fcn.00403cf2][similar_5_ref] (sim.: 0.9120893561571782)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x58
+test byte[0x41c3d0],8
+je 0x41315d
+mov eax,dword[ebp+0xc]
+call fcn.0040111c
+mov dword[esp+0x14],0x41e5f6
+mov dword[esp+0x10],0x10c
+mov dword[esp+0xc],0x41f2b4
+mov dword[esp+8],0x41d9e3
+mov dword[esp+4],0x41c3d0
+mov dword[esp+0x18],eax
+mov dword[esp],3
+call fcn.0041a1a2
+mov dword[esp],str.SHELL32.DLL
+call sub.kernel32.dll_LoadLibraryW
+test eax,eax
+mov ebx,eax
+push edi
+jne 0x4131b6
+test byte[0x41c3d0],4
+je 0x4132e8
+mov dword[esp+0x14],str.RunFile:_couldnt_load_SHELL32.DLL__n
+mov dword[esp+0x10],0x110
+mov dword[esp+0xc],0x41f2b4
+mov dword[esp+8],0x41d9e3
+mov dword[esp+4],0x41c3d0
+mov dword[esp],2
+call fcn.0041a1a2
+jmp 0x4132e8
+mov dword[esp+4],str.ShellExecuteExW
+mov dword[esp],eax
+call sub.kernel32.dll_GetProcAddress
+test eax,eax
+push esi
+push esi
+mov esi,eax
+jne 0x413219
+test byte[0x41c3d0],4
+je 0x41320b
+mov dword[esp+0x14],str.RunFile:_couldnt_find_ShellExecuteExA_W_in_SHELL32.DLL__n
+mov dword[esp+0x10],0x117
+mov dword[esp+0xc],0x41f2b4
+mov dword[esp+8],0x41d9e3
+mov dword[esp+4],0x41c3d0
+mov dword[esp],2
+call fcn.0041a1a2
+mov dword[esp],ebx
+call sub.kernel32.dll_FreeLibrary
+push ecx
+jmp 0x4132e8
+test byte[0x41c3d0],8
+je 0x41325a
+mov dword[esp+0x18],eax
+mov dword[esp+0x14],0x41e68b
+mov dword[esp+0x10],0x11c
+mov dword[esp+0xc],0x41f2b4
+mov dword[esp+8],0x41d9e3
+mov dword[esp+4],0x41c3d0
+mov dword[esp],3
+call fcn.0041a1a2
+lea edx,[ebp-0x48]
+xor eax,eax
+mov edi,edx
+mov ecx,0xf
+rep stosd dword es:[edi],eax
+mov eax,dword[ebp+8]
+mov dword[esp],edx
+mov dword[ebp-0x48],0x3c
+mov dword[ebp-0x44],eax
+mov eax,dword[ebp+0xc]
+mov dword[ebp-0x38],eax
+mov eax,dword[ebp+0x10]
+mov dword[ebp-0x34],eax
+mov eax,dword[ebp+0x14]
+mov dword[ebp-0x30],eax
+mov eax,dword[ebp+0x18]
+mov dword[ebp-0x2c],eax
+call esi
+test byte[0x41c3d0],8
+push edx
+mov esi,eax
+je 0x4132d6
+mov dword[esp+0x18],eax
+mov dword[esp+0x14],0x41e6b0
+mov dword[esp+0x10],0x127
+mov dword[esp+0xc],0x41f2b4
+mov dword[esp+8],0x41d9e3
+mov dword[esp+4],0x41c3d0
+mov dword[esp],3
+call fcn.0041a1a2
+mov dword[esp],ebx
+call sub.kernel32.dll_FreeLibrary
+test esi,esi
+push edi
+je 0x4132e8
+mov eax,dword[ebp-0x10]
+jmp 0x4132ea
+xor eax,eax
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00418cc9@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_2_ref]: /report/sym.___shmem_winpthreads_grab@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/dbg.__shmem_grab@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/fcn.00403b03@35bedc5498306afe90b32d21d460d74f
+[similar_5_ref]: /report/fcn.00403cf2@35bedc5498306afe90b32d21d460d74f
+[virustotal_ref]: https://www.virustotal.com/gui/file/8c10f6a1b7643ed6e914352ded4b58e0

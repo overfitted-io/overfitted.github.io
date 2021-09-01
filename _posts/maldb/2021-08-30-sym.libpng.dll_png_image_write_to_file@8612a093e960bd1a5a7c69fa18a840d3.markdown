@@ -1,0 +1,148 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_image_write_to_file @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_image\_write\_to\_file
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.libpng.dll\_png\_set\_iCCP][similar_1_ref] (sim.: 0.9201204064197654)
+2. [sym.libpng.dll\_png\_image\_finish\_read][similar_2_ref] (sim.: 0.9111119276278279)
+3. [sym.libpng.dll\_png\_set\_sCAL\_s][similar_3_ref] (sim.: 0.9095983766805008)
+4. [fcn.1001bad0][similar_4_ref] (sim.: 0.90537911269809)
+5. [sym.libpng.dll\_png\_image\_write\_to\_memory][similar_5_ref] (sim.: 0.9038090988536241)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+mov ebx,dword[ebp+8]
+test ebx,ebx
+je 0x1001cb43
+cmp dword[ebx+4],1
+jne 0x1001cb36
+push edi
+mov edi,dword[ebp+0xc]
+test edi,edi
+je 0x1001cb28
+cmp dword[ebp+0x14],0
+je 0x1001cb28
+push esi
+push 0x1002d9c8
+push edi
+call dword[sym.imp.MSVCR100.dll_fopen]
+mov esi,eax
+add esp,8
+test esi,esi
+je 0x1001cb0c
+mov eax,dword[ebp+0x1c]
+mov ecx,dword[ebp+0x18]
+mov edx,dword[ebp+0x14]
+push eax
+mov eax,dword[ebp+0x10]
+push ecx
+push edx
+push eax
+push esi
+push ebx
+call sym.libpng.dll_png_image_write_to_stdio
+add esp,0x18
+push esi
+test eax,eax
+je 0x1001caf5
+call dword[sym.imp.MSVCR100.dll_fflush]
+add esp,4
+test eax,eax
+jne 0x1001cac5
+push esi
+call dword[sym.imp.MSVCR100.dll_ferror]
+add esp,4
+test eax,eax
+jne 0x1001cac5
+push esi
+call dword[sym.imp.MSVCR100.dll_fclose]
+add esp,4
+test eax,eax
+jne 0x1001cabb
+pop esi
+pop edi
+mov eax,1
+pop ebx
+pop ebp
+ret 
+call dword[sym.imp.MSVCR100.dll__errno]
+mov edi,dword[eax]
+jmp 0x1001cad7
+call dword[sym.imp.MSVCR100.dll__errno]
+mov edi,dword[eax]
+push esi
+call dword[sym.imp.MSVCR100.dll_fclose]
+add esp,4
+mov ecx,dword[ebp+0xc]
+push ecx
+call dword[sym.imp.MSVCR100.dll_remove]
+push edi
+call dword[sym.imp.MSVCR100.dll_strerror]
+add esp,8
+call fcn.100054b0
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+call dword[sym.imp.MSVCR100.dll_fclose]
+push edi
+call dword[sym.imp.MSVCR100.dll_remove]
+add esp,8
+pop esi
+pop edi
+xor eax,eax
+pop ebx
+pop ebp
+ret 
+call dword[sym.imp.MSVCR100.dll__errno]
+mov edx,dword[eax]
+push edx
+call dword[sym.imp.MSVCR100.dll_strerror]
+add esp,4
+call fcn.100054b0
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+mov eax,str.png_image_write_to_file:_invalid_argument
+call fcn.100054b0
+pop edi
+pop ebx
+pop ebp
+ret 
+mov eax,str.png_image_write_to_file:_incorrect_PNG_IMAGE_VERSION
+call fcn.100054b0
+pop ebx
+pop ebp
+ret 
+xor eax,eax
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.libpng.dll_png_set_iCCP@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_image_finish_read@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/sym.libpng.dll_png_set_sCAL_s@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.1001bad0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/sym.libpng.dll_png_image_write_to_memory@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.004185f0 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004185f0
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004c2e30][similar_1_ref] (sim.: 0.832093801143035)
+2. [fcn.00453340][similar_2_ref] (sim.: 0.8169838289881605)
+3. [fcn.00418670][similar_3_ref] (sim.: 0.815425957702219)
+4. [fcn.004473d0][similar_4_ref] (sim.: 0.8151371165913183)
+5. [fcn.00428bb0][similar_5_ref] (sim.: 0.8129772210482833)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+push edi
+mov edi,dword[ebp+0xc]
+test esi,esi
+je 0x41862a
+cmp dword[esi+0x40],0
+je 0x418620
+cmp edi,dword[esi+0x1ac]
+jne 0x418637
+cmp dword[esi+0x1bc],0
+je 0x418637
+mov dword[esi+0x1bc],0
+push edi
+push esi
+call fcn.00410e50
+add esp,8
+push edi
+call dword[sym.imp.WS2_32.dll_closesocket]
+pop edi
+xor eax,eax
+pop esi
+pop ebp
+ret 
+push edi
+push esi
+call fcn.00410e50
+mov eax,dword[esi]
+push 1
+push eax
+call fcn.004117d0
+mov ecx,dword[esi+0x44]
+mov edx,dword[esi+0x40]
+push edi
+push ecx
+call edx
+mov edi,eax
+mov eax,dword[esi]
+push 0
+push eax
+call fcn.004117d0
+add esp,0x20
+mov eax,edi
+pop edi
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004c2e30@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00453340@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.00418670@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.004473d0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.00428bb0@e2ba7f10eb234338a49853c34d7d9c56
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

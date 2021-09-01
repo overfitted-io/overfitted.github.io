@@ -1,0 +1,126 @@
+---
+layout: post
+title:  "fcn.006ac480 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006ac480
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0068f270][similar_1_ref] (sim.: 0.9157273615548471)
+2. [fcn.006bcb40][similar_2_ref] (sim.: 0.9154058778315379)
+3. [fcn.0068bfa0][similar_3_ref] (sim.: 0.9130500696958098)
+4. [fcn.00683fd0][similar_4_ref] (sim.: 0.9120392111850217)
+5. [fcn.00698c20][similar_5_ref] (sim.: 0.9112945213516396)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x30
+mov esi,dword[0x83b640]
+test esi,esi
+jle 0x6ac590
+mov edi,dword[0x83b644]
+xor ebx,ebx
+lea edx,[edi+0xc]
+nop 
+mov ecx,dword[edx]
+cmp ecx,eax
+ja 0x6ac4b4
+mov edi,dword[edx+4]
+add ecx,dword[edi+8]
+cmp eax,ecx
+jb 0x6ac535
+add ebx,1
+add edx,0x14
+cmp ebx,esi
+jne 0x6ac4a0
+mov dword[esp],eax
+mov ebx,eax
+call fcn.006acd70
+test eax,eax
+mov edi,eax
+je 0x6ac5b7
+mov eax,dword[0x83b644]
+lea ebx,[esi+esi*4]
+shl ebx,2
+add eax,ebx
+mov dword[eax+0x10],edi
+mov dword[eax],0
+call fcn.006ace70
+add eax,dword[edi+0xc]
+mov edx,dword[0x83b644]
+mov dword[edx+ebx+0xc],eax
+lea edx,[esp+0x14]
+mov dword[esp+8],0x1c
+mov dword[esp],eax
+mov dword[esp+4],edx
+call dword[sym.imp.KERNEL32.dll_VirtualQuery]
+sub esp,0xc
+test eax,eax
+je 0x6ac597
+mov eax,dword[esp+0x28]
+lea edx,[eax-0x40]
+and edx,0xffffffbf
+je 0x6ac52e
+sub eax,4
+and eax,0xfffffffb
+jne 0x6ac540
+add dword[0x83b640],1
+add esp,0x30
+pop ebx
+pop esi
+pop edi
+ret 
+add ebx,dword[0x83b644]
+mov eax,dword[esp+0x14]
+mov edx,dword[esp+0x20]
+mov dword[ebx+4],eax
+mov dword[ebx+8],edx
+mov dword[esp+0xc],ebx
+mov dword[esp+8],0x40
+mov dword[esp+4],edx
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_VirtualProtect]
+sub esp,0x10
+test eax,eax
+jne 0x6ac52e
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esp],str.__VirtualProtect_failed_with_code_0x_x
+mov dword[esp+4],eax
+call fcn.00743eb0
+lea esi,[esi]
+xor esi,esi
+jmp 0x6ac4be
+mov eax,dword[0x83b644]
+mov eax,dword[eax+ebx+0xc]
+mov dword[esp+8],eax
+mov eax,dword[edi+8]
+mov dword[esp],str.__VirtualQuery_failed_for__d_bytes_at_address__p
+mov dword[esp+4],eax
+call fcn.00743eb0
+mov dword[esp+4],ebx
+mov dword[esp],str.Address__p_has_no_image_section
+call fcn.00743eb0
+mov esi,esi
+lea edi,[edi]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006bcb40@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00698c20@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

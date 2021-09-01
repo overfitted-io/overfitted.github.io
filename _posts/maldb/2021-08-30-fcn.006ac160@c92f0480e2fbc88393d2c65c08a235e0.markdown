@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.006ac160 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006ac160
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00433480][similar_1_ref] (sim.: 0.8854301886756076)
+2. [dbg.\_\_security\_init\_cookie][similar_2_ref] (sim.: 0.8838936048125794)
+3. [sym.xmrig.exe\_MHD\_create\_response\_from\_buffer][similar_3_ref] (sim.: 0.8765767741505771)
+4. [fcn.006b64a0][similar_4_ref] (sim.: 0.8748511268567734)
+5. [fcn.0041d9d0][similar_5_ref] (sim.: 0.8741679561577905)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x2c
+mov eax,dword[0x7493d0]
+mov dword[esp+0x10],0
+mov dword[esp+0x14],0
+cmp eax,0xbb40e64e
+je 0x6ac192
+not eax
+mov dword[0x7493d4],eax
+add esp,0x2c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+lea eax,[esp+0x10]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+sub esp,4
+mov ebx,dword[esp+0x10]
+xor ebx,dword[esp+0x14]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov ebp,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+mov esi,eax
+lea eax,[esp+0x18]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+sub esp,4
+mov eax,dword[esp+0x18]
+xor eax,ebx
+xor eax,dword[esp+0x1c]
+xor eax,ebp
+xor eax,edi
+xor eax,esi
+cmp eax,0xbb40e64e
+je 0x6ac200
+mov edx,eax
+not edx
+mov dword[0x7493d0],eax
+mov dword[0x7493d4],edx
+add esp,0x2c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov edx,0x44bf19b0
+mov eax,0xbb40e64f
+jmp 0x6ac1ed
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00433480@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/dbg.__security_init_cookie@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/sym.xmrig.exe_MHD_create_response_from_buffer@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0041d9d0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

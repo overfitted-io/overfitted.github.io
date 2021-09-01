@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "fcn.00420db0 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00420db0
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00416337][similar_1_ref] (sim.: 0.8945313493400326)
+2. [fcn.00502f5f][similar_2_ref] (sim.: 0.8915843408997707)
+3. [fcn.0043aeab][similar_3_ref] (sim.: 0.8889351571664428)
+4. [fcn.00403908][similar_4_ref] (sim.: 0.8875804081173184)
+5. [fcn.0048c850][similar_5_ref] (sim.: 0.8872395437322393)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push ebx
+xor ebx,ebx
+cmp dword[0x5391d8],ebx
+push esi
+push edi
+jne 0x420e30
+push 0x4313ac
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x420e6b
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x4313a0
+push edi
+call esi
+test eax,eax
+mov dword[0x5391d8],eax
+je 0x420e6b
+push 0x431390
+push edi
+call esi
+push 0x43137c
+push edi
+mov dword[0x5391dc],eax
+call esi
+cmp dword[0x538f9c],2
+mov dword[0x5391e0],eax
+jne 0x420e30
+push 0x431360
+push edi
+call esi
+test eax,eax
+mov dword[0x5391e8],eax
+je 0x420e30
+push 0x431348
+push edi
+call esi
+mov dword[0x5391e4],eax
+mov eax,dword[0x5391e4]
+test eax,eax
+je 0x420e75
+call eax
+test eax,eax
+je 0x420e5c
+lea ecx,[ebp-4]
+push ecx
+push 0xc
+lea ecx,[ebp-0x10]
+push ecx
+push 1
+push eax
+call dword[0x5391e8]
+test eax,eax
+je 0x420e5c
+test byte[ebp-8],1
+jne 0x420e75
+cmp dword[0x538fa8],4
+jb 0x420e6f
+or byte[ebp+0x12],0x20
+jmp 0x420e94
+xor eax,eax
+jmp 0x420ea4
+or byte[ebp+0x12],4
+jmp 0x420e94
+mov eax,dword[0x5391dc]
+test eax,eax
+je 0x420e94
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x420e94
+mov eax,dword[0x5391e0]
+test eax,eax
+je 0x420e94
+push ebx
+call eax
+mov ebx,eax
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+push ebx
+call dword[0x5391d8]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e
+[similar_2_ref]: /report/fcn.00502f5f@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0043aeab@9964b63070116cfb2469e51850178af1
+[similar_4_ref]: /report/fcn.00403908@4c8869bb42f854640703b6ddda29ee38
+[similar_5_ref]: /report/fcn.0048c850@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

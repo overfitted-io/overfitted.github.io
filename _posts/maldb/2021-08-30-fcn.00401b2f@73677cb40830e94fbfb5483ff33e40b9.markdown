@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.00401b2f @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401b2f
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00401aef][similar_1_ref] (sim.: 0.8844528170645003)
+2. [fcn.00406391][similar_2_ref] (sim.: 0.8170208258461648)
+3. [fcn.00406391][similar_3_ref] (sim.: 0.8170208258461648)
+4. [loc.004027c2][similar_4_ref] (sim.: 0.8137511383994889)
+5. [fcn.00406365][similar_5_ref] (sim.: 0.8122536383967113)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push edi
+push dword[esp+0xc]
+xor edi,edi
+push edi
+push 0x200
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov esi,eax
+cmp esi,edi
+je 0x401b6c
+push dword[esp+0x10]
+push esi
+call dword[sym.imp.KERNEL32.dll_SetPriorityClass]
+test eax,eax
+jne 0x401b60
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov edi,eax
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,edi
+pop edi
+pop esi
+ret 
+pop edi
+pop esi
+jmp dword[sym.imp.KERNEL32.dll_GetLastError]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401aef@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.00406391@999ae3491971c32d67bd4c32561ea381
+[similar_3_ref]: /report/fcn.00406391@5bfd33ece1aeef8bda2c7fc886262ed9
+[similar_4_ref]: /report/loc.004027c2@de21a548b66aa6c0b17491b6a31e14fa
+[similar_5_ref]: /report/fcn.00406365@fc08a944a357dc216338592f13f65b60
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

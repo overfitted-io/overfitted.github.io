@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.00404b24 @ fca52b995e756cff97168f6fef94b37d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00404b24
+- **Origin (md5):** fca52b995e756cff97168f6fef94b37d
+- **VirusTotal:** [virustotal.com/gui/file/fca52b995e756cff97168f6fef94b37d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00423714][similar_1_ref] (sim.: 0.8823076254009286)
+2. [fcn.1000a380][similar_2_ref] (sim.: 0.8723023753633662)
+3. [fcn.0047b47e][similar_3_ref] (sim.: 0.854647778287708)
+4. [fcn.0047b47e][similar_4_ref] (sim.: 0.854647778287708)
+5. [fcn.0047b47e][similar_5_ref] (sim.: 0.854647778287708)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+call fcn.00404b77
+mov eax,0x400000
+mov dword[esi],0x38
+lea ecx,[esi+0x14]
+mov dword[esi+8],eax
+mov dword[esi+4],eax
+mov dword[esi+0xc],0xe00
+mov dword[esi+0x10],0x413110
+call fcn.00401070
+test eax,eax
+jns 0x404b73
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x404b6c
+push str.ERROR_:_Unable_to_initialize_critical_section_in_CAtlBaseModule_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[0x41ca28],1
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00423714@ba86269e5231930ee4def4088ddb8d19
+[similar_2_ref]: /report/fcn.1000a380@b7467517f3ef2950fbbab46c56c44481
+[similar_3_ref]: /report/fcn.0047b47e@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_4_ref]: /report/fcn.0047b47e@152885a790b99953ce23874f0947b7bd
+[similar_5_ref]: /report/fcn.0047b47e@912f1d013a0d6151bc7a7cef6da1b2a0
+[virustotal_ref]: https://www.virustotal.com/gui/file/fca52b995e756cff97168f6fef94b37d

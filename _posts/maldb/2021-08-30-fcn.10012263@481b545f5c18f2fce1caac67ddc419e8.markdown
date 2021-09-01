@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.10012263 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10012263
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10002290][similar_1_ref] (sim.: 0.8170236148400758)
+2. [fcn.10011737][similar_2_ref] (sim.: 0.8106676305259389)
+3. [fcn.10062725][similar_3_ref] (sim.: 0.8080657268798657)
+4. [fcn.1000d752][similar_4_ref] (sim.: 0.8055146132793705)
+5. [fcn.100072a0][similar_5_ref] (sim.: 0.7992223394519916)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push 0x10003b47
+mov ecx,0x10063678
+call fcn.10006693
+mov esi,eax
+test esi,esi
+jne 0x1001227e
+call fcn.100073a7
+push edi
+mov edi,dword[esp+0xc]
+cmp dword[esi+0x14],edi
+je 0x100122b3
+cmp dword[esi+0x28],0
+jne 0x100122b0
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x10012043
+push 5
+call dword[sym.imp.USER32.dll_SetWindowsHookExW]
+test eax,eax
+mov dword[esi+0x28],eax
+jne 0x100122b0
+call fcn.10007373
+mov dword[esi+0x14],edi
+pop edi
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10002290@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10011737@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.10062725@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.1000d752@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.100072a0@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

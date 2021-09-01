@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.00406e47 @ f5b8476c36459986b226c45654aeb016"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406e47
+- **Origin (md5):** f5b8476c36459986b226c45654aeb016
+- **VirusTotal:** [virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004060f1][similar_1_ref] (sim.: 0.8963353066499453)
+2. [fcn.004060f1][similar_2_ref] (sim.: 0.8963353066499453)
+3. [fcn.004060f1][similar_3_ref] (sim.: 0.8963353066499453)
+4. [fcn.00406421][similar_4_ref] (sim.: 0.8897299065946168)
+5. [fcn.00405c54][similar_5_ref] (sim.: 0.8852450810627265)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push edi
+xor ebx,ebx
+lea edi,[esi+0x1c]
+mov dword[ebp-8],ebx
+mov dword[ebp-4],1
+jmp 0x406e82
+push ebx
+push ebx
+push ebx
+push ebx
+push edi
+call dword[sym.imp.USER32.dll_PeekMessageW]
+test eax,eax
+jne 0x406e87
+push dword[ebp-8]
+mov eax,dword[esi]
+mov ecx,esi
+call dword[eax+4]
+inc dword[ebp-8]
+test eax,eax
+jne 0x406e82
+mov dword[ebp-4],ebx
+cmp dword[ebp-4],ebx
+jne 0x406e5f
+push ebx
+push ebx
+push ebx
+push edi
+call dword[sym.imp.USER32.dll_GetMessageW]
+cmp eax,0xffffffff
+je 0x406e82
+cmp eax,ebx
+je 0x406ed0
+mov eax,dword[esi]
+push edi
+mov ecx,esi
+call dword[eax]
+test eax,eax
+jne 0x406eb3
+push edi
+call dword[sym.imp.USER32.dll_TranslateMessage]
+push edi
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+mov eax,dword[esi+0x20]
+sub eax,0xf
+je 0x406e82
+sub eax,0x91
+je 0x406e82
+sub eax,0x78
+je 0x406e82
+sub eax,0xe8
+je 0x406e82
+jmp 0x406e53
+mov eax,dword[esi+0x24]
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004060f1@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_2_ref]: /report/fcn.004060f1@505be53c36227b94e2fcc406f247f6e5
+[similar_3_ref]: /report/fcn.004060f1@96a869ae624ddb4834a1d5a829f85469
+[similar_4_ref]: /report/fcn.00406421@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_5_ref]: /report/fcn.00405c54@e16f74a2849182d98050864255e902f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016

@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "fcn.0040e96c @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040e96c
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100229c8][similar_1_ref] (sim.: 0.7802542211079492)
+2. [fcn.00419ed6][similar_2_ref] (sim.: 0.7608055040920579)
+3. [fcn.0040d22f][similar_3_ref] (sim.: 0.7580743770614375)
+4. [fcn.0042daa0][similar_4_ref] (sim.: 0.7510846840015573)
+5. [fcn.004293b3][similar_5_ref] (sim.: 0.7456650427316384)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push str.kernel32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x40e99d
+push str.SetDllDirectoryW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x40e99d
+movzx ecx,byte[esp+4]
+neg ecx
+sbb ecx,ecx
+and ecx,0x41437c
+push ecx
+call eax
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100229c8@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00419ed6@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.0040d22f@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.0042daa0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.004293b3@ba86269e5231930ee4def4088ddb8d19
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

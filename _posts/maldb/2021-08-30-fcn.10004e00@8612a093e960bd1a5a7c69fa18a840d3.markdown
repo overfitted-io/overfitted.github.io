@@ -1,0 +1,123 @@
+---
+layout: post
+title:  "fcn.10004e00 @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10004e00
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10004a40][similar_1_ref] (sim.: 0.8978453096934537)
+2. [sym.libpng.dll\_png\_image\_finish\_read][similar_2_ref] (sim.: 0.8838386312761346)
+3. [fcn.1000a280][similar_3_ref] (sim.: 0.883116073152938)
+4. [fcn.10009e60][similar_4_ref] (sim.: 0.8816762787622732)
+5. [fcn.01001cf4][similar_5_ref] (sim.: 0.8810658021460818)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+push esi
+mov esi,eax
+push edi
+test esi,esi
+jne 0x10004e13
+xor edi,edi
+jmp 0x10004e44
+mov eax,dword[esi+0x254]
+push 0x100
+test eax,eax
+je 0x10004e2a
+push esi
+call eax
+add esp,8
+jmp 0x10004e33
+call dword[sym.imp.MSVCR100.dll_malloc]
+add esp,4
+test eax,eax
+jne 0x10004e42
+push str.Out_of_memory
+push esi
+call sym.libpng.dll_png_error
+mov edi,eax
+mov ecx,dword[ebp+0xc]
+mov eax,dword[ebp+8]
+add ecx,0xfffe8ce8
+mov dword[eax],edi
+cmp ecx,0x2710
+jbe 0x10004ee6
+xor ebx,ebx
+or ecx,0xffffffff
+sub ecx,edi
+mov dword[ebp-4],ebx
+mov dword[ebp-0xc],ecx
+jmp 0x10004e70
+lea esi,[edi+ebx]
+lea edx,[ecx+esi]
+cmp edx,0xfd
+ja 0x10004ecf
+fild dword[ebp-4]
+fdiv qword[0x1002e888]
+fild dword[ebp+0xc]
+fmul qword[0x1002e858]
+call sub.MSVCR100.dll__CIpow
+fmul qword[0x1002e888]
+sub esp,8
+fadd qword[0x1002e868]
+fstp qword[esp]
+call sub.MSVCR100.dll_floor
+mov ecx,dword[ebp-0xc]
+fnstcw word[ebp-2]
+movzx eax,word[ebp-2]
+add esp,8
+or eax,0xc00
+mov dword[ebp-8],eax
+fldcw word[ebp-8]
+fistp dword[ebp-8]
+mov al,byte[ebp-8]
+fldcw word[ebp-2]
+jmp 0x10004ed1
+mov al,bl
+inc ebx
+mov byte[esi],al
+mov dword[ebp-4],ebx
+cmp ebx,0x100
+jb 0x10004e70
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+xor eax,eax
+jmp 0x10004ef0
+mov byte[edi+eax],al
+inc eax
+cmp eax,0x100
+jb 0x10004ef0
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10004a40@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_image_finish_read@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.1000a280@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.10009e60@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.01001cf4@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

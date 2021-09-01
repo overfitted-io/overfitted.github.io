@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.458ca160 @ 284c9c9722cef7520dddfe58806fd72f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.458ca160
+- **Origin (md5):** 284c9c9722cef7520dddfe58806fd72f
+- **VirusTotal:** [virustotal.com/gui/file/284c9c9722cef7520dddfe58806fd72f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0041ac8a][similar_1_ref] (sim.: 0.8235498985375184)
+2. [fcn.004189a5][similar_2_ref] (sim.: 0.8234496844841961)
+3. [fcn.458e5cc0][similar_3_ref] (sim.: 0.8223106745491058)
+4. [fcn.0040ce3e][similar_4_ref] (sim.: 0.8163005444526915)
+5. [fcn.004cc499][similar_5_ref] (sim.: 0.8004748823092858)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+push esi
+push edi
+push eax
+call fcn.458ca0a0
+mov ecx,dword[esp+0x14]
+mov edx,dword[esp+0x10]
+push ecx
+mov esi,eax
+push edx
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov edi,eax
+test edi,edi
+jne 0x458ca18c
+pop edi
+xor eax,eax
+pop esi
+ret 0x10
+push ebx
+mov ebx,dword[esp+0x1c]
+test ebx,ebx
+je 0x458ca19f
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebx],eax
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+test eax,eax
+pop ebx
+je 0x458ca185
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+pop edi
+pop esi
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041ac8a@59aef7c08025d70f84c85db2092fc99e
+[similar_2_ref]: /report/fcn.004189a5@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.458e5cc0@284c9c9722cef7520dddfe58806fd72f
+[similar_4_ref]: /report/fcn.0040ce3e@a2475448bf4050c1583e1970984a4d00
+[similar_5_ref]: /report/fcn.004cc499@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/284c9c9722cef7520dddfe58806fd72f

@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.00431bd1 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00431bd1
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0056d4f6][similar_1_ref] (sim.: 0.8564900226024681)
+2. [fcn.0046e8cd][similar_2_ref] (sim.: 0.8460166010427967)
+3. [fcn.0046e68e][similar_3_ref] (sim.: 0.8378450670699058)
+4. [fcn.004052a4][similar_4_ref] (sim.: 0.8376757163239849)
+5. [fcn.0046132c][similar_5_ref] (sim.: 0.8375340657896979)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20
+mov eax,dword[0x5d9004]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+push edi
+push 6
+pop ecx
+mov ebx,dword[ebp+8]
+lea edi,[ebp-0x20]
+mov esi,str.mfcm140u.dll
+lea eax,[ebp-0x20]
+rep movsd dword es:[edi],dword ptr[esi]
+push eax
+movsw word es:[edi],word ptr[esi]
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x431c21
+push str.AfxmReleaseManagedReferences
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x431c21
+push ebx
+mov ecx,esi
+call fcn.00553897
+call esi
+pop ecx
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00553199
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0056d4f6@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0046e8cd@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_3_ref]: /report/fcn.0046e68e@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_4_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.0046132c@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

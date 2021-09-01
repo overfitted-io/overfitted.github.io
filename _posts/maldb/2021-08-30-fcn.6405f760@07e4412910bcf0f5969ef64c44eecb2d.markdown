@@ -1,0 +1,126 @@
+---
+layout: post
+title:  "fcn.6405f760 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.6405f760
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.64034ee0][similar_1_ref] (sim.: 0.9309770490237438)
+2. [fcn.640757a0][similar_2_ref] (sim.: 0.9309747580644596)
+3. [fcn.640564a0][similar_3_ref] (sim.: 0.9287634226592381)
+4. [fcn.64057020][similar_4_ref] (sim.: 0.9266304873906769)
+5. [fcn.6407d7f0][similar_5_ref] (sim.: 0.9216949974396126)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebx
+push ebp
+mov ebp,ecx
+push esi
+mov esi,dword[esp+0x18]
+mov dword[esp+0xc],ebp
+mov ebx,dword[ebp]
+lea eax,[ebx+8]
+cmp esi,eax
+jne 0x6405f785
+mov eax,dword[esp+0x14]
+mov dword[eax],esi
+pop esi
+pop ebp
+pop ebx
+pop ecx
+ret 8
+mov eax,dword[ebx]
+push edi
+cmp eax,1
+je 0x6405f7f8
+test eax,eax
+je 0x6405f7f8
+cmp dword[ebx+0xc],0
+je 0x6405f79c
+mov ebx,dword[ebx+0x14]
+jmp 0x6405f79f
+add ebx,8
+xor edi,edi
+cmp esi,ebx
+je 0x6405f7cb
+mov ebp,dword[sym.imp.Qt5Core.dll_public:_struct_QMapNodeBase_const____thiscall_QMapNodeBase::previousNode_void_const]
+jmp 0x6405f7b0
+mov ecx,esi
+call ebp
+mov esi,eax
+mov eax,dword[esp+0x1c]
+mov ecx,dword[esi+0xc]
+cmp ecx,dword[eax+0xc]
+jb 0x6405f7c7
+inc edi
+cmp esi,ebx
+jne 0x6405f7b0
+mov ebp,dword[esp+0x10]
+lea eax,[esi+0xc]
+mov ecx,ebp
+push eax
+lea eax,[esp+0x14]
+push eax
+call fcn.6405f850
+mov esi,dword[eax]
+mov dword[esp+0x1c],esi
+test edi,edi
+jle 0x6405f7f8
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_struct_QMapNodeBase____thiscall_QMapNodeBase::nextNode_void_]
+dec edi
+mov esi,eax
+mov dword[esp+0x1c],esi
+test edi,edi
+jg 0x6405f7e5
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_struct_QMapNodeBase____thiscall_QMapNodeBase::nextNode_void_]
+mov edi,dword[ebp]
+mov dword[esp+0x1c],eax
+mov ecx,dword[esi+0x10]
+test ecx,ecx
+je 0x6405f827
+add ecx,4
+or eax,0xffffffff
+lock xadd dword[ecx],eax
+jne 0x6405f827
+mov ecx,dword[esi+0x10]
+test ecx,ecx
+je 0x6405f827
+mov eax,dword[ecx]
+push 1
+call dword[eax]
+push esi
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QMapDataBase::freeNodeAndRebalance_struct_QMapNodeBase__]
+mov eax,dword[esp+0x18]
+mov ecx,dword[esp+0x1c]
+pop edi
+pop esi
+pop ebp
+mov dword[eax],ecx
+pop ebx
+pop ecx
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.64034ee0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.640757a0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.640564a0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.64057020@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.6407d7f0@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

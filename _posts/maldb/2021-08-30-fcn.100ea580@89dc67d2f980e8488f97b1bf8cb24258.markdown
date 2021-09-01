@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "fcn.100ea580 @ 89dc67d2f980e8488f97b1bf8cb24258"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100ea580
+- **Origin (md5):** 89dc67d2f980e8488f97b1bf8cb24258
+- **VirusTotal:** [virustotal.com/gui/file/89dc67d2f980e8488f97b1bf8cb24258][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100c9180][similar_1_ref] (sim.: 0.8550174812492826)
+2. [sym.libpng.dll\_png\_image\_begin\_read\_from\_file][similar_2_ref] (sim.: 0.8411429764787772)
+3. [fcn.10004e20][similar_3_ref] (sim.: 0.8359583411481759)
+4. [fcn.1000a280][similar_4_ref] (sim.: 0.8339682327242589)
+5. [fcn.10004680][similar_5_ref] (sim.: 0.8327107379798164)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebp
+mov ebp,dword[esp+0xc]
+push esi
+push edi
+mov esi,eax
+push ebx
+call fcn.100ea3a0
+mov edi,eax
+add esp,4
+test edi,edi
+jne 0x100ea5c5
+push eax
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExA]
+mov edi,eax
+test edi,edi
+jne 0x100ea5bb
+mov ecx,esi
+call fcn.100ea310
+test edi,edi
+jne 0x100ea5bb
+lea eax,[edi+1]
+pop edi
+pop esi
+pop ebp
+pop ecx
+ret 
+push edi
+push ebx
+call fcn.100ea420
+add esp,8
+cmp byte[ebp],0x2a
+jne 0x100ea5e6
+mov eax,dword[esi+8]
+mov dword[eax],1
+mov dword[eax+4],0x7ff7a501
+add dword[esi+8],8
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+pop ecx
+ret 
+push ebp
+push edi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x100ea603
+mov ecx,esi
+call fcn.100ea310
+mov eax,2
+pop edi
+pop esi
+pop ebp
+pop ecx
+ret 
+mov ecx,dword[esi+8]
+mov dword[ecx],eax
+pop edi
+mov dword[ecx+4],0x7ff7a516
+add dword[esi+8],8
+pop esi
+xor eax,eax
+pop ebp
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100c9180@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/sym.libpng.dll_png_image_begin_read_from_file@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.10004e20@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.1000a280@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/fcn.10004680@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/89dc67d2f980e8488f97b1bf8cb24258

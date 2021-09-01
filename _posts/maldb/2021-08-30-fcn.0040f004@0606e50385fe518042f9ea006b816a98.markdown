@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.0040f004 @ 0606e50385fe518042f9ea006b816a98"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040f004
+- **Origin (md5):** 0606e50385fe518042f9ea006b816a98
+- **VirusTotal:** [virustotal.com/gui/file/0606e50385fe518042f9ea006b816a98][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040f004][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040f004][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040f004][similar_3_ref] (sim.: 1.0)
+4. [fcn.0040f004][similar_4_ref] (sim.: 1.0)
+5. [fcn.0040f004][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+mov eax,dword[0x42e068]
+xor eax,ebp
+mov dword[ebp-4],eax
+and dword[ebp-8],0
+lea eax,[ebp-8]
+push eax
+push 0x4236ec
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+test eax,eax
+je 0x40f051
+push esi
+push str.CorExitProcess
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x40f050
+push dword[ebp+8]
+mov ecx,esi
+call dword[0x41f134]
+call esi
+pop esi
+cmp dword[ebp-8],0
+je 0x40f060
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.00407996
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040f004@e9c6b3bcaa2edc455cb26f1e0f4a513a
+[similar_2_ref]: /report/fcn.0040f004@31d828bf241be93b3ffe89cf3c313d44
+[similar_3_ref]: /report/fcn.0040f004@6312517583453b51c66fd5c06a181092
+[similar_4_ref]: /report/fcn.0040f004@8fe319558c6f221efde51f3acc33b19c
+[similar_5_ref]: /report/fcn.0040f004@773e84b03dfb92871dd754ab3c01c180
+[virustotal_ref]: https://www.virustotal.com/gui/file/0606e50385fe518042f9ea006b816a98

@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.00450119 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00450119
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.101034b0][similar_1_ref] (sim.: 0.9109784922932926)
+2. [fcn.004d1eae][similar_2_ref] (sim.: 0.8976194675912724)
+3. [fcn.0044cde0][similar_3_ref] (sim.: 0.8969411539156994)
+4. [fcn.00501e1f][similar_4_ref] (sim.: 0.8870038263148832)
+5. [fcn.0040a415][similar_5_ref] (sim.: 0.8864775981848291)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+push edi
+push esi
+mov edi,ecx
+call fcn.00418067
+test eax,eax
+je 0x450135
+xor eax,eax
+inc eax
+jmp 0x4501f2
+push ebx
+push dword[0x5d85b4]
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_GetPropW]
+mov ebx,eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_GlobalLock]
+test eax,eax
+je 0x4501a7
+cmp dword[eax],1
+jne 0x4501a0
+push 0
+push 0
+push 0x476
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_SendMessageW]
+test eax,eax
+jne 0x4501a0
+push ebx
+call dword[sym.imp.KERNEL32.dll_GlobalUnlock]
+push dword[0x5d85b4]
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_RemovePropW]
+test eax,eax
+je 0x45018e
+push eax
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+mov ecx,dword[edi]
+mov esi,dword[ecx+0x60]
+mov ecx,esi
+call fcn.00553897
+mov ecx,edi
+call esi
+jmp 0x4501e4
+push ebx
+call dword[sym.imp.KERNEL32.dll_GlobalUnlock]
+cmp dword[esi+4],0x100
+jne 0x4501e9
+push 0x11
+call dword[sym.imp.USER32.dll_GetAsyncKeyState]
+test ax,ax
+jns 0x4501e9
+cmp dword[esi+8],9
+je 0x4501cf
+cmp dword[esi+8],0x21
+je 0x4501cf
+cmp dword[esi+8],0x22
+jne 0x4501e9
+push esi
+push 0
+push 0x475
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_SendMessageW]
+test eax,eax
+je 0x4501e9
+xor eax,eax
+inc eax
+jmp 0x4501f1
+push esi
+mov ecx,edi
+call fcn.00418034
+pop ebx
+pop edi
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.101034b0@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.004d1eae@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.0044cde0@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.00501e1f@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0040a415@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

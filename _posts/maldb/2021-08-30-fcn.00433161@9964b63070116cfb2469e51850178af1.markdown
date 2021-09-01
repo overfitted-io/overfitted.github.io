@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.00433161 @ 9964b63070116cfb2469e51850178af1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00433161
+- **Origin (md5):** 9964b63070116cfb2469e51850178af1
+- **VirusTotal:** [virustotal.com/gui/file/9964b63070116cfb2469e51850178af1][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0042b271][similar_1_ref] (sim.: 0.8477494390079767)
+2. [fcn.00488fd4][similar_2_ref] (sim.: 0.8457758558473015)
+3. [fcn.00440bf3][similar_3_ref] (sim.: 0.8372518271949948)
+4. [fcn.0041239c][similar_4_ref] (sim.: 0.8319698711550947)
+5. [fcn.1011f088][similar_5_ref] (sim.: 0.8203993030281208)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x18
+fld qword[0x4414e0]
+fstp qword[ebp-0x10]
+fld qword[0x4414d8]
+fstp qword[ebp-0x18]
+fld qword[ebp-0x18]
+fdiv qword[ebp-0x10]
+fmul qword[ebp-0x10]
+fsubr qword[ebp-0x18]
+fstp qword[ebp-8]
+fld1 
+fcomp qword[ebp-8]
+fnstsw ax
+test ah,5
+jp 0x43315d
+xor eax,eax
+inc eax
+leave 
+ret 
+xor eax,eax
+leave 
+ret 
+push str.KERNEL32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+test eax,eax
+je 0x433185
+push 0x4414e8
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x433185
+push 0
+call eax
+ret 
+jmp 0x433123
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042b271@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00488fd4@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.00440bf3@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.0041239c@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.1011f088@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/9964b63070116cfb2469e51850178af1

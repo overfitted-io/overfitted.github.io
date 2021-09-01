@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00420ac7 @ de21a548b66aa6c0b17491b6a31e14fa"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00420ac7
+- **Origin (md5):** de21a548b66aa6c0b17491b6a31e14fa
+- **VirusTotal:** [virustotal.com/gui/file/de21a548b66aa6c0b17491b6a31e14fa][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00438486][similar_1_ref] (sim.: 0.9409539632626245)
+2. [fcn.0041bbb5][similar_2_ref] (sim.: 0.9237279226118892)
+3. [fcn.0041bbb5][similar_3_ref] (sim.: 0.9237279226118892)
+4. [fcn.0041bbb5][similar_4_ref] (sim.: 0.9237279226118892)
+5. [fcn.0041b995][similar_5_ref] (sim.: 0.923489098407098)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+mov eax,dword[0x4481b0]
+and dword[ebp-8],0
+and dword[ebp-4],0
+push ebx
+push edi
+mov edi,0xbb40e64e
+cmp eax,edi
+mov ebx,0xffff0000
+je 0x420af7
+test ebx,eax
+je 0x420af7
+not eax
+mov dword[0x4481b4],eax
+jmp 0x420b57
+push esi
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov esi,dword[ebp-4]
+xor esi,dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+xor esi,eax
+lea eax,[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[ebp-0xc]
+xor eax,dword[ebp-0x10]
+xor esi,eax
+cmp esi,edi
+jne 0x420b3d
+mov esi,0xbb40e64f
+jmp 0x420b48
+test ebx,esi
+jne 0x420b48
+mov eax,esi
+shl eax,0x10
+or esi,eax
+mov dword[0x4481b0],esi
+not esi
+mov dword[0x4481b4],esi
+pop esi
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00438486@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_2_ref]: /report/fcn.0041bbb5@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_3_ref]: /report/fcn.0041bbb5@96a869ae624ddb4834a1d5a829f85469
+[similar_4_ref]: /report/fcn.0041bbb5@505be53c36227b94e2fcc406f247f6e5
+[similar_5_ref]: /report/fcn.0041b995@e16f74a2849182d98050864255e902f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/de21a548b66aa6c0b17491b6a31e14fa

@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_image_write_to_stdio @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_image\_write\_to\_stdio
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.libpng.dll\_png\_image\_write\_to\_memory][similar_1_ref] (sim.: 0.9339801693653123)
+2. [sym.libpng.dll\_png\_image\_finish\_read][similar_2_ref] (sim.: 0.8915149006432088)
+3. [fcn.1001bad0][similar_3_ref] (sim.: 0.8910487781778509)
+4. [sym.libpng.dll\_png\_image\_begin\_read\_from\_file][similar_4_ref] (sim.: 0.8878296531037808)
+5. [sym.libpng.dll\_png\_image\_write\_to\_file][similar_5_ref] (sim.: 0.8873854536483838)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x2c
+push ebx
+mov ebx,dword[ebp+8]
+test ebx,ebx
+je 0x1001ca11
+cmp dword[ebx+4],1
+jne 0x1001ca02
+push esi
+push edi
+mov edi,dword[ebp+0xc]
+test edi,edi
+je 0x1001c9f1
+mov esi,dword[ebp+0x14]
+test esi,esi
+je 0x1001c9f1
+push ebx
+call fcn.1001bad0
+add esp,4
+test eax,eax
+je 0x1001c9e8
+mov eax,dword[ebx]
+mov ecx,dword[eax]
+push 0x2c
+lea edx,[ebp-0x2c]
+push 0
+push edx
+mov dword[ecx+0x60],edi
+call sub.MSVCR100.dll_memset
+mov eax,dword[ebp+0x18]
+mov ecx,dword[ebp+0x1c]
+mov edx,dword[ebp+0x10]
+mov dword[ebp-0x24],eax
+lea eax,[ebp-0x2c]
+push eax
+push fcn.1001c3f0
+push ebx
+mov dword[ebp-0x2c],ebx
+mov dword[ebp-0x28],esi
+mov dword[ebp-0x20],ecx
+mov dword[ebp-0x1c],edx
+call fcn.10005f20
+push ebx
+mov esi,eax
+call sym.libpng.dll_png_image_free
+add esp,0x1c
+pop edi
+mov eax,esi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,str.png_image_write_to_stdio:_invalid_argument
+call fcn.100054b0
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,str.png_image_write_to_stdio:_incorrect_PNG_IMAGE_VERSION
+call fcn.100054b0
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+xor eax,eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.libpng.dll_png_image_write_to_memory@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_image_finish_read@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.1001bad0@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/sym.libpng.dll_png_image_begin_read_from_file@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/sym.libpng.dll_png_image_write_to_file@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

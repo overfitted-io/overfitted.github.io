@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.004060f1 @ 505be53c36227b94e2fcc406f247f6e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004060f1
+- **Origin (md5):** 505be53c36227b94e2fcc406f247f6e5
+- **VirusTotal:** [virustotal.com/gui/file/505be53c36227b94e2fcc406f247f6e5][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00406421][similar_1_ref] (sim.: 0.9125584288848028)
+2. [fcn.00405bfe][similar_2_ref] (sim.: 0.8982999631328303)
+3. [fcn.00405bfe][similar_3_ref] (sim.: 0.8982999631328303)
+4. [fcn.00405bfe][similar_4_ref] (sim.: 0.8982999631328303)
+5. [fcn.00405bfe][similar_5_ref] (sim.: 0.8982999631328303)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push edi
+xor ebx,ebx
+lea edi,[esi+0x1c]
+mov dword[ebp-8],ebx
+mov dword[ebp-4],1
+jmp 0x40612c
+push ebx
+push ebx
+push ebx
+push ebx
+push edi
+call dword[sym.imp.USER32.dll_PeekMessageW]
+test eax,eax
+jne 0x406131
+push dword[ebp-8]
+mov eax,dword[esi]
+mov ecx,esi
+call dword[eax+4]
+inc dword[ebp-8]
+test eax,eax
+jne 0x40612c
+mov dword[ebp-4],ebx
+cmp dword[ebp-4],ebx
+jne 0x406109
+push ebx
+push ebx
+push ebx
+push edi
+call dword[sym.imp.USER32.dll_GetMessageW]
+cmp eax,0xffffffff
+je 0x40612c
+cmp eax,ebx
+je 0x40617a
+mov eax,dword[esi]
+push edi
+mov ecx,esi
+call dword[eax]
+test eax,eax
+jne 0x40615d
+push edi
+call dword[sym.imp.USER32.dll_TranslateMessage]
+push edi
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+mov eax,dword[esi+0x20]
+sub eax,0xf
+je 0x40612c
+sub eax,0x91
+je 0x40612c
+sub eax,0x78
+je 0x40612c
+sub eax,0xe8
+je 0x40612c
+jmp 0x4060fd
+mov eax,dword[esi+0x24]
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406421@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_2_ref]: /report/fcn.00405bfe@3d7f25d788af3e7f7707a736ac852465
+[similar_3_ref]: /report/fcn.00405bfe@e83552e81a6f265fd7baa50402d3d47d
+[similar_4_ref]: /report/fcn.00405bfe@e3d061f479f25b8f541d0905c967999c
+[similar_5_ref]: /report/fcn.00405bfe@7307643b343733b7fbd7b4b4fb482515
+[virustotal_ref]: https://www.virustotal.com/gui/file/505be53c36227b94e2fcc406f247f6e5

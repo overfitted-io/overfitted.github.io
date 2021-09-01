@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.0044eff0 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0044eff0
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00432f50][similar_1_ref] (sim.: 0.890285001760288)
+2. [fcn.0040d730][similar_2_ref] (sim.: 0.8898683981664127)
+3. [fcn.0045f3c0][similar_3_ref] (sim.: 0.8887202054214381)
+4. [fcn.0042a730][similar_4_ref] (sim.: 0.884351929478635)
+5. [fcn.00453c80][similar_5_ref] (sim.: 0.8780212263508009)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+push 0
+push 0x100
+push 2
+push 0
+push 0
+push 0x40000000
+mov eax,dword[ebp+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov dword[ebp-0x10],eax
+cmp dword[ebp-0x10],0xffffffff
+jne 0x44f01f
+xor eax,eax
+jmp 0x44f08d
+call fcn.004037a0
+mov dword[ebp-0xc],eax
+mov ecx,dword[ebp+0xc]
+push ecx
+movzx edx,word[ebp+0x10]
+push edx
+mov eax,dword[ebp-0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov dword[ebp-0x18],eax
+mov ecx,dword[ebp-0x18]
+push ecx
+mov edx,dword[ebp-0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-4],eax
+mov eax,dword[ebp-0x18]
+push eax
+mov ecx,dword[ebp-0xc]
+push ecx
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebp-8],eax
+mov dword[ebp-0x14],0
+push 0
+lea edx,[ebp-0x14]
+push edx
+mov eax,dword[ebp-8]
+push eax
+mov ecx,dword[ebp-4]
+push ecx
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+mov eax,dword[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,1
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00432f50@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0040d730@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.0045f3c0@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.0042a730@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00453c80@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

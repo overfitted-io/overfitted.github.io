@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.10019ede @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10019ede
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040f130][similar_1_ref] (sim.: 0.8917371189505805)
+2. [fcn.0041178e][similar_2_ref] (sim.: 0.8756379077309158)
+3. [fcn.10028140][similar_3_ref] (sim.: 0.8673703242228215)
+4. [fcn.100149d4][similar_4_ref] (sim.: 0.8320049897110772)
+5. [fcn.10126ec7][similar_5_ref] (sim.: 0.8277462908725834)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+xor esi,esi
+lea eax,[ebp-4]
+inc esi
+xor ebx,ebx
+push eax
+mov dword[ebp-8],esi
+mov dword[ebp-4],ebx
+call fcn.1001bea6
+cmp dword[ebp-4],5
+pop ecx
+jle 0x10019f04
+mov eax,esi
+jmp 0x10019f46
+push edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov esi,dword[eax+0x3c]
+add esi,eax
+cmp word[esi+6],bx
+movzx eax,word[esi+0x14]
+lea edi,[eax+esi+0x18]
+jbe 0x10019f42
+push edi
+push str..mixcrt
+call fcn.1001a660
+test eax,eax
+pop ecx
+pop ecx
+je 0x10019f3e
+movzx eax,word[esi+6]
+inc ebx
+add edi,0x28
+cmp ebx,eax
+jb 0x10019f1f
+jmp 0x10019f42
+and dword[ebp-8],0
+mov eax,dword[ebp-8]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040f130@6c5b0418e4a4c57d99cda47d2717045d
+[similar_2_ref]: /report/fcn.0041178e@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.10028140@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.100149d4@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.10126ec7@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

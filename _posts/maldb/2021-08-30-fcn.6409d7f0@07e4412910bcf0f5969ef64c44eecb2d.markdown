@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.6409d7f0 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.6409d7f0
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.Qt5Network.dll\_public꞉\_static\_class\_QString\_\_\_cdecl\_QHostInfo꞉꞉localDomainName\_void\_][similar_1_ref] (sim.: 0.929648164572914)
+2. [fcn.6409ab00][similar_2_ref] (sim.: 0.921454157380379)
+3. [fcn.6409c4c0][similar_3_ref] (sim.: 0.9192401752768539)
+4. [fcn.6403eac0][similar_4_ref] (sim.: 0.918216329920269)
+5. [fcn.640822d0][similar_5_ref] (sim.: 0.9175324572296214)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x818
+push esi
+call dword[sym.imp.Qt5Core.dll_public:_static_struct_QArrayData____cdecl_QArrayData::sharedNull_void_]
+push 0
+push 0
+mov dword[esp+0xc],eax
+call fcn.640a0080
+mov esi,eax
+add esp,8
+mov dword[esp+0x10],esi
+cmp esi,0x100
+jle 0x6409d832
+lea ecx,[esi*8]
+push ecx
+call dword[sym.imp.MSVCR120.dll_malloc]
+add esp,4
+mov dword[esp+0xc],esi
+jmp 0x6409d83e
+lea eax,[esp+0x1c]
+mov dword[esp+0xc],0x100
+push esi
+push eax
+mov dword[esp+0x1c],eax
+call fcn.640a0080
+add esp,8
+cmp eax,esi
+jne 0x6409d880
+push edi
+push esi
+lea ecx,[esp+0xc]
+call fcn.6409d4a0
+xor edi,edi
+test esi,esi
+je 0x6409d87f
+mov eax,dword[esp+0x18]
+lea ecx,[esp+8]
+mov eax,dword[eax+edi*8]
+mov dword[esp+0xc],eax
+lea eax,[esp+0xc]
+push eax
+call fcn.6409bee0
+inc edi
+cmp edi,esi
+jb 0x6409d861
+pop edi
+lea eax,[esp+4]
+push eax
+call fcn.64094b80
+mov eax,dword[esp+0x18]
+lea ecx,[esp+0x20]
+add esp,4
+cmp eax,ecx
+je 0x6409d8a3
+push eax
+call dword[sym.imp.MSVCR120.dll_free]
+add esp,4
+mov esi,dword[esp+4]
+mov eax,dword[esi]
+test eax,eax
+je 0x6409d8c4
+cmp eax,0xffffffff
+je 0x6409d8e2
+or eax,0xffffffff
+lock xadd dword[esi],eax
+setne al
+test al,al
+jne 0x6409d8e2
+mov esi,dword[esp+4]
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+mov ecx,esi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+push 4
+push 4
+push esi
+call dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QArrayData::deallocate_struct_QArrayData___unsigned_int__unsigned_int_]
+add esp,0xc
+pop esi
+add esp,0x818
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.Qt5Network.dll_public꞉_static_class_QString___cdecl_QHostInfo꞉꞉localDomainName_void_@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.6409ab00@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.6409c4c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.6403eac0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.640822d0@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0072f6d0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0072f6d0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0072f640][similar_1_ref] (sim.: 0.9100337632945937)
+2. [fcn.00723170][similar_2_ref] (sim.: 0.8580022264847089)
+3. [fcn.00723270][similar_3_ref] (sim.: 0.857740412052899)
+4. [fcn.0072ee70][similar_4_ref] (sim.: 0.8539919757772745)
+5. [fcn.00742ce0][similar_5_ref] (sim.: 0.8480816802792286)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+mov ebx,ecx
+sub esp,0x10
+mov edx,dword[ecx+8]
+test edx,edx
+je 0x72f732
+mov ecx,dword[ecx+0x10]
+sub ecx,edx
+lea eax,[ecx+1]
+shr eax,1
+add eax,ecx
+mov edi,dword[ebx+0xc]
+mov esi,dword[esp+0x20]
+sub edi,edx
+add esi,edi
+cmp eax,esi
+jae 0x72f720
+mov dword[esp+4],esi
+mov dword[esp],edx
+call sub.msvcrt.dll_realloc
+add esi,eax
+mov dword[ebx+8],eax
+add eax,edi
+mov dword[ebx+0x10],esi
+mov dword[ebx+0xc],eax
+add esp,0x10
+pop ebx
+pop esi
+pop edi
+ret 4
+test eax,eax
+jne 0x72f756
+mov dword[esp],edx
+xor esi,esi
+call sub.msvcrt.dll_free
+xor eax,eax
+jmp 0x72f708
+mov eax,dword[ecx]
+test eax,eax
+je 0x72f740
+mov eax,dword[ebx+0x14]
+jmp 0x72f6eb
+mov dword[esp],1
+call fcn.00742ce0
+mov edx,dword[ebx+8]
+mov dword[ebx],eax
+mov dword[ebx+4],eax
+jmp 0x72f738
+mov esi,eax
+jmp 0x72f6fa
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0072f640@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00723170@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.00723270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0072ee70@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00742ce0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

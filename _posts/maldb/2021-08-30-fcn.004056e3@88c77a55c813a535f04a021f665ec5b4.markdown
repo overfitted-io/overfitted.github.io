@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.004056e3 @ 88c77a55c813a535f04a021f665ec5b4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004056e3
+- **Origin (md5):** 88c77a55c813a535f04a021f665ec5b4
+- **VirusTotal:** [virustotal.com/gui/file/88c77a55c813a535f04a021f665ec5b4][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00405712][similar_1_ref] (sim.: 0.9326178027579886)
+2. [fcn.0040586c][similar_2_ref] (sim.: 0.9083829255449494)
+3. [fcn.0040586c][similar_3_ref] (sim.: 0.9083829255449494)
+4. [fcn.0040586c][similar_4_ref] (sim.: 0.9083829255449494)
+5. [fcn.0040586c][similar_5_ref] (sim.: 0.9083829255449494)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+push edi
+push 0x64
+pop edi
+dec edi
+mov dword[ebp+8],0x61736e
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+push 0x1a
+xor edx,edx
+pop ecx
+div ecx
+push esi
+lea eax,[ebp+8]
+push 0
+push eax
+push dword[ebp+0xc]
+add byte[ebp+0xa],dl
+call dword[sym.imp.KERNEL32.dll_GetTempFileNameA]
+test eax,eax
+jne 0x405727
+test edi,edi
+jne 0x4056ee
+and byte[esi],0
+pop edi
+pop esi
+pop ebp
+ret 8
+mov eax,esi
+jmp 0x405721
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405712@8cfdb0713f3b8f9b0a5ef775f40cf182
+[similar_2_ref]: /report/fcn.0040586c@983fe9598b69120a048e4bbfe8d8764c
+[similar_3_ref]: /report/fcn.0040586c@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_4_ref]: /report/fcn.0040586c@024d69b3dfb503973cce5c1700f282aa
+[similar_5_ref]: /report/fcn.0040586c@cce7ba37a5ac487b09e8c8d292223615
+[virustotal_ref]: https://www.virustotal.com/gui/file/88c77a55c813a535f04a021f665ec5b4

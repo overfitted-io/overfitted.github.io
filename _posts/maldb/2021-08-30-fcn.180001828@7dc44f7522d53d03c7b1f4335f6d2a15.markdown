@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "fcn.180001828 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.180001828
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.180006ed0][similar_1_ref] (sim.: 0.7736135696874042)
+2. [fcn.140006278][similar_2_ref] (sim.: 0.7645604575065155)
+3. [fcn.1400106c8][similar_3_ref] (sim.: 0.7631390761674881)
+4. [fcn.14000c76c][similar_4_ref] (sim.: 0.7581717641753534)
+5. [fcn.180003fe4][similar_5_ref] (sim.: 0.7493025548378671)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+sub rsp,0x20
+mov ebx,ecx
+lea r8,[rsp+0x38]
+lea rdx,[0x18000c360]
+xor ecx,ecx
+call qword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+test eax,eax
+je 0x180001863
+mov rcx,qword[rsp+0x38]
+lea rdx,str.CorExitProcess
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+test rax,rax
+je 0x180001863
+mov ecx,ebx
+call rax
+add rsp,0x20
+pop rbx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.180006ed0@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_2_ref]: /report/fcn.140006278@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.1400106c8@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.14000c76c@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.180003fe4@7dc44f7522d53d03c7b1f4335f6d2a15
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

@@ -1,0 +1,163 @@
+---
+layout: post
+title:  "fcn.00589eeb @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00589eeb
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004abbe2][similar_1_ref] (sim.: 0.9381599320870231)
+2. [fcn.0054bf3b][similar_2_ref] (sim.: 0.9325626489804407)
+3. [fcn.0054bf3b][similar_3_ref] (sim.: 0.9325626489804407)
+4. [fcn.0048c850][similar_4_ref] (sim.: 0.9299412034042421)
+5. [fcn.00496300][similar_5_ref] (sim.: 0.9293902869862506)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x14
+push ebx
+push esi
+push edi
+call fcn.0057c4c2
+and dword[ebp-4],0
+cmp dword[0x61031c],0
+mov ebx,eax
+jne 0x589f9c
+push str.USER32.DLL
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+test edi,edi
+je 0x58a04d
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.MessageBoxA
+push edi
+call esi
+test eax,eax
+je 0x58a04d
+push eax
+call fcn.0057c450
+mov dword[esp],0x5bc018
+push edi
+mov dword[0x61031c],eax
+call esi
+push eax
+call fcn.0057c450
+mov dword[esp],0x5bc004
+push edi
+mov dword[0x610320],eax
+call esi
+push eax
+call fcn.0057c450
+mov dword[esp],str.GetUserObjectInformationA
+push edi
+mov dword[0x610324],eax
+call esi
+push eax
+call fcn.0057c450
+pop ecx
+mov dword[0x61032c],eax
+test eax,eax
+je 0x589f9c
+push str.GetProcessWindowStation
+push edi
+call esi
+push eax
+call fcn.0057c450
+pop ecx
+mov dword[0x610328],eax
+mov eax,dword[0x610328]
+cmp eax,ebx
+je 0x589ff4
+cmp dword[0x61032c],ebx
+je 0x589ff4
+push eax
+call fcn.0057c4cb
+push dword[0x61032c]
+mov esi,eax
+call fcn.0057c4cb
+pop ecx
+pop ecx
+mov edi,eax
+test esi,esi
+je 0x589ff4
+test edi,edi
+je 0x589ff4
+call esi
+test eax,eax
+je 0x589feb
+lea ecx,[ebp-8]
+push ecx
+push 0xc
+lea ecx,[ebp-0x14]
+push ecx
+push 1
+push eax
+call edi
+test eax,eax
+je 0x589feb
+test byte[ebp-0xc],1
+jne 0x589ff4
+or dword[ebp+0x10],0x200000
+jmp 0x58a02d
+mov eax,dword[0x610320]
+cmp eax,ebx
+je 0x58a02d
+push eax
+call fcn.0057c4cb
+pop ecx
+test eax,eax
+je 0x58a02d
+call eax
+mov dword[ebp-4],eax
+test eax,eax
+je 0x58a02d
+mov eax,dword[0x610324]
+cmp eax,ebx
+je 0x58a02d
+push eax
+call fcn.0057c4cb
+pop ecx
+test eax,eax
+je 0x58a02d
+push dword[ebp-4]
+call eax
+mov dword[ebp-4],eax
+push dword[0x61031c]
+call fcn.0057c4cb
+pop ecx
+test eax,eax
+je 0x58a04d
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+push dword[ebp-4]
+call eax
+jmp 0x58a04f
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004abbe2@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0054bf3b@9a2108de6665bf53e42d7cbbbe5a0866
+[similar_3_ref]: /report/fcn.0054bf3b@90c53de31ca36ce245bc69453e4bdaaf
+[similar_4_ref]: /report/fcn.0048c850@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.00496300@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

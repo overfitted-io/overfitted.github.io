@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.004052a4 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004052a4
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004151b4][similar_1_ref] (sim.: 0.8758915354220955)
+2. [fcn.00428d93][similar_2_ref] (sim.: 0.8750864648191757)
+3. [fcn.00403b0c][similar_3_ref] (sim.: 0.8736196532357939)
+4. [fcn.00403bbc][similar_4_ref] (sim.: 0.870059217917074)
+5. [fcn.00416337][similar_5_ref] (sim.: 0.8692161543868959)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+mov eax,dword[0x43720c]
+xor eax,ebp
+mov dword[ebp-4],eax
+push edi
+mov edi,dword[ebp+8]
+push str.Shell32.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+jne 0x4052cb
+xor al,al
+jmp 0x40531e
+push esi
+push str.SHGetKnownFolderPath
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x405302
+lea eax,[ebp-0x14]
+push eax
+push str.A520A1A4_1780_4FF6_BD18_167343C5AF16
+call dword[sym.imp.ole32.dll_CLSIDFromString]
+lea eax,[ebp-0x18]
+push eax
+push 0
+push 0x400
+lea eax,[ebp-0x14]
+push eax
+call esi
+test eax,eax
+jge 0x405306
+xor al,al
+jmp 0x40531d
+push dword[ebp-0x18]
+push edi
+call fcn.00408466
+pop ecx
+pop ecx
+push edi
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+setne al
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop edi
+call fcn.004082f3
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004151b4@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00403bbc@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

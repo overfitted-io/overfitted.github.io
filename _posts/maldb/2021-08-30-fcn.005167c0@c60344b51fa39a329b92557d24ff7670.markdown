@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.005167c0 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005167c0
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00517120][similar_1_ref] (sim.: 0.8316128040434846)
+2. [fcn.005171a0][similar_2_ref] (sim.: 0.8238866268636)
+3. [fcn.004528b0][similar_3_ref] (sim.: 0.8237986122870453)
+4. [fcn.00402280][similar_4_ref] (sim.: 0.8228942762681879)
+5. [fcn.004c23a0][similar_5_ref] (sim.: 0.8185375452423569)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x24
+xor eax,eax
+push esi
+push 0x5dcf9c
+xor esi,esi
+push str.kernel32.dll
+mov dword[esp+0xc],esi
+mov dword[esp+0x10],eax
+mov dword[esp+0x14],eax
+mov dword[esp+0x18],eax
+mov dword[esp+0x1c],eax
+mov dword[esp+0x20],eax
+mov dword[esp+0x24],eax
+mov dword[esp+0x28],eax
+mov dword[esp+0x2c],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+cmp eax,esi
+jne 0x51680e
+xor eax,eax
+pop esi
+add esp,0x24
+ret 
+lea ecx,[esp+4]
+push ecx
+call eax
+mov eax,dword[esp+4]
+cmp ax,9
+je 0x516825
+cmp ax,6
+jne 0x51682a
+mov esi,1
+mov eax,esi
+pop esi
+add esp,0x24
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00517120@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.005171a0@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.004528b0@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.00402280@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.004c23a0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "fcn.00409978 @ e1cfd2251920da7635928443c90c6b4d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00409978
+- **Origin (md5):** e1cfd2251920da7635928443c90c6b4d
+- **VirusTotal:** [virustotal.com/gui/file/e1cfd2251920da7635928443c90c6b4d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004099ec][similar_1_ref] (sim.: 0.9784240015943606)
+2. [fcn.00409e8c][similar_2_ref] (sim.: 0.9704816346976843)
+3. [fcn.004099a4][similar_3_ref] (sim.: 0.968614965341861)
+4. [fcn.004099a4][similar_4_ref] (sim.: 0.968614965341861)
+5. [fcn.00409898][similar_5_ref] (sim.: 0.9639011861771675)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+add esp,0xffffffa8
+push ebx
+push esi
+push edi
+xor ebx,ebx
+mov dword[ebp-4],ebx
+mov edi,ecx
+mov esi,edx
+mov ebx,eax
+xor eax,eax
+push ebp
+push 0x409a4b
+push dword fs:[eax]
+mov dword fs:[eax],esp
+push 0x409a64
+push ebx
+push 0x409a70
+push esi
+lea eax,[ebp-4]
+mov edx,4
+call fcn.00403388
+lea eax,[ebp-0x48]
+xor ecx,ecx
+mov edx,0x44
+call fcn.00402750
+mov dword[ebp-0x48],0x44
+lea eax,[ebp-0x58]
+push eax
+lea eax,[ebp-0x48]
+push eax
+push 0
+push 0
+push 0
+push 0
+push 0
+push 0
+mov eax,dword[ebp-4]
+call fcn.004033e8
+push eax
+push 0
+call sub.kernel32.dll_CreateProcessA
+test eax,eax
+jne 0x4099f8
+mov al,0x62
+call fcn.0040961c
+mov eax,dword[ebp-0x54]
+push eax
+call sub.kernel32.dll_CloseHandle_1
+call fcn.0040994c
+push 0xff
+push 0xffffffffffffffff
+push 0
+lea eax,[ebp-0x58]
+push eax
+push 1
+call sub.user32.dll_MsgWaitForMultipleObjects
+dec eax
+je 0x409a01
+call fcn.0040994c
+push edi
+mov eax,dword[ebp-0x58]
+push eax
+call sub.kernel32.dll_GetExitCodeProcess
+mov eax,dword[ebp-0x58]
+push eax
+call sub.kernel32.dll_CloseHandle_1
+xor eax,eax
+pop edx
+pop ecx
+pop ecx
+mov dword fs:[eax],edx
+push 0x409a52
+lea eax,[ebp-4]
+call fcn.0040316c
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004099ec@7610eb4a4e290563f87db1cc0480b6e7
+[similar_2_ref]: /report/fcn.00409e8c@4f80ac3d231aa2cc69a16e7195916d21
+[similar_3_ref]: /report/fcn.004099a4@e9398015e0cb217dd733ec66460ced7d
+[similar_4_ref]: /report/fcn.004099a4@e4a72fe437dbc99d650504e450f93aae
+[similar_5_ref]: /report/fcn.00409898@241e401b92b37dc9e35b2948d20d17b3
+[virustotal_ref]: https://www.virustotal.com/gui/file/e1cfd2251920da7635928443c90c6b4d

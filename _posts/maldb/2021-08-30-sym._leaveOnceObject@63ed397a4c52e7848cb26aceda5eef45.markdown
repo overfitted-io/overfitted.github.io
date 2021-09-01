@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "sym._leaveOnceObject @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_leaveOnceObject
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.\_pop\_pthread\_mem][similar_1_ref] (sim.: 0.9377498930638499)
+2. [sym.\_pthread\_rwlock\_destroy][similar_2_ref] (sim.: 0.924427367185207)
+3. [sym.\_pthread\_spin\_destroy][similar_3_ref] (sim.: 0.9083225258026639)
+4. [sym.\_\_\_cxa\_get\_globals][similar_4_ref] (sim.: 0.9030947369574316)
+5. [fcn.0040c920][similar_5_ref] (sim.: 0.8995085461337163)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,eax
+push ebx
+sub esp,0x14
+test eax,eax
+je 0x40c25c
+mov eax,dword[0x45a3dc]
+test eax,eax
+je 0x40c2ae
+mov dword[esp],eax
+call sym.__spin_lite_lock
+mov eax,dword[0x45a3e0]
+test eax,eax
+je 0x40c2d4
+mov ebx,dword[eax]
+cmp esi,ebx
+je 0x40c285
+test ebx,ebx
+jne 0x40c236
+jmp 0x40c285
+test edx,edx
+je 0x40c23d
+mov ebx,edx
+mov edx,dword[ebx+0xc]
+cmp esi,edx
+jne 0x40c230
+test edx,edx
+je 0x40c2fa
+sub dword[esi+8],1
+je 0x40c262
+mov eax,dword[0x45a3dc]
+test eax,eax
+je 0x40c28b
+mov dword[esp],eax
+call sym.__spin_lite_unlock
+add esp,0x14
+pop ebx
+pop esi
+ret 
+lea eax,[esi+4]
+mov dword[esp],eax
+call sym._pthread_mutex_destroy
+test ebx,ebx
+je 0x40c31b
+mov eax,dword[esi+0xc]
+mov dword[ebx+0xc],eax
+mov dword[esp],esi
+call sym._free
+jmp 0x40c24b
+mov edx,ebx
+xor ebx,ebx
+jmp 0x40c23d
+mov dword[esp+8],sym.___shmem_winpthreads_init_once_global_shmem
+mov dword[esp+4],0x10
+mov dword[esp],str.once_global_shmem
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a3dc],eax
+jmp 0x40c254
+mov dword[esp+8],sym.___shmem_winpthreads_init_once_global_shmem
+mov dword[esp+4],0x10
+mov dword[esp],str.once_global_shmem
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a3dc],eax
+jmp 0x40c208
+mov dword[esp+8],0
+mov dword[esp+4],4
+mov dword[esp],str.once_obj_shmem
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a3e0],eax
+jmp 0x40c21d
+mov eax,dword[sym.imp.msvcrt.dll__iob]
+mov dword[esp+8],esi
+mov dword[esp+4],0x458bde
+add eax,0x40
+mov dword[esp],eax
+call sym._fprintf
+jmp 0x40c24b
+mov eax,dword[0x45a3e0]
+test eax,eax
+je 0x40c32e
+mov edx,dword[esi+0xc]
+mov dword[eax],edx
+jmp 0x40c27b
+mov dword[esp+8],0
+mov dword[esp+4],4
+mov dword[esp],str.once_obj_shmem
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a3e0],eax
+jmp 0x40c324
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pop_pthread_mem@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_rwlock_destroy@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/sym._pthread_spin_destroy@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/sym.___cxa_get_globals@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/fcn.0040c920@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

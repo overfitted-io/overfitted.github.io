@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.00403bbc @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00403bbc
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00403b0c][similar_1_ref] (sim.: 0.9081975712863481)
+2. [fcn.0040121c][similar_2_ref] (sim.: 0.8830498677498582)
+3. [fcn.00403708][similar_3_ref] (sim.: 0.8823196446365931)
+4. [fcn.00405d62][similar_4_ref] (sim.: 0.8822972852534351)
+5. [fcn.01001cf4][similar_5_ref] (sim.: 0.8740777217697556)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x104
+push edi
+call fcn.00403961
+push str.UseDllInstall_Start...
+call fcn.00403708
+call fcn.00401da4
+push 0x40
+xor eax,eax
+mov byte[ebp-0x104],0
+pop ecx
+lea edi,[ebp-0x103]
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+stosb byte es:[edi],al
+lea eax,[ebp-0x104]
+mov dword[esp],0x5388c0
+push eax
+call fcn.00416ea0
+lea eax,[ebp-0x104]
+push str.setup.dll
+push eax
+call fcn.00416eb0
+push str.rs_setup
+lea eax,[ebp-0x104]
+push 0x6c
+push eax
+call fcn.0040224b
+add esp,0x1c
+call fcn.00403961
+lea eax,[ebp-0x104]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+pop edi
+jne 0x403c47
+or eax,0xffffffff
+leave 
+ret 
+push esi
+push 0x42e864
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x403c63
+call fcn.00403961
+push 0
+call esi
+push str.UseDllInstall_End...
+call fcn.00403708
+pop ecx
+xor eax,eax
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040121c@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.00403708@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00405d62@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.01001cf4@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

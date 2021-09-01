@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.0047a72b @ 27ac6b5c7fa1ad11790cdc733c25a701"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0047a72b
+- **Origin (md5):** 27ac6b5c7fa1ad11790cdc733c25a701
+- **VirusTotal:** [virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0046e68e][similar_1_ref] (sim.: 0.9105570980806243)
+2. [fcn.0047ad2d][similar_2_ref] (sim.: 0.8883359219032603)
+3. [fcn.00482679][similar_3_ref] (sim.: 0.886607770206761)
+4. [fcn.0046e8cd][similar_4_ref] (sim.: 0.8786667835774794)
+5. [fcn.0045c7eb][similar_5_ref] (sim.: 0.8766409684424014)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push esi
+push 0x800
+push 0
+mov esi,str.combase.dll
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[0x4eba78],eax
+test eax,eax
+je 0x47a7b0
+push str.RoInitialize
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x47a771
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x47a7c2
+jmp 0x47a7ba
+push eax
+call fcn.0046ec52
+mov dword[esp],str.RoUninitialize
+push esi
+mov dword[0x4eba70],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x47a765
+push eax
+call fcn.0046ec52
+mov dword[0x4eba74],eax
+xor eax,eax
+pop ecx
+inc eax
+mov ecx,0x4eba7c
+xchg dword[ecx],eax
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x47a7c2
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.0046f070
+push 0x4dcfb4
+lea eax,[ebp-0x10]
+push eax
+call fcn.004841d0
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046e68e@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_2_ref]: /report/fcn.0047ad2d@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_3_ref]: /report/fcn.00482679@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_4_ref]: /report/fcn.0046e8cd@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_5_ref]: /report/fcn.0045c7eb@f47bfed80cd39ec1aff63db618c8814f
+[virustotal_ref]: https://www.virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701

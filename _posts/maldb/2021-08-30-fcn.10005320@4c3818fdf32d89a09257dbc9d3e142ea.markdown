@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "fcn.10005320 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10005320
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.10004680][similar_1_ref] (sim.: 0.806894690946667)
+2. [fcn.00401470][similar_2_ref] (sim.: 0.8029947288215804)
+3. [fcn.10007210][similar_3_ref] (sim.: 0.7991923245651389)
+4. [fcn.10013575][similar_4_ref] (sim.: 0.7962764409174697)
+5. [fcn.10004e20][similar_5_ref] (sim.: 0.7959715488620194)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,dword[esp+0x10]
+test ebp,ebp
+jne 0x10005333
+push 0x80004005
+call fcn.10004350
+push ebx
+mov ebx,dword[sym.imp.KERNEL32.dll_lstrlenW]
+push esi
+push edi
+xor edi,edi
+mov esi,ebp
+push esi
+call ebx
+add eax,1
+lea ecx,[eax+eax]
+add esi,ecx
+add edi,ecx
+cmp eax,1
+jne 0x10005340
+mov eax,dword[esp+0x18]
+mov ecx,dword[esp+0x14]
+mov edx,dword[ecx]
+push edi
+push ebp
+push 7
+push 0
+push eax
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10004680@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.00401470@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_3_ref]: /report/fcn.10007210@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.10013575@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.10004e20@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

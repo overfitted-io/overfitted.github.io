@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.0040b7d9 @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040b7d9
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040bf66][similar_1_ref] (sim.: 0.7967460923138989)
+2. [fcn.0040bf66][similar_2_ref] (sim.: 0.7967460923138989)
+3. [fcn.0041cc92][similar_3_ref] (sim.: 0.7963580047598083)
+4. [fcn.0046b66b][similar_4_ref] (sim.: 0.7882876809094936)
+5. [fcn.004090fd][similar_5_ref] (sim.: 0.7868839442258221)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+push esi
+push 0x48fcec
+push 0x491264
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x40b813
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call esi
+test eax,eax
+jne 0x40b813
+and dword[ebp-4],eax
+mov eax,dword[ebp-4]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040bf66@b8b9b802e96d8e813c605554cf6f7018
+[similar_2_ref]: /report/fcn.0040bf66@617bd594ba13d0dcc08a315774c342d4
+[similar_3_ref]: /report/fcn.0041cc92@b41633237f937bbe6f9bcfbdce811f10
+[similar_4_ref]: /report/fcn.0046b66b@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_5_ref]: /report/fcn.004090fd@fca52b995e756cff97168f6fef94b37d
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

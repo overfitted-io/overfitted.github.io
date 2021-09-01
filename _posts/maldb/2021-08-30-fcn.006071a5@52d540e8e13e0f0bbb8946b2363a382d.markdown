@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "fcn.006071a5 @ 52d540e8e13e0f0bbb8946b2363a382d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006071a5
+- **Origin (md5):** 52d540e8e13e0f0bbb8946b2363a382d
+- **VirusTotal:** [virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006070d0][similar_1_ref] (sim.: 0.9066449459651442)
+2. [fcn.0047c79c][similar_2_ref] (sim.: 0.8481847592174527)
+3. [fcn.0047c79c][similar_3_ref] (sim.: 0.8481847592174527)
+4. [fcn.0047c79c][similar_4_ref] (sim.: 0.8481847592174527)
+5. [fcn.00557903][similar_5_ref] (sim.: 0.8242628754231293)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x6a0b5c],0
+jne 0x6071e6
+push str.RoUninitialize
+push 0x800
+push 0
+push str.combase.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x6071f4
+push eax
+call dword[sym.imp.KERNEL32.dll_EncodePointer]
+mov dword[0x6a0b58],eax
+mov dword[0x6a0b5c],1
+push dword[0x6a0b58]
+call dword[sym.imp.KERNEL32.dll_DecodePointer]
+jmp eax
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006070d0@52d540e8e13e0f0bbb8946b2363a382d
+[similar_2_ref]: /report/fcn.0047c79c@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_3_ref]: /report/fcn.0047c79c@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_4_ref]: /report/fcn.0047c79c@152885a790b99953ce23874f0947b7bd
+[similar_5_ref]: /report/fcn.00557903@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d

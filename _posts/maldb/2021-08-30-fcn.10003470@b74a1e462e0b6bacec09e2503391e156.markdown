@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.10003470 @ b74a1e462e0b6bacec09e2503391e156"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10003470
+- **Origin (md5):** b74a1e462e0b6bacec09e2503391e156
+- **VirusTotal:** [virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100081fd][similar_1_ref] (sim.: 0.7823538022860634)
+2. [fcn.10005320][similar_2_ref] (sim.: 0.7749048548954907)
+3. [fcn.10002290][similar_3_ref] (sim.: 0.7731985598043353)
+4. [fcn.100affc2][similar_4_ref] (sim.: 0.7731429696535904)
+5. [fcn.00600244][similar_5_ref] (sim.: 0.7728985816905378)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+call fcn.10001250
+add esp,4
+sub dword[ebp+0xc],1
+je 0x10003488
+xor al,al
+pop ebp
+ret 0xc
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_DisableThreadLibraryCalls]
+push 0
+push 0
+push 0
+push 0x10003150
+push 0
+push 0
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+test eax,eax
+je 0x100034b2
+push 0x30
+call dword[sym.imp.USER32.dll_MessageBeep]
+mov al,1
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100081fd@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10005320@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.10002290@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.100affc2@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.00600244@52d540e8e13e0f0bbb8946b2363a382d
+[virustotal_ref]: https://www.virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156

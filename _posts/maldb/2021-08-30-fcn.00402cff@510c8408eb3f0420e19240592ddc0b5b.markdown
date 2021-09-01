@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.00402cff @ 510c8408eb3f0420e19240592ddc0b5b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00402cff
+- **Origin (md5):** 510c8408eb3f0420e19240592ddc0b5b
+- **VirusTotal:** [virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004032d2][similar_1_ref] (sim.: 0.8943519809833291)
+2. [fcn.004032d2][similar_2_ref] (sim.: 0.8943519809833291)
+3. [fcn.004032d2][similar_3_ref] (sim.: 0.8943519809833291)
+4. [fcn.00402bbe][similar_4_ref] (sim.: 0.8917518512891652)
+5. [fcn.004032d2][similar_5_ref] (sim.: 0.8805657279487246)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+xor esi,esi
+cmp dword[esp+8],esi
+je 0x402d20
+mov eax,dword[0x421428]
+cmp eax,esi
+je 0x402d18
+push eax
+call dword[sym.imp.USER32.dll_DestroyWindow]
+mov dword[0x421428],esi
+pop esi
+ret 
+cmp dword[0x421428],esi
+je 0x402d30
+push esi
+call fcn.00406374
+pop esi
+ret 
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+cmp eax,dword[0x42f410]
+jbe 0x402d61
+push esi
+push 0x402c7c
+push esi
+push 0x6f
+push dword[0x42f400]
+call dword[sym.imp.USER32.dll_CreateDialogParamA]
+push 5
+push eax
+mov dword[0x421428],eax
+call dword[sym.imp.USER32.dll_ShowWindow]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004032d2@fc08a944a357dc216338592f13f65b60
+[similar_2_ref]: /report/fcn.004032d2@e7f0482c425f7bc9cd320f60c1cfa28c
+[similar_3_ref]: /report/fcn.004032d2@59b1876779e3211327c1a96e7e2c12c4
+[similar_4_ref]: /report/fcn.00402bbe@88c77a55c813a535f04a021f665ec5b4
+[similar_5_ref]: /report/fcn.004032d2@999ae3491971c32d67bd4c32561ea381
+[virustotal_ref]: https://www.virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b

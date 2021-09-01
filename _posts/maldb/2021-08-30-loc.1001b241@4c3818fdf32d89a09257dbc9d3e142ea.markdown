@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "loc.1001b241 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** loc.1001b241
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [loc.1e1f3336][similar_1_ref] (sim.: 0.8972100926142687)
+2. [loc.1002ba9c][similar_2_ref] (sim.: 0.893404529395336)
+3. [loc.004043f6][similar_3_ref] (sim.: 0.8870732855441926)
+4. [loc.100266f4][similar_4_ref] (sim.: 0.885613484391084)
+5. [loc.0049c33c][similar_5_ref] (sim.: 0.8821987787474054)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x10035ef8],eax
+mov dword[0x10035ef4],ecx
+mov dword[0x10035ef0],edx
+mov dword[0x10035eec],ebx
+mov dword[0x10035ee8],esi
+mov dword[0x10035ee4],edi
+mov word[0x10035f10],ss
+mov word[0x10035f04],cs
+mov word[0x10035ee0],ds
+mov word[0x10035edc],es
+mov word[0x10035ed8],fs
+mov word[0x10035ed4],gs
+pushfd 
+pop dword[0x10035f08]
+mov eax,dword[ebp]
+mov dword[0x10035efc],eax
+mov eax,dword[ebp+4]
+mov dword[0x10035f00],eax
+lea eax,[ebp+8]
+mov dword[0x10035f0c],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x10035e48],0x10001
+mov eax,dword[0x10035f00]
+mov dword[0x10035dfc],eax
+mov dword[0x10035df0],0xc0000409
+mov dword[0x10035df4],1
+mov eax,dword[0x10034390]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x10034394]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x10035e40],eax
+push 1
+call fcn.1001b345
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x1002cf54
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x10035e40],0
+jne 0x1001b331
+push 1
+call fcn.1001b345
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.1e1f3336@0ecb3e79106aa3c6cb23e5d4e5e71929
+[similar_2_ref]: /report/loc.1002ba9c@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/loc.004043f6@4b23380b9a3d725ff34b4863334d2fd1
+[similar_4_ref]: /report/loc.100266f4@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/loc.0049c33c@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

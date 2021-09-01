@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.00437d5b @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00437d5b
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0048532e][similar_1_ref] (sim.: 0.8690444889657563)
+2. [fcn.00418670][similar_2_ref] (sim.: 0.8075082126888633)
+3. [fcn.0047fa31][similar_3_ref] (sim.: 0.8059741522012784)
+4. [fcn.00405d20][similar_4_ref] (sim.: 0.8049735484606193)
+5. [fcn.0049b6c7][similar_5_ref] (sim.: 0.8039723375920339)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+0x14]
+push edi
+mov edi,dword[ebp+0xc]
+imul edi,dword[ebp+0x10]
+cmp byte[esi],0
+je 0x437d8f
+push 0
+lea eax,[ebp+0x10]
+push eax
+push edi
+push dword[ebp+8]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x437d8a
+mov byte[esi+8],1
+mov eax,dword[ebp+0x10]
+jmp 0x437db7
+mov ecx,dword[esi+0x18]
+mov eax,dword[esi+0x14]
+lea edx,[ecx+edi]
+cmp edx,eax
+jbe 0x437da0
+sub eax,ecx
+mov edi,eax
+mov eax,dword[esi+0x10]
+push edi
+add eax,ecx
+push eax
+push dword[ebp+8]
+call fcn.00479600
+add esp,0xc
+add dword[esi+0x18],edi
+mov eax,edi
+xor edx,edx
+div dword[ebp+0xc]
+pop edi
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0048532e@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00418670@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0047fa31@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.00405d20@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.0049b6c7@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

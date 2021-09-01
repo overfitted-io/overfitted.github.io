@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "sym.xmrig.exe_MHD_create_response_from_data @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.xmrig.exe\_MHD\_create\_response\_from\_data
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.xmrig.exe\_MHD\_create\_response\_from\_buffer][similar_1_ref] (sim.: 0.9434038430246088)
+2. [sym.xmrig.exe\_MHD\_create\_response\_from\_fd\_at\_offset64][similar_2_ref] (sim.: 0.9146338482687281)
+3. [fcn.006bc5b0][similar_3_ref] (sim.: 0.9052537882131941)
+4. [sym.xmrig.exe\_MHD\_create\_response\_from\_callback][similar_4_ref] (sim.: 0.9047589884396959)
+5. [fcn.006abe20][similar_5_ref] (sim.: 0.9036494716408966)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x2c
+mov ebx,dword[esp+0x40]
+mov esi,dword[esp+0x44]
+test ebx,ebx
+setne al
+test esi,esi
+mov edi,eax
+jne 0x6a0542
+test al,al
+jne 0x6a0602
+mov dword[esp+4],0x68
+mov dword[esp],1
+call sub.msvcrt.dll_calloc
+test eax,eax
+mov ebp,eax
+je 0x6a0602
+mov dword[eax+0x5c],0xffffffff
+lea eax,[eax+0x1c]
+mov dword[esp+4],0x10
+mov dword[esp+0x1c],eax
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSectionAndSpinCount]
+sub esp,8
+test eax,eax
+je 0x6a05fa
+mov edx,dword[esp+0x4c]
+test edx,edx
+je 0x6a05e0
+mov eax,edi
+test al,al
+je 0x6a05e0
+mov dword[esp],ebx
+call sub.msvcrt.dll_malloc
+test eax,eax
+mov edi,eax
+je 0x6a05ea
+mov dword[esp+4],esi
+mov dword[esp+8],ebx
+mov esi,edi
+mov dword[esp],eax
+call sub.msvcrt.dll_memcpy
+mov dword[ebp+0x10],sub.msvcrt.dll_free
+mov dword[ebp+8],esi
+mov dword[ebp+0x58],1
+mov dword[ebp+0x38],ebx
+mov eax,ebp
+mov dword[ebp+0x3c],0
+mov dword[ebp+4],esi
+mov dword[ebp+0x50],ebx
+add esp,0x2c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov eax,dword[esp+0x48]
+test eax,eax
+je 0x6a05be
+jmp 0x6a05b4
+mov eax,dword[esp+0x1c]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_DeleteCriticalSection]
+sub esp,4
+mov dword[esp],ebp
+call sub.msvcrt.dll_free
+add esp,0x2c
+xor ebp,ebp
+pop ebx
+mov eax,ebp
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.xmrig.exe_MHD_create_response_from_buffer@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/sym.xmrig.exe_MHD_create_response_from_fd_at_offset64@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006bc5b0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym.xmrig.exe_MHD_create_response_from_callback@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.006abe20@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "fcn.00458af9 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00458af9
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.Install.exe\_public꞉\_unsigned\_int\_\_\_thiscall\_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal\_void\_][similar_1_ref] (sim.: 0.8637900149508916)
+2. [fcn.004088f4][similar_2_ref] (sim.: 0.8621725692371895)
+3. [fcn.0044cde0][similar_3_ref] (sim.: 0.8586787377492511)
+4. [fcn.00406434][similar_4_ref] (sim.: 0.8585960355420508)
+5. [sym.Install.exe\_public꞉\_bool\_\_\_thiscall\_DuiLib꞉꞉CPaintManagerUI꞉꞉SetNextTabControl\_bool\_][similar_5_ref] (sim.: 0.8578396964415842)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+xor ebx,ebx
+test byte[ebp+0x14],1
+mov eax,ebx
+push edi
+mov dword[ebp-4],eax
+mov edi,ebx
+je 0x458b11
+inc edi
+jmp 0x458b1a
+test byte[ebp+0x14],2
+je 0x458b1a
+push 2
+pop edi
+test byte[ebp+0x14],4
+je 0x458b59
+push esi
+lea eax,[ebp+0x14]
+mov dword[ebp+0x14],ebx
+push eax
+push 0xa
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+push 1
+push dword[ebp+0x14]
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.USERENV.dll_CreateEnvironmentBlock]
+push dword[ebp+0x14]
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+test esi,esi
+pop esi
+je 0x458b85
+mov eax,dword[ebp-4]
+push dword[ebp+0x2c]
+push dword[ebp+0x28]
+push dword[ebp+0x24]
+push eax
+mov eax,dword[ebp+0x20]
+or eax,0x400
+push eax
+push dword[ebp+0x1c]
+push ebx
+push edi
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_CreateProcessWithLogonW]
+test eax,eax
+setne bl
+cmp dword[ebp-4],0
+je 0x458b94
+push dword[ebp-4]
+call dword[sym.imp.USERENV.dll_DestroyEnvironmentBlock]
+pop edi
+mov al,bl
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0x28
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.Install.exe_public꞉_unsigned_int___thiscall_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal_void_@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.0044cde0@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.00406434@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/sym.Install.exe_public꞉_bool___thiscall_DuiLib꞉꞉CPaintManagerUI꞉꞉SetNextTabControl_bool_@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

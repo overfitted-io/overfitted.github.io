@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0044466f @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0044466f
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00446216][similar_1_ref] (sim.: 0.9244865194693315)
+2. [fcn.00420ac7][similar_2_ref] (sim.: 0.9083051562521496)
+3. [fcn.00438486][similar_3_ref] (sim.: 0.9051787130505671)
+4. [fcn.0043250e][similar_4_ref] (sim.: 0.8998506342610217)
+5. [fcn.0041b995][similar_5_ref] (sim.: 0.8997618892336807)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+mov eax,dword[0x4672d8]
+and dword[ebp-8],0
+and dword[ebp-4],0
+push ebx
+push edi
+mov edi,0xbb40e64e
+cmp eax,edi
+mov ebx,0xffff0000
+je 0x44469f
+test ebx,eax
+je 0x44469f
+not eax
+mov dword[0x4672dc],eax
+jmp 0x4446ff
+push esi
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov esi,dword[ebp-4]
+xor esi,dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+xor esi,eax
+lea eax,[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[ebp-0xc]
+xor eax,dword[ebp-0x10]
+xor esi,eax
+cmp esi,edi
+jne 0x4446e5
+mov esi,0xbb40e64f
+jmp 0x4446f0
+test ebx,esi
+jne 0x4446f0
+mov eax,esi
+shl eax,0x10
+or esi,eax
+mov dword[0x4672d8],esi
+not esi
+mov dword[0x4672dc],esi
+pop esi
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00446216@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.00420ac7@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.00438486@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_4_ref]: /report/fcn.0043250e@9964b63070116cfb2469e51850178af1
+[similar_5_ref]: /report/fcn.0041b995@e16f74a2849182d98050864255e902f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00404540 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00404540
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00479480][similar_1_ref] (sim.: 0.838259014479104)
+2. [fcn.00401470][similar_2_ref] (sim.: 0.8343082623084394)
+3. [fcn.0045d3d0][similar_3_ref] (sim.: 0.8291639156075673)
+4. [fcn.00403f74][similar_4_ref] (sim.: 0.8272645917813684)
+5. [fcn.00411130][similar_5_ref] (sim.: 0.8260693276493638)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+cmp dword[eax+0x18],0
+je 0x404552
+mov eax,1
+ret 4
+push ebx
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetTickCount]
+push edi
+call esi
+mov ecx,dword[0x4c64b8]
+mov ebx,dword[sym.imp.USER32.dll_OpenClipboard]
+push ecx
+mov edi,eax
+call ebx
+test eax,eax
+jne 0x4045c0
+mov eax,dword[0x4c28b0]
+cmp eax,0xffffffff
+je 0x404591
+test eax,eax
+je 0x4045d6
+call esi
+mov edx,dword[0x4c28b0]
+add edx,edi
+sub edx,eax
+cmp edx,5
+jle 0x4045d6
+push 1
+push 0x8000012f
+mov dword[0x4c28b4],0
+call fcn.00401340
+mov eax,dword[0x4c64b8]
+add esp,8
+push eax
+mov dword[0x4c28b4],1
+call ebx
+test eax,eax
+je 0x404572
+mov ecx,dword[esp+0x10]
+pop edi
+pop esi
+mov dword[ecx+0x18],1
+mov eax,1
+pop ebx
+ret 4
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00479480@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00401470@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_3_ref]: /report/fcn.0045d3d0@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.00403f74@ea9c1e2eeb951a8e6185c6674c228f98
+[similar_5_ref]: /report/fcn.00411130@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

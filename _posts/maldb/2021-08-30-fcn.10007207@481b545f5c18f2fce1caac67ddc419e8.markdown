@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.10007207 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10007207
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0056eb91][similar_1_ref] (sim.: 0.8537581082028185)
+2. [fcn.004239f9][similar_2_ref] (sim.: 0.8506533034199815)
+3. [fcn.0042e63c][similar_3_ref] (sim.: 0.8443911298568199)
+4. [fcn.10001d0c][similar_4_ref] (sim.: 0.8385954771867179)
+5. [fcn.10002023][similar_5_ref] (sim.: 0.8344358730094324)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_SetErrorMode]
+push 0
+call esi
+or eax,0x8001
+push eax
+call esi
+call fcn.10005f79
+mov esi,dword[esp+8]
+mov ecx,eax
+mov dword[eax+8],esi
+mov dword[eax+0xc],esi
+call fcn.100053a7
+call fcn.10005f79
+mov eax,dword[eax+4]
+test eax,eax
+je 0x10007254
+mov ecx,dword[esp+0x10]
+mov dword[eax+0x48],ecx
+mov ecx,dword[esp+0x14]
+mov dword[eax+0x4c],ecx
+mov ecx,eax
+mov dword[eax+0x44],esi
+call fcn.1000707a
+call fcn.10005f79
+cmp byte[eax+0x14],0
+pop esi
+jne 0x10007265
+call fcn.10004033
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x10007285
+push str.NotifyWinEvent
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[0x1006535c],eax
+xor eax,eax
+inc eax
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0056eb91@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.004239f9@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0042e63c@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.10001d0c@dc3e2cdf680078d293de3e2d92ba613c
+[similar_5_ref]: /report/fcn.10002023@dc3e2cdf680078d293de3e2d92ba613c
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

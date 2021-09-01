@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.004261b0 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004261b0
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00412422][similar_1_ref] (sim.: 0.8773731457486791)
+2. [fcn.00426c00][similar_2_ref] (sim.: 0.8700381961126284)
+3. [sym.\_pthread\_rwlock\_unlock][similar_3_ref] (sim.: 0.8692506942740738)
+4. [fcn.00403d56][similar_4_ref] (sim.: 0.8664572607400247)
+5. [fcn.004059f0][similar_5_ref] (sim.: 0.8662035476714802)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0xa0
+mov eax,dword[0x437388]
+push esi
+push edi
+mov esi,ecx
+push 0x431ad0
+mov dword[esp+0xa8],eax
+mov dword[esi],1
+mov dword[esi+4],0
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+mov dword[esi+0xc],eax
+je 0x4261fa
+push 0x431ac0
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[esi+8],eax
+mov eax,dword[esi+0xc]
+test eax,eax
+je 0x426208
+mov eax,dword[esi+8]
+test eax,eax
+jne 0x42620f
+mov dword[esi+4],1
+xor eax,eax
+mov ecx,0x25
+lea edi,[esp+8]
+rep stosd dword es:[edi],eax
+lea eax,[esp+8]
+push eax
+mov dword[esp+0xc],0x94
+call dword[sym.imp.KERNEL32.dll_GetVersionExA]
+cmp dword[esp+0x18],2
+jne 0x426250
+mov dword[esi],0
+mov eax,esi
+mov ecx,dword[esp+0xa4]
+call fcn.0041e6b7
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+cmp dword[esp+0xc],4
+jne 0x426266
+mov eax,dword[esp+0x10]
+test eax,eax
+jne 0x426266
+mov dword[esi+4],1
+mov ecx,dword[esp+0xa4]
+mov eax,esi
+call fcn.0041e6b7
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00412422@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_2_ref]: /report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c
+[similar_3_ref]: /report/sym._pthread_rwlock_unlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/fcn.00403d56@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_5_ref]: /report/fcn.004059f0@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

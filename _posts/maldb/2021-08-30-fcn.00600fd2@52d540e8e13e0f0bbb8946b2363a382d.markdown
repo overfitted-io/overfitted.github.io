@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.00600fd2 @ 52d540e8e13e0f0bbb8946b2363a382d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00600fd2
+- **Origin (md5):** 52d540e8e13e0f0bbb8946b2363a382d
+- **VirusTotal:** [virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100072a0][similar_1_ref] (sim.: 0.8567540283866368)
+2. [fcn.00405990][similar_2_ref] (sim.: 0.8501800092559949)
+3. [fcn.00450119][similar_3_ref] (sim.: 0.847583361061033)
+4. [fcn.004060f1][similar_4_ref] (sim.: 0.845827309939049)
+5. [fcn.004060f1][similar_5_ref] (sim.: 0.845827309939049)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+push esi
+push edi
+mov edi,ecx
+lea esi,[edi+0x1c]
+xor ebx,ebx
+inc ebx
+xor ebp,ebp
+jmp 0x601004
+push 0
+push 0
+push 0
+push 0
+push esi
+call dword[sym.imp.USER32.dll_PeekMessageW]
+test eax,eax
+jne 0x601008
+mov eax,dword[edi]
+mov ecx,edi
+push ebp
+call dword[eax+4]
+inc ebp
+test eax,eax
+jne 0x601004
+xor ebx,ebx
+test ebx,ebx
+jne 0x600fe2
+push 0
+push 0
+push 0
+push esi
+call dword[sym.imp.USER32.dll_GetMessageW]
+cmp eax,0xffffffff
+je 0x601004
+test eax,eax
+je 0x601044
+mov eax,dword[edi]
+mov ecx,edi
+push esi
+call dword[eax]
+test eax,eax
+jne 0x601037
+push esi
+call dword[sym.imp.USER32.dll_TranslateMessage]
+push esi
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+push esi
+call fcn.005fdc10
+pop ecx
+test eax,eax
+je 0x601004
+jmp 0x600fdb
+mov eax,dword[edi+0x24]
+pop edi
+pop esi
+pop ebp
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100072a0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.00405990@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.00450119@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.004060f1@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_5_ref]: /report/fcn.004060f1@505be53c36227b94e2fcc406f247f6e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d

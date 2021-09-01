@@ -1,0 +1,139 @@
+---
+layout: post
+title:  "fcn.004cc6e0 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004cc6e0
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0045d3d0][similar_1_ref] (sim.: 0.9375477194644176)
+2. [fcn.00428bb0][similar_2_ref] (sim.: 0.9298165192495809)
+3. [fcn.00450ef0][similar_3_ref] (sim.: 0.8990822190066475)
+4. [fcn.00454a20][similar_4_ref] (sim.: 0.8978488006790294)
+5. [fcn.00470b30][similar_5_ref] (sim.: 0.8975291193667513)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+push 0x168
+push 1
+mov ebx,0x200
+call dword[0x540208]
+mov edi,dword[esp+0x18]
+mov esi,eax
+add esp,8
+mov dword[edi+0x400],esi
+test esi,esi
+jne 0x4cc711
+pop edi
+pop esi
+mov eax,0x1b
+pop ebx
+ret 
+mov eax,dword[edi]
+mov eax,dword[eax+0x1f0]
+test eax,eax
+je 0x4cc735
+mov ebx,eax
+cmp ebx,0xffb8
+jg 0x4cc72c
+cmp ebx,8
+jge 0x4cc735
+pop edi
+pop esi
+mov eax,0x47
+pop ebx
+ret 
+cmp dword[esi+0x15c],0
+jne 0x4cc757
+lea ecx,[ebx+4]
+push ecx
+push 1
+call dword[0x540208]
+add esp,8
+mov dword[esi+0x15c],eax
+test eax,eax
+je 0x4cc708
+cmp dword[esi+0x160],0
+jne 0x4cc779
+lea edx,[ebx+4]
+push edx
+push 1
+call dword[0x540208]
+add esp,8
+mov dword[esi+0x160],eax
+test eax,eax
+je 0x4cc708
+mov dword[edi+0x1d4],1
+mov dword[esi+0x10],edi
+mov eax,dword[edi+0x154]
+mov dword[esi+0x14],eax
+mov dword[esi+0x158],ebx
+mov dword[esi],0
+mov dword[esi+8],0xffffff9c
+mov dword[esi+0x154],0x200
+mov ecx,dword[edi+0x4c]
+mov dx,word[ecx+4]
+lea ebx,[esi+0x48]
+mov eax,esi
+mov word[ebx],dx
+call fcn.004cbba0
+cmp dword[edi+0x22c],0
+jne 0x4cc810
+mov eax,dword[edi+0x4c]
+mov ecx,dword[eax+0x10]
+mov edx,dword[esi+0x14]
+push ecx
+push ebx
+push edx
+call dword[sym.imp.WS2_32.dll_bind]
+test eax,eax
+je 0x4cc806
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push eax
+push edi
+call fcn.004b5640
+push eax
+mov eax,dword[edi]
+push str.bind___failed___s
+push eax
+call fcn.004c0450
+add esp,0x14
+pop edi
+pop esi
+mov eax,7
+pop ebx
+ret 
+mov dword[edi+0x22c],1
+mov ecx,dword[edi]
+push ecx
+call fcn.004da940
+mov edx,dword[esp+0x18]
+add esp,4
+pop edi
+pop esi
+mov dword[edx],1
+xor eax,eax
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045d3d0@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.00428bb0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.00450ef0@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00470b30@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

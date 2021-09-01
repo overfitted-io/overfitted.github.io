@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.005034d0 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005034d0
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.MFC80D.DLL\_Ordinal\_5626][similar_1_ref] (sim.: 0.8341608820043487)
+2. [sym.MFC80D.DLL\_Ordinal\_5611][similar_2_ref] (sim.: 0.8243047103317955)
+3. [fcn.0040cdd0][similar_3_ref] (sim.: 0.8215829368657885)
+4. [fcn.004955a0][similar_4_ref] (sim.: 0.8215403809927099)
+5. [fcn.0040d730][similar_5_ref] (sim.: 0.8206768363813957)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+mov dword[ebp-8],ecx
+xor eax,eax
+jne 0x5034d9
+xor ecx,ecx
+jne 0x5034d9
+movzx edx,byte[0x6116b8]
+test edx,edx
+jne 0x50351b
+push 0x5ddcf4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+je 0x503514
+push str.RegDeleteKeyExW
+mov eax,dword[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[0x6116bc],eax
+mov byte[0x6116b8],1
+cmp dword[0x6116bc],0
+je 0x50353f
+push 0
+mov ecx,dword[ebp-8]
+mov edx,dword[ecx+4]
+push edx
+mov eax,dword[ebp+8]
+push eax
+mov ecx,dword[ebp-8]
+mov edx,dword[ecx]
+push edx
+call dword[0x6116bc]
+jmp 0x50354f
+mov eax,dword[ebp+8]
+push eax
+mov ecx,dword[ebp-8]
+mov edx,dword[ecx]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.MFC80D.DLL_Ordinal_5626@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/sym.MFC80D.DLL_Ordinal_5611@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/fcn.0040cdd0@2fcce874fb2a3a396274d2df89c397e3
+[similar_4_ref]: /report/fcn.004955a0@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.0040d730@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.140006278 @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.140006278
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.140015e00][similar_1_ref] (sim.: 0.9090678227639724)
+2. [fcn.140015a60][similar_2_ref] (sim.: 0.9082949394275162)
+3. [fcn.1400106c8][similar_3_ref] (sim.: 0.9068480776883351)
+4. [fcn.180003fe4][similar_4_ref] (sim.: 0.9053568956105398)
+5. [fcn.14000a1a4][similar_5_ref] (sim.: 0.8941749937064611)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov r11,rsp
+mov qword[r11+8],rbx
+mov qword[r11+0x10],rbp
+mov qword[r11+0x20],rsi
+push rdi
+sub rsp,0x30
+lea rax,[r11+0x18]
+mov r9,rdx
+mov r8,rcx
+mov qword[r11-0x10],rax
+xor edi,edi
+mov edx,0x1000
+xor ecx,ecx
+mov dword[rsp+0x20],edi
+call qword[sym.imp.KERNEL32.dll_CreateThread]
+mov rbp,rax
+test rax,rax
+je 0x14000633e
+lea rcx,[0x14001f160]
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rbx,qword[0x14001e5b0]
+jmp 0x140006302
+lea rsi,[rbx+0x10]
+xor edx,edx
+mov rcx,qword[rsi]
+call qword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+test eax,eax
+jne 0x1400062ff
+mov rcx,qword[rsi]
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+mov rbx,qword[rbx]
+lea rcx,[0x14001e5b0]
+mov rdx,rsi
+call fcn.140010878
+jmp 0x140006302
+mov rbx,qword[rbx]
+test rbx,rbx
+jne 0x1400062cf
+mov rdx,qword[0x14001d158]
+lea rcx,[0x14001e5b0]
+mov rdi,rdx
+inc rdx
+mov qword[0x14001d158],rdx
+lea edx,[rbx+0x20]
+call fcn.1400108c0
+lea rcx,[0x14001f160]
+mov qword[rax],rbp
+mov qword[rax+8],rdi
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov rbx,qword[rsp+0x40]
+mov rbp,qword[rsp+0x48]
+mov rsi,qword[rsp+0x58]
+mov rax,rdi
+add rsp,0x30
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140015e00@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.140015a60@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.1400106c8@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.180003fe4@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_5_ref]: /report/fcn.14000a1a4@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

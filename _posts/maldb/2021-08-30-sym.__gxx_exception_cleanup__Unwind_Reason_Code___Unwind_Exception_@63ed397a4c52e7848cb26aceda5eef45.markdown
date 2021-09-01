@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "sym.__gxx_exception_cleanup__Unwind_Reason_Code___Unwind_Exception_ @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_\_gxx\_exception\_cleanup\_\_Unwind\_Reason\_Code\_\_\_Unwind\_Exception\_
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00742ce0][similar_1_ref] (sim.: 0.7944967402654844)
+2. [fcn.1400106c8][similar_2_ref] (sim.: 0.7895233380213397)
+3. [sym.\_\_\_cxa\_free\_exception][similar_3_ref] (sim.: 0.7868318260879054)
+4. [sym.\_pthread\_rwlock\_rdlock][similar_4_ref] (sim.: 0.7824687961098397)
+5. [sym.\_\_\_cxa\_free\_dependent\_exception][similar_5_ref] (sim.: 0.7815671731939026)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x18
+cmp dword[esp+0x20],1
+mov ecx,dword[esp+0x24]
+ja 0x414076
+lock sub dword[ecx-0x40],1
+jne 0x414071
+mov eax,dword[ecx-0x2c]
+lea ebx,[ecx+0x20]
+test eax,eax
+je 0x414064
+mov ecx,ebx
+call eax
+mov dword[esp+0x20],ebx
+add esp,0x18
+pop ebx
+jmp sym.___cxa_free_exception
+add esp,0x18
+pop ebx
+ret 
+mov eax,dword[ecx-0x24]
+mov dword[esp],eax
+call method __cxxabiv1::__terminate(void (*)())
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00742ce0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.1400106c8@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/sym.___cxa_free_exception@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/sym._pthread_rwlock_rdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym.___cxa_free_dependent_exception@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

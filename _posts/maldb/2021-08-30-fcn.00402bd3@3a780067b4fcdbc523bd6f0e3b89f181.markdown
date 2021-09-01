@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00402bd3 @ 3a780067b4fcdbc523bd6f0e3b89f181"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00402bd3
+- **Origin (md5):** 3a780067b4fcdbc523bd6f0e3b89f181
+- **VirusTotal:** [virustotal.com/gui/file/3a780067b4fcdbc523bd6f0e3b89f181][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00402bd3][similar_1_ref] (sim.: 0.9998445752508868)
+2. [fcn.00402bd3][similar_2_ref] (sim.: 0.9998445752508868)
+3. [fcn.00402bd3][similar_3_ref] (sim.: 0.9998445752508868)
+4. [fcn.0040330e][similar_4_ref] (sim.: 0.8882411150830309)
+5. [fcn.0040330e][similar_5_ref] (sim.: 0.8882411150830309)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x40
+push esi
+xor esi,esi
+cmp dword[ebp+8],esi
+je 0x402bf9
+mov eax,dword[0x41704c]
+cmp eax,esi
+je 0x402bf1
+push eax
+call dword[sym.imp.USER32.dll_DestroyWindow]
+mov dword[0x41704c],esi
+jmp 0x402c6f
+cmp dword[0x41704c],esi
+je 0x402c09
+push esi
+call fcn.00405ec1
+jmp 0x402c6f
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+cmp eax,dword[0x423eac]
+jbe 0x402c6f
+cmp dword[0x423ea8],esi
+je 0x402c4c
+test byte[0x423f54],1
+je 0x402c6f
+call fcn.00402bb7
+push eax
+lea eax,[ebp-0x40]
+push str....__d__
+push eax
+call dword[sym.imp.USER32.dll_wsprintfA]
+add esp,0xc
+lea eax,[ebp-0x40]
+push eax
+push esi
+call fcn.00404f04
+jmp 0x402c6f
+push esi
+push 0x402b3b
+push esi
+push 0x6f
+push dword[0x423ea0]
+call dword[sym.imp.USER32.dll_CreateDialogParamA]
+push 5
+push eax
+mov dword[0x41704c],eax
+call dword[sym.imp.USER32.dll_ShowWindow]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402bd3@983fe9598b69120a048e4bbfe8d8764c
+[similar_2_ref]: /report/fcn.00402bd3@024d69b3dfb503973cce5c1700f282aa
+[similar_3_ref]: /report/fcn.00402bd3@cce7ba37a5ac487b09e8c8d292223615
+[similar_4_ref]: /report/fcn.0040330e@6c8b5339bada4cbd03f0f446da640707
+[similar_5_ref]: /report/fcn.0040330e@e7582fc3dadb394a1457ab7e7fbbe9a7
+[virustotal_ref]: https://www.virustotal.com/gui/file/3a780067b4fcdbc523bd6f0e3b89f181

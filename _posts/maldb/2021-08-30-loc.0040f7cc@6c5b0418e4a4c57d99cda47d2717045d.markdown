@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "loc.0040f7cc @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** loc.0040f7cc
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [loc.00410f91][similar_1_ref] (sim.: 0.9272551935676392)
+2. [loc.0042d43d][similar_2_ref] (sim.: 0.9206727600233948)
+3. [loc.00444703][similar_3_ref] (sim.: 0.9086163472598345)
+4. [loc.0040191a][similar_4_ref] (sim.: 0.9078705475207122)
+5. [loc.00436ab0][similar_5_ref] (sim.: 0.903854747284577)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x4391b8],eax
+mov dword[0x4391b4],ecx
+mov dword[0x4391b0],edx
+mov dword[0x4391ac],ebx
+mov dword[0x4391a8],esi
+mov dword[0x4391a4],edi
+mov word[0x4391d0],ss
+mov word[0x4391c4],cs
+mov word[0x4391a0],ds
+mov word[0x43919c],es
+mov word[0x439198],fs
+mov word[0x439194],gs
+pushfd 
+pop dword[0x4391c8]
+mov eax,dword[ebp]
+mov dword[0x4391bc],eax
+mov eax,dword[ebp+4]
+mov dword[0x4391c0],eax
+lea eax,[ebp+8]
+mov dword[0x4391cc],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x439108],0x10001
+mov eax,dword[0x4391c0]
+mov dword[0x4390bc],eax
+mov dword[0x4390b0],0xc0000409
+mov dword[0x4390b4],1
+mov eax,dword[0x43720c]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x437210]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x439100],eax
+push 1
+call fcn.00411ba3
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x42dec8
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x439100],0
+jne 0x40f8bc
+push 1
+call fcn.00411ba3
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.00410f91@de21a548b66aa6c0b17491b6a31e14fa
+[similar_2_ref]: /report/loc.0042d43d@9964b63070116cfb2469e51850178af1
+[similar_3_ref]: /report/loc.00444703@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/loc.0040191a@eb7f7fa38880dd66bab8caf5987e5b1a
+[similar_5_ref]: /report/loc.00436ab0@46f6c2adf1fd4d1453ed312ca79dd9bf
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

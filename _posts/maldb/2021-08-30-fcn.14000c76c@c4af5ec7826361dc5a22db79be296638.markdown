@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.14000c76c @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.14000c76c
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.140015e00][similar_1_ref] (sim.: 0.8955948287665514)
+2. [fcn.140015a60][similar_2_ref] (sim.: 0.8941609254140457)
+3. [fcn.1400106c8][similar_3_ref] (sim.: 0.8842749096093692)
+4. [fcn.140006278][similar_4_ref] (sim.: 0.8784571916336985)
+5. [fcn.180003fe4][similar_5_ref] (sim.: 0.8757967286018662)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rbp
+mov qword[rax+0x18],rsi
+mov qword[rax+0x20],rdi
+push r14
+sub rsp,0x20
+mov edx,ecx
+mov ebx,0x104
+mov ecx,ebx
+call fcn.1400112e0
+mov ecx,ebx
+mov rdx,rax
+mov rdi,rax
+call qword[sym.imp.KERNEL32.dll_GetTempPathW]
+lea rcx,str.Kernel32.DLL
+mov esi,eax
+call qword[sym.imp.KERNEL32.dll_LoadLibraryW]
+xor r14d,r14d
+mov rbp,rax
+test rax,rax
+je 0x14000c7e6
+lea rdx,str.GetLongPathNameW
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+test rax,rax
+je 0x14000c7dd
+mov r8d,ebx
+mov rdx,rdi
+mov rcx,rdi
+call rax
+mov esi,eax
+mov rcx,rbp
+call qword[sym.imp.KERNEL32.dll_FreeLibrary]
+sub ebx,esi
+mov ecx,ebx
+call fcn.1400114b0
+mov rbx,qword[rsp+0x30]
+mov rbp,qword[rsp+0x38]
+movsxd rax,esi
+mov rsi,qword[rsp+0x40]
+mov word[rdi+rax*2],r14w
+mov rdi,qword[rsp+0x48]
+add rsp,0x20
+pop r14
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140015e00@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.140015a60@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.1400106c8@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.140006278@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.180003fe4@7dc44f7522d53d03c7b1f4335f6d2a15
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

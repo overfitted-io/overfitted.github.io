@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "sym._pthread_rwlock_trywrlock @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_rwlock\_trywrlock
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.\_pthread\_rwlock\_unlock][similar_1_ref] (sim.: 0.9013491872512963)
+2. [sym.\_pthread\_rwlock\_tryrdlock][similar_2_ref] (sim.: 0.8879203333513865)
+3. [sym.\_pthread\_rwlock\_timedrdlock][similar_3_ref] (sim.: 0.8823836681736881)
+4. [sym.\_pthread\_rwlock\_rdlock][similar_4_ref] (sim.: 0.8799716627592888)
+5. [fcn.0072f640][similar_5_ref] (sim.: 0.8638386231304849)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov ebx,dword[esp+0x30]
+mov eax,ebx
+call sym._rwl_ref.isra.0
+test eax,eax
+je 0x412600
+add esp,0x1c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov esi,dword[ebx]
+lea edi,[esi+0x14]
+mov dword[esp],edi
+call sym._pthread_mutex_trylock
+test eax,eax
+jne 0x41266d
+lea eax,[esi+0x18]
+mov dword[esp],eax
+call sym._pthread_mutex_trylock
+test eax,eax
+mov ebp,eax
+jne 0x412660
+mov eax,dword[esi+8]
+mov edx,0x10
+test eax,eax
+jne 0x41266f
+mov edx,dword[esi+0x10]
+mov eax,dword[esi+0xc]
+test edx,edx
+jle 0x412644
+sub eax,edx
+mov dword[esi+0xc],eax
+mov dword[esi+0x10],0
+test eax,eax
+jle 0x412680
+xor edx,edx
+mov eax,esi
+call sym._rwlock_free_both_locks
+mov edx,0x10
+test eax,eax
+cmove eax,edx
+mov edx,eax
+jmp 0x41266f
+mov dword[esp],edi
+call sym._pthread_mutex_unlock
+test eax,eax
+cmove eax,ebp
+mov edx,eax
+add esp,0x1c
+mov eax,ebx
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp sym._rwl_unref
+mov dword[esi+8],1
+xor edx,edx
+jmp 0x41266f
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pthread_rwlock_unlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_rwlock_tryrdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/sym._pthread_rwlock_timedrdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/sym._pthread_rwlock_rdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/fcn.0072f640@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.0040fcef @ 4643b8f5a3d13e435a65fc553546b71e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040fcef
+- **Origin (md5):** 4643b8f5a3d13e435a65fc553546b71e
+- **VirusTotal:** [virustotal.com/gui/file/4643b8f5a3d13e435a65fc553546b71e][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040cd84][similar_1_ref] (sim.: 0.8394645997858543)
+2. [fcn.0040d3eb][similar_2_ref] (sim.: 0.833157451324283)
+3. [fcn.00609de1][similar_3_ref] (sim.: 0.829005208573103)
+4. [fcn.0041014f][similar_4_ref] (sim.: 0.8215841131761457)
+5. [fcn.0040e3ab][similar_5_ref] (sim.: 0.8128912745012273)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+lea eax,[ebp-4]
+push eax
+push 0x6b1490
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleExW]
+test eax,eax
+je 0x40fd1f
+push str.CorExitProcess
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x40fd1f
+push dword[ebp+8]
+call eax
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040cd84@c299206e1e94de2392d4dd9464d03d54
+[similar_2_ref]: /report/fcn.0040d3eb@90aa43862e75a7f78f2655241632f0e5
+[similar_3_ref]: /report/fcn.00609de1@52d540e8e13e0f0bbb8946b2363a382d
+[similar_4_ref]: /report/fcn.0041014f@fd17dad7a5809016e438b746adc04679
+[similar_5_ref]: /report/fcn.0040e3ab@e5be9c1df6690f9880cc7a4e3bb82114
+[virustotal_ref]: https://www.virustotal.com/gui/file/4643b8f5a3d13e435a65fc553546b71e

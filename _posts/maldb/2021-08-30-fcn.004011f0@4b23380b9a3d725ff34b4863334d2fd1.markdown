@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "fcn.004011f0 @ 4b23380b9a3d725ff34b4863334d2fd1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004011f0
+- **Origin (md5):** 4b23380b9a3d725ff34b4863334d2fd1
+- **VirusTotal:** [virustotal.com/gui/file/4b23380b9a3d725ff34b4863334d2fd1][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00402dec][similar_1_ref] (sim.: 0.8762096325099412)
+2. [fcn.00429202][similar_2_ref] (sim.: 0.8457173723525333)
+3. [fcn.100022e8][similar_3_ref] (sim.: 0.845208665554975)
+4. [fcn.10109678][similar_4_ref] (sim.: 0.8268164554808247)
+5. [fcn.00415c06][similar_5_ref] (sim.: 0.8251574594496717)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push str.mscoree.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x401219
+push str.CorExitProcess
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x401219
+push dword[ebp+8]
+call eax
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402dec@eb7f7fa38880dd66bab8caf5987e5b1a
+[similar_2_ref]: /report/fcn.00429202@9964b63070116cfb2469e51850178af1
+[similar_3_ref]: /report/fcn.100022e8@dc3e2cdf680078d293de3e2d92ba613c
+[similar_4_ref]: /report/fcn.10109678@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.00415c06@f5b8476c36459986b226c45654aeb016
+[virustotal_ref]: https://www.virustotal.com/gui/file/4b23380b9a3d725ff34b4863334d2fd1

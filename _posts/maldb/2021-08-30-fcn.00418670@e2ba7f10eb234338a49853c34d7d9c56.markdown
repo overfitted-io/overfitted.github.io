@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00418670 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00418670
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004533a0][similar_1_ref] (sim.: 0.9043079113632597)
+2. [fcn.004c2e90][similar_2_ref] (sim.: 0.8993231254704982)
+3. [fcn.00426aa0][similar_3_ref] (sim.: 0.8882635693299274)
+4. [fcn.00426c00][similar_4_ref] (sim.: 0.8878206315622521)
+5. [fcn.00518200][similar_5_ref] (sim.: 0.8852789758764826)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x94
+mov eax,dword[0x55bdf4]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+8]
+mov eax,dword[ebp+0xc]
+push ebx
+mov ebx,dword[ebp+0x14]
+push esi
+mov esi,dword[ebp+0x10]
+push edi
+mov edi,dword[ecx]
+test esi,esi
+jne 0x41869e
+lea esi,[ebp-0x94]
+mov edx,dword[eax+4]
+mov dword[esi],edx
+mov edx,dword[ecx+0x94]
+mov dword[esi+4],edx
+cmp dword[ecx+0x94],2
+mov ecx,0x11
+je 0x4186bd
+mov ecx,dword[eax+0xc]
+mov dword[esi+8],ecx
+mov ecx,dword[eax+0x10]
+mov dword[esi+0xc],ecx
+cmp ecx,0x80
+jbe 0x4186d5
+mov dword[esi+0xc],0x80
+mov ecx,dword[esi+0xc]
+mov edx,dword[eax+0x18]
+push ecx
+push edx
+lea eax,[esi+0x10]
+push eax
+call fcn.004f3c80
+add esp,0xc
+cmp dword[edi+0x1f0],0
+je 0x41871b
+push 1
+push edi
+call fcn.004117d0
+mov ecx,dword[edi+0x1f4]
+mov edx,dword[edi+0x1f0]
+push esi
+push 0
+push ecx
+call edx
+push 0
+push edi
+mov dword[ebx],eax
+call fcn.004117d0
+add esp,0x1c
+jmp 0x41872e
+mov eax,dword[esi+8]
+mov ecx,dword[esi+4]
+mov edx,dword[esi]
+push eax
+push ecx
+push edx
+call dword[sym.imp.WS2_32.dll_socket]
+mov dword[ebx],eax
+mov ecx,dword[ebp-4]
+xor eax,eax
+cmp dword[ebx],0xffffffff
+pop edi
+setne al
+pop esi
+xor ecx,ebp
+pop ebx
+dec eax
+and eax,7
+call fcn.004f166b
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004533a0@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.004c2e90@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00426aa0@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00518200@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

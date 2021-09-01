@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.00414d69 @ 912f1d013a0d6151bc7a7cef6da1b2a0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00414d69
+- **Origin (md5):** 912f1d013a0d6151bc7a7cef6da1b2a0
+- **VirusTotal:** [virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00414d69][similar_1_ref] (sim.: 1.0)
+2. [fcn.00414d69][similar_2_ref] (sim.: 1.0)
+3. [fcn.00415940][similar_3_ref] (sim.: 0.8948698421316499)
+4. [fcn.00415940][similar_4_ref] (sim.: 0.8948698421316499)
+5. [fcn.00415940][similar_5_ref] (sim.: 0.8948698421316499)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+push edi
+mov ebx,ecx
+call fcn.0041a9c8
+call fcn.00412817
+push 5
+mov ecx,ebx
+mov edi,eax
+call fcn.00414b21
+mov dword[ebp-4],eax
+pop ecx
+test eax,eax
+je 0x414e27
+push 0xf0
+mov ecx,ebx
+call fcn.00414b21
+pop ecx
+test eax,eax
+je 0x414db4
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+push dword[ebp-4]
+xor esi,esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+test eax,eax
+je 0x414e30
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-8],eax
+test eax,eax
+je 0x414e30
+mov ecx,eax
+call fcn.00414c2d
+push esi
+push 0x414ad3
+push dword[ebp+8]
+mov edi,eax
+push edi
+push ebx
+call dword[sym.imp.USER32.dll_CreateDialogIndirectParamW]
+mov ecx,eax
+mov dword[ebp-4],eax
+call fcn.00411be7
+test al,al
+jne 0x414e02
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov esi,eax
+cmp edi,dword[ebp-8]
+je 0x414e19
+test edi,edi
+je 0x414e19
+push edi
+call dword[sym.imp.KERNEL32.dll_GlobalHandle]
+push eax
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+mov edi,dword[ebp-4]
+test esi,esi
+je 0x414e27
+push esi
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+mov eax,edi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov esi,eax
+jmp 0x414e1c
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00414d69@152885a790b99953ce23874f0947b7bd
+[similar_2_ref]: /report/fcn.00414d69@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_3_ref]: /report/fcn.00415940@d701bfe1b2c669cec1fe384fdc108bfb
+[similar_4_ref]: /report/fcn.00415940@adc325bca51b67a67785e7e986af8b4d
+[similar_5_ref]: /report/fcn.00415940@5e50a67c7e8dbb50c23acbc92eb08f0e
+[virustotal_ref]: https://www.virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0

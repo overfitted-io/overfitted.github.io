@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.004090b9 @ fca52b995e756cff97168f6fef94b37d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004090b9
+- **Origin (md5):** fca52b995e756cff97168f6fef94b37d
+- **VirusTotal:** [virustotal.com/gui/file/fca52b995e756cff97168f6fef94b37d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00409d19][similar_1_ref] (sim.: 0.8732878957696082)
+2. [fcn.00409d19][similar_2_ref] (sim.: 0.8732878957696082)
+3. [fcn.00409d19][similar_3_ref] (sim.: 0.8732878957696082)
+4. [fcn.00408b87][similar_4_ref] (sim.: 0.8725123372757271)
+5. [fcn.00408b87][similar_5_ref] (sim.: 0.8725123372757271)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov ecx,eax
+test ecx,ecx
+jne 0x4090ca
+xor al,al
+ret 
+mov eax,0x5a4d
+cmp word[ecx],ax
+jne 0x4090c7
+mov eax,dword[ecx+0x3c]
+add eax,ecx
+cmp dword[eax],0x4550
+jne 0x4090c7
+mov ecx,0x10b
+cmp word[eax+0x18],cx
+jne 0x4090c7
+cmp dword[eax+0x74],0xe
+jbe 0x4090c7
+cmp dword[eax+0xe8],0
+setne al
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409d19@a7fde220a04c8ad1ded25e571c4daa50
+[similar_2_ref]: /report/fcn.00409d19@339149a6ceaff8ec9831ebc6113adb23
+[similar_3_ref]: /report/fcn.00409d19@0b073c89b077a27e3496540be7574e33
+[similar_4_ref]: /report/fcn.00408b87@ce89505d1998cb8719c6ac390eeeb98e
+[similar_5_ref]: /report/fcn.00408b87@14618ef6ca36984f994ab39b0c0ac7d8
+[virustotal_ref]: https://www.virustotal.com/gui/file/fca52b995e756cff97168f6fef94b37d

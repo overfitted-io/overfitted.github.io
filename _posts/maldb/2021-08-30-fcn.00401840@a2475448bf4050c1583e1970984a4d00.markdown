@@ -1,0 +1,171 @@
+---
+layout: post
+title:  "fcn.00401840 @ a2475448bf4050c1583e1970984a4d00"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401840
+- **Origin (md5):** a2475448bf4050c1583e1970984a4d00
+- **VirusTotal:** [virustotal.com/gui/file/a2475448bf4050c1583e1970984a4d00][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00450290][similar_1_ref] (sim.: 0.9251750831718465)
+2. [fcn.00401540][similar_2_ref] (sim.: 0.9248857203103841)
+3. [fcn.00401630][similar_3_ref] (sim.: 0.9228976704295919)
+4. [fcn.00407b10][similar_4_ref] (sim.: 0.9200762568358803)
+5. [fcn.00408f95][similar_5_ref] (sim.: 0.9187963742491585)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+push ebx
+push ebp
+push esi
+push edi
+push str.UsbIo.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov esi,eax
+test esi,esi
+jne 0x40186f
+push str.LoadLibrary__UsbIo.dll___is_failed
+call fcn.00402130
+add esp,4
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,8
+ret 
+push str.GetUSBHandle
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x40189d
+push str.UsbIo.dll_GetUSBHandle_is_fail_n
+call fcn.00402130
+add esp,4
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+pop edi
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+add esp,8
+ret 
+push 0x415d44
+push 0x4161c4
+call eax
+add esp,8
+mov ebx,eax
+test ebx,ebx
+push esi
+jne 0x4018c3
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+pop edi
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+add esp,8
+ret 
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+push 0x80
+call fcn.004043e6
+mov ebp,eax
+add esp,4
+test ebp,ebp
+jne 0x4018e4
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,8
+ret 
+xor eax,eax
+mov ecx,0x20
+mov word[esp+0x10],ax
+mov edi,0x416144
+rep stosd dword es:[edi],eax
+mov ecx,0x20
+mov edi,ebp
+mov byte[esp+0x12],al
+push eax
+rep stosd dword es:[edi],eax
+lea ecx,[esp+0x18]
+lea edx,[esp+0x14]
+push ecx
+push 0x80
+push ebp
+push 3
+push edx
+push 0x22003c
+push ebx
+mov byte[esp+0x30],3
+mov byte[esp+0x31],al
+mov byte[esp+0x32],al
+call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
+test eax,eax
+jne 0x40196a
+mov edi,0x4165d0
+or ecx,0xffffffff
+repne scasb al,byte es:[edi]
+not ecx
+sub edi,ecx
+push ebp
+mov eax,ecx
+mov esi,edi
+mov edi,0x416144
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,eax
+and ecx,3
+rep movsb byte es:[edi],byte ptr[esi]
+call fcn.0040439e
+add esp,4
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,8
+ret 
+push ebp
+push str.pBuffer___s
+call fcn.00402130
+mov ecx,dword[esp+0x1c]
+mov esi,ebp
+mov edx,ecx
+mov edi,0x416144
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,edx
+push ebp
+and ecx,3
+rep movsb byte es:[edi],byte ptr[esi]
+call fcn.0040439e
+add esp,0xc
+mov eax,1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,8
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00450290@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00401540@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_3_ref]: /report/fcn.00401630@a2475448bf4050c1583e1970984a4d00
+[similar_4_ref]: /report/fcn.00407b10@0403abd1e9e066fc89cddd5736647282
+[similar_5_ref]: /report/fcn.00408f95@fbf34fa6d7da2b8e1de5133a8ca34847
+[virustotal_ref]: https://www.virustotal.com/gui/file/a2475448bf4050c1583e1970984a4d00

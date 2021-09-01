@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.00405890 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405890
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040b5b4][similar_1_ref] (sim.: 0.7837448272287796)
+2. [sym.libpng.dll\_png\_set\_longjmp\_fn][similar_2_ref] (sim.: 0.7799597830364786)
+3. [fcn.0055fb49][similar_3_ref] (sim.: 0.7798126873236033)
+4. [fcn.00405bb7][similar_4_ref] (sim.: 0.7736131902324505)
+5. [loc.004027c2][similar_5_ref] (sim.: 0.7695607441341434)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+mov eax,dword[esi+0xd0]
+test eax,eax
+jne 0x4058dc
+push eax
+push eax
+push eax
+push eax
+push esi
+push 0x405900
+call fcn.0042c0eb
+mov dword[esi+0xd0],eax
+test eax,eax
+jne 0x4058c3
+push 0x5b88cc
+call fcn.00405f90
+add esp,4
+mov eax,dword[esi+0xd0]
+mov dword[eax+0x28],0
+mov dword[esi+0xd4],1
+pop esi
+ret 
+cmp dword[esi+0xd4],2
+jne 0x4058f8
+push dword[eax+0x2c]
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+mov dword[esi+0xd4],1
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040b5b4@a2475448bf4050c1583e1970984a4d00
+[similar_2_ref]: /report/sym.libpng.dll_png_set_longjmp_fn@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/fcn.0055fb49@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00405bb7@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/loc.004027c2@de21a548b66aa6c0b17491b6a31e14fa
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

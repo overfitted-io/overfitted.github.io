@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "fcn.0042f52f @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0042f52f
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0047d56e][similar_1_ref] (sim.: 0.934878149513692)
+2. [fcn.0042c50d][similar_2_ref] (sim.: 0.9188378107301232)
+3. [fcn.004725e2][similar_3_ref] (sim.: 0.9144779681736702)
+4. [fcn.004245c7][similar_4_ref] (sim.: 0.9097228473917505)
+5. [fcn.0044cde0][similar_5_ref] (sim.: 0.9079593304935485)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+mov esi,ecx
+push 0
+lea eax,[esi+0x44]
+push eax
+push edi
+mov dword[esi+4],edi
+mov dword[esi+8],1
+call fcn.0042f411
+add esp,0xc
+test eax,eax
+jl 0x42f637
+lea eax,[esi+0xb8]
+push eax
+push edi
+call fcn.0042cc68
+pop ecx
+pop ecx
+test eax,eax
+jl 0x42f637
+mov ecx,edi
+mov dword[esi+0x10],4
+call sym public: bool __thiscall DuiLib::CRichEditUI::IsRich(void)
+movzx eax,al
+shl eax,3
+xor eax,dword[esi+0x14]
+and eax,8
+xor dword[esi+0x14],eax
+mov edx,dword[esi+0x14]
+call sym public: int __thiscall DuiLib::CRichEditUI::GetLimitText(void)
+mov ebx,dword[ebp+0xc]
+mov dword[esi+0x1c],eax
+test ebx,ebx
+je 0x42f5b5
+mov eax,dword[ebx+0x20]
+mov dword[esi+0x10],eax
+test eax,0x100080
+jne 0x42f5b5
+or edx,2
+mov dword[esi+0x14],edx
+mov eax,dword[esi+0x10]
+test al,1
+je 0x42f5c0
+push 3
+jmp 0x42f5c6
+test al,2
+je 0x42f5ce
+push 2
+pop eax
+mov word[esi+0xd0],ax
+or dword[esi+0x14],0x20
+push str.msftedit.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+je 0x42f5f0
+push str.CreateTextServices
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp+8],eax
+cmp dword[ebp+8],0
+je 0x42f600
+lea eax,[ebp-4]
+push eax
+push esi
+push 0
+call dword[ebp+8]
+mov eax,dword[ebp-4]
+mov ecx,dword[eax]
+add esi,0xc
+push esi
+push 0x4a25a4
+push eax
+call dword[ecx]
+mov edi,eax
+mov eax,dword[ebp-4]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+test edi,edi
+jl 0x42f637
+test ebx,ebx
+je 0x42f63b
+mov eax,dword[ebx+0x24]
+test eax,eax
+je 0x42f63b
+mov ecx,dword[esi]
+mov edx,dword[ecx]
+push eax
+call dword[edx+0x38]
+test eax,eax
+jge 0x42f63b
+xor eax,eax
+jmp 0x42f63e
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047d56e@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0042c50d@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.004725e2@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.004245c7@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.0044cde0@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

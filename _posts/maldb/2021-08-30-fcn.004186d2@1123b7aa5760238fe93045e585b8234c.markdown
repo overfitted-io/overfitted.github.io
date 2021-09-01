@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.004186d2 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004186d2
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004240c1][similar_1_ref] (sim.: 0.9007820538772129)
+2. [fcn.0047c694][similar_2_ref] (sim.: 0.8971711795087473)
+3. [fcn.0047c694][similar_3_ref] (sim.: 0.8971711795087473)
+4. [fcn.0047c694][similar_4_ref] (sim.: 0.8971711795087473)
+5. [fcn.0043f9aa][similar_5_ref] (sim.: 0.8809860407147743)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push edi
+mov edi,dword[ebp+0x10]
+xor ebx,ebx
+test edi,edi
+jne 0x4186ef
+call fcn.0041db02
+mov dword[eax],0x16
+xor eax,eax
+jmp 0x418759
+push esi
+push 0x8c
+push 1
+call fcn.0041db87
+mov esi,eax
+test esi,esi
+pop ecx
+pop ecx
+je 0x418744
+push esi
+call fcn.00418fc4
+mov eax,dword[ebp+0x14]
+or dword[esi+4],0xffffffff
+mov dword[esi+0x50],eax
+mov eax,dword[ebp+0x1c]
+test eax,eax
+pop ecx
+mov dword[esi+0x4c],edi
+jne 0x418722
+lea eax,[ebp+0x10]
+push eax
+push dword[ebp+0x18]
+push esi
+push 0x41863d
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+test eax,eax
+jne 0x418758
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov ebx,eax
+push esi
+call fcn.00417b36
+test ebx,ebx
+pop ecx
+je 0x418756
+push ebx
+call fcn.0041db14
+pop ecx
+xor eax,eax
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004240c1@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.0047c694@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_3_ref]: /report/fcn.0047c694@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_4_ref]: /report/fcn.0047c694@152885a790b99953ce23874f0947b7bd
+[similar_5_ref]: /report/fcn.0043f9aa@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

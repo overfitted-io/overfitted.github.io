@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.00405990 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405990
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004b4c76][similar_1_ref] (sim.: 0.8626073392369824)
+2. [fcn.004b4a2b][similar_2_ref] (sim.: 0.8616220465037127)
+3. [fcn.004022f0][similar_3_ref] (sim.: 0.8549616823983132)
+4. [fcn.004128c6][similar_4_ref] (sim.: 0.8515844004994619)
+5. [fcn.00401b74][similar_5_ref] (sim.: 0.8505770804061189)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+mov eax,dword[0x5d9004]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+8]
+test ecx,ecx
+jle 0x405a17
+dec ecx
+mov eax,0xcccccccd
+mul ecx
+push ebx
+mov ebx,dword[sym.imp.USER32.dll_DispatchMessageW]
+mov eax,edx
+push esi
+mov esi,dword[sym.imp.USER32.dll_PeekMessageW]
+shr eax,3
+inc eax
+push edi
+mov edi,dword[sym.imp.USER32.dll_TranslateMessage]
+mov dword[ebp-0x24],eax
+nop dword[eax]
+push 0xa
+call dword[sym.imp.KERNEL32.dll_Sleep]
+push 1
+push 0
+push 0
+push 0
+lea eax,[ebp-0x20]
+push eax
+call esi
+test eax,eax
+je 0x405a0e
+nop word[eax+eax]
+lea eax,[ebp-0x20]
+push eax
+call edi
+lea eax,[ebp-0x20]
+push eax
+call ebx
+push 1
+push 0
+push 0
+push 0
+lea eax,[ebp-0x20]
+push eax
+call esi
+test eax,eax
+jne 0x4059f0
+sub dword[ebp-0x24],1
+jne 0x4059d0
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.00553199
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004b4c76@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.004b4a2b@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.004022f0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.004128c6@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

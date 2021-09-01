@@ -1,0 +1,126 @@
+---
+layout: post
+title:  "fcn.005be170 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005be170
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0068bda0][similar_1_ref] (sim.: 0.9261516863866721)
+2. [fcn.006823d0][similar_2_ref] (sim.: 0.9158548489329802)
+3. [fcn.0068f270][similar_3_ref] (sim.: 0.9122139217321664)
+4. [fcn.005235a0][similar_4_ref] (sim.: 0.9116573372058011)
+5. [fcn.0068fd90][similar_5_ref] (sim.: 0.9104222113308905)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x4c
+mov eax,dword[0x83a2c0]
+test eax,eax
+je 0x5be191
+cmp eax,0xffffffff
+je 0x5be1da
+call eax
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+sub esp,4
+test eax,eax
+je 0x5be1bb
+mov dword[esp+4],str._OPENSSL_isservice
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+sub esp,8
+mov ebx,eax
+test ebx,ebx
+je 0x5be1d0
+mov dword[0x83a2c0],ebx
+mov eax,ebx
+jmp 0x5be182
+mov dword[0x83a2c0],0xffffffff
+call dword[sym.imp.USER32.dll_GetProcessWindowStation]
+test eax,eax
+mov ebx,eax
+je 0x5be2ae
+lea edi,[ebp-0x1c]
+mov dword[esp+0xc],0
+mov dword[esp+8],0
+mov dword[esp+4],2
+mov dword[esp],eax
+mov dword[esp+0x10],edi
+mov esi,dword[sym.imp.USER32.dll_GetUserObjectInformationW]
+call esi
+sub esp,0x14
+test eax,eax
+jne 0x5be2ae
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x7a
+jne 0x5be2ae
+mov edx,dword[ebp-0x1c]
+cmp edx,0x200
+ja 0x5be2ae
+add edx,1
+and edx,0xfffffffe
+lea eax,[edx+0x20]
+mov dword[ebp-0x1c],edx
+shr eax,4
+shl eax,4
+call fcn.006acfd0
+sub esp,eax
+lea ecx,[esp+0x23]
+mov dword[esp+0x10],edi
+mov dword[esp+0xc],edx
+mov dword[esp+4],2
+mov dword[esp],ebx
+and ecx,0xfffffff0
+mov dword[esp+8],ecx
+mov dword[ebp-0x2c],ecx
+call esi
+sub esp,0x14
+test eax,eax
+je 0x5be2ae
+mov eax,dword[ebp-0x1c]
+mov ecx,dword[ebp-0x2c]
+xor edx,edx
+add eax,1
+and eax,0xfffffffe
+mov word[ecx+eax],dx
+mov dword[esp+4],0x78f84c
+mov dword[esp],ecx
+mov dword[ebp-0x1c],eax
+call sub.msvcrt.dll_wcsstr
+test eax,eax
+setne al
+movzx eax,al
+jmp 0x5be189
+mov eax,0xffffffff
+jmp 0x5be189
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006823d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.005235a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

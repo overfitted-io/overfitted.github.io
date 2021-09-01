@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "sym.libpng.dll_png_set_hIST @ 8612a093e960bd1a5a7c69fa18a840d3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.libpng.dll\_png\_set\_hIST
+- **Origin (md5):** 8612a093e960bd1a5a7c69fa18a840d3
+- **VirusTotal:** [virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.libpng.dll\_png\_set\_PLTE][similar_1_ref] (sim.: 0.8989016269077177)
+2. [sym.libpng.dll\_png\_set\_tRNS][similar_2_ref] (sim.: 0.8956323473751172)
+3. [sym.libpng.dll\_png\_set\_iCCP][similar_3_ref] (sim.: 0.8745424687109057)
+4. [fcn.1000a280][similar_4_ref] (sim.: 0.8720093792207203)
+5. [sym.libpng.dll\_png\_set\_sCAL\_s][similar_5_ref] (sim.: 0.8670331974690383)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+mov edi,dword[ebp+8]
+test edi,edi
+je 0x100182a5
+push esi
+mov esi,dword[ebp+0xc]
+test esi,esi
+je 0x100182a4
+movzx eax,word[esi+0x14]
+test ax,ax
+je 0x10018296
+mov ecx,0x100
+cmp ax,cx
+ja 0x10018296
+push 0
+push 8
+push esi
+push edi
+call sym.libpng.dll_png_free_data
+push 0x200
+push edi
+call sym.libpng.dll_png_malloc_warn
+add esp,0x18
+mov dword[esi+0xcc],eax
+test eax,eax
+jne 0x10018263
+push str.Insufficient_memory_for_hIST_chunk_data
+push edi
+call sym.libpng.dll_png_warning
+add esp,8
+pop esi
+pop edi
+pop ebp
+ret 
+or dword[esi+0xe8],8
+xor edx,edx
+xor ecx,ecx
+cmp dx,word[esi+0x14]
+jae 0x1001828e
+movzx edx,word[esi+0x14]
+mov edi,dword[ebp+0x10]
+push ebx
+lea esp,[esp]
+mov bx,word[edi+ecx*2]
+mov word[eax+ecx*2],bx
+inc ecx
+cmp ecx,edx
+jl 0x10018280
+pop ebx
+or dword[esi+8],0x40
+pop esi
+pop edi
+pop ebp
+ret 
+push str.Invalid_palette_size__hIST_allocation_skipped
+push edi
+call sym.libpng.dll_png_warning
+add esp,8
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.libpng.dll_png_set_PLTE@8612a093e960bd1a5a7c69fa18a840d3
+[similar_2_ref]: /report/sym.libpng.dll_png_set_tRNS@8612a093e960bd1a5a7c69fa18a840d3
+[similar_3_ref]: /report/sym.libpng.dll_png_set_iCCP@8612a093e960bd1a5a7c69fa18a840d3
+[similar_4_ref]: /report/fcn.1000a280@8612a093e960bd1a5a7c69fa18a840d3
+[similar_5_ref]: /report/sym.libpng.dll_png_set_sCAL_s@8612a093e960bd1a5a7c69fa18a840d3
+[virustotal_ref]: https://www.virustotal.com/gui/file/8612a093e960bd1a5a7c69fa18a840d3

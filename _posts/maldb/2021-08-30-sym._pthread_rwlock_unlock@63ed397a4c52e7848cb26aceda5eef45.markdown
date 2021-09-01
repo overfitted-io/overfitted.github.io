@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "sym._pthread_rwlock_unlock @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_rwlock\_unlock
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.\_pthread\_rwlock\_tryrdlock][similar_1_ref] (sim.: 0.9142308765940712)
+2. [sym.\_pthread\_rwlock\_timedrdlock][similar_2_ref] (sim.: 0.9136147555854406)
+3. [sym.\_pthread\_rwlock\_rdlock][similar_3_ref] (sim.: 0.9073782426635358)
+4. [sym.\_pthread\_rwlock\_trywrlock][similar_4_ref] (sim.: 0.9013491872512963)
+5. [sym.\_pthread\_rwlock\_destroy][similar_5_ref] (sim.: 0.8814979254475712)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov ebx,dword[ebp+8]
+mov eax,ebx
+call sym._rwl_ref_unlock
+test eax,eax
+jne 0x4126d8
+mov esi,dword[ebx]
+mov eax,dword[esi+8]
+test eax,eax
+je 0x4126e0
+lea eax,[esi+8]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedDecrement]
+xor edx,edx
+mov eax,esi
+sub esp,4
+call sym._rwlock_free_both_locks
+mov edx,eax
+lea esp,[ebp-0xc]
+mov eax,ebx
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp sym._rwl_unref
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+lea edi,[esi+0x18]
+mov dword[esp],edi
+call sym._pthread_mutex_lock
+test eax,eax
+mov edx,eax
+jne 0x4126ca
+lea eax,[esi+0x10]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+mov eax,dword[esi+0x10]
+sub esp,4
+test eax,eax
+je 0x412713
+mov dword[esp],edi
+call sym._pthread_mutex_unlock
+mov edx,eax
+jmp 0x4126ca
+add esi,0x1c
+mov dword[esp],esi
+call sym._pthread_cond_signal
+mov dword[esp],edi
+mov dword[ebp-0x1c],eax
+call sym._pthread_mutex_unlock
+mov edx,dword[ebp-0x1c]
+test edx,edx
+cmove edx,eax
+jmp 0x4126ca
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pthread_rwlock_tryrdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_rwlock_timedrdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/sym._pthread_rwlock_rdlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/sym._pthread_rwlock_trywrlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym._pthread_rwlock_destroy@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

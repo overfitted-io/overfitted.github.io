@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.0046568b @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0046568b
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00403834][similar_1_ref] (sim.: 0.8475596830719103)
+2. [loc.004064ba][similar_2_ref] (sim.: 0.8407974163386438)
+3. [fcn.010019c3][similar_3_ref] (sim.: 0.8396136686644898)
+4. [fcn.0040909d][similar_4_ref] (sim.: 0.8349191278659585)
+5. [fcn.00404fe9][similar_5_ref] (sim.: 0.8335206466333984)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push esi
+push edi
+xor edi,edi
+mov esi,ecx
+push edi
+push edi
+push 0x10
+push esi
+call dword[sym.imp.USER32.dll_PostMessageW]
+lea eax,[ebp-8]
+push eax
+push 0x1f4
+push 2
+push edi
+push edi
+push 0x10
+push esi
+call dword[sym.imp.USER32.dll_SendMessageTimeoutW]
+test eax,eax
+jne 0x4656e6
+lea eax,[ebp-4]
+push eax
+push esi
+call dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+push dword[ebp-4]
+push edi
+push 0x1f0fff
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov esi,eax
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403834@4c8869bb42f854640703b6ddda29ee38
+[similar_2_ref]: /report/loc.004064ba@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.010019c3@7be42d186738ec1816397d616de2cb9d
+[similar_4_ref]: /report/fcn.0040909d@470263fe7e7cc115b95cd041d643e3b5
+[similar_5_ref]: /report/fcn.00404fe9@d96761eb00d2d97e2b6f5ffffed0b46a
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

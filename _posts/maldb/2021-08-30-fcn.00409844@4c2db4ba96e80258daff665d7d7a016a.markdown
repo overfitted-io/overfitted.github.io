@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.00409844 @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00409844
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00403c03][similar_1_ref] (sim.: 0.8617504920056043)
+2. [fcn.0040473c][similar_2_ref] (sim.: 0.823477821069027)
+3. [fcn.004048f5][similar_3_ref] (sim.: 0.8189688527156954)
+4. [fcn.00403bbc][similar_4_ref] (sim.: 0.8188960732555395)
+5. [fcn.004047d3][similar_5_ref] (sim.: 0.8181030313746579)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x800
+push esi
+push edi
+push 0
+mov edi,ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push 5
+mov esi,0x4144c0
+push esi
+push eax
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x409872
+mov byte[edi+0x10],1
+jmp 0x4098a4
+mov eax,0x4144b8
+push eax
+push 1
+push 0x400
+lea ecx,[ebp-0x800]
+push ecx
+push eax
+mov ecx,edi
+call fcn.00409680
+push esi
+lea eax,[ebp-0x800]
+push eax
+call fcn.0040a93b
+neg eax
+sbb al,al
+inc al
+mov byte[edi+0x10],al
+pop edi
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403c03@5f763449465a14d1cdb5ea67e2f984d0
+[similar_2_ref]: /report/fcn.0040473c@0c82eefbb8a4714538e49f74fe0058a6
+[similar_3_ref]: /report/fcn.004048f5@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.00403bbc@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.004047d3@024d69b3dfb503973cce5c1700f282aa
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

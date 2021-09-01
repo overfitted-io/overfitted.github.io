@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.1002409f @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1002409f
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1002c47b][similar_1_ref] (sim.: 0.9205882648915374)
+2. [fcn.0041aa97][similar_2_ref] (sim.: 0.8765540447988391)
+3. [fcn.004059b0][similar_3_ref] (sim.: 0.8749507053230479)
+4. [fcn.10001d0c][similar_4_ref] (sim.: 0.861664128058099)
+5. [fcn.00444d93][similar_5_ref] (sim.: 0.858026815165721)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x14
+push 0x10030e30
+call fcn.1001584c
+xor edi,edi
+mov dword[ebp-0x1c],edi
+push dword[0x10036810]
+call fcn.10019fc1
+pop ecx
+mov esi,eax
+cmp esi,edi
+jne 0x10024115
+lea eax,[ebp-0x1c]
+push eax
+call fcn.1001be6f
+pop ecx
+cmp eax,edi
+je 0x100240dd
+push edi
+push edi
+push edi
+push edi
+push edi
+call fcn.10013bef
+add esp,0x14
+cmp dword[ebp-0x1c],1
+je 0x10024104
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+cmp eax,edi
+je 0x10024104
+push 0x1002e628
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+cmp esi,edi
+jne 0x10024109
+mov esi,0x1002408f
+push esi
+call fcn.10019f4a
+pop ecx
+mov dword[0x10036810],eax
+mov dword[ebp-4],edi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call esi
+mov dword[ebp-0x20],eax
+jmp 0x10024154
+mov dword[ebp-4],0xfffffffe
+mov eax,dword[ebp-0x20]
+call fcn.10015891
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1002c47b@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.0041aa97@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.004059b0@e38ba004520fa1a86a35b63e8d5843ef
+[similar_4_ref]: /report/fcn.10001d0c@dc3e2cdf680078d293de3e2d92ba613c
+[similar_5_ref]: /report/fcn.00444d93@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

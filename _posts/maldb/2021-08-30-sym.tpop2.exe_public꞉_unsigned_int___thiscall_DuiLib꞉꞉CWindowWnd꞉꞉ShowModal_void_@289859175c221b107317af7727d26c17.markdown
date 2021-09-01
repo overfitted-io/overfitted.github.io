@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "sym.tpop2.exe_public꞉_unsigned_int___thiscall_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal_void_ @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.tpop2.exe\_public꞉\_unsigned\_int\_\_\_thiscall\_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal\_void\_
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.Install.exe\_public꞉\_unsigned\_int\_\_\_thiscall\_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal\_void\_][similar_1_ref] (sim.: 0.9329217888647364)
+2. [fcn.00406cfe][similar_2_ref] (sim.: 0.908768091295895)
+3. [fcn.00401c59][similar_3_ref] (sim.: 0.9046632519548297)
+4. [fcn.00404ba4][similar_4_ref] (sim.: 0.9029748102192547)
+5. [[...].exe\_public꞉\_void\_\_\_thiscall\_DuiLib꞉꞉CPaintManagerUI꞉꞉SetFocusNeeded\_class\_DuiLib꞉꞉CControlUI\_\_][similar_5_ref] (sim.: 0.9029220375215425)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+push ebx
+push esi
+push edi
+mov esi,ecx
+push 4
+push dword[esi+4]
+xor edi,edi
+mov dword[ebp-8],edi
+call dword[sym.imp.USER32.dll_GetWindow]
+push 1
+push dword[esi+4]
+mov dword[ebp-4],eax
+call dword[sym.imp.USER32.dll_ShowWindow]
+mov ebx,dword[sym.imp.USER32.dll_EnableWindow]
+push edi
+push dword[ebp-4]
+call ebx
+mov dword[ebp-0x24],edi
+push 6
+pop ecx
+xor eax,eax
+lea edi,[ebp-0x20]
+rep stosd dword es:[edi],eax
+mov edi,dword[sym.imp.USER32.dll_IsWindow]
+jmp 0x40fe4a
+xor eax,eax
+push eax
+push eax
+push eax
+lea eax,[ebp-0x24]
+push eax
+call dword[sym.imp.USER32.dll_GetMessageW]
+test eax,eax
+je 0x40fe53
+cmp dword[ebp-0x20],0x10
+jne 0x40fe22
+mov eax,dword[ebp-0x24]
+cmp eax,dword[esi+4]
+jne 0x40fe22
+mov eax,dword[ebp-0x1c]
+push 1
+push dword[ebp-4]
+mov dword[ebp-8],eax
+call ebx
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_SetFocus]
+lea eax,[ebp-0x24]
+push eax
+call sym public: static bool __cdecl DuiLib::CPaintManagerUI::TranslateMessage(struct tagMSG*const)
+pop ecx
+test al,al
+jne 0x40fe44
+lea eax,[ebp-0x24]
+push eax
+call dword[sym.imp.USER32.dll_TranslateMessage]
+lea eax,[ebp-0x24]
+push eax
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+cmp dword[ebp-0x20],0x12
+je 0x40fe53
+push dword[esi+4]
+call edi
+test eax,eax
+jne 0x40fdeb
+push 1
+push dword[ebp-4]
+call ebx
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_SetFocus]
+cmp dword[ebp-0x20],0x12
+pop edi
+pop esi
+pop ebx
+jne 0x40fe75
+push dword[ebp-0x1c]
+call dword[sym.imp.USER32.dll_PostQuitMessage]
+mov eax,dword[ebp-8]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.Install.exe_public꞉_unsigned_int___thiscall_DuiLib꞉꞉CWindowWnd꞉꞉ShowModal_void_@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00406cfe@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00401c59@4c8869bb42f854640703b6ddda29ee38
+[similar_4_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[similar_5_ref]: /report/[...].exe_public꞉_void___thiscall_DuiLib꞉꞉CPaintManagerUI꞉꞉SetFocusNeeded_class_DuiLib꞉꞉CControlUI__@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

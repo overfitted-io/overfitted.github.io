@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.1001425d @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1001425d
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100145d9][similar_1_ref] (sim.: 0.9104179140035377)
+2. [fcn.10014366][similar_2_ref] (sim.: 0.9010461165796247)
+3. [fcn.100142df][similar_3_ref] (sim.: 0.8966891294216998)
+4. [fcn.10014112][similar_4_ref] (sim.: 0.8889823423899589)
+5. [fcn.10014957][similar_5_ref] (sim.: 0.8832844562887265)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[0x101a0c80]
+push esi
+test eax,eax
+jne 0x10014295
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x100142bd
+push str.CompareStringEx
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+push esi
+call dword[sym.imp.KERNEL32.dll_EncodePointer]
+mov dword[0x101a0c80],eax
+jmp 0x1001429e
+push eax
+call dword[sym.imp.KERNEL32.dll_DecodePointer]
+mov esi,eax
+test esi,esi
+je 0x100142bd
+xor eax,eax
+push eax
+push eax
+push eax
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call esi
+jmp 0x100142dc
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call fcn.10139ddd
+pop ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_CompareStringW]
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100145d9@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10014366@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.100142df@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.10014112@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.10014957@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

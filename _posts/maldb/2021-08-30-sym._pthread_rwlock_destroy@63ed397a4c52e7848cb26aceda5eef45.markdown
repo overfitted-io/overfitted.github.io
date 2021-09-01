@@ -1,0 +1,126 @@
+---
+layout: post
+title:  "sym._pthread_rwlock_destroy @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_rwlock\_destroy
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [sym.\_leaveOnceObject][similar_1_ref] (sim.: 0.924427367185207)
+2. [sym.\_pthread\_spin\_destroy][similar_2_ref] (sim.: 0.9133520684072367)
+3. [fcn.0040c920][similar_3_ref] (sim.: 0.9115775378289981)
+4. [fcn.0041310b][similar_4_ref] (sim.: 0.9105395862345024)
+5. [sym.\_pthread\_rwlock\_timedrdlock][similar_5_ref] (sim.: 0.9097781908967753)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x20
+mov edx,dword[0x45a438]
+mov esi,dword[esp+0x30]
+test edx,edx
+je 0x412323
+mov dword[esp],edx
+call sym.__spin_lite_lock
+lea edx,[esp+0x1c]
+mov eax,esi
+call sym._rwl_ref_destroy
+mov edx,dword[0x45a438]
+test edx,edx
+mov ebx,eax
+je 0x412350
+mov dword[esp],edx
+call sym.__spin_lite_unlock
+test ebx,ebx
+jne 0x412309
+mov edi,dword[esp+0x1c]
+test edi,edi
+je 0x412309
+mov eax,edi
+call sym._rwlock_gain_both_locks
+test eax,eax
+jne 0x412312
+mov eax,dword[edi+0x10]
+cmp dword[edi+0xc],eax
+jg 0x4122ed
+mov eax,dword[edi+8]
+test eax,eax
+jle 0x412378
+mov eax,dword[esp+0x1c]
+mov edx,1
+mov ebx,0x10
+mov dword[esi],eax
+mov eax,edi
+call sym._rwlock_free_both_locks
+test eax,eax
+cmovne ebx,eax
+add esp,0x20
+mov eax,ebx
+pop ebx
+pop esi
+pop edi
+ret 
+mov edx,dword[esp+0x1c]
+mov ebx,eax
+mov eax,ebx
+mov dword[esi],edx
+add esp,0x20
+pop ebx
+pop esi
+pop edi
+ret 
+mov dword[esp+8],sym.___shmem_winpthreads_init_cond_locked_shmem_rwlock
+mov dword[esp+4],0x10
+mov dword[esp],str.cond_locked_shmem_rwlock
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a438],eax
+mov edx,eax
+jmp 0x412298
+mov dword[esp+8],sym.___shmem_winpthreads_init_cond_locked_shmem_rwlock
+mov dword[esp+4],0x10
+mov dword[esp],str.cond_locked_shmem_rwlock
+call sym.___shmem_winpthreads_grab
+mov dword[0x45a438],eax
+mov edx,eax
+jmp 0x4122bb
+xor edx,edx
+mov eax,edi
+mov dword[edi],0xdeadb0ef
+call sym._rwlock_free_both_locks
+test eax,eax
+jne 0x412312
+lea eax,[edi+0x1c]
+mov dword[esp],eax
+call sym._pthread_cond_destroy
+lea eax,[edi+0x14]
+mov dword[esp],eax
+call sym._pthread_mutex_destroy
+lea eax,[edi+0x18]
+mov dword[esp],eax
+call sym._pthread_mutex_destroy
+mov eax,dword[esp+0x1c]
+mov dword[edi],0xdeadb0ef
+mov dword[esp],eax
+call sym._free
+jmp 0x412309
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._leaveOnceObject@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_spin_destroy@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/fcn.0040c920@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0041310b@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_5_ref]: /report/sym._pthread_rwlock_timedrdlock@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

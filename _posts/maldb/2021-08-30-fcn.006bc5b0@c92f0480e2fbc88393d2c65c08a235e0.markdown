@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "fcn.006bc5b0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.006bc5b0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.006bcb40][similar_1_ref] (sim.: 0.9218694660842242)
+2. [fcn.0068bfa0][similar_2_ref] (sim.: 0.9158740208945254)
+3. [sym.\_pthread\_cond\_init][similar_3_ref] (sim.: 0.9118778100203848)
+4. [fcn.0068f270][similar_4_ref] (sim.: 0.9116560280862102)
+5. [sym.xmrig.exe\_MHD\_create\_response\_for\_upgrade][similar_5_ref] (sim.: 0.9069554729266598)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x10
+mov esi,dword[esp+0x20]
+mov eax,dword[esp+0x24]
+test esi,esi
+je 0x6bc700
+test eax,eax
+je 0x6bc5d3
+cmp dword[eax],1
+je 0x6bc710
+mov dword[esp+4],0x6c
+mov dword[esp],1
+call sub.msvcrt.dll_calloc
+mov ebx,eax
+mov eax,0xc
+test ebx,ebx
+je 0x6bc6b6
+mov edi,dword[sym.imp.KERNEL32.dll_CreateSemaphoreA]
+mov dword[ebx],0xc0deadbf
+mov dword[ebx+4],0
+mov dword[ebx+8],0
+mov dword[ebx+0x10],0
+mov dword[ebx+0xc],0
+mov dword[esp+0xc],0
+mov dword[esp+8],0x7fffffff
+mov dword[esp+4],0
+mov dword[esp],0
+call edi
+sub esp,0x10
+mov dword[ebx+0x64],eax
+mov dword[esp+0xc],0
+mov dword[esp+8],0x7fffffff
+mov dword[esp+4],0
+mov dword[esp],0
+call edi
+mov edx,dword[ebx+0x64]
+sub esp,0x10
+mov dword[ebx+0x68],eax
+test edx,edx
+je 0x6bc6cf
+test eax,eax
+je 0x6bc6c0
+lea eax,[ebx+0x14]
+mov edi,dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov dword[esp],eax
+call edi
+lea eax,[ebx+0x48]
+sub esp,4
+mov dword[esp],eax
+call edi
+lea eax,[ebx+0x2c]
+sub esp,4
+mov dword[esp],eax
+call edi
+mov dword[ebx+0x44],0
+sub esp,4
+mov dword[ebx+0x60],1
+mov dword[ebx],0xc0bab1fd
+mov dword[esi],ebx
+xor eax,eax
+add esp,0x10
+pop ebx
+pop esi
+pop edi
+ret 
+mov dword[esp],edx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[ebx+0x68]
+sub esp,4
+test eax,eax
+je 0x6bc6df
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+sub esp,4
+mov dword[esp],ebx
+call sub.msvcrt.dll_free
+mov dword[esi],0
+add esp,0x10
+mov eax,0xb
+pop ebx
+pop esi
+pop edi
+ret 
+add esp,0x10
+mov eax,0x16
+pop ebx
+pop esi
+pop edi
+ret 
+add esp,0x10
+mov eax,0x28
+pop ebx
+pop esi
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006bcb40@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/sym._pthread_cond_init@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/sym.xmrig.exe_MHD_create_response_for_upgrade@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

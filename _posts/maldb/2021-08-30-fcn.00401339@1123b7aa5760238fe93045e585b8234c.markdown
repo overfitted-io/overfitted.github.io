@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "fcn.00401339 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401339
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00420db0][similar_1_ref] (sim.: 0.8754910207182651)
+2. [fcn.00414d69][similar_2_ref] (sim.: 0.8742018035396775)
+3. [fcn.00414d69][similar_3_ref] (sim.: 0.8742018035396775)
+4. [fcn.00414d69][similar_4_ref] (sim.: 0.8742018035396775)
+5. [fcn.00403908][similar_5_ref] (sim.: 0.8737281773526063)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x28
+push edi
+push 0x42e3e4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+test edi,edi
+je 0x4013ef
+push ebx
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.OpenThread
+push edi
+call esi
+push str.Thread32First
+push edi
+mov dword[ebp-4],eax
+call esi
+push str.Thread32Next
+push edi
+mov ebx,eax
+call esi
+push 0x42e39c
+push edi
+mov dword[ebp-8],eax
+call esi
+xor ecx,ecx
+cmp dword[ebp-4],ecx
+je 0x4013ed
+cmp ebx,ecx
+je 0x4013ed
+cmp dword[ebp-8],ecx
+je 0x4013ed
+cmp eax,ecx
+je 0x4013ed
+push ecx
+push 4
+call eax
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov dword[ebp-0xc],eax
+lea eax,[ebp-0x28]
+push eax
+push esi
+mov dword[ebp-0x28],0x1c
+call ebx
+jmp 0x4013e9
+cmp dword[ebp-0x1c],edi
+jne 0x4013e1
+mov eax,dword[ebp-0x20]
+cmp eax,dword[ebp-0xc]
+je 0x4013e1
+push eax
+push 0
+push 2
+call dword[ebp-4]
+test eax,eax
+je 0x4013e1
+push eax
+call dword[sym.imp.KERNEL32.dll_SuspendThread]
+lea eax,[ebp-0x28]
+push eax
+push esi
+call dword[ebp-8]
+test eax,eax
+jne 0x4013c1
+pop esi
+pop ebx
+pop edi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00420db0@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00414d69@152885a790b99953ce23874f0947b7bd
+[similar_3_ref]: /report/fcn.00414d69@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_4_ref]: /report/fcn.00414d69@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_5_ref]: /report/fcn.00403908@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

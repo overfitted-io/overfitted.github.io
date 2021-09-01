@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.00407761 @ e7582fc3dadb394a1457ab7e7fbbe9a7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00407761
+- **Origin (md5):** e7582fc3dadb394a1457ab7e7fbbe9a7
+- **VirusTotal:** [virustotal.com/gui/file/e7582fc3dadb394a1457ab7e7fbbe9a7][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00407761][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00401b74][similar_2_ref] (sim.: 0.8692053209479624)
+3. [fcn.00428940][similar_3_ref] (sim.: 0.8681050059317948)
+4. [fcn.004054cd][similar_4_ref] (sim.: 0.8678744301290638)
+5. [fcn.00408cff][similar_5_ref] (sim.: 0.8669886874029471)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+lea ebp,[esp-0x74]
+sub esp,0x120
+push esi
+push 0x118
+lea eax,[ebp-0xa8]
+push 0
+push eax
+mov dword[ebp-0xac],0x11c
+call fcn.0040888c
+mov esi,dword[ebp+0x7c]
+and dword[ebp+0x70],0
+add esp,0xc
+lea eax,[ebp-0xac]
+push eax
+mov byte[esi],0
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+test eax,eax
+je 0x40781f
+cmp dword[ebp-0xa8],6
+movzx eax,byte[ebp+0x6e]
+mov dword[ebp+0x70],eax
+jb 0x4077ef
+push str.GetProductInfo
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x4077ef
+lea ecx,[ebp+0x70]
+push ecx
+movzx ecx,word[ebp+0x6a]
+push ecx
+movzx ecx,word[ebp+0x68]
+push ecx
+push dword[ebp-0xa4]
+push dword[ebp-0xa8]
+call eax
+call dword[sym.imp.KERNEL32.dll_GetSystemDefaultLCID]
+push eax
+push dword[ebp+0x70]
+movzx eax,word[ebp+0x68]
+push dword[ebp-0xa0]
+push eax
+push dword[ebp-0xa4]
+push dword[ebp-0xa8]
+push str._d__d__d__d__d__d
+push esi
+call dword[sym.imp.USER32.dll_wsprintfA]
+add esp,0x20
+mov eax,esi
+pop esi
+add ebp,0x74
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407761@6c8b5339bada4cbd03f0f446da640707
+[similar_2_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00428940@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.004054cd@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.00408cff@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/e7582fc3dadb394a1457ab7e7fbbe9a7

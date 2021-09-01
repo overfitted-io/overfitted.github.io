@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.00406338 @ 510c8408eb3f0420e19240592ddc0b5b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406338
+- **Origin (md5):** 510c8408eb3f0420e19240592ddc0b5b
+- **VirusTotal:** [virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00405cff][similar_1_ref] (sim.: 0.8407618424367167)
+2. [fcn.00405e8f][similar_2_ref] (sim.: 0.828420601298393)
+3. [fcn.00405e88][similar_3_ref] (sim.: 0.822238691944353)
+4. [fcn.00405e88][similar_4_ref] (sim.: 0.822238691944353)
+5. [fcn.00405e88][similar_5_ref] (sim.: 0.822238691944353)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+push esi
+mov esi,eax
+push edi
+shl esi,3
+mov edi,dword[esi+0x40a240]
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+test eax,eax
+jne 0x40635e
+push edi
+call fcn.004062ca
+test eax,eax
+je 0x40636d
+push dword[esi+0x40a244]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+jmp 0x40636f
+xor eax,eax
+pop edi
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405cff@88c77a55c813a535f04a021f665ec5b4
+[similar_2_ref]: /report/fcn.00405e8f@0c82eefbb8a4714538e49f74fe0058a6
+[similar_3_ref]: /report/fcn.00405e88@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_4_ref]: /report/fcn.00405e88@983fe9598b69120a048e4bbfe8d8764c
+[similar_5_ref]: /report/fcn.00405e88@024d69b3dfb503973cce5c1700f282aa
+[virustotal_ref]: https://www.virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b

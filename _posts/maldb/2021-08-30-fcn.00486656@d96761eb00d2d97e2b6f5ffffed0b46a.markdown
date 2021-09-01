@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.00486656 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00486656
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00468420][similar_1_ref] (sim.: 0.8667363024267413)
+2. [fcn.00402344][similar_2_ref] (sim.: 0.8646841815769848)
+3. [fcn.00463e91][similar_3_ref] (sim.: 0.8619713632478896)
+4. [fcn.00416337][similar_4_ref] (sim.: 0.8618753042263124)
+5. [fcn.004088f4][similar_5_ref] (sim.: 0.8598968355831058)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+0x28]
+cmp eax,0xffffffff
+jne 0x486664
+push 2
+pop eax
+cmp eax,0x10
+jge 0x48666c
+or eax,2
+mov ecx,dword[ebp+0x20]
+push esi
+mov esi,0x96
+cmp ecx,0xffffffff
+jne 0x48667c
+mov ecx,esi
+mov edx,dword[ebp+0x24]
+cmp edx,0xffffffff
+jne 0x486686
+mov edx,esi
+cmp dword[ebp+0x30],0
+jge 0x486690
+xor al,al
+jmp 0x4866fe
+push ebx
+push edi
+mov edi,dword[ebp+0x14]
+xor ebx,ebx
+cmp word[edi],bx
+je 0x4866fa
+push ebx
+push ecx
+push dword[ebp+0x10]
+push edx
+push ecx
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push eax
+push ebx
+push str.SysAnimate32
+push ebx
+push dword[ebp+8]
+call fcn.00401d35
+mov esi,dword[ebp+0xc]
+mov dword[esi],eax
+test eax,eax
+je 0x4866fa
+push edi
+push ebx
+mov ebx,dword[sym.imp.USER32.dll_SendMessageW]
+push 0x467
+push eax
+call ebx
+test eax,eax
+jne 0x486703
+push edi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+je 0x486703
+push dword[ebp+0x30]
+push eax
+push 0x467
+push dword[esi]
+call ebx
+test eax,eax
+jne 0x486703
+push dword[esi]
+call dword[sym.imp.USER32.dll_DestroyWindow]
+xor al,al
+pop edi
+pop ebx
+pop esi
+pop ebp
+ret 0x2c
+cmp dword[0x4c67b8],0
+jne 0x486718
+mov eax,0x300
+mov word[esi+0x86],ax
+mov al,1
+jmp 0x4866fc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00468420@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00402344@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.00463e91@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

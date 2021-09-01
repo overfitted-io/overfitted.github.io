@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.0046132c @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0046132c
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100383cd][similar_1_ref] (sim.: 0.8776882736015105)
+2. [fcn.00415c2c][similar_2_ref] (sim.: 0.8613487156140521)
+3. [fcn.005617e4][similar_3_ref] (sim.: 0.8578779170418147)
+4. [fcn.00416677][similar_4_ref] (sim.: 0.8504956968048833)
+5. [fcn.0046e8cd][similar_5_ref] (sim.: 0.8492948926305521)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+mov esi,dword[ebp+0xc]
+mov dword[ebp-8],ecx
+test esi,esi
+jne 0x461345
+call fcn.0042d89f
+mov esi,dword[eax+0xc]
+push 0x58e510
+push dword[ebp+8]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov ebx,eax
+test ebx,ebx
+je 0x46139b
+push edi
+push ebx
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov edi,eax
+test edi,edi
+je 0x46139a
+push edi
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-4],eax
+test eax,eax
+jne 0x46137b
+xor esi,esi
+jmp 0x461391
+push ebx
+push esi
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov ecx,dword[ebp-8]
+push eax
+push dword[ebp-4]
+call fcn.004613a3
+mov esi,eax
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,esi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100383cd@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.00415c2c@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.005617e4@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00416677@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.0046e8cd@27ac6b5c7fa1ad11790cdc733c25a701
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

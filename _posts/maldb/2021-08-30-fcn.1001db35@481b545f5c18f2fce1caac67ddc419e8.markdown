@@ -1,0 +1,49 @@
+---
+layout: post
+title:  "fcn.1001db35 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1001db35
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1001da60][similar_1_ref] (sim.: 0.8439952634761745)
+2. [fcn.1000fd84][similar_2_ref] (sim.: 0.8437392357324114)
+3. [fcn.1000fe22][similar_3_ref] (sim.: 0.8287923722894663)
+4. [fcn.0055e698][similar_4_ref] (sim.: 0.7410962912503214)
+5. [fcn.0055e5f5][similar_5_ref] (sim.: 0.7326706837266799)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+cmp dword[esi+0x1c],0
+jne 0x1001db52
+push str.GetSaveFileNameW
+call fcn.1000fd52
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[esi+0x1c],eax
+mov ecx,dword[esi+0x1c]
+mov eax,dword[esp+8]
+mov dword[eax],ecx
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001da60@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.1000fd84@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.1000fe22@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.0055e698@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.0055e5f5@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

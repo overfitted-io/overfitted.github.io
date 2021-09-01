@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.00403c03 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00403c03
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00409844][similar_1_ref] (sim.: 0.8617504920056043)
+2. [fcn.00403bbc][similar_2_ref] (sim.: 0.826050810247614)
+3. [fcn.004052a4][similar_3_ref] (sim.: 0.8221437902603851)
+4. [fcn.00410aac][similar_4_ref] (sim.: 0.821559562440629)
+5. [fcn.004064c1][similar_5_ref] (sim.: 0.8170169364328874)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x800
+push esi
+push edi
+push 0
+mov esi,ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push 5
+mov edi,0x425348
+push edi
+push eax
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x403c31
+mov byte[esi+0x10],1
+jmp 0x403c65
+mov ecx,0x425350
+lea eax,[ebp-0x800]
+push ecx
+push 1
+push 0x400
+push eax
+push ecx
+mov ecx,esi
+call fcn.004036ec
+lea eax,[ebp-0x800]
+push edi
+push eax
+call fcn.0041804b
+neg eax
+pop ecx
+sbb al,al
+inc al
+pop ecx
+mov byte[esi+0x10],al
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409844@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.00403bbc@1123b7aa5760238fe93045e585b8234c
+[similar_3_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.00410aac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_5_ref]: /report/fcn.004064c1@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

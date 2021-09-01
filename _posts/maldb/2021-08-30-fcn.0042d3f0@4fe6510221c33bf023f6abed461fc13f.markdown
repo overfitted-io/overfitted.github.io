@@ -1,0 +1,149 @@
+---
+layout: post
+title:  "fcn.0042d3f0 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0042d3f0
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.00450290][similar_1_ref] (sim.: 0.9161314431352441)
+2. [fcn.00454a20][similar_2_ref] (sim.: 0.9136900204755446)
+3. [fcn.00475640][similar_3_ref] (sim.: 0.9135090109761654)
+4. [fcn.00467c50][similar_4_ref] (sim.: 0.9113967939480867)
+5. [fcn.0048f350][similar_5_ref] (sim.: 0.9112865907431033)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x1c
+push ebx
+push ebp
+push esi
+push edi
+mov edi,eax
+mov ebx,edi
+push str.Script_lines_most_recently_executed__oldest_first_.__Press__F5__to_refresh.__The_seconds_elapsed_between_a_line_and_the_one_after_it_is_in_parentheses_to_the_right__if_not_0_.__The_bottommost_lines_elapsed_time_is_the_number_of_seconds_since_it_executed._r_n_r_n
+mov esi,0xfffe
+mov dword[esp+0x24],ebx
+call fcn.004738d0
+mov esi,dword[0x4c8560]
+lea eax,[edi+eax*2]
+add esp,4
+mov dword[esp+0x24],eax
+mov ebp,0x190
+mov edi,dword[esp+0x24]
+mov byte[esp+0x17],0
+test ebp,ebp
+jle 0x42d52e
+lea ecx,[esi-0x18e]
+mov ebx,2
+mov dword[esp+0x18],ecx
+mov dword[esp+0x1c],ebp
+cmp esi,0x190
+jl 0x42d45d
+sub esi,0x190
+sub dword[esp+0x18],0x190
+cmp dword[esi*4+0x4c7f20],0
+je 0x42d513
+mov al,byte[esp+0x17]
+lea edx,[ebx-1]
+mov byte[esp+0x28],al
+mov byte[esp+0x17],0
+cmp edx,ebp
+jge 0x42d4d0
+test al,al
+jne 0x42d513
+cmp esi,0x18f
+jl 0x42d493
+xor eax,eax
+jmp 0x42d496
+lea eax,[esi+1]
+mov ecx,dword[esi*4+0x4c5dc0]
+mov eax,dword[eax*4+0x4c5dc0]
+sub eax,ecx
+cmp eax,0x7fffffff
+jbe 0x42d4dd
+mov byte[esp+0x17],1
+cmp ebx,ebp
+je 0x42d4d0
+lea eax,[esi+2]
+cmp esi,0x18e
+jl 0x42d4c5
+mov eax,dword[esp+0x18]
+mov eax,dword[eax*4+0x4c5dc0]
+sub eax,ecx
+jmp 0x42d4dd
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+sub eax,dword[esi*4+0x4c5dc0]
+mov edx,edi
+sub edx,dword[esp+0x20]
+mov ecx,0xfffe
+sar edx,1
+sub ecx,edx
+cmp ecx,0xc8
+jl 0x42d4f9
+mov ecx,0xc8
+mov edx,dword[esp+0x28]
+push edx
+push eax
+mov eax,dword[esi*4+0x4c7f20]
+push 1
+push ecx
+push eax
+mov eax,edi
+call fcn.0042d680
+mov edi,eax
+mov eax,1
+add dword[esp+0x18],eax
+add ebx,eax
+add esi,eax
+sub dword[esp+0x1c],eax
+jne 0x42d447
+mov ebx,dword[esp+0x20]
+mov ecx,edi
+sub ecx,ebx
+sar ecx,1
+mov edx,0xfffe
+sub edx,ecx
+cmp edx,0x18
+jg 0x42d55b
+cmp ebp,0x78
+jl 0x42d55b
+mov esi,dword[0x4c8560]
+sub ebp,0x64
+sub esi,ebp
+add esi,0x190
+jmp 0x42d423
+mov eax,edi
+sub eax,ebx
+sar eax,1
+mov esi,0xfffe
+push str._r_nPress__F5__to_refresh.
+sub esi,eax
+call fcn.004738d0
+add esp,4
+lea eax,[edi+eax*2]
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,0x1c
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00450290@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.00475640@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.00467c50@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.0048f350@3e981d1767f44f5fe2446a49ffe52f4e
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

@@ -1,0 +1,160 @@
+---
+layout: post
+title:  "fcn.004440a0 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004440a0
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.004441f9][similar_1_ref] (sim.: 0.9098952242909286)
+2. [fcn.004441f9][similar_2_ref] (sim.: 0.9098952242909286)
+3. [fcn.0044ce03][similar_3_ref] (sim.: 0.9013480109409393)
+4. [fcn.0044ce03][similar_4_ref] (sim.: 0.9013480109409393)
+5. [fcn.00401879][similar_5_ref] (sim.: 0.900693432172732)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+push ebx
+mov ebx,ecx
+mov dword[ebp-0x10],edx
+mov ecx,edx
+mov dword[ebp-0x14],ebx
+push esi
+push edi
+xor esi,esi
+mov dword[ebp-8],6
+lea eax,[ecx+1]
+xor edi,edi
+mov dword[ebp-0xc],eax
+mov al,byte[ecx]
+inc ecx
+test al,al
+jne 0x4440c4
+sub ecx,dword[ebp-0xc]
+push ecx
+push 0
+push edx
+call sub.MSVCR120.dll_memset
+add esp,0xc
+test ebx,ebx
+jne 0x4440e7
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+lea ecx,[ebx+1]
+lea ebx,[ebx]
+mov al,byte[ebx]
+inc ebx
+test al,al
+jne 0x4440f0
+sub ebx,ecx
+mov dword[ebp-0x18],ebx
+je 0x4440de
+xor edx,edx
+xor eax,eax
+mov ecx,dword[ebp-8]
+cmp edx,ecx
+jge 0x44412d
+lea esp,[esp]
+cmp esi,ebx
+jge 0x444184
+mov ecx,dword[ebp-0x14]
+add edx,8
+shl eax,8
+mov cl,byte[esi+ecx]
+inc esi
+movzx ecx,cl
+or eax,ecx
+mov ecx,dword[ebp-8]
+cmp edx,ecx
+jl 0x444110
+sub edx,ecx
+mov dword[ebp-4],eax
+mov ecx,edx
+sar dword[ebp-4],cl
+mov ecx,dword[ebp-8]
+mov dword[ebp-0xc],ecx
+mov ecx,dword[ecx*4+0x45c870]
+and dword[ebp-4],ecx
+mov ecx,dword[ebp-0xc]
+mov dword[ebp-8],ecx
+test ecx,ecx
+jle 0x44419a
+mov ecx,dword[ebp-4]
+mov ebx,dword[ebp-0x10]
+mov cl,byte[ecx+0x45c800]
+mov byte[edi+ebx],cl
+inc edi
+mov ebx,dword[ebp-0x18]
+cmp edi,0x1f0
+jl 0x444102
+push str.Err:_Over_Base64_out_buf__n
+call dword[sym.imp.MSVCR120.dll_printf]
+add esp,4
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+cmp edx,ecx
+jge 0x44412d
+sub ecx,edx
+mov dword[ebp-4],eax
+shl dword[ebp-4],cl
+mov ecx,dword[ebp-8]
+mov dword[ebp-0xc],edx
+xor edx,edx
+jmp 0x44413d
+mov eax,edi
+and eax,reloc.WS2_32.dll_closesocket
+jns 0x4441a8
+dec eax
+or eax,0xfffffffc
+inc eax
+je 0x4441c6
+mov eax,dword[ebp-0x10]
+lea ecx,[ecx]
+mov byte[edi+eax],0x3d
+inc edi
+mov ecx,edi
+and ecx,reloc.WS2_32.dll_closesocket
+jns 0x4441c4
+dec ecx
+or ecx,0xfffffffc
+inc ecx
+jne 0x4441b0
+mov eax,edi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004441f9@8d996434378dbdbb47e86342be5446c7
+[similar_2_ref]: /report/fcn.004441f9@c2f40b3bc10e39d3d975422ee4d09bab
+[similar_3_ref]: /report/fcn.0044ce03@c2f40b3bc10e39d3d975422ee4d09bab
+[similar_4_ref]: /report/fcn.0044ce03@8d996434378dbdbb47e86342be5446c7
+[similar_5_ref]: /report/fcn.00401879@7dd153bad1771b9e8d5266a341ebf949
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

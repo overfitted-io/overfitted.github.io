@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.458e5cc0 @ 284c9c9722cef7520dddfe58806fd72f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.458e5cc0
+- **Origin (md5):** 284c9c9722cef7520dddfe58806fd72f
+- **VirusTotal:** [virustotal.com/gui/file/284c9c9722cef7520dddfe58806fd72f][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.100ea580][similar_1_ref] (sim.: 0.8295118568275364)
+2. [fcn.640589b0][similar_2_ref] (sim.: 0.8255574429165667)
+3. [fcn.0045d3d0][similar_3_ref] (sim.: 0.8241675373659645)
+4. [fcn.6403d5b0][similar_4_ref] (sim.: 0.822922223125542)
+5. [fcn.458ca160][similar_5_ref] (sim.: 0.8223106745491058)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+mov ebx,dword[esp+0xc]
+test ebx,ebx
+jne 0x458e5cda
+mov eax,dword[esp+0x10]
+mov ecx,dword[esp+0x14]
+mov byte[eax],bl
+mov dword[ecx],ebx
+lea eax,[ebx+1]
+pop ebx
+ret 
+lea edx,[ebx+2]
+mov eax,0xaaaaaaab
+mul edx
+shr edx,1
+push esi
+mov esi,dword[esp+0x18]
+lea eax,[edx*4+8]
+cmp dword[esi],eax
+jae 0x458e5cfd
+mov dword[esi],eax
+pop esi
+xor eax,eax
+pop ebx
+ret 
+push edi
+push ebx
+call dword[sym.imp.MSVCR80.dll_malloc]
+mov edi,eax
+add esp,4
+test edi,edi
+jne 0x458e5d12
+pop edi
+pop esi
+pop ebx
+ret 
+mov eax,dword[esp+0x10]
+push 0x320
+push ebx
+mov ecx,edi
+call fcn.458e5b60
+mov eax,dword[esp+0x20]
+mov byte[eax],0x7a
+add dword[esi],0xffffffff
+push esi
+add eax,1
+push eax
+push ebx
+push edi
+call fcn.458e5830
+add dword[esi],1
+push edi
+mov ebx,eax
+call dword[sym.imp.MSVCR80.dll_free]
+add esp,0x1c
+pop edi
+pop esi
+mov eax,ebx
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100ea580@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/fcn.640589b0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.0045d3d0@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.6403d5b0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.458ca160@284c9c9722cef7520dddfe58806fd72f
+[virustotal_ref]: https://www.virustotal.com/gui/file/284c9c9722cef7520dddfe58806fd72f

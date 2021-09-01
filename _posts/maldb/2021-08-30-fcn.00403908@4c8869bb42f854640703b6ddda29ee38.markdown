@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "fcn.00403908 @ 4c8869bb42f854640703b6ddda29ee38"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00403908
+- **Origin (md5):** 4c8869bb42f854640703b6ddda29ee38
+- **VirusTotal:** [virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0040567b][similar_1_ref] (sim.: 0.9130546421280041)
+2. [fcn.00406cfe][similar_2_ref] (sim.: 0.9029841637838681)
+3. [fcn.00404ba4][similar_3_ref] (sim.: 0.8985590549753462)
+4. [fcn.0040764a][similar_4_ref] (sim.: 0.8948258633024941)
+5. [fcn.0040514a][similar_5_ref] (sim.: 0.8938426291123492)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x4c
+push ebx
+push esi
+push edi
+push 0
+mov dword[ebp-8],edx
+mov dword[ebp-0xc],ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+movzx ecx,word[0x422730]
+mov esi,dword[sym.imp.KERNEL32.dll_FindResourceExA]
+push ecx
+push dword[ebp-8]
+mov dword[ebp-4],eax
+push dword[ebp-0xc]
+push eax
+call esi
+mov ebx,eax
+mov edi,0x409
+test ebx,ebx
+jne 0x403956
+push edi
+push dword[ebp-8]
+push dword[ebp-0xc]
+push dword[ebp-4]
+call esi
+mov ebx,eax
+test ebx,ebx
+je 0x403980
+mov esi,dword[ebp+8]
+test esi,esi
+je 0x403969
+push ebx
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[esi],eax
+push ebx
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+test eax,eax
+je 0x403980
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+jmp 0x4039ea
+cmp dword[0x422734],0
+jne 0x4039e8
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.SetProcessPreferredUILanguages
+push dword[0x42275c]
+mov dword[0x422734],1
+call esi
+push 0
+mov ebx,eax
+movzx eax,word[0x422730]
+push edi
+push 0
+push eax
+lea eax,[ebp-0x4c]
+push str._04X_c_04X_c
+push eax
+call dword[sym.imp.USER32.dll_wsprintfW]
+add esp,0x18
+test ebx,ebx
+jne 0x4039de
+push str.SetThreadPreferredUILanguages
+push dword[0x42275c]
+call esi
+mov ebx,eax
+test ebx,ebx
+je 0x4039e8
+push 0
+lea eax,[ebp-0x4c]
+push eax
+push 4
+call ebx
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040567b@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.00406cfe@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[similar_4_ref]: /report/fcn.0040764a@470263fe7e7cc115b95cd041d643e3b5
+[similar_5_ref]: /report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38

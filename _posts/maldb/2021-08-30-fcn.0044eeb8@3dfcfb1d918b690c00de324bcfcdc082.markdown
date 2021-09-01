@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.0044eeb8 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0044eeb8
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0047b47e][similar_1_ref] (sim.: 0.8904178204805233)
+2. [fcn.0047b47e][similar_2_ref] (sim.: 0.8904178204805233)
+3. [fcn.0047b47e][similar_3_ref] (sim.: 0.8904178204805233)
+4. [fcn.0043b511][similar_4_ref] (sim.: 0.8730652410890396)
+5. [fcn.00423714][similar_5_ref] (sim.: 0.8575649615685943)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+call fcn.0044ef0b
+mov eax,0x400000
+mov dword[esi],0x38
+lea ecx,[esi+0x14]
+mov dword[esi+8],eax
+mov dword[esi+4],eax
+mov dword[esi+0xc],0xc00
+mov dword[esi+0x10],0x459198
+call fcn.0043b830
+test eax,eax
+jns 0x44ef07
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x44ef00
+push str.ERROR_:_Unable_to_initialize_critical_section_in_CAtlBaseModule_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[0x48da6c],1
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047b47e@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_2_ref]: /report/fcn.0047b47e@152885a790b99953ce23874f0947b7bd
+[similar_3_ref]: /report/fcn.0047b47e@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_4_ref]: /report/fcn.0043b511@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.00423714@ba86269e5231930ee4def4088ddb8d19
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.0068bd30 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0068bd30
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.0068db60][similar_1_ref] (sim.: 0.8653437217187141)
+2. [fcn.006b64a0][similar_2_ref] (sim.: 0.8447743983329961)
+3. [fcn.006850b0][similar_3_ref] (sim.: 0.842435722588436)
+4. [fcn.006843d0][similar_4_ref] (sim.: 0.8351279608998317)
+5. [fcn.0069e360][similar_5_ref] (sim.: 0.8267262021200421)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x20
+cmp dword[edx+0x38],0xffffffff
+mov dword[esp+0x1c],1
+jne 0x68bd91
+mov edi,eax
+lea eax,[esp+0x1c]
+mov esi,ecx
+mov ebx,edx
+mov dword[esp+4],0x8004667e
+mov dword[esp],ecx
+mov dword[esp+8],eax
+call dword[sym.imp.WS2_32.dll_ioctlsocket]
+sub esp,0xc
+cmp eax,0xffffffff
+je 0x68bd84
+mov eax,dword[esp+0x30]
+mov ecx,esi
+mov edx,ebx
+mov dword[esp],eax
+mov eax,edi
+call fcn.0068bbc0
+add esp,0x20
+pop ebx
+pop esi
+pop edi
+ret 
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+add esp,0x20
+pop ebx
+pop esi
+pop edi
+ret 
+mov eax,0xfffff00e
+jmp 0x68bd7d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068db60@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006b64a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006850b0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006843d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0069e360@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

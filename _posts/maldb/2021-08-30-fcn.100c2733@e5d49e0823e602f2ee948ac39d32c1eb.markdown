@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "fcn.100c2733 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100c2733
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.1005235d][similar_1_ref] (sim.: 0.9048730431124613)
+2. [fcn.004d1eae][similar_2_ref] (sim.: 0.8919050182813028)
+3. [fcn.10004278][similar_3_ref] (sim.: 0.8901376499153189)
+4. [fcn.100e55ac][similar_4_ref] (sim.: 0.8886298382241693)
+5. [fcn.10025f4a][similar_5_ref] (sim.: 0.8885873392693338)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20
+xor eax,eax
+push ebx
+push esi
+mov esi,ecx
+push edi
+mov edi,dword[sym.imp.USER32.dll_GetKeyState]
+push 1
+mov dword[esi+0x34],eax
+mov dword[esi+0x38],eax
+mov dword[esi+0x3c],eax
+call edi
+test ax,ax
+jns 0x100c2762
+or dword[esi+0x3c],1
+or dword[esi+0x38],2
+jmp 0x100c2773
+push 2
+call edi
+test ax,ax
+jns 0x100c2773
+or dword[esi+0x3c],2
+or dword[esi+0x38],1
+mov edi,dword[sym.imp.KERNEL32.dll_GetTickCount]
+call edi
+mov ebx,dword[ebp+8]
+mov dword[ebp-4],eax
+push dword[ebx+0x20]
+call dword[sym.imp.USER32.dll_SetCapture]
+push eax
+call fcn.1000def0
+jmp 0x100c2838
+call dword[sym.imp.USER32.dll_GetCapture]
+push eax
+call fcn.1000def0
+cmp eax,ebx
+jne 0x100c2842
+push 1
+push 0x209
+push 0x200
+push 0
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.USER32.dll_PeekMessageW]
+test eax,eax
+jne 0x100c27e0
+push 1
+push 0x109
+push 0x100
+push eax
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.USER32.dll_PeekMessageW]
+test eax,eax
+je 0x100c2824
+mov eax,dword[ebp-0x1c]
+cmp eax,0x202
+je 0x100c2842
+cmp eax,0x205
+je 0x100c2842
+cmp eax,0x201
+je 0x100c2842
+cmp eax,0x204
+je 0x100c2842
+cmp eax,0x100
+jne 0x100c280c
+cmp dword[ebp-0x18],0x1b
+je 0x100c2842
+push dword[ebp-8]
+lea eax,[esi+0x24]
+push dword[ebp-0xc]
+push eax
+call dword[sym.imp.USER32.dll_PtInRect]
+neg eax
+sbb eax,eax
+inc eax
+mov dword[esi+0x34],eax
+call edi
+sub eax,dword[ebp-4]
+cmp eax,dword[0x101a3488]
+jbe 0x100c2838
+mov dword[esi+0x34],1
+cmp dword[esi+0x34],0
+je 0x100c2795
+call dword[sym.imp.USER32.dll_ReleaseCapture]
+mov eax,dword[esi+0x34]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1005235d@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.004d1eae@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.10004278@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.100e55ac@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.10025f4a@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

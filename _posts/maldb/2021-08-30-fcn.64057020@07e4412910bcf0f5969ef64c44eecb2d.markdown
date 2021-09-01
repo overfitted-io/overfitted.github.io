@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "fcn.64057020 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64057020
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+
+
+# Similar Functions
+
+1. [fcn.640757a0][similar_1_ref] (sim.: 0.9560357751167335)
+2. [fcn.6407d7f0][similar_2_ref] (sim.: 0.9552182915936345)
+3. [fcn.64061a20][similar_3_ref] (sim.: 0.9531750689625468)
+4. [fcn.64077360][similar_4_ref] (sim.: 0.9522889562678499)
+5. [fcn.640656c0][similar_5_ref] (sim.: 0.9472316992220825)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+push esi
+mov esi,ecx
+push edi
+mov ecx,dword[esi]
+mov eax,dword[ecx+8]
+cmp eax,1
+je 0x64057077
+test eax,eax
+je 0x64057077
+push 4
+push 0x10
+push sym.Qt5Network.dll_public_virtual:_void___thiscall_QNetworkReply::ignoreSslErrors_void_
+push 0x64057a70
+call dword[sym.imp.Qt5Core.dll_public:_struct_QHashData____thiscall_QHashData::detach_helper_void____cdecl___struct_QHashData::Node___void____void____cdecl___struct_QHashData::Node____int__int_]
+mov ecx,dword[esi]
+mov edi,eax
+add ecx,8
+mov edx,dword[ecx]
+test edx,edx
+je 0x64057068
+cmp edx,0xffffffff
+je 0x64057075
+or eax,0xffffffff
+lock xadd dword[ecx],eax
+setne al
+test al,al
+jne 0x64057075
+mov ecx,dword[esi]
+push sym.Qt5Network.dll_public_virtual:_void___thiscall_QNetworkReply::ignoreSslErrors_void_
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QHashData::free_helper_void____cdecl___struct_QHashData::Node___]
+mov dword[esi],edi
+mov eax,dword[esi]
+mov ecx,esi
+mov ebx,dword[esp+0x14]
+mov edi,dword[eax+0x1c]
+xor edi,dword[ebx]
+push edi
+push ebx
+call fcn.6403f850
+mov ecx,dword[esi]
+mov ebp,eax
+mov eax,dword[ebp]
+cmp eax,ecx
+jne 0x640570fc
+call dword[sym.imp.Qt5Core.dll_public:_bool___thiscall_QHashData::willGrow_void_]
+test al,al
+je 0x640570b2
+mov eax,dword[esi]
+mov ecx,esi
+mov edi,dword[eax+0x1c]
+xor edi,dword[ebx]
+push edi
+push ebx
+call fcn.6403f850
+mov ebp,eax
+mov ecx,dword[esi]
+push 4
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QHashData::allocateNode_int_]
+mov edx,eax
+test edx,edx
+je 0x640570e8
+mov ecx,dword[ebp]
+mov dword[edx+4],edi
+mov dword[edx],ecx
+mov ecx,dword[ebx]
+mov dword[edx+8],ecx
+mov dword[edx+0xc],0
+mov dword[ebp],edx
+mov eax,dword[esi]
+pop edi
+pop esi
+pop ebp
+inc dword[eax+0xc]
+lea eax,[edx+0xc]
+pop ebx
+ret 4
+xor edx,edx
+mov dword[ebp],edx
+mov eax,dword[esi]
+pop edi
+pop esi
+pop ebp
+inc dword[eax+0xc]
+lea eax,[edx+0xc]
+pop ebx
+ret 4
+pop edi
+pop esi
+pop ebp
+add eax,0xc
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.640757a0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.6407d7f0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.64061a20@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.64077360@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.640656c0@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d
