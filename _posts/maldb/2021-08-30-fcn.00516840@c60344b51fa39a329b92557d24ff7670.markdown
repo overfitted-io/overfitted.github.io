@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.00516840 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00516840
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.005168b0][similar_1_ref] (sim.: 0.8988780627550811)
+2. [fcn.00446290][similar_2_ref] (sim.: 0.8200461822480312)
+3. [fcn.0045eaa0][similar_3_ref] (sim.: 0.7925448998736672)
+4. [fcn.004b4900][similar_4_ref] (sim.: 0.792509629535703)
+5. [fcn.0041c110][similar_5_ref] (sim.: 0.7891592509930826)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x118
+mov eax,dword[0x5ffcc0]
+xor eax,esp
+mov dword[esp+0x114],eax
+lea eax,[esp]
+push eax
+mov dword[esp+4],0x114
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+test eax,eax
+je 0x516892
+cmp dword[esp+4],5
+jbe 0x516892
+cmp dword[esp+8],4
+jae 0x516892
+mov eax,1
+mov ecx,dword[esp+0x114]
+xor ecx,esp
+call fcn.005713ed
+add esp,0x118
+ret 
+mov ecx,dword[esp+0x114]
+xor ecx,esp
+xor eax,eax
+call fcn.005713ed
+add esp,0x118
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005168b0@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.00446290@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.0045eaa0@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.004b4900@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0041c110@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

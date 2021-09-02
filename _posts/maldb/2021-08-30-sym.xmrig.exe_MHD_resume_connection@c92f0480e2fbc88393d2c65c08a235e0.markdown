@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "sym.xmrig.exe_MHD_resume_connection @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.xmrig.exe\_MHD\_resume\_connection
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0068bbc0][similar_1_ref] (sim.: 0.8951878064102616)
+2. [sym.xmrig.exe\_MHD\_quiesce\_daemon][similar_2_ref] (sim.: 0.8916966311070005)
+3. [fcn.006b8ae0][similar_3_ref] (sim.: 0.891574693257568)
+4. [fcn.0068bfa0][similar_4_ref] (sim.: 0.8841388275765305)
+5. [fcn.006827a0][similar_5_ref] (sim.: 0.8821834108217729)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+push esi
+push ebx
+sub esp,0x10
+mov esi,dword[esp+0x20]
+mov ebx,dword[esi+0x10]
+test byte[ebx+0xdd],0x20
+je 0x69ac33
+lea edi,[ebx+0x9c]
+mov dword[esp],edi
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+sub esp,4
+mov byte[esi+0xdc],1
+mov byte[ebx+0xc7],1
+mov dword[esp],edi
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp,4
+cmp dword[ebx+0xbc],0xffffffff
+je 0x69ac0d
+mov dword[esp+0xc],0
+mov dword[esp+8],1
+mov dword[esp+4],0x7ba042
+mov eax,dword[ebx+0xc0]
+mov dword[esp],eax
+call dword[sym.imp.WS2_32.dll_send]
+sub esp,0x10
+test eax,eax
+jle 0x69ac14
+add esp,0x10
+pop ebx
+pop esi
+pop edi
+ret 
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+je 0x69ac0d
+mov dword[esp+4],str.Failed_to_signal_resume_via_inter_thread_communication_channel.
+mov dword[esp],ebx
+call fcn.0069df20
+jmp 0x69ac0d
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9ffc
+mov dword[esp+8],0xa7b
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+lea esi,[esi]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068bbc0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/sym.xmrig.exe_MHD_quiesce_daemon@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006b8ae0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.006827a0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

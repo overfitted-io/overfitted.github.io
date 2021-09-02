@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.0047b652 @ fb9b7d22bc1c143ac66b0575cbdd088d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0047b652
+- **Origin (md5):** fb9b7d22bc1c143ac66b0575cbdd088d
+- **VirusTotal:** [virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.0047b652][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0047b652][similar_2_ref] (sim.: 0.9998900981078187)
+3. [fcn.00605695][similar_3_ref] (sim.: 0.8776477383260612)
+4. [fcn.00410a58][similar_4_ref] (sim.: 0.874140853587709)
+5. [fcn.00410a58][similar_5_ref] (sim.: 0.874140853587709)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call sub.KERNEL32.dll_IsProcessorFeaturePresent
+test eax,eax
+jne 0x47b664
+inc eax
+mov dword[0x4bd060],eax
+ret 
+push esi
+mov esi,dword fs:[0x30]
+add esi,0x34
+push edi
+mov eax,dword[esi]
+test eax,eax
+jne 0x47b6b1
+push 8
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+test edi,edi
+je 0x47b6b9
+push edi
+call dword[sym.imp.KERNEL32.dll_InitializeSListHead]
+mov ecx,edi
+xor eax,eax
+lock cmpxchg dword[esi],ecx
+test eax,eax
+je 0x47b6af
+push edi
+push 0
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x4bd060],eax
+xor eax,eax
+inc eax
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047b652@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_2_ref]: /report/fcn.0047b652@152885a790b99953ce23874f0947b7bd
+[similar_3_ref]: /report/fcn.00605695@52d540e8e13e0f0bbb8946b2363a382d
+[similar_4_ref]: /report/fcn.00410a58@96a869ae624ddb4834a1d5a829f85469
+[similar_5_ref]: /report/fcn.00410a58@505be53c36227b94e2fcc406f247f6e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d

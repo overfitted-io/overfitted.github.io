@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.004058f3 @ 8cfdb0713f3b8f9b0a5ef775f40cf182"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004058f3
+- **Origin (md5):** 8cfdb0713f3b8f9b0a5ef775f40cf182
+- **VirusTotal:** [virustotal.com/gui/file/8cfdb0713f3b8f9b0a5ef775f40cf182][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004058c4][similar_1_ref] (sim.: 0.9556600625373266)
+2. [fcn.00405a4d][similar_2_ref] (sim.: 0.9040188615521343)
+3. [fcn.00405a4d][similar_3_ref] (sim.: 0.9040188615521343)
+4. [fcn.00405a4d][similar_4_ref] (sim.: 0.9040188615521343)
+5. [fcn.00405a4d][similar_5_ref] (sim.: 0.9040188615521343)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+lea eax,[ebp+0x18]
+push esi
+push eax
+mov eax,dword[ebp+0x18]
+xor ebx,ebx
+neg eax
+sbb eax,eax
+mov esi,dword[ebp+0x14]
+and eax,0x100
+or eax,0x20019
+mov byte[esi],bl
+push eax
+push ebx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x405964
+lea eax,[ebp+0xc]
+mov dword[ebp+0xc],0x400
+push eax
+lea eax,[ebp+0x14]
+push esi
+push eax
+push ebx
+push dword[ebp+0x10]
+push dword[ebp+0x18]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+jne 0x405953
+cmp dword[ebp+0x14],1
+je 0x405955
+cmp dword[ebp+0x14],2
+je 0x405955
+mov byte[esi],bl
+push dword[ebp+0x18]
+mov byte[esi+0x3ff],bl
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop esi
+pop ebx
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004058c4@88c77a55c813a535f04a021f665ec5b4
+[similar_2_ref]: /report/fcn.00405a4d@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_3_ref]: /report/fcn.00405a4d@cce7ba37a5ac487b09e8c8d292223615
+[similar_4_ref]: /report/fcn.00405a4d@024d69b3dfb503973cce5c1700f282aa
+[similar_5_ref]: /report/fcn.00405a4d@983fe9598b69120a048e4bbfe8d8764c
+[virustotal_ref]: https://www.virustotal.com/gui/file/8cfdb0713f3b8f9b0a5ef775f40cf182

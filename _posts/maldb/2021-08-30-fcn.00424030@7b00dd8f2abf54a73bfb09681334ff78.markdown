@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.00424030 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00424030
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.00402626][similar_1_ref] (sim.: 0.8635922335425505)
+2. [fcn.0040dcc6][similar_2_ref] (sim.: 0.8598271676535718)
+3. [fcn.004088f4][similar_3_ref] (sim.: 0.856423456717182)
+4. [fcn.00409e60][similar_4_ref] (sim.: 0.8555736578615725)
+5. [fcn.00407582][similar_5_ref] (sim.: 0.8503156644020105)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+mov eax,dword[0x466e08]
+cmp eax,0xffffffff
+jne 0x4240ba
+push ebx
+push ebp
+push esi
+push edi
+xor esi,esi
+push esi
+call dword[sym.imp.USER32.dll_GetDC]
+push str.Marlett
+push esi
+push esi
+push esi
+push esi
+push 2
+push esi
+push esi
+push esi
+push 0x190
+push esi
+push esi
+push esi
+push 0x48
+mov ebx,eax
+mov dword[esp+0x48],esi
+call dword[sym.imp.USER32.dll_GetSystemMetrics]
+push eax
+call dword[sym.imp.GDI32.dll_CreateFontA]
+mov ebp,dword[sym.imp.GDI32.dll_SelectObject]
+mov edi,eax
+cmp edi,esi
+je 0x424087
+push edi
+push ebx
+call ebp
+mov dword[esp+0x10],eax
+push 0x466e08
+push 0x36
+push 0x36
+push ebx
+call dword[sym.imp.GDI32.dll_GetCharWidthA]
+cmp edi,esi
+je 0x4240a9
+push dword[esp+0x10]
+push ebx
+call ebp
+push edi
+call dword[sym.imp.GDI32.dll_DeleteObject]
+push ebx
+push esi
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[0x466e08]
+pop edi
+pop esi
+pop ebp
+pop ebx
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402626@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040dcc6@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.00409e60@0403abd1e9e066fc89cddd5736647282
+[similar_5_ref]: /report/fcn.00407582@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.00426960 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00426960
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004261b0][similar_1_ref] (sim.: 0.8517375485188518)
+2. [fcn.0068d5a0][similar_2_ref] (sim.: 0.8186399980799071)
+3. [fcn.0044f0f4][similar_3_ref] (sim.: 0.8112707172569034)
+4. [fcn.0040ab12][similar_4_ref] (sim.: 0.8111560839153333)
+5. [fcn.004bf420][similar_5_ref] (sim.: 0.8106632667939692)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0xa0
+mov eax,dword[0x437388]
+push esi
+mov esi,ecx
+push edi
+mov dword[esp+0xa4],eax
+xor eax,eax
+mov ecx,0x25
+lea edi,[esp+8]
+rep stosd dword es:[edi],eax
+lea eax,[esp+8]
+push eax
+mov dword[esi+8],0
+mov dword[esi+0xc],0
+mov dword[esi+0x10],0
+mov dword[esp+0xc],0x94
+call dword[sym.imp.KERNEL32.dll_GetVersionExA]
+cmp dword[esp+0x18],2
+mov dword[esi],1
+mov eax,esi
+jne 0x4269c6
+mov dword[esi],0
+mov ecx,dword[esp+0xa4]
+call fcn.0041e6b7
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004261b0@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0068d5a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0044f0f4@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.0040ab12@de21a548b66aa6c0b17491b6a31e14fa
+[similar_5_ref]: /report/fcn.004bf420@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

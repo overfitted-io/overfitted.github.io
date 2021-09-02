@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "sym.xmrig.exe_MHD_queue_response @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.xmrig.exe\_MHD\_queue\_response
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00683fd0][similar_1_ref] (sim.: 0.9311778708149029)
+2. [fcn.006841c0][similar_2_ref] (sim.: 0.9253764741454364)
+3. [fcn.0068b9d0][similar_3_ref] (sim.: 0.9233877886775964)
+4. [fcn.0068fd90][similar_4_ref] (sim.: 0.9138530248373617)
+5. [fcn.006821a0][similar_5_ref] (sim.: 0.9117101193898871)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push ebx
+xor eax,eax
+sub esp,0x14
+mov ebx,dword[esp+0x20]
+test ebx,ebx
+je 0x694b9e
+mov esi,dword[esp+0x28]
+test esi,esi
+je 0x694b9e
+mov ecx,dword[ebx+0x1c]
+test ecx,ecx
+je 0x694ba4
+add esp,0x14
+pop ebx
+pop esi
+ret 
+mov edx,dword[ebx+0xa4]
+cmp edx,4
+je 0x694bb4
+cmp edx,9
+jne 0x694b9e
+mov esi,dword[ebx+0x10]
+movzx eax,byte[esi+0xc4]
+test al,al
+jne 0x694c92
+cmp byte[ebx+0xd4],0
+je 0x694ca0
+mov eax,dword[esp+0x28]
+mov edx,dword[eax+0x14]
+test edx,edx
+je 0x694c10
+test byte[esi+0xdd],0x80
+je 0x694d10
+cmp dword[esp+0x24],0x65
+je 0x694cd3
+mov dword[esp+4],str.Application_used_invalid_status_code_for_upgrade_response__n
+mov dword[esp],esi
+call fcn.0069df20
+xor eax,eax
+jmp 0x694b9e
+mov dword[esp],eax
+call fcn.006a0a60
+mov eax,dword[esp+0x28]
+mov dword[ebx+0x1c],eax
+mov eax,dword[esp+0x24]
+mov dword[ebx+0xac],eax
+mov eax,dword[ebx+0x2c]
+test eax,eax
+je 0x694c48
+mov dword[esp+4],str.HEAD
+mov dword[esp],eax
+call fcn.0069e770
+test eax,eax
+jne 0x694cf7
+cmp dword[esp+0x24],0xc7
+setbe dl
+cmp dword[esp+0x24],0xcc
+sete al
+or dl,al
+jne 0x694cf7
+cmp dword[esp+0x24],0x130
+je 0x694cf7
+cmp dword[ebx+0xa4],4
+je 0x694d27
+cmp byte[ebx+0x9f],0
+jne 0x694c92
+mov dword[esp],ebx
+call fcn.00694d80
+mov eax,1
+jmp 0x694b9e
+test byte[esi+0xdc],8
+je 0x694bd3
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp eax,dword[ebx+0x54]
+je 0x694bd3
+mov dword[esp+4],str.Attempted_to_queue_response_on_wrong_thread__n
+mov dword[esp],esi
+call fcn.0069df20
+xor eax,eax
+jmp 0x694b9e
+mov dword[esp],eax
+call fcn.006a0a60
+mov eax,dword[esp+0x28]
+mov dword[ebx+0xac],0x65
+mov dword[ebx+0x1c],eax
+mov eax,dword[ebx+0x2c]
+test eax,eax
+jne 0x694c30
+mov eax,dword[esp+0x28]
+mov edx,dword[eax+0x3c]
+mov eax,dword[eax+0x38]
+mov dword[ebx+0x7c],edx
+mov dword[ebx+0x78],eax
+jmp 0x694c74
+mov dword[esp+4],str.Attempted_upgrade_connection_on_daemon_without_MHD_ALLOW_UPGRADE_option__n
+mov dword[esp],esi
+call fcn.0069df20
+xor eax,eax
+jmp 0x694b9e
+mov eax,dword[ebx+0x2c]
+test eax,eax
+je 0x694c81
+mov dword[esp+4],str.POST
+mov dword[esp],eax
+call fcn.0069e770
+test eax,eax
+je 0x694d5c
+mov byte[ebx+0x9d],1
+mov dword[ebx+0xa4],9
+jmp 0x694c81
+mov dword[esp+4],0x7b8c6c
+mov eax,dword[ebx+0x2c]
+mov dword[esp],eax
+call fcn.0069e770
+test eax,eax
+jne 0x694d46
+jmp 0x694c81
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006841c0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068b9d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

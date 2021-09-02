@@ -1,0 +1,195 @@
+---
+layout: post
+title:  "fcn.00509d80 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00509d80
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00401840][similar_1_ref] (sim.: 0.9194024681606324)
+2. [fcn.00450290][similar_2_ref] (sim.: 0.9168572361119226)
+3. [fcn.004182b0][similar_3_ref] (sim.: 0.9116933569672991)
+4. [fcn.0043db80][similar_4_ref] (sim.: 0.9101193873049389)
+5. [fcn.00454a20][similar_5_ref] (sim.: 0.9088135405129971)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+mov ebx,dword[esp+8]
+test ebx,ebx
+jne 0x509da5
+push 0xb0
+push str..crypto_bio_b_sock.c
+push 0x71
+push 0x6b
+push 0x20
+call fcn.00443760
+add esp,0x14
+xor eax,eax
+pop ebx
+ret 
+push ebp
+push esi
+push edi
+push ebx
+call fcn.004f61dc
+add esp,4
+test eax,eax
+je 0x509dc6
+mov ecx,dword[esp+0x18]
+mov word[ecx],ax
+pop edi
+pop esi
+pop ebp
+mov eax,1
+pop ebx
+ret 
+push 0xb7
+push str..crypto_bio_b_sock.c
+push 0x17
+push 9
+call fcn.00454f00
+add esp,0x10
+push 0x555ba4
+push ebx
+call dword[sym.imp.WS2_32.dll_getservbyname]
+mov ebp,dword[esp+0x18]
+mov esi,eax
+test esi,esi
+je 0x509e01
+movzx edx,word[esi+8]
+push edx
+call dword[sym.imp.WS2_32.dll_ntohs]
+mov word[ebp],ax
+push 0xc3
+push str..crypto_bio_b_sock.c
+push 0x17
+push 0xa
+call fcn.00454f00
+add esp,0x10
+test esi,esi
+jne 0x509dbc
+mov edi,str.http
+mov esi,ebx
+mov ecx,5
+xor eax,eax
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509e3d
+pop edi
+pop esi
+mov word[ebp],0x50
+pop ebp
+mov eax,1
+pop ebx
+ret 
+mov edi,str.telnet
+mov esi,ebx
+mov ecx,7
+xor edx,edx
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509e5d
+pop edi
+pop esi
+mov word[ebp],0x17
+pop ebp
+lea eax,[edx+1]
+pop ebx
+ret 
+mov edi,str.socks
+mov esi,ebx
+mov ecx,6
+xor eax,eax
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509e7f
+pop edi
+pop esi
+mov word[ebp],0x438
+pop ebp
+mov eax,1
+pop ebx
+ret 
+mov edi,str.https
+mov esi,ebx
+mov ecx,6
+xor edx,edx
+repe cmpsb byte[esi],byte ptr es:[edi]
+je 0x509ea3
+mov edi,0x519964
+mov esi,ebx
+mov ecx,4
+xor eax,eax
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509eb3
+pop edi
+pop esi
+mov word[ebp],0x1bb
+pop ebp
+mov eax,1
+pop ebx
+ret 
+mov edi,0x50c4cc
+mov esi,ebx
+mov ecx,4
+xor edx,edx
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509ed3
+pop edi
+pop esi
+mov word[ebp],0x15
+pop ebp
+lea eax,[edx+1]
+pop ebx
+ret 
+mov edi,str.gopher
+mov esi,ebx
+mov ecx,7
+xor eax,eax
+repe cmpsb byte[esi],byte ptr es:[edi]
+jne 0x509ef5
+pop edi
+pop esi
+mov word[ebp],0x46
+pop ebp
+mov eax,1
+pop ebx
+ret 
+push 0xd8
+push str..crypto_bio_b_sock.c
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push eax
+push 3
+push 2
+call fcn.00443760
+push 0x54bd8c
+push ebx
+push str.service
+push 3
+call fcn.00443a40
+add esp,0x24
+pop edi
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401840@a2475448bf4050c1583e1970984a4d00
+[similar_2_ref]: /report/fcn.00450290@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.004182b0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.0043db80@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.00406c92 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406c92
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00402626][similar_1_ref] (sim.: 0.850655067885517)
+2. [fcn.0040585c][similar_2_ref] (sim.: 0.8467446992083201)
+3. [fcn.0040ad38][similar_3_ref] (sim.: 0.8428623343067202)
+4. [fcn.0040aac0][similar_4_ref] (sim.: 0.8404133889525598)
+5. [fcn.004077b4][similar_5_ref] (sim.: 0.8402037400905359)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+push esi
+push edi
+push dword[esp+0x14]
+call fcn.00407e49
+mov edi,eax
+xor ecx,ecx
+push 2
+pop edx
+lea eax,[edi+1]
+mul edx
+seto cl
+neg ecx
+or ecx,eax
+push ecx
+call fcn.00407b08
+push dword[esp+0x1c]
+mov esi,eax
+push esi
+call fcn.00408466
+add esp,0x10
+xor ebp,ebp
+test edi,edi
+mov bl,1
+jl 0x406d01
+cmp word[esi+ebp*2],0x5c
+jne 0x406cf8
+and word[esi+ebp*2],0
+push esi
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x406cf2
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_CreateDirectoryW]
+test eax,eax
+je 0x406cff
+mov word[esi+ebp*2],0x5c
+inc ebp
+cmp ebp,edi
+jle 0x406ccf
+jmp 0x406d01
+xor bl,bl
+push esi
+call fcn.004085ea
+pop ecx
+pop edi
+pop esi
+pop ebp
+movzx eax,bl
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402626@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040585c@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.0040ad38@4c2db4ba96e80258daff665d7d7a016a
+[similar_4_ref]: /report/fcn.0040aac0@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_5_ref]: /report/fcn.004077b4@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

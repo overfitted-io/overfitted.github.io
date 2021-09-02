@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.00427aa0 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00427aa0
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004244b0][similar_1_ref] (sim.: 0.8442665832545795)
+2. [fcn.00470a40][similar_2_ref] (sim.: 0.8439526222257312)
+3. [fcn.100cbce0][similar_3_ref] (sim.: 0.8311664132357288)
+4. [fcn.10004b60][similar_4_ref] (sim.: 0.8284745787655837)
+5. [fcn.00407c90][similar_5_ref] (sim.: 0.8282827453136449)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov ecx,dword[esp+8]
+mov edx,dword[esp+4]
+sub esp,0x10c
+lea eax,[esp]
+push esi
+push eax
+push 1
+push 0
+push ecx
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+mov esi,eax
+test esi,esi
+jne 0x427b02
+mov edx,dword[esp+4]
+lea eax,[esp+8]
+lea ecx,[esp+0xc]
+push eax
+push ecx
+push esi
+push edx
+mov dword[esp+0x18],0x104
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueA]
+mov ecx,dword[esp+0x11c]
+lea eax,[esp+0xc]
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_lstrcpyA]
+mov edx,dword[esp+4]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,esi
+pop esi
+add esp,0x10c
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004244b0@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00470a40@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.100cbce0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/fcn.10004b60@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.00407c90@0403abd1e9e066fc89cddd5736647282
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

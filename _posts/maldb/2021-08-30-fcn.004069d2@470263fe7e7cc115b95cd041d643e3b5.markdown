@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "fcn.004069d2 @ 470263fe7e7cc115b95cd041d643e3b5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004069d2
+- **Origin (md5):** 470263fe7e7cc115b95cd041d643e3b5
+- **VirusTotal:** [virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Similar Functions
+
+1. [fcn.00406ac5][similar_1_ref] (sim.: 0.9107058918544183)
+2. [fcn.0040bcdc][similar_2_ref] (sim.: 0.9012102498199297)
+3. [fcn.004030f3][similar_3_ref] (sim.: 0.8867393272392744)
+4. [fcn.0040b15a][similar_4_ref] (sim.: 0.885812887969353)
+5. [fcn.00407935][similar_5_ref] (sim.: 0.8855414258953404)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov ebx,ecx
+push edi
+push 4
+push 0x3000
+push 0x400
+push 0
+mov edi,edx
+call esi
+push 4
+push 0x3000
+push 0x800
+push 0
+mov dword[ebx],eax
+call esi
+push 0x800
+push eax
+mov dword[edi],eax
+call dword[sym.imp.KERNEL32.dll_VirtualLock]
+mov esi,dword[ebp+8]
+mov eax,dword[ebp+0xc]
+push 0xf0000000
+push 1
+mov dword[esi],0x400
+mov dword[eax],0x800
+mov eax,dword[edi]
+mov dword[ebp-0xc],eax
+mov eax,dword[ebx]
+push str.Microsoft_Enhanced_Cryptographic_Provider_v1.0
+mov dword[ebp-8],eax
+lea eax,[ebp-4]
+push 0
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextW]
+test eax,eax
+je 0x406aa0
+lea eax,[ebp+8]
+push eax
+push 0x8000001
+push 0xa400
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_CryptGenKey]
+push esi
+push dword[ebp-8]
+mov esi,dword[sym.imp.ADVAPI32.dll_CryptExportKey]
+xor ebx,ebx
+push ebx
+push 6
+push ebx
+push dword[ebp+8]
+call esi
+push dword[ebp+0xc]
+push dword[ebp-0xc]
+push ebx
+push 7
+push ebx
+push dword[ebp+8]
+call esi
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_CryptDestroyKey]
+push ebx
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
+xor eax,eax
+inc eax
+jmp 0x406abe
+mov esi,dword[sym.imp.KERNEL32.dll_VirtualFree]
+push 0x8000
+push 0
+push dword[ebx]
+call esi
+push 0x8000
+push 0
+push dword[edi]
+call esi
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406ac5@470263fe7e7cc115b95cd041d643e3b5
+[similar_2_ref]: /report/fcn.0040bcdc@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.004030f3@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.0040b15a@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/fcn.00407935@e7582fc3dadb394a1457ab7e7fbbe9a7
+[virustotal_ref]: https://www.virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5

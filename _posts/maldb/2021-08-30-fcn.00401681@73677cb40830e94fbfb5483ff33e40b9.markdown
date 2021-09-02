@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.00401681 @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401681
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.10001db0][similar_1_ref] (sim.: 0.7796291449624069)
+2. [fcn.00404644][similar_2_ref] (sim.: 0.7792605803656939)
+3. [fcn.0042a9a8][similar_3_ref] (sim.: 0.775231850202005)
+4. [fcn.004eaeee][similar_4_ref] (sim.: 0.7746610930331119)
+5. [fcn.10120772][similar_5_ref] (sim.: 0.7744942846353821)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+push ebx
+push edi
+mov edi,esi
+mov ebx,0x1ff
+mov ecx,edi
+call fcn.004015a3
+add edi,0x350
+dec ebx
+jns 0x401690
+and dword[esi+0x6a000],0
+lea eax,[ebp-0x24]
+push eax
+mov byte[esi+0x6a008],1
+mov dword[esi+0x6a00c],1
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+mov eax,dword[ebp-0x10]
+mov dword[esi+0x6a004],eax
+lea eax,[esi+0x6a010]
+push eax
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+pop edi
+mov eax,esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001db0@aa9c32ee21744d1f55f879ae83c2dc54
+[similar_2_ref]: /report/fcn.00404644@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.0042a9a8@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.004eaeee@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.10120772@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

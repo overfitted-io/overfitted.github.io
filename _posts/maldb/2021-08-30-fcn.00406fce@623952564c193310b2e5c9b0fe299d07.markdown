@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.00406fce @ 623952564c193310b2e5c9b0fe299d07"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406fce
+- **Origin (md5):** 623952564c193310b2e5c9b0fe299d07
+- **VirusTotal:** [virustotal.com/gui/file/623952564c193310b2e5c9b0fe299d07][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00407d82][similar_1_ref] (sim.: 0.8892111821862759)
+2. [fcn.004046d3][similar_2_ref] (sim.: 0.8799234909528926)
+3. [fcn.004046d3][similar_3_ref] (sim.: 0.8799234909528926)
+4. [fcn.00407da8][similar_4_ref] (sim.: 0.8798561376985772)
+5. [fcn.004020d5][similar_5_ref] (sim.: 0.8796872422986008)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x41d128
+call fcn.0041be50
+sub esp,0x224
+push ebx
+push esi
+mov esi,edx
+xor ebx,ebx
+push edi
+mov edi,ecx
+mov eax,dword[esi]
+mov dword[esi+4],ebx
+mov word[eax],bx
+cmp byte[0x4263b0],bl
+je 0x40702b
+lea eax,[ebp-0x230]
+push 0x105
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+cmp eax,0x104
+ja 0x407027
+cmp eax,ebx
+je 0x407027
+lea eax,[ebp-0x230]
+mov ecx,esi
+push eax
+call fcn.00404046
+mov al,1
+jmp 0x407088
+xor al,al
+jmp 0x407088
+push 3
+lea ecx,[ebp-0x18]
+mov dword[ebp-0x18],ebx
+mov dword[ebp-0x14],ebx
+mov dword[ebp-0x10],ebx
+call fcn.00402a2f
+lea edx,[ebp-0x18]
+mov ecx,edi
+mov dword[ebp-4],ebx
+call fcn.00406f84
+test al,al
+je 0x40707d
+call dword[sym.imp.KERNEL32.dll_AreFileApisANSI]
+neg eax
+sbb eax,eax
+lea edx,[ebp-0x18]
+inc eax
+lea ecx,[ebp-0x24]
+push eax
+call fcn.00405d64
+push eax
+mov ecx,esi
+mov byte[ebp-4],1
+call fcn.00401e1b
+push dword[ebp-0x24]
+call fcn.0040577b
+pop ecx
+mov bl,1
+push dword[ebp-0x18]
+call fcn.0040577b
+pop ecx
+mov al,bl
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+pop ebx
+mov dword fs:[0],ecx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407d82@623952564c193310b2e5c9b0fe299d07
+[similar_2_ref]: /report/fcn.004046d3@617bd594ba13d0dcc08a315774c342d4
+[similar_3_ref]: /report/fcn.004046d3@b8b9b802e96d8e813c605554cf6f7018
+[similar_4_ref]: /report/fcn.00407da8@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_5_ref]: /report/fcn.004020d5@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/623952564c193310b2e5c9b0fe299d07

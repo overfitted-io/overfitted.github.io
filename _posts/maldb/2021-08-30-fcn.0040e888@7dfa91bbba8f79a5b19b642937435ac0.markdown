@@ -1,0 +1,169 @@
+---
+layout: post
+title:  "fcn.0040e888 @ 7dfa91bbba8f79a5b19b642937435ac0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040e888
+- **Origin (md5):** 7dfa91bbba8f79a5b19b642937435ac0
+- **VirusTotal:** [virustotal.com/gui/file/7dfa91bbba8f79a5b19b642937435ac0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00402fdb][similar_1_ref] (sim.: 0.9566376665645931)
+2. [fcn.00409db2][similar_2_ref] (sim.: 0.952929514175511)
+3. [fcn.00409db2][similar_3_ref] (sim.: 0.952929514175511)
+4. [fcn.00409db2][similar_4_ref] (sim.: 0.952929514175511)
+5. [fcn.0040de0b][similar_5_ref] (sim.: 0.9518128304212701)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and dword[0x4b7f7c],0
+sub esp,0x28
+push ebx
+xor ebx,ebx
+inc ebx
+or dword[0x437080],ebx
+push 0xa
+call sub.KERNEL32.dll_IsProcessorFeaturePresent
+test eax,eax
+je 0x40ea1b
+and dword[ebp-0x10],0
+xor eax,eax
+or dword[0x437080],2
+xor ecx,ecx
+push esi
+push edi
+mov dword[0x4b7f7c],ebx
+lea edi,[ebp-0x28]
+push ebx
+cpuid 
+mov esi,ebx
+pop ebx
+mov dword[edi],eax
+mov dword[edi+4],esi
+mov dword[edi+8],ecx
+mov dword[edi+0xc],edx
+mov eax,dword[ebp-0x28]
+mov ecx,dword[ebp-0x1c]
+mov dword[ebp-8],eax
+xor ecx,0x49656e69
+mov eax,dword[ebp-0x20]
+xor eax,0x6c65746e
+or ecx,eax
+mov eax,dword[ebp-0x24]
+push 1
+xor eax,0x756e6547
+or ecx,eax
+pop eax
+push 0
+pop ecx
+push ebx
+cpuid 
+mov esi,ebx
+pop ebx
+mov dword[edi],eax
+mov dword[edi+4],esi
+mov dword[edi+8],ecx
+mov dword[edi+0xc],edx
+jne 0x40e958
+mov eax,dword[ebp-0x28]
+and eax,0xfff3ff0
+cmp eax,0x106c0
+je 0x40e947
+cmp eax,0x20660
+je 0x40e947
+cmp eax,0x20670
+je 0x40e947
+cmp eax,0x30650
+je 0x40e947
+cmp eax,0x30660
+je 0x40e947
+cmp eax,0x30670
+jne 0x40e958
+mov edi,dword[0x4b7f80]
+or edi,1
+mov dword[0x4b7f80],edi
+jmp 0x40e95e
+mov edi,dword[0x4b7f80]
+cmp dword[ebp-8],7
+mov eax,dword[ebp-0x1c]
+mov dword[ebp-0x18],eax
+mov eax,dword[ebp-0x20]
+mov dword[ebp-4],eax
+mov dword[ebp-0x14],eax
+jl 0x40e9a5
+push 7
+pop eax
+xor ecx,ecx
+push ebx
+cpuid 
+mov esi,ebx
+pop ebx
+lea ebx,[ebp-0x28]
+mov dword[ebx],eax
+mov dword[ebx+4],esi
+mov dword[ebx+8],ecx
+mov dword[ebx+0xc],edx
+mov eax,dword[ebp-0x24]
+test eax,0x200
+mov dword[ebp-0x10],eax
+mov eax,dword[ebp-4]
+je 0x40e9a5
+or edi,2
+mov dword[0x4b7f80],edi
+pop edi
+pop esi
+test eax,0x100000
+je 0x40ea1b
+or dword[0x437080],4
+mov dword[0x4b7f7c],2
+test eax,0x8000000
+je 0x40ea1b
+test eax,0x10000000
+je 0x40ea1b
+xor ecx,ecx
+xgetbv 
+mov dword[ebp-0xc],eax
+mov dword[ebp-8],edx
+mov eax,dword[ebp-0xc]
+mov ecx,dword[ebp-8]
+and eax,6
+xor ecx,ecx
+cmp eax,6
+jne 0x40ea1b
+test ecx,ecx
+jne 0x40ea1b
+mov eax,dword[0x437080]
+or eax,8
+mov dword[0x4b7f7c],3
+test byte[ebp-0x10],0x20
+mov dword[0x437080],eax
+je 0x40ea1b
+or eax,0x20
+mov dword[0x4b7f7c],5
+mov dword[0x437080],eax
+xor eax,eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402fdb@df122b321cb85208f7078f98486a1c28
+[similar_2_ref]: /report/fcn.00409db2@a7fde220a04c8ad1ded25e571c4daa50
+[similar_3_ref]: /report/fcn.00409db2@339149a6ceaff8ec9831ebc6113adb23
+[similar_4_ref]: /report/fcn.00409db2@0b073c89b077a27e3496540be7574e33
+[similar_5_ref]: /report/fcn.0040de0b@64e5091c15839d4b2093890f73869f28
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dfa91bbba8f79a5b19b642937435ac0

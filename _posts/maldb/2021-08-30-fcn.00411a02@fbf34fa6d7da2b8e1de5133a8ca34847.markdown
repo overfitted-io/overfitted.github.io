@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "fcn.00411a02 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00411a02
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00417233][similar_1_ref] (sim.: 0.8931540986121427)
+2. [fcn.00417233][similar_2_ref] (sim.: 0.8931540986121427)
+3. [fcn.00417233][similar_3_ref] (sim.: 0.8931540986121427)
+4. [fcn.00417233][similar_4_ref] (sim.: 0.8931540986121427)
+5. [fcn.00417233][similar_5_ref] (sim.: 0.8931540986121427)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x417658],0
+push ebx
+push esi
+mov esi,0x417660
+jne 0x411a2e
+call dword[sym.imp.KERNEL32.dll_TlsAlloc]
+push esi
+mov dword[0x417678],eax
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov dword[0x417658],1
+push dword[0x417678]
+call dword[sym.imp.KERNEL32.dll_TlsGetValue]
+mov ebx,eax
+test ebx,ebx
+jne 0x411acb
+push 0x14
+push 8
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov ebx,eax
+test ebx,ebx
+je 0x411af5
+push esi
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov eax,dword[0x41765c]
+test eax,eax
+je 0x411a70
+mov dword[eax],ebx
+push edi
+push esi
+mov dword[ebx+4],eax
+mov dword[0x41765c],ebx
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov esi,dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+lea edi,[ebx+0x10]
+push 0
+push 0
+push 0x100000
+push edi
+call esi
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+push eax
+call esi
+push eax
+call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
+push 8
+push 0xffffffffffffffff
+push ebx
+push 0x411afa
+push dword[edi]
+lea eax,[ebx+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_RegisterWaitForSingleObject]
+push ebx
+push dword[0x417678]
+call dword[sym.imp.KERNEL32.dll_TlsSetValue]
+pop edi
+push 0xc
+push 0
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+test eax,eax
+je 0x411af5
+mov ecx,dword[esp+0xc]
+mov dword[eax+4],ecx
+mov ecx,dword[esp+0x10]
+mov dword[eax+8],ecx
+mov ecx,dword[ebx+8]
+mov dword[eax],ecx
+mov dword[ebx+8],eax
+pop esi
+pop ebx
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00417233@44a756939733df3681808b122b91651f
+[similar_2_ref]: /report/fcn.00417233@6e426bd8e348fab7a17ba317fb0f2d87
+[similar_3_ref]: /report/fcn.00417233@c6d5547a6b11db0106596d8a93b709be
+[similar_4_ref]: /report/fcn.00417233@3d7f25d788af3e7f7707a736ac852465
+[similar_5_ref]: /report/fcn.00417233@b8b9cf6862b0d68d10750002e5baaf97
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

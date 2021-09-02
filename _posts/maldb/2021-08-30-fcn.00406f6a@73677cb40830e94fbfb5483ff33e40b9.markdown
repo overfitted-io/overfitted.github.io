@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.00406f6a @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406f6a
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.004042e8][similar_1_ref] (sim.: 0.7772244820013654)
+2. [fcn.0040434f][similar_2_ref] (sim.: 0.7701177270882102)
+3. [fcn.004033cc][similar_3_ref] (sim.: 0.7674577858069396)
+4. [fcn.004f6d50][similar_4_ref] (sim.: 0.7667353984384722)
+5. [fcn.004f6d50][similar_5_ref] (sim.: 0.7667353984384722)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,eax
+call fcn.00406c30
+push 0x64
+call dword[sym.imp.KERNEL32.dll_Sleep]
+mov eax,esi
+call fcn.00406f44
+test al,al
+je 0x406f9e
+push 1
+push dword[esi+0x14]
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+push 0x3e8
+push dword[esi+0x14]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+and dword[esi+0x14],0
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004042e8@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_2_ref]: /report/fcn.0040434f@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_3_ref]: /report/fcn.004033cc@e38ba004520fa1a86a35b63e8d5843ef
+[similar_4_ref]: /report/fcn.004f6d50@a9a3c47f5c08fef0f0f69b66c17916ac
+[similar_5_ref]: /report/fcn.004f6d50@ef3a0211d1ddb224667e2aa0d915337b
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

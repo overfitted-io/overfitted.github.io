@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.00410810 @ 146b14fc12cf789043a79d4f548a23bf"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00410810
+- **Origin (md5):** 146b14fc12cf789043a79d4f548a23bf
+- **VirusTotal:** [virustotal.com/gui/file/146b14fc12cf789043a79d4f548a23bf][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00410810][similar_1_ref] (sim.: 0.9998445752508868)
+2. [fcn.00410810][similar_2_ref] (sim.: 0.9998445752508868)
+3. [fcn.00410810][similar_3_ref] (sim.: 0.9998445752508868)
+4. [fcn.00410810][similar_4_ref] (sim.: 0.9998445752508868)
+5. [fcn.00410810][similar_5_ref] (sim.: 0.9998445752508868)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x477100],0
+push esi
+push edi
+jne 0x410786
+call fcn.004106f2
+test eax,eax
+je 0x4107cb
+mov eax,dword[0x477100]
+cmp eax,1
+jne 0x4107a7
+push 0xd
+push 0
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+test eax,eax
+je 0x4107cb
+jmp 0x41080d
+mov edi,dword[sym.imp.KERNEL32.dll_InterlockedPopEntrySList]
+push eax
+call edi
+test eax,eax
+jne 0x41080d
+push 0x40
+mov eax,0x1000
+push eax
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov esi,eax
+test esi,esi
+jne 0x4107cf
+xor eax,eax
+jmp 0x41080d
+mov eax,dword[esi]
+push dword[0x477100]
+call edi
+mov edi,eax
+test edi,edi
+je 0x4107f1
+push 0x8000
+push 0
+push esi
+call dword[sym.imp.KERNEL32.dll_VirtualFree]
+mov eax,edi
+jmp 0x41080d
+lea edi,[esi+0xff0]
+push esi
+push dword[0x477100]
+call dword[sym.imp.KERNEL32.dll_InterlockedPushEntrySList]
+add esi,0x10
+cmp esi,edi
+jb 0x4107f7
+mov eax,esi
+pop edi
+pop esi
+ret 
+jmp 0x410772
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410810@6e426bd8e348fab7a17ba317fb0f2d87
+[similar_2_ref]: /report/fcn.00410810@44a756939733df3681808b122b91651f
+[similar_3_ref]: /report/fcn.00410810@9571c7458fae91969aaed3955e433f49
+[similar_4_ref]: /report/fcn.00410810@a314f14b11fc4f772a3e30c11b5cb1d4
+[similar_5_ref]: /report/fcn.00410810@b8b9cf6862b0d68d10750002e5baaf97
+[virustotal_ref]: https://www.virustotal.com/gui/file/146b14fc12cf789043a79d4f548a23bf

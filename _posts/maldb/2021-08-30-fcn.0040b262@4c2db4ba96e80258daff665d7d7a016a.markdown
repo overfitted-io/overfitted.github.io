@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.0040b262 @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040b262
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040b21f][similar_1_ref] (sim.: 0.8891133776719109)
+2. [fcn.0040d8fe][similar_2_ref] (sim.: 0.811316877952044)
+3. [fcn.00405e88][similar_3_ref] (sim.: 0.7684866968871589)
+4. [fcn.00405e88][similar_4_ref] (sim.: 0.7684866968871589)
+5. [fcn.00405e88][similar_5_ref] (sim.: 0.7684866968871589)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x42aa84],0
+jne 0x40b292
+push esi
+push 0
+call dword[sym.imp.USER32.dll_GetDC]
+mov esi,eax
+test esi,esi
+je 0x40b291
+push 0x5a
+push esi
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push esi
+push 0
+mov dword[0x42aa84],eax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+pop esi
+mov eax,dword[0x42aa84]
+imul eax,dword[esp+4]
+push 0x60
+cdq 
+pop ecx
+idiv ecx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040b21f@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.0040d8fe@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.00405e88@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_4_ref]: /report/fcn.00405e88@983fe9598b69120a048e4bbfe8d8764c
+[similar_5_ref]: /report/fcn.00405e88@024d69b3dfb503973cce5c1700f282aa
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00432ad9 @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00432ad9
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004151b4][similar_1_ref] (sim.: 0.8651310182443113)
+2. [fcn.00416337][similar_2_ref] (sim.: 0.8615076692942365)
+3. [fcn.0040c178][similar_3_ref] (sim.: 0.8600068206014908)
+4. [fcn.00432a0a][similar_4_ref] (sim.: 0.8583780196982935)
+5. [fcn.00432ba8][similar_5_ref] (sim.: 0.8577447093802518)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x118
+mov eax,dword[0x4a83f0]
+xor eax,ebp
+mov dword[ebp-4],eax
+push edi
+lea eax,[ebp-0x118]
+push eax
+mov dword[ebp-0x118],0x114
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+xor edi,edi
+inc edi
+cmp dword[ebp-0x108],edi
+jne 0x432b13
+xor eax,eax
+jmp 0x432b6c
+cmp dword[0x4b5f08],0
+je 0x432b23
+mov eax,0x4b5f28
+jmp 0x432b6c
+push esi
+push edi
+mov esi,0x4b5f14
+push esi
+call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]
+test eax,eax
+je 0x432b69
+push 0
+push 0
+push edi
+push esi
+call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]
+test eax,eax
+je 0x432b69
+and dword[0x4b5f30],0
+mov dword[0x4b5f28],0xc
+mov dword[0x4b5f2c],esi
+mov dword[0x4b5f08],edi
+mov eax,0x4b5f28
+jmp 0x432b6b
+xor eax,eax
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop edi
+call fcn.0043e257
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004151b4@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0040c178@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_4_ref]: /report/fcn.00432a0a@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_5_ref]: /report/fcn.00432ba8@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

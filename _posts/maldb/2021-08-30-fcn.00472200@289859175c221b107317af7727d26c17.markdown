@@ -1,0 +1,57 @@
+---
+layout: post
+title:  "fcn.00472200 @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00472200
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Similar Functions
+
+1. [fcn.004e1240][similar_1_ref] (sim.: 0.886880693182346)
+2. [fcn.00472260][similar_2_ref] (sim.: 0.7830819383970822)
+3. [fcn.004e12a0][similar_3_ref] (sim.: 0.7501488721942748)
+4. [fcn.0050a0c0][similar_4_ref] (sim.: 0.7471991032192232)
+5. [fcn.004131ff][similar_5_ref] (sim.: 0.7408080382945992)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push 0xf0000000
+push 1
+push 0
+push 0
+push esi
+call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextA]
+test eax,eax
+je 0x472231
+mov ecx,dword[esi]
+lea eax,[esi+4]
+push eax
+push 0
+push 0
+push 0x8003
+push ecx
+call dword[sym.imp.ADVAPI32.dll_CryptCreateHash]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004e1240@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00472260@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.004e12a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.0050a0c0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.004131ff@4c2db4ba96e80258daff665d7d7a016a
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

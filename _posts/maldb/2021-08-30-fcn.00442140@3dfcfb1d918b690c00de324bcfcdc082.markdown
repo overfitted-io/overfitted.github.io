@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.00442140 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00442140
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00495a72][similar_1_ref] (sim.: 0.8098767135927991)
+2. [fcn.00434d6b][similar_2_ref] (sim.: 0.8097325776285642)
+3. [fcn.0054ab03][similar_3_ref] (sim.: 0.8091422026385551)
+4. [fcn.0054ab03][similar_4_ref] (sim.: 0.8091422026385551)
+5. [fcn.0041b4be][similar_5_ref] (sim.: 0.8084991593009461)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+xor eax,eax
+push 0x104
+push esi
+push dword[0x48a04c]
+mov word[esi],ax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+cmp word[esi+2],0x3a
+jne 0x442174
+movzx eax,word[esi]
+cmp eax,0x61
+jb 0x442174
+cmp eax,0x7a
+ja 0x442174
+add eax,0xffffffe0
+mov word[esi],ax
+mov eax,esi
+mov cx,word[eax]
+add eax,2
+test cx,cx
+jne 0x442176
+sub eax,2
+cmp eax,esi
+je 0x442190
+cmp word[eax],0x5c
+jne 0x442181
+jmp 0x442196
+cmp word[eax],0x5c
+jne 0x44219c
+xor ecx,ecx
+mov word[eax+2],cx
+mov ecx,esi
+mov edi,edi
+mov ax,word[ecx]
+add ecx,2
+test ax,ax
+jne 0x4421a0
+sub ecx,esi
+sar ecx,1
+pop esi
+lea eax,[ecx-1]
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00495a72@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00434d6b@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.0054ab03@9a2108de6665bf53e42d7cbbbe5a0866
+[similar_4_ref]: /report/fcn.0054ab03@90c53de31ca36ce245bc69453e4bdaaf
+[similar_5_ref]: /report/fcn.0041b4be@44a756939733df3681808b122b91651f
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

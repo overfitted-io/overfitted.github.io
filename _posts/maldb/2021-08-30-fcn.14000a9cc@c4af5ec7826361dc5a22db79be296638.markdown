@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "fcn.14000a9cc @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.14000a9cc
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.14000d1a0][similar_1_ref] (sim.: 0.8262404618335679)
+2. [fcn.14000ac34][similar_2_ref] (sim.: 0.8197235506734865)
+3. [fcn.14000c76c][similar_3_ref] (sim.: 0.8112497333979533)
+4. [fcn.18000163c][similar_4_ref] (sim.: 0.8076475485479316)
+5. [fcn.180002540][similar_5_ref] (sim.: 0.8039932645327409)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x10],rbx
+push rdi
+sub rsp,0x20
+call qword[sym.imp.USER32.DLL_GetForegroundWindow]
+xor edi,edi
+mov rbx,rax
+test rax,rax
+je 0x14000aa02
+lea rdx,[rsp+0x30]
+mov rcx,rax
+call qword[sym.imp.USER32.DLL_GetWindowThreadProcessId]
+call qword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+cmp dword[rsp+0x30],eax
+cmovne rbx,rdi
+mov rax,rbx
+mov rbx,qword[rsp+0x38]
+add rsp,0x20
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14000d1a0@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.14000ac34@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.14000c76c@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.18000163c@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_5_ref]: /report/fcn.180002540@7dc44f7522d53d03c7b1f4335f6d2a15
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

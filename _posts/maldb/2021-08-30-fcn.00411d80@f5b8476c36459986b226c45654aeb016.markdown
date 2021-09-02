@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.00411d80 @ f5b8476c36459986b226c45654aeb016"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00411d80
+- **Origin (md5):** f5b8476c36459986b226c45654aeb016
+- **VirusTotal:** [virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004113e8][similar_1_ref] (sim.: 0.9208914446565083)
+2. [fcn.0041088c][similar_2_ref] (sim.: 0.9088182362680515)
+3. [fcn.00410a58][similar_3_ref] (sim.: 0.9037380364271345)
+4. [fcn.00410a58][similar_4_ref] (sim.: 0.9037380364271345)
+5. [fcn.00410a58][similar_5_ref] (sim.: 0.9037380364271345)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+jne 0x411d93
+inc eax
+mov dword[0x480140],eax
+ret 
+mov eax,dword fs:[0x18]
+push ebx
+push esi
+mov esi,dword[eax+0x30]
+add esi,0x34
+mov eax,dword[esi]
+push edi
+test eax,eax
+jne 0x411de2
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push 8
+push eax
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+xor eax,eax
+cmp edi,eax
+je 0x411dea
+push eax
+push edi
+push esi
+mov dword[edi],eax
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+test eax,eax
+je 0x411de0
+push edi
+push 0
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x480140],eax
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004113e8@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_2_ref]: /report/fcn.0041088c@e16f74a2849182d98050864255e902f8
+[similar_3_ref]: /report/fcn.00410a58@96a869ae624ddb4834a1d5a829f85469
+[similar_4_ref]: /report/fcn.00410a58@505be53c36227b94e2fcc406f247f6e5
+[similar_5_ref]: /report/fcn.00410a58@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[virustotal_ref]: https://www.virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016

@@ -1,0 +1,153 @@
+---
+layout: post
+title:  "fcn.00462340 @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00462340
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004d1670][similar_1_ref] (sim.: 0.9397845732152883)
+2. [fcn.00452f60][similar_2_ref] (sim.: 0.9109100575923587)
+3. [fcn.0042e6f0][similar_3_ref] (sim.: 0.9107166494023611)
+4. [fcn.004e53a0][similar_4_ref] (sim.: 0.9106820525969402)
+5. [fcn.00454190][similar_5_ref] (sim.: 0.9105399277439609)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0xc
+push ebx
+mov ebx,dword[esp+0x1c]
+push ebp
+push esi
+mov esi,dword[esp+0x20]
+mov eax,dword[esi]
+mov ebp,dword[esi+0x154]
+push edi
+xor edi,edi
+add esi,0x400
+mov dword[esp+0x14],eax
+mov dword[esp+0x10],edi
+mov dword[esp+0x18],edi
+cmp ebx,edi
+je 0x462373
+mov dword[ebx],edi
+jmp 0x462377
+lea ebx,[esp+0x18]
+mov ecx,dword[esp+0x20]
+mov dword[ecx],edi
+cmp dword[ebx],edi
+jne 0x46241f
+push esi
+call fcn.0046f6a0
+add esp,4
+test eax,eax
+jle 0x462430
+mov ecx,0x3e8
+cmp eax,ecx
+jge 0x4623a1
+mov ecx,eax
+cmp dword[esi],0
+je 0x4623ad
+cmp dword[esp+0x10],2
+jl 0x4623c8
+push ecx
+push 0xffffffffffffffff
+push 0xffffffffffffffff
+push ebp
+call fcn.00446660
+add esp,0x10
+cmp eax,0xffffffff
+je 0x46245c
+test eax,eax
+je 0x462405
+push ebp
+lea ecx,[esp+0x2c]
+mov eax,esi
+call fcn.004622e0
+mov edi,eax
+add esp,4
+test edi,edi
+jne 0x46241f
+mov eax,dword[esp+0x28]
+test eax,eax
+jne 0x4623f5
+cmp dword[esi],eax
+je 0x4623f5
+mov ecx,dword[esp+0x20]
+inc dword[esp+0x10]
+add dword[ecx],eax
+jmp 0x462416
+mov ecx,dword[esp+0x20]
+add dword[ecx],eax
+mov dword[esp+0x10],0
+jmp 0x462416
+mov edx,dword[esp+0x24]
+push edx
+call fcn.0046b9c0
+add esp,4
+test eax,eax
+jne 0x46244f
+cmp dword[ebx],0
+je 0x462385
+mov eax,edi
+pop edi
+mov dword[esi+0x10],0
+pop esi
+pop ebp
+pop ebx
+add esp,0xc
+ret 
+mov eax,dword[esp+0x14]
+push str.FTP_response_timeout
+push eax
+call fcn.00450880
+add esp,8
+pop edi
+pop esi
+pop ebp
+mov eax,0x1c
+pop ebx
+add esp,0xc
+ret 
+pop edi
+pop esi
+pop ebp
+mov eax,0x2a
+pop ebx
+add esp,0xc
+ret 
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ecx,dword[esp+0x14]
+push eax
+push str.FTP_response_aborted_due_to_select_poll_error:__d
+push ecx
+call fcn.00450880
+add esp,0xc
+pop edi
+pop esi
+pop ebp
+mov eax,0x38
+pop ebx
+add esp,0xc
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004d1670@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00452f60@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.0042e6f0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.004e53a0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.00454190@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

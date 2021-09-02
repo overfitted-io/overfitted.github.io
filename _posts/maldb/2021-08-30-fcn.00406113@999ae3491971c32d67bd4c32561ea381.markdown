@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "fcn.00406113 @ 999ae3491971c32d67bd4c32561ea381"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406113
+- **Origin (md5):** 999ae3491971c32d67bd4c32561ea381
+- **VirusTotal:** [virustotal.com/gui/file/999ae3491971c32d67bd4c32561ea381][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00406113][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0040626d][similar_2_ref] (sim.: 0.9596628332389826)
+3. [fcn.0040626d][similar_3_ref] (sim.: 0.9596628332389826)
+4. [fcn.00406248][similar_4_ref] (sim.: 0.956826957668341)
+5. [fcn.004060e7][similar_5_ref] (sim.: 0.9459295568591279)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+xor ebx,ebx
+cmp dword[ebp+8],ebx
+je 0x40613c
+mov eax,dword[0x40c058]
+cmp eax,0xffffffff
+je 0x406130
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+or dword[0x40c058],0xffffffff
+jmp 0x4061e7
+cmp dword[0x46d204],ebx
+je 0x4061e7
+push esi
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_WriteFile]
+cmp word[0x476240],bx
+je 0x4061b3
+cmp dword[0x40c058],0xffffffff
+jne 0x4061bc
+mov esi,0x476240
+push esi
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
+push 4
+push 0x40000000
+push esi
+mov dword[ebp+8],eax
+call fcn.00405e7c
+mov dword[0x40c058],eax
+cmp eax,0xffffffff
+je 0x4061e5
+cmp dword[ebp+8],0xffffffff
+jne 0x4061a8
+push ebx
+lea ecx,[ebp-4]
+push ecx
+push 2
+lea ecx,[ebp+8]
+push ecx
+push eax
+mov dword[ebp+8],0xfeff
+call edi
+mov eax,dword[0x40c058]
+push 2
+push ebx
+push ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_SetFilePointer]
+cmp dword[0x40c058],0xffffffff
+je 0x4061e5
+push 0x40a678
+mov esi,0x46d220
+push esi
+call dword[sym.imp.KERNEL32.dll_lstrcatW]
+push esi
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+push ebx
+lea ecx,[ebp+8]
+push ecx
+add eax,eax
+push eax
+push esi
+push dword[0x40c058]
+call edi
+pop edi
+pop esi
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406113@5bfd33ece1aeef8bda2c7fc886262ed9
+[similar_2_ref]: /report/fcn.0040626d@e7582fc3dadb394a1457ab7e7fbbe9a7
+[similar_3_ref]: /report/fcn.0040626d@6c8b5339bada4cbd03f0f446da640707
+[similar_4_ref]: /report/fcn.00406248@13efdafd5b4f5d3a5dcb240b696c267c
+[similar_5_ref]: /report/fcn.004060e7@fc08a944a357dc216338592f13f65b60
+[virustotal_ref]: https://www.virustotal.com/gui/file/999ae3491971c32d67bd4c32561ea381

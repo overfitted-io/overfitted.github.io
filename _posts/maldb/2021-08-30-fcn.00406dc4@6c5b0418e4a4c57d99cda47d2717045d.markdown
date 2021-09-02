@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.00406dc4 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406dc4
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004054cd][similar_1_ref] (sim.: 0.9167460747831806)
+2. [fcn.004064c1][similar_2_ref] (sim.: 0.9090932083003875)
+3. [fcn.00406735][similar_3_ref] (sim.: 0.8997864589419451)
+4. [fcn.0040659d][similar_4_ref] (sim.: 0.8994168034122397)
+5. [fcn.00404ea8][similar_5_ref] (sim.: 0.8991311022910824)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+lea ebp,[esp-0x194]
+sub esp,0x214
+mov eax,dword[0x43720c]
+xor eax,ebp
+mov dword[ebp+0x190],eax
+mov eax,dword[ebp+0x19c]
+and dword[ebp-0x7c],0
+push ebx
+mov ebx,dword[ebp+0x1a0]
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_MoveFileExW]
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_DeleteFileW]
+mov dword[ebp-0x80],eax
+and word[ebp-0x78],0
+push 0x206
+lea eax,[ebp-0x76]
+push 0
+push eax
+call fcn.00408570
+add esp,0xc
+cmp dword[ebp-0x7c],0
+lea eax,[ebp-0x78]
+jne 0x406e33
+push ebx
+push str._s.bak
+push eax
+call fcn.00408482
+add esp,0xc
+jmp 0x406e45
+push dword[ebp-0x7c]
+push ebx
+push str._s.bak_d
+push eax
+call fcn.00408482
+add esp,0x10
+lea eax,[ebp-0x78]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x406e59
+lea eax,[ebp-0x78]
+push eax
+call edi
+lea eax,[ebp-0x78]
+push eax
+push ebx
+call fcn.00408534
+pop ecx
+pop ecx
+lea eax,[ebp-0x78]
+push eax
+call edi
+push 0
+push ebx
+push dword[ebp-0x80]
+call dword[sym.imp.KERNEL32.dll_CopyFileW]
+push 5
+test eax,eax
+push 0
+lea eax,[ebp-0x78]
+push eax
+jne 0x406e93
+call esi
+cmp dword[ebp-0x7c],0xa
+jge 0x406e9e
+inc dword[ebp-0x7c]
+jmp 0x406e01
+call esi
+push 5
+push 0
+push dword[ebp-0x80]
+call esi
+mov ecx,dword[ebp+0x190]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.004082f3
+add ebp,0x194
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004054cd@6c5b0418e4a4c57d99cda47d2717045d
+[similar_2_ref]: /report/fcn.004064c1@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.00406735@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.0040659d@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.00404ea8@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

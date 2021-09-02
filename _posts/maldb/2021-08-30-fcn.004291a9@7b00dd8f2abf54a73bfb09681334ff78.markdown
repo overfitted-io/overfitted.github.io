@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "fcn.004291a9 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004291a9
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10016c94][similar_1_ref] (sim.: 0.8569054593723603)
+2. [fcn.00406669][similar_2_ref] (sim.: 0.8451810222615841)
+3. [fcn.0040659d][similar_3_ref] (sim.: 0.8433826713986152)
+4. [fcn.004052a4][similar_4_ref] (sim.: 0.8412548492855577)
+5. [fcn.0040fd57][similar_5_ref] (sim.: 0.8399376093586254)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x108
+mov eax,dword[0x4672d8]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+push esi
+push edi
+mov edi,dword[ebp+0xc]
+mov esi,0x104
+push esi
+lea ecx,[ebp-0x108]
+push ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+push esi
+mov ecx,edi
+call fcn.00401670
+push esi
+push eax
+lea eax,[ebp-0x108]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetShortPathNameA]
+test eax,eax
+jne 0x429201
+lea eax,[ebp-0x108]
+push eax
+mov ecx,edi
+call fcn.0041063d
+push 0xffffffffffffffff
+mov ecx,edi
+call fcn.004115fe
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.0043779f
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10016c94@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00406669@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.0040659d@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.0040fd57@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.00683320 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00683320
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00683380][similar_1_ref] (sim.: 0.9484298661844842)
+2. [fcn.00683830][similar_2_ref] (sim.: 0.8501905960492084)
+3. [fcn.006845d0][similar_3_ref] (sim.: 0.8370057316846498)
+4. [fcn.00682110][similar_4_ref] (sim.: 0.8299573748888982)
+5. [fcn.0066e170][similar_5_ref] (sim.: 0.8270641636747238)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+sub esp,0x18
+mov eax,dword[esp+0x20]
+mov ecx,dword[esp+0x24]
+mov ebx,dword[esp+0x28]
+mov edx,dword[eax+0x90]
+cmp edx,0xffffffff
+je 0x683375
+mov eax,dword[eax+0x94]
+test eax,eax
+jne 0x683368
+mov dword[esp+8],ebx
+mov dword[esp+4],ecx
+mov dword[esp],edx
+call dword[sym.imp.WS2_32.dll_getsockname]
+sub esp,0xc
+test eax,eax
+jne 0x683362
+add esp,0x18
+pop ebx
+ret 
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[esp+0x20],eax
+add esp,0x18
+pop ebx
+jmp fcn.0066e3a0
+mov eax,0xfffff019
+jmp 0x68335d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00683380@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00683830@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006845d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00682110@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0066e170@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

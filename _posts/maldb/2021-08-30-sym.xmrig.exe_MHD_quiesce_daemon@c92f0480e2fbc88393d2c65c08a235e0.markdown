@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "sym.xmrig.exe_MHD_quiesce_daemon @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.xmrig.exe\_MHD\_quiesce\_daemon
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.005be170][similar_1_ref] (sim.: 0.9180838337367445)
+2. [fcn.0068bda0][similar_2_ref] (sim.: 0.9173257206843686)
+3. [fcn.006b8ae0][similar_3_ref] (sim.: 0.9159120897127744)
+4. [fcn.006841c0][similar_4_ref] (sim.: 0.9122709348389882)
+5. [fcn.0068fd90][similar_5_ref] (sim.: 0.9113341838806949)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov edi,dword[esp+0x30]
+mov esi,dword[edi+0xb4]
+cmp esi,0xffffffff
+je 0x69bea1
+mov eax,dword[edi+0xdc]
+and eax,0x408
+cmp eax,8
+je 0x69bee3
+mov ecx,dword[edi+0x64]
+test ecx,ecx
+je 0x69be63
+mov eax,dword[edi+0x78]
+test eax,eax
+je 0x69be63
+xor ebp,ebp
+mov ebx,dword[sym.imp.WS2_32.dll_send]
+jmp 0x69bdeb
+add ebp,1
+cmp dword[edi+0x78],ebp
+jbe 0x69be63
+mov ecx,dword[edi+0x64]
+imul eax,ebp,0x114
+add ecx,eax
+mov byte[ecx+0xc5],1
+add eax,dword[edi+0x64]
+cmp dword[eax+0xbc],0xffffffff
+je 0x69bde0
+mov dword[esp+0xc],0
+mov dword[esp+8],1
+mov dword[esp+4],0x7ba7e4
+mov eax,dword[eax+0xc0]
+mov dword[esp],eax
+call ebx
+sub esp,0x10
+test eax,eax
+jg 0x69bde0
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+je 0x69bde0
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7ba7e8
+mov dword[esp+8],0x11da
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+cmp dword[edi+0xbc],0xffffffff
+mov byte[edi+0xc5],1
+je 0x69bea1
+mov dword[esp+0xc],0
+mov dword[esp+8],1
+mov dword[esp+4],0x7ba7e4
+mov eax,dword[edi+0xc0]
+mov dword[esp],eax
+call dword[sym.imp.WS2_32.dll_send]
+sub esp,0x10
+test eax,eax
+jle 0x69beb0
+add esp,0x1c
+mov eax,esi
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+je 0x69bea1
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7ba828
+mov dword[esp+8],0x11ed
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+mov dword[esp+4],str.Using_MHD_quiesce_daemon_in_this_mode_requires_MHD_USE_ITC_n
+mov dword[esp],edi
+mov esi,0xffffffff
+call fcn.0069df20
+jmp 0x69bea1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005be170@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006b8ae0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006841c0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

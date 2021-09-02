@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00594030 @ 009ea4ad185ccb9becba67b3b2163e8b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00594030
+- **Origin (md5):** 009ea4ad185ccb9becba67b3b2163e8b
+- **VirusTotal:** [virustotal.com/gui/file/009ea4ad185ccb9becba67b3b2163e8b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00596ea0][similar_1_ref] (sim.: 0.9006990575924234)
+2. [fcn.0069d03f][similar_2_ref] (sim.: 0.8822504130802559)
+3. [fcn.004f6417][similar_3_ref] (sim.: 0.87874524537557)
+4. [fcn.004f6417][similar_4_ref] (sim.: 0.87874524537557)
+5. [fcn.006597ff][similar_5_ref] (sim.: 0.8784962470348276)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+call fcn.005940d5
+push 1
+pop edi
+cmp dword[0x4659644],edi
+jne 0x594052
+push dword[esp+8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+cmp dword[esp+0xc],0
+push ebx
+mov ebx,dword[esp+0x14]
+mov dword[0x4659640],edi
+mov byte[0x465963c],bl
+jne 0x5940a6
+mov eax,dword[0x4659cb0]
+test eax,eax
+je 0x594095
+mov ecx,dword[0x4659cac]
+push esi
+lea esi,[ecx-4]
+cmp esi,eax
+jb 0x594094
+mov eax,dword[esi]
+test eax,eax
+je 0x594089
+call eax
+sub esi,4
+cmp esi,dword[0x4659cb0]
+jae 0x594081
+pop esi
+push 0x5a6018
+push 0x5a6014
+call fcn.005940e7
+pop ecx
+pop ecx
+push 0x5a6020
+push 0x5a601c
+call fcn.005940e7
+pop ecx
+pop ecx
+test ebx,ebx
+pop ebx
+je 0x5940c3
+call fcn.005940de
+pop edi
+ret 
+push dword[esp+8]
+mov dword[0x4659644],edi
+call dword[sym.imp.KERNEL32.dll_ExitProcess]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00596ea0@140d3779c34998b2115004c062b02ca8
+[similar_2_ref]: /report/fcn.0069d03f@0fb0e1c162f9df68f5d89a2b2a71a217
+[similar_3_ref]: /report/fcn.004f6417@ef3a0211d1ddb224667e2aa0d915337b
+[similar_4_ref]: /report/fcn.004f6417@a9a3c47f5c08fef0f0f69b66c17916ac
+[similar_5_ref]: /report/fcn.006597ff@bcba729302fe28f65deb2b102a06324a
+[virustotal_ref]: https://www.virustotal.com/gui/file/009ea4ad185ccb9becba67b3b2163e8b

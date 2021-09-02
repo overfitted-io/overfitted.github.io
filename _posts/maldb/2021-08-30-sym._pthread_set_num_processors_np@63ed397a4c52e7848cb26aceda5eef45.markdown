@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "sym._pthread_set_num_processors_np @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_set\_num\_processors\_np
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [sym.\_pthread\_mutex\_lock\_intern][similar_1_ref] (sim.: 0.8722520975819759)
+2. [sym.\_pthread\_mutex\_timedlock][similar_2_ref] (sim.: 0.8525887513577908)
+3. [sym.\_\_mutex\_trylock.isra.0][similar_3_ref] (sim.: 0.852145092625703)
+4. [dbg.\_\_security\_init\_cookie][similar_4_ref] (sim.: 0.8500247837207325)
+5. [sym.\_pthread\_mutex\_unlock][similar_5_ref] (sim.: 0.8454470486433823)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov eax,1
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x2c
+mov edi,dword[ebp+8]
+mov ecx,dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+test edi,edi
+cmove edi,eax
+xor esi,esi
+mov dword[ebp-0x2c],ecx
+call ecx
+lea edx,[ebp-0x1c]
+mov dword[esp+8],edx
+lea edx,[ebp-0x20]
+mov dword[esp+4],edx
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetProcessAffinityMask]
+sub esp,0xc
+test eax,eax
+je 0x40e06e
+mov edx,dword[ebp-0x20]
+xor ebx,ebx
+mov ecx,dword[ebp-0x2c]
+test edx,edx
+je 0x40e05c
+lea esi,[esi]
+add ebx,ebx
+test dl,1
+je 0x40e051
+cmp edi,esi
+jle 0x40e051
+or ebx,1
+add esi,1
+shr edx,1
+jne 0x40e040
+mov dword[ebp-0x20],0
+call ecx
+mov dword[esp+4],ebx
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_SetProcessAffinityMask]
+sub esp,8
+lea esp,[ebp-0xc]
+mov eax,esi
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pthread_mutex_lock_intern@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_mutex_timedlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/sym.__mutex_trylock.isra.0@63ed397a4c52e7848cb26aceda5eef45
+[similar_4_ref]: /report/dbg.__security_init_cookie@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/sym._pthread_mutex_unlock@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.0041cbca @ d32515577b2cd57bf3dd6c5e3c37e219"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041cbca
+- **Origin (md5):** d32515577b2cd57bf3dd6c5e3c37e219
+- **VirusTotal:** [virustotal.com/gui/file/d32515577b2cd57bf3dd6c5e3c37e219][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10001c97][similar_1_ref] (sim.: 0.7881471307945729)
+2. [fcn.00401aad][similar_2_ref] (sim.: 0.7797518796672425)
+3. [fcn.004040c0][similar_3_ref] (sim.: 0.7727593786407034)
+4. [fcn.00401fd3][similar_4_ref] (sim.: 0.7680116382576367)
+5. [fcn.0040605c][similar_5_ref] (sim.: 0.7664722654006975)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+0x10]
+push edi
+mov edi,dword[ebp+0xc]
+push esi
+push edi
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test esi,esi
+je 0x41cc00
+test eax,eax
+jne 0x41cbed
+xor ecx,ecx
+mov word[edi],cx
+cmp eax,esi
+jne 0x41cc00
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jne 0x41cc00
+mov word[edi+esi*2-2],ax
+pop edi
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001c97@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00401aad@1123b7aa5760238fe93045e585b8234c
+[similar_3_ref]: /report/fcn.004040c0@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.00401fd3@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.0040605c@6c8b5339bada4cbd03f0f446da640707
+[virustotal_ref]: https://www.virustotal.com/gui/file/d32515577b2cd57bf3dd6c5e3c37e219

@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.101289ba @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.101289ba
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10028e32][similar_1_ref] (sim.: 0.8774857300334981)
+2. [fcn.00412898][similar_2_ref] (sim.: 0.8680918198721472)
+3. [fcn.10126ec7][similar_3_ref] (sim.: 0.8661372189455403)
+4. [fcn.00420605][similar_4_ref] (sim.: 0.8636378535143818)
+5. [fcn.1012928e][similar_5_ref] (sim.: 0.8631922690484032)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+cmp dword[0x101a6654],0
+jne 0x101289cd
+call fcn.1012a23b
+push ebx
+push esi
+push edi
+push 0x104
+mov edi,0x101a4a20
+xor ebx,ebx
+push edi
+push ebx
+mov byte[0x101a4b24],bl
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+mov esi,dword[0x101a665c]
+mov dword[0x101a45a8],edi
+test esi,esi
+je 0x101289fe
+cmp byte[esi],bl
+jne 0x10128a00
+mov esi,edi
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-4]
+push eax
+push ebx
+push ebx
+push esi
+call fcn.10128a6d
+mov ebx,dword[ebp-4]
+add esp,0x14
+cmp ebx,0x3fffffff
+jae 0x10128a63
+mov ecx,dword[ebp-8]
+cmp ecx,0xffffffff
+jae 0x10128a63
+lea edx,[ecx+ebx*4]
+cmp edx,ecx
+jb 0x10128a63
+push edx
+call fcn.10128019
+mov edi,eax
+pop ecx
+test edi,edi
+je 0x10128a63
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-4]
+push eax
+lea eax,[edi+ebx*4]
+push eax
+push edi
+push esi
+call fcn.10128a6d
+mov eax,dword[ebp-4]
+add esp,0x14
+dec eax
+mov dword[0x101a4598],edi
+mov dword[0x101a4594],eax
+xor eax,eax
+jmp 0x10128a66
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10028e32@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.00412898@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.10126ec7@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.00420605@de21a548b66aa6c0b17491b6a31e14fa
+[similar_5_ref]: /report/fcn.1012928e@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

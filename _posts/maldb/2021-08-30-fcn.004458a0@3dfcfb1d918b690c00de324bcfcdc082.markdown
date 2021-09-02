@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.004458a0 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004458a0
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004457c0][similar_1_ref] (sim.: 0.9062183247604861)
+2. [fcn.004117af][similar_2_ref] (sim.: 0.8914088145244752)
+3. [[...]\_public꞉\_static\_class\_DuiLib꞉꞉CDuiString\_\_\_cdecl\_DuiLib꞉꞉CPaintManagerUI꞉꞉GetInstancePath\_void\_][similar_3_ref] (sim.: 0.8900698128559372)
+4. [fcn.0041997e][similar_4_ref] (sim.: 0.8892900329256942)
+5. [fcn.00437c8a][similar_5_ref] (sim.: 0.8887862495561626)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x230
+mov eax,dword[0x48800c]
+xor eax,ebp
+mov dword[ebp-8],eax
+cmp dword[ebp+0x18],0
+mov eax,ecx
+mov ecx,dword[ebp+0xc]
+push ebx
+push esi
+push edi
+mov dword[ebp-0x224],eax
+mov dword[ebp-0x220],ecx
+jl 0x44596f
+mov ebx,dword[ebp+8]
+jmp 0x4458e0
+cmp byte[eax+0x140c],0
+jne 0x44596f
+push 0x10
+push ecx
+push ebx
+call dword[sym.imp.WS2_32.dll_connect]
+test eax,eax
+je 0x4459a7
+mov eax,dword[ebp+0x14]
+lea esi,[ebp-0x21c]
+mov dword[ebp-0x22c],eax
+lea edi,[ebp-0x114]
+lea eax,[ebp-0x22c]
+mov dword[ebp-0x218],ebx
+push eax
+push 0
+lea eax,[ebp-0x114]
+mov dword[ebp-0x21c],1
+push eax
+lea eax,[ebp-0x21c]
+mov dword[ebp-0x228],0
+push eax
+lea eax,[ebx+1]
+mov ecx,0x41
+rep movsd dword es:[edi],dword ptr[esi]
+push eax
+call dword[sym.imp.WS2_32.dll_select]
+test eax,eax
+jg 0x445985
+dec dword[ebp+0x18]
+mov eax,dword[ebp-0x224]
+mov ecx,dword[ebp-0x220]
+jns 0x4458e0
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.0044e61f
+mov esp,ebp
+pop ebp
+ret 0x14
+mov esi,dword[sym.imp.WS2_32.dll___WSAFDIsSet]
+lea eax,[ebp-0x21c]
+push eax
+push ebx
+call esi
+test eax,eax
+jne 0x4459a7
+lea eax,[ebp-0x114]
+push eax
+push ebx
+call esi
+test eax,eax
+je 0x44596f
+mov ecx,dword[ebp-8]
+xor eax,eax
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.0044e61f
+mov esp,ebp
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004457c0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_2_ref]: /report/fcn.004117af@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/[...]_public꞉_static_class_DuiLib꞉꞉CDuiString___cdecl_DuiLib꞉꞉CPaintManagerUI꞉꞉GetInstancePath_void_@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_5_ref]: /report/fcn.00437c8a@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

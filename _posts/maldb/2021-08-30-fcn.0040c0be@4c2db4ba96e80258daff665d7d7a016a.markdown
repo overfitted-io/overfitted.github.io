@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0040c0be @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040c0be
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040e2e7][similar_1_ref] (sim.: 0.9044745110607649)
+2. [fcn.00410aac][similar_2_ref] (sim.: 0.8803121002575447)
+3. [fcn.00406b38][similar_3_ref] (sim.: 0.8663516204808618)
+4. [fcn.10016851][similar_4_ref] (sim.: 0.8626916731004843)
+5. [fcn.0040c039][similar_5_ref] (sim.: 0.8607976616436398)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x100c
+call fcn.00401200
+cmp byte[0x424958],0
+je 0x40c165
+push esi
+push dword[ebp+8]
+lea esi,[ebp-0x100c]
+call fcn.0040bffe
+lea eax,[ebp-8]
+push eax
+push 1
+push 0
+push str.SoftwareWinRAR_SFX
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+pop esi
+test eax,eax
+jne 0x40c165
+lea eax,[ebp-4]
+push eax
+lea eax,[ebp-0x80c]
+push eax
+lea eax,[ebp-0xc]
+push eax
+push 0
+lea eax,[ebp-0x100c]
+push eax
+push dword[ebp-8]
+mov dword[ebp-4],0x800
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x40c15c
+shr dword[ebp-4],1
+mov eax,0x3ff
+cmp dword[ebp-4],eax
+jae 0x40c140
+mov eax,dword[ebp-4]
+push dword[ebp+0xc]
+xor ecx,ecx
+mov word[ebp+eax*2-0x80c],cx
+lea eax,[ebp-0x80c]
+push eax
+push dword[ebp+8]
+call fcn.0040e5a3
+push dword[ebp-8]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040e2e7@5f763449465a14d1cdb5ea67e2f984d0
+[similar_2_ref]: /report/fcn.00410aac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.00406b38@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.10016851@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.0040c039@4c2db4ba96e80258daff665d7d7a016a
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

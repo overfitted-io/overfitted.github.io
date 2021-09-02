@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.004053d0 @ d59f9c4f445b9f980173dec064f55091"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004053d0
+- **Origin (md5):** d59f9c4f445b9f980173dec064f55091
+- **VirusTotal:** [virustotal.com/gui/file/d59f9c4f445b9f980173dec064f55091][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00405380][similar_1_ref] (sim.: 0.8813464375436046)
+2. [fcn.00404fe9][similar_2_ref] (sim.: 0.7772836010831814)
+3. [fcn.00427aa0][similar_3_ref] (sim.: 0.7762560750135438)
+4. [fcn.00405630][similar_4_ref] (sim.: 0.7752066733658144)
+5. [fcn.10004780][similar_5_ref] (sim.: 0.7747162088651645)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edx,dword[esp+0xc]
+mov eax,dword[esp+4]
+mov eax,dword[eax]
+push esi
+mov esi,ecx
+lea ecx,[esp+8]
+push ecx
+mov ecx,dword[esp+0x10]
+push edx
+push 0
+push ecx
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+je 0x4053fb
+xor al,al
+pop esi
+ret 0xc
+mov eax,dword[esi]
+test eax,eax
+je 0x405408
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov edx,dword[esp+8]
+mov dword[esi],edx
+mov al,1
+pop esi
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405380@d59f9c4f445b9f980173dec064f55091
+[similar_2_ref]: /report/fcn.00404fe9@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.00427aa0@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.00405630@d59f9c4f445b9f980173dec064f55091
+[similar_5_ref]: /report/fcn.10004780@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/d59f9c4f445b9f980173dec064f55091

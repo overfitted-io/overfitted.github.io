@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "fcn.1000883a @ b74a1e462e0b6bacec09e2503391e156"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1000883a
+- **Origin (md5):** b74a1e462e0b6bacec09e2503391e156
+- **VirusTotal:** [virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.1000a660][similar_1_ref] (sim.: 0.8569681168716213)
+2. [fcn.00405a21][similar_2_ref] (sim.: 0.8490695153606893)
+3. [fcn.00405a21][similar_3_ref] (sim.: 0.8490695153606893)
+4. [fcn.004088f5][similar_4_ref] (sim.: 0.8488161627743511)
+5. [fcn.0040c86a][similar_5_ref] (sim.: 0.8457211194702029)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x17
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+je 0x1000884b
+push 5
+pop ecx
+int 0x29
+push esi
+push 1
+mov esi,0xc0000417
+push esi
+push 2
+call fcn.10008648
+add esp,0xc
+push esi
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000a660@f306bc4e89ecdab5df7aa72172ee5f69
+[similar_2_ref]: /report/fcn.00405a21@03a5d7e745838b7e7a4c7d09dcb64e60
+[similar_3_ref]: /report/fcn.00405a21@ea6f23b2cb496f8773ec04df5c0f8d87
+[similar_4_ref]: /report/fcn.004088f5@fca52b995e756cff97168f6fef94b37d
+[similar_5_ref]: /report/fcn.0040c86a@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/b74a1e462e0b6bacec09e2503391e156

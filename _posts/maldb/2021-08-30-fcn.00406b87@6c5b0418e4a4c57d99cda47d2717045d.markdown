@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.00406b87 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00406b87
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00416dc7][similar_1_ref] (sim.: 0.7734890515442854)
+2. [fcn.00401bee][similar_2_ref] (sim.: 0.7716740046633453)
+3. [fcn.00404b24][similar_3_ref] (sim.: 0.7713564767579305)
+4. [fcn.100b3250][similar_4_ref] (sim.: 0.7697005353391563)
+5. [fcn.00405d89][similar_5_ref] (sim.: 0.7681687515812948)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push 0xffffffffffffffff
+lea esi,[ecx+0x78]
+add ecx,0x40
+push 0
+push ecx
+mov ecx,esi
+call fcn.00401382
+push str.Skin
+mov ecx,esi
+call fcn.00401610
+cmp dword[esi+0x18],8
+jb 0x406bb1
+mov eax,dword[esi+4]
+jmp 0x406bb4
+lea eax,[esi+4]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x406bd4
+cmp dword[esi+0x18],8
+jb 0x406bca
+mov esi,dword[esi+4]
+jmp 0x406bcd
+add esi,4
+push esi
+call fcn.00406c92
+pop ecx
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416dc7@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.00401bee@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.00404b24@fca52b995e756cff97168f6fef94b37d
+[similar_4_ref]: /report/fcn.100b3250@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.00405d89@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "sym._cond_print @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_cond\_print
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [sym.\_rwl\_print][similar_1_ref] (sim.: 0.8882229676498612)
+2. [sym.\_mutex\_print][similar_2_ref] (sim.: 0.8731097606415048)
+3. [fcn.006843d0][similar_3_ref] (sim.: 0.8569696062323153)
+4. [sym.\_thread\_print][similar_4_ref] (sim.: 0.8562047388817601)
+5. [fcn.0041a53e][similar_5_ref] (sim.: 0.8536773507022569)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x3c
+mov edx,dword[0x45a44c]
+mov ebx,dword[esp+0x50]
+test edx,edx
+je 0x412ce4
+mov eax,dword[ebx]
+test eax,eax
+je 0x412cf0
+mov ebp,dword[eax+8]
+mov edi,dword[eax+4]
+mov esi,dword[eax]
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov edx,dword[ebx]
+mov ecx,dword[esp+0x54]
+mov dword[esp+0x1c],ebp
+mov dword[esp+0x18],0
+mov dword[esp+0x14],edi
+mov dword[esp+0x20],ecx
+mov dword[esp+0xc],eax
+mov eax,dword[0x45a448]
+mov dword[esp+0x10],esi
+mov dword[esp+8],edx
+mov dword[esp+4],0x459008
+mov dword[esp],eax
+call sym._fprintf
+add esp,0x3c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov edx,dword[ebx]
+mov ecx,dword[esp+0x54]
+mov dword[esp+4],0x458ffc
+mov dword[esp+8],edx
+mov dword[esp+0x10],ecx
+mov dword[esp+0xc],eax
+mov eax,dword[0x45a448]
+mov dword[esp],eax
+call sym._fprintf
+jmp 0x412ce4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._rwl_print@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._mutex_print@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/fcn.006843d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/sym._thread_print@63ed397a4c52e7848cb26aceda5eef45
+[similar_5_ref]: /report/fcn.0041a53e@8c10f6a1b7643ed6e914352ded4b58e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

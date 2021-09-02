@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "fcn.00413fd8 @ 4c8869bb42f854640703b6ddda29ee38"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00413fd8
+- **Origin (md5):** 4c8869bb42f854640703b6ddda29ee38
+- **VirusTotal:** [virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00407d49][similar_1_ref] (sim.: 0.8010905479719717)
+2. [fcn.004402c0][similar_2_ref] (sim.: 0.7621142821735185)
+3. [method.CLocalFileIO.virtual\_64][similar_3_ref] (sim.: 0.7621142821735185)
+4. [fcn.00600192][similar_4_ref] (sim.: 0.7594813580849648)
+5. [fcn.00404d63][similar_5_ref] (sim.: 0.7592039575409237)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+call fcn.00413dda
+test al,al
+je 0x41400a
+push 0
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push 0
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+xor ecx,ecx
+cmp eax,0xffffffff
+mov dword[esi],eax
+setne al
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407d49@623952564c193310b2e5c9b0fe299d07
+[similar_2_ref]: /report/fcn.004402c0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_3_ref]: /report/method.CLocalFileIO.virtual_64@3dfcfb1d918b690c00de324bcfcdc082
+[similar_4_ref]: /report/fcn.00600192@52d540e8e13e0f0bbb8946b2363a382d
+[similar_5_ref]: /report/fcn.00404d63@505be53c36227b94e2fcc406f247f6e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38

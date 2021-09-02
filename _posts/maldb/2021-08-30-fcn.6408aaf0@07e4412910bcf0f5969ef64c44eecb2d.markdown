@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "fcn.6408aaf0 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.6408aaf0
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.6408a540][similar_1_ref] (sim.: 0.9388515836042254)
+2. [fcn.64089580][similar_2_ref] (sim.: 0.9228999661320629)
+3. [sym.Qt5Network.dll\_public꞉\_static\_class\_QString\_\_\_cdecl\_QHostInfo꞉꞉localDomainName\_void\_][similar_3_ref] (sim.: 0.922442039893709)
+4. [fcn.6409c4c0][similar_4_ref] (sim.: 0.9133932961879768)
+5. [fcn.10011870][similar_5_ref] (sim.: 0.910104474725251)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x18
+mov eax,dword[0x641b8950]
+xor eax,esp
+mov dword[esp+0x14],eax
+push ebx
+push ebp
+mov ebp,dword[esp+0x30]
+mov ebx,ecx
+push esi
+mov esi,dword[esp+0x30]
+push edi
+mov edi,dword[esp+0x30]
+mov ecx,edi
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+cmp eax,1
+je 0x6408ab85
+mov ecx,edi
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+cmp eax,2
+je 0x6408ab85
+mov eax,dword[ebx+0x54]
+cmp eax,1
+je 0x6408ab85
+cmp eax,2
+je 0x6408ab85
+push dword[esp+0x2c]
+xor eax,eax
+mov dword[esi],eax
+mov dword[esi+4],eax
+mov dword[esi+8],eax
+mov dword[esi+0xc],eax
+mov eax,2
+mov word[esi],ax
+call dword[sym.imp.WS2_32.dll_htons]
+mov ecx,edi
+mov word[esi+2],ax
+call sym public: unsigned int __thiscall QHostAddress::toIPv4Address(void)const
+push eax
+call dword[sym.imp.WS2_32.dll_htonl]
+pop edi
+mov dword[esi+4],eax
+pop esi
+mov dword[ebp],0x10
+pop ebp
+pop ebx
+mov ecx,dword[esp+0x14]
+xor ecx,esp
+call fcn.641429ea
+add esp,0x18
+ret 0x10
+xor eax,eax
+mov ecx,edi
+mov dword[esi],eax
+mov dword[esi+4],eax
+mov dword[esi+8],eax
+mov dword[esi+0xc],eax
+mov dword[esi+0x10],eax
+mov dword[esi+0x14],eax
+mov dword[esi+0x18],eax
+mov eax,0x17
+mov word[esi],ax
+lea eax,[esp+0x10]
+push eax
+call sym public: class QString __thiscall QHostAddress::scopeId(void)
+push 0xa
+push 0
+mov ecx,eax
+call dword[sym.imp.Qt5Core.dll_public:_unsigned_int___thiscall_QString::toUInt_bool___int_const]
+lea ecx,[esp+0x10]
+mov dword[esi+0x18],eax
+call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QString::destructor_void_]
+push dword[esp+0x2c]
+call dword[sym.imp.WS2_32.dll_htons]
+mov word[esi+2],ax
+mov ecx,edi
+lea eax,[esp+0x14]
+push eax
+call sym public: class QIPv6Address __thiscall QHostAddress::toIPv6Address(void)
+mov eax,dword[esp+0x14]
+mov ecx,dword[esp+0x24]
+mov dword[esi+8],eax
+mov eax,dword[esp+0x18]
+mov dword[esi+0xc],eax
+mov eax,dword[esp+0x1c]
+mov dword[esi+0x10],eax
+mov eax,dword[esp+0x20]
+pop edi
+mov dword[esi+0x14],eax
+pop esi
+mov dword[ebp],0x1c
+pop ebp
+pop ebx
+xor ecx,esp
+call fcn.641429ea
+add esp,0x18
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6408a540@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.64089580@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/sym.Qt5Network.dll_public꞉_static_class_QString___cdecl_QHostInfo꞉꞉localDomainName_void_@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.6409c4c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.10011870@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

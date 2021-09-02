@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.0041088c @ e16f74a2849182d98050864255e902f8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041088c
+- **Origin (md5):** e16f74a2849182d98050864255e902f8
+- **VirusTotal:** [virustotal.com/gui/file/e16f74a2849182d98050864255e902f8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00410a58][similar_1_ref] (sim.: 0.9246699195349202)
+2. [fcn.00410a58][similar_2_ref] (sim.: 0.9246699195349202)
+3. [fcn.00410a58][similar_3_ref] (sim.: 0.9246699195349202)
+4. [fcn.00411d80][similar_4_ref] (sim.: 0.9088182362680515)
+5. [fcn.004113e8][similar_5_ref] (sim.: 0.8910411511332778)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+jne 0x41089f
+inc eax
+mov dword[0x4780e0],eax
+ret 
+mov eax,dword fs:[0x18]
+push ebx
+push esi
+mov esi,dword[eax+0x30]
+add esi,0x34
+mov eax,dword[esi]
+push edi
+test eax,eax
+jne 0x4108ee
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push 8
+push eax
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+xor eax,eax
+cmp edi,eax
+je 0x4108f6
+push eax
+push edi
+push esi
+mov dword[edi],eax
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+test eax,eax
+je 0x4108ec
+push edi
+push 0
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x4780e0],eax
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410a58@96a869ae624ddb4834a1d5a829f85469
+[similar_2_ref]: /report/fcn.00410a58@505be53c36227b94e2fcc406f247f6e5
+[similar_3_ref]: /report/fcn.00410a58@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_4_ref]: /report/fcn.00411d80@f5b8476c36459986b226c45654aeb016
+[similar_5_ref]: /report/fcn.004113e8@20a93604f17ee6f3c2aa7b1f7a497fcf
+[virustotal_ref]: https://www.virustotal.com/gui/file/e16f74a2849182d98050864255e902f8

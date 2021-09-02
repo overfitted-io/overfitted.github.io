@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "sym._pthread_mutex_timedlock @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** sym.\_pthread\_mutex\_timedlock
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [sym.\_pthread\_mutex\_lock\_intern][similar_1_ref] (sim.: 0.904019563543799)
+2. [sym.\_pthread\_mutex\_unlock][similar_2_ref] (sim.: 0.8772698865693518)
+3. [fcn.004d1670][similar_3_ref] (sim.: 0.8644443281006311)
+4. [fcn.00433480][similar_4_ref] (sim.: 0.8630919506449686)
+5. [sym.\_mutex\_print][similar_5_ref] (sim.: 0.8629682388436267)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov edx,0xffffffff
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov esi,dword[esp+0x34]
+mov ebx,dword[esp+0x30]
+test esi,esi
+je 0x410f14
+mov eax,ebx
+call sym._mutex_ref
+test eax,eax
+je 0x410ec0
+add esp,0x1c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov eax,dword[ebx]
+call sym.__mutex_trylock.isra.0
+cmp eax,0x10
+mov edx,eax
+jne 0x410f45
+mov eax,dword[ebx]
+mov edx,dword[eax+8]
+test edx,edx
+je 0x410ede
+mov edi,dword[eax+0x14]
+test edi,edi
+jne 0x410f36
+call sym.__pthread_time_in_ms
+mov dword[esp],esi
+mov edi,edx
+mov dword[esp+0xc],eax
+call sym.__pthread_time_in_ms_from_timespec
+mov ebp,eax
+mov eax,dword[ebx]
+mov esi,edx
+mov edx,0x10
+call sym._mutex_unref.isra.1
+cmp edi,esi
+ja 0x410f12
+jb 0x410f22
+cmp dword[esp+0xc],ebp
+nop 
+lea esi,[esi]
+jbe 0x410f22
+xor edx,edx
+add esp,0x1c
+mov eax,ebx
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp sym._pthread_mutex_lock_intern
+mov edx,ebp
+mov eax,ebx
+sub edx,dword[esp+0xc]
+add esp,0x1c
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp sym._pthread_mutex_lock_intern
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp edi,eax
+jne 0x410ede
+mov edx,0x24
+mov eax,dword[ebx]
+add esp,0x1c
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp sym._mutex_unref.isra.1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym._pthread_mutex_lock_intern@63ed397a4c52e7848cb26aceda5eef45
+[similar_2_ref]: /report/sym._pthread_mutex_unlock@63ed397a4c52e7848cb26aceda5eef45
+[similar_3_ref]: /report/fcn.004d1670@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00433480@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/sym._mutex_print@63ed397a4c52e7848cb26aceda5eef45
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

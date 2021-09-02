@@ -1,0 +1,146 @@
+---
+layout: post
+title:  "fcn.100096b0 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100096b0
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.100015d0][similar_1_ref] (sim.: 0.9126468039435637)
+2. [fcn.10005830][similar_2_ref] (sim.: 0.910071253444038)
+3. [fcn.100bb0a0][similar_3_ref] (sim.: 0.9054303011713697)
+4. [fcn.100bc540][similar_4_ref] (sim.: 0.9046747684126801)
+5. [fcn.10011870][similar_5_ref] (sim.: 0.9030796725957622)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x1002a805
+mov eax,dword fs:[0]
+push eax
+push ebx
+push ebp
+mov eax,dword[0x10034390]
+xor eax,esp
+push eax
+lea eax,[esp+0xc]
+mov dword fs:[0],eax
+mov ebx,edx
+push esi
+call fcn.100093d0
+add esp,4
+cmp dword[0x100368dc],0
+jne 0x100096f6
+mov eax,dword[0x100368e0]
+push 0xffffffffffffffff
+push eax
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+jmp 0x10009703
+mov ecx,dword[0x100368d8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov dword[esp+0x14],0
+mov eax,dword[0x100368c4]
+test eax,eax
+mov ebp,dword[sym.imp.KERNEL32.dll_CloseHandle]
+je 0x10009727
+push eax
+call ebp
+mov dword[0x100368c4],0
+test ebx,ebx
+mov dword[0x100354f0],ebx
+je 0x100097df
+cmp ebx,2
+je 0x100097df
+push 0xffffffffffffffff
+push 0
+mov eax,esi
+mov ecx,0x10035514
+call fcn.100089e0
+cmp dword[esp+0x1c],0
+jne 0x1000978e
+cmp dword[0x10035528],0
+je 0x1000978e
+mov eax,dword[0x100368c4]
+test eax,eax
+je 0x10009774
+push eax
+call ebp
+mov dword[0x100368c4],0
+cmp dword[0x1003552c],8
+mov eax,dword[0x10035518]
+jae 0x10009787
+mov eax,0x10035518
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+call fcn.10009590
+cmp dword[0x100368dc],0
+mov bl,al
+jne 0x100097bf
+mov edx,dword[0x100368e0]
+push edx
+call dword[sym.imp.KERNEL32.dll_ReleaseMutex]
+mov al,bl
+mov ecx,dword[esp+0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop ebp
+pop ebx
+add esp,0xc
+ret 
+mov eax,dword[0x100368d8]
+push eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov al,bl
+mov ecx,dword[esp+0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop ebp
+pop ebx
+add esp,0xc
+ret 
+cmp dword[0x100368dc],0
+jne 0x10009809
+mov ecx,dword[0x100368e0]
+push ecx
+call dword[sym.imp.KERNEL32.dll_ReleaseMutex]
+mov al,1
+mov ecx,dword[esp+0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop ebp
+pop ebx
+add esp,0xc
+ret 
+mov edx,dword[0x100368d8]
+push edx
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov al,1
+mov ecx,dword[esp+0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop ebp
+pop ebx
+add esp,0xc
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100015d0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.10005830@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.100bb0a0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/fcn.100bc540@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.10011870@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

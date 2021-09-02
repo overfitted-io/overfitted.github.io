@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.004092d8 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004092d8
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040a3d2][similar_1_ref] (sim.: 0.8679772149896987)
+2. [fcn.00406c92][similar_2_ref] (sim.: 0.8291113421237059)
+3. [fcn.00406365][similar_3_ref] (sim.: 0.8157974251293293)
+4. [fcn.00406365][similar_4_ref] (sim.: 0.8157974251293293)
+5. [fcn.00406365][similar_5_ref] (sim.: 0.8157974251293293)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+push dword[esp+0x10]
+mov ebx,0x104
+push ebx
+call fcn.0040dea0
+push ebx
+mov edi,eax
+push edi
+push dword[0x416ff0]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push str._
+push edi
+mov esi,eax
+call sub.MSVCRT.dll_wcscmp
+pop ecx
+pop ecx
+test eax,eax
+jne 0x409325
+lea ecx,[esi*2-8]
+push ecx
+lea eax,[edi+8]
+push eax
+push edi
+call sub.MSVCRT.dll_memmove
+add esp,0xc
+sub esi,4
+sub ebx,esi
+push ebx
+call fcn.0040dff0
+xor eax,eax
+mov word[edi+esi*2],ax
+pop edi
+pop esi
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040a3d2@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_2_ref]: /report/fcn.00406c92@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.00406365@fc08a944a357dc216338592f13f65b60
+[similar_4_ref]: /report/fcn.00406365@59b1876779e3211327c1a96e7e2c12c4
+[similar_5_ref]: /report/fcn.00406365@e7f0482c425f7bc9cd320f60c1cfa28c
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

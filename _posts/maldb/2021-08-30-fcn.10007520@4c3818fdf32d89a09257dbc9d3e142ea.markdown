@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.10007520 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10007520
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.100073f0][similar_1_ref] (sim.: 0.8782705187691325)
+2. [fcn.100092a0][similar_2_ref] (sim.: 0.8702656508983637)
+3. [fcn.10009590][similar_3_ref] (sim.: 0.8686675384145623)
+4. [fcn.100096b0][similar_4_ref] (sim.: 0.8658618105400073)
+5. [fcn.00404880][similar_5_ref] (sim.: 0.8593094488008586)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x10029d48
+mov eax,dword fs:[0]
+push eax
+sub esp,8
+push ebx
+push esi
+push edi
+mov eax,dword[0x10034390]
+xor eax,esp
+push eax
+lea eax,[esp+0x18]
+mov dword fs:[0],eax
+mov edi,dword[0x10036840]
+add edi,0x10
+mov dword[esp+0x10],edi
+push edi
+mov dword[esp+0x24],0
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov byte[esp+0x14],1
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov ebx,eax
+mov eax,dword[esp+0x28]
+mov esi,dword[eax+0x34]
+mov ecx,dword[esi+8]
+xor eax,eax
+test ecx,ecx
+jle 0x10007598
+mov edx,dword[esi]
+cmp dword[edx],ebx
+je 0x10007593
+add eax,1
+add edx,4
+cmp eax,ecx
+jl 0x10007581
+xor esi,esi
+jmp 0x100075a3
+cmp eax,0xffffffff
+jne 0x1000759c
+xor esi,esi
+jmp 0x100075a3
+call fcn.100087d0
+mov esi,eax
+push edi
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov eax,esi
+mov ecx,dword[esp+0x18]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+add esp,0x14
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100073f0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.100092a0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.10009590@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.100096b0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.00404880@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

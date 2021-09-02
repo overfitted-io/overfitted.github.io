@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.1001fbef @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.1001fbef
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10028e32][similar_1_ref] (sim.: 0.9090618273757008)
+2. [fcn.10002abc][similar_2_ref] (sim.: 0.8793816103059905)
+3. [fcn.0041e082][similar_3_ref] (sim.: 0.8719539787974524)
+4. [fcn.10008daa][similar_4_ref] (sim.: 0.8671037381449664)
+5. [fcn.00402d63][similar_5_ref] (sim.: 0.8670398379307314)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+xor ebx,ebx
+cmp dword[0x1004fec8],ebx
+push esi
+push edi
+jne 0x1001fc07
+call fcn.10019ec0
+push 0x104
+mov esi,0x100366a8
+push esi
+push ebx
+mov byte[0x100367ac],bl
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+mov eax,dword[0x1004fed4]
+cmp eax,ebx
+mov dword[0x10036148],esi
+je 0x1001fc35
+cmp byte[eax],bl
+mov dword[ebp-4],eax
+jne 0x1001fc38
+mov dword[ebp-4],esi
+mov edx,dword[ebp-4]
+lea eax,[ebp-8]
+push eax
+push ebx
+push ebx
+lea edi,[ebp-0xc]
+call fcn.1001fa57
+mov eax,dword[ebp-8]
+add esp,0xc
+cmp eax,0x3fffffff
+jae 0x1001fca0
+mov ecx,dword[ebp-0xc]
+cmp ecx,0xffffffff
+jae 0x1001fca0
+mov edi,eax
+shl edi,2
+lea eax,[edi+ecx]
+cmp eax,ecx
+jb 0x1001fca0
+push eax
+call fcn.10018755
+mov esi,eax
+cmp esi,ebx
+pop ecx
+je 0x1001fca0
+mov edx,dword[ebp-4]
+lea eax,[ebp-8]
+push eax
+add edi,esi
+push edi
+push esi
+lea edi,[ebp-0xc]
+call fcn.1001fa57
+mov eax,dword[ebp-8]
+add esp,0xc
+dec eax
+mov dword[0x1003612c],eax
+mov dword[0x10036130],esi
+xor eax,eax
+jmp 0x1001fca3
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10028e32@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.10002abc@dc3e2cdf680078d293de3e2d92ba613c
+[similar_3_ref]: /report/fcn.0041e082@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.10008daa@b74a1e462e0b6bacec09e2503391e156
+[similar_5_ref]: /report/fcn.00402d63@e38ba004520fa1a86a35b63e8d5843ef
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

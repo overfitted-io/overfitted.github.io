@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.005ffc1c @ 52d540e8e13e0f0bbb8946b2363a382d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005ffc1c
+- **Origin (md5):** 52d540e8e13e0f0bbb8946b2363a382d
+- **VirusTotal:** [virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.005fd372][similar_1_ref] (sim.: 0.8667487675219765)
+2. [fcn.00451dab][similar_2_ref] (sim.: 0.806082486590614)
+3. [fcn.0043187f][similar_3_ref] (sim.: 0.8046548442448475)
+4. [fcn.10015ca9][similar_4_ref] (sim.: 0.798782399378452)
+5. [fcn.00404cff][similar_5_ref] (sim.: 0.7943024783018406)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+lea eax,[ebp-4]
+xor edx,edx
+push eax
+push dword[ebp+0x10]
+mov esi,ecx
+mov dword[ebp-4],edx
+push edx
+push dword[ebp+0xc]
+mov ecx,dword[esi+8]
+push dword[ebp+8]
+test ecx,ecx
+je 0x5ffc44
+call fcn.00600244
+jmp 0x5ffc4a
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+mov ecx,eax
+test ecx,ecx
+jne 0x5ffc5e
+mov ecx,esi
+call fcn.005fd358
+mov ecx,eax
+mov eax,dword[ebp-4]
+mov dword[esi],eax
+mov eax,ecx
+pop esi
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005fd372@52d540e8e13e0f0bbb8946b2363a382d
+[similar_2_ref]: /report/fcn.00451dab@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.0043187f@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.10015ca9@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.00404cff@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[virustotal_ref]: https://www.virustotal.com/gui/file/52d540e8e13e0f0bbb8946b2363a382d

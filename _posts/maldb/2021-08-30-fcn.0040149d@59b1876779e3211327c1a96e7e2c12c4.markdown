@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.0040149d @ 59b1876779e3211327c1a96e7e2c12c4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040149d
+- **Origin (md5):** 59b1876779e3211327c1a96e7e2c12c4
+- **VirusTotal:** [virustotal.com/gui/file/59b1876779e3211327c1a96e7e2c12c4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040149d][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040149d][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040149d][similar_3_ref] (sim.: 0.9877074085441552)
+4. [fcn.0040149d][similar_4_ref] (sim.: 0.978755116358718)
+5. [fcn.0040149d][similar_5_ref] (sim.: 0.978755116358718)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x210
+push ebx
+push esi
+push edi
+lea eax,[ebp-4]
+push eax
+mov eax,dword[0x472eb0]
+or eax,8
+push eax
+xor ebx,ebx
+push ebx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+cmp eax,ebx
+jne 0x401532
+mov esi,dword[sym.imp.ADVAPI32.dll_RegEnumKeyW]
+mov edi,0x105
+jmp 0x4014ef
+cmp dword[ebp+0x10],ebx
+jne 0x401526
+push ebx
+lea eax,[ebp-0x210]
+push eax
+push dword[ebp-4]
+call fcn.0040149d
+test eax,eax
+jne 0x401501
+push edi
+lea eax,[ebp-0x210]
+push eax
+push ebx
+push dword[ebp-4]
+call esi
+test eax,eax
+je 0x4014d6
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push 2
+call fcn.004062fc
+cmp eax,ebx
+je 0x401539
+push ebx
+push dword[0x472eb0]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x401532
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0xc
+cmp dword[0x472eb0],ebx
+jne 0x40152f
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+test eax,eax
+jne 0x40152f
+jmp 0x401532
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040149d@fc08a944a357dc216338592f13f65b60
+[similar_2_ref]: /report/fcn.0040149d@e7f0482c425f7bc9cd320f60c1cfa28c
+[similar_3_ref]: /report/fcn.0040149d@13efdafd5b4f5d3a5dcb240b696c267c
+[similar_4_ref]: /report/fcn.0040149d@5bfd33ece1aeef8bda2c7fc886262ed9
+[similar_5_ref]: /report/fcn.0040149d@999ae3491971c32d67bd4c32561ea381
+[virustotal_ref]: https://www.virustotal.com/gui/file/59b1876779e3211327c1a96e7e2c12c4

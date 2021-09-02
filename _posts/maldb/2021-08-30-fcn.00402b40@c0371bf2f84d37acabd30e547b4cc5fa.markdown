@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.00402b40 @ c0371bf2f84d37acabd30e547b4cc5fa"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00402b40
+- **Origin (md5):** c0371bf2f84d37acabd30e547b4cc5fa
+- **VirusTotal:** [virustotal.com/gui/file/c0371bf2f84d37acabd30e547b4cc5fa][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00402b40][similar_1_ref] (sim.: 1.0)
+2. [fcn.00402b40][similar_2_ref] (sim.: 1.0)
+3. [fcn.00402b40][similar_3_ref] (sim.: 1.0)
+4. [fcn.00402b40][similar_4_ref] (sim.: 1.0)
+5. [fcn.00402b40][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x40
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov dword[ebp-0xc],eax
+lea eax,[ebp-0x28]
+push eax
+lea ecx,[ebp-0x30]
+push ecx
+lea edx,[ebp-0x38]
+push edx
+lea eax,[ebp-0x18]
+push eax
+mov ecx,dword[ebp-0xc]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetProcessTimes]
+test eax,eax
+je 0x402b76
+mov dword[ebp-0x10],1
+jmp 0x402b7d
+mov dword[ebp-0x10],0
+movsd xmm0,qword[0x443f28]
+movsd qword[ebp-0x40],xmm0
+mov edx,dword[ebp-0x14]
+mov dword[ebp-4],edx
+cvtsi2sd xmm0,dword[ebp-4]
+mov eax,dword[ebp-4]
+shr eax,0x1f
+addsd xmm0,qword[eax*8+0x443f40]
+mulsd xmm0,qword[0x443f30]
+mov ecx,dword[ebp-0x18]
+mov dword[ebp-8],ecx
+cvtsi2sd xmm1,dword[ebp-8]
+mov edx,dword[ebp-8]
+shr edx,0x1f
+addsd xmm1,qword[edx*8+0x443f40]
+mulsd xmm1,qword[0x443f28]
+addsd xmm0,xmm1
+movsd qword[ebp-0x20],xmm0
+fld qword[ebp-0x20]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402b40@368dd66411b8b6ce2bcd15b0e14af5c0
+[similar_2_ref]: /report/fcn.00402b40@ed513abc569bc29389208199ec389a34
+[similar_3_ref]: /report/fcn.00402b40@835812ed365516de32516b9bf14b0450
+[similar_4_ref]: /report/fcn.00402b40@5e50a67c7e8dbb50c23acbc92eb08f0e
+[similar_5_ref]: /report/fcn.00402b40@adc325bca51b67a67785e7e986af8b4d
+[virustotal_ref]: https://www.virustotal.com/gui/file/c0371bf2f84d37acabd30e547b4cc5fa

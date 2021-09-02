@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "fcn.00424c40 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00424c40
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0043db80][similar_1_ref] (sim.: 0.9077137946792604)
+2. [fcn.004046c0][similar_2_ref] (sim.: 0.8981048568819141)
+3. [fcn.0040641d][similar_3_ref] (sim.: 0.8975447054789822)
+4. [fcn.0042bf30][similar_4_ref] (sim.: 0.8962677826409007)
+5. [fcn.004228b4][similar_5_ref] (sim.: 0.8948797364195726)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+mov eax,dword[ebp+0xc]
+mov ecx,dword[ebp+0x10]
+push ebx
+mov ebx,dword[ebp+8]
+push esi
+push edi
+push eax
+push ebx
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+mov edi,eax
+test edi,edi
+mov dword[ebp-4],edi
+jbe 0x424d28
+call dword[0x43618c]
+test ebx,ebx
+mov dword[ebp-8],eax
+je 0x424cb9
+push ebx
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+mov esi,eax
+inc esi
+lea eax,[esi+esi]
+add eax,3
+and eax,0xfffffffc
+call fcn.00417df0
+mov edi,esp
+test edi,edi
+je 0x424cb6
+mov edx,dword[ebp-8]
+push esi
+push edi
+push 0xffffffffffffffff
+push ebx
+push 0
+push edx
+mov word[edi],0
+call dword[sym.imp.KERNEL32.dll_MultiByteToWideChar]
+mov esi,eax
+neg esi
+sbb esi,esi
+and esi,edi
+mov edi,dword[ebp-4]
+jmp 0x424cbb
+mov edi,dword[ebp-4]
+xor esi,esi
+push 0x5c
+push esi
+call fcn.0042a966
+add esp,8
+test eax,eax
+je 0x424d28
+test esi,esi
+mov word[eax],0
+jne 0x424cd7
+xor eax,eax
+jmp 0x424cfd
+push esi
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+lea edi,[eax+eax+2]
+mov eax,edi
+add eax,3
+and eax,0xfffffffc
+call fcn.00417df0
+mov ecx,dword[ebp-8]
+mov eax,esp
+push ecx
+push edi
+push esi
+push eax
+call fcn.004019f9
+mov ecx,dword[ebp+0xc]
+cmp ecx,0x7fffffff
+ja 0x424d10
+push eax
+push ecx
+push ebx
+call fcn.00401bc7
+mov eax,ebx
+lea edx,[eax+1]
+mov cl,byte[eax]
+inc eax
+test cl,cl
+jne 0x424d15
+sub eax,edx
+lea esp,[ebp-0x14]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,edi
+lea esp,[ebp-0x14]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043db80@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.004046c0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0040641d@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.0042bf30@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.004228b4@b41633237f937bbe6f9bcfbdce811f10
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

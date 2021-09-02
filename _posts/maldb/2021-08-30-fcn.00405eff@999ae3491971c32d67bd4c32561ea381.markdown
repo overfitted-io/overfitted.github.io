@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.00405eff @ 999ae3491971c32d67bd4c32561ea381"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405eff
+- **Origin (md5):** 999ae3491971c32d67bd4c32561ea381
+- **VirusTotal:** [virustotal.com/gui/file/999ae3491971c32d67bd4c32561ea381][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00405eff][similar_1_ref] (sim.: 1.0)
+2. [fcn.00405ed3][similar_2_ref] (sim.: 0.9375454806801896)
+3. [fcn.00405ed3][similar_3_ref] (sim.: 0.9375454806801896)
+4. [fcn.00405ed3][similar_4_ref] (sim.: 0.9375454806801896)
+5. [fcn.00406034][similar_5_ref] (sim.: 0.909788635394381)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+0x14]
+xor eax,eax
+mov word[esi],ax
+lea eax,[ebp+0x18]
+push eax
+mov eax,dword[ebp+0x18]
+neg eax
+sbb eax,eax
+and eax,0x100
+or eax,0x20019
+push eax
+push 0
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x405f78
+lea eax,[ebp+0xc]
+push eax
+push esi
+lea eax,[ebp+0x14]
+push eax
+push 0
+push dword[ebp+0x10]
+mov dword[ebp+0xc],0x4008
+push dword[ebp+0x18]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x405f61
+cmp dword[ebp+0x14],1
+je 0x405f66
+cmp dword[ebp+0x14],2
+je 0x405f66
+xor eax,eax
+mov word[esi],ax
+push dword[ebp+0x18]
+xor eax,eax
+mov word[esi+0x4006],ax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405eff@5bfd33ece1aeef8bda2c7fc886262ed9
+[similar_2_ref]: /report/fcn.00405ed3@59b1876779e3211327c1a96e7e2c12c4
+[similar_3_ref]: /report/fcn.00405ed3@fc08a944a357dc216338592f13f65b60
+[similar_4_ref]: /report/fcn.00405ed3@e7f0482c425f7bc9cd320f60c1cfa28c
+[similar_5_ref]: /report/fcn.00406034@13efdafd5b4f5d3a5dcb240b696c267c
+[virustotal_ref]: https://www.virustotal.com/gui/file/999ae3491971c32d67bd4c32561ea381

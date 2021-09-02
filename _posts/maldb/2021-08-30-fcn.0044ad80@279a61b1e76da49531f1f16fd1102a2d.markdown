@@ -1,0 +1,162 @@
+---
+layout: post
+title:  "fcn.0044ad80 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0044ad80
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+<span class="tag" id="REGISTRY">REGISTRY</span>
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004168d0][similar_1_ref] (sim.: 0.9462635673391024)
+2. [fcn.0042e670][similar_2_ref] (sim.: 0.9415764733440412)
+3. [fcn.00416cf0][similar_3_ref] (sim.: 0.9383900240846879)
+4. [fcn.0042c1a0][similar_4_ref] (sim.: 0.9322756102805709)
+5. [fcn.00416770][similar_5_ref] (sim.: 0.9297550428038639)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x228
+mov eax,dword[0x53ebd0]
+xor eax,ebp
+mov dword[ebp-0x14],eax
+mov dword[ebp-0x228],ecx
+mov dword[ebp-0xc],0
+lea eax,[ebp-4]
+push eax
+push 0x20019
+push 0
+push 0x10
+mov ecx,0x5427d8
+call fcn.0044d7d0
+push eax
+push reloc.WS2_32.dll_accept
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+jne 0x44af18
+cmp dword[ebp+8],0
+je 0x44aebc
+cmp dword[ebp+0xc],0
+je 0x44aebc
+xor ecx,ecx
+mov word[ebp-0x220],cx
+push 0x206
+push 0
+lea edx,[ebp-0x21e]
+push edx
+call fcn.00490b70
+add esp,0xc
+mov dword[ebp-0x10],0x208
+lea eax,[ebp-0x10]
+push eax
+lea ecx,[ebp-0x220]
+push ecx
+push 0
+push 0
+push 0x4fb304
+mov edx,dword[ebp-4]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+je 0x44ae45
+mov eax,dword[ebp-4]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,1
+jmp 0x44af1d
+lea ecx,[ebp-0x220]
+push ecx
+mov edx,dword[ebp+0xc]
+push edx
+mov eax,dword[ebp+8]
+push eax
+call fcn.00496ea2
+add esp,0xc
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x44ae88
+xor edx,edx
+mov eax,dword[ebp+8]
+mov word[eax],dx
+mov ecx,dword[ebp-4]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,1
+jmp 0x44af1d
+push 0x4fb310
+lea edx,[ebp-0x220]
+push edx
+call dword[sym.imp.SHLWAPI.dll_PathAppendW]
+lea eax,[ebp-0x220]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x44aebc
+mov ecx,dword[ebp-4]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,1
+jmp 0x44af1d
+cmp dword[ebp+0x10],0
+je 0x44af09
+cmp dword[ebp+0x14],0
+je 0x44af09
+mov edx,dword[ebp+0x14]
+mov dword[ebp-0x224],edx
+lea eax,[ebp-0x224]
+push eax
+mov ecx,dword[ebp+0x10]
+push ecx
+push 0
+push 0
+push 0x4fb330
+mov edx,dword[ebp-4]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+je 0x44af09
+mov eax,dword[ebp-4]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,1
+jmp 0x44af1d
+mov ecx,dword[ebp-4]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,dword[ebp-0xc]
+jmp 0x44af1d
+mov eax,1
+mov ecx,dword[ebp-0x14]
+xor ecx,ebp
+call fcn.00490ace
+mov esp,ebp
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004168d0@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0042e670@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00416cf0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.0042c1a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00416770@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

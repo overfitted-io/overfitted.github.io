@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.10016851 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10016851
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00428d93][similar_1_ref] (sim.: 0.9235067146033323)
+2. [fcn.10007609][similar_2_ref] (sim.: 0.8980724798879735)
+3. [fcn.10007cef][similar_3_ref] (sim.: 0.8900196109655377)
+4. [fcn.10018cb4][similar_4_ref] (sim.: 0.886017006275424)
+5. [fcn.0100342e][similar_5_ref] (sim.: 0.8812340619590103)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+mov ecx,dword[ebp+0xc]
+push esi
+push edi
+xor esi,esi
+push 0x104
+mov dword[ebp-8],esi
+call fcn.10002936
+mov edi,dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
+mov dword[ebp-0x10],eax
+lea eax,[ebp-8]
+push eax
+push str.CLSID
+push 0x80000000
+mov dword[ebp-0xc],0x208
+mov dword[ebp-0x14],esi
+call edi
+test eax,eax
+jne 0x100168f2
+push ebx
+lea eax,[ebp-4]
+push eax
+push dword[ebp+8]
+mov dword[ebp-4],esi
+push dword[ebp-8]
+call edi
+test eax,eax
+mov ebx,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+jne 0x100168ec
+lea eax,[ebp+8]
+push eax
+push str.InProcServer32
+push dword[ebp-4]
+mov dword[ebp+8],esi
+call edi
+test eax,eax
+jne 0x100168e7
+lea eax,[ebp-0xc]
+push eax
+push dword[ebp-0x10]
+lea eax,[ebp-0x14]
+push eax
+push esi
+push 0x10050c4c
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+push dword[ebp+8]
+mov esi,eax
+neg esi
+sbb esi,esi
+inc esi
+call ebx
+push dword[ebp-4]
+call ebx
+push dword[ebp-8]
+call ebx
+pop ebx
+mov ecx,dword[ebp+0xc]
+push 0xffffffffffffffff
+call fcn.10004789
+pop edi
+mov eax,esi
+pop esi
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.10007609@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.10007cef@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.10018cb4@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.0100342e@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

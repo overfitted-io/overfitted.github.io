@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.004033c5 @ d287262b3c4caae6c69c406382125319"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004033c5
+- **Origin (md5):** d287262b3c4caae6c69c406382125319
+- **VirusTotal:** [virustotal.com/gui/file/d287262b3c4caae6c69c406382125319][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.004033c5][similar_1_ref] (sim.: 1.0)
+2. [fcn.004033c5][similar_2_ref] (sim.: 1.0)
+3. [fcn.00407410][similar_3_ref] (sim.: 0.8330371261584046)
+4. [fcn.004014fa][similar_4_ref] (sim.: 0.8306090318539604)
+5. [fcn.004014fa][similar_5_ref] (sim.: 0.8302787732348427)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+mov esi,edx
+xor eax,eax
+push edi
+mov edi,ecx
+cmp dword[esi],eax
+je 0x403418
+push 2
+push eax
+push eax
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+push dword[esi]
+push edi
+call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
+test eax,eax
+jne 0x403413
+push ecx
+push 0x401220
+call fcn.0040249a
+push 0xa
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+mov ecx,0x406048
+call fcn.00402433
+xor al,al
+jmp 0x40341a
+mov eax,dword[ebp-4]
+mov dword[esi],eax
+mov al,1
+pop edi
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004033c5@57989f43bf24a9272122210a17558c3d
+[similar_2_ref]: /report/fcn.004033c5@3a783d6a0e3505903843983e413a529e
+[similar_3_ref]: /report/fcn.00407410@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.004014fa@ea9c1e2eeb951a8e6185c6674c228f98
+[similar_5_ref]: /report/fcn.004014fa@03566ca6c146fb1f8bfbce50f19cbb41
+[virustotal_ref]: https://www.virustotal.com/gui/file/d287262b3c4caae6c69c406382125319

@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00433720 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00433720
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042f720][similar_1_ref] (sim.: 0.8915825290023659)
+2. [fcn.00434a10][similar_2_ref] (sim.: 0.8830405711034879)
+3. [fcn.004ea5a0][similar_3_ref] (sim.: 0.878395805308533)
+4. [fcn.0042c080][similar_4_ref] (sim.: 0.8740695065700039)
+5. [fcn.0040c178][similar_5_ref] (sim.: 0.868725746804489)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x218
+mov eax,dword[0x53ebd0]
+xor eax,ebp
+mov dword[ebp-0xc],eax
+xor eax,eax
+mov word[ebp-0x218],ax
+push 0x206
+push 0
+lea ecx,[ebp-0x216]
+push ecx
+call fcn.00490b70
+add esp,0xc
+push 0x104
+mov edx,dword[ebp+8]
+push edx
+lea eax,[ebp-0x218]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcpynW]
+lea ecx,[ebp-0x218]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFindFileNameW]
+mov dword[ebp-4],eax
+xor edx,edx
+mov eax,dword[ebp-4]
+mov word[eax],dx
+lea ecx,[ebp-0x218]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x433798
+mov eax,1
+jmp 0x4337b3
+lea edx,[ebp-0x218]
+push edx
+push 0
+call dword[sym.imp.SHELL32.dll_SHCreateDirectory]
+mov dword[ebp-8],eax
+xor eax,eax
+cmp dword[ebp-8],0
+sete al
+mov ecx,dword[ebp-0xc]
+xor ecx,ebp
+call fcn.00490ace
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042f720@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.00434a10@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.004ea5a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.0042c080@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0040c178@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

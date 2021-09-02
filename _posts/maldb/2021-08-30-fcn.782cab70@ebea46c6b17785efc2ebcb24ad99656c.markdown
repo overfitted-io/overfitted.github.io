@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "fcn.782cab70 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.782cab70
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.783aa670][similar_1_ref] (sim.: 0.9041232401235755)
+2. [sym.MFC80D.DLL\_Ordinal\_8701][similar_2_ref] (sim.: 0.9014321455905905)
+3. [fcn.782ca750][similar_3_ref] (sim.: 0.9011207648554287)
+4. [fcn.782cc1c0][similar_4_ref] (sim.: 0.89962158576448)
+5. [sym.MFC80D.DLL\_Ordinal\_2320][similar_5_ref] (sim.: 0.8972416727528061)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x1c
+mov dword[ebp-0x1c],ecx
+mov dword[ebp-0x14],0
+mov dword[ebp-0x18],0
+mov dword[ebp-0xc],4
+mov dword[ebp-8],0
+mov eax,dword[ebp-0x1c]
+mov dword[eax+0xa0],0
+mov dword[ebp-0x10],0x783e6870
+mov dword[ebp-4],0
+mov ecx,dword[ebp-0x10]
+cmp dword[ecx],0
+je 0x782cac96
+lea edx,[ebp-0x14]
+push edx
+push 1
+push 0
+mov eax,dword[ebp-0x10]
+mov ecx,dword[eax]
+push ecx
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x782cac88
+mov edx,dword[ebp-0x10]
+mov eax,dword[edx+4]
+mov dword[ebp-4],eax
+mov ecx,dword[ebp-4]
+cmp dword[ecx],0
+je 0x782cac77
+lea edx,[ebp-0xc]
+push edx
+lea eax,[ebp-0x18]
+push eax
+lea ecx,[ebp-8]
+push ecx
+push 0
+mov edx,dword[ebp-4]
+mov eax,dword[edx]
+push eax
+mov ecx,dword[ebp-0x14]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+jne 0x782cac54
+cmp dword[ebp-8],4
+jne 0x782cac54
+cmp dword[ebp-0x18],0
+je 0x782cac3a
+mov edx,dword[ebp-0x1c]
+mov eax,dword[ebp-4]
+mov ecx,dword[edx+0xa0]
+or ecx,dword[eax+4]
+mov edx,dword[ebp-0x1c]
+mov dword[edx+0xa0],ecx
+jmp 0x782cac54
+mov eax,dword[ebp-4]
+mov ecx,dword[eax+4]
+not ecx
+mov edx,dword[ebp-0x1c]
+and ecx,dword[edx+0xa0]
+mov eax,dword[ebp-0x1c]
+mov dword[eax+0xa0],ecx
+mov dword[ebp-0x18],0
+mov dword[ebp-0xc],4
+mov dword[ebp-8],0
+mov ecx,dword[ebp-4]
+add ecx,8
+mov dword[ebp-4],ecx
+jmp 0x782cabe6
+mov edx,dword[ebp-0x14]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov dword[ebp-0x14],0
+mov eax,dword[ebp-0x10]
+add eax,8
+mov dword[ebp-0x10],eax
+jmp 0x782cabb0
+mov eax,1
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.783aa670@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/sym.MFC80D.DLL_Ordinal_8701@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/fcn.782ca750@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/fcn.782cc1c0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/sym.MFC80D.DLL_Ordinal_2320@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

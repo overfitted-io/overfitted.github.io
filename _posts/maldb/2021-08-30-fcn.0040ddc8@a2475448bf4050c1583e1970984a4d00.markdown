@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "fcn.0040ddc8 @ a2475448bf4050c1583e1970984a4d00"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040ddc8
+- **Origin (md5):** a2475448bf4050c1583e1970984a4d00
+- **VirusTotal:** [virustotal.com/gui/file/a2475448bf4050c1583e1970984a4d00][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040c2a5][similar_1_ref] (sim.: 0.9172963224118159)
+2. [method.CWinApp.virtual\_140][similar_2_ref] (sim.: 0.8979878898923777)
+3. [fcn.004bbcad][similar_3_ref] (sim.: 0.8979878898923777)
+4. [fcn.00403dd7][similar_4_ref] (sim.: 0.892545623620833)
+5. [fcn.004209e0][similar_5_ref] (sim.: 0.8906923656260363)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x114
+push ebx
+push esi
+push edi
+xor ebx,ebx
+mov edi,ecx
+push ebx
+mov dword[ebp-0x10],edi
+call fcn.0040dd9a
+lea eax,[ebp-4]
+push eax
+push ebx
+call fcn.0040df40
+xor esi,esi
+cmp eax,ebx
+mov dword[ebp-0xc],eax
+je 0x40de0c
+push ebx
+push ebx
+push 0x376
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_SendMessageA]
+cmp eax,ebx
+je 0x40de0c
+mov esi,eax
+jmp 0x40de16
+cmp edi,ebx
+je 0x40de16
+lea esi,[edi+0x9c]
+cmp esi,ebx
+mov dword[ebp-8],ebx
+je 0x40de30
+mov eax,dword[esi]
+mov dword[ebp-8],eax
+mov eax,dword[ebp+0x10]
+cmp eax,ebx
+je 0x40de30
+add eax,0x30000
+mov dword[esi],eax
+mov ebx,dword[ebp+0xc]
+test bl,0xf0
+jne 0x40de4f
+mov eax,ebx
+and eax,0xf
+cmp eax,1
+jbe 0x40de4c
+cmp eax,2
+jbe 0x40de4f
+cmp eax,4
+ja 0x40de4f
+or ebx,0x30
+test edi,edi
+je 0x40de58
+mov edi,dword[edi+0x78]
+jmp 0x40de72
+lea eax,[ebp-0x114]
+push 0x104
+push eax
+push 0
+lea edi,[ebp-0x114]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+push ebx
+push edi
+push dword[ebp+8]
+push dword[ebp-0xc]
+call dword[sym.imp.USER32.dll_MessageBoxA]
+test esi,esi
+mov edi,eax
+je 0x40de8b
+mov eax,dword[ebp-8]
+mov dword[esi],eax
+cmp dword[ebp-4],0
+je 0x40de9c
+push 1
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_EnableWindow]
+mov ecx,dword[ebp-0x10]
+push 1
+call fcn.0040dd9a
+mov eax,edi
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040c2a5@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_2_ref]: /report/method.CWinApp.virtual_140@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_3_ref]: /report/fcn.004bbcad@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.00403dd7@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.004209e0@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/a2475448bf4050c1583e1970984a4d00

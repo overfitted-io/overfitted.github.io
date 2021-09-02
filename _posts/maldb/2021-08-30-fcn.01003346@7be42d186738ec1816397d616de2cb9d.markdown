@@ -1,0 +1,102 @@
+---
+layout: post
+title:  "fcn.01003346 @ 7be42d186738ec1816397d616de2cb9d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.01003346
+- **Origin (md5):** 7be42d186738ec1816397d616de2cb9d
+- **VirusTotal:** [virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.01006205][similar_1_ref] (sim.: 0.8979089063437256)
+2. [fcn.010052d4][similar_2_ref] (sim.: 0.888463248013038)
+3. [fcn.01004cae][similar_3_ref] (sim.: 0.8877306343335634)
+4. [fcn.01001cf4][similar_4_ref] (sim.: 0.8839879942323594)
+5. [fcn.01002a96][similar_5_ref] (sim.: 0.8809309912873386)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x108
+mov eax,dword[0x100b2d0]
+push ebx
+push esi
+mov esi,dword[0x100bc40]
+test esi,esi
+mov dword[ebp-4],eax
+mov ebx,esi
+je 0x10033a6
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_LocalFree]
+cmp dword[0x100c884],0
+jne 0x1003395
+cmp dword[0x100c490],0
+jne 0x1003395
+push 0x80
+push dword[esi]
+call dword[sym.imp.KERNEL32.dll_SetFileAttributesA]
+push dword[esi]
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+push dword[ebx]
+mov esi,dword[esi+4]
+call edi
+push ebx
+call edi
+test esi,esi
+mov ebx,esi
+jne 0x100336e
+pop edi
+xor eax,eax
+cmp dword[0x100c880],eax
+pop esi
+pop ebx
+je 0x1003400
+cmp dword[0x100c884],eax
+jne 0x1003400
+cmp dword[0x100c490],eax
+jne 0x1003400
+push 0x100bc44
+lea eax,[ebp-0x108]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcpyA]
+test byte[0x100c494],0x20
+je 0x10033e9
+lea eax,[ebp-0x108]
+push eax
+call fcn.01006666
+push 0x1001344
+call dword[sym.imp.KERNEL32.dll_SetCurrentDirectoryA]
+lea eax,[ebp-0x108]
+push eax
+call fcn.01002a96
+cmp word[0x100ba64],1
+je 0x1003418
+cmp dword[0x100c880],0
+je 0x1003418
+call fcn.01001a5b
+mov ecx,dword[ebp-4]
+and dword[0x100c880],0
+call fcn.010064de
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.01006205@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.010052d4@7be42d186738ec1816397d616de2cb9d
+[similar_3_ref]: /report/fcn.01004cae@7be42d186738ec1816397d616de2cb9d
+[similar_4_ref]: /report/fcn.01001cf4@7be42d186738ec1816397d616de2cb9d
+[similar_5_ref]: /report/fcn.01002a96@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d

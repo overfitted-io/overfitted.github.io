@@ -1,0 +1,189 @@
+---
+layout: post
+title:  "fcn.00401000 @ 470263fe7e7cc115b95cd041d643e3b5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00401000
+- **Origin (md5):** 470263fe7e7cc115b95cd041d643e3b5
+- **VirusTotal:** [virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00405242][similar_1_ref] (sim.: 0.9217894769799442)
+2. [fcn.00408ec1][similar_2_ref] (sim.: 0.9142185537944436)
+3. [fcn.0040764a][similar_3_ref] (sim.: 0.9123866021953076)
+4. [fcn.0041ffb4][similar_4_ref] (sim.: 0.9113565432638528)
+5. [fcn.0040641d][similar_5_ref] (sim.: 0.9103139907780412)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x1c
+push ebx
+push esi
+mov ebx,edx
+mov dword[ebp-0x14],ecx
+push edi
+push 3
+pop edi
+lea eax,[ebx+2]
+xor esi,esi
+cdq 
+idiv edi
+mov eax,ebx
+and dword[ebp-0xc],esi
+sub eax,edx
+push 4
+push 0x3000
+lea eax,[eax*4+8]
+cdq 
+idiv edi
+mov dword[ebp-0x1c],eax
+lea ecx,[eax+1]
+push ecx
+push esi
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov ecx,eax
+mov dword[ebp-0x10],ecx
+test ecx,ecx
+je 0x401179
+test ebx,ebx
+je 0x40116f
+mov ecx,dword[ebp-0x14]
+jmp 0x40105c
+mov ebx,dword[ebp-0x18]
+mov al,byte[ecx]
+dec ebx
+mov byte[ebp+esi-4],al
+inc esi
+mov dh,byte[ebp-2]
+inc ecx
+mov dl,byte[ebp-3]
+mov dword[ebp-0x18],ebx
+mov bl,byte[ebp-4]
+mov dword[ebp-0x14],ecx
+cmp esi,edi
+jne 0x4010d3
+mov esi,dword[ebp-0x10]
+mov al,bl
+shr al,2
+mov cl,bl
+and cl,3
+mov byte[ebp-8],al
+shl cl,4
+mov al,dl
+shr al,4
+add cl,al
+mov al,dh
+mov byte[ebp-7],cl
+mov cl,dl
+and cl,0xf
+shr al,6
+shl cl,2
+add cl,al
+mov al,dh
+and al,0x3f
+mov byte[ebp-6],cl
+mov ecx,dword[ebp-0xc]
+xor edi,edi
+mov byte[ebp-5],al
+movzx eax,byte[ebp+edi-8]
+mov al,byte[eax+str.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_]
+mov byte[esi+ecx],al
+inc ecx
+inc edi
+cmp edi,4
+jl 0x4010b3
+push 3
+mov dword[ebp-0xc],ecx
+xor esi,esi
+mov ecx,dword[ebp-0x14]
+pop edi
+cmp dword[ebp-0x18],0
+jne 0x401059
+test esi,esi
+je 0x40116f
+cmp esi,edi
+jge 0x401103
+mov eax,edi
+lea ecx,[ebp-4]
+sub eax,esi
+add ecx,esi
+push eax
+push 0
+push ecx
+call fcn.0040de40
+mov dh,byte[ebp-2]
+add esp,0xc
+mov dl,byte[ebp-3]
+mov bl,byte[ebp-4]
+mov ecx,dword[ebp-0xc]
+mov al,bl
+shr al,2
+and bl,3
+mov byte[ebp-8],al
+mov al,dl
+shr al,4
+and dl,0xf
+shl bl,4
+add bl,al
+shl dl,2
+mov al,dh
+mov byte[ebp-7],bl
+shr al,6
+and dh,0x3f
+add dl,al
+mov byte[ebp-5],dh
+lea eax,[esi+1]
+mov byte[ebp-6],dl
+mov edx,dword[ebp-0x10]
+xor ebx,ebx
+test eax,eax
+jle 0x40115a
+lea edi,[esi+1]
+movzx eax,byte[ebp+ebx-8]
+mov al,byte[eax+str.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_]
+mov byte[edx+ecx],al
+inc ecx
+inc ebx
+cmp ebx,edi
+jl 0x401143
+push 3
+pop edi
+cmp esi,edi
+jge 0x40116f
+sub edi,esi
+lea eax,[edx+ecx]
+push edi
+push 0x3d
+push eax
+call fcn.0040de40
+add esp,0xc
+mov eax,dword[ebp-0x10]
+mov ecx,dword[ebp-0x1c]
+mov byte[eax+ecx],0
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405242@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.00408ec1@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.0040764a@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.0041ffb4@597d9ee507d1b2a81775aa98c4a2271a
+[similar_5_ref]: /report/fcn.0040641d@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5

@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.00558332 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00558332
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0056836b][similar_1_ref] (sim.: 0.8978721371586936)
+2. [fcn.00403f21][similar_2_ref] (sim.: 0.8903382487766927)
+3. [fcn.00403f21][similar_3_ref] (sim.: 0.8860173857303779)
+4. [fcn.0040c2f6][similar_4_ref] (sim.: 0.8786708627182338)
+5. [fcn.004364ba][similar_5_ref] (sim.: 0.872555500276732)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+mov ebx,dword[ebp+8]
+xor ecx,ecx
+push edi
+xor eax,eax
+lea edi,[ebx*4+0x5e373c]
+lock cmpxchg dword[edi],ecx
+mov ecx,eax
+test ecx,ecx
+je 0x55835a
+lea eax,[ecx+1]
+neg eax
+sbb eax,eax
+and eax,ecx
+jmp 0x5583af
+mov ebx,dword[ebx*4+0x5b2bfc]
+push esi
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x55839d
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x55838e
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x558390
+xor esi,esi
+test esi,esi
+jne 0x55839d
+or eax,0xffffffff
+xchg dword[edi],eax
+xor eax,eax
+jmp 0x5583ae
+mov eax,esi
+xchg dword[edi],eax
+test eax,eax
+je 0x5583ac
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,esi
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0056836b@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.00403f21@48311276b3cd8adebcd777f7aad326b2
+[similar_3_ref]: /report/fcn.00403f21@df122b321cb85208f7078f98486a1c28
+[similar_4_ref]: /report/fcn.0040c2f6@d59f9c4f445b9f980173dec064f55091
+[similar_5_ref]: /report/fcn.004364ba@8d996434378dbdbb47e86342be5446c7
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

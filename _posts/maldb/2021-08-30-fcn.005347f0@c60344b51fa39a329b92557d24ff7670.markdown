@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.005347f0 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.005347f0
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004537f0][similar_1_ref] (sim.: 0.7998010272294209)
+2. [fcn.004f6d50][similar_2_ref] (sim.: 0.7957946659352638)
+3. [fcn.004f6d50][similar_3_ref] (sim.: 0.7957946659352638)
+4. [fcn.00478540][similar_4_ref] (sim.: 0.7947530431140892)
+5. [fcn.004854c2][similar_5_ref] (sim.: 0.7934081409210183)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+test esi,esi
+jne 0x5347f9
+xor al,al
+pop ecx
+ret 
+mov eax,dword[esi+4]
+push eax
+call fcn.0057818d
+add esp,4
+cmp eax,0xffffffff
+jne 0x534811
+mov ecx,esi
+call fcn.00533d60
+push 0x5dfde4
+push 0
+push 0
+push 4
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileMappingW]
+mov dword[edi],eax
+test eax,eax
+je 0x5347f5
+push 0
+push 0
+push 0
+push 2
+push eax
+call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
+xor ecx,ecx
+test eax,eax
+setne cl
+mov dword[edi+4],eax
+mov al,cl
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004537f0@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.004f6d50@a9a3c47f5c08fef0f0f69b66c17916ac
+[similar_3_ref]: /report/fcn.004f6d50@ef3a0211d1ddb224667e2aa0d915337b
+[similar_4_ref]: /report/fcn.00478540@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.004854c2@152885a790b99953ce23874f0947b7bd
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

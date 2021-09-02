@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.00402a36 @ cce7ba37a5ac487b09e8c8d292223615"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00402a36
+- **Origin (md5):** cce7ba37a5ac487b09e8c8d292223615
+- **VirusTotal:** [virustotal.com/gui/file/cce7ba37a5ac487b09e8c8d292223615][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00402a36][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00402a36][similar_2_ref] (sim.: 0.9998900981078187)
+3. [fcn.00402a36][similar_3_ref] (sim.: 0.9998900981078187)
+4. [fcn.00402a36][similar_4_ref] (sim.: 0.9778634707364748)
+5. [fcn.00402a36][similar_5_ref] (sim.: 0.9649194108572479)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10c
+push ebx
+push esi
+lea eax,[ebp-4]
+push edi
+push eax
+mov eax,dword[0x423f50]
+or al,8
+xor ebx,ebx
+push eax
+push ebx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+cmp eax,ebx
+jne 0x402aca
+mov esi,dword[sym.imp.ADVAPI32.dll_RegEnumKeyA]
+mov edi,0x105
+jmp 0x402a87
+cmp dword[ebp+0x10],ebx
+jne 0x402abe
+lea eax,[ebp-0x10c]
+push ebx
+push eax
+push dword[ebp-4]
+call fcn.00402a36
+test eax,eax
+jne 0x402a99
+lea eax,[ebp-0x10c]
+push edi
+push eax
+push ebx
+push dword[ebp-4]
+call esi
+test eax,eax
+je 0x402a6e
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push 2
+call fcn.00405e88
+cmp eax,ebx
+je 0x402ad1
+push ebx
+push dword[0x423f50]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x402aca
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0xc
+cmp dword[0x423f50],ebx
+jne 0x402ac7
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyA]
+test eax,eax
+jne 0x402ac7
+jmp 0x402aca
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402a36@024d69b3dfb503973cce5c1700f282aa
+[similar_2_ref]: /report/fcn.00402a36@983fe9598b69120a048e4bbfe8d8764c
+[similar_3_ref]: /report/fcn.00402a36@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_4_ref]: /report/fcn.00402a36@88c77a55c813a535f04a021f665ec5b4
+[similar_5_ref]: /report/fcn.00402a36@8cfdb0713f3b8f9b0a5ef775f40cf182
+[virustotal_ref]: https://www.virustotal.com/gui/file/cce7ba37a5ac487b09e8c8d292223615

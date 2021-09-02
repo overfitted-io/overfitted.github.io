@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "fcn.00432a0a @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00432a0a
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040c178][similar_1_ref] (sim.: 0.8990277672207644)
+2. [fcn.0041997e][similar_2_ref] (sim.: 0.8920084956472285)
+3. [fcn.0040191d][similar_3_ref] (sim.: 0.8893351311469639)
+4. [fcn.00442db0][similar_4_ref] (sim.: 0.8848812975984325)
+5. [fcn.004151b4][similar_5_ref] (sim.: 0.8848357250584703)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x210
+mov eax,dword[0x4a83f0]
+xor eax,ebp
+mov dword[ebp-4],eax
+xor eax,eax
+push 0x208
+push eax
+mov word[ebp-0x210],ax
+lea eax,[ebp-0x20e]
+push eax
+call fcn.0043fe30
+push 0x495274
+push edi
+call fcn.004547a1
+add esp,0x14
+test eax,eax
+lea eax,[ebp-0x210]
+jne 0x432a8a
+push ebx
+push esi
+push eax
+mov esi,0x104
+push esi
+call dword[sym.imp.KERNEL32.dll_GetCurrentDirectoryW]
+mov ebx,eax
+lea eax,[ebp-0x210]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathAddBackslashW]
+sub esi,ebx
+push esi
+push edi
+lea eax,[ebp-0x210]
+push 0x105
+push eax
+call fcn.00454609
+add esp,0x10
+pop esi
+pop ebx
+jmp 0x432a9e
+push 0x104
+push edi
+push 0x105
+push eax
+call fcn.0044844d
+add esp,0x10
+lea eax,[ebp-0x210]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x432ab3
+xor eax,eax
+jmp 0x432ac4
+push 0
+lea eax,[ebp-0x210]
+push eax
+push 0
+call dword[sym.imp.SHELL32.dll_SHCreateDirectoryExW]
+xor ecx,ecx
+test eax,eax
+sete cl
+mov eax,ecx
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.0043e257
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040c178@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.0040191d@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00442db0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_5_ref]: /report/fcn.004151b4@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

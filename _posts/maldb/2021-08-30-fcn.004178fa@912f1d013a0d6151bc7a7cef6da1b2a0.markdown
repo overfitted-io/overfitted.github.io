@@ -1,0 +1,102 @@
+---
+layout: post
+title:  "fcn.004178fa @ 912f1d013a0d6151bc7a7cef6da1b2a0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004178fa
+- **Origin (md5):** 912f1d013a0d6151bc7a7cef6da1b2a0
+- **VirusTotal:** [virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.004178fa][similar_1_ref] (sim.: 1.0)
+2. [fcn.004178fa][similar_2_ref] (sim.: 1.0)
+3. [fcn.00410b76][similar_3_ref] (sim.: 0.8706293774444146)
+4. [fcn.00410b76][similar_4_ref] (sim.: 0.8706293774444146)
+5. [fcn.00410b76][similar_5_ref] (sim.: 0.8706293774444146)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+jmp 0x47b579
+mov eax,dword[0x4bd060]
+push ebx
+push esi
+xor ebx,ebx
+push edi
+test eax,eax
+jne 0x47b595
+call fcn.0047b652
+test eax,eax
+je 0x47b5d3
+mov eax,dword[0x4bd060]
+cmp eax,1
+jne 0x47b5b0
+push 0xd
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+test eax,eax
+je 0x47b5d3
+jmp 0x47b622
+mov edi,dword[sym.imp.KERNEL32.dll_InterlockedPopEntrySList]
+push eax
+call edi
+test eax,eax
+jne 0x47b622
+push 0x40
+mov eax,0x1000
+push eax
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov esi,eax
+test esi,esi
+jne 0x47b5e5
+push ebx
+push ebx
+push ebx
+push 0xc0000017
+call dword[sym.imp.KERNEL32.dll_RaiseException]
+mov eax,dword[esi]
+push dword[0x4bd060]
+call edi
+mov edi,eax
+test edi,edi
+je 0x47b606
+push 0x8000
+push ebx
+push esi
+call dword[sym.imp.KERNEL32.dll_VirtualFree]
+mov eax,edi
+jmp 0x47b622
+lea edi,[esi+0xff0]
+push esi
+push dword[0x4bd060]
+call dword[sym.imp.KERNEL32.dll_InterlockedPushEntrySList]
+add esi,0x10
+cmp esi,edi
+jb 0x47b60c
+mov eax,esi
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004178fa@152885a790b99953ce23874f0947b7bd
+[similar_2_ref]: /report/fcn.004178fa@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_3_ref]: /report/fcn.00410b76@505be53c36227b94e2fcc406f247f6e5
+[similar_4_ref]: /report/fcn.00410b76@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_5_ref]: /report/fcn.00410b76@96a869ae624ddb4834a1d5a829f85469
+[virustotal_ref]: https://www.virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0

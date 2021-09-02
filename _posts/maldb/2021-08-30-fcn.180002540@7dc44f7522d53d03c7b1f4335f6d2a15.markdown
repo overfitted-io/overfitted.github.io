@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "fcn.180002540 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.180002540
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.180002110][similar_1_ref] (sim.: 0.8826450936641703)
+2. [fcn.1400106c8][similar_2_ref] (sim.: 0.8760471119531903)
+3. [fcn.140006278][similar_3_ref] (sim.: 0.8746019672476756)
+4. [fcn.14000cc10][similar_4_ref] (sim.: 0.8717685012159913)
+5. [fcn.180003fe4][similar_5_ref] (sim.: 0.8693287291853411)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x20],rbx
+push rbp
+mov rbp,rsp
+sub rsp,0x20
+mov rax,qword[0x1800141b0]
+and qword[rbp+0x18],0
+movabs rbx,0x2b992ddfa232
+cmp rax,rbx
+jne 0x1800025d7
+lea rcx,[rbp+0x18]
+call qword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov rax,qword[rbp+0x18]
+mov qword[rbp+0x10],rax
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov eax,eax
+xor qword[rbp+0x10],rax
+call qword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+lea rcx,[rbp+0x20]
+mov eax,eax
+xor qword[rbp+0x10],rax
+call qword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[rbp+0x20]
+shl rax,0x20
+lea rcx,[rbp+0x10]
+xor rax,qword[rbp+0x20]
+xor rax,qword[rbp+0x10]
+xor rax,rcx
+movabs rcx,0xffffffffffff
+and rax,rcx
+movabs rcx,0x2b992ddfa233
+cmp rax,rbx
+cmove rax,rcx
+mov qword[0x1800141b0],rax
+mov rbx,qword[rsp+0x48]
+not rax
+mov qword[0x1800141b8],rax
+add rsp,0x20
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.180002110@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_2_ref]: /report/fcn.1400106c8@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.140006278@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.14000cc10@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.180003fe4@7dc44f7522d53d03c7b1f4335f6d2a15
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

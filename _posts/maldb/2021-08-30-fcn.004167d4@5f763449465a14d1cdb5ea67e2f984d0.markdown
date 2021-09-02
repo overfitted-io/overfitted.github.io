@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.004167d4 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004167d4
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004364ba][similar_1_ref] (sim.: 0.9133741621719269)
+2. [fcn.004364ba][similar_2_ref] (sim.: 0.9133741621719269)
+3. [fcn.0040c2f6][similar_3_ref] (sim.: 0.913314047020857)
+4. [fcn.0041c5e0][similar_4_ref] (sim.: 0.9072767194906226)
+5. [fcn.0041865d][similar_5_ref] (sim.: 0.9044218996314082)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+mov ebx,dword[ebp+8]
+xor ecx,ecx
+push edi
+xor eax,eax
+lea edi,[ebx*4+0x46032c]
+lock cmpxchg dword[edi],ecx
+mov ecx,eax
+test ecx,ecx
+je 0x4167fc
+lea eax,[ecx+1]
+neg eax
+sbb eax,eax
+and eax,ecx
+jmp 0x416851
+mov ebx,dword[ebx*4+0x42676c]
+push esi
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x41683f
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x416830
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x416832
+xor esi,esi
+test esi,esi
+jne 0x41683f
+or eax,0xffffffff
+xchg dword[edi],eax
+xor eax,eax
+jmp 0x416850
+mov eax,esi
+xchg dword[edi],eax
+test eax,eax
+je 0x41684e
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,esi
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004364ba@8d996434378dbdbb47e86342be5446c7
+[similar_2_ref]: /report/fcn.004364ba@c2f40b3bc10e39d3d975422ee4d09bab
+[similar_3_ref]: /report/fcn.0040c2f6@d59f9c4f445b9f980173dec064f55091
+[similar_4_ref]: /report/fcn.0041c5e0@5f763449465a14d1cdb5ea67e2f984d0
+[similar_5_ref]: /report/fcn.0041865d@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

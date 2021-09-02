@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "fcn.00418200 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00418200
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00416770][similar_1_ref] (sim.: 0.9464293606948306)
+2. [fcn.0042e670][similar_2_ref] (sim.: 0.9454029303013723)
+3. [fcn.00416cf0][similar_3_ref] (sim.: 0.9452217026153946)
+4. [fcn.004180b0][similar_4_ref] (sim.: 0.9392679690115022)
+5. [fcn.004168d0][similar_5_ref] (sim.: 0.9370238486982645)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x630
+mov eax,dword[0x53ebd0]
+xor eax,ebp
+mov dword[ebp-8],eax
+mov eax,dword[ebp+8]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x418226
+jmp 0x4183b8
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+je 0x41823e
+jmp 0x4183b8
+xor edx,edx
+mov word[ebp-0x210],dx
+push 0x206
+push 0
+lea eax,[ebp-0x20e]
+push eax
+call fcn.00490b70
+add esp,0xc
+xor ecx,ecx
+mov word[ebp-0x420],cx
+push 0x206
+push 0
+lea edx,[ebp-0x41e]
+push edx
+call fcn.00490b70
+add esp,0xc
+lea eax,[ebp-0x420]
+push eax
+push 0x104
+call dword[sym.imp.KERNEL32.dll_GetTempPathW]
+lea ecx,[ebp-0x210]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call fcn.00417920
+add esp,8
+mov dword[ebp-0x214],0
+mov dword[ebp-0x424],0
+mov eax,1
+test eax,eax
+je 0x4183b8
+mov dword[ebp-0x428],1
+xor ecx,ecx
+mov word[ebp-0x630],cx
+push 0x206
+push 0
+lea edx,[ebp-0x62e]
+push edx
+call fcn.00490b70
+add esp,0xc
+cmp dword[ebp-0x424],0
+jne 0x418318
+lea eax,[ebp-0x210]
+push eax
+lea ecx,[ebp-0x420]
+push ecx
+push str._s_s.del
+lea edx,[ebp-0x630]
+push edx
+call fcn.0049148c
+add esp,0x10
+jmp 0x418341
+mov eax,dword[ebp-0x424]
+push eax
+lea ecx,[ebp-0x210]
+push ecx
+lea edx,[ebp-0x420]
+push edx
+push str._s_s.del_d
+lea eax,[ebp-0x630]
+push eax
+call fcn.0049148c
+add esp,0x14
+lea ecx,[ebp-0x630]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x418365
+lea edx,[ebp-0x630]
+push edx
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+mov dword[ebp-0x428],eax
+cmp dword[ebp-0x428],0
+jne 0x41838d
+cmp dword[ebp-0x424],0xa
+jl 0x418379
+jmp 0x4183b8
+mov eax,dword[ebp-0x424]
+add eax,1
+mov dword[ebp-0x424],eax
+jmp 0x4182b5
+lea ecx,[ebp-0x630]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call fcn.00491b5c
+add esp,8
+push 5
+push 0
+lea eax,[ebp-0x630]
+push eax
+call dword[sym.imp.KERNEL32.dll_MoveFileExW]
+jmp 0x4183b8
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.00490ace
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416770@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0042e670@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00416cf0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.004180b0@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.004168d0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "fcn.0041f520 @ adc325bca51b67a67785e7e986af8b4d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041f520
+- **Origin (md5):** adc325bca51b67a67785e7e986af8b4d
+- **VirusTotal:** [virustotal.com/gui/file/adc325bca51b67a67785e7e986af8b4d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0041f520][similar_1_ref] (sim.: 1.0)
+2. [fcn.0041f520][similar_2_ref] (sim.: 1.0)
+3. [fcn.0041f520][similar_3_ref] (sim.: 1.0)
+4. [fcn.0041f510][similar_4_ref] (sim.: 0.9718815293999477)
+5. [fcn.0041f510][similar_5_ref] (sim.: 0.9718815293999477)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+jmp 0x41f5d0
+mov ebx,dword[edi]
+lea eax,[ebx*4+0x449608]
+mov esi,dword[eax]
+mov dword[ebp-4],eax
+test esi,esi
+je 0x41f54c
+cmp esi,0xffffffff
+je 0x41f5cd
+jmp 0x41f5c9
+mov ebx,dword[ebx*4+0x43a080]
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x41f5b7
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x41f5a7
+push 7
+push 0x43a118
+push ebx
+call fcn.00425bf8
+add esp,0xc
+test eax,eax
+je 0x41f5a7
+push 7
+push 0x43a128
+push ebx
+call fcn.00425bf8
+add esp,0xc
+test eax,eax
+je 0x41f5a7
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x41f5a9
+xor esi,esi
+test esi,esi
+jne 0x41f5b7
+mov ecx,dword[ebp-4]
+or eax,0xffffffff
+xchg dword[ecx],eax
+jmp 0x41f5cd
+mov ecx,dword[ebp-4]
+mov eax,esi
+xchg dword[ecx],eax
+test eax,eax
+je 0x41f5c9
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test esi,esi
+jne 0x41f5e0
+add edi,4
+cmp edi,dword[ebp+0xc]
+jne 0x41f52f
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+mov eax,esi
+jmp 0x41f5db
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041f520@c0371bf2f84d37acabd30e547b4cc5fa
+[similar_2_ref]: /report/fcn.0041f520@5e50a67c7e8dbb50c23acbc92eb08f0e
+[similar_3_ref]: /report/fcn.0041f520@d701bfe1b2c669cec1fe384fdc108bfb
+[similar_4_ref]: /report/fcn.0041f510@835812ed365516de32516b9bf14b0450
+[similar_5_ref]: /report/fcn.0041f510@ed513abc569bc29389208199ec389a34
+[virustotal_ref]: https://www.virustotal.com/gui/file/adc325bca51b67a67785e7e986af8b4d

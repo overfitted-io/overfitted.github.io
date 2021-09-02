@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.78320870 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.78320870
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [sym.MFC80D.DLL\_Ordinal\_2253][similar_1_ref] (sim.: 0.8260584372921871)
+2. [sym.MFC80D.DLL\_Ordinal\_2199][similar_2_ref] (sim.: 0.8121742374476099)
+3. [sym.MFC80D.DLL\_Ordinal\_3084][similar_3_ref] (sim.: 0.8043167498809318)
+4. [fcn.78286e30][similar_4_ref] (sim.: 0.8023869368491878)
+5. [sym.MFC80D.DLL\_Ordinal\_5626][similar_5_ref] (sim.: 0.8015834599570743)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+cmp dword[ebp+8],0xffff
+jbe 0x78320884
+mov eax,dword[ebp+8]
+jmp 0x783208c6
+mov eax,dword[ebp+8]
+push eax
+call dword[sym.imp.USER32.dll_GetDC]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+jne 0x7832089c
+mov eax,dword[ebp+8]
+jmp 0x783208c6
+mov ecx,dword[ebp-8]
+push ecx
+call dword[sym.imp.USER32.dll_WindowFromDC]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+jne 0x783208b5
+mov edx,dword[ebp+8]
+mov dword[ebp-4],edx
+mov eax,dword[ebp-8]
+push eax
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[ebp-4]
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.MFC80D.DLL_Ordinal_2253@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/sym.MFC80D.DLL_Ordinal_2199@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/sym.MFC80D.DLL_Ordinal_3084@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/fcn.78286e30@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/sym.MFC80D.DLL_Ordinal_5626@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

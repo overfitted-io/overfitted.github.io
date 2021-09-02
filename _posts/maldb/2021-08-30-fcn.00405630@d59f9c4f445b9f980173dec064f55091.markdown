@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.00405630 @ d59f9c4f445b9f980173dec064f55091"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405630
+- **Origin (md5):** d59f9c4f445b9f980173dec064f55091
+- **VirusTotal:** [virustotal.com/gui/file/d59f9c4f445b9f980173dec064f55091][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.10014479][similar_1_ref] (sim.: 0.7902329187851131)
+2. [fcn.004e12a0][similar_2_ref] (sim.: 0.7880623226123785)
+3. [fcn.0040a680][similar_3_ref] (sim.: 0.7861956698577095)
+4. [fcn.004052f0][similar_4_ref] (sim.: 0.785394735313787)
+5. [fcn.004073c1][similar_5_ref] (sim.: 0.7841524946584909)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push esi
+mov esi,ecx
+mov eax,dword[esi+8]
+test eax,eax
+push edi
+je 0x40564a
+push eax
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov dword[esi+8],0
+mov edi,dword[sym.imp.KERNEL32.dll_SetThreadErrorMode]
+lea eax,[esp+8]
+push eax
+push 1
+mov dword[esp+0x10],0
+call edi
+mov ecx,dword[esp+0x10]
+push 0
+push 0
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov edx,dword[esp+8]
+push 0
+push edx
+mov dword[esi+8],eax
+call edi
+pop edi
+pop esi
+pop ecx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10014479@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.004e12a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.0040a680@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_4_ref]: /report/fcn.004052f0@d59f9c4f445b9f980173dec064f55091
+[similar_5_ref]: /report/fcn.004073c1@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/d59f9c4f445b9f980173dec064f55091

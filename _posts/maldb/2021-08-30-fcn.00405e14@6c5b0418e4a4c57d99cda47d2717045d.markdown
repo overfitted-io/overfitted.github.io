@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.00405e14 @ 6c5b0418e4a4c57d99cda47d2717045d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00405e14
+- **Origin (md5):** 6c5b0418e4a4c57d99cda47d2717045d
+- **VirusTotal:** [virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00405d89][similar_1_ref] (sim.: 0.9494370392390327)
+2. [fcn.00405f66][similar_2_ref] (sim.: 0.9284671252584933)
+3. [fcn.0040535d][similar_3_ref] (sim.: 0.9069064947784864)
+4. [fcn.0040659d][similar_4_ref] (sim.: 0.8775178224362232)
+5. [fcn.004053e4][similar_5_ref] (sim.: 0.8774786626849819)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20c
+mov eax,dword[0x43720c]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+mov esi,ecx
+cmp dword[esi+0x58],8
+jb 0x405e35
+mov eax,dword[esi+0x44]
+jmp 0x405e38
+lea eax,[esi+0x44]
+push str.Config
+push eax
+lea eax,[ebp-0x20c]
+push 0x42d788
+push eax
+call fcn.00408482
+add esp,0x10
+lea eax,[ebp-0x20c]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+jne 0x405e70
+lea eax,[ebp-0x20c]
+push eax
+call fcn.00406c92
+pop ecx
+lea eax,[ebp-0x20c]
+push str.Related.ini
+push eax
+call fcn.0040843c
+pop ecx
+pop ecx
+lea eax,[ebp-0x20c]
+push eax
+lea ecx,[esi+0xe8]
+call fcn.00401532
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop esi
+call fcn.004082f3
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405d89@6c5b0418e4a4c57d99cda47d2717045d
+[similar_2_ref]: /report/fcn.00405f66@6c5b0418e4a4c57d99cda47d2717045d
+[similar_3_ref]: /report/fcn.0040535d@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.0040659d@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.004053e4@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/6c5b0418e4a4c57d99cda47d2717045d

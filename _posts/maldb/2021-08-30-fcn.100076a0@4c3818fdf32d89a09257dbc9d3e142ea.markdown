@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.100076a0 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.100076a0
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1000cae0][similar_1_ref] (sim.: 0.8730380246824719)
+2. [fcn.100b3250][similar_2_ref] (sim.: 0.8525180968453765)
+3. [fcn.10009590][similar_3_ref] (sim.: 0.8515509325725288)
+4. [fcn.100ea210][similar_4_ref] (sim.: 0.8512796791987408)
+5. [fcn.1000d5f1][similar_5_ref] (sim.: 0.8494105694732453)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x20c
+mov eax,dword[0x10034390]
+xor eax,esp
+mov dword[esp+0x208],eax
+mov eax,dword[0x100368b8]
+push 0x104
+push 0x10036920
+push eax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push 0x206
+lea ecx,[esp+6]
+push 0
+push ecx
+mov word[esp+0xc],0
+call fcn.100157d0
+add esp,0xc
+xor eax,eax
+jmp 0x100076f0
+movzx ecx,word[eax+0x10036920]
+mov word[esp+eax],cx
+add eax,2
+test cx,cx
+jne 0x100076f0
+push esi
+mov esi,dword[sym.imp.SHLWAPI.dll_PathAppendW]
+push str...XAR
+lea edx,[esp+8]
+push edx
+call esi
+lea eax,[esp+4]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x1000772c
+push str...XAR
+jmp 0x10007731
+push str...UI
+push 0x10036920
+call esi
+mov ecx,dword[esp+0x20c]
+pop esi
+xor ecx,esp
+mov eax,0x10036920
+call fcn.10013bd6
+add esp,0x20c
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000cae0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.100b3250@89dc67d2f980e8488f97b1bf8cb24258
+[similar_3_ref]: /report/fcn.10009590@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.100ea210@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.1000d5f1@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

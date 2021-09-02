@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.00402322 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00402322
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00405dd8][similar_1_ref] (sim.: 0.8234777451780363)
+2. [fcn.01001a5b][similar_2_ref] (sim.: 0.7918607995100473)
+3. [fcn.00410aac][similar_3_ref] (sim.: 0.785259231949753)
+4. [fcn.01003ccc][similar_4_ref] (sim.: 0.7811375922406042)
+5. [fcn.0040e2e7][similar_5_ref] (sim.: 0.7800877542196778)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x1000
+call fcn.00411a40
+push ebx
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+test eax,eax
+setne bl
+test bl,bl
+jne 0x40236c
+push 0x800
+lea eax,[ebp-0x1000]
+push eax
+push dword[ebp+8]
+call fcn.004031e0
+test al,al
+je 0x40236c
+lea eax,[ebp-0x1000]
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+test eax,eax
+setne bl
+mov al,bl
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405dd8@5f763449465a14d1cdb5ea67e2f984d0
+[similar_2_ref]: /report/fcn.01001a5b@7be42d186738ec1816397d616de2cb9d
+[similar_3_ref]: /report/fcn.00410aac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.01003ccc@7be42d186738ec1816397d616de2cb9d
+[similar_5_ref]: /report/fcn.0040e2e7@5f763449465a14d1cdb5ea67e2f984d0
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

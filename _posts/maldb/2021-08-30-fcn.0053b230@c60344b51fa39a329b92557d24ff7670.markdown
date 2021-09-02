@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.0053b230 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0053b230
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00429ec0][similar_1_ref] (sim.: 0.815691063905754)
+2. [fcn.00403dc7][similar_2_ref] (sim.: 0.8136387438421467)
+3. [fcn.00403dc7][similar_3_ref] (sim.: 0.8136387438421467)
+4. [fcn.100b3250][similar_4_ref] (sim.: 0.8124685996280897)
+5. [fcn.1000cae0][similar_5_ref] (sim.: 0.8118536169843209)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x20
+push ebx
+push esi
+push 1
+lea esi,[esp+0x10]
+call fcn.00537cc0
+add esp,4
+mov ecx,eax
+call fcn.004020c0
+push 0
+push 0
+push 3
+push 0
+push 3
+push 0xc0000000
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+lea ecx,[esp+0xc]
+mov esi,eax
+call fcn.0050e2b0
+cmp esi,0xffffffff
+jne 0x53b278
+xor al,al
+pop esi
+pop ebx
+add esp,0x20
+ret 
+mov eax,dword[esp+0x34]
+mov ecx,dword[esp+0x2c]
+push eax
+mov eax,dword[esp+0x34]
+push esi
+call fcn.0053b2a0
+add esp,8
+push esi
+mov bl,al
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop esi
+mov al,bl
+pop ebx
+add esp,0x20
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00429ec0@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_2_ref]: /report/fcn.00403dc7@b8b9b802e96d8e813c605554cf6f7018
+[similar_3_ref]: /report/fcn.00403dc7@617bd594ba13d0dcc08a315774c342d4
+[similar_4_ref]: /report/fcn.100b3250@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.1000cae0@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

@@ -1,0 +1,119 @@
+---
+layout: post
+title:  "fcn.0040dcc6 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040dcc6
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040b15a][similar_1_ref] (sim.: 0.8939879034414459)
+2. [fcn.004757f0][similar_2_ref] (sim.: 0.885146432261089)
+3. [fcn.00408f95][similar_3_ref] (sim.: 0.8848719155746976)
+4. [fcn.00432a3a][similar_4_ref] (sim.: 0.8836991531214586)
+5. [fcn.00404b52][similar_5_ref] (sim.: 0.8822922954207915)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x24
+push ebx
+push ebp
+push esi
+push edi
+push 0
+call dword[sym.imp.USER32.dll_GetDC]
+mov esi,dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+mov ebp,eax
+push ebp
+mov dword[esp+0x1c],ebp
+call esi
+mov ebx,eax
+push ebp
+mov dword[esp+0x18],ebx
+call esi
+mov esi,eax
+lea eax,[esp+0x1c]
+push eax
+push 0x18
+push dword[esp+0x40]
+mov dword[esp+0x1c],esi
+call dword[sym.imp.GDI32.dll_GetObjectW]
+mov eax,dword[esp+0x24]
+imul eax,dword[esp+0x3c]
+cdq 
+idiv dword[esp+0x20]
+mov ecx,eax
+mov eax,dword[esp+0x40]
+cmp ecx,eax
+jge 0x40dd22
+mov eax,ecx
+mov dword[esp+0x40],eax
+push eax
+push dword[esp+0x40]
+push ebp
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+push dword[esp+0x38]
+mov ebp,eax
+push ebx
+mov ebx,dword[sym.imp.GDI32.dll_SelectObject]
+call ebx
+push ebp
+push esi
+mov edi,eax
+call ebx
+push 0xcc0020
+push dword[esp+0x28]
+mov esi,eax
+xor eax,eax
+push dword[esp+0x28]
+push eax
+push eax
+push dword[esp+0x28]
+push dword[esp+0x58]
+push dword[esp+0x58]
+push eax
+push eax
+push dword[esp+0x38]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+push edi
+mov edi,dword[esp+0x18]
+push edi
+call ebx
+push esi
+push dword[esp+0x14]
+call ebx
+mov esi,dword[sym.imp.GDI32.dll_DeleteDC]
+push edi
+call esi
+push dword[esp+0x10]
+call esi
+push dword[esp+0x18]
+push 0
+call dword[sym.imp.USER32.dll_ReleaseDC]
+pop edi
+pop esi
+mov eax,ebp
+pop ebp
+pop ebx
+add esp,0x24
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040b15a@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.004757f0@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.00408f95@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_4_ref]: /report/fcn.00432a3a@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.00404b52@96a869ae624ddb4834a1d5a829f85469
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

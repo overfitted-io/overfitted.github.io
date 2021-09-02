@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "fcn.0068d6d0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0068d6d0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.006b7d90][similar_1_ref] (sim.: 0.9109722407729273)
+2. [fcn.0068bda0][similar_2_ref] (sim.: 0.9089900914166681)
+3. [fcn.0067aed0][similar_3_ref] (sim.: 0.9057539762470376)
+4. [fcn.006b7ee0][similar_4_ref] (sim.: 0.9020861741491145)
+5. [fcn.0068c9c0][similar_5_ref] (sim.: 0.9011341691016748)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x2c
+mov edi,dword[esp+0x40]
+mov esi,dword[esp+0x44]
+test edi,edi
+je 0x68d7c0
+test esi,esi
+je 0x68d7c0
+mov eax,dword[esi]
+test eax,eax
+je 0x68d7c0
+cmp eax,0x8000
+mov ebx,0x8000
+cmovbe ebx,eax
+lea eax,[ebx+ebx]
+mov dword[esp],eax
+call fcn.0066b490
+test eax,eax
+mov ebp,eax
+je 0x68d7d0
+mov dword[esp+8],ebx
+mov dword[esp+4],eax
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+sub esp,0xc
+test eax,eax
+jle 0x68d782
+xor edx,edx
+mov word[ebp+eax*2],dx
+mov dword[esp+0x1c],0
+mov dword[esp+0x18],0
+mov eax,dword[esi]
+mov dword[esp+0x10],edi
+mov dword[esp+0xc],0xffffffff
+mov dword[esp+8],ebp
+mov dword[esp+4],0
+mov dword[esp+0x14],eax
+mov dword[esp],0xfde9
+call dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]
+sub esp,0x20
+test eax,eax
+mov ebx,eax
+jne 0x68d7a2
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esp],ebp
+mov ebx,eax
+call fcn.0066b4a0
+mov dword[esp+0x40],ebx
+add esp,0x2c
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp fcn.0066e3a0
+mov dword[esp],ebp
+sub ebx,1
+call fcn.0066b4a0
+mov dword[esi],ebx
+xor eax,eax
+add esp,0x2c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov eax,0xfffff019
+jmp 0x68d7b1
+mov eax,0xfffff027
+jmp 0x68d7b1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006b7d90@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0067aed0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006b7ee0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068c9c0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

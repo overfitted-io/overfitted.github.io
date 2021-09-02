@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.64076700 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64076700
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.64074320][similar_1_ref] (sim.: 0.8503603547092048)
+2. [fcn.640d2de0][similar_2_ref] (sim.: 0.8447832586061694)
+3. [fcn.0040548c][similar_3_ref] (sim.: 0.843511354059853)
+4. [fcn.00518200][similar_4_ref] (sim.: 0.8423427656111069)
+5. [fcn.004088f4][similar_5_ref] (sim.: 0.840835039297322)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push edi
+lea eax,[esp+4]
+mov edi,ecx
+mov ecx,dword[esp+0x10]
+push eax
+push 0x20019
+push 0
+call dword[sym.imp.Qt5Core.dll_public:_unsigned_short_int_const____thiscall_QString::utf16_void_const]
+push eax
+push dword[esp+0x1c]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x64076777
+push esi
+push eax
+push eax
+push 1
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateEventW]
+push 1
+mov esi,eax
+push esi
+push 0xf
+push 1
+push dword[esp+0x18]
+mov dword[esp+0x28],esi
+call dword[sym.imp.ADVAPI32.dll_RegNotifyChangeKeyValue]
+test eax,eax
+je 0x6407675d
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop esi
+pop edi
+pop ecx
+ret 8
+lea eax,[esp+0x14]
+mov ecx,edi
+push eax
+call fcn.64076780
+lea eax,[esp+8]
+push eax
+lea ecx,[edi+4]
+call fcn.64076780
+pop esi
+pop edi
+pop ecx
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.64074320@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.640d2de0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.0040548c@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_4_ref]: /report/fcn.00518200@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

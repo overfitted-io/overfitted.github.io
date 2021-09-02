@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.004053f9 @ 0c82eefbb8a4714538e49f74fe0058a6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004053f9
+- **Origin (md5):** 0c82eefbb8a4714538e49f74fe0058a6
+- **VirusTotal:** [virustotal.com/gui/file/0c82eefbb8a4714538e49f74fe0058a6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00405720][similar_1_ref] (sim.: 0.9005472945836153)
+2. [fcn.00404539][similar_2_ref] (sim.: 0.8130612703205699)
+3. [fcn.00407203][similar_3_ref] (sim.: 0.8053955213420922)
+4. [fcn.00403f74][similar_4_ref] (sim.: 0.8018132199316544)
+5. [fcn.00403442][similar_5_ref] (sim.: 0.8013620100459843)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push edi
+push esi
+call fcn.004057ed
+mov edi,eax
+cmp edi,0xffffffff
+je 0x40543a
+test byte[esp+0x10],1
+push esi
+je 0x40541c
+call dword[sym.imp.KERNEL32.dll_RemoveDirectoryA]
+jmp 0x405422
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+test eax,eax
+je 0x40542b
+xor eax,eax
+inc eax
+jmp 0x40543c
+test byte[esp+0x10],4
+jne 0x40543a
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_SetFileAttributesA]
+xor eax,eax
+pop edi
+pop esi
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405720@510c8408eb3f0420e19240592ddc0b5b
+[similar_2_ref]: /report/fcn.00404539@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00407203@623952564c193310b2e5c9b0fe299d07
+[similar_4_ref]: /report/fcn.00403f74@ea9c1e2eeb951a8e6185c6674c228f98
+[similar_5_ref]: /report/fcn.00403442@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/0c82eefbb8a4714538e49f74fe0058a6

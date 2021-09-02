@@ -1,0 +1,177 @@
+---
+layout: post
+title:  "fcn.004101fd @ d3b17e7234a8b4bee51cf688dbfdf6d0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004101fd
+- **Origin (md5):** d3b17e7234a8b4bee51cf688dbfdf6d0
+- **VirusTotal:** [virustotal.com/gui/file/d3b17e7234a8b4bee51cf688dbfdf6d0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00410a95][similar_1_ref] (sim.: 0.9581088371367578)
+2. [fcn.0040ecf1][similar_2_ref] (sim.: 0.9517266040261856)
+3. [fcn.0040e05d][similar_3_ref] (sim.: 0.9484735224769293)
+4. [fcn.0040d0e2][similar_4_ref] (sim.: 0.9479731494587958)
+5. [fcn.0042ded0][similar_5_ref] (sim.: 0.9478440019652394)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x1fc
+mov eax,dword[0x41add0]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+mov esi,dword[ebp+8]
+push edi
+push esi
+call fcn.004101d9
+mov edi,eax
+pop ecx
+test edi,edi
+je 0x41039f
+push ebx
+push 3
+call fcn.004103c7
+pop ecx
+cmp eax,1
+je 0x410347
+push 3
+call fcn.004103c7
+pop ecx
+test eax,eax
+jne 0x410251
+cmp dword[0xb96e50],1
+je 0x410347
+cmp esi,0xfc
+je 0x41039e
+push str.Runtime_Error__n_nProgram:_
+push 0x314
+push 0xb96e58
+call fcn.00412302
+add esp,0xc
+xor ebx,ebx
+test eax,eax
+jne 0x4103af
+push 0x104
+push 0xb96e8a
+push ebx
+mov word[0xb97092],ax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+mov esi,0x2fb
+test eax,eax
+jne 0x4102b9
+push str._program_name_unknown_
+push esi
+push 0xb96e8a
+call fcn.00412302
+add esp,0xc
+test eax,eax
+jne 0x4103af
+push 0xb96e8a
+call fcn.0041235e
+inc eax
+pop ecx
+cmp eax,0x3c
+jbe 0x4102ff
+push 0xb96e8a
+call fcn.0041235e
+push 3
+push 0x47f45c
+lea ecx,[eax*2+0xb96e14]
+mov eax,ecx
+sub eax,0xb96e8a
+sar eax,1
+sub esi,eax
+push esi
+push ecx
+call fcn.00412477
+add esp,0x14
+test eax,eax
+jne 0x4103af
+push 0x47f464
+push 0x314
+mov esi,0xb96e58
+push esi
+call fcn.0041240b
+add esp,0xc
+test eax,eax
+jne 0x4103af
+push edi
+push 0x314
+push esi
+call fcn.0041240b
+add esp,0xc
+test eax,eax
+jne 0x4103af
+push 0x12010
+push str.Microsoft_Visual_C_Runtime_Library
+push esi
+call fcn.00412535
+add esp,0xc
+jmp 0x41039e
+push 0xfffffffffffffff4
+call dword[sym.imp.KERNEL32.dll_GetStdHandle]
+mov esi,eax
+test esi,esi
+je 0x41039e
+cmp esi,0xffffffff
+je 0x41039e
+xor ebx,ebx
+mov ecx,ebx
+mov al,byte[edi+ecx*2]
+mov byte[ebp+ecx-0x1f8],al
+cmp word[edi+ecx*2],bx
+je 0x410377
+inc ecx
+cmp ecx,0x1f4
+jb 0x41035e
+push ebx
+lea eax,[ebp-0x1fc]
+mov byte[ebp-5],bl
+push eax
+lea eax,[ebp-0x1f8]
+push eax
+call fcn.00412380
+pop ecx
+push eax
+lea eax,[ebp-0x1f8]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+pop ebx
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.0041271b
+mov esp,ebp
+pop ebp
+ret 
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+call fcn.00411a78
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410a95@fd17dad7a5809016e438b746adc04679
+[similar_2_ref]: /report/fcn.0040ecf1@e5be9c1df6690f9880cc7a4e3bb82114
+[similar_3_ref]: /report/fcn.0040e05d@883dfc165005908f8666e487fe529d8c
+[similar_4_ref]: /report/fcn.0040d0e2@c299206e1e94de2392d4dd9464d03d54
+[similar_5_ref]: /report/fcn.0042ded0@ba86269e5231930ee4def4088ddb8d19
+[virustotal_ref]: https://www.virustotal.com/gui/file/d3b17e7234a8b4bee51cf688dbfdf6d0

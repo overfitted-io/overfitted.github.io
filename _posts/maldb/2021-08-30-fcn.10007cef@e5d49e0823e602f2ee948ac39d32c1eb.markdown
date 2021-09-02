@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "fcn.10007cef @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.10007cef
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.10016851][similar_1_ref] (sim.: 0.8900196109655377)
+2. [fcn.10007609][similar_2_ref] (sim.: 0.8849403502756316)
+3. [fcn.10018cb4][similar_3_ref] (sim.: 0.8833995070307459)
+4. [fcn.10005f15][similar_4_ref] (sim.: 0.8795222647710236)
+5. [fcn.10008855][similar_5_ref] (sim.: 0.8789772915662473)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+push esi
+mov esi,dword[ebp+8]
+lea eax,[ebp-4]
+push edi
+push eax
+mov edi,0x2001f
+mov ebx,ecx
+xor ecx,ecx
+mov dword[ebp-0xc],ecx
+mov dword[ebp-4],ecx
+mov dword[ebp-8],ecx
+push edi
+push ecx
+push str.software
+push 0x80000001
+test esi,esi
+je 0x10007d2a
+mov ecx,esi
+call fcn.100081fd
+jmp 0x10007d30
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x10007d88
+lea eax,[ebp+8]
+push eax
+lea eax,[ebp-8]
+push eax
+xor eax,eax
+push eax
+push edi
+push eax
+push eax
+push eax
+push dword[ebx+0x58]
+push dword[ebp-4]
+test esi,esi
+je 0x10007d56
+mov ecx,esi
+call fcn.1000819a
+jmp 0x10007d5c
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+test eax,eax
+jne 0x10007d88
+lea eax,[ebp+8]
+push eax
+lea eax,[ebp-0xc]
+push eax
+xor eax,eax
+push eax
+push edi
+push eax
+push eax
+push eax
+push dword[ebx+0x6c]
+push dword[ebp-8]
+test esi,esi
+je 0x10007d82
+mov ecx,esi
+call fcn.1000819a
+jmp 0x10007d88
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+cmp dword[ebp-4],0
+mov esi,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+je 0x10007d99
+push dword[ebp-4]
+call esi
+cmp dword[ebp-8],0
+je 0x10007da4
+push dword[ebp-8]
+call esi
+mov eax,dword[ebp-0xc]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10016851@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.10007609@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.10018cb4@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.10005f15@dc3e2cdf680078d293de3e2d92ba613c
+[similar_5_ref]: /report/fcn.10008855@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "fcn.6408a540 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.6408a540
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [sym.Qt5Network.dll\_public꞉\_static\_class\_QString\_\_\_cdecl\_QHostInfo꞉꞉localDomainName\_void\_][similar_1_ref] (sim.: 0.9406299798798067)
+2. [fcn.6408aaf0][similar_2_ref] (sim.: 0.9388515836042254)
+3. [fcn.64089580][similar_3_ref] (sim.: 0.938391010667568)
+4. [fcn.6409c4c0][similar_4_ref] (sim.: 0.9374590218689459)
+5. [fcn.10011870][similar_5_ref] (sim.: 0.9185295225528356)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+push esi
+push edi
+mov edi,ecx
+mov eax,dword[edi+0x54]
+cmp eax,1
+je 0x6408a64d
+cmp eax,2
+je 0x6408a64d
+mov esi,dword[esp+0x14]
+mov ecx,esi
+call sym public: bool __thiscall QNetworkInterface::isValid(void)const
+test al,al
+je 0x6408a638
+push ebx
+push ebp
+lea eax,[esp+0x10]
+mov ecx,esi
+push eax
+call sym public: class QList<class QNetworkAddressEntry> __thiscall QNetworkInterface::addressEntries(void)
+lea ecx,[esp+0x10]
+xor esi,esi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+test eax,eax
+jle 0x6408a601
+mov ebx,dword[sym.imp.WS2_32.dll_setsockopt]
+mov ebp,dword[sym.imp.WS2_32.dll_htonl]
+lea esp,[esp]
+push esi
+lea ecx,[esp+0x14]
+call dword[sym.imp.Qt5Core.dll_public:_void_____thiscall_QListData::at_int_const]
+lea ecx,[esp+0x1c]
+push ecx
+mov ecx,eax
+call sym public: class QHostAddress __thiscall QNetworkAddressEntry::ip(void)
+lea ecx,[esp+0x1c]
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+test eax,eax
+jne 0x6408a5e9
+lea ecx,[esp+0x1c]
+call sym public: unsigned int __thiscall QHostAddress::toIPv4Address(void)const
+push eax
+call ebp
+push 4
+mov dword[esp+0x18],eax
+lea eax,[esp+0x18]
+push eax
+push 9
+push 0
+push dword[edi+0x6c]
+call ebx
+cmp eax,0xffffffff
+jne 0x6408a618
+lea ecx,[esp+0x1c]
+call sym public: void __thiscall QHostAddress::~destructor(void)
+lea ecx,[esp+0x10]
+inc esi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+cmp esi,eax
+jl 0x6408a5a0
+lea ecx,[esp+0x10]
+xor bl,bl
+call fcn.64071eb0
+pop ebp
+mov al,bl
+pop ebx
+pop edi
+pop esi
+add esp,8
+ret 4
+lea ecx,[esp+0x1c]
+call sym public: void __thiscall QHostAddress::~destructor(void)
+lea ecx,[esp+0x10]
+mov bl,1
+call fcn.64071eb0
+pop ebp
+mov al,bl
+pop ebx
+pop edi
+pop esi
+add esp,8
+ret 4
+push 4
+lea eax,[esp+0x10]
+mov dword[esp+0x10],0
+push eax
+push 9
+push 0
+jmp 0x6408a67c
+mov esi,dword[esp+0x14]
+mov ecx,esi
+call sym public: bool __thiscall QNetworkInterface::isValid(void)const
+test al,al
+je 0x6408a669
+mov ecx,esi
+call sym public: int __thiscall QNetworkInterface::index(void)const
+mov dword[esp+0x14],eax
+jmp 0x6408a671
+mov dword[esp+0x14],0
+push 4
+lea eax,[esp+0x18]
+push eax
+push 9
+push 0x29
+push dword[edi+0x6c]
+call dword[sym.imp.WS2_32.dll_setsockopt]
+xor ecx,ecx
+cmp eax,0xffffffff
+pop edi
+setne cl
+mov al,cl
+pop esi
+add esp,8
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.Qt5Network.dll_public꞉_static_class_QString___cdecl_QHostInfo꞉꞉localDomainName_void_@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.6408aaf0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.64089580@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.6409c4c0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.10011870@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

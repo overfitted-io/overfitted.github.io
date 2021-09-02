@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.00478ae0 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00478ae0
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0043a7c0][similar_1_ref] (sim.: 0.8585989478588218)
+2. [fcn.004cc6e0][similar_2_ref] (sim.: 0.8568692214242639)
+3. [fcn.00470010][similar_3_ref] (sim.: 0.8563659787780417)
+4. [fcn.00428bb0][similar_4_ref] (sim.: 0.8543639554685725)
+5. [fcn.0045d3d0][similar_5_ref] (sim.: 0.8530865203663031)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+mov ecx,dword[esi+0x1850]
+test ecx,ecx
+je 0x478b9e
+mov eax,dword[esi]
+test eax,eax
+je 0x478b9e
+push edi
+test al,1
+jne 0x478b0a
+mov eax,dword[esi+0x100c]
+cmp word[eax],0
+je 0x478b26
+push 0x7fff
+lea edi,[esi+0x1858]
+push edi
+push ecx
+call dword[sym.imp.USER32.dll_GetWindowTextW]
+test eax,eax
+jne 0x478b26
+xor ecx,ecx
+mov word[edi],cx
+test byte[esi],4
+mov edi,dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+je 0x478b41
+mov eax,dword[esi+0x1850]
+lea edx,[esi+0x1854]
+push edx
+push eax
+call edi
+test byte[esi],0x20
+je 0x478b7f
+mov edx,dword[esi+0x1850]
+lea ecx,[esp+4]
+push ecx
+push edx
+call edi
+test eax,eax
+je 0x478b7f
+movzx eax,byte[esi+0x1828]
+mov ecx,dword[esp+4]
+push eax
+lea eax,[esi+0x11a58]
+call fcn.00450290
+add esp,4
+test eax,eax
+jne 0x478b7f
+xor ecx,ecx
+mov word[esi+0x11a58],cx
+test byte[esi],8
+pop edi
+je 0x478b9e
+mov eax,dword[esi+0x1850]
+push 0x101
+lea edx,[esi+0x11856]
+push edx
+push eax
+call dword[sym.imp.USER32.dll_GetClassNameW]
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043a7c0@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.004cc6e0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00470010@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.00428bb0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.0045d3d0@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

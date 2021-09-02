@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.004510c0 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004510c0
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00432d50][similar_1_ref] (sim.: 0.8391512079394369)
+2. [fcn.0040297a][similar_2_ref] (sim.: 0.8208222245469784)
+3. [fcn.00433010][similar_3_ref] (sim.: 0.8161107031392605)
+4. [fcn.004953a0][similar_4_ref] (sim.: 0.8159485810102112)
+5. [fcn.0055ef04][similar_5_ref] (sim.: 0.8137692194280417)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x130
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-0xc],eax
+mov dword[ebp-0x128],0x114
+lea eax,[ebp-0x128]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+test eax,eax
+jne 0x4510f2
+xor eax,eax
+jmp 0x451140
+mov ecx,dword[ebp-0x118]
+mov dword[ebp-0x130],ecx
+mov edx,dword[ebp-0x120]
+mov dword[ebp-4],edx
+mov eax,dword[ebp-0x124]
+mov dword[ebp-8],eax
+mov ecx,dword[ebp-0x11c]
+and ecx,0xffff
+mov dword[ebp-0x12c],ecx
+cmp dword[ebp-0x130],2
+jne 0x45113e
+cmp dword[ebp-8],6
+jne 0x45113e
+cmp dword[ebp-4],1
+jne 0x45113e
+mov eax,1
+jmp 0x451140
+xor eax,eax
+mov ecx,dword[ebp-0xc]
+xor ecx,ebp
+call fcn.005713ed
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00432d50@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0040297a@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.00433010@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.004953a0@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.0055ef04@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

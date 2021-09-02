@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.00509f30 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00509f30
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0050a0c0][similar_1_ref] (sim.: 0.7444507868791916)
+2. [fcn.00517120][similar_2_ref] (sim.: 0.7308951001609443)
+3. [fcn.005171a0][similar_3_ref] (sim.: 0.7270495329034978)
+4. [fcn.00452e50][similar_4_ref] (sim.: 0.7250302633663743)
+5. [fcn.006b9220][similar_5_ref] (sim.: 0.7231050986578155)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,8
+call fcn.004f5100
+mov edx,dword[esp+0xc]
+lea eax,[esp]
+push eax
+lea ecx,[esp+8]
+push ecx
+push 0x1007
+push 0xffff
+push edx
+mov dword[esp+0x14],4
+call dword[sym.imp.WS2_32.dll_getsockopt]
+test eax,eax
+mov eax,1
+jl 0x509f6d
+mov eax,dword[esp+4]
+add esp,8
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0050a0c0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.00517120@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.005171a0@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00452e50@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.006b9220@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

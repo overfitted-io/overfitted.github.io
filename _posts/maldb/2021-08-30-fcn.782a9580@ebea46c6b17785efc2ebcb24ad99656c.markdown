@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.782a9580 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.782a9580
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [sym.MFC80D.DLL\_Ordinal\_2112][similar_1_ref] (sim.: 0.8882277108367849)
+2. [sym.MFC80D.DLL\_Ordinal\_354][similar_2_ref] (sim.: 0.88701010629437)
+3. [fcn.782a9730][similar_3_ref] (sim.: 0.8859137186369753)
+4. [sym.MFC80D.DLL\_Ordinal\_8306][similar_4_ref] (sim.: 0.8846488529800536)
+5. [sym.MFC80D.DLL\_Ordinal\_2320][similar_5_ref] (sim.: 0.8839802248921785)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+mov dword[ebp-8],ecx
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+mov dword[ebp-4],eax
+mov eax,dword[ebp-4]
+and eax,0x80000000
+neg eax
+sbb eax,eax
+neg eax
+mov ecx,dword[ebp-8]
+mov dword[ecx+0x54],eax
+mov ecx,dword[ebp-8]
+call fcn.782a9730
+mov edx,dword[ebp-8]
+mov dword[edx+0x24],0
+mov ecx,dword[ebp-8]
+call fcn.782a9680
+push 0x7f02
+push 0
+call dword[sym.imp.USER32.dll_LoadCursorA]
+mov ecx,dword[ebp-8]
+mov dword[ecx+0x3c],eax
+push 0x7f00
+push 0
+call dword[sym.imp.USER32.dll_LoadCursorA]
+mov edx,dword[ebp-8]
+mov dword[edx+0x40],eax
+mov eax,dword[ebp-8]
+cmp dword[eax+0x3c],0
+jne 0x782a9600
+push 0x26
+push 0x781df5d8
+call sym.MFC80D.DLL_Ordinal_1363
+test eax,eax
+je 0x782a9600
+int3 
+mov edx,dword[ebp-8]
+cmp dword[edx+0x40],0
+jne 0x782a961a
+push 0x27
+push 0x781df5d8
+call sym.MFC80D.DLL_Ordinal_1363
+test eax,eax
+je 0x782a961a
+int3 
+mov ecx,dword[ebp-8]
+mov dword[ecx+0x44],0
+mov edx,dword[ebp-8]
+mov dword[edx+0x10],2
+mov eax,dword[ebp-8]
+mov dword[eax+0x14],2
+mov ecx,dword[ebp-8]
+mov dword[ecx+0x50],0
+mov edx,dword[ebp-8]
+mov dword[edx+0x44],0
+mov eax,dword[ebp-8]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/sym.MFC80D.DLL_Ordinal_2112@ebea46c6b17785efc2ebcb24ad99656c
+[similar_2_ref]: /report/sym.MFC80D.DLL_Ordinal_354@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/fcn.782a9730@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/sym.MFC80D.DLL_Ordinal_8306@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/sym.MFC80D.DLL_Ordinal_2320@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

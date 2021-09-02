@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "fcn.01001a5b @ 7be42d186738ec1816397d616de2cb9d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.01001a5b
+- **Origin (md5):** 7be42d186738ec1816397d616de2cb9d
+- **VirusTotal:** [virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.01001edf][similar_1_ref] (sim.: 0.7958103943431025)
+2. [fcn.00402322][similar_2_ref] (sim.: 0.7918607995100473)
+3. [fcn.10014071][similar_3_ref] (sim.: 0.7893532283655109)
+4. [fcn.0040c0be][similar_4_ref] (sim.: 0.7858649748653946)
+5. [fcn.00405dd8][similar_5_ref] (sim.: 0.7845218750833547)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+cmp byte[0x100b2e0],0
+je 0x1001aa0
+lea eax,[ebp-4]
+push eax
+push 0x20006
+push 0
+push str.SoftwareMicrosoftWindowsCurrentVersionRunOnce
+push 0x80000002
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x1001aa0
+push 0x100b2e0
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteValueA]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.01001edf@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.00402322@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.10014071@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.0040c0be@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/fcn.00405dd8@5f763449465a14d1cdb5ea67e2f984d0
+[virustotal_ref]: https://www.virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d

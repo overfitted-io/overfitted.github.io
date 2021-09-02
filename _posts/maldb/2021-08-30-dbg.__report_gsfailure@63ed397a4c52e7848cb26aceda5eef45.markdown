@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "dbg.__report_gsfailure @ 63ed397a4c52e7848cb26aceda5eef45"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** dbg.\_\_report\_gsfailure
+- **Origin (md5):** 63ed397a4c52e7848cb26aceda5eef45
+- **VirusTotal:** [virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [loc.00444703][similar_1_ref] (sim.: 0.8444190103095569)
+2. [fcn.00401c58][similar_2_ref] (sim.: 0.8430954809167639)
+3. [loc.004f89ff][similar_3_ref] (sim.: 0.8378021127691255)
+4. [loc.0040191a][similar_4_ref] (sim.: 0.8377974834186881)
+5. [loc.0042d43d][similar_5_ref] (sim.: 0.8368068972888115)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x28
+mov eax,dword[ebp+4]
+lea edx,[ebp+4]
+mov dword[0x45a124],edx
+mov dword[0x45a340],0xc0000409
+mov dword[0x45a344],1
+mov dword[0x45a118],eax
+mov dword[0x45a34c],eax
+mov eax,dword[ebp+8]
+mov dword[esp],0
+mov dword[0x45a10c],eax
+mov eax,dword[0x456210]
+mov dword[ebp-0x10],eax
+mov eax,dword[0x456214]
+mov dword[ebp-0xc],eax
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+sub esp,4
+mov dword[esp],0x458b70
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+sub esp,4
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov dword[esp+4],0xc0000409
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+sub esp,8
+call sym._abort
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+nop 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.00444703@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.00401c58@799ea8d6698cf889f1eb7e76fbecd6be
+[similar_3_ref]: /report/loc.004f89ff@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/loc.0040191a@eb7f7fa38880dd66bab8caf5987e5b1a
+[similar_5_ref]: /report/loc.0042d43d@9964b63070116cfb2469e51850178af1
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ed397a4c52e7848cb26aceda5eef45

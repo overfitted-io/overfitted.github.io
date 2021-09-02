@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.00432b6c @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00432b6c
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.10020aac][similar_1_ref] (sim.: 0.9080059180755123)
+2. [fcn.0042c795][similar_2_ref] (sim.: 0.9009403624839757)
+3. [fcn.0056f02e][similar_3_ref] (sim.: 0.8993389297693277)
+4. [fcn.100209df][similar_4_ref] (sim.: 0.8920622739005685)
+5. [fcn.0042e665][similar_5_ref] (sim.: 0.8858135899610177)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x64
+mov eax,dword[0x5d9004]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+push edi
+push 0xa
+pop esi
+mov edi,ecx
+mov ebx,str.System
+push 0x11
+mov dword[ebp-0x64],edi
+call dword[sym.imp.GDI32.dll_GetStockObject]
+test eax,eax
+jne 0x432ba4
+push 0xd
+call dword[sym.imp.GDI32.dll_GetStockObject]
+test eax,eax
+je 0x432bf2
+lea ecx,[ebp-0x60]
+push ecx
+push 0x5c
+push eax
+call dword[sym.imp.GDI32.dll_GetObjectW]
+test eax,eax
+je 0x432bf2
+push 0
+lea ebx,[ebp-0x44]
+call dword[sym.imp.USER32.dll_GetDC]
+mov ecx,dword[ebp-0x60]
+mov edi,eax
+test ecx,ecx
+jns 0x432bce
+neg ecx
+mov dword[ebp-0x60],ecx
+push 0x5a
+push edi
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push eax
+push 0x48
+push dword[ebp-0x60]
+call dword[sym.imp.KERNEL32.dll_MulDiv]
+push edi
+push 0
+movzx esi,ax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov edi,dword[ebp-0x64]
+mov eax,dword[ebp+8]
+test ax,ax
+jne 0x432bfd
+movzx eax,si
+push eax
+push ebx
+mov ecx,edi
+call fcn.00432a1e
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00553199
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10020aac@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.0042c795@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.0056f02e@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.100209df@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.0042e665@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

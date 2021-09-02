@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.0040191d @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0040191d
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00403bbc][similar_1_ref] (sim.: 0.9020594794931084)
+2. [fcn.00403b0c][similar_2_ref] (sim.: 0.8994195449742816)
+3. [fcn.0040121f][similar_3_ref] (sim.: 0.8932766151303798)
+4. [fcn.0042f720][similar_4_ref] (sim.: 0.8931704531206553)
+5. [fcn.00401e85][similar_5_ref] (sim.: 0.8929088284163224)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x124
+mov dword[ebp-4],ecx
+call fcn.0040121f
+test al,al
+je 0x4019db
+push edi
+push 0x401426
+mov dword[0x436188],1
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x40
+mov dword[0x4387a4],eax
+pop ecx
+xor eax,eax
+mov byte[ebp-0x124],0
+lea edi,[ebp-0x123]
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+stosb byte es:[edi],al
+push 0x104
+lea eax,[ebp-0x124]
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+lea eax,[ebp-0x124]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathRemoveExtensionA]
+lea eax,[ebp-0x20]
+push eax
+call fcn.004018ad
+cmp dword[ebp-8],0x10
+mov eax,dword[ebp-0x1c]
+pop ecx
+pop edi
+jae 0x4019a0
+lea eax,[ebp-0x1c]
+push esi
+push eax
+lea eax,[ebp-0x124]
+push eax
+call fcn.00416eb0
+lea eax,[ebp-0x124]
+push eax
+mov esi,0x4387a8
+push esi
+call fcn.00416ea0
+push str..dmp
+push esi
+call fcn.00416eb0
+add esp,0x18
+push 0
+push 1
+lea ecx,[ebp-0x20]
+call fcn.0040156b
+pop esi
+mov eax,dword[ebp-4]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403bbc@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c
+[similar_3_ref]: /report/fcn.0040121f@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.0042f720@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00401e85@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

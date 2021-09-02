@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.00463fa0 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00463fa0
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00464021][similar_1_ref] (sim.: 0.8734594568406355)
+2. [fcn.004640b1][similar_2_ref] (sim.: 0.8543780901656048)
+3. [fcn.0040bc28][similar_3_ref] (sim.: 0.8543628835083277)
+4. [fcn.00564659][similar_4_ref] (sim.: 0.8477377707681446)
+5. [fcn.00477f12][similar_5_ref] (sim.: 0.8471062913202554)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x3c
+push ebx
+push esi
+push edi
+xor esi,esi
+mov eax,0x80
+push esi
+push eax
+push 3
+push esi
+push 3
+mov ebx,edx
+push eax
+push ecx
+mov dword[ebx],esi
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov edx,eax
+mov dword[ebp-8],edx
+cmp edx,0xffffffff
+jne 0x463fd1
+xor al,al
+jmp 0x46401a
+push 0xa
+pop ecx
+xor eax,eax
+mov dword[ebp-0x14],esi
+push esi
+lea edi,[ebp-0x3c]
+mov dword[ebp-0x10],esi
+rep stosd dword es:[edi],eax
+lea eax,[ebp-4]
+mov dword[ebp-0xc],esi
+push eax
+push 0x28
+lea eax,[ebp-0x3c]
+mov dword[ebp-4],esi
+push eax
+push 0xc
+lea eax,[ebp-0x14]
+push eax
+push 0x2d1400
+push edx
+call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
+push dword[ebp-8]
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+test esi,esi
+je 0x463fcd
+mov eax,dword[ebp-0x20]
+mov dword[ebx],eax
+mov al,1
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00464021@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.004640b1@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.0040bc28@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.00564659@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.00477f12@2fcce874fb2a3a396274d2df89c397e3
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.64089bd0 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.64089bd0
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.6408a6a0][similar_1_ref] (sim.: 0.8710198176192193)
+2. [fcn.10007520][similar_2_ref] (sim.: 0.8538901490403982)
+3. [fcn.100c92d0][similar_3_ref] (sim.: 0.8521885497042972)
+4. [fcn.100092a0][similar_4_ref] (sim.: 0.850282964871359)
+5. [fcn.10009590][similar_5_ref] (sim.: 0.8474140008287383)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+mov eax,dword[esp+0xc]
+push esi
+push edi
+push 0
+mov dword[esp+0x10],eax
+or esi,0xffffffff
+mov eax,dword[esp+0x1c]
+or edi,esi
+push 0
+mov dword[esp+0x10],eax
+lea eax,[esp+0x20]
+push eax
+lea eax,[esp+0x20]
+mov dword[esp+0x24],0
+push eax
+push 1
+lea eax,[esp+0x1c]
+mov dword[esp+0x28],0
+push eax
+push dword[ecx+0x6c]
+call dword[sym.imp.WS2_32.dll_WSARecv]
+cmp eax,esi
+jne 0x64089c43
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+je 0x64089c50
+add eax,0xffffd8bb
+cmp eax,1
+ja 0x64089c6a
+xor esi,esi
+xor edi,edi
+mov edx,edi
+mov eax,esi
+pop edi
+pop esi
+add esp,8
+ret 0xc
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+jne 0x64089c64
+or edi,0xffffffff
+mov esi,0xfffffffe
+mov edx,edi
+mov eax,esi
+pop edi
+pop esi
+add esp,8
+ret 0xc
+mov esi,dword[esp+0x14]
+xor edi,edi
+mov edx,edi
+mov eax,esi
+pop edi
+pop esi
+add esp,8
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6408a6a0@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.10007520@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.100c92d0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/fcn.100092a0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.10009590@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.0041ae74 @ 64e5091c15839d4b2093890f73869f28"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.0041ae74
+- **Origin (md5):** 64e5091c15839d4b2093890f73869f28
+- **VirusTotal:** [virustotal.com/gui/file/64e5091c15839d4b2093890f73869f28][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00416e68][similar_1_ref] (sim.: 0.9216231191849721)
+2. [fcn.0040a54b][similar_2_ref] (sim.: 0.9028265476823962)
+3. [fcn.0040d68c][similar_3_ref] (sim.: 0.8995619639048502)
+4. [fcn.0040d68c][similar_4_ref] (sim.: 0.8995619639048502)
+5. [fcn.00423dfb][similar_5_ref] (sim.: 0.8967940771755718)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+push edi
+lea edi,[eax*4+0x63f520]
+mov ecx,dword[edi]
+test ecx,ecx
+je 0x41ae95
+lea eax,[ecx+1]
+neg eax
+sbb eax,eax
+and eax,ecx
+jmp 0x41aeec
+push ebx
+mov ebx,dword[eax*4+0x42dac0]
+push esi
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x41aed9
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x41aeca
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x41aecc
+xor esi,esi
+test esi,esi
+jne 0x41aed9
+or eax,0xffffffff
+xchg dword[edi],eax
+xor eax,eax
+jmp 0x41aeea
+mov eax,esi
+xchg dword[edi],eax
+test eax,eax
+je 0x41aee8
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,esi
+pop esi
+pop ebx
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416e68@597d9ee507d1b2a81775aa98c4a2271a
+[similar_2_ref]: /report/fcn.0040a54b@fca52b995e756cff97168f6fef94b37d
+[similar_3_ref]: /report/fcn.0040d68c@617bd594ba13d0dcc08a315774c342d4
+[similar_4_ref]: /report/fcn.0040d68c@b8b9b802e96d8e813c605554cf6f7018
+[similar_5_ref]: /report/fcn.00423dfb@d32515577b2cd57bf3dd6c5e3c37e219
+[virustotal_ref]: https://www.virustotal.com/gui/file/64e5091c15839d4b2093890f73869f28

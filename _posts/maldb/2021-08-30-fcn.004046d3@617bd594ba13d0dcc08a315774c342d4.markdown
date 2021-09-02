@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.004046d3 @ 617bd594ba13d0dcc08a315774c342d4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.004046d3
+- **Origin (md5):** 617bd594ba13d0dcc08a315774c342d4
+- **VirusTotal:** [virustotal.com/gui/file/617bd594ba13d0dcc08a315774c342d4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004046d3][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.004075c2][similar_2_ref] (sim.: 0.8939367339409139)
+3. [fcn.00407a82][similar_3_ref] (sim.: 0.8926807285571654)
+4. [fcn.00407a82][similar_4_ref] (sim.: 0.8926807285571654)
+5. [fcn.00407a82][similar_5_ref] (sim.: 0.8926807285571654)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x14
+mov eax,0x415393
+call fcn.00413f4f
+mov edi,ecx
+mov dword[ebp-0x14],edi
+xor eax,eax
+mov bl,al
+mov dword[ebp-0x20],eax
+mov dword[ebp-0x1c],eax
+mov dword[ebp-4],eax
+lea esi,[edi+0x38]
+push 4
+pop edi
+push dword[ebp+0xc]
+lea eax,[ebp-0x20]
+mov ecx,esi
+push eax
+push dword[ebp+8]
+call fcn.00404631
+test al,al
+jne 0x404710
+test bl,bl
+je 0x404712
+mov bl,1
+add esi,0x1c
+sub edi,1
+jne 0x4046f7
+mov edi,dword[ebp-0x14]
+lea eax,[ebp-0x20]
+push eax
+mov ecx,dword[edi+0x14]
+call fcn.00404f8c
+test bl,bl
+je 0x40478c
+lea eax,[ebp+0xf]
+mov dword[ebp-0x18],1
+xor ebx,ebx
+mov dword[ebp-0x14],eax
+mov byte[ebp+0xf],bl
+call fcn.00407a70
+mov esi,dword[edi+0x34]
+push ebx
+call dword[sym.imp.WS2_32.dll_WSASetLastError]
+push ebx
+push ebx
+push ebx
+lea eax,[ebp+8]
+mov dword[ebp+8],ebx
+push eax
+push 1
+lea eax,[ebp-0x18]
+push eax
+push esi
+call dword[sym.imp.WS2_32.dll_WSASend]
+mov esi,eax
+call fcn.00407a70
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x40
+je 0x40477e
+cmp eax,0x4d2
+jne 0x404783
+call fcn.00407a70
+test esi,esi
+jne 0x40478c
+call fcn.00407a70
+or dword[ebp-4],0xffffffff
+lea ecx,[ebp-0x20]
+call fcn.00404425
+call fcn.00413f18
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004046d3@b8b9b802e96d8e813c605554cf6f7018
+[similar_2_ref]: /report/fcn.004075c2@e16f74a2849182d98050864255e902f8
+[similar_3_ref]: /report/fcn.00407a82@505be53c36227b94e2fcc406f247f6e5
+[similar_4_ref]: /report/fcn.00407a82@96a869ae624ddb4834a1d5a829f85469
+[similar_5_ref]: /report/fcn.00407a82@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[virustotal_ref]: https://www.virustotal.com/gui/file/617bd594ba13d0dcc08a315774c342d4

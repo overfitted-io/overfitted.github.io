@@ -1,0 +1,134 @@
+---
+layout: post
+title:  "fcn.00412b4a @ 59aef7c08025d70f84c85db2092fc99e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00412b4a
+- **Origin (md5):** 59aef7c08025d70f84c85db2092fc99e
+- **VirusTotal:** [virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00420f53][similar_1_ref] (sim.: 0.9366608858053084)
+2. [fcn.00412458][similar_2_ref] (sim.: 0.9297525289147943)
+3. [fcn.0041dc42][similar_3_ref] (sim.: 0.9145504061243678)
+4. [fcn.0040d0e2][similar_4_ref] (sim.: 0.9113764267034367)
+5. [fcn.0042ded0][similar_5_ref] (sim.: 0.9105300808879074)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x118
+push 0x42ad38
+call fcn.0040e2ec
+mov eax,dword[0x433138]
+mov dword[ebp-0x1c],eax
+mov eax,dword[0x43678c]
+xor ecx,ecx
+cmp eax,ecx
+je 0x412b8b
+mov dword[ebp-4],ecx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+pop ecx
+pop ecx
+or dword[ebp-4],0xffffffff
+jmp 0x412c8a
+mov eax,dword[ebp+8]
+dec eax
+je 0x412ba7
+mov edi,str.Unknown_security_failure_detected_
+mov dword[ebp-0x128],0x42ac60
+mov esi,0xd4
+jmp 0x412bbb
+mov edi,str.Buffer_overrun_detected_
+mov dword[ebp-0x128],0x42aba0
+mov esi,0xb9
+mov byte[ebp-0x20],cl
+push 0x104
+lea eax,[ebp-0x124]
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+test eax,eax
+jne 0x412be8
+push str._program_name_unknown_
+lea eax,[ebp-0x124]
+push eax
+call fcn.00413a30
+pop ecx
+pop ecx
+lea ebx,[ebp-0x124]
+mov eax,ebx
+push eax
+call fcn.0040d7a0
+pop ecx
+add eax,0xb
+cmp eax,0x3c
+jbe 0x412c24
+mov eax,ebx
+push eax
+call fcn.0040d7a0
+mov ebx,eax
+lea eax,[ebp-0x124]
+sub eax,0x31
+add ebx,eax
+push 3
+push 0x42ab58
+push ebx
+call fcn.0040bdc0
+add esp,0x10
+push ebx
+call fcn.0040d7a0
+pop ecx
+lea eax,[eax+esi+0xc]
+add eax,3
+and eax,0xfffffffc
+call fcn.0040bd60
+mov dword[ebp-0x18],esp
+mov esi,esp
+push edi
+push esi
+call fcn.00413a30
+mov edi,0x42ab38
+push edi
+push esi
+call fcn.00413a40
+push str.Program:_
+push esi
+call fcn.00413a40
+push ebx
+push esi
+call fcn.00413a40
+push edi
+push esi
+call fcn.00413a40
+push dword[ebp-0x128]
+push esi
+call fcn.00413a40
+push 0x12010
+push str.Microsoft_Visual_C_Runtime_Library
+push esi
+call fcn.00416337
+add esp,0x3c
+push 3
+call fcn.0040d3c7
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00420f53@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00412458@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0041dc42@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.0040d0e2@c299206e1e94de2392d4dd9464d03d54
+[similar_5_ref]: /report/fcn.0042ded0@ba86269e5231930ee4def4088ddb8d19
+[virustotal_ref]: https://www.virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e

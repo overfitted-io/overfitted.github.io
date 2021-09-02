@@ -1,0 +1,137 @@
+---
+layout: post
+title:  "fcn.00407935 @ e7582fc3dadb394a1457ab7e7fbbe9a7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+---
+
+# Generic Information
+- **Function:** fcn.00407935
+- **Origin (md5):** e7582fc3dadb394a1457ab7e7fbbe9a7
+- **VirusTotal:** [virustotal.com/gui/file/e7582fc3dadb394a1457ab7e7fbbe9a7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00407935][similar_1_ref] (sim.: 1.0)
+2. [fcn.00404ba4][similar_2_ref] (sim.: 0.9239242715777793)
+3. [fcn.00474ed0][similar_3_ref] (sim.: 0.9216307509727322)
+4. [fcn.00474ed0][similar_4_ref] (sim.: 0.9216307509727322)
+5. [fcn.00474ed0][similar_5_ref] (sim.: 0.9216307509727322)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x7c
+push ebx
+push edi
+push 8
+xor ebx,ebx
+pop ecx
+xor eax,eax
+lea edi,[ebp-0x38]
+push 0x3c
+mov dword[ebp-0x3c],ebx
+rep stosd dword es:[edi],eax
+lea eax,[ebp-0x78]
+push ebx
+push eax
+mov dword[ebp-4],ebx
+mov dword[ebp-0x7c],ebx
+call fcn.0040888c
+mov edi,dword[ebp+8]
+add esp,0xc
+lea eax,[ebp-0x3c]
+push eax
+mov dword[ebp-8],ebx
+mov byte[edi],bl
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+mov eax,dword[ebp-0x28]
+cmp eax,ebx
+mov dword[ebp-0x10],eax
+jle 0x407a47
+lea eax,[ebp-0x7c]
+push eax
+mov dword[ebp-0x7c],0x40
+call dword[sym.imp.KERNEL32.dll_GlobalMemoryStatusEx]
+test eax,eax
+je 0x407a47
+mov eax,dword[ebp-0x74]
+mov ecx,dword[ebp-0x70]
+shrd eax,ecx,0x14
+mov dword[ebp-0xc],eax
+lea eax,[ebp-8]
+push eax
+push 0x20019
+push ebx
+push str.HARDWAREDESCRIPTIONSystemCentralProcessor0
+push 0x80000002
+shr ecx,0x14
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x4079f0
+lea eax,[ebp+8]
+push eax
+lea eax,[ebp-4]
+push eax
+push ebx
+push ebx
+push str.MHz
+push dword[ebp-8]
+mov dword[ebp+8],4
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+push dword[ebp-8]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+cmp dword[ebp-4],ebx
+jg 0x407a15
+lea eax,[ebp-0x18]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
+test eax,eax
+je 0x407a47
+mov eax,dword[ebp-0x18]
+cdq 
+mov ecx,0xf4240
+idiv ecx
+cmp eax,ebx
+mov dword[ebp-4],eax
+jle 0x407a47
+push esi
+mov esi,dword[sym.imp.USER32.dll_GetSystemMetrics]
+push 1
+call esi
+mov dword[ebp+8],eax
+shl dword[ebp+8],0x10
+push ebx
+call esi
+or eax,dword[ebp+8]
+push eax
+push dword[ebp-0xc]
+push dword[ebp-4]
+push dword[ebp-0x10]
+push str._d__d__d__u
+push edi
+call dword[sym.imp.USER32.dll_wsprintfA]
+add esp,0x18
+pop esi
+mov eax,edi
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407935@6c8b5339bada4cbd03f0f446da640707
+[similar_2_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[similar_3_ref]: /report/fcn.00474ed0@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_4_ref]: /report/fcn.00474ed0@152885a790b99953ce23874f0947b7bd
+[similar_5_ref]: /report/fcn.00474ed0@fb9b7d22bc1c143ac66b0575cbdd088d
+[virustotal_ref]: https://www.virustotal.com/gui/file/e7582fc3dadb394a1457ab7e7fbbe9a7
