@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.004032d0 @ 2d591d102f09b733d7d0e893e5642beb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004032d0
+- **Origin (md5):** 2d591d102f09b733d7d0e893e5642beb
+- **VirusTotal:** [virustotal.com/gui/file/2d591d102f09b733d7d0e893e5642beb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00401700][similar_1_ref] (sim.: 0.8090922473938755)
+2. [section..text][similar_2_ref] (sim.: 0.7986309209608593)
+3. [main][similar_3_ref] (sim.: 0.7986309209608593)
+4. [fcn.00407fb0][similar_4_ref] (sim.: 0.7981015623274357)
+5. [fcn.00501250][similar_5_ref] (sim.: 0.7899872406752174)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0xa0
+mov eax,dword[0x410018]
+xor eax,esp
+mov dword[esp+0x9c],eax
+cmp byte[0x4108a9],0
+je 0x403309
+movzx eax,byte[0x4108aa]
+mov ecx,dword[esp+0x9c]
+xor ecx,esp
+call fcn.004073b2
+add esp,0xa0
+ret 
+push esi
+push 0x9c
+lea eax,[esp+8]
+push 0
+push eax
+call sub.MSVCR90.dll_memset
+mov esi,dword[sym.imp.KERNEL32.dll_GetVersionExA]
+add esp,0xc
+lea ecx,[esp+4]
+push ecx
+mov dword[esp+8],0x9c
+call esi
+test eax,eax
+jne 0x403360
+lea edx,[esp+4]
+push edx
+mov dword[esp+8],0x94
+call esi
+test eax,eax
+jne 0x403360
+pop esi
+mov ecx,dword[esp+0x9c]
+xor ecx,esp
+call fcn.004073b2
+add esp,0xa0
+ret 
+mov eax,dword[esp+0xc]
+mov ecx,dword[esp+8]
+mov dword[0x4108b0],eax
+mov eax,dword[esp+0x14]
+sub eax,2
+mov dword[0x4108ac],ecx
+je 0x403380
+xor al,al
+jmp 0x403386
+cmp ecx,6
+setae al
+mov ecx,dword[esp+0xa0]
+pop esi
+mov byte[0x4108aa],al
+xor ecx,esp
+mov byte[0x4108a9],1
+movzx eax,al
+call fcn.004073b2
+add esp,0xa0
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401700@2eb7544c38a76e8aaeea362abfc44c72
+[similar_2_ref]: /report/section..text@e38ba004520fa1a86a35b63e8d5843ef
+[similar_3_ref]: /report/main@e38ba004520fa1a86a35b63e8d5843ef
+[similar_4_ref]: /report/fcn.00407fb0@0aa2d73a5300dff2412388945614b507
+[similar_5_ref]: /report/fcn.00501250@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/2d591d102f09b733d7d0e893e5642beb

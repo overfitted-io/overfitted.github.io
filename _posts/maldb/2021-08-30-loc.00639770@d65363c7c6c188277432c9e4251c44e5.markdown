@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "loc.00639770 @ d65363c7c6c188277432c9e4251c44e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.00639770
+- **Origin (md5):** d65363c7c6c188277432c9e4251c44e5
+- **VirusTotal:** [virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00697430][similar_1_ref] (sim.: 0.8300865982734452)
+2. [fcn.00727830][similar_2_ref] (sim.: 0.8199292721767377)
+3. [fcn.006538a0][similar_3_ref] (sim.: 0.8179095283209219)
+4. [fcn.782b2240][similar_4_ref] (sim.: 0.8162603791458223)
+5. [fcn.783a9ee0][similar_5_ref] (sim.: 0.8148615184583083)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+call fcn.0051e291
+cmp eax,4
+jl 0x6397db
+mov eax,dword[0x7e7f28]
+push eax
+call fcn.00520b04
+add esp,4
+mov dword[ebp-8],eax
+mov ecx,dword[ebp+0xc]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+mov eax,dword[ebp-8]
+mov dword[ebp-4],eax
+mov ecx,dword[ebp-4]
+call dword[section..00cfg]
+call dword[ebp-4]
+test eax,eax
+jne 0x6397d5
+push str.fnDecodedFunction_hThread__affinity_
+push 0x777604
+push 0
+push 0x108
+push str.f:dd_vctoolscrtcrtw32concrtplatform.cpp
+push 2
+call fcn.0051c0f9
+add esp,0x18
+cmp eax,1
+jne 0x6397d5
+int3 
+xor edx,edx
+jne 0x639791
+jmp 0x639801
+lea eax,[ebp-0x10]
+push eax
+lea ecx,[ebp-0xc]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcessAffinityMask]
+xor edx,edx
+mov eax,dword[ebp+0xc]
+mov word[eax+4],dx
+mov ecx,dword[ebp+0xc]
+mov edx,dword[ebp-0xc]
+mov dword[ecx],edx
+mov eax,1
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00697430@d65363c7c6c188277432c9e4251c44e5
+[similar_2_ref]: /report/fcn.00727830@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.006538a0@d65363c7c6c188277432c9e4251c44e5
+[similar_4_ref]: /report/fcn.782b2240@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/fcn.783a9ee0@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5

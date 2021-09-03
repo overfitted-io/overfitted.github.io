@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00410e06 @ 319cf4affa41f752783e62f81908d682"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00410e06
+- **Origin (md5):** 319cf4affa41f752783e62f81908d682
+- **VirusTotal:** [virustotal.com/gui/file/319cf4affa41f752783e62f81908d682][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00410e04][similar_1_ref] (sim.: 0.8766045312804541)
+2. [fcn.00410e04][similar_2_ref] (sim.: 0.8766045312804541)
+3. [fcn.0040f7c6][similar_3_ref] (sim.: 0.8402552511005263)
+4. [fcn.0040f7c6][similar_4_ref] (sim.: 0.8402552511005263)
+5. [fcn.0040548c][similar_5_ref] (sim.: 0.7674520939826313)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebp
+push esi
+mov esi,ecx
+xor ebp,ebp
+cmp dword[esi],ebp
+jbe 0x410e81
+push ebx
+push edi
+lea edi,[esi+4]
+lea eax,[esp+0x10]
+push eax
+push 0
+push esi
+push 0x410da8
+push 0x10000
+push 0
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+mov ebx,eax
+test ebx,ebx
+jne 0x410e5d
+push str.CreateThread_failed
+push 0x4325ac
+call fcn.00406381
+pop ecx
+pop ecx
+mov ecx,0x4325ac
+call fcn.00401000
+push 2
+mov ecx,0x4325ac
+call fcn.004062f8
+mov dword[edi],ebx
+inc dword[esi+0x84]
+mov eax,dword[0x44e58c]
+test eax,eax
+je 0x410e77
+push eax
+push dword[edi]
+call dword[sym.imp.KERNEL32.dll_SetThreadPriority]
+inc ebp
+add edi,4
+cmp ebp,dword[esi]
+jb 0x410e16
+pop edi
+pop ebx
+pop esi
+pop ebp
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410e04@88e03379526f823ce2de3b236adcaf80
+[similar_2_ref]: /report/fcn.00410e04@7e044e51324f9f80f4e97d8f3549c003
+[similar_3_ref]: /report/fcn.0040f7c6@f068e0a788db6c075da6c407576e943b
+[similar_4_ref]: /report/fcn.0040f7c6@e02c832a2c768752009e071574e12967
+[similar_5_ref]: /report/fcn.0040548c@6f11dca39a331a6e158b2810d4d8234f
+[virustotal_ref]: https://www.virustotal.com/gui/file/319cf4affa41f752783e62f81908d682

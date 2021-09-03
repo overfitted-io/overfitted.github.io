@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "fcn.00407602 @ 0cb2d61ee2bb08c35289961542a08513"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00407602
+- **Origin (md5):** 0cb2d61ee2bb08c35289961542a08513
+- **VirusTotal:** [virustotal.com/gui/file/0cb2d61ee2bb08c35289961542a08513][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00407e2d][similar_1_ref] (sim.: 0.8558027537899833)
+2. [fcn.00407e2d][similar_2_ref] (sim.: 0.8558027537899833)
+3. [fcn.00401e20][similar_3_ref] (sim.: 0.7352031660889391)
+4. [fcn.0041c5d0][similar_4_ref] (sim.: 0.7282367715632276)
+5. [fcn.00403f74][similar_5_ref] (sim.: 0.7181891458936895)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push str.uxtheme
+mov esi,ecx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+je 0x407655
+push ebp
+push str.SetWindowTheme
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov ebp,eax
+test ebp,ebp
+je 0x407654
+mov eax,dword[esi+4]
+push ebx
+mov ebx,dword[sym.imp.USER32.dll_GetWindow]
+push 5
+push eax
+call ebx
+mov esi,eax
+test esi,esi
+je 0x407653
+push edi
+mov edi,0x41ecc0
+push edi
+push edi
+push esi
+call ebp
+push 2
+push esi
+call ebx
+mov esi,eax
+test esi,esi
+jne 0x407642
+pop edi
+pop ebx
+pop ebp
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407e2d@4c8869bb42f854640703b6ddda29ee38
+[similar_2_ref]: /report/fcn.00407e2d@3f1595e66dc63331ba0930a0c79684ce
+[similar_3_ref]: /report/fcn.00401e20@b7a5b92638cb734d6411e4abb8a97a82
+[similar_4_ref]: /report/fcn.0041c5d0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00403f74@2f7d0bff2a387da538798c888eb7f4a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/0cb2d61ee2bb08c35289961542a08513

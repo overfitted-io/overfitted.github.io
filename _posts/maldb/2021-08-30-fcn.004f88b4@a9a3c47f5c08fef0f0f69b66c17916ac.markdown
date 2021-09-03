@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.004f88b4 @ a9a3c47f5c08fef0f0f69b66c17916ac"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004f88b4
+- **Origin (md5):** a9a3c47f5c08fef0f0f69b66c17916ac
+- **VirusTotal:** [virustotal.com/gui/file/a9a3c47f5c08fef0f0f69b66c17916ac][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.004f1a34][similar_1_ref] (sim.: 0.8997775132914072)
+2. [fcn.00492c50][similar_2_ref] (sim.: 0.8625512557947974)
+3. [fcn.005c79a4][similar_3_ref] (sim.: 0.8535588089746617)
+4. [fcn.00500184][similar_4_ref] (sim.: 0.84993477700567)
+5. [fcn.00526f54][similar_5_ref] (sim.: 0.8441907776411661)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push 0x8000
+push 0
+push dword[esi+0x10]
+call dword[sym.imp.KERNEL32.dll_VirtualFree]
+cmp dword[0x5072e0],esi
+jne 0x4f88d9
+mov eax,dword[esi+4]
+mov dword[0x5072e0],eax
+cmp esi,0x5052c0
+je 0x4f8901
+mov eax,dword[esi+4]
+mov ecx,dword[esi]
+push esi
+push 0
+mov dword[eax],ecx
+mov eax,dword[esi]
+mov ecx,dword[esi+4]
+mov dword[eax+4],ecx
+push dword[0x44fd8ac]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+pop esi
+ret 
+or dword[0x5052d0],0xffffffff
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004f1a34@726f5d13ec98918aff408346434b56c3
+[similar_2_ref]: /report/fcn.00492c50@18980bd3439a28c3ca084fb94b418e27
+[similar_3_ref]: /report/fcn.005c79a4@9df9a5aa1b4726bd0de47365be1d7f48
+[similar_4_ref]: /report/fcn.00500184@557dcbbf2711fedc520328fbbc657056
+[similar_5_ref]: /report/fcn.00526f54@dc54d4461cc1157c0cc897f7e0798837
+[virustotal_ref]: https://www.virustotal.com/gui/file/a9a3c47f5c08fef0f0f69b66c17916ac

@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.1000d338 @ f306bc4e89ecdab5df7aa72172ee5f69"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1000d338
+- **Origin (md5):** f306bc4e89ecdab5df7aa72172ee5f69
+- **VirusTotal:** [virustotal.com/gui/file/f306bc4e89ecdab5df7aa72172ee5f69][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.10006d44][similar_1_ref] (sim.: 0.8643575562390504)
+2. [fcn.0040d322][similar_2_ref] (sim.: 0.8556906533102304)
+3. [fcn.0040d312][similar_3_ref] (sim.: 0.8443707720985437)
+4. [fcn.0040dd72][similar_4_ref] (sim.: 0.8426062686174617)
+5. [fcn.0040c975][similar_5_ref] (sim.: 0.8148406674085921)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov ecx,eax
+test ecx,ecx
+jne 0x1000d349
+xor al,al
+ret 
+mov eax,0x5a4d
+cmp word[ecx],ax
+jne 0x1000d346
+mov eax,dword[ecx+0x3c]
+add eax,ecx
+cmp dword[eax],0x4550
+jne 0x1000d346
+mov ecx,0x10b
+cmp word[eax+0x18],cx
+jne 0x1000d346
+cmp dword[eax+0x74],0xe
+jbe 0x1000d346
+cmp dword[eax+0xe8],0
+setne al
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10006d44@b74a1e462e0b6bacec09e2503391e156
+[similar_2_ref]: /report/fcn.0040d322@a8daa9c49d07466f146a96953a40fc82
+[similar_3_ref]: /report/fcn.0040d312@597d9ee507d1b2a81775aa98c4a2271a
+[similar_4_ref]: /report/fcn.0040dd72@64e5091c15839d4b2093890f73869f28
+[similar_5_ref]: /report/fcn.0040c975@b9bcb002212a6b3f234989f71e66f5f7
+[virustotal_ref]: https://www.virustotal.com/gui/file/f306bc4e89ecdab5df7aa72172ee5f69

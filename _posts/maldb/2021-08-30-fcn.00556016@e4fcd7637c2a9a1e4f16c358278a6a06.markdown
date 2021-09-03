@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "fcn.00556016 @ e4fcd7637c2a9a1e4f16c358278a6a06"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00556016
+- **Origin (md5):** e4fcd7637c2a9a1e4f16c358278a6a06
+- **VirusTotal:** [virustotal.com/gui/file/e4fcd7637c2a9a1e4f16c358278a6a06][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.005e6a50][similar_1_ref] (sim.: 0.8162176904635097)
+2. [fcn.00500040][similar_2_ref] (sim.: 0.8148390357522903)
+3. [fcn.00598530][similar_3_ref] (sim.: 0.814041136847999)
+4. [fcn.00555c00][similar_4_ref] (sim.: 0.8126883799373825)
+5. [fcn.00517510][similar_5_ref] (sim.: 0.8088879109012059)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[ebp-4],0x10
+jge 0x556021
+add eax,8
+inc dword[ebp-4]
+cmp dword[eax],0xffffffff
+je 0x556010
+mov eax,dword[ebp-4]
+push 4
+shl eax,0xc
+push 0x1000
+push eax
+push esi
+mov dword[ebp-8],eax
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+cmp eax,esi
+jne 0x5560f9
+push 0
+push dword[ebp-8]
+push esi
+call fcn.005564c0
+mov edx,dword[ebp-4]
+add esp,0xc
+test edx,edx
+mov ecx,ebx
+jle 0x556088
+lea eax,[esi+4]
+mov dword[ebp-4],edx
+or byte[eax+0xf4],0xff
+lea edx,[eax+4]
+mov dword[eax-4],edx
+mov edx,0xf0
+mov dword[eax],edx
+mov dword[ecx],edx
+mov dword[ecx+4],0xf1
+add eax,0x1000
+add ecx,8
+dec dword[ebp-4]
+jne 0x55605e
+mov dword[0x5602b0],edi
+lea eax,[edi+0x2018]
+cmp ecx,eax
+jae 0x5560a4
+cmp dword[ecx],0xffffffff
+je 0x5560a2
+add ecx,8
+jmp 0x556094
+cmp ecx,eax
+sbb eax,eax
+and eax,ecx
+mov dword[edi+0xc],eax
+mov eax,dword[ebp+8]
+mov byte[esi+8],al
+mov dword[edi+8],ebx
+sub dword[ebx],eax
+sub dword[esi+4],eax
+lea ecx,[esi+eax+8]
+lea eax,[esi+0x100]
+mov dword[esi],ecx
+jmp 0x5560fb
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005e6a50@8481303ca93a816ad088ab207da601a7
+[similar_2_ref]: /report/fcn.00500040@557dcbbf2711fedc520328fbbc657056
+[similar_3_ref]: /report/fcn.00598530@fd515d36e5c3696f076b92b737a2556c
+[similar_4_ref]: /report/fcn.00555c00@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_5_ref]: /report/fcn.00517510@3c34f316ae659be601887de3fc681ce5
+[virustotal_ref]: https://www.virustotal.com/gui/file/e4fcd7637c2a9a1e4f16c358278a6a06

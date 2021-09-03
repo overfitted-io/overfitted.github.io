@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.004209d0 @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004209d0
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0047a72b][similar_1_ref] (sim.: 0.8870518747984194)
+2. [fcn.0047a72b][similar_2_ref] (sim.: 0.8870518747984194)
+3. [fcn.0049942e][similar_3_ref] (sim.: 0.8725557943543214)
+4. [fcn.0047d551][similar_4_ref] (sim.: 0.8709428831273183)
+5. [fcn.0046d868][similar_5_ref] (sim.: 0.8619451713696973)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push esi
+push 0x800
+push 0
+mov esi,str.combase.dll
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[0x45bae0],eax
+test eax,eax
+je 0x420a55
+push str.RoInitialize
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x420a16
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x420a67
+jmp 0x420a5f
+push eax
+call fcn.00414a07
+mov dword[esp],str.RoUninitialize
+push esi
+mov dword[0x45bad8],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x420a0a
+push eax
+call fcn.00414a07
+mov dword[0x45badc],eax
+xor eax,eax
+pop ecx
+inc eax
+mov ecx,0x45bae4
+xchg dword[ecx],eax
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x420a67
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.00414e25
+push 0x4547e4
+lea eax,[ebp-0x10]
+push eax
+call fcn.00429324
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047a72b@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_2_ref]: /report/fcn.0047a72b@9b5524245506621a9773176393787e61
+[similar_3_ref]: /report/fcn.0049942e@94f83197373b17ab8b5225c0900d14de
+[similar_4_ref]: /report/fcn.0047d551@843c4207147f5bab0e104024677fd9ec
+[similar_5_ref]: /report/fcn.0046d868@53687e619dcac7d709f306d061d8daeb
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

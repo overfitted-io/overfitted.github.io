@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.10005d8e @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10005d8e
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.100acc5e][similar_1_ref] (sim.: 0.837107178966572)
+2. [fcn.100d4b49][similar_2_ref] (sim.: 0.8318395852966767)
+3. [fcn.10009e8d][similar_3_ref] (sim.: 0.8250424466531477)
+4. [fcn.1001b674][similar_4_ref] (sim.: 0.8239521207886413)
+5. [fcn.10006fda][similar_5_ref] (sim.: 0.8230137476604201)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x64
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+push edi
+xor eax,eax
+lea edi,[ebp-0x60]
+stosd dword es:[edi],eax
+mov esi,edx
+push 0x44
+mov ebx,ecx
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+lea eax,[ebp-0x50]
+pop edi
+push edi
+push 0
+push eax
+call fcn.100da270
+add esp,0xc
+lea eax,[ebp-0x50]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetStartupInfoW]
+or dword[ebp-0x24],1
+xor eax,eax
+mov word[ebp-0x20],ax
+lea eax,[ebp-0x60]
+push eax
+lea eax,[ebp-0x50]
+mov dword[ebp-0x50],edi
+push eax
+xor eax,eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push ebx
+push esi
+call dword[sym.imp.KERNEL32.dll_CreateProcessW]
+test eax,eax
+je 0x10005e12
+push 0xffffffffffffffff
+push dword[ebp-0x60]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+push dword[ebp-0x5c]
+mov esi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+call esi
+push dword[ebp-0x60]
+call esi
+xor eax,eax
+jmp 0x10005e19
+push ebx
+call fcn.100d2281
+pop ecx
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100acc5e@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.100d4b49@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.10009e8d@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.1001b674@880ba8b1983575bc0c5ed1cb79dcde8f
+[similar_5_ref]: /report/fcn.10006fda@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

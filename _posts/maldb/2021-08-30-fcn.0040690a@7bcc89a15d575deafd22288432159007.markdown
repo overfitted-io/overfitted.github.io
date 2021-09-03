@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.0040690a @ 7bcc89a15d575deafd22288432159007"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040690a
+- **Origin (md5):** 7bcc89a15d575deafd22288432159007
+- **VirusTotal:** [virustotal.com/gui/file/7bcc89a15d575deafd22288432159007][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004188cc][similar_1_ref] (sim.: 0.8692796277143078)
+2. [fcn.004188cc][similar_2_ref] (sim.: 0.8692796277143078)
+3. [fcn.004188cc][similar_3_ref] (sim.: 0.8692796277143078)
+4. [fcn.00473510][similar_4_ref] (sim.: 0.855951130163328)
+5. [fcn.00473510][similar_5_ref] (sim.: 0.855951130163328)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+jmp 0x4069bc
+mov ebx,dword[edi]
+lea eax,[ebx*4+0x413078]
+mov esi,dword[eax]
+mov dword[ebp-4],eax
+test esi,esi
+je 0x406938
+cmp esi,0xffffffff
+je 0x4069b9
+jmp 0x4069b5
+mov ebx,dword[ebx*4+0x40d7b0]
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x4069a3
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x406993
+push 7
+push str.api_ms_
+push ebx
+call fcn.00404510
+add esp,0xc
+test eax,eax
+je 0x406993
+push 7
+push str.ext_ms_
+push ebx
+call fcn.00404510
+add esp,0xc
+test eax,eax
+je 0x406993
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x406995
+xor esi,esi
+test esi,esi
+jne 0x4069a3
+mov ecx,dword[ebp-4]
+or eax,0xffffffff
+xchg dword[ecx],eax
+jmp 0x4069b9
+mov ecx,dword[ebp-4]
+mov eax,esi
+xchg dword[ecx],eax
+test eax,eax
+je 0x4069b5
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test esi,esi
+jne 0x4069ce
+add edi,4
+cmp edi,dword[ebp+0xc]
+jne 0x40691b
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,esi
+jmp 0x4069c7
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004188cc@912beaab0bb0679fee17cef9ce127a44
+[similar_2_ref]: /report/fcn.004188cc@7a3a0c983ae0c0ae537e7010d24072c9
+[similar_3_ref]: /report/fcn.004188cc@5a99618b63178d7a221552fe962992e3
+[similar_4_ref]: /report/fcn.00473510@1f41df4e00687de20d33ef8b9cef2eeb
+[similar_5_ref]: /report/fcn.00473510@2a380710d2016aed75cfad6eacab1d1a
+[virustotal_ref]: https://www.virustotal.com/gui/file/7bcc89a15d575deafd22288432159007

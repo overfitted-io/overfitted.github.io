@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "fcn.14001de9c @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14001de9c
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.140011800][similar_1_ref] (sim.: 0.7951355337076099)
+2. [fcn.1400a1110][similar_2_ref] (sim.: 0.7750559538581294)
+3. [fcn.14003e460][similar_3_ref] (sim.: 0.7745378460640886)
+4. [fcn.14000fd70][similar_4_ref] (sim.: 0.7708865217975382)
+5. [fcn.14003bd80][similar_5_ref] (sim.: 0.7578543121609292)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub rsp,0x28
+xor r8d,r8d
+mov edx,0x1000
+xor ecx,ecx
+mov dword[rsp+0x30],2
+call qword[sym.imp.KERNEL32.dll_HeapCreate]
+mov qword[0x1400b3030],rax
+test rax,rax
+je 0x14001deed
+call qword[sym.imp.KERNEL32.dll_GetVersion]
+cmp al,6
+jae 0x14001dee8
+mov rcx,qword[0x1400b3030]
+lea r8,[rsp+0x30]
+mov r9d,4
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_HeapSetInformation]
+mov eax,1
+add rsp,0x28
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140011800@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.1400a1110@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.14003e460@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.14000fd70@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.14003bd80@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

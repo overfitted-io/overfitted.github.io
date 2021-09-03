@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.0041b549 @ f068e0a788db6c075da6c407576e943b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041b549
+- **Origin (md5):** f068e0a788db6c075da6c407576e943b
+- **VirusTotal:** [virustotal.com/gui/file/f068e0a788db6c075da6c407576e943b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0041b549][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00410aac][similar_2_ref] (sim.: 0.8787237113069367)
+3. [fcn.0040d77d][similar_3_ref] (sim.: 0.8177595108049016)
+4. [fcn.0040c0be][similar_4_ref] (sim.: 0.7994129965935735)
+5. [fcn.0040c039][similar_5_ref] (sim.: 0.7906137966950799)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x1008
+call fcn.0041c630
+cmp byte[0x449118],0
+je 0x41b5d3
+cmp word[0x455808],0
+je 0x41b5d3
+push esi
+lea eax,[ebp-0x1008]
+push eax
+push 0x455808
+call fcn.0041a204
+lea eax,[ebp-8]
+xor esi,esi
+push eax
+lea eax,[ebp-4]
+push eax
+push esi
+push 0x20006
+push esi
+push esi
+push esi
+push str.SoftwareWinRAR_SFX
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+test eax,eax
+jne 0x41b5d2
+push dword[ebp+8]
+call fcn.00421845
+pop ecx
+lea eax,[eax*2+2]
+push eax
+push dword[ebp+8]
+lea eax,[ebp-0x1008]
+push 1
+push esi
+push eax
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop esi
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041b549@e02c832a2c768752009e071574e12967
+[similar_2_ref]: /report/fcn.00410aac@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.0040d77d@319cf4affa41f752783e62f81908d682
+[similar_4_ref]: /report/fcn.0040c0be@4c2db4ba96e80258daff665d7d7a016a
+[similar_5_ref]: /report/fcn.0040c039@4c2db4ba96e80258daff665d7d7a016a
+[virustotal_ref]: https://www.virustotal.com/gui/file/f068e0a788db6c075da6c407576e943b

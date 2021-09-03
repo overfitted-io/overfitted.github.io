@@ -1,0 +1,155 @@
+---
+layout: post
+title:  "fcn.100148e0 @ ca9ea786d78fbd8b044a85f19ea8ac95"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100148e0
+- **Origin (md5):** ca9ea786d78fbd8b044a85f19ea8ac95
+- **VirusTotal:** [virustotal.com/gui/file/ca9ea786d78fbd8b044a85f19ea8ac95][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004233f0][similar_1_ref] (sim.: 0.8708461885186933)
+2. [fcn.1000c290][similar_2_ref] (sim.: 0.8702900213927773)
+3. [fcn.00404490][similar_3_ref] (sim.: 0.8702895850195803)
+4. [fcn.00423210][similar_4_ref] (sim.: 0.8698495216231807)
+5. [fcn.00402320][similar_5_ref] (sim.: 0.8690649890196401)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x1001b0fb
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,8
+push ebx
+push esi
+push edi
+mov edi,ecx
+mov dword[ebp-0x10],edi
+mov dword[edi],vtable.HttpRequestMgr.0
+lea eax,[edi+0x18]
+mov dword[ebp-4],5
+push eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+cmp dword[edi+8],0
+jbe 0x10014957
+lea eax,[edi+4]
+mov esi,dword[eax]
+mov esi,dword[esi]
+mov ebx,dword[esi+0x14]
+test ebx,ebx
+je 0x10014942
+mov ecx,ebx
+call fcn.10003070
+push ebx
+call dword[sym.imp.MSVCR120.dll_void___cdecl_operator_delete_void__]
+add esp,4
+lea eax,[edi+4]
+push esi
+lea ecx,[ebp-0x14]
+push ecx
+mov ecx,eax
+call fcn.10003530
+cmp dword[edi+8],0
+lea eax,[edi+4]
+ja 0x10014923
+cmp dword[edi+0x10],0
+jbe 0x10014994
+lea eax,[edi+0xc]
+mov esi,dword[eax]
+mov esi,dword[esi]
+mov ebx,dword[esi+0x14]
+test ebx,ebx
+je 0x1001497f
+mov ecx,ebx
+call fcn.10003070
+push ebx
+call dword[sym.imp.MSVCR120.dll_void___cdecl_operator_delete_void__]
+add esp,4
+lea eax,[edi+0xc]
+push esi
+lea ecx,[ebp-0x14]
+push ecx
+mov ecx,eax
+call fcn.10003530
+cmp dword[edi+0x10],0
+lea eax,[edi+0xc]
+ja 0x10014960
+lea eax,[edi+0x18]
+push eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+lea ecx,[edi+0x74]
+call fcn.10002e70
+cmp dword[edi+0x6c],0x10
+mov ebx,dword[sym.imp.MSVCR120.dll_void___cdecl_operator_delete_void__]
+jb 0x100149c0
+push dword[edi+0x58]
+call ebx
+add esp,4
+mov dword[edi+0x6c],0xf
+mov dword[edi+0x68],0
+mov byte[edi+0x58],0
+cmp dword[edi+0x44],0x10
+jb 0x100149e0
+push dword[edi+0x30]
+call ebx
+add esp,4
+mov dword[edi+0x44],0xf
+lea eax,[edi+0x18]
+mov dword[edi+0x40],0
+mov byte[edi+0x30],0
+push eax
+mov dword[edi+0x14],0x1001de0c
+call dword[sym.imp.KERNEL32.dll_DeleteCriticalSection]
+mov eax,dword[edi+0xc]
+lea ecx,[edi+0xc]
+push eax
+push dword[eax]
+lea eax,[ebp-0x14]
+push eax
+call fcn.100044c0
+push dword[edi+0xc]
+call ebx
+mov eax,dword[edi+4]
+lea ecx,[edi+4]
+add esp,4
+push eax
+push dword[eax]
+lea eax,[ebp-0x14]
+push eax
+call fcn.100044c0
+push dword[edi+4]
+call ebx
+mov ecx,dword[ebp-0xc]
+add esp,4
+mov dword fs:[0],ecx
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004233f0@3b2d901eaca41ce14deca6a48c0c801a
+[similar_2_ref]: /report/fcn.1000c290@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.00404490@065d95e046989885ac0aa05648eeda39
+[similar_4_ref]: /report/fcn.00423210@3b2d901eaca41ce14deca6a48c0c801a
+[similar_5_ref]: /report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/ca9ea786d78fbd8b044a85f19ea8ac95

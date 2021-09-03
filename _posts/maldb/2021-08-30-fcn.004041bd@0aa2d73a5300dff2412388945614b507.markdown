@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.004041bd @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004041bd
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00404ebc][similar_1_ref] (sim.: 0.7836405530074507)
+2. [fcn.00404b4c][similar_2_ref] (sim.: 0.7745899452292576)
+3. [fcn.00401b74][similar_3_ref] (sim.: 0.7743072323158622)
+4. [fcn.0042536a][similar_4_ref] (sim.: 0.7725019943454801)
+5. [fcn.0040c2a5][similar_5_ref] (sim.: 0.7709140891999383)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov eax,dword[ebx]
+xor ecx,ecx
+cmp eax,ecx
+mov dword[ebp-0xc],ecx
+mov dword[ebp-4],ecx
+je 0x404245
+push edi
+mov edi,dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+lea edx,[ebp-4]
+push edx
+push ecx
+lea edx,[ebp-8]
+push edx
+push ecx
+push dword[ebp+8]
+push eax
+call edi
+cmp dword[ebp-8],1
+jne 0x404244
+push esi
+mov esi,dword[ebp+0xc]
+call fcn.00404479
+mov eax,dword[ebp-4]
+shr eax,1
+inc eax
+push eax
+call fcn.004042cb
+mov esi,eax
+lea eax,[ebp-4]
+push eax
+push esi
+lea eax,[ebp-8]
+push eax
+push 0
+push dword[ebp+8]
+push dword[ebx]
+call edi
+test eax,eax
+jne 0x404243
+mov eax,dword[ebp-4]
+shr eax,1
+and word[esi+eax*2],0
+mov esi,dword[ebp+0xc]
+mov eax,dword[esi]
+test eax,eax
+je 0x404235
+push eax
+call fcn.0041a322
+pop ecx
+mov edx,esi
+call fcn.00403fda
+mov dword[ebp-0xc],1
+pop esi
+pop edi
+mov eax,dword[ebp-0xc]
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404ebc@0cb2d61ee2bb08c35289961542a08513
+[similar_2_ref]: /report/fcn.00404b4c@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[similar_4_ref]: /report/fcn.0042536a@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.0040c2a5@d4e56c7d970c209a3a2b3c4b4cc5e586
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

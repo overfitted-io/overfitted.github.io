@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.00409f10 @ 37599acf0ccd223da88bef73a018ad03"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409f10
+- **Origin (md5):** 37599acf0ccd223da88bef73a018ad03
+- **VirusTotal:** [virustotal.com/gui/file/37599acf0ccd223da88bef73a018ad03][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00409d80][similar_1_ref] (sim.: 0.8357663559142555)
+2. [fcn.0050d390][similar_2_ref] (sim.: 0.8235951485407698)
+3. [fcn.00402730][similar_3_ref] (sim.: 0.8221940111235324)
+4. [fcn.00489ae0][similar_4_ref] (sim.: 0.8200015203999583)
+5. [fcn.00408f95][similar_5_ref] (sim.: 0.8198515218566857)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+mov eax,dword[esp+0x10]
+push ebx
+push ebp
+xor ecx,ecx
+mov ebp,dword[eax+4]
+mov eax,dword[eax]
+mov dword[esp+8],0
+mov cx,word[eax+0x14]
+cmp word[eax+6],0
+lea ebx,[ecx+eax+0x18]
+jbe 0x409fdb
+push esi
+push edi
+add ebx,0x10
+cmp dword[ebx],0
+jne 0x409f80
+mov edx,dword[esp+0x1c]
+mov esi,dword[edx+0x38]
+test esi,esi
+jle 0x409fb9
+call fcn.00409d60
+mov eax,dword[ebx-4]
+push 4
+push 0x1000
+add eax,ebp
+push esi
+push eax
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov ecx,esi
+mov edi,eax
+mov edx,ecx
+xor eax,eax
+shr ecx,2
+mov dword[ebx-8],edi
+rep stosd dword es:[edi],eax
+mov ecx,edx
+and ecx,3
+rep stosb byte es:[edi],al
+jmp 0x409fb9
+call fcn.00409d60
+mov ecx,dword[ebx-4]
+mov eax,dword[ebx]
+push 4
+push 0x1000
+add ecx,ebp
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov ecx,dword[ebx]
+mov esi,dword[ebx+4]
+mov edi,dword[esp+0x18]
+mov edx,ecx
+add esi,edi
+mov edi,eax
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,edx
+and ecx,3
+rep movsb byte es:[edi],byte ptr[esi]
+mov dword[ebx-8],eax
+mov ecx,dword[esp+0x20]
+mov eax,dword[esp+0x10]
+inc eax
+add ebx,0x28
+mov edx,dword[ecx]
+xor ecx,ecx
+mov dword[esp+0x10],eax
+mov cx,word[edx+6]
+cmp eax,ecx
+jl 0x409f3e
+pop edi
+pop esi
+pop ebp
+pop ebx
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409d80@37599acf0ccd223da88bef73a018ad03
+[similar_2_ref]: /report/fcn.0050d390@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.00402730@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_4_ref]: /report/fcn.00489ae0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00408f95@6f11dca39a331a6e158b2810d4d8234f
+[virustotal_ref]: https://www.virustotal.com/gui/file/37599acf0ccd223da88bef73a018ad03

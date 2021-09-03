@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "fcn.00439810 @ a4175bd1311845689d3bca41d1d095ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00439810
+- **Origin (md5):** a4175bd1311845689d3bca41d1d095ff
+- **VirusTotal:** [virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004398c0][similar_1_ref] (sim.: 0.8229650256443407)
+2. [fcn.004cccc0][similar_2_ref] (sim.: 0.7959296760078577)
+3. [fcn.00470010][similar_3_ref] (sim.: 0.7910547233514996)
+4. [fcn.00470010][similar_4_ref] (sim.: 0.7910547233514996)
+5. [fcn.00471e50][similar_5_ref] (sim.: 0.7903521814771207)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10
+push ebx
+mov ebx,dword[0x4c09e8]
+push esi
+push edi
+push 0
+push 0x80
+push 3
+push 0
+push 3
+push 0x80000000
+push str.Data_Game_Progress.ppr
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov edi,eax
+cmp edi,0xffffffff
+je 0x439863
+lea eax,[esp+0xc]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+mov esi,eax
+sub esi,0xffffffff
+neg esi
+sbb esi,esi
+and esi,eax
+cmp esi,8
+jbe 0x43986c
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+xor al,al
+pop edi
+pop esi
+pop ebx
+add esp,0x10
+ret 
+push 0
+lea ecx,[esp+0x10]
+push ecx
+push esi
+lea edx,[esp+0x1c]
+push edx
+push edi
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x43985c
+cmp dword[esp+0xc],esi
+jne 0x43985c
+cmp dword[esp+0x10],esi
+jne 0x43985c
+cmp esi,8
+mov dword[ebx],1
+jl 0x4398a1
+mov eax,dword[esp+0x14]
+mov dword[ebx],eax
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop edi
+pop esi
+mov al,1
+pop ebx
+add esp,0x10
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004398c0@a4175bd1311845689d3bca41d1d095ff
+[similar_2_ref]: /report/fcn.004cccc0@1160595edb203a63cb2ca3ce2ff04f47
+[similar_3_ref]: /report/fcn.00470010@ec199daf84c7d2c754bb8d013dd4880e
+[similar_4_ref]: /report/fcn.00470010@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00471e50@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff

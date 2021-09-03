@@ -1,0 +1,163 @@
+---
+layout: post
+title:  "fcn.140062360 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140062360
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.1400728a0][similar_1_ref] (sim.: 0.9209662209983592)
+2. [fcn.14000a1a4][similar_2_ref] (sim.: 0.9169410292521153)
+3. [fcn.140055a30][similar_3_ref] (sim.: 0.913462651067174)
+4. [fcn.140011620][similar_4_ref] (sim.: 0.9051990138906002)
+5. [fcn.140006360][similar_5_ref] (sim.: 0.9032063251729967)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+push rbp
+push rsi
+push rdi
+push r12
+push r13
+lea rbp,[rsp-0x1e0]
+sub rsp,0x2e0
+mov rbx,rcx
+xor r13d,r13d
+lea rcx,[rsp+0x58]
+mov rsi,r9
+mov r12,r8
+mov rdi,rdx
+mov qword[rsp+0x30],r13
+mov qword[rbp+0x228],r13
+call fcn.14000e0b0
+lea rcx,[rsp+0x38]
+call fcn.14000e0b0
+lea rcx,[rsp+0x78]
+call fcn.14000e0b0
+lea rdx,str.SOFTWAREClasses
+lea rcx,[rsp+0x58]
+call fcn.14000e920
+lea rcx,[rsp+0x58]
+mov rdx,rbx
+call fcn.14000fa50
+lea rdx,str.CLSID
+lea rcx,[rsp+0x58]
+call fcn.14000fa50
+lea rdx,[0x140098da0]
+lea rcx,[rsp+0x38]
+call fcn.14000e920
+test rdi,rdi
+je 0x140062424
+cmp word[rdi],0x5c
+je 0x140062424
+cmp word[rdi+2],0x5c
+je 0x140062424
+lea rdx,[0x140098de0]
+lea rcx,[rsp+0x38]
+call fcn.14000e920
+lea rcx,[rsp+0x38]
+mov rdx,rdi
+call fcn.14000fa50
+test rsi,rsi
+je 0x140062486
+xor edx,edx
+lea rcx,[rbp-0x68]
+lea r8d,[rdx+0x30]
+call fcn.140014d40
+lea rdx,[rsp+0x38]
+lea rcx,[rsp+0x78]
+mov dword[rbp-0x64],r13d
+call fcn.140010950
+lea rdx,str.IPC_
+lea rcx,[rsp+0x78]
+call fcn.14000fa50
+mov r11,qword[rsp+0x78]
+mov rdx,qword[rbp+0x230]
+lea rcx,[rbp-0x68]
+xor r9d,r9d
+mov r8,rsi
+mov qword[rbp-0x50],r11
+call qword[sym.imp.MPR.dll_WNetAddConnection2W]
+mov ebx,eax
+test eax,eax
+js 0x140062547
+mov rcx,qword[rsp+0x38]
+lea r8,[rsp+0x30]
+mov rdx,0xffffffff80000002
+call qword[sym.imp.ADVAPI32.dll_RegConnectRegistryW]
+mov ebx,eax
+test eax,eax
+jne 0x140062547
+mov rdx,qword[rsp+0x58]
+mov rcx,qword[rsp+0x30]
+lea rax,[rbp+0x228]
+mov r9d,0x20019
+xor r8d,r8d
+mov qword[rsp+0x20],rax
+call qword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+mov ebx,eax
+test eax,eax
+jne 0x14006253c
+mov rcx,qword[rbp+0x228]
+lea rax,[rbp+0x218]
+xor r9d,r9d
+mov qword[rsp+0x28],rax
+lea rax,[rbp-0x30]
+xor r8d,r8d
+xor edx,edx
+mov dword[rbp+0x218],0x1fe
+mov qword[rsp+0x20],rax
+call qword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov ebx,eax
+test eax,eax
+jne 0x14006252f
+mov eax,dword[rbp+0x218]
+lea rcx,[rbp-0x30]
+mov rdx,r12
+shr eax,1
+mov dword[rbp+0x218],eax
+mov word[rbp+rax*2-0x30],r13w
+call qword[sym.imp.ole32.dll_CLSIDFromString]
+mov ebx,eax
+mov rcx,qword[rbp+0x228]
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov rcx,qword[rsp+0x30]
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea rcx,[rsp+0x78]
+call fcn.1400024f0
+lea rcx,[rsp+0x38]
+call fcn.1400024f0
+lea rcx,[rsp+0x58]
+call fcn.1400024f0
+mov eax,ebx
+mov rbx,qword[rsp+0x310]
+add rsp,0x2e0
+pop r13
+pop r12
+pop rdi
+pop rsi
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1400728a0@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14000a1a4@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.140055a30@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140011620@72082bb1b08918279d6780845b69f5ff
+[similar_5_ref]: /report/fcn.140006360@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

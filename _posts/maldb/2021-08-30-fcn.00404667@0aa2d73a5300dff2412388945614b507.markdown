@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "fcn.00404667 @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00404667
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00406491][similar_1_ref] (sim.: 0.8775568493782309)
+2. [fcn.00409d1f][similar_2_ref] (sim.: 0.8759534434978227)
+3. [fcn.00404ba4][similar_3_ref] (sim.: 0.874914732993419)
+4. [fcn.00404ba4][similar_4_ref] (sim.: 0.874914732993419)
+5. [fcn.00405ed0][similar_5_ref] (sim.: 0.8743913697482669)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 8
+mov eax,0x439f1a
+call fcn.0041e4bb
+mov esi,ecx
+mov ebx,dword[ebp+8]
+cmp ebx,3
+jge 0x404782
+push dword[0x446b8c]
+xor edi,edi
+push edi
+push 0x100000
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+cmp eax,edi
+mov dword[ebp-0x14],eax
+je 0x404782
+mov eax,dword[esi+ebx*4+4]
+push edi
+push edi
+push edi
+push edi
+push edi
+push edi
+push edi
+push edi
+push edi
+push eax
+push str.Static
+push edi
+call dword[sym.imp.USER32.dll_CreateWindowExW]
+cmp eax,edi
+mov dword[esi+0x10],eax
+jne 0x4046d4
+call fcn.00404860
+push dword[ebp-0x14]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+jmp 0x404782
+push 0x43dd84
+lea eax,[ebp-0x10]
+push eax
+call fcn.0040439a
+sub ebx,edi
+mov dword[ebp-4],edi
+je 0x4046fd
+dec ebx
+je 0x4046f6
+dec ebx
+jne 0x40470b
+push str.Global3B615196_DDB1_4076_ADD5_C981FD8D206F
+jmp 0x404702
+push str.Global3B615196_DDB1_4076_ADD5_C981FD8D206F_RESTART
+jmp 0x404702
+push str.Global3B615196_DDB1_4076_ADD5_C981FD8D206F_REG
+lea eax,[ebp-0x10]
+push eax
+call fcn.004044b9
+mov eax,dword[ebp-0x10]
+cmp dword[eax-0xc],edi
+je 0x40476e
+push eax
+push edi
+push 0x1f0003
+call dword[sym.imp.KERNEL32.dll_OpenEventW]
+mov ebx,eax
+cmp ebx,edi
+je 0x404769
+push ebx
+call dword[sym.imp.KERNEL32.dll_SetEvent]
+push 0x64
+call dword[sym.imp.KERNEL32.dll_Sleep]
+mov edi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+push ebx
+call edi
+push 0xffffffffffffffff
+push dword[ebp-0x14]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+push dword[ebp-0x14]
+call edi
+push dword[ebp+8]
+mov ecx,esi
+call fcn.0040478c
+mov esi,eax
+mov eax,dword[ebp-0x10]
+add eax,0xfffffff0
+call fcn.00403f3a
+mov eax,esi
+jmp 0x404784
+call fcn.00404860
+push dword[ebp-0x14]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[ebp-0x10]
+add eax,0xfffffff0
+call fcn.00403f3a
+xor eax,eax
+call fcn.0041e55a
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406491@588e58b795d90bc66462e36cf410fee4
+[similar_2_ref]: /report/fcn.00409d1f@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.00404ba4@3f1595e66dc63331ba0930a0c79684ce
+[similar_4_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[similar_5_ref]: /report/fcn.00405ed0@ca0b3b300c37cf83aa8195cdd053964b
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

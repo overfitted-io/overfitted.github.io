@@ -1,0 +1,137 @@
+---
+layout: post
+title:  "fcn.14001040c @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14001040c
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.14001008c][similar_1_ref] (sim.: 0.9191068632651787)
+2. [fcn.1400580a0][similar_2_ref] (sim.: 0.9073394908263699)
+3. [fcn.1400158d4][similar_3_ref] (sim.: 0.8983639582108038)
+4. [fcn.140007470][similar_4_ref] (sim.: 0.8951835185692827)
+5. [fcn.14001d040][similar_5_ref] (sim.: 0.8936141687709861)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+mov dword[rsp+0x18],r8d
+mov dword[rsp+0x10],edx
+push rbp
+push rsi
+push rdi
+sub rsp,0x20
+xor ebx,ebx
+mov edi,r9d
+mov ebp,r9d
+lea eax,[rbx+8]
+and edi,3
+lea rsi,[rax+rcx]
+mov rcx,rsi
+and ecx,7
+je 0x140010441
+sub rax,rcx
+add rsi,rax
+test bpl,4
+je 0x140010513
+lea rdx,[0x140010640]
+lea rcx,[0x14001f048]
+call fcn.1400106c8
+lea rcx,[0x14001f058]
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rax,qword[0x14001f050]
+test rax,rax
+je 0x140010493
+cmp qword[rax+0x18],rsi
+jne 0x140010482
+cmp dword[rax+0x20],ebp
+je 0x140010487
+mov rax,qword[rax]
+jmp 0x140010472
+mov rbx,qword[rax+0x10]
+inc dword[rax+0x24]
+test rbx,rbx
+jne 0x140010504
+mov rcx,qword[0x14001e444]
+xor edx,edx
+lea r8d,[rdx+0x28]
+call qword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov rdi,rax
+test rax,rax
+je 0x140010504
+mov r8d,dword[rsp+0x50]
+mov edx,dword[rsp+0x48]
+mov r9d,ebp
+lea rcx,[rsi-8]
+and r9d,0xfffffffb
+call fcn.14001040c
+mov rbx,rax
+test rax,rax
+je 0x140010504
+mov qword[rax+0x10],rdi
+and qword[rdi+8],0
+mov qword[rdi+0x10],rax
+mov rax,qword[0x14001f050]
+mov qword[rdi+0x18],rsi
+mov dword[rdi+0x20],ebp
+mov dword[rdi+0x24],1
+mov qword[rdi],rax
+test rax,rax
+je 0x1400104fd
+mov qword[rax+8],rdi
+mov qword[0x14001f050],rdi
+lea rcx,[0x14001f058]
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+jmp 0x140010568
+mov rcx,qword[0x14001e444]
+xor edx,edx
+lea r8d,[rdx+0x60]
+call qword[sym.imp.KERNEL32.dll_HeapAlloc]
+xor ecx,ecx
+mov rbx,rax
+test rax,rax
+je 0x140010568
+mov qword[rax],rcx
+mov qword[rax+8],rcx
+mov qword[rax+0x10],rcx
+mov eax,dword[rsp+0x48]
+mov qword[rbx+0x20],rsi
+mov dword[rbx+0x28],eax
+mov eax,dword[rsp+0x50]
+mov dword[rbx+0x2c],eax
+cmp edi,1
+jbe 0x140010557
+mov dword[rbx+0x30],ecx
+jmp 0x140010568
+lea rcx,[rbx+0x38]
+mov dword[rbx+0x30],1
+call qword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov rax,rbx
+mov rbx,qword[rsp+0x40]
+add rsp,0x20
+pop rdi
+pop rsi
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14001008c@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.1400580a0@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.1400158d4@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.140007470@72082bb1b08918279d6780845b69f5ff
+[similar_5_ref]: /report/fcn.14001d040@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

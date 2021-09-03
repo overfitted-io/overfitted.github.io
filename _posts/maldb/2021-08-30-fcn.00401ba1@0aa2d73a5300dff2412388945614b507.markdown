@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.00401ba1 @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401ba1
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040193c][similar_1_ref] (sim.: 0.8533797821274167)
+2. [fcn.004019f8][similar_2_ref] (sim.: 0.8416157204330805)
+3. [fcn.00403b0c][similar_3_ref] (sim.: 0.7772252409112732)
+4. [fcn.0040cfad][similar_4_ref] (sim.: 0.7746110618974416)
+5. [fcn.0040337b][similar_5_ref] (sim.: 0.773292778469386)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 8
+mov eax,0x4381a4
+call fcn.0041e4bb
+xor edi,edi
+mov dword[ebp-0x10],edi
+push 0x43dd84
+lea eax,[ebp-0x14]
+push eax
+mov dword[ebp-4],edi
+call fcn.0040439a
+push edi
+push str.SOFTWARETencentQQPCMgr
+lea esi,[ebp-0x10]
+mov byte[ebp-4],1
+call fcn.0040424c
+test eax,eax
+je 0x401c1b
+lea eax,[ebp-0x14]
+push eax
+push str.InstallDir
+mov ebx,esi
+call fcn.004041bd
+mov eax,dword[ebp+8]
+push dword[ebp-0x14]
+mov eax,dword[eax]
+push eax
+call fcn.0041aa40
+test eax,eax
+pop ecx
+pop ecx
+jne 0x401c1b
+mov eax,dword[ebp-0x14]
+add eax,0xfffffff0
+call fcn.00403f3a
+cmp dword[ebp-0x10],edi
+je 0x401c16
+push dword[ebp-0x10]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+inc eax
+jmp 0x401c36
+mov eax,dword[ebp-0x14]
+add eax,0xfffffff0
+call fcn.00403f3a
+cmp dword[ebp-0x10],edi
+je 0x401c34
+push dword[ebp-0x10]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+call fcn.0041e55a
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040193c@0aa2d73a5300dff2412388945614b507
+[similar_2_ref]: /report/fcn.004019f8@0aa2d73a5300dff2412388945614b507
+[similar_3_ref]: /report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.0040cfad@b3771987fba16f4fba07d1109ec72c76
+[similar_5_ref]: /report/fcn.0040337b@0d7eb0bfa8278c92cad79678ce8bc0fd
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "fcn.0040287a @ 3bf433430f740e75dfaf9134a5696829"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040287a
+- **Origin (md5):** 3bf433430f740e75dfaf9134a5696829
+- **VirusTotal:** [virustotal.com/gui/file/3bf433430f740e75dfaf9134a5696829][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040287a][similar_1_ref] (sim.: 1.0)
+2. [fcn.00402baf][similar_2_ref] (sim.: 0.7156001057705532)
+3. [fcn.0040341e][similar_3_ref] (sim.: 0.7123943944291031)
+4. [fcn.0040341e][similar_4_ref] (sim.: 0.7123943944291031)
+5. [fcn.0040341e][similar_5_ref] (sim.: 0.7123943944291031)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x208
+push esi
+push 0x104
+lea eax,[ebp-0x208]
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push 6
+push 0
+call dword[sym.imp.ole32.dll_CoInitializeEx]
+mov esi,eax
+cmp esi,0x80010106
+je 0x4028b0
+test esi,esi
+js 0x4028c6
+lea eax,[ebp-0x208]
+push eax
+call fcn.00402a7f
+test esi,esi
+js 0x4028c6
+call dword[sym.imp.ole32.dll_CoUninitialize]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040287a@4bd33f73402d0d03c0318f793884eb34
+[similar_2_ref]: /report/fcn.00402baf@0cb2d61ee2bb08c35289961542a08513
+[similar_3_ref]: /report/fcn.0040341e@57989f43bf24a9272122210a17558c3d
+[similar_4_ref]: /report/fcn.0040341e@3a783d6a0e3505903843983e413a529e
+[similar_5_ref]: /report/fcn.0040341e@d287262b3c4caae6c69c406382125319
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bf433430f740e75dfaf9134a5696829

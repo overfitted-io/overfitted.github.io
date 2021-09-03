@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "fcn.0055fe80 @ 7453c96a6fbd42ec690b8deb53eafcba"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0055fe80
+- **Origin (md5):** 7453c96a6fbd42ec690b8deb53eafcba
+- **VirusTotal:** [virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00401470][similar_1_ref] (sim.: 0.8660324609191452)
+2. [fcn.0051f4c0][similar_2_ref] (sim.: 0.8014111304897653)
+3. [fcn.00455ef0][similar_3_ref] (sim.: 0.7993558127320223)
+4. [fcn.004e0e90][similar_4_ref] (sim.: 0.7978640804445438)
+5. [fcn.00471e50][similar_5_ref] (sim.: 0.7955123135040746)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+mov eax,dword[esp+0x10]
+push edi
+push 0
+push 0x20
+push 2
+push 0
+push 0
+push 0x40000000
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov edi,eax
+xor eax,eax
+cmp edi,0xffffffff
+je 0x55ff12
+mov eax,dword[esp+0x10]
+push ebx
+mov ebx,1
+push ebp
+cmp eax,ebx
+push esi
+mov dword[esp+0x10],ebx
+jle 0x55ff04
+mov ebp,dword[sym.imp.KERNEL32.dll_WriteFile]
+lea esi,[esp+0x2c]
+mov eax,dword[esi]
+lea edx,[esp+0x14]
+push 0
+push edx
+lea ecx,[eax+8]
+mov eax,dword[eax+4]
+push eax
+push ecx
+push edi
+call ebp
+test eax,eax
+je 0x55fefc
+mov eax,dword[esp+0x1c]
+inc ebx
+add esi,0xc
+cmp ebx,eax
+jl 0x55fec5
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[esp+0x10]
+pop esi
+pop ebp
+pop ebx
+pop edi
+add esp,8
+ret 
+mov dword[esp+0x10],0
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[esp+0x10]
+pop esi
+pop ebp
+pop ebx
+pop edi
+add esp,8
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401470@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_2_ref]: /report/fcn.0051f4c0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.00455ef0@a4175bd1311845689d3bca41d1d095ff
+[similar_4_ref]: /report/fcn.004e0e90@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00471e50@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba

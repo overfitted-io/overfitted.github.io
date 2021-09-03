@@ -1,0 +1,194 @@
+---
+layout: post
+title:  "fcn.0049987e @ ec199daf84c7d2c754bb8d013dd4880e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0049987e
+- **Origin (md5):** ec199daf84c7d2c754bb8d013dd4880e
+- **VirusTotal:** [virustotal.com/gui/file/ec199daf84c7d2c754bb8d013dd4880e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.004699d5][similar_1_ref] (sim.: 0.9182310337997321)
+2. [fcn.00490f71][similar_2_ref] (sim.: 0.9182034853700798)
+3. [fcn.004ae573][similar_3_ref] (sim.: 0.9163457403204532)
+4. [fcn.00495eb0][similar_4_ref] (sim.: 0.9155837663139215)
+5. [fcn.0049196d][similar_5_ref] (sim.: 0.9137506763499239)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x18
+push ebx
+push esi
+push edi
+xor ebx,ebx
+push 1
+push ebx
+push ebx
+push dword[ebp+8]
+mov dword[ebp-0x10],ebx
+mov dword[ebp-0xc],ebx
+call fcn.00496529
+mov dword[ebp-0x18],eax
+and eax,edx
+add esp,0x10
+mov dword[ebp-0x14],edx
+cmp eax,0xffffffff
+je 0x499906
+push 2
+push ebx
+push ebx
+push dword[ebp+8]
+call fcn.00496529
+mov ecx,eax
+and ecx,edx
+add esp,0x10
+cmp ecx,0xffffffff
+je 0x499906
+mov esi,dword[ebp+0xc]
+mov edi,dword[ebp+0x10]
+sub esi,eax
+sbb edi,edx
+js 0x49999b
+jg 0x4998df
+cmp esi,ebx
+jbe 0x49999b
+mov ebx,0x1000
+push ebx
+push 8
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov dword[ebp-4],eax
+test eax,eax
+jne 0x499912
+call fcn.00490ec2
+mov dword[eax],0xc
+call fcn.00490ec2
+mov eax,dword[eax]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+push 0x8000
+push dword[ebp+8]
+call fcn.0049a060
+pop ecx
+pop ecx
+mov dword[ebp-8],eax
+test edi,edi
+jl 0x499932
+jg 0x49992e
+cmp esi,ebx
+jb 0x499932
+mov eax,ebx
+jmp 0x499934
+mov eax,esi
+push eax
+push dword[ebp-4]
+push dword[ebp+8]
+call fcn.004948d2
+add esp,0xc
+cmp eax,0xffffffff
+je 0x49997e
+cdq 
+sub esi,eax
+sbb edi,edx
+js 0x499955
+jg 0x499924
+test esi,esi
+jne 0x499924
+mov esi,dword[ebp-0x10]
+push dword[ebp-8]
+push dword[ebp+8]
+call fcn.0049a060
+pop ecx
+pop ecx
+push dword[ebp-4]
+push 0
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+xor ebx,ebx
+jmp 0x499a04
+call fcn.00490ed5
+cmp dword[eax],5
+jne 0x499993
+call fcn.00490ec2
+mov dword[eax],0xd
+or esi,0xffffffff
+mov dword[ebp-0xc],esi
+jmp 0x499958
+cmp edi,ebx
+jg 0x499a10
+jl 0x4999a5
+cmp esi,ebx
+jae 0x499a10
+push ebx
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call fcn.00496529
+and eax,edx
+add esp,0x10
+cmp eax,0xffffffff
+je 0x499906
+push dword[ebp+8]
+call fcn.00499010
+pop ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_SetEndOfFile]
+neg eax
+sbb eax,eax
+neg eax
+dec eax
+cdq 
+mov dword[ebp-0x10],eax
+and eax,edx
+mov dword[ebp-0xc],edx
+cmp eax,0xffffffff
+jne 0x499a10
+call fcn.00490ec2
+mov dword[eax],0xd
+call fcn.00490ed5
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esi],eax
+mov esi,dword[ebp-0x10]
+and esi,dword[ebp-0xc]
+cmp esi,0xffffffff
+je 0x499906
+push ebx
+push dword[ebp-0x14]
+push dword[ebp-0x18]
+push dword[ebp+8]
+call fcn.00496529
+and eax,edx
+add esp,0x10
+cmp eax,0xffffffff
+je 0x499906
+xor eax,eax
+jmp 0x49990d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004699d5@ab923633032c47ff6d9c40ed36a40b2b
+[similar_2_ref]: /report/fcn.00490f71@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/fcn.004ae573@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00495eb0@ca482108b30ec675315f128a8f4fc7af
+[similar_5_ref]: /report/fcn.0049196d@a4175bd1311845689d3bca41d1d095ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/ec199daf84c7d2c754bb8d013dd4880e

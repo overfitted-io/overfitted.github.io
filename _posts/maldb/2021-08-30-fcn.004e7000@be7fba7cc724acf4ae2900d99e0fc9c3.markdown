@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.004e7000 @ be7fba7cc724acf4ae2900d99e0fc9c3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004e7000
+- **Origin (md5):** be7fba7cc724acf4ae2900d99e0fc9c3
+- **VirusTotal:** [virustotal.com/gui/file/be7fba7cc724acf4ae2900d99e0fc9c3][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.005244f0][similar_1_ref] (sim.: 0.8474924626268288)
+2. [fcn.004e6c50][similar_2_ref] (sim.: 0.8446012625239101)
+3. [fcn.00516740][similar_3_ref] (sim.: 0.8397335574571713)
+4. [fcn.005166c0][similar_4_ref] (sim.: 0.7817822862072626)
+5. [fcn.004e6f60][similar_5_ref] (sim.: 0.766043063902353)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+mov dword[ebp-8],ecx
+lea eax,[ebp-4]
+push eax
+mov ecx,dword[ebp-8]
+mov edx,dword[ecx+0x28]
+or edx,0x20019
+push edx
+push 0
+mov ecx,dword[ebp-8]
+add ecx,4
+call fcn.00403b50
+push eax
+mov eax,dword[ebp-8]
+mov ecx,dword[eax]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x4e7046
+mov edx,dword[ebp-4]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov al,1
+jmp 0x4e7048
+xor al,al
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005244f0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.004e6c50@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00516740@1160595edb203a63cb2ca3ce2ff04f47
+[similar_4_ref]: /report/fcn.005166c0@1160595edb203a63cb2ca3ce2ff04f47
+[similar_5_ref]: /report/fcn.004e6f60@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/be7fba7cc724acf4ae2900d99e0fc9c3

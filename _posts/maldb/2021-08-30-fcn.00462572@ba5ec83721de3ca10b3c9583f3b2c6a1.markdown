@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00462572 @ ba5ec83721de3ca10b3c9583f3b2c6a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00462572
+- **Origin (md5):** ba5ec83721de3ca10b3c9583f3b2c6a1
+- **VirusTotal:** [virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00462572][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00471d8d][similar_2_ref] (sim.: 0.8604198573187996)
+3. [fcn.00414b0e][similar_3_ref] (sim.: 0.8589849768697877)
+4. [fcn.00471cdd][similar_4_ref] (sim.: 0.8562672066535442)
+5. [fcn.0046ed59][similar_5_ref] (sim.: 0.8436995921761038)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x21c
+mov eax,dword[0x493560]
+xor eax,ebp
+mov dword[ebp-4],eax
+push edi
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov ecx,0x400000
+cmp eax,ecx
+je 0x4625c9
+mov edi,0x104
+lea eax,[ebp-0x20c]
+push edi
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x4625d8
+cmp eax,edi
+je 0x4625d8
+push 0
+push 0
+lea eax,[ebp-0x20c]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[0x4ae0f4],eax
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop edi
+call fcn.00443c54
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x4625ea
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x21c]
+call fcn.00460131
+push 0x48f67c
+lea eax,[ebp-0x21c]
+push eax
+call fcn.00443046
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00462572@53687e619dcac7d709f306d061d8daeb
+[similar_2_ref]: /report/fcn.00471d8d@ba63c5f75a2177720b184529dbf918cf
+[similar_3_ref]: /report/fcn.00414b0e@065d95e046989885ac0aa05648eeda39
+[similar_4_ref]: /report/fcn.00471cdd@843c4207147f5bab0e104024677fd9ec
+[similar_5_ref]: /report/fcn.0046ed59@27ac6b5c7fa1ad11790cdc733c25a701
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1

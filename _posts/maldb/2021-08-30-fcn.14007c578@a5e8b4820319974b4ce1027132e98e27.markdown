@@ -1,0 +1,52 @@
+---
+layout: post
+title:  "fcn.14007c578 @ a5e8b4820319974b4ce1027132e98e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14007c578
+- **Origin (md5):** a5e8b4820319974b4ce1027132e98e27
+- **VirusTotal:** [virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.140026710][similar_1_ref] (sim.: 0.7771788715159079)
+2. [fcn.14000ba00][similar_2_ref] (sim.: 0.7708481778744477)
+3. [fcn.1400267a0][similar_3_ref] (sim.: 0.7621064654014684)
+4. [fcn.14000b9a0][similar_4_ref] (sim.: 0.7509307391267643)
+5. [fcn.14009bb14][similar_5_ref] (sim.: 0.7508505033767643)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub rsp,0x28
+mov rax,qword[reloc.WS2_32.dll_ioctlsocket]
+test rax,rax
+je 0x14007c5af
+dec rax
+mov qword[reloc.WS2_32.dll_ioctlsocket],rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+mov rcx,qword[reloc.WS2_32.dll_ioctlsocket]
+lea rdx,[0x1400eb260]
+mov qword[rdx+rcx*8],rax
+add rsp,0x28
+ret 
+call fcn.14008bf14
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140026710@a5e8b4820319974b4ce1027132e98e27
+[similar_2_ref]: /report/fcn.14000ba00@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.1400267a0@a5e8b4820319974b4ce1027132e98e27
+[similar_4_ref]: /report/fcn.14000b9a0@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.14009bb14@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27

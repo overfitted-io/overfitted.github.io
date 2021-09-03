@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "method.CNewTypeDlg.virtual_284 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CNewTypeDlg.virtual\_284
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.CDialog.virtual\_328][similar_1_ref] (sim.: 0.8593277669887577)
+2. [method.CDialog.virtual\_292][similar_2_ref] (sim.: 0.8461103738482767)
+3. [method.CAboutDlg.virtual\_284][similar_3_ref] (sim.: 0.8380962852221284)
+4. [method.CDialog.virtual\_292][similar_4_ref] (sim.: 0.8348451531226977)
+5. [method.CDialog.virtual\_284][similar_5_ref] (sim.: 0.8322999400467356)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,ecx
+cmp dword[edi+0x58],0
+mov eax,dword[edi+0x5c]
+mov esi,dword[edi+0x60]
+mov dword[ebp-4],eax
+je 0x1001d291
+call fcn.10005f79
+mov ebx,dword[eax+0xc]
+push 5
+push dword[edi+0x58]
+push ebx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+je 0x1001d2a2
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov esi,eax
+xor ebx,ebx
+inc ebx
+test esi,esi
+je 0x1001d2db
+cmp word[esi+2],0xffff
+mov edx,dword[esi]
+jne 0x1001d2c0
+mov edx,dword[esi+0xc]
+movzx eax,word[esi+0x12]
+movzx ecx,word[esi+0x14]
+jmp 0x1001d2c8
+movzx eax,word[esi+0xa]
+movzx ecx,word[esi+0xc]
+test dx,0x1801
+jne 0x1001d2d9
+test ax,ax
+jne 0x1001d2d9
+test cx,cx
+je 0x1001d2db
+xor ebx,ebx
+cmp dword[edi+0x58],0
+je 0x1001d2ea
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+pop edi
+pop esi
+mov eax,ebx
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CDialog.virtual_328@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/method.CDialog.virtual_292@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/method.CAboutDlg.virtual_284@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/method.CDialog.virtual_292@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/method.CDialog.virtual_284@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

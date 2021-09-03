@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.140039400 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140039400
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.14003b520][similar_1_ref] (sim.: 0.8362070928431983)
+2. [fcn.14002c830][similar_2_ref] (sim.: 0.8130316159159234)
+3. [fcn.1400203dc][similar_3_ref] (sim.: 0.7963212355747764)
+4. [fcn.14000d380][similar_4_ref] (sim.: 0.7945750407952196)
+5. [fcn.14000ff80][similar_5_ref] (sim.: 0.786686286140341)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rsi
+push rdi
+sub rsp,0x40
+and qword[rax-0x18],0
+xor r9d,r9d
+mov rdi,r8
+mov rsi,rdx
+mov dword[rax-0x20],0x80
+lea r8d,[r9+1]
+mov edx,0x40000000
+mov dword[rax-0x28],3
+call qword[sym.imp.KERNEL32.dll_CreateFileW]
+mov rbx,rax
+cmp rax,0xffffffffffffffff
+je 0x14003945f
+mov r9,rdi
+xor r8d,r8d
+mov rdx,rsi
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_SetFileTime]
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+mov rbx,qword[rsp+0x50]
+mov rsi,qword[rsp+0x58]
+add rsp,0x40
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14003b520@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14002c830@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.1400203dc@72082bb1b08918279d6780845b69f5ff
+[similar_4_ref]: /report/fcn.14000d380@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.14000ff80@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

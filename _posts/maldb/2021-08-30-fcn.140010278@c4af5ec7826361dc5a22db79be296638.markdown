@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "fcn.140010278 @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140010278
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.140010578][similar_1_ref] (sim.: 0.8528664554657948)
+2. [fcn.14000c094][similar_2_ref] (sim.: 0.8453696208600412)
+3. [fcn.14000b9a0][similar_3_ref] (sim.: 0.8389213910466137)
+4. [fcn.1400157d8][similar_4_ref] (sim.: 0.8243807720773028)
+5. [fcn.14000fc54][similar_5_ref] (sim.: 0.8171927758585198)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+push rdi
+sub rsp,0x20
+cmp dword[rcx+0x30],0
+mov rdi,rcx
+je 0x140010295
+add rcx,0x38
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov r8,qword[rdi+8]
+test r8,r8
+je 0x1400102b8
+mov rcx,qword[0x14001e444]
+mov rbx,qword[r8]
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+mov r8,rbx
+test rbx,rbx
+jne 0x14001029e
+mov r8,qword[rdi]
+test r8,r8
+je 0x1400102da
+mov rcx,qword[0x14001e444]
+mov rbx,qword[r8]
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+mov r8,rbx
+test rbx,rbx
+jne 0x1400102c0
+and qword[rdi],0
+and qword[rdi+8],0
+and qword[rdi+0x18],0
+cmp dword[rdi+0x30],0
+je 0x1400102f8
+lea rcx,[rdi+0x38]
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov rbx,qword[rsp+0x30]
+add rsp,0x20
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140010578@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.14000c094@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.14000b9a0@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.1400157d8@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.14000fc54@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

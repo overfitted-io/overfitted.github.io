@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00403a20 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403a20
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040e480][similar_1_ref] (sim.: 0.8963436072270617)
+2. [fcn.004038e0][similar_2_ref] (sim.: 0.8207357847084824)
+3. [fcn.00419a20][similar_3_ref] (sim.: 0.819393329999864)
+4. [fcn.00428dc0][similar_4_ref] (sim.: 0.8176752718051381)
+5. [fcn.00428dc0][similar_5_ref] (sim.: 0.8176752718051381)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+push ebx
+mov ebx,ecx
+push esi
+push edi
+mov eax,dword[ebx]
+mov ecx,dword[eax-0x10]
+lea esi,[eax-0x10]
+mov dword[ebp-8],eax
+mov eax,dword[esi+4]
+mov dword[ebp-4],eax
+mov eax,dword[ecx]
+cmp eax,vtable.ATL::CAtlStringMgr.0
+jne 0x403ace
+mov eax,dword[ecx]
+mov edi,dword[ebp+8]
+push 2
+push edi
+call dword[eax]
+mov dword[ebp+8],eax
+test eax,eax
+je 0x403ad8
+cmp dword[ebp-4],edi
+cmovl edi,dword[ebp-4]
+lea edx,[edi*2+2]
+push edx
+push dword[ebp-8]
+lea edi,[eax+0x10]
+mov ecx,edi
+call fcn.00405850
+mov eax,dword[ebp+8]
+add esp,8
+mov ecx,dword[ebp-4]
+mov dword[eax+4],ecx
+or eax,0xffffffff
+lock xadd dword[esi+0xc],eax
+dec eax
+test eax,eax
+jg 0x403ac3
+mov ecx,dword[esi]
+push esi
+mov eax,dword[ecx]
+mov edx,dword[eax+4]
+cmp eax,vtable.ATL::CAtlStringMgr.0
+jne 0x403add
+mov ecx,dword[ecx+4]
+mov eax,dword[ecx]
+mov edx,dword[eax+4]
+cmp eax,vtable.ATL::CWin32Heap.0
+jne 0x403add
+push 0
+push dword[ecx+4]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov dword[ebx],edi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+mov dword[ebx],edi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+call dword[eax+0x10]
+mov ecx,eax
+jmp 0x403a49
+call fcn.00403af0
+call edx
+jmp 0x403ac3
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040e480@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.004038e0@4fe38de7c6c86a1bad209560fa052231
+[similar_3_ref]: /report/fcn.00419a20@e2ba7f10eb234338a49853c34d7d9c56
+[similar_4_ref]: /report/fcn.00428dc0@9868510768324dde7e5ccf745520e27a
+[similar_5_ref]: /report/fcn.00428dc0@60b56bcd9822c2761bd5abef67177c49
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

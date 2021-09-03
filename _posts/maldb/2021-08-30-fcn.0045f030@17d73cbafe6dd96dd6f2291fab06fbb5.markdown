@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.0045f030 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0045f030
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00433720][similar_1_ref] (sim.: 0.8710908326138398)
+2. [fcn.0045b590][similar_2_ref] (sim.: 0.8348588893920286)
+3. [fcn.00457ff0][similar_3_ref] (sim.: 0.8283469111463476)
+4. [fcn.004580e0][similar_4_ref] (sim.: 0.8247184110952737)
+5. [fcn.0042bf70][similar_5_ref] (sim.: 0.8196223310645364)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x218
+mov eax,dword[0x589c98]
+xor eax,ebp
+mov dword[ebp-0xc],eax
+xor eax,eax
+mov word[ebp-0x218],ax
+push 0x206
+push 0
+lea ecx,[ebp-0x216]
+push ecx
+call fcn.004bbdd0
+add esp,0xc
+push 0x104
+mov edx,dword[ebp+8]
+push edx
+lea eax,[ebp-0x218]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcpynW]
+lea ecx,[ebp-0x218]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFindFileNameW]
+mov dword[ebp-4],eax
+xor edx,edx
+mov eax,dword[ebp-4]
+mov word[eax],dx
+lea ecx,[ebp-0x218]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
+test eax,eax
+je 0x45f0a8
+mov eax,1
+jmp 0x45f0c3
+lea edx,[ebp-0x218]
+push edx
+push 0
+call dword[sym.imp.SHELL32.dll_SHCreateDirectory]
+mov dword[ebp-8],eax
+xor eax,eax
+cmp dword[ebp-8],0
+sete al
+mov ecx,dword[ebp-0xc]
+xor ecx,ebp
+call fcn.004bbd2d
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00433720@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0045b590@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.00457ff0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/fcn.004580e0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.0042bf70@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

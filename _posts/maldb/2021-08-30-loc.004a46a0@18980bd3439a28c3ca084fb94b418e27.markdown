@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "loc.004a46a0 @ 18980bd3439a28c3ca084fb94b418e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.004a46a0
+- **Origin (md5):** 18980bd3439a28c3ca084fb94b418e27
+- **VirusTotal:** [virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [loc.004a9d35][similar_1_ref] (sim.: 0.9366644384523142)
+2. [loc.004bea5c][similar_2_ref] (sim.: 0.917142927746706)
+3. [loc.005a9c91][similar_3_ref] (sim.: 0.915464560540157)
+4. [loc.0040da15][similar_4_ref] (sim.: 0.8899244152039807)
+5. [loc.0040ec24][similar_5_ref] (sim.: 0.8860683939625545)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+mov esi,ecx
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+xor ecx,ecx
+push 1
+mov cl,ah
+movzx edx,al
+movzx ecx,cl
+shl edx,8
+add ecx,edx
+mov dword[esi+0x54],ecx
+mov ecx,eax
+shr ecx,0x1f
+cmp al,4
+mov dword[esi+0x58],ecx
+sbb eax,eax
+pop ecx
+inc eax
+xor ebx,ebx
+sub ecx,eax
+cmp eax,ebx
+mov dword[esi+0x5c],eax
+mov dword[esi+0x60],ecx
+mov dword[esi+0x64],eax
+mov dword[esi+0x68],ebx
+je 0x4a46f3
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetProcessVersion]
+cmp eax,0x40000
+sbb eax,eax
+inc eax
+mov dword[esi+0x68],eax
+mov ecx,esi
+call fcn.0049ffc3
+mov ecx,esi
+mov dword[esi+0x24],ebx
+call fcn.0049ff7f
+mov edi,dword[sym.imp.USER32.dll_LoadCursorA]
+push 0x7f02
+push ebx
+call edi
+push 0x7f00
+push ebx
+mov dword[esi+0x3c],eax
+call edi
+mov dword[esi+0x40],eax
+xor eax,eax
+cmp dword[esi+0x5c],ebx
+mov dword[esi+0x50],ebx
+mov dword[esi+0x44],ebx
+pop edi
+setne al
+inc eax
+mov dword[esi+0x10],eax
+mov dword[esi+0x14],eax
+mov eax,esi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.004a9d35@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/loc.004bea5c@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_3_ref]: /report/loc.005a9c91@7453c96a6fbd42ec690b8deb53eafcba
+[similar_4_ref]: /report/loc.0040da15@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_5_ref]: /report/loc.0040ec24@a2475448bf4050c1583e1970984a4d00
+[virustotal_ref]: https://www.virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27

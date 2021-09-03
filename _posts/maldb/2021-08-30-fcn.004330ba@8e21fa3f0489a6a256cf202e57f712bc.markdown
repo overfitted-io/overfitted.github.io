@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.004330ba @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004330ba
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00435384][similar_1_ref] (sim.: 0.7427259743862864)
+2. [fcn.00435384][similar_2_ref] (sim.: 0.7427259743862864)
+3. [fcn.00435384][similar_3_ref] (sim.: 0.7427259743862864)
+4. [fcn.005578c1][similar_4_ref] (sim.: 0.7425163065515148)
+5. [fcn.00557903][similar_5_ref] (sim.: 0.7291975325337283)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x47ce10],0
+jne 0x433127
+push 0x45ede8
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+mov dword[0x47ce10],eax
+jne 0x4330dc
+jmp fcn.0042e9c1
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CreateActCtxW
+push eax
+call esi
+push str.ReleaseActCtx
+push dword[0x47ce10]
+mov dword[0x47ce00],eax
+call esi
+push str.ActivateActCtx
+push dword[0x47ce10]
+mov dword[0x47ce04],eax
+call esi
+push str.DeactivateActCtx
+push dword[0x47ce10]
+mov dword[0x47ce08],eax
+call esi
+mov dword[0x47ce0c],eax
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00435384@8e21fa3f0489a6a256cf202e57f712bc
+[similar_2_ref]: /report/fcn.00435384@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_3_ref]: /report/fcn.00435384@ff219f45286905b4a87327ca719363be
+[similar_4_ref]: /report/fcn.005578c1@14b20b07906a36e23f2230c8042160f2
+[similar_5_ref]: /report/fcn.00557903@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

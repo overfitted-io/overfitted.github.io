@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.005646ba @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005646ba
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00564734][similar_1_ref] (sim.: 0.9194813473591723)
+2. [fcn.0041235e][similar_2_ref] (sim.: 0.8193748505436096)
+3. [fcn.10007749][similar_3_ref] (sim.: 0.8161887380505279)
+4. [fcn.00434f55][similar_4_ref] (sim.: 0.81396928705248)
+5. [fcn.00434f55][similar_5_ref] (sim.: 0.81396928705248)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x24
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+mov ebx,dword[ebp+0xc]
+push esi
+mov esi,ecx
+cmp dword[esi+0x54],0
+push edi
+mov edi,dword[ebp+8]
+je 0x56470d
+push edi
+call fcn.00564672
+mov esi,eax
+test esi,esi
+je 0x564732
+push 4
+lea eax,[ebp+0x10]
+push eax
+push 4
+push 0
+push ebx
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+push esi
+mov edi,eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+test edi,edi
+sete al
+jmp 0x564732
+push dword[ebp+0x10]
+lea eax,[ebp-0x24]
+push 0x5ba228
+push 0x10
+push eax
+call fcn.00575deb
+add esp,0x10
+push dword[esi+0x68]
+lea eax,[ebp-0x24]
+push eax
+push ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_WritePrivateProfileStringW]
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.0057147f
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00564734@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0041235e@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.10007749@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.00434f55@ff219f45286905b4a87327ca719363be
+[similar_5_ref]: /report/fcn.00434f55@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

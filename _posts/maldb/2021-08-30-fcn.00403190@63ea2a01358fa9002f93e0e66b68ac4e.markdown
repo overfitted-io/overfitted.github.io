@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.00403190 @ 63ea2a01358fa9002f93e0e66b68ac4e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403190
+- **Origin (md5):** 63ea2a01358fa9002f93e0e66b68ac4e
+- **VirusTotal:** [virustotal.com/gui/file/63ea2a01358fa9002f93e0e66b68ac4e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00403190][similar_1_ref] (sim.: 1.0)
+2. [fcn.00403190][similar_2_ref] (sim.: 1.0)
+3. [fcn.00403190][similar_3_ref] (sim.: 1.0)
+4. [fcn.00403190][similar_4_ref] (sim.: 1.0)
+5. [fcn.00403190][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x40
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov dword[ebp-0xc],eax
+lea eax,[ebp-0x28]
+push eax
+lea ecx,[ebp-0x30]
+push ecx
+lea edx,[ebp-0x38]
+push edx
+lea eax,[ebp-0x18]
+push eax
+mov ecx,dword[ebp-0xc]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetProcessTimes]
+test eax,eax
+je 0x4031c6
+mov dword[ebp-0x10],1
+jmp 0x4031cd
+mov dword[ebp-0x10],0
+movsd xmm0,qword[0x493a80]
+movsd qword[ebp-0x40],xmm0
+mov edx,dword[ebp-0x14]
+mov dword[ebp-4],edx
+cvtsi2sd xmm0,dword[ebp-4]
+mov eax,dword[ebp-4]
+shr eax,0x1f
+addsd xmm0,qword[eax*8+0x493ab0]
+mulsd xmm0,qword[0x493a98]
+mov ecx,dword[ebp-0x18]
+mov dword[ebp-8],ecx
+cvtsi2sd xmm1,dword[ebp-8]
+mov edx,dword[ebp-8]
+shr edx,0x1f
+addsd xmm1,qword[edx*8+0x493ab0]
+mulsd xmm1,qword[0x493a80]
+addsd xmm0,xmm1
+movsd qword[ebp-0x20],xmm0
+fld qword[ebp-0x20]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403190@394c28c779b535ac47055481e5ab2427
+[similar_2_ref]: /report/fcn.00403190@c0b08c2b3a5f375f1494c2141d2fd209
+[similar_3_ref]: /report/fcn.00403190@0638e71dd9f2155e0fa02353e4ce6af1
+[similar_4_ref]: /report/fcn.00403190@f56350f8eee3139ca4a92176576e560d
+[similar_5_ref]: /report/fcn.00403190@899c547f2f595a257b6323d1960b704f
+[virustotal_ref]: https://www.virustotal.com/gui/file/63ea2a01358fa9002f93e0e66b68ac4e

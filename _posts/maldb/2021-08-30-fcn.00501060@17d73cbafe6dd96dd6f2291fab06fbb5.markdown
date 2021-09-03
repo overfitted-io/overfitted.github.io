@@ -1,0 +1,158 @@
+---
+layout: post
+title:  "fcn.00501060 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00501060
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00452f60][similar_1_ref] (sim.: 0.9414116286256977)
+2. [fcn.004c2a50][similar_2_ref] (sim.: 0.9299937958608512)
+3. [fcn.004aba90][similar_3_ref] (sim.: 0.9154878401015781)
+4. [fcn.00487640][similar_4_ref] (sim.: 0.9092941771303413)
+5. [fcn.0050b490][similar_5_ref] (sim.: 0.9002809930969755)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10c
+mov eax,dword[0x589c98]
+xor eax,esp
+mov dword[esp+0x108],eax
+push ebp
+mov ebp,dword[esp+0x114]
+cmp dword[ebp+0x8c],2
+push edi
+mov edi,dword[ebp]
+mov dword[esp+0xc],edi
+je 0x5011d5
+cmp dword[ebp+0x1d8],0
+push ebx
+push esi
+jne 0x5011ca
+mov esi,dword[esp+0x124]
+lea eax,[esp+0x10]
+push eax
+lea ecx,[esp+0x9c]
+push ecx
+mov ebx,0x80
+push esi
+mov dword[esp+0x1c],ebx
+call dword[sym.imp.WS2_32.dll_getpeername]
+test eax,eax
+je 0x5010ec
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov esi,eax
+push esi
+push ebp
+call fcn.004f3450
+push eax
+push esi
+push str.getpeername___failed_with_errno__d:__s
+push edi
+call fcn.004fea60
+add esp,0x18
+jmp 0x5011d3
+push ebx
+lea edx,[esp+0x1c]
+push 0
+push edx
+mov dword[esp+0x1c],ebx
+call fcn.004bbdd0
+add esp,0xc
+lea eax,[esp+0x10]
+push eax
+lea ecx,[esp+0x1c]
+push ecx
+push esi
+call dword[sym.imp.WS2_32.dll_getsockname]
+test eax,eax
+je 0x501139
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov esi,eax
+push esi
+push ebp
+call fcn.004f3450
+push eax
+push esi
+push str.getsockname___failed_with_errno__d:__s
+push edi
+call fcn.004fea60
+add esp,0x18
+jmp 0x5011d3
+lea edi,[ebp+0xb8]
+lea ebx,[ebp+0xe8]
+lea esi,[esp+0x98]
+call fcn.00501020
+test eax,eax
+jne 0x50117a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov esi,eax
+push esi
+push ebp
+call fcn.004f3450
+mov edx,dword[esp+0x1c]
+push eax
+push esi
+push str.ssrem_inet_ntop___failed_with_errno__d:__s
+push edx
+call fcn.004fea60
+add esp,0x18
+jmp 0x5011d3
+lea edi,[ebp+0x58]
+mov ecx,0xb
+lea esi,[ebp+0xb8]
+rep movsd dword es:[edi],dword ptr[esi]
+movsw word es:[edi],word ptr[esi]
+lea ebx,[ebp+0x11c]
+lea edi,[ebp+0xec]
+lea esi,[esp+0x18]
+call fcn.00501020
+test eax,eax
+jne 0x5011ca
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov esi,eax
+push esi
+push ebp
+call fcn.004f3450
+push eax
+mov eax,dword[esp+0x20]
+push esi
+push str.ssloc_inet_ntop___failed_with_errno__d:__s
+push eax
+call fcn.004fea60
+add esp,0x18
+jmp 0x5011d3
+push ebp
+call fcn.00500fc0
+add esp,4
+pop esi
+pop ebx
+mov ecx,dword[esp+0x110]
+pop edi
+pop ebp
+xor ecx,esp
+call fcn.004bbd2d
+add esp,0x10c
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00452f60@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.004c2a50@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.004aba90@1160595edb203a63cb2ca3ce2ff04f47
+[similar_4_ref]: /report/fcn.00487640@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.0050b490@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

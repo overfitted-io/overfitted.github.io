@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.657417a8 @ 984f203c4ed51e246e26dafed8395c7a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.657417a8
+- **Origin (md5):** 984f203c4ed51e246e26dafed8395c7a
+- **VirusTotal:** [virustotal.com/gui/file/984f203c4ed51e246e26dafed8395c7a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [loc.005a0186][similar_1_ref] (sim.: 0.8390352844510236)
+2. [loc.005a0186][similar_2_ref] (sim.: 0.8390352844510236)
+3. [loc.0042eb3c][similar_3_ref] (sim.: 0.8340149815745781)
+4. [loc.004f89ff][similar_4_ref] (sim.: 0.8306983555501061)
+5. [loc.1002ba9c][similar_5_ref] (sim.: 0.8276562841575208)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp ecx,dword[0x65763040]
+jne 0x657417b2
+ret 
+jmp 0x657417be
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x657632d8],eax
+mov dword[0x657632d4],ecx
+mov dword[0x657632d0],edx
+mov dword[0x657632cc],ebx
+mov dword[0x657632c8],esi
+mov dword[0x657632c4],edi
+mov word[0x657632f0],ss
+mov word[0x657632e4],cs
+mov word[0x657632c0],ds
+mov word[0x657632bc],es
+mov word[0x657632b8],fs
+mov word[0x657632b4],gs
+pushfd 
+pop dword[0x657632e8]
+mov eax,dword[ebp]
+mov dword[0x657632dc],eax
+mov eax,dword[ebp+4]
+mov dword[0x657632e0],eax
+lea eax,[ebp+8]
+mov dword[0x657632ec],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x65763228],0x10001
+mov eax,dword[0x657632e0]
+mov dword[0x657631dc],eax
+mov dword[0x657631d0],0xc0000409
+mov dword[0x657631d4],1
+mov eax,dword[0x65763040]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x65763044]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x65763220],eax
+push 1
+call sub.MSVCR90.dll__crt_debugger_hook
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x6575b2cc
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x65763220],0
+jne 0x657418b0
+push 1
+call sub.MSVCR90.dll__crt_debugger_hook
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.005a0186@7ac14f4fe1d72f11ebc5f62db6a11799
+[similar_2_ref]: /report/loc.005a0186@a19fdf17f648388c26b301d17cf9cf93
+[similar_3_ref]: /report/loc.0042eb3c@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/loc.004f89ff@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/loc.1002ba9c@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/984f203c4ed51e246e26dafed8395c7a

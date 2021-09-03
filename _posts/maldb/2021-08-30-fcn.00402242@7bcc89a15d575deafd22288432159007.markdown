@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.00402242 @ 7bcc89a15d575deafd22288432159007"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402242
+- **Origin (md5):** 7bcc89a15d575deafd22288432159007
+- **VirusTotal:** [virustotal.com/gui/file/7bcc89a15d575deafd22288432159007][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00402be0][similar_1_ref] (sim.: 0.8353861230777104)
+2. [fcn.00402644][similar_2_ref] (sim.: 0.8220483004212388)
+3. [fcn.00402644][similar_3_ref] (sim.: 0.8220483004212388)
+4. [fcn.00402644][similar_4_ref] (sim.: 0.8220483004212388)
+5. [fcn.00402644][similar_5_ref] (sim.: 0.8220483004212388)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+push esi
+push edi
+lea edi,[eax*4+0x412b34]
+mov eax,dword[edi]
+mov edx,dword[section..data]
+or esi,0xffffffff
+mov ecx,edx
+xor edx,eax
+and ecx,0x1f
+ror edx,cl
+cmp edx,esi
+je 0x4022c3
+test edx,edx
+je 0x402271
+mov eax,edx
+jmp 0x4022c5
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call fcn.0040217c
+pop ecx
+pop ecx
+test eax,eax
+je 0x4022ac
+push dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x4022ac
+mov edx,dword[section..data]
+and edx,0x1f
+push 0x20
+pop ecx
+sub ecx,edx
+mov edx,eax
+ror edx,cl
+xor edx,dword[section..data]
+xchg dword[edi],edx
+jmp 0x4022c5
+mov eax,dword[section..data]
+push 0x20
+and eax,0x1f
+pop ecx
+sub ecx,eax
+ror esi,cl
+xor esi,dword[section..data]
+xchg dword[edi],esi
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402be0@a6cf94ccbcdc43329b71e021286f4210
+[similar_2_ref]: /report/fcn.00402644@70e9569a63e2c5481707e2ba7c663021
+[similar_3_ref]: /report/fcn.00402644@654e6b0be4a673e5e2e5701863f36729
+[similar_4_ref]: /report/fcn.00402644@ebaf0937e1ef2b2ef3c4d1d19ad40f05
+[similar_5_ref]: /report/fcn.00402644@9c3e9743674b44dfd8ec923c8ffbe016
+[virustotal_ref]: https://www.virustotal.com/gui/file/7bcc89a15d575deafd22288432159007

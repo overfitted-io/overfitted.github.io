@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00408787 @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408787
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00408e3d][similar_1_ref] (sim.: 0.8017301572422479)
+2. [fcn.0041c2fc][similar_2_ref] (sim.: 0.7946313898558721)
+3. [fcn.0040cfad][similar_3_ref] (sim.: 0.7850657858142601)
+4. [fcn.00409347][similar_4_ref] (sim.: 0.7755549181497465)
+5. [fcn.0040f884][similar_5_ref] (sim.: 0.7726188285257827)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 8
+mov eax,0x4c444e
+call fcn.0044a5d1
+mov esi,ecx
+xor ebx,ebx
+mov dword[ebp-4],ebx
+mov eax,dword[esi+0x10]
+lea ecx,[ebp-0x10]
+push ecx
+mov ecx,dword[esi+4]
+xor edi,edi
+inc edi
+or ecx,edi
+push ecx
+push ebx
+push eax
+push dword[esi+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+mov dword[esi],eax
+cmp eax,ebx
+je 0x4087d7
+mov dword[ebp-4],edi
+or dword[ebp-4],0xffffffff
+mov ecx,dword[ebp+8]
+add ecx,0xfffffff0
+call fcn.0040771f
+mov eax,ebx
+call fcn.0044a6a9
+ret 4
+push ebx
+push ebx
+lea eax,[ebp-0x14]
+push eax
+push ebx
+push dword[ebp+8]
+mov dword[ebp-0x14],edi
+push dword[ebp-0x10]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+push dword[ebp-0x10]
+mov dword[esi],eax
+cmp eax,ebx
+jne 0x408808
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov ebx,dword[ebp-0x14]
+mov dword[ebp-4],2
+jmp 0x4087be
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov dword[ebp-4],3
+jmp 0x4087be
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408e3d@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.0041c2fc@b3771987fba16f4fba07d1109ec72c76
+[similar_3_ref]: /report/fcn.0040cfad@b3771987fba16f4fba07d1109ec72c76
+[similar_4_ref]: /report/fcn.00409347@b3771987fba16f4fba07d1109ec72c76
+[similar_5_ref]: /report/fcn.0040f884@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

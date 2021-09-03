@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.00408af4 @ 6f11dca39a331a6e158b2810d4d8234f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408af4
+- **Origin (md5):** 6f11dca39a331a6e158b2810d4d8234f
+- **VirusTotal:** [virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00408af4][similar_1_ref] (sim.: 1.0)
+2. [fcn.0100589b][similar_2_ref] (sim.: 0.7970245743045585)
+3. [fcn.0100589b][similar_3_ref] (sim.: 0.7970245743045585)
+4. [fcn.01003ac7][similar_4_ref] (sim.: 0.7905780520384235)
+5. [fcn.01003ac7][similar_5_ref] (sim.: 0.7905780520384235)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+0xc]
+dec eax
+dec eax
+je 0x408b87
+sub eax,0xe
+je 0x408b25
+sub eax,0x101
+je 0x408b15
+pop ebp
+jmp dword[sym.imp.USER32.DLL_DefWindowProcW]
+mov eax,dword[ebp+0x10]
+movzx eax,ax
+sub eax,0x3e8
+je 0x408b35
+dec eax
+jne 0x408ba3
+call fcn.00408f32
+push dword[ebp+8]
+call dword[sym.imp.USER32.DLL_DestroyWindow]
+jmp 0x408ba3
+push esi
+push edi
+push 0xffffffffffffffeb
+push dword[ebp+8]
+call dword[sym.imp.USER32.DLL_GetWindowLongW]
+push dword[0x4170b0]
+mov edi,eax
+call dword[sym.imp.USER32.DLL_GetWindowTextLengthW]
+lea esi,[eax+1]
+lea ecx,[esi+esi]
+push ecx
+push 0
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+push esi
+push eax
+push dword[0x4170b0]
+mov dword[edi],eax
+call dword[sym.imp.USER32.DLL_GetWindowTextW]
+call fcn.00408f32
+push dword[ebp+8]
+call dword[sym.imp.USER32.DLL_DestroyWindow]
+pop edi
+pop esi
+jmp 0x408ba3
+push dword[0x416ff0]
+push dword[0x41610c]
+call dword[sym.imp.USER32.DLL_UnregisterClassW]
+mov dword[0x4170a8],1
+xor eax,eax
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408af4@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_2_ref]: /report/fcn.0100589b@bcf1729ded12dd6e2e4c565a6c795602
+[similar_3_ref]: /report/fcn.0100589b@7be42d186738ec1816397d616de2cb9d
+[similar_4_ref]: /report/fcn.01003ac7@7be42d186738ec1816397d616de2cb9d
+[similar_5_ref]: /report/fcn.01003ac7@bcf1729ded12dd6e2e4c565a6c795602
+[virustotal_ref]: https://www.virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f

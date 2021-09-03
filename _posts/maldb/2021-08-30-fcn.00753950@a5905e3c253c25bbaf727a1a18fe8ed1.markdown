@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.00753950 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00753950
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.007539f0][similar_1_ref] (sim.: 0.8051278538176185)
+2. [fcn.0069e360][similar_2_ref] (sim.: 0.7749289502850626)
+3. [fcn.006936c0][similar_3_ref] (sim.: 0.7709819167729461)
+4. [fcn.00633e60][similar_4_ref] (sim.: 0.7685889599972321)
+5. [fcn.005ff2e0][similar_5_ref] (sim.: 0.7680613278838486)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rsi
+push rbx
+sub rsp,0x28
+mov eax,dword[rcx]
+mov rbx,rcx
+test eax,eax
+je 0x753990
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp eax,dword[rbx+8]
+mov esi,eax
+je 0x753979
+lea rcx,[rbx+0x10]
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov dword[rbx+8],esi
+add dword[rbx+0xc],1
+je 0x7539e3
+add rsp,0x28
+pop rbx
+pop rsi
+ret 
+lock add dword[rcx+4],1
+je 0x7539c0
+mov eax,dword[rcx]
+mov rsi,qword[sym.imp.KERNEL32.dll_Sleep]
+test eax,eax
+jne 0x75395f
+xor ecx,ecx
+call rsi
+mov eax,dword[rbx]
+test eax,eax
+jne 0x75395f
+xor ecx,ecx
+call rsi
+mov eax,dword[rbx]
+test eax,eax
+je 0x7539a4
+jmp 0x75395f
+mov dword[rcx+8],0
+mov dword[rcx+0xc],0
+lea rcx,[rcx+0x10]
+call qword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov dword[rbx],1
+jmp 0x75395f
+call sub.msvcrt.dll_abort
+nop 
+nop dword[rax]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.007539f0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.0069e360@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006936c0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00633e60@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.005ff2e0@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

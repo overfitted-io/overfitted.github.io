@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00410aa0 @ db0bb0926cbc24a905ae237e61cb9c73"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00410aa0
+- **Origin (md5):** db0bb0926cbc24a905ae237e61cb9c73
+- **VirusTotal:** [virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00410dc0][similar_1_ref] (sim.: 0.8245979341474138)
+2. [fcn.004112d0][similar_2_ref] (sim.: 0.816084843284153)
+3. [fcn.004113a0][similar_3_ref] (sim.: 0.7832212742561504)
+4. [fcn.0040ae60][similar_4_ref] (sim.: 0.77254124896046)
+5. [fcn.004261b0][similar_5_ref] (sim.: 0.7712674945712434)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+push ebx
+mov ebx,eax
+sub esp,0x10
+mov eax,dword[eax+8]
+test eax,eax
+je 0x410af2
+mov esi,dword[ebx+0x14]
+test esi,esi
+jne 0x410b07
+mov dword[esp+8],0
+mov dword[esp+4],1
+mov eax,dword[ebx+0x18]
+mov dword[esp],eax
+call fcn.00413650
+cmp eax,0x8a
+je 0x410af9
+test eax,eax
+mov esi,eax
+jne 0x410afe
+mov dword[ebx+0xc],1
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov dword[ebx+0x14],eax
+jmp 0x410afe
+mov ecx,dword[ebx+0x14]
+test ecx,ecx
+je 0x410ab8
+mov esi,0x10
+lea esp,[ebp-8]
+mov eax,esi
+pop ebx
+pop esi
+pop ebp
+ret 
+cmp eax,2
+jne 0x410af9
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp esi,eax
+jne 0x410af9
+add ebx,0xc
+xor esi,esi
+mov dword[esp],ebx
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+sub esp,4
+jmp 0x410afe
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00410dc0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_2_ref]: /report/fcn.004112d0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_3_ref]: /report/fcn.004113a0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_4_ref]: /report/fcn.0040ae60@ca482108b30ec675315f128a8f4fc7af
+[similar_5_ref]: /report/fcn.004261b0@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73

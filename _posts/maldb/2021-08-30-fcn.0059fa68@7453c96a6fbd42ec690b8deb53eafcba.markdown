@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "fcn.0059fa68 @ 7453c96a6fbd42ec690b8deb53eafcba"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0059fa68
+- **Origin (md5):** 7453c96a6fbd42ec690b8deb53eafcba
+- **VirusTotal:** [virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.CDialog.virtual\_184][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0049b0f5][similar_2_ref] (sim.: 0.9411246563304448)
+3. [method.CDialog.virtual\_184][similar_3_ref] (sim.: 0.9411246563304448)
+4. [method.CDialog.virtual\_184][similar_4_ref] (sim.: 0.9285282839106865)
+5. [fcn.004b4bfc][similar_5_ref] (sim.: 0.9285282839106865)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x5b38a0
+call fcn.005864ec
+sub esp,0x18
+push ebx
+push esi
+mov esi,ecx
+push edi
+mov dword[ebp-0x10],esp
+mov dword[ebp-0x1c],esi
+mov eax,dword[esi+0x48]
+mov edi,dword[esi+0x44]
+mov dword[ebp-0x18],eax
+call fcn.005a8b23
+cmp dword[esi+0x40],0
+mov ebx,dword[eax+0xc]
+je 0x59fab5
+call fcn.005a8b23
+mov ebx,dword[eax+0xc]
+push 5
+push dword[esi+0x40]
+push ebx
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov edi,eax
+test edi,edi
+je 0x59fac3
+push edi
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-0x18],eax
+cmp dword[ebp-0x18],0
+jne 0x59fad1
+or eax,0xffffffff
+jmp 0x59fbb9
+mov ecx,esi
+call fcn.0059f9ec
+mov dword[ebp-0x14],eax
+call fcn.005a08aa
+xor edi,edi
+cmp dword[ebp-0x14],edi
+mov dword[ebp-0x20],edi
+je 0x59fb08
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_IsWindowEnabled]
+test eax,eax
+je 0x59fb08
+push edi
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_EnableWindow]
+mov dword[ebp-0x20],1
+push esi
+mov dword[ebp-4],edi
+call fcn.005a085e
+push dword[ebp-0x14]
+call fcn.005a0390
+push ebx
+push eax
+push dword[ebp-0x18]
+mov ecx,esi
+call fcn.0059f742
+cmp eax,edi
+je 0x59fb7b
+test byte[esi+0x24],0x10
+je 0x59fb49
+push 4
+mov ecx,esi
+pop ebx
+call fcn.005a2de4
+test ah,1
+je 0x59fb41
+push 5
+pop ebx
+push ebx
+mov ecx,esi
+call fcn.005a2722
+cmp dword[esi+0x1c],edi
+je 0x59fb7b
+push 0x97
+push edi
+push edi
+push edi
+push edi
+push edi
+mov ecx,esi
+call fcn.005a2f18
+jmp 0x59fb7b
+or dword[ebp-4],0xffffffff
+cmp dword[ebp-0x20],edi
+je 0x59fb8f
+push 1
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_EnableWindow]
+cmp dword[ebp-0x14],edi
+je 0x59fba8
+call dword[sym.imp.USER32.dll_GetActiveWindow]
+cmp eax,dword[esi+0x1c]
+jne 0x59fba8
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_SetActiveWindow]
+mov eax,dword[esi]
+mov ecx,esi
+call dword[eax+0x58]
+mov ecx,esi
+call fcn.0059fa26
+mov eax,dword[esi+0x2c]
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+mov dword fs:[0],ecx
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CDialog.virtual_184@7453c96a6fbd42ec690b8deb53eafcba
+[similar_2_ref]: /report/fcn.0049b0f5@18980bd3439a28c3ca084fb94b418e27
+[similar_3_ref]: /report/method.CDialog.virtual_184@18980bd3439a28c3ca084fb94b418e27
+[similar_4_ref]: /report/method.CDialog.virtual_184@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_5_ref]: /report/fcn.004b4bfc@3e981d1767f44f5fe2446a49ffe52f4e
+[virustotal_ref]: https://www.virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba

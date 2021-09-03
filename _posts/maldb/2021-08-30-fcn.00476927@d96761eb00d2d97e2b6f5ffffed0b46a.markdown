@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.00476927 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00476927
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0045eca0][similar_1_ref] (sim.: 0.6881325569415899)
+2. [fcn.00485573][similar_2_ref] (sim.: 0.6844658837221548)
+3. [fcn.00493630][similar_3_ref] (sim.: 0.6841716922964042)
+4. [fcn.0050c620][similar_4_ref] (sim.: 0.6785111161035131)
+5. [fcn.10005520][similar_5_ref] (sim.: 0.6783709833890417)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x198
+push esi
+push edi
+lea eax,[esp+0x10]
+mov edi,ecx
+push eax
+push 0x202
+call dword[sym.imp.WSOCK32.dll_WSAStartup]
+mov edx,dword[edi]
+mov esi,eax
+push 0
+push esi
+mov ecx,dword[edx+4]
+add ecx,edi
+call fcn.00456aa3
+mov ecx,dword[ebp+0xc]
+test esi,esi
+sete byte[esp+0xc]
+push dword[esp+0xc]
+call fcn.00409863
+pop edi
+xor eax,eax
+pop esi
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045eca0@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.00485573@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.00493630@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.0050c620@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.10005520@2585b133c2e70968905cce13b1fc2654
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

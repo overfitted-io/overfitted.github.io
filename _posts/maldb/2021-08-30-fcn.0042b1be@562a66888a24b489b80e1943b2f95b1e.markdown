@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.0042b1be @ 562a66888a24b489b80e1943b2f95b1e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0042b1be
+- **Origin (md5):** 562a66888a24b489b80e1943b2f95b1e
+- **VirusTotal:** [virustotal.com/gui/file/562a66888a24b489b80e1943b2f95b1e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042b1ae][similar_1_ref] (sim.: 0.9488355936507438)
+2. [fcn.0042a47e][similar_2_ref] (sim.: 0.9231499273397508)
+3. [fcn.00419299][similar_3_ref] (sim.: 0.9157518648584945)
+4. [fcn.00419299][similar_4_ref] (sim.: 0.9157518648584945)
+5. [fcn.00419299][similar_5_ref] (sim.: 0.9157518648584945)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,0x1410
+call fcn.004142d0
+mov eax,dword[0x4dd594]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+0xc]
+mov eax,ecx
+sar eax,6
+and ecx,0x3f
+imul ecx,ecx,0x30
+push ebx
+mov ebx,dword[ebp+0x10]
+mov eax,dword[eax*4+0x4de598]
+push esi
+mov esi,dword[ebp+8]
+push edi
+mov ecx,dword[eax+ecx+0x18]
+mov eax,dword[ebp+0x14]
+and dword[esi],0
+add eax,ebx
+and dword[esi+4],0
+and dword[esi+8],0
+mov dword[ebp-0x1410],ecx
+mov dword[ebp-0x1408],eax
+jmp 0x42b27c
+lea edi,[ebp-0x1404]
+cmp ebx,eax
+jae 0x42b23f
+mov al,byte[ebx]
+inc ebx
+cmp al,0xa
+jne 0x42b22f
+inc dword[esi+8]
+mov byte[edi],0xd
+inc edi
+mov byte[edi],al
+lea eax,[ebp-5]
+inc edi
+cmp edi,eax
+mov eax,dword[ebp-0x1408]
+jb 0x42b21d
+lea eax,[ebp-0x1404]
+sub edi,eax
+lea eax,[ebp-0x140c]
+push 0
+push eax
+push edi
+lea eax,[ebp-0x1404]
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x42b282
+mov eax,dword[ebp-0x140c]
+add dword[esi+4],eax
+cmp eax,edi
+jb 0x42b28a
+mov eax,dword[ebp-0x1408]
+mov ecx,dword[ebp-0x1410]
+cmp ebx,eax
+jb 0x42b217
+jmp 0x42b28a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esi],eax
+mov ecx,dword[ebp-4]
+mov eax,esi
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.004142b2
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042b1ae@9e9e09e44e48901b1c3d0f12f9fa9c06
+[similar_2_ref]: /report/fcn.0042a47e@3560a51fc1c1e7fd8dfd02d5b3e4d8f9
+[similar_3_ref]: /report/fcn.00419299@4e573fef868dafaa925d7d4b0a3f9a39
+[similar_4_ref]: /report/fcn.00419299@3126c42be5ff4667ca90db79e3d82aff
+[similar_5_ref]: /report/fcn.00419299@7dfa91bbba8f79a5b19b642937435ac0
+[virustotal_ref]: https://www.virustotal.com/gui/file/562a66888a24b489b80e1943b2f95b1e

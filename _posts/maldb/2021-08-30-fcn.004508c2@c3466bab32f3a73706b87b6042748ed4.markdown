@@ -1,0 +1,130 @@
+---
+layout: post
+title:  "fcn.004508c2 @ c3466bab32f3a73706b87b6042748ed4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004508c2
+- **Origin (md5):** c3466bab32f3a73706b87b6042748ed4
+- **VirusTotal:** [virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00409c57][similar_1_ref] (sim.: 0.86338609463885)
+2. [fcn.0049503b][similar_2_ref] (sim.: 0.8582938376167731)
+3. [fcn.0044541a][similar_3_ref] (sim.: 0.8579047729661763)
+4. [fcn.00405288][similar_4_ref] (sim.: 0.8546104304338714)
+5. [fcn.0045245d][similar_5_ref] (sim.: 0.8542247713914857)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x838
+push ebx
+push edi
+mov edi,ecx
+mov dword[ebp-0x10],1
+call fcn.00450a5e
+xor ebx,ebx
+mov dword[ebp-0x14],eax
+cmp eax,ebx
+je 0x450976
+lea eax,[ebp-4]
+mov dword[ebp-4],ebx
+push eax
+push str.SoftwareMicrosoftWindowsCurrentVersionInternet_Settings
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax,eax
+jne 0x450968
+lea eax,[ebp-8]
+push esi
+push eax
+lea eax,[ebp-0xc]
+mov esi,dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+push eax
+push ebx
+push ebx
+push str.ProxyEnable
+mov dword[ebp-8],4
+push dword[ebp-4]
+call esi
+test eax,eax
+je 0x45092c
+mov dword[ebp-0xc],ebx
+lea eax,[ebp-8]
+mov dword[ebp-8],0x824
+push eax
+lea eax,[ebp-0x838]
+push eax
+push ebx
+push ebx
+push str.AutoConfigURL
+push dword[ebp-4]
+call esi
+test eax,eax
+pop esi
+je 0x450955
+mov byte[ebp-0x838],bl
+cmp dword[ebp-0xc],ebx
+jne 0x450962
+cmp byte[ebp-0x838],bl
+je 0x450968
+mov eax,dword[ebp+0xc]
+mov dword[ebp-0x10],eax
+cmp dword[ebp-4],ebx
+je 0x450976
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp-0x10]
+push dword[ebp+8]
+call fcn.004505a9
+add esp,0x14
+cmp dword[ebp+0xc],ebx
+mov dword[edi+4],eax
+je 0x45099b
+cmp dword[ebp+0xc],4
+jne 0x4509c7
+cmp dword[ebp-0x14],ebx
+jne 0x4509c7
+mov ax,word[edi+0x14]
+cmp ax,3
+jne 0x4509b3
+mov ecx,edi
+call fcn.00450e1e
+jmp 0x4509c7
+cmp ax,4
+mov ecx,edi
+jne 0x4509c2
+call fcn.00450fff
+jmp 0x4509c7
+call fcn.0045138a
+xor eax,eax
+cmp dword[edi+4],ebx
+pop edi
+pop ebx
+setne al
+leave 
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409c57@ab923633032c47ff6d9c40ed36a40b2b
+[similar_2_ref]: /report/fcn.0049503b@3b2d901eaca41ce14deca6a48c0c801a
+[similar_3_ref]: /report/fcn.0044541a@c3466bab32f3a73706b87b6042748ed4
+[similar_4_ref]: /report/fcn.00405288@0aa2d73a5300dff2412388945614b507
+[similar_5_ref]: /report/fcn.0045245d@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4

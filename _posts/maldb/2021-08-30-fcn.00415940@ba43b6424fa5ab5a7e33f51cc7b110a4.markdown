@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "fcn.00415940 @ ba43b6424fa5ab5a7e33f51cc7b110a4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00415940
+- **Origin (md5):** ba43b6424fa5ab5a7e33f51cc7b110a4
+- **VirusTotal:** [virustotal.com/gui/file/ba43b6424fa5ab5a7e33f51cc7b110a4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00415940][similar_1_ref] (sim.: 1.0)
+2. [fcn.00415940][similar_2_ref] (sim.: 1.0)
+3. [fcn.00415940][similar_3_ref] (sim.: 1.0)
+4. [fcn.00415940][similar_4_ref] (sim.: 1.0)
+5. [fcn.00415940][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x434930
+mov eax,dword fs:[0]
+push eax
+push ebx
+push esi
+push edi
+mov eax,dword[0x44806c]
+xor eax,ebp
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+push 0xfa0
+push 0x4491f8
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSectionAndSpinCount]
+push 0x4393d0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+jne 0x41599b
+push 0x436ed4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+je 0x415a27
+push str.InitializeConditionVariable
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.SleepConditionVariableCS
+push esi
+mov ebx,eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.WakeAllConditionVariable
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test ebx,ebx
+je 0x415a01
+test edi,edi
+je 0x415a01
+test esi,esi
+je 0x415a01
+and dword[0x449214],0
+mov ecx,ebx
+push 0x449210
+call dword[0x4361c4]
+call ebx
+push edi
+call fcn.00415923
+push esi
+mov dword[0x449218],eax
+call fcn.00415923
+pop ecx
+pop ecx
+mov dword[0x44921c],eax
+jmp 0x415a17
+xor eax,eax
+push eax
+push eax
+push 1
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateEventW]
+mov dword[0x449214],eax
+test eax,eax
+je 0x415a27
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+push 7
+call fcn.00416443
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00415940@c0371bf2f84d37acabd30e547b4cc5fa
+[similar_2_ref]: /report/fcn.00415940@ec60ce05664fcce926079f6a04ff35cb
+[similar_3_ref]: /report/fcn.00415940@d701bfe1b2c669cec1fe384fdc108bfb
+[similar_4_ref]: /report/fcn.00415940@5e50a67c7e8dbb50c23acbc92eb08f0e
+[similar_5_ref]: /report/fcn.00415940@114b798bcd6c8d19f121c452bc20962c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba43b6424fa5ab5a7e33f51cc7b110a4

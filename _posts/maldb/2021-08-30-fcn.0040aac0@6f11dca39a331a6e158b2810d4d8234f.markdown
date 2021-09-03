@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "fcn.0040aac0 @ 6f11dca39a331a6e158b2810d4d8234f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040aac0
+- **Origin (md5):** 6f11dca39a331a6e158b2810d4d8234f
+- **VirusTotal:** [virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040aac0][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040ac60][similar_2_ref] (sim.: 0.8246094506052644)
+3. [fcn.0040ac60][similar_3_ref] (sim.: 0.8246094506052644)
+4. [fcn.00402730][similar_4_ref] (sim.: 0.8167500088455737)
+5. [fcn.00424c40][similar_5_ref] (sim.: 0.8156780296280879)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+mov edx,dword[esp+0xc]
+mov dword[esp],0
+test edx,edx
+je 0x40abb4
+cmp word[edx],0
+je 0x40abb4
+mov ecx,dword[esp+0x10]
+push esi
+cmp ecx,0x19
+jne 0x40ab4d
+mov esi,dword[esp+0xc]
+mov ecx,edx
+push edi
+cmp dword[esi+4],0
+lea edi,[ecx+2]
+je 0x40ab20
+jmp 0x40ab00
+mov ax,word[ecx]
+add ecx,2
+test ax,ax
+jne 0x40ab00
+sub ecx,edi
+sar ecx,1
+lea eax,[ecx+ecx]
+push eax
+push edx
+push esi
+call fcn.0040ac60
+pop edi
+pop esi
+pop ecx
+ret 0xc
+mov ax,word[ecx]
+add ecx,2
+test ax,ax
+jne 0x40ab20
+sub ecx,edi
+lea eax,[esp+8]
+push 0
+sar ecx,1
+push eax
+lea eax,[ecx+ecx]
+push eax
+push edx
+push dword[esi]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+mov eax,dword[esp+8]
+pop edi
+pop esi
+pop ecx
+ret 0xc
+xor eax,eax
+cmp ecx,2
+lea ecx,[esp+0x10]
+setne al
+push ecx
+dec eax
+and eax,0xfde9
+push edx
+push eax
+call fcn.0040ad70
+mov esi,eax
+test esi,esi
+je 0x40abab
+mov eax,dword[esp+0xc]
+cmp dword[eax+4],0
+je 0x40ab88
+push dword[esp+0x10]
+push esi
+push eax
+call fcn.0040ac60
+mov dword[esp+4],eax
+jmp 0x40ab9c
+push 0
+lea ecx,[esp+8]
+push ecx
+push dword[esp+0x18]
+push esi
+push dword[eax]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+push esi
+push 0
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esp+4]
+pop esi
+pop ecx
+ret 0xc
+xor eax,eax
+pop ecx
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040aac0@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_2_ref]: /report/fcn.0040ac60@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_3_ref]: /report/fcn.0040ac60@6f11dca39a331a6e158b2810d4d8234f
+[similar_4_ref]: /report/fcn.00402730@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_5_ref]: /report/fcn.00424c40@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f

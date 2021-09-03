@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "fcn.0055dcf0 @ 7453c96a6fbd42ec690b8deb53eafcba"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0055dcf0
+- **Origin (md5):** 7453c96a6fbd42ec690b8deb53eafcba
+- **VirusTotal:** [virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0055dbc0][similar_1_ref] (sim.: 0.7145750841036111)
+2. [fcn.0040114b][similar_2_ref] (sim.: 0.7075503673514869)
+3. [fcn.004b149b][similar_3_ref] (sim.: 0.6919836452686154)
+4. [fcn.0055db50][similar_4_ref] (sim.: 0.6914278575976534)
+5. [fcn.0055dc60][similar_5_ref] (sim.: 0.6869809680747782)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+cmp esi,0xffff
+jbe 0x55dd36
+mov eax,dword[0x64711b]
+test eax,eax
+jne 0x55dd0b
+call fcn.0055db90
+cmp dword[0x647113],esi
+ja 0x55dd1b
+cmp esi,dword[0x64710f]
+jbe 0x55dd36
+push 8
+push esi
+call dword[sym.imp.KERNEL32.dll_IsBadReadPtr]
+test eax,eax
+jne 0x55dd36
+push esi
+push eax
+mov eax,dword[0x64712b]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0055dbc0@7453c96a6fbd42ec690b8deb53eafcba
+[similar_2_ref]: /report/fcn.0040114b@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_3_ref]: /report/fcn.004b149b@4fe38de7c6c86a1bad209560fa052231
+[similar_4_ref]: /report/fcn.0055db50@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.0055dc60@7453c96a6fbd42ec690b8deb53eafcba
+[virustotal_ref]: https://www.virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba

@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.00420fd2 @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00420fd2
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00499a26][similar_1_ref] (sim.: 0.8968239213076952)
+2. [fcn.0047ad2d][similar_2_ref] (sim.: 0.8915928596634854)
+3. [fcn.0047ad2d][similar_3_ref] (sim.: 0.8915928596634854)
+4. [fcn.0047dbfb][similar_4_ref] (sim.: 0.8884720893134636)
+5. [fcn.0047db49][similar_5_ref] (sim.: 0.8866458579977576)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x43f0f0
+mov eax,dword fs:[0]
+push eax
+push ebx
+push esi
+push edi
+mov eax,dword[0x45806c]
+xor eax,ebp
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov edi,ecx
+push 0x800
+push 0
+mov ebx,str.advapi32.dll
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x421032
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x4210ba
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov esi,eax
+test esi,esi
+je 0x4210ba
+push str.RegisterTraceGuidsW
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+mov dword[esp],str.UnregisterTraceGuids
+push esi
+mov dword[edi],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+mov dword[esp],str.TraceEvent
+push esi
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+mov dword[esp],str.GetTraceLoggerHandle
+push esi
+mov dword[edi+8],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+mov dword[esp],str.GetTraceEnableLevel
+push esi
+mov dword[edi+0xc],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+mov dword[esp],str.GetTraceEnableFlags
+push esi
+mov dword[edi+0x10],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.00414a07
+pop ecx
+mov dword[edi+0x14],eax
+mov eax,edi
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00499a26@94f83197373b17ab8b5225c0900d14de
+[similar_2_ref]: /report/fcn.0047ad2d@9b5524245506621a9773176393787e61
+[similar_3_ref]: /report/fcn.0047ad2d@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_4_ref]: /report/fcn.0047dbfb@ba63c5f75a2177720b184529dbf918cf
+[similar_5_ref]: /report/fcn.0047db49@843c4207147f5bab0e104024677fd9ec
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

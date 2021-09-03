@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.004069d2 @ 7bcc89a15d575deafd22288432159007"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004069d2
+- **Origin (md5):** 7bcc89a15d575deafd22288432159007
+- **VirusTotal:** [virustotal.com/gui/file/7bcc89a15d575deafd22288432159007][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00412eec][similar_1_ref] (sim.: 0.8535973995434724)
+2. [fcn.0040a4af][similar_2_ref] (sim.: 0.8425972375895592)
+3. [fcn.00406543][similar_3_ref] (sim.: 0.8423252442786111)
+4. [fcn.0040fb82][similar_4_ref] (sim.: 0.8417310367935676)
+5. [fcn.0040fb82][similar_5_ref] (sim.: 0.8417310367935676)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+push ebx
+push edi
+lea ebx,[eax*4+0x4130c8]
+mov eax,dword[ebx]
+mov edx,dword[section..data]
+or edi,0xffffffff
+mov ecx,edx
+xor edx,eax
+and ecx,0x1f
+ror edx,cl
+cmp edx,edi
+jne 0x4069ff
+xor eax,eax
+jmp 0x406a50
+test edx,edx
+je 0x406a07
+mov eax,edx
+jmp 0x406a50
+push esi
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call fcn.0040690a
+pop ecx
+pop ecx
+test eax,eax
+je 0x406a36
+push dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x406a36
+push esi
+call fcn.00401386
+pop ecx
+xchg dword[ebx],eax
+mov eax,esi
+jmp 0x406a4f
+mov eax,dword[section..data]
+push 0x20
+and eax,0x1f
+pop ecx
+sub ecx,eax
+ror edi,cl
+xor edi,dword[section..data]
+xchg dword[ebx],edi
+xor eax,eax
+pop esi
+pop edi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00412eec@64e66e284dcd12bef07260fe06b1f0e9
+[similar_2_ref]: /report/fcn.0040a4af@fca52b995e756cff97168f6fef94b37d
+[similar_3_ref]: /report/fcn.00406543@8e7d8d161cdcb697942011baea931489
+[similar_4_ref]: /report/fcn.0040fb82@ed2190c0d8e9302a8f4d8ac702731b90
+[similar_5_ref]: /report/fcn.0040fb82@cbd43f32a37a470d65c9071d3fc4f8ce
+[virustotal_ref]: https://www.virustotal.com/gui/file/7bcc89a15d575deafd22288432159007

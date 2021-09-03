@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "fcn.100da8c0 @ 8761fe5e7bef67f1579f600248f8f0cc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100da8c0
+- **Origin (md5):** 8761fe5e7bef67f1579f600248f8f0cc
+- **VirusTotal:** [virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.10088f90][similar_1_ref] (sim.: 0.9096502576590714)
+2. [fcn.100810f0][similar_2_ref] (sim.: 0.9062904212017251)
+3. [fcn.10086fd0][similar_3_ref] (sim.: 0.9041300228808763)
+4. [fcn.10085850][similar_4_ref] (sim.: 0.902505690059761)
+5. [fcn.1000c910][similar_5_ref] (sim.: 0.8998550454248606)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x101e1288
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,0x14
+push ebp
+push esi
+mov esi,ecx
+lea ecx,[esp+8]
+call sub.MFC42.DLL_CString::CString_1
+mov eax,dword[esp+0x2c]
+mov ecx,dword[esi+0x108]
+xor ebp,ebp
+push 0xffffffffffffffff
+push eax
+mov dword[esp+0x2c],ebp
+call dword[sym.imp.MVUILib.dll_public:_void____thiscall_CSkinConfContext::GetPictureExEx_char_const___int_]
+cmp eax,ebp
+jne 0x100da92c
+lea ecx,[esp+8]
+mov dword[esi+0xec],ebp
+mov dword[esp+0x24],0xffffffff
+call sub.MFC42.DLL_CString::CString
+pop esi
+pop ebp
+mov ecx,dword[esp+0x14]
+mov dword fs:[0],ecx
+add esp,0x20
+ret 8
+mov dword[esi+0xec],1
+mov ecx,dword[eax+0x14]
+mov dword[esi+0xfc],ecx
+mov ecx,dword[eax+0x18]
+cmp ecx,0x3d
+mov dword[esi+0x100],ecx
+jle 0x100da957
+mov dword[esi+0x100],0x3a
+push ebx
+push edi
+mov ecx,esi
+mov dword[esi+0x104],eax
+mov dword[esi+0x110],ebp
+call fcn.100d9590
+push ebp
+call dword[sym.imp.USER32.dll_GetDC]
+mov edi,eax
+push edi
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+mov dword[esi+0x114],eax
+mov eax,dword[esi+0x104]
+mov edx,dword[eax+0x18]
+mov eax,dword[eax+0x14]
+push edx
+push eax
+push edi
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+mov ecx,dword[esi+0x114]
+push eax
+push ecx
+mov dword[esi+0x124],eax
+call dword[sym.imp.GDI32.dll_SelectObject]
+push 0xfff3e8
+call dword[sym.imp.GDI32.dll_CreateSolidBrush]
+mov ebx,eax
+mov eax,dword[esi+0x104]
+mov dword[esp+0x14],ebp
+mov dword[esp+0x18],ebp
+mov edx,dword[eax+0x14]
+lea ecx,[esp+0x14]
+mov dword[esp+0x1c],edx
+mov edx,dword[esi+0x114]
+mov eax,dword[eax+0x18]
+push ebx
+push ecx
+push edx
+mov dword[esp+0x2c],eax
+call dword[sym.imp.USER32.dll_FillRect]
+mov ecx,esi
+call fcn.100daa40
+push edi
+push ebp
+call dword[sym.imp.USER32.dll_ReleaseDC]
+push ebx
+call dword[sym.imp.GDI32.dll_DeleteObject]
+mov eax,dword[esi+0x20]
+push ebp
+push 0x46
+push 1
+push eax
+call dword[sym.imp.USER32.dll_SetTimer]
+lea ecx,[esp+0x10]
+mov dword[esp+0x2c],0xffffffff
+call sub.MFC42.DLL_CString::CString
+mov ecx,dword[esp+0x24]
+pop edi
+pop ebx
+pop esi
+pop ebp
+mov dword fs:[0],ecx
+add esp,0x20
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10088f90@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.100810f0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.10086fd0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.10085850@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.1000c910@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc

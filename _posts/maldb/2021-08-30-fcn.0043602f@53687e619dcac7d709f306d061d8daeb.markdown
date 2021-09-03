@@ -1,0 +1,172 @@
+---
+layout: post
+title:  "fcn.0043602f @ 53687e619dcac7d709f306d061d8daeb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0043602f
+- **Origin (md5):** 53687e619dcac7d709f306d061d8daeb
+- **VirusTotal:** [virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.0043602f][similar_1_ref] (sim.: 1.0)
+2. [method.CEmbeddedMSIHandler.virtual\_8][similar_2_ref] (sim.: 0.8866666426428569)
+3. [fcn.00472740][similar_3_ref] (sim.: 0.8866666426428569)
+4. [fcn.0040735c][similar_4_ref] (sim.: 0.886220507967195)
+5. [fcn.0040735c][similar_5_ref] (sim.: 0.886220507967195)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+push edi
+xor eax,eax
+mov ebx,ecx
+push eax
+push eax
+push eax
+push eax
+push str.QDownload_Agent
+mov edi,0x80ff
+mov dword[ebx+0x28],eax
+mov dword[ebx+0x24],eax
+call dword[sym.imp.WININET.dll_InternetOpenA]
+mov dword[ebx+4],eax
+test eax,eax
+jne 0x43608f
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+or eax,0xc000
+movzx esi,ax
+call fcn.004323c2
+mov edx,dword[eax]
+test edx,edx
+je 0x43608f
+lea ecx,[ebx+0xc]
+cmp dword[ecx+0x14],0x10
+jb 0x436080
+mov ecx,dword[ecx]
+mov eax,dword[edx]
+push ecx
+push esi
+push 0x4c
+push str.download_stream.cpp
+mov ecx,edx
+call dword[eax]
+mov esi,dword[sym.imp.WININET.dll_InternetSetOptionA]
+lea eax,[ebp-4]
+push 4
+push eax
+push 0x1f
+push dword[ebx+4]
+mov dword[ebp-4],0x3180
+call esi
+push 4
+lea eax,[ebp-8]
+mov dword[ebp-8],0x32
+push eax
+push 0x49
+push 0
+call esi
+lea esi,[ebx+0xc]
+cmp dword[esi+0x14],0x10
+jb 0x4360c9
+mov eax,dword[esi]
+jmp 0x4360cb
+mov eax,esi
+xor ecx,ecx
+push ecx
+push 0x4400300
+push ecx
+push ecx
+push eax
+push dword[ebx+4]
+call dword[sym.imp.WININET.dll_InternetOpenUrlA]
+mov dword[ebx+8],eax
+cmp eax,0xffffffff
+je 0x436129
+push ecx
+mov ecx,ebx
+call fcn.00435fba
+mov dword[ebx+0x28],eax
+cmp eax,0xc8
+jb 0x436104
+cmp eax,0x12c
+jae 0x436104
+xor edi,edi
+jmp 0x43617d
+mov eax,0xc000
+or ax,word[ebx+0x28]
+movzx edi,ax
+call fcn.004323c2
+mov ecx,dword[eax]
+test ecx,ecx
+je 0x43617d
+cmp dword[esi+0x14],0x10
+jb 0x436123
+mov esi,dword[esi]
+push esi
+push edi
+push 0x6a
+jmp 0x436152
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+je 0x43615d
+or eax,0xc000
+movzx edi,ax
+call fcn.004323c2
+mov ecx,dword[eax]
+test ecx,ecx
+je 0x43617d
+cmp dword[esi+0x14],0x10
+jb 0x43614e
+mov esi,dword[esi]
+push esi
+push edi
+push 0x73
+mov eax,dword[ecx]
+push str.download_stream.cpp
+call dword[eax]
+jmp 0x43617d
+call fcn.004323c2
+mov ecx,dword[eax]
+test ecx,ecx
+je 0x43617d
+cmp dword[esi+0x14],0x10
+jb 0x436170
+mov esi,dword[esi]
+mov edx,dword[ecx]
+push esi
+push edi
+push 0x78
+push str.download_stream.cpp
+call dword[edx]
+mov ax,di
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043602f@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_2_ref]: /report/method.CEmbeddedMSIHandler.virtual_8@3b2d901eaca41ce14deca6a48c0c801a
+[similar_3_ref]: /report/fcn.00472740@3b2d901eaca41ce14deca6a48c0c801a
+[similar_4_ref]: /report/fcn.0040735c@3bf433430f740e75dfaf9134a5696829
+[similar_5_ref]: /report/fcn.0040735c@4bd33f73402d0d03c0318f793884eb34
+[virustotal_ref]: https://www.virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb

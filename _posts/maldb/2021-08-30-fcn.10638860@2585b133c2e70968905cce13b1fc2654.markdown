@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "fcn.10638860 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10638860
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.1004a970][similar_1_ref] (sim.: 0.8487157495071781)
+2. [fcn.10638970][similar_2_ref] (sim.: 0.8459345913408873)
+3. [fcn.10956110][similar_3_ref] (sim.: 0.8409725632589854)
+4. [fcn.00436bc0][similar_4_ref] (sim.: 0.8395719855378051)
+5. [fcn.00401fb0][similar_5_ref] (sim.: 0.8329013951213983)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x294
+mov eax,dword[0x10c992e8]
+xor eax,esp
+mov dword[esp+0x290],eax
+push ebx
+push esi
+push edi
+push 0x80
+lea esi,[ecx+0x40]
+push 0
+push esi
+call sub.MSVCR80.dll_memset
+push 0xfe
+lea eax,[esp+0x1ad]
+push 0
+push eax
+mov byte[esp+0x1b4],0
+call sub.MSVCR80.dll_memset
+mov edi,dword[sym.imp.WS2_32.dll_gethostname]
+add esp,0x18
+push 0xff
+lea ecx,[esp+0x1a0]
+push ecx
+xor bl,bl
+call edi
+test eax,eax
+je 0x1063890a
+lea edx,[esp+0xc]
+push edx
+push 0x202
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+jne 0x106388f0
+push 0xff
+lea eax,[esp+0x1a0]
+push eax
+mov bl,1
+call edi
+test eax,eax
+je 0x1063890a
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+pop edi
+pop esi
+xor al,al
+pop ebx
+mov ecx,dword[esp+0x290]
+xor ecx,esp
+call fcn.1090658a
+add esp,0x294
+ret 
+lea ecx,[esp+0x19c]
+push ecx
+call dword[sym.imp.WS2_32.dll_gethostbyname]
+test eax,eax
+je 0x1063893e
+mov edx,dword[eax+0xc]
+mov eax,dword[edx]
+mov ecx,dword[eax]
+push ecx
+call dword[sym.imp.WS2_32.dll_inet_ntoa]
+mov edx,esi
+lea esp,[esp]
+mov cl,byte[eax]
+mov byte[edx],cl
+add eax,1
+add edx,1
+test cl,cl
+jne 0x10638930
+test bl,bl
+je 0x10638948
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+mov ecx,dword[esp+0x29c]
+pop edi
+pop esi
+pop ebx
+xor ecx,esp
+mov al,1
+call fcn.1090658a
+add esp,0x294
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1004a970@2585b133c2e70968905cce13b1fc2654
+[similar_2_ref]: /report/fcn.10638970@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.10956110@2585b133c2e70968905cce13b1fc2654
+[similar_4_ref]: /report/fcn.00436bc0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.00401fb0@fac4f0be03ac37bd8be7ef737cdcee10
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

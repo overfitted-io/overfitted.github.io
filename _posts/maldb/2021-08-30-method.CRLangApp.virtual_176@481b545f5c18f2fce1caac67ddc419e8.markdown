@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "method.CRLangApp.virtual_176 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CRLangApp.virtual\_176
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [method.CWinApp.virtual\_264][similar_1_ref] (sim.: 0.8399843392361969)
+2. [fcn.10001fef][similar_2_ref] (sim.: 0.8069172495436757)
+3. [fcn.10022f3a][similar_3_ref] (sim.: 0.7985119049145718)
+4. [fcn.10006ef0][similar_4_ref] (sim.: 0.7897524149770028)
+5. [fcn.100147bf][similar_5_ref] (sim.: 0.7854067450630776)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x220
+mov eax,dword[0x10062200]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+mov eax,ecx
+mov esi,0x104
+push esi
+lea ecx,[ebp-0x220]
+push ecx
+push dword[eax+0x44]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x100028ed
+cmp eax,esi
+je 0x100028ed
+push edi
+lea eax,[ebp-0x220]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFindExtensionW]
+and word[eax],0
+mov esi,str._s_s.dll
+lea edi,[ebp-0x18]
+movsd dword es:[edi],dword ptr[esi]
+movsd dword es:[edi],dword ptr[esi]
+movsd dword es:[edi],dword ptr[esi]
+lea eax,[ebp-0x220]
+movsd dword es:[edi],dword ptr[esi]
+push eax
+lea eax,[ebp-0x18]
+push eax
+movsw word es:[edi],word ptr[esi]
+call fcn.1000250f
+pop ecx
+pop ecx
+pop edi
+jmp 0x100028ef
+xor eax,eax
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop esi
+call fcn.1002288b
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CWinApp.virtual_264@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10001fef@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.10022f3a@880ba8b1983575bc0c5ed1cb79dcde8f
+[similar_4_ref]: /report/fcn.10006ef0@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_5_ref]: /report/fcn.100147bf@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

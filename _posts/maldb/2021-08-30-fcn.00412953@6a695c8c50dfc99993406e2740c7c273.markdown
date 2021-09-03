@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00412953 @ 6a695c8c50dfc99993406e2740c7c273"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00412953
+- **Origin (md5):** 6a695c8c50dfc99993406e2740c7c273
+- **VirusTotal:** [virustotal.com/gui/file/6a695c8c50dfc99993406e2740c7c273][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00417cff][similar_1_ref] (sim.: 0.8607755299334542)
+2. [fcn.00437d79][similar_2_ref] (sim.: 0.8536464346098888)
+3. [fcn.0040f3b8][similar_3_ref] (sim.: 0.8473447408132796)
+4. [fcn.00417e52][similar_4_ref] (sim.: 0.8432563698172131)
+5. [fcn.00422406][similar_5_ref] (sim.: 0.836537920644747)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push edi
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov edi,eax
+call fcn.00412838
+push dword[0x45da20]
+push dword[0x45da24]
+call dword[sym.imp.KERNEL32.dll_TlsGetValue]
+call eax
+mov esi,eax
+test esi,esi
+jne 0x4129ca
+push 0x214
+push 1
+call fcn.00414616
+mov esi,eax
+test esi,esi
+pop ecx
+pop ecx
+je 0x4129ca
+push esi
+push dword[0x45da20]
+push dword[0x474770]
+call fcn.004127cc
+pop ecx
+call eax
+test eax,eax
+je 0x4129c1
+push 0
+push esi
+call fcn.0041289f
+pop ecx
+pop ecx
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+or dword[esi+4],0xffffffff
+mov dword[esi],eax
+jmp 0x4129ca
+push esi
+call fcn.00414548
+pop ecx
+xor esi,esi
+push edi
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+pop edi
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00417cff@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_2_ref]: /report/fcn.00437d79@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_3_ref]: /report/fcn.0040f3b8@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.00417e52@820356b443df86d107b675e725c13af0
+[similar_5_ref]: /report/fcn.00422406@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/6a695c8c50dfc99993406e2740c7c273

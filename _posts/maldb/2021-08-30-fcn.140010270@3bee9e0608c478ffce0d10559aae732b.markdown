@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.140010270 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140010270
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.14004b4a0][similar_1_ref] (sim.: 0.885375585107743)
+2. [fcn.1400557c0][similar_2_ref] (sim.: 0.8778922021801046)
+3. [fcn.140011760][similar_3_ref] (sim.: 0.8758703713220424)
+4. [fcn.14003f0a0][similar_4_ref] (sim.: 0.8729788297096652)
+5. [fcn.14003b740][similar_5_ref] (sim.: 0.8725692839779321)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rdi
+sub rsp,0x50
+mov rdi,rcx
+call fcn.140003480
+lea rax,[rsp+0x70]
+lea rdx,str.SoftwareAutoIt_v3AutoIt
+mov r9d,1
+xor r8d,r8d
+mov rcx,0xffffffff80000001
+mov qword[rsp+0x20],rax
+call qword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x14002dbf0
+mov rcx,qword[rsp+0x70]
+lea rax,[rsp+0x68]
+mov qword[rsp+0x60],rbx
+mov qword[rsp+0x28],rax
+mov qword[rsp+0x48],rbp
+lea rdx,str.Include
+xor ebp,ebp
+xor r9d,r9d
+xor r8d,r8d
+mov qword[rsp+0x20],rbp
+xor bl,bl
+call qword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x140010377
+mov ecx,dword[rsp+0x68]
+mov eax,2
+mov qword[rsp+0x40],rsi
+inc ecx
+mul rcx
+mov rcx,0xffffffffffffffff
+cmovo rax,rcx
+mov rcx,rax
+call fcn.140014e9c
+lea rcx,[rsp+0x30]
+mov rdx,rax
+call fcn.140012240
+mov rsi,qword[rsp+0x30]
+mov rcx,qword[rsp+0x70]
+lea r11,[rsp+0x68]
+lea rdx,str.Include
+xor r9d,r9d
+mov qword[rsp+0x28],r11
+xor r8d,r8d
+mov qword[rsp+0x20],rsi
+call qword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x140010368
+mov eax,dword[rsp+0x68]
+mov rdx,rsi
+mov rcx,rdi
+shr eax,1
+mov dword[rsp+0x68],eax
+mov word[rsi+rax*2],bp
+call fcn.14000e920
+mov bl,1
+lea rcx,[rsp+0x30]
+call fcn.1400122d0
+mov rsi,qword[rsp+0x40]
+mov rcx,qword[rsp+0x70]
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov rbp,qword[rsp+0x48]
+movzx eax,bl
+mov rbx,qword[rsp+0x60]
+add rsp,0x50
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14004b4a0@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.1400557c0@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.140011760@a5e8b4820319974b4ce1027132e98e27
+[similar_4_ref]: /report/fcn.14003f0a0@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14003b740@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

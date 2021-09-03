@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "entry0 @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** entry0
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [entry0][similar_1_ref] (sim.: 0.8099718619224869)
+2. [fcn.010063e0][similar_2_ref] (sim.: 0.8064114550628886)
+3. [fcn.0040334d][similar_3_ref] (sim.: 0.7740566023188181)
+4. [fcn.00401b30][similar_4_ref] (sim.: 0.773521741588563)
+5. [fcn.004043e3][similar_5_ref] (sim.: 0.7733288456627533)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x44
+push esi
+call dword[sym.imp.KERNEL32.dll_GetCommandLineA]
+mov esi,eax
+mov al,byte[esi]
+cmp al,0x22
+je 0x4039e7
+cmp al,0x20
+jle 0x4039f9
+inc esi
+cmp byte[esi],0x20
+jg 0x4039db
+jmp 0x4039f9
+cmp al,0x22
+je 0x4039f8
+inc esi
+mov al,byte[esi]
+test al,al
+jne 0x4039e3
+cmp al,0x22
+jne 0x4039f9
+jmp 0x4039f8
+cmp al,0x20
+jg 0x4039ff
+inc esi
+mov al,byte[esi]
+test al,al
+jne 0x4039f4
+and dword[ebp-0x18],0
+lea eax,[ebp-0x44]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetStartupInfoA]
+call fcn.004038cd
+push 0x40a004
+push section..data
+call fcn.004038b3
+test byte[ebp-0x18],1
+pop ecx
+pop ecx
+je 0x403a2f
+movzx eax,word[ebp-0x14]
+jmp 0x403a32
+push 0xa
+pop eax
+push eax
+push esi
+push 0
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+push eax
+call fcn.00404f12
+mov esi,eax
+call fcn.0040390c
+push esi
+call dword[sym.imp.KERNEL32.dll_ExitProcess]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/entry0@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.010063e0@bcf1729ded12dd6e2e4c565a6c795602
+[similar_3_ref]: /report/fcn.0040334d@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_4_ref]: /report/fcn.00401b30@f7e82c158979ed94604a574150f80bf3
+[similar_5_ref]: /report/fcn.004043e3@d4e56c7d970c209a3a2b3c4b4cc5e586
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

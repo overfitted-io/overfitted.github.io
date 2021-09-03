@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.0040a115 @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040a115
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0040a1a7][similar_1_ref] (sim.: 0.8911645498842826)
+2. [fcn.004099bb][similar_2_ref] (sim.: 0.8257259398888414)
+3. [fcn.0040a097][similar_3_ref] (sim.: 0.8043540692756468)
+4. [fcn.0040a019][similar_4_ref] (sim.: 0.7997695893864912)
+5. [fcn.004052a4][similar_5_ref] (sim.: 0.7886299872233974)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x234
+mov eax,dword[0x42e364]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+push ebx
+push edi
+xor ebx,ebx
+push ebx
+push 2
+mov dword[ebp-0x234],eax
+mov dword[ebp-0x230],0x22c
+call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+mov edi,eax
+lea eax,[ebp-0x230]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_Process32FirstW]
+test eax,eax
+je 0x40a18e
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_Process32NextW]
+jmp 0x40a17f
+push dword[ebp-0x234]
+lea eax,[ebp-0x20c]
+push eax
+call fcn.0041ff83
+pop ecx
+pop ecx
+test eax,eax
+jne 0x40a17f
+mov bl,1
+lea eax,[ebp-0x230]
+push eax
+push edi
+call esi
+test eax,eax
+jne 0x40a165
+pop esi
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov ecx,dword[ebp-4]
+pop edi
+mov al,bl
+xor ecx,ebp
+pop ebx
+call fcn.0040c22b
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040a1a7@69b3c79878674ea715338a112bb5caa6
+[similar_2_ref]: /report/fcn.004099bb@69b3c79878674ea715338a112bb5caa6
+[similar_3_ref]: /report/fcn.0040a097@69b3c79878674ea715338a112bb5caa6
+[similar_4_ref]: /report/fcn.0040a019@69b3c79878674ea715338a112bb5caa6
+[similar_5_ref]: /report/fcn.004052a4@6c5b0418e4a4c57d99cda47d2717045d
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "method.COccManager.virtual_36 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.COccManager.virtual\_36
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.COccManager.virtual\_36][similar_1_ref] (sim.: 0.8160167500926775)
+2. [fcn.0045dae3][similar_2_ref] (sim.: 0.8004674070466942)
+3. [fcn.00416677][similar_3_ref] (sim.: 0.7980684169372134)
+4. [method.CDialogEx.virtual\_332][similar_4_ref] (sim.: 0.7971941716961994)
+5. [method.CDialog.virtual\_328][similar_5_ref] (sim.: 0.7964290766726718)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+xor esi,esi
+mov eax,ecx
+push edi
+mov edi,esi
+mov dword[ebp-4],eax
+cmp dword[ebp+0xc],esi
+je 0x41dbba
+call fcn.0042d89f
+push 0xf0
+push dword[ebp+0xc]
+mov ebx,dword[eax+0xc]
+push ebx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x41dbb7
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov edi,eax
+test edi,edi
+je 0x41dc08
+push edi
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov esi,eax
+mov eax,dword[ebp-4]
+xor ebx,ebx
+inc ebx
+test esi,esi
+je 0x41dbe6
+mov ecx,dword[eax]
+push dword[ebp+0x10]
+push esi
+mov esi,dword[ecx+0x20]
+mov ecx,esi
+push dword[ebp+8]
+call fcn.00553897
+mov ecx,dword[ebp-4]
+call esi
+mov ebx,eax
+test edi,edi
+je 0x41dbe6
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,dword[ebp+8]
+mov edi,dword[eax+0x70]
+test edi,edi
+je 0x41dc06
+mov eax,dword[edi]
+push dword[ebp+0x10]
+mov esi,dword[eax+0xa0]
+mov ecx,esi
+call fcn.00553897
+mov ecx,edi
+call esi
+mov eax,ebx
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.COccManager.virtual_36@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_2_ref]: /report/fcn.0045dae3@4fe38de7c6c86a1bad209560fa052231
+[similar_3_ref]: /report/fcn.00416677@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/method.CDialogEx.virtual_332@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/method.CDialog.virtual_328@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

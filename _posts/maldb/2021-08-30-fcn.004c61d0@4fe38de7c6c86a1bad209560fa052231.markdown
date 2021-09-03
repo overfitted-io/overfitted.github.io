@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.004c61d0 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004c61d0
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004051e0][similar_1_ref] (sim.: 0.8203248539661676)
+2. [fcn.00479f60][similar_2_ref] (sim.: 0.7749914654887159)
+3. [fcn.004e1c20][similar_3_ref] (sim.: 0.7679500716913682)
+4. [fcn.00427200][similar_4_ref] (sim.: 0.7666464921427759)
+5. [fcn.004f2630][similar_5_ref] (sim.: 0.7652997685659263)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x194
+mov eax,dword[0x537474]
+xor eax,ebp
+mov dword[ebp-4],eax
+lea eax,[ebp-0x194]
+push eax
+push 0x202
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+jne 0x4c6220
+mov eax,dword[ebp-0x194]
+cmp al,2
+jne 0x4c621a
+shr eax,8
+cmp al,2
+jne 0x4c621a
+xor eax,eax
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.00497b95
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+mov ecx,dword[ebp-4]
+mov eax,2
+xor ecx,ebp
+call fcn.00497b95
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004051e0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_2_ref]: /report/fcn.00479f60@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.004e1c20@4fe38de7c6c86a1bad209560fa052231
+[similar_4_ref]: /report/fcn.00427200@4fe38de7c6c86a1bad209560fa052231
+[similar_5_ref]: /report/fcn.004f2630@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

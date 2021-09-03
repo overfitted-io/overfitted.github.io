@@ -1,0 +1,139 @@
+---
+layout: post
+title:  "fcn.10009e8d @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10009e8d
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1000a104][similar_1_ref] (sim.: 0.8650107120511806)
+2. [fcn.10066d7f][similar_2_ref] (sim.: 0.8629136921940052)
+3. [fcn.100366cb][similar_3_ref] (sim.: 0.8619639543899149)
+4. [fcn.00417a43][similar_4_ref] (sim.: 0.8594883048933745)
+5. [fcn.00417a43][similar_5_ref] (sim.: 0.8594883048933745)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x22c
+mov eax,0x1012b71d
+call fcn.100eff85
+mov edi,ecx
+xor eax,eax
+xor ebx,ebx
+push 0x206
+mov word[ebp-0x218],ax
+lea eax,[ebp-0x216]
+push ebx
+push eax
+mov dword[ebp-0x220],ebx
+call fcn.100da270
+add esp,0xc
+lea eax,[ebp-0x218]
+push eax
+push ebx
+push ebx
+push 0x1a
+push ebx
+call dword[sym.imp.SHELL32.dll_SHGetFolderPathW]
+mov esi,dword[sym.imp.SHLWAPI.dll_PathAppendW]
+lea eax,[ebp-0x218]
+push 0x101660fc
+push eax
+call esi
+lea eax,[ebp-0x218]
+push eax
+lea ecx,[ebp-0x238]
+call fcn.1000a96e
+lea ecx,[ebp-0x238]
+call fcn.100a726b
+mov bl,al
+lea ecx,[ebp-0x238]
+push 0
+neg bl
+push 1
+sbb bl,bl
+call fcn.1000ccac
+inc bl
+je 0x10009f2f
+push 0
+lea eax,[ebp-0x218]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateDirectoryW]
+push str.ywdata2.dat
+lea eax,[ebp-0x218]
+push eax
+call esi
+xor esi,esi
+lea eax,[ebp-0x218]
+push esi
+push 0x80
+push 4
+push esi
+push 1
+push 0xc0000000
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov ebx,eax
+cmp ebx,0xffffffff
+je 0x10009fda
+push 2
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_SetFilePointer]
+mov dword[ebp-0x21c],esi
+call fcn.10005526
+push eax
+lea ecx,[ebp-0x21c]
+call fcn.1000cec5
+push edi
+lea eax,[ebp-0x21c]
+mov dword[ebp-4],esi
+push 0x10166014
+push eax
+call fcn.1002de1f
+mov edi,dword[sym.imp.KERNEL32.dll_WriteFile]
+lea eax,[ebp-0x220]
+add esp,0xc
+push esi
+mov esi,dword[ebp-0x21c]
+push eax
+push dword[esi-0xc]
+push esi
+push ebx
+call edi
+push 0
+lea eax,[ebp-0x220]
+push eax
+push 2
+push 0x10185784
+push ebx
+call edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea ecx,[esi-0x10]
+call fcn.1000550a
+call fcn.100eff34
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000a104@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.10066d7f@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.100366cb@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.00417a43@8e21fa3f0489a6a256cf202e57f712bc
+[similar_5_ref]: /report/fcn.00417a43@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

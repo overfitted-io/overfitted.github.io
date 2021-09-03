@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "fcn.0070e010 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0070e010
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0070ceb0][similar_1_ref] (sim.: 0.897539070572917)
+2. [fcn.00670a70][similar_2_ref] (sim.: 0.8943709632173974)
+3. [fcn.00712ec0][similar_3_ref] (sim.: 0.8939771174343816)
+4. [fcn.005ff610][similar_4_ref] (sim.: 0.888777161610017)
+5. [fcn.0067cb80][similar_5_ref] (sim.: 0.8855295679280313)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbp
+push rdi
+push rsi
+push rbx
+sub rsp,0x58
+mov edi,dword[r8]
+mov ebp,dword[r8+4]
+mov rbx,rcx
+mov esi,edx
+xor ecx,ecx
+call qword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov r9d,edi
+lea rdi,[0x00b6d5c0]
+movzx edx,si
+mov dword[rsp+0x28],0
+mov dword[rsp+0x20],ebp
+mov r8d,1
+mov rcx,rax
+call qword[sym.imp.USER32.dll_LoadImageW]
+test rax,rax
+mov qword[rbx+8],rax
+mov byte[rbx+0x10],1
+mov dword[rbx+0x14],0
+mov qword[rbx],rdi
+mov dword[rbx+0x18],esi
+je 0x70e077
+add rsp,0x58
+pop rbx
+pop rsi
+pop rdi
+pop rbp
+ret 
+mov ecx,0x18
+lea rsi,[rsp+0x30]
+call fcn.00a5b090
+lea rdx,str.Failed_to_create_an_icon_from_a_resource
+mov rcx,rsi
+mov rbp,rax
+call fcn.00a64590
+mov rdx,rsi
+mov rcx,rbp
+call fcn.00921b40
+mov rcx,qword[rsp+0x30]
+add rsi,0x10
+cmp rcx,rsi
+je 0x70e0b6
+call fcn.00a5af30
+lea r8,[0x00921f10]
+lea rdx,[0x00b48210]
+mov rcx,rbp
+call fcn.00a5b6d0
+mov rsi,rax
+cmp byte[rbx+0x10],0
+lea rax,[0x00b6dbe0]
+mov qword[rbx],rax
+je 0x70e0ee
+mov rcx,qword[rbx+8]
+test rcx,rcx
+je 0x70e0ee
+call qword[sym.imp.USER32.dll_DestroyIcon]
+mov rcx,rsi
+call fcn.008da260
+mov rcx,qword[rsp+0x30]
+add rsi,0x10
+mov rdi,rax
+cmp rcx,rsi
+je 0x70e10c
+call fcn.00a5af30
+mov rsi,rdi
+mov rcx,rbp
+call fcn.00a5b440
+jmp 0x70e0cf
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0070ceb0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.00670a70@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.00712ec0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.005ff610@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.0067cb80@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

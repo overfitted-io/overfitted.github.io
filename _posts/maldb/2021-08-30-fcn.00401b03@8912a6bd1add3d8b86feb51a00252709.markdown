@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.00401b03 @ 8912a6bd1add3d8b86feb51a00252709"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401b03
+- **Origin (md5):** 8912a6bd1add3d8b86feb51a00252709
+- **VirusTotal:** [virustotal.com/gui/file/8912a6bd1add3d8b86feb51a00252709][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00401b5b][similar_1_ref] (sim.: 0.8311217134421607)
+2. [fcn.005e50f6][similar_2_ref] (sim.: 0.8057561363575212)
+3. [fcn.00611e9e][similar_3_ref] (sim.: 0.8016044817615198)
+4. [fcn.005542a6][similar_4_ref] (sim.: 0.801086430885722)
+5. [fcn.0051ecee][similar_5_ref] (sim.: 0.7992093810653162)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push 0
+and dword[esi],0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+cmp word[eax],0x5a4d
+jne 0x401b2e
+mov ecx,dword[eax+0x3c]
+test ecx,ecx
+je 0x401b2e
+add eax,ecx
+mov cl,byte[eax+0x1a]
+mov byte[esi],cl
+mov al,byte[eax+0x1b]
+mov byte[esi+1],al
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401b5b@f7fdde1e34169179beb179f5c2c38adb
+[similar_2_ref]: /report/fcn.005e50f6@8481303ca93a816ad088ab207da601a7
+[similar_3_ref]: /report/fcn.00611e9e@55f27df545216d53535d76f71b6e14f5
+[similar_4_ref]: /report/fcn.005542a6@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_5_ref]: /report/fcn.0051ecee@cc49f2546fb252f16a4d5a9a02301eb1
+[virustotal_ref]: https://www.virustotal.com/gui/file/8912a6bd1add3d8b86feb51a00252709

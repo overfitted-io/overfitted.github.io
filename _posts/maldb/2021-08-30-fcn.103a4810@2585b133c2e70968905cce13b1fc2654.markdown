@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.103a4810 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.103a4810
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.300ef970][similar_1_ref] (sim.: 0.8070167236598378)
+2. [fcn.10638860][similar_2_ref] (sim.: 0.7966797066697159)
+3. [fcn.10175a10][similar_3_ref] (sim.: 0.7915308444548925)
+4. [fcn.100e7270][similar_4_ref] (sim.: 0.7888819453127801)
+5. [fcn.10013b70][similar_5_ref] (sim.: 0.7879141075073892)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push str.WeaponBute
+push 0
+push 0xf001f
+xor bl,bl
+call dword[sym.imp.KERNEL32.dll_OpenFileMappingA]
+mov esi,eax
+test esi,esi
+jne 0x103a484f
+push str.WeaponBute
+push 0x3976000
+push eax
+push 4
+push eax
+push 0xffffffffffffffff
+mov bl,1
+call dword[sym.imp.KERNEL32.dll_CreateFileMappingA]
+mov esi,eax
+test esi,esi
+jne 0x103a484f
+pop esi
+mov al,bl
+pop ebx
+ret 
+push ebp
+push edi
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push 0
+push 0
+push 0
+push 0xf001f
+push esi
+call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
+mov ebp,dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+xor esi,esi
+mov edi,eax
+mov ecx,dword[0x11b6a71c]
+test ecx,ecx
+je 0x103a488b
+mov eax,dword[0x11b6a720]
+sub eax,ecx
+sar eax,2
+cmp esi,eax
+jb 0x103a4893
+call ebp
+mov ecx,dword[0x11b6a71c]
+mov dword[ecx+esi*4],edi
+add esi,1
+add edi,0x72ec
+cmp esi,0x800
+jb 0x103a4873
+pop edi
+pop ebp
+pop esi
+mov al,bl
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300ef970@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.10638860@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.10175a10@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.100e7270@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.10013b70@ca9ea786d78fbd8b044a85f19ea8ac95
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

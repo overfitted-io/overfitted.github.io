@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "fcn.100622e0 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100622e0
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.101108e0][similar_1_ref] (sim.: 0.8706963417574023)
+2. [fcn.101d16c0][similar_2_ref] (sim.: 0.8706401824242267)
+3. [fcn.100096b0][similar_3_ref] (sim.: 0.8485643944124454)
+4. [fcn.100e7270][similar_4_ref] (sim.: 0.8456270431007599)
+5. [fcn.1004a970][similar_5_ref] (sim.: 0.8435142853493718)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+push esi
+mov esi,dword[esp+0x10]
+push esi
+call dword[sym.imp.USER32.dll_IsWindow]
+test eax,eax
+jne 0x100622fc
+xor al,al
+pop esi
+add esp,8
+ret 4
+mov eax,dword[0x10ca8248]
+mov ecx,dword[eax+0x320]
+call ecx
+test eax,eax
+je 0x100622f3
+mov edx,dword[eax]
+push 1
+push eax
+mov eax,dword[edx+0x50]
+call eax
+mov eax,dword[0x10ca8274]
+test eax,eax
+je 0x10062331
+push eax
+call dword[sym.imp.USER32.dll_DestroyWindow]
+mov dword[0x10ca8274],0
+push ebp
+push edi
+lea ecx,[esp+0xc]
+push ecx
+mov ecx,dword[0x10ca8254]
+call fcn.10054100
+fld dword[0x109ef0e4]
+push ecx
+fstp dword[esp]
+call fcn.1020ad50
+fiadd dword[esp+0x10]
+call fcn.109067f0
+fld dword[0x109ef0e0]
+fstp dword[esp]
+mov edi,eax
+call fcn.1020ad70
+fiadd dword[esp+0x14]
+add esp,4
+call fcn.109067f0
+push 0
+push 0
+mov ebp,eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+fld dword[0x109ef0dc]
+push eax
+push 0
+push esi
+push ecx
+fstp dword[esp]
+call fcn.1020ad70
+add esp,4
+call fcn.109067f0
+fld dword[0x109ef0d8]
+push eax
+push ecx
+fstp dword[esp]
+call fcn.1020ad50
+add esp,4
+call fcn.109067f0
+push eax
+push ebp
+push edi
+push 0x82000000
+push str.http:__cf.qq.com_client_client_advert.htm
+push str.AtlAxWin80
+push 0
+call dword[sym.imp.USER32.dll_CreateWindowExA]
+push 5
+push esi
+mov dword[0x10ca8274],eax
+mov byte[0x10d00f46],0
+call dword[sym.imp.USER32.dll_ShowWindow]
+push esi
+call dword[sym.imp.USER32.dll_SetFocus]
+pop edi
+pop ebp
+mov al,1
+pop esi
+add esp,8
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.101108e0@2585b133c2e70968905cce13b1fc2654
+[similar_2_ref]: /report/fcn.101d16c0@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.100096b0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.100e7270@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.1004a970@2585b133c2e70968905cce13b1fc2654
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

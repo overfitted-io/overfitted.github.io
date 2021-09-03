@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.100049cb @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100049cb
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.10003b1f][similar_1_ref] (sim.: 0.8698954356726014)
+2. [fcn.10009568][similar_2_ref] (sim.: 0.8672872805061628)
+3. [fcn.10003dbb][similar_3_ref] (sim.: 0.8662467486179806)
+4. [fcn.10006fda][similar_4_ref] (sim.: 0.8620271336397375)
+5. [fcn.10006bd8][similar_5_ref] (sim.: 0.8605497257767684)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20c
+mov eax,dword[0x1002f010]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[0x100312a4]
+push edi
+cmp eax,0xffffffff
+je 0x100049f5
+push 0x3a98
+push eax
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+mov eax,dword[0x10031174]
+cmp eax,0xffffffff
+je 0x10004aa3
+push eax
+call fcn.10004712
+pop ecx
+lea eax,[ebp-0x20c]
+push eax
+push 0x28
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+test eax,eax
+je 0x10004a3c
+push dword[ebp-0x20c]
+call fcn.10004712
+pop ecx
+push dword[ebp-0x20c]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+push dword[0x10031174]
+call dword[sym.imp.ADVAPI32.dll_ImpersonateLoggedOnUser]
+test eax,eax
+jne 0x10004a60
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+push str.Failed_to_impersonate_token:__d
+call fcn.10001d95
+pop ecx
+jmp 0x10004aad
+mov eax,dword[0x10031174]
+push 0x200
+push eax
+lea edi,[ebp-0x208]
+mov dword[0x1003b6b0],eax
+call fcn.100093a3
+pop ecx
+pop ecx
+test eax,eax
+je 0x10004aae
+mov eax,edi
+lea edx,[eax+1]
+mov cl,byte[eax]
+inc eax
+test cl,cl
+jne 0x10004a86
+sub eax,edx
+push 0xf
+push eax
+lea eax,[ebp-0x208]
+push eax
+call fcn.10001d50
+add esp,0xc
+jmp 0x10004aae
+push str.Failed_to_get_token
+call fcn.10001d95
+pop ecx
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+pop edi
+call fcn.100149fd
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10003b1f@090dc3a8da6aa33c667b678303e4bdd6
+[similar_2_ref]: /report/fcn.10009568@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.10003dbb@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.10006fda@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_5_ref]: /report/fcn.10006bd8@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

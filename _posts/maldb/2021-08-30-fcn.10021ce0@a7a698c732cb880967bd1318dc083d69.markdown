@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.10021ce0 @ a7a698c732cb880967bd1318dc083d69"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10021ce0
+- **Origin (md5):** a7a698c732cb880967bd1318dc083d69
+- **VirusTotal:** [virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.3010d5d0][similar_1_ref] (sim.: 0.8536644776929462)
+2. [fcn.10016236][similar_2_ref] (sim.: 0.8476782627450008)
+3. [fcn.100013fa][similar_3_ref] (sim.: 0.8320213631923375)
+4. [fcn.100026f7][similar_4_ref] (sim.: 0.831384998261917)
+5. [fcn.10020eea][similar_5_ref] (sim.: 0.8259244896934641)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+8]
+cmp eax,1
+jne 0x10021d75
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+push 1
+mov dword[0x1003ee70],eax
+call fcn.10023d16
+test eax,eax
+pop ecx
+je 0x10021d40
+mov eax,dword[0x1003ee70]
+xor ecx,ecx
+mov cl,byte[0x1003ee71]
+and eax,0xff
+shr dword[0x1003ee70],0x10
+mov dword[0x1003ee78],eax
+mov dword[0x1003ee7c],ecx
+shl eax,8
+add eax,ecx
+mov dword[0x1003ee74],eax
+call fcn.100231cc
+test eax,eax
+jne 0x10021d44
+call fcn.10023d73
+xor eax,eax
+jmp 0x10021db6
+call dword[sym.imp.KERNEL32.dll_GetCommandLineA]
+mov dword[0x10040584],eax
+call fcn.100287a2
+mov dword[0x1003ee5c],eax
+call fcn.1002828c
+call fcn.10028555
+call fcn.1002849c
+call fcn.1002240b
+inc dword[0x1003ee58]
+jmp 0x10021db3
+xor ecx,ecx
+cmp eax,ecx
+jne 0x10021da7
+cmp dword[0x1003ee58],ecx
+jle 0x10021d40
+dec dword[0x1003ee58]
+cmp dword[0x1003eea8],ecx
+jne 0x10021d96
+call fcn.1002245a
+call fcn.10028448
+call fcn.10023220
+call fcn.10023d73
+jmp 0x10021db3
+cmp eax,3
+jne 0x10021db3
+push ecx
+call fcn.100232b8
+pop ecx
+push 1
+pop eax
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.3010d5d0@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.10016236@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.100013fa@dc3e2cdf680078d293de3e2d92ba613c
+[similar_4_ref]: /report/fcn.100026f7@b9edf77857f539db509c59673523150a
+[similar_5_ref]: /report/fcn.10020eea@3785b40cea34bd176ce2c160dcf987f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69

@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00598b54 @ fd515d36e5c3696f076b92b737a2556c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00598b54
+- **Origin (md5):** fd515d36e5c3696f076b92b737a2556c
+- **VirusTotal:** [virustotal.com/gui/file/fd515d36e5c3696f076b92b737a2556c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.006a8544][similar_1_ref] (sim.: 0.8570238208588523)
+2. [fcn.00596e04][similar_2_ref] (sim.: 0.855122969726464)
+3. [fcn.00596e04][similar_3_ref] (sim.: 0.855122969726464)
+4. [fcn.00556224][similar_4_ref] (sim.: 0.8528706199839138)
+5. [fcn.00584ce4][similar_5_ref] (sim.: 0.8527219495329799)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x4665abc],ebx
+push esi
+push edi
+jne 0x598ba3
+push 0x59f618
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x598bd9
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x59f60c
+push edi
+call esi
+test eax,eax
+mov dword[0x4665abc],eax
+je 0x598bd9
+push 0x59f5fc
+push edi
+call esi
+push 0x59f5e8
+push edi
+mov dword[0x4665ac0],eax
+call esi
+mov dword[0x4665ac4],eax
+mov eax,dword[0x4665ac0]
+test eax,eax
+je 0x598bc2
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x598bc2
+mov eax,dword[0x4665ac4]
+test eax,eax
+je 0x598bc2
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x4665abc]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x598bd5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006a8544@3bf23deea18f4cf41dad4db83464f7ba
+[similar_2_ref]: /report/fcn.00596e04@009ea4ad185ccb9becba67b3b2163e8b
+[similar_3_ref]: /report/fcn.00596e04@096ef9f81a4dc8cb7c74a7404f69cfcb
+[similar_4_ref]: /report/fcn.00556224@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_5_ref]: /report/fcn.00584ce4@7222f99e9d37678c6831c282d2d5fc22
+[virustotal_ref]: https://www.virustotal.com/gui/file/fd515d36e5c3696f076b92b737a2556c

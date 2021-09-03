@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.0044ec13 @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0044ec13
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0044ee44][similar_1_ref] (sim.: 0.7987029225383598)
+2. [fcn.0044c09e][similar_2_ref] (sim.: 0.7771459348259102)
+3. [fcn.0044bcf4][similar_3_ref] (sim.: 0.7716020220585924)
+4. [fcn.0044c21d][similar_4_ref] (sim.: 0.7706125173753345)
+5. [fcn.00442ca0][similar_5_ref] (sim.: 0.7690925156937913)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10c
+mov eax,dword[0x483380]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+0xc]
+push ebx
+push esi
+mov esi,dword[ebp+8]
+push edi
+push eax
+xor ebx,ebx
+push ebx
+push 0x410
+mov dword[ebp-0x10c],ebx
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov edi,eax
+cmp edi,ebx
+je 0x44ec64
+push 0x104
+lea eax,[ebp-0x108]
+push eax
+push ebx
+push edi
+call sub.PSAPI.DLL_GetModuleFileNameExA
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea eax,[ebp-0x108]
+mov dword[esi+0x14],0xf
+mov dword[esi+0x10],ebx
+push eax
+mov ecx,esi
+mov byte[esi],bl
+call fcn.0040310d
+mov ecx,dword[ebp-4]
+pop edi
+mov eax,esi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00454d3f
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0044ee44@ab923633032c47ff6d9c40ed36a40b2b
+[similar_2_ref]: /report/fcn.0044c09e@ab923633032c47ff6d9c40ed36a40b2b
+[similar_3_ref]: /report/fcn.0044bcf4@ab923633032c47ff6d9c40ed36a40b2b
+[similar_4_ref]: /report/fcn.0044c21d@ab923633032c47ff6d9c40ed36a40b2b
+[similar_5_ref]: /report/fcn.00442ca0@3dfcfb1d918b690c00de324bcfcdc082
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

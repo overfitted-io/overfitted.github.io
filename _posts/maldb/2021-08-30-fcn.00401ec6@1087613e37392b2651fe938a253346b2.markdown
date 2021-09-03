@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.00401ec6 @ 1087613e37392b2651fe938a253346b2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401ec6
+- **Origin (md5):** 1087613e37392b2651fe938a253346b2
+- **VirusTotal:** [virustotal.com/gui/file/1087613e37392b2651fe938a253346b2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.0040312d][similar_1_ref] (sim.: 0.748037964285787)
+2. [fcn.0044df72][similar_2_ref] (sim.: 0.7392042529592371)
+3. [fcn.00408af4][similar_3_ref] (sim.: 0.7385274001852365)
+4. [fcn.00408af4][similar_4_ref] (sim.: 0.7385274001852365)
+5. [fcn.00600192][similar_5_ref] (sim.: 0.7349184041187926)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+0xc]
+dec eax
+je 0x401ef0
+dec eax
+je 0x401ee6
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.USER32.dll_DefWindowProcA]
+jmp 0x401f3b
+push 0
+call dword[sym.imp.USER32.dll_PostQuitMessage]
+jmp 0x401f39
+push 0x40cad4
+push 4
+push 0
+push fcn.00401cd7
+push 0
+push 0
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+push 0
+push eax
+mov dword[0x40cbdc],eax
+call dword[sym.imp.KERNEL32.dll_SetThreadPriority]
+push dword[0x40cbdc]
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+push 0xffffffffffffffff
+push dword[0x40cbdc]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+push dword[ebp+8]
+call dword[sym.imp.USER32.dll_DestroyWindow]
+xor eax,eax
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040312d@73677cb40830e94fbfb5483ff33e40b9
+[similar_2_ref]: /report/fcn.0044df72@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.00408af4@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_4_ref]: /report/fcn.00408af4@6f11dca39a331a6e158b2810d4d8234f
+[similar_5_ref]: /report/fcn.00600192@52d540e8e13e0f0bbb8946b2363a382d
+[virustotal_ref]: https://www.virustotal.com/gui/file/1087613e37392b2651fe938a253346b2

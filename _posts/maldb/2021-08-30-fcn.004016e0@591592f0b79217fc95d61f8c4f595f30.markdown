@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.004016e0 @ 591592f0b79217fc95d61f8c4f595f30"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004016e0
+- **Origin (md5):** 591592f0b79217fc95d61f8c4f595f30
+- **VirusTotal:** [virustotal.com/gui/file/591592f0b79217fc95d61f8c4f595f30][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00401700][similar_1_ref] (sim.: 0.8509521241961695)
+2. [fcn.004015a0][similar_2_ref] (sim.: 0.8306895142496804)
+3. [fcn.00401fb0][similar_3_ref] (sim.: 0.8280952566209281)
+4. [fcn.00471be0][similar_4_ref] (sim.: 0.8276680662338392)
+5. [fcn.10001990][similar_5_ref] (sim.: 0.8269114330557833)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10
+mov eax,dword[0x4402fc]
+xor eax,esp
+mov dword[esp+0xc],eax
+push ebx
+push 0x42d934
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+xor ebx,ebx
+cmp eax,ebx
+jne 0x401712
+xor al,al
+pop ebx
+mov ecx,dword[esp+0xc]
+xor ecx,esp
+call fcn.0040ddd1
+add esp,0x10
+ret 
+push edi
+push str.AddMandatoryAce
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov edi,eax
+cmp edi,ebx
+je 0x40177e
+mov al,1
+mov byte[esp+8],al
+mov byte[esp+9],al
+push esi
+lea eax,[esp+0xc]
+push eax
+mov byte[esp+0x12],bl
+mov byte[esp+0x13],bl
+mov byte[esp+0x14],bl
+mov byte[esp+0x15],bl
+mov byte[esp+0x16],bl
+mov byte[esp+0x17],0x10
+mov dword[esp+0x18],0x1000
+call dword[sym.imp.ADVAPI32.dll_GetLengthSid]
+mov esi,eax
+add esi,0x10
+push esi
+push 0x40
+call dword[sym.imp.KERNEL32.dll_LocalAlloc]
+push 2
+push esi
+push eax
+mov dword[0x44e584],eax
+call dword[sym.imp.ADVAPI32.dll_InitializeAcl]
+pop esi
+test eax,eax
+jne 0x401791
+pop edi
+xor al,al
+pop ebx
+mov ecx,dword[esp+0xc]
+xor ecx,esp
+call fcn.0040ddd1
+add esp,0x10
+ret 
+mov edx,dword[0x44e584]
+lea ecx,[esp+8]
+push ecx
+push ebx
+push 3
+push 2
+push edx
+call edi
+mov ecx,dword[esp+0x14]
+test eax,eax
+pop edi
+setne al
+pop ebx
+xor ecx,esp
+call fcn.0040ddd1
+add esp,0x10
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401700@2eb7544c38a76e8aaeea362abfc44c72
+[similar_2_ref]: /report/fcn.004015a0@2d591d102f09b733d7d0e893e5642beb
+[similar_3_ref]: /report/fcn.00401fb0@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_4_ref]: /report/fcn.00471be0@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.10001990@a0ac129ff3ea4c0dfa9529c259a9502c
+[virustotal_ref]: https://www.virustotal.com/gui/file/591592f0b79217fc95d61f8c4f595f30

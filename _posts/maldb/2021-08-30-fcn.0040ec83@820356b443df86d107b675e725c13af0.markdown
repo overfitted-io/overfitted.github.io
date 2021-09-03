@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.0040ec83 @ 820356b443df86d107b675e725c13af0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040ec83
+- **Origin (md5):** 820356b443df86d107b675e725c13af0
+- **VirusTotal:** [virustotal.com/gui/file/820356b443df86d107b675e725c13af0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040ec12][similar_1_ref] (sim.: 0.9072236811744427)
+2. [fcn.0040de75][similar_2_ref] (sim.: 0.896443574634664)
+3. [fcn.0040de75][similar_3_ref] (sim.: 0.896443574634664)
+4. [fcn.0040de75][similar_4_ref] (sim.: 0.896443574634664)
+5. [fcn.0040de75][similar_5_ref] (sim.: 0.896443574634664)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+cmp dword[ebp+8],0
+jne 0x40ec98
+push 0x80004003
+call fcn.004061a6
+test ebx,ebx
+je 0x40ec8e
+push esi
+push edi
+push 0
+call dword[sym.imp.USER32.dll_GetDC]
+mov esi,dword[sym.imp.GDI32.dll_GetDeviceCaps]
+mov edi,eax
+push 0x58
+push edi
+call esi
+push 0x5a
+push edi
+mov dword[ebp-4],eax
+call esi
+push edi
+push 0
+mov dword[ebp-8],eax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[ebp+8]
+mov esi,dword[sym.imp.KERNEL32.dll_MulDiv]
+mov edi,0x9ec
+push edi
+push dword[eax]
+push dword[ebp-4]
+call esi
+mov dword[ebx],eax
+mov eax,dword[ebp+8]
+push edi
+push dword[eax+4]
+push dword[ebp-8]
+call esi
+pop edi
+mov dword[ebx+4],eax
+pop esi
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040ec12@820356b443df86d107b675e725c13af0
+[similar_2_ref]: /report/fcn.0040de75@c6d5547a6b11db0106596d8a93b709be
+[similar_3_ref]: /report/fcn.0040de75@13ef005ca8ff2306b83fd3ae03f29104
+[similar_4_ref]: /report/fcn.0040de75@5eead96f991d1eaa139e848643009945
+[similar_5_ref]: /report/fcn.0040de75@9571c7458fae91969aaed3955e433f49
+[virustotal_ref]: https://www.virustotal.com/gui/file/820356b443df86d107b675e725c13af0

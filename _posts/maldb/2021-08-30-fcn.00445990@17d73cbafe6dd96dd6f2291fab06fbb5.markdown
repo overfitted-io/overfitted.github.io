@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.00445990 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00445990
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00445940][similar_1_ref] (sim.: 0.735091890923711)
+2. [fcn.00559f10][similar_2_ref] (sim.: 0.7102988165007524)
+3. [fcn.004e6ca0][similar_3_ref] (sim.: 0.7071588457300637)
+4. [fcn.00401940][similar_4_ref] (sim.: 0.7009388770441485)
+5. [fcn.00401940][similar_5_ref] (sim.: 0.7009388770441485)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push 0
+lea eax,[ebp-4]
+push eax
+push 1
+lea ecx,[ebp-6]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x4459bf
+cmp dword[ebp-4],0
+je 0x4459bf
+mov dword[ebp-0xc],1
+jmp 0x4459c6
+mov dword[ebp-0xc],0
+mov al,byte[ebp-0xc]
+mov byte[ebp-5],al
+movzx ecx,byte[ebp-5]
+test ecx,ecx
+je 0x4459e4
+push 1
+push 0
+push 0xffffffffffffffff
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_SetFilePointer]
+movzx eax,byte[ebp-5]
+neg eax
+sbb eax,eax
+add eax,1
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00445940@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.00559f10@2db66bac8e26cd758cb6fa211bf2d229
+[similar_3_ref]: /report/fcn.004e6ca0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00401940@29245c79f991cfb0a8bda1c5d052457d
+[similar_5_ref]: /report/fcn.00401940@ed513abc569bc29389208199ec389a34
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

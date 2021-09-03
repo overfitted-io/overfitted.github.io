@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.1018b8a0 @ 8761fe5e7bef67f1579f600248f8f0cc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1018b8a0
+- **Origin (md5):** 8761fe5e7bef67f1579f600248f8f0cc
+- **VirusTotal:** [virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.1008d510][similar_1_ref] (sim.: 0.9399174962856358)
+2. [fcn.1001e440][similar_2_ref] (sim.: 0.8145498721046788)
+3. [fcn.10019570][similar_3_ref] (sim.: 0.8090914315657246)
+4. [fcn.100e5210][similar_4_ref] (sim.: 0.8067264975383553)
+5. [fcn.00424a90][similar_5_ref] (sim.: 0.8059019988417964)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10c
+push esi
+push edi
+mov edx,dword[esp+0x118]
+mov ecx,0x41
+xor eax,eax
+lea edi,[esp+0x10]
+rep stosd dword es:[edi],eax
+mov ecx,dword[esp+0x11c]
+lea eax,[esp+8]
+push eax
+push 0xf003f
+push 0
+push ecx
+push edx
+mov dword[esp+0x1c],0
+mov esi,1
+mov dword[esp+0x20],0x104
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x1018b958
+mov edx,dword[esp+0x120]
+lea eax,[esp+0xc]
+lea ecx,[esp+0x10]
+push eax
+mov eax,dword[esp+0xc]
+push ecx
+push 0
+push 0
+push edx
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+je 0x1018b92f
+mov edx,dword[esp+8]
+xor esi,esi
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,esi
+pop edi
+pop esi
+add esp,0x10c
+ret 0x10
+lea ecx,[esp+0x10]
+push ecx
+mov ecx,dword[esp+0x128]
+call fcn.101bf41e
+mov edx,dword[esp+8]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,esi
+pop edi
+pop esi
+add esp,0x10c
+ret 0x10
+pop edi
+xor eax,eax
+pop esi
+add esp,0x10c
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1008d510@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.1001e440@a7a698c732cb880967bd1318dc083d69
+[similar_3_ref]: /report/fcn.10019570@2585b133c2e70968905cce13b1fc2654
+[similar_4_ref]: /report/fcn.100e5210@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.00424a90@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc

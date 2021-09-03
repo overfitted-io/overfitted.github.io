@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.01002fe5 @ bcf1729ded12dd6e2e4c565a6c795602"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.01002fe5
+- **Origin (md5):** bcf1729ded12dd6e2e4c565a6c795602
+- **VirusTotal:** [virustotal.com/gui/file/bcf1729ded12dd6e2e4c565a6c795602][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.01002fe5][similar_1_ref] (sim.: 1.0)
+2. [fcn.1004cf71][similar_2_ref] (sim.: 0.7815298537991876)
+3. [fcn.1000c060][similar_3_ref] (sim.: 0.7699645031778296)
+4. [fcn.14000d230][similar_4_ref] (sim.: 0.7666872076593283)
+5. [fcn.01002f8d][similar_5_ref] (sim.: 0.7655627118762242)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+lea eax,[eax+eax*2]
+shl eax,3
+mov ecx,dword[eax+0x100c4c4]
+sub ecx,0
+je 0x1003042
+dec ecx
+jne 0x1003068
+mov edx,dword[eax+0x100c4d0]
+push ebx
+push esi
+push edi
+mov edi,dword[eax+0x100c4cc]
+sub edx,edi
+cmp dword[ebp+0x10],edx
+jae 0x100301a
+mov edx,dword[ebp+0x10]
+mov esi,dword[eax+0x100c4c8]
+add esi,edi
+mov edi,dword[ebp+0xc]
+mov ecx,edx
+mov ebx,ecx
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,ebx
+and ecx,3
+rep movsb byte es:[edi],byte ptr[esi]
+add dword[eax+0x100c4cc],edx
+pop edi
+pop esi
+mov eax,edx
+pop ebx
+pop ebp
+ret 
+push 0
+lea ecx,[ebp+0x10]
+push ecx
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[eax+0x100c4d4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x1003063
+or eax,0xffffffff
+pop ebp
+ret 
+mov eax,dword[ebp+0x10]
+pop ebp
+ret 
+mov eax,dword[ebp+8]
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.01002fe5@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.1004cf71@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.1000c060@ca9ea786d78fbd8b044a85f19ea8ac95
+[similar_4_ref]: /report/fcn.14000d230@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.01002f8d@5f29ac1dca7e163ea19fd3cb73e2638f
+[virustotal_ref]: https://www.virustotal.com/gui/file/bcf1729ded12dd6e2e4c565a6c795602

@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.1000558b @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1000558b
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.10001fef][similar_1_ref] (sim.: 0.8178532172057646)
+2. [fcn.10009499][similar_2_ref] (sim.: 0.79855685135386)
+3. [fcn.100079ac][similar_3_ref] (sim.: 0.7979388710159554)
+4. [fcn.10003ca7][similar_4_ref] (sim.: 0.7950934142077282)
+5. [fcn.100014e0][similar_5_ref] (sim.: 0.7915443909967464)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x104
+mov eax,dword[0x1002f010]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push 0x100
+lea eax,[ebp-0x104]
+push 0
+push eax
+call fcn.10018150
+add esp,0xc
+cmp dword[ebp+8],0
+jne 0x100055ee
+push 0
+lea ebx,[ebp-0x104]
+call fcn.10005329
+pop ecx
+push 1
+push 4
+push dword[ebp+0xc]
+lea eax,[ebp-0x104]
+push eax
+mov ecx,edi
+call fcn.100036c8
+mov ecx,dword[ebp-4]
+add esp,0x10
+xor ecx,ebp
+pop ebx
+call fcn.100149fd
+leave 
+ret 
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call fcn.10004abb
+pop ecx
+push 1
+test eax,eax
+jne 0x100055bd
+lea ebx,[ebp-0x104]
+call fcn.10005329
+mov eax,ebx
+mov dword[esp],str.syswow64
+push eax
+call fcn.100161b0
+pop ecx
+pop ecx
+test eax,eax
+je 0x100055c9
+mov ecx,dword[str.system32]
+mov dword[eax],ecx
+mov ecx,dword[0x1002bfa0]
+mov dword[eax+4],ecx
+jmp 0x100055c9
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001fef@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.10009499@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.100079ac@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.10003ca7@090dc3a8da6aa33c667b678303e4bdd6
+[similar_5_ref]: /report/fcn.100014e0@b9edf77857f539db509c59673523150a
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

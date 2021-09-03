@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "loc.0043957c @ f86ab4114e997e148e8eceeac9acf240"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.0043957c
+- **Origin (md5):** f86ab4114e997e148e8eceeac9acf240
+- **VirusTotal:** [virustotal.com/gui/file/f86ab4114e997e148e8eceeac9acf240][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [loc.0042eb3c][similar_1_ref] (sim.: 0.8618438094651395)
+2. [loc.004043f6][similar_2_ref] (sim.: 0.8580729094562447)
+3. [loc.0042d43d][similar_3_ref] (sim.: 0.8567190046943929)
+4. [loc.00430e75][similar_4_ref] (sim.: 0.8556982803548037)
+5. [loc.00430e75][similar_5_ref] (sim.: 0.8556982803548037)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x45dbd0],eax
+mov dword[0x45dbcc],ecx
+mov dword[0x45dbc8],edx
+mov dword[0x45dbc4],ebx
+mov dword[0x45dbc0],esi
+mov dword[0x45dbbc],edi
+mov word[0x45dbe8],ss
+mov word[0x45dbdc],cs
+mov word[0x45dbb8],ds
+mov word[0x45dbb4],es
+mov word[0x45dbb0],fs
+mov word[0x45dbac],gs
+pushfd 
+pop dword[0x45dbe0]
+mov eax,dword[ebp]
+mov dword[0x45dbd4],eax
+mov eax,dword[ebp+4]
+mov dword[0x45dbd8],eax
+lea eax,[ebp+8]
+mov dword[0x45dbe4],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x45db20],0x10001
+mov eax,dword[0x45dbd8]
+mov dword[0x45dad4],eax
+mov dword[0x45dac8],0xc0000409
+mov dword[0x45dacc],1
+mov eax,dword[0x45c2b8]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x45c2bc]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x45db18],eax
+push 1
+call fcn.0043bf2e
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x450574
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x45db18],0
+jne 0x43966c
+push 1
+call fcn.0043bf2e
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.0042eb3c@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_2_ref]: /report/loc.004043f6@52db6d423a145a27bf6841bc6d6a753c
+[similar_3_ref]: /report/loc.0042d43d@9964b63070116cfb2469e51850178af1
+[similar_4_ref]: /report/loc.00430e75@3bf433430f740e75dfaf9134a5696829
+[similar_5_ref]: /report/loc.00430e75@4bd33f73402d0d03c0318f793884eb34
+[virustotal_ref]: https://www.virustotal.com/gui/file/f86ab4114e997e148e8eceeac9acf240

@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.0040c937 @ 2f226b8c6cd8e0f731b233309d01c72c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040c937
+- **Origin (md5):** 2f226b8c6cd8e0f731b233309d01c72c
+- **VirusTotal:** [virustotal.com/gui/file/2f226b8c6cd8e0f731b233309d01c72c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0041292b][similar_1_ref] (sim.: 0.8898081122606135)
+2. [fcn.0040d957][similar_2_ref] (sim.: 0.8884111393614951)
+3. [fcn.0040bc67][similar_3_ref] (sim.: 0.8817797940736943)
+4. [fcn.00409127][similar_4_ref] (sim.: 0.8810832191284653)
+5. [fcn.0040cd57][similar_5_ref] (sim.: 0.8746800401044383)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+cmp esi,0xffffffe0
+ja 0x40c9b2
+push ebx
+push edi
+mov eax,dword[0xb469ec]
+test eax,eax
+jne 0x40c96b
+call fcn.00409d1c
+push 0x1e
+call fcn.00409d79
+push 0xff
+call fcn.00409467
+mov eax,dword[0xb469ec]
+pop ecx
+pop ecx
+test esi,esi
+je 0x40c973
+mov ecx,esi
+jmp 0x40c976
+xor ecx,ecx
+inc ecx
+push ecx
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+test edi,edi
+jne 0x40c9ac
+push 0xc
+pop ebx
+cmp dword[0xb47820],eax
+je 0x40c99e
+push esi
+call fcn.0040b950
+pop ecx
+test eax,eax
+jne 0x40c945
+jmp 0x40c9a5
+call fcn.0040b657
+mov dword[eax],ebx
+call fcn.0040b657
+mov dword[eax],ebx
+mov eax,edi
+pop edi
+pop ebx
+jmp 0x40c9c6
+push esi
+call fcn.0040b950
+pop ecx
+call fcn.0040b657
+mov dword[eax],0xc
+xor eax,eax
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041292b@d8e81b230e51671f65a4a8e6ababe01d
+[similar_2_ref]: /report/fcn.0040d957@fbdc34e804f1067bfed624cdbe8650fe
+[similar_3_ref]: /report/fcn.0040bc67@d5337b9620c223d0a47057760eb166f6
+[similar_4_ref]: /report/fcn.00409127@39cc9d1efb3c13c15792b3ba0142fd3c
+[similar_5_ref]: /report/fcn.0040cd57@f40e41234bc244856083b8839ad797e1
+[virustotal_ref]: https://www.virustotal.com/gui/file/2f226b8c6cd8e0f731b233309d01c72c

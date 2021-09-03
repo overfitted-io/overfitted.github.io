@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "fcn.0042ab00 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0042ab00
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.006a9fd0][similar_1_ref] (sim.: 0.9077865551666687)
+2. [fcn.0070ceb0][similar_2_ref] (sim.: 0.9067303612752647)
+3. [fcn.0070d8f0][similar_3_ref] (sim.: 0.8984215689591781)
+4. [fcn.00703b40][similar_4_ref] (sim.: 0.8978603455960015)
+5. [fcn.00a64d60][similar_5_ref] (sim.: 0.8972126634215812)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rdi
+push rbx
+sub rsp,0x1f8
+xor eax,eax
+mov ecx,0x23
+mov rbx,qword[sym.imp.KERNEL32.dll_GetVersionExW]
+lea rdi,[rsp+0xd0]
+rep stosq qword[rdi],rax
+mov dword[rsp+0xd0],0x11c
+mov dword[rdi],0
+lea rdi,[rsp+0xd0]
+mov rcx,rdi
+call rbx
+test eax,eax
+jne 0x42ab4f
+mov dword[rsp+0xd0],0x114
+mov rcx,rdi
+call rbx
+test eax,eax
+je 0x42ac60
+movzx eax,byte[rsp+0x1ea]
+mov r9d,dword[rsp+0xd8]
+lea rdx,str.Windows_version:_major___lu__minor___lu__build___lu__SP___u__type___u_n
+mov r8d,dword[rsp+0xd4]
+mov rcx,qword[0x00c17000]
+mov dword[rsp+0x30],eax
+movzx eax,word[rsp+0x1e4]
+mov dword[rsp+0x28],eax
+mov eax,dword[rsp+0xdc]
+mov dword[rsp+0x20],eax
+call fcn.0042aad0
+lea rcx,[rsp+0x60]
+call qword[sym.imp.KERNEL32.dll_GetNativeSystemInfo]
+movzx eax,word[rsp+0x60]
+lea r9,[0x00a83564]
+cmp ax,9
+je 0x42abcf
+test ax,ax
+lea r9,[0x00a83560]
+jne 0x42ac83
+mov r8d,dword[rsp+0x80]
+mov rcx,qword[0x00c17000]
+lea rdx,str.Processors:__lu___s_n
+lea rdi,[rsp+0x90]
+lea rbx,[rsp+0x40]
+call fcn.0042aad0
+xor eax,eax
+mov ecx,8
+rep stosq qword[rdi],rax
+lea rcx,[rsp+0x90]
+mov dword[rsp+0x90],0x40
+call qword[sym.imp.KERNEL32.dll_GlobalMemoryStatusEx]
+mov rdx,qword[rsp+0x98]
+mov rcx,rbx
+add rbx,0x10
+call fcn.006a6100
+mov rcx,qword[0x00c17000]
+mov r8,qword[rsp+0x40]
+lea rdx,str.System_memory_installed:__s
+call fcn.0042aad0
+mov rcx,qword[rsp+0x40]
+cmp rcx,rbx
+je 0x42ac56
+call fcn.00a5af30
+nop 
+add rsp,0x1f8
+pop rbx
+pop rdi
+ret 
+mov r9,qword[0x00c17000]
+lea rcx,str.Windows_version:_unknown_n
+mov r8d,0x19
+mov edx,1
+call sub.msvcrt.dll_fwrite
+jmp 0x42aba2
+cmp ax,6
+lea r9,str.ia64
+lea rax,str._unknown_architecture_
+cmovne r9,rax
+jmp 0x42abcf
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006a9fd0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.0070ceb0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.0070d8f0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.00703b40@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.00a64d60@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

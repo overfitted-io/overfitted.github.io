@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.005663af @ 7453c96a6fbd42ec690b8deb53eafcba"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005663af
+- **Origin (md5):** 7453c96a6fbd42ec690b8deb53eafcba
+- **VirusTotal:** [virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00598384][similar_1_ref] (sim.: 0.8489284245224593)
+2. [fcn.0049725a][similar_2_ref] (sim.: 0.8446259745277822)
+3. [fcn.005c76b4][similar_3_ref] (sim.: 0.8422315094186265)
+4. [fcn.00555a54][similar_4_ref] (sim.: 0.8402582487946622)
+5. [fcn.00624644][similar_5_ref] (sim.: 0.8363157307964969)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x65475f]
+mov ecx,dword[0x65474f]
+push esi
+push edi
+xor edi,edi
+cmp eax,ecx
+jne 0x5663f2
+lea eax,[ecx+ecx*4+0x50]
+shl eax,2
+push eax
+push dword[0x654763]
+push edi
+push dword[0x654773]
+call dword[sym.imp.KERNEL32.dll_HeapReAlloc]
+cmp eax,edi
+je 0x566442
+add dword[0x65474f],0x10
+mov dword[0x654763],eax
+mov eax,dword[0x65475f]
+mov ecx,dword[0x654763]
+push 0x41c4
+push 8
+lea eax,[eax+eax*4]
+push dword[0x654773]
+lea esi,[ecx+eax*4]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+cmp eax,edi
+mov dword[esi+0x10],eax
+je 0x566442
+push 4
+push 0x2000
+push 0x100000
+push edi
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+cmp eax,edi
+mov dword[esi+0xc],eax
+jne 0x566446
+push dword[esi+0x10]
+push edi
+push dword[0x654773]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+xor eax,eax
+jmp 0x56645d
+or dword[esi+8],0xffffffff
+mov dword[esi],edi
+mov dword[esi+4],edi
+inc dword[0x65475f]
+mov eax,dword[esi+0x10]
+or dword[eax],0xffffffff
+mov eax,esi
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00598384@fd515d36e5c3696f076b92b737a2556c
+[similar_2_ref]: /report/fcn.0049725a@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_3_ref]: /report/fcn.005c76b4@9df9a5aa1b4726bd0de47365be1d7f48
+[similar_4_ref]: /report/fcn.00555a54@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_5_ref]: /report/fcn.00624644@30ae0be98a500ebab0e80cb562d02ecf
+[virustotal_ref]: https://www.virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba

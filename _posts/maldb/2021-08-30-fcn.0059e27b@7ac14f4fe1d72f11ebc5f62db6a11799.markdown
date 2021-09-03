@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.0059e27b @ 7ac14f4fe1d72f11ebc5f62db6a11799"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0059e27b
+- **Origin (md5):** 7ac14f4fe1d72f11ebc5f62db6a11799
+- **VirusTotal:** [virustotal.com/gui/file/7ac14f4fe1d72f11ebc5f62db6a11799][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.0059e25f][similar_1_ref] (sim.: 0.905129469283926)
+2. [fcn.004a918f][similar_2_ref] (sim.: 0.8749635403868632)
+3. [fcn.5e2e16fa][similar_3_ref] (sim.: 0.8495482831623857)
+4. [fcn.004fe25b][similar_4_ref] (sim.: 0.8387335228989429)
+5. [fcn.005b193f][similar_5_ref] (sim.: 0.8374052787783478)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov ebx,0xffff0000
+cmp eax,edi
+je 0x59e291
+test ebx,eax
+je 0x59e291
+not eax
+mov dword[0x5ad3e4],eax
+jmp 0x59e2f6
+push esi
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov esi,dword[ebp-4]
+xor esi,dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor esi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+xor esi,eax
+lea eax,[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[ebp-0xc]
+xor eax,dword[ebp-0x10]
+xor esi,eax
+cmp esi,edi
+jne 0x59e2d7
+mov esi,0xbb40e64f
+jmp 0x59e2e7
+test ebx,esi
+jne 0x59e2e7
+mov eax,esi
+or eax,0x4711
+shl eax,0x10
+or esi,eax
+mov dword[0x5ad3e0],esi
+not esi
+mov dword[0x5ad3e4],esi
+pop esi
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0059e25f@a19fdf17f648388c26b301d17cf9cf93
+[similar_2_ref]: /report/fcn.004a918f@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.5e2e16fa@40fe084e371a76111a4f0884be244b87
+[similar_4_ref]: /report/fcn.004fe25b@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.005b193f@b38ce64a273c3fc98fc78af14b8bdcc0
+[virustotal_ref]: https://www.virustotal.com/gui/file/7ac14f4fe1d72f11ebc5f62db6a11799

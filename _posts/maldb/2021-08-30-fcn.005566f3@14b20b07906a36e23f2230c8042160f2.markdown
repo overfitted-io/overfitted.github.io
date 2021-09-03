@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.005566f3 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005566f3
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.COccManager.virtual\_36][similar_1_ref] (sim.: 0.9398167699681258)
+2. [method.COccManager.virtual\_36][similar_2_ref] (sim.: 0.8059814756818886)
+3. [fcn.00416677][similar_3_ref] (sim.: 0.8024577621163312)
+4. [method.CDialog.virtual\_292][similar_4_ref] (sim.: 0.8004341288472381)
+5. [method.CDialog.virtual\_292][similar_5_ref] (sim.: 0.7970815874113804)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+xor ebx,ebx
+push esi
+push edi
+mov edi,ecx
+mov dword[ebp-4],ebx
+cmp dword[ebp+0xc],ebx
+je 0x55673b
+call fcn.00558216
+mov esi,dword[eax+0xc]
+push 0xf0
+push dword[ebp+0xc]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+je 0x55673b
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-4],eax
+test eax,eax
+je 0x55677e
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov ebx,eax
+mov esi,dword[ebp+8]
+mov dword[ebp+0xc],1
+test ebx,ebx
+je 0x556767
+push dword[ebp+0x10]
+mov eax,dword[edi]
+push ebx
+push esi
+mov ecx,edi
+call dword[eax+0x20]
+cmp dword[ebp-4],0
+mov dword[ebp+0xc],eax
+je 0x556767
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+cmp dword[esi+0x4c],0
+je 0x55677b
+mov ecx,dword[esi+0x4c]
+push dword[ebp+0x10]
+mov eax,dword[ecx]
+call dword[eax+0xa0]
+mov eax,dword[ebp+0xc]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.COccManager.virtual_36@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/method.COccManager.virtual_36@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/fcn.00416677@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/method.CDialog.virtual_292@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/method.CDialog.virtual_292@14b20b07906a36e23f2230c8042160f2
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

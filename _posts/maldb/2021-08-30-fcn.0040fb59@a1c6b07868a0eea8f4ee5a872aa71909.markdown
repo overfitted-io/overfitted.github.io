@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "fcn.0040fb59 @ a1c6b07868a0eea8f4ee5a872aa71909"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040fb59
+- **Origin (md5):** a1c6b07868a0eea8f4ee5a872aa71909
+- **VirusTotal:** [virustotal.com/gui/file/a1c6b07868a0eea8f4ee5a872aa71909][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.005579bd][similar_1_ref] (sim.: 0.8761124446098763)
+2. [fcn.005579ff][similar_2_ref] (sim.: 0.8517263071658427)
+3. [fcn.0041bc77][similar_3_ref] (sim.: 0.8280935490736355)
+4. [fcn.100053a7][similar_4_ref] (sim.: 0.819614590183477)
+5. [fcn.00433197][similar_5_ref] (sim.: 0.8157871608728265)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x230
+mov eax,dword[0x4535c4]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+push edi
+mov esi,ecx
+call fcn.0040fa5d
+mov edi,dword[esi+8]
+xor eax,eax
+mov word[ebp-6],ax
+mov word[ebp-8],ax
+push 0x105
+lea eax,[ebp-0x210]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x40fc47
+cmp word[ebp-8],0
+je 0x40fbb3
+push 0x6f
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+jmp 0x40fc47
+lea eax,[ebp-0x210]
+mov dword[ebp-0x228],eax
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x230],0x20
+mov dword[ebp-0x22c],0x88
+mov dword[ebp-0x21c],2
+mov dword[ebp-0x214],edi
+call fcn.0040facb
+mov dword[esi+0x80],eax
+cmp eax,0xffffffff
+jne 0x40fc16
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x21c],3
+call fcn.0040facb
+mov dword[esi+0x80],eax
+cmp dword[esi+0x80],0xffffffff
+jne 0x40fc47
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x21c],1
+call fcn.0040facb
+mov dword[esi+0x80],eax
+cmp eax,0xffffffff
+jne 0x40fc47
+and dword[esi+0x80],0
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.00428524
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005579bd@14b20b07906a36e23f2230c8042160f2
+[similar_2_ref]: /report/fcn.005579ff@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.0041bc77@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.100053a7@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.00433197@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/a1c6b07868a0eea8f4ee5a872aa71909

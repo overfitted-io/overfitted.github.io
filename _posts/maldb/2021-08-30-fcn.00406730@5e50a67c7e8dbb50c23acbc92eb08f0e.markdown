@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00406730 @ 5e50a67c7e8dbb50c23acbc92eb08f0e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00406730
+- **Origin (md5):** 5e50a67c7e8dbb50c23acbc92eb08f0e
+- **VirusTotal:** [virustotal.com/gui/file/5e50a67c7e8dbb50c23acbc92eb08f0e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00406730][similar_1_ref] (sim.: 1.0)
+2. [fcn.00406730][similar_2_ref] (sim.: 1.0)
+3. [fcn.00406730][similar_3_ref] (sim.: 1.0)
+4. [fcn.00406730][similar_4_ref] (sim.: 1.0)
+5. [fcn.00406730][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov dword[ebp-4],0
+jmp 0x406748
+mov eax,dword[ebp-4]
+add eax,1
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+8]
+cmp dword[ecx*4+0x44a07c],2
+jge 0x4067cf
+mov edx,1
+mov eax,dword[ebp+8]
+lea ecx,[eax*4+0x44a07c]
+xor eax,eax
+lock cmpxchg dword[ecx],edx
+test eax,eax
+jne 0x4067a6
+mov edx,dword[ebp+8]
+mov eax,dword[edx*4+0x448880]
+mov dword[ebp-8],eax
+mov ecx,dword[ebp-8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov dword[ebp-0xc],eax
+mov edx,dword[ebp+8]
+mov eax,dword[ebp-0xc]
+mov dword[edx*4+0x44a084],eax
+mov ecx,dword[ebp+8]
+lea edx,[ecx*4+0x44a07c]
+lock inc dword[edx]
+jmp 0x4067cf
+mov eax,dword[ebp-4]
+and eax,1
+je 0x4067c2
+call dword[sym.imp.KERNEL32.dll_SwitchToThread]
+test eax,eax
+jne 0x4067c0
+push 0
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x4067ca
+push 1
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x40673f
+mov ecx,dword[ebp+8]
+mov eax,dword[ecx*4+0x44a084]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406730@c0371bf2f84d37acabd30e547b4cc5fa
+[similar_2_ref]: /report/fcn.00406730@d701bfe1b2c669cec1fe384fdc108bfb
+[similar_3_ref]: /report/fcn.00406730@143c2afed0cb206e05faa28fca4f35ef
+[similar_4_ref]: /report/fcn.00406730@ec60ce05664fcce926079f6a04ff35cb
+[similar_5_ref]: /report/fcn.00406730@114b798bcd6c8d19f121c452bc20962c
+[virustotal_ref]: https://www.virustotal.com/gui/file/5e50a67c7e8dbb50c23acbc92eb08f0e

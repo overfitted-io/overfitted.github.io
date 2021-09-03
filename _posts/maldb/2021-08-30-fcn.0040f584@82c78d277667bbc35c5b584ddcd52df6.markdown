@@ -1,0 +1,143 @@
+---
+layout: post
+title:  "fcn.0040f584 @ 82c78d277667bbc35c5b584ddcd52df6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040f584
+- **Origin (md5):** 82c78d277667bbc35c5b584ddcd52df6
+- **VirusTotal:** [virustotal.com/gui/file/82c78d277667bbc35c5b584ddcd52df6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040f584][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0040f584][similar_2_ref] (sim.: 0.9998900981078187)
+3. [fcn.0040f584][similar_3_ref] (sim.: 0.9998900981078187)
+4. [fcn.0040f584][similar_4_ref] (sim.: 0.9998900981078187)
+5. [fcn.0040f584][similar_5_ref] (sim.: 0.9998900981078187)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x8c
+mov eax,dword[0x475084]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+0xc]
+push esi
+mov esi,dword[ebp+8]
+push edi
+lea edi,[esi+0x7c]
+cmp dword[edi],0
+mov dword[ebp-0x6c],eax
+jne 0x40f68c
+push ebx
+mov ebx,dword[sym.imp.GDI32.dll_GetStockObject]
+push 0x11
+call ebx
+test eax,eax
+jne 0x40f5c1
+push 0xd
+call ebx
+lea ecx,[ebp-0x60]
+push ecx
+push 0x5c
+push eax
+call dword[sym.imp.GDI32.dll_GetObjectW]
+lea eax,[ebp-0x44]
+mov dword[ebp-0x88],eax
+mov ax,word[ebp-0x50]
+mov word[ebp-0x7c],ax
+movzx eax,byte[ebp-0x49]
+mov word[ebp-0x7a],ax
+movzx eax,byte[ebp-0x4c]
+mov dword[ebp-0x78],eax
+movzx eax,byte[ebp-0x4b]
+mov dword[ebp-0x74],eax
+movzx eax,byte[ebp-0x4a]
+mov dword[ebp-0x70],eax
+mov eax,dword[ebp-0x60]
+mov dword[ebp-0x8c],0x20
+mov dword[ebp-0x68],eax
+test eax,eax
+jns 0x40f615
+neg eax
+mov dword[ebp-0x68],eax
+mov eax,dword[esi-0x4c]
+test eax,eax
+je 0x40f637
+push eax
+call dword[sym.imp.USER32.dll_GetDC]
+mov ebx,eax
+push 0x5a
+push ebx
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push ebx
+push dword[esi-0x4c]
+mov dword[ebp-0x64],eax
+jmp 0x40f658
+mov esi,dword[sym.imp.USER32.dll_GetDesktopWindow]
+call esi
+push eax
+call dword[sym.imp.USER32.dll_GetDC]
+mov ebx,eax
+push 0x5a
+push ebx
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push ebx
+mov dword[ebp-0x64],eax
+call esi
+push eax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[ebp-0x68]
+imul eax,eax,0xafc80
+cdq 
+idiv dword[ebp-0x64]
+and dword[ebp-0x80],0
+push edi
+push 0x453448
+mov dword[ebp-0x84],eax
+lea eax,[ebp-0x8c]
+push eax
+call dword[sym.imp.OLEAUT32.dll_OleTranslateColor]
+mov eax,dword[ebp-0x6c]
+pop ebx
+test eax,eax
+jne 0x40f697
+mov eax,0x80004003
+jmp 0x40f6a9
+mov ecx,dword[edi]
+mov dword[eax],ecx
+mov edi,dword[edi]
+test edi,edi
+je 0x40f6a7
+mov eax,dword[edi]
+push edi
+call dword[eax+4]
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.00410b3d
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040f584@44a756939733df3681808b122b91651f
+[similar_2_ref]: /report/fcn.0040f584@4145a3cd012c27a513ec76436468549a
+[similar_3_ref]: /report/fcn.0040f584@0c9813ad67afad78a02241f0c1f94624
+[similar_4_ref]: /report/fcn.0040f584@146b14fc12cf789043a79d4f548a23bf
+[similar_5_ref]: /report/fcn.0040f584@3d7f25d788af3e7f7707a736ac852465
+[virustotal_ref]: https://www.virustotal.com/gui/file/82c78d277667bbc35c5b584ddcd52df6

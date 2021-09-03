@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.004a4892 @ 18980bd3439a28c3ca084fb94b418e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004a4892
+- **Origin (md5):** 18980bd3439a28c3ca084fb94b418e27
+- **VirusTotal:** [virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0042a180][similar_1_ref] (sim.: 0.8953746690023047)
+2. [fcn.004a9f2d][similar_2_ref] (sim.: 0.8952887129688748)
+3. [fcn.004bec4e][similar_3_ref] (sim.: 0.8865403790069502)
+4. [fcn.005a9e83][similar_4_ref] (sim.: 0.8863616367509204)
+5. [fcn.00434e7e][similar_5_ref] (sim.: 0.863354732686911)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+push ebx
+push esi
+lea eax,[ebp-4]
+push edi
+mov esi,0x2001f
+xor edi,edi
+push eax
+push esi
+push edi
+mov ebx,ecx
+push str.software
+push reloc.WS2_32.dll_accept
+mov dword[ebp-0x14],ebx
+mov dword[ebp-0xc],edi
+mov dword[ebp-4],edi
+mov dword[ebp-8],edi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x4a4904
+lea eax,[ebp-0x10]
+push eax
+lea eax,[ebp-8]
+push eax
+push edi
+push esi
+push edi
+push edi
+push edi
+push dword[ebx+0x7c]
+mov ebx,dword[sym.imp.ADVAPI32.dll_RegCreateKeyExA]
+push dword[ebp-4]
+call ebx
+test eax,eax
+jne 0x4a4904
+lea eax,[ebp-0x10]
+push eax
+lea eax,[ebp-0xc]
+push eax
+mov eax,dword[ebp-0x14]
+push edi
+push esi
+push edi
+push edi
+push edi
+push dword[eax+0x90]
+push dword[ebp-8]
+call ebx
+cmp dword[ebp-4],edi
+mov esi,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+je 0x4a4914
+push dword[ebp-4]
+call esi
+cmp dword[ebp-8],edi
+je 0x4a491e
+push dword[ebp-8]
+call esi
+mov eax,dword[ebp-0xc]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042a180@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_2_ref]: /report/fcn.004a9f2d@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_3_ref]: /report/fcn.004bec4e@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.005a9e83@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.00434e7e@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27

@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "fcn.00408dc8 @ 513a8bfcd5da1a9aee6dd942ecac565e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408dc8
+- **Origin (md5):** 513a8bfcd5da1a9aee6dd942ecac565e
+- **VirusTotal:** [virustotal.com/gui/file/513a8bfcd5da1a9aee6dd942ecac565e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00408f58][similar_1_ref] (sim.: 0.8676914854094198)
+2. [fcn.0040b8c8][similar_2_ref] (sim.: 0.8410075395193601)
+3. [fcn.0040df38][similar_3_ref] (sim.: 0.8344131246849468)
+4. [fcn.0040e8c9][similar_4_ref] (sim.: 0.8275286924292755)
+5. [fcn.0040a8a8][similar_5_ref] (sim.: 0.8267107772761664)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[ebp+8],0
+je 0x408dfe
+push dword[ebp+8]
+push 0
+push dword[0xa83f64]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+test eax,eax
+jne 0x408dfe
+push esi
+call fcn.00409b77
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+call fcn.00409b8a
+pop ecx
+mov dword[esi],eax
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408f58@ad31b5a684d4322296b17fe829c17502
+[similar_2_ref]: /report/fcn.0040b8c8@fbdc34e804f1067bfed624cdbe8650fe
+[similar_3_ref]: /report/fcn.0040df38@3d0ec851566b617e7e4e75da3dd9651c
+[similar_4_ref]: /report/fcn.0040e8c9@d8e81b230e51671f65a4a8e6ababe01d
+[similar_5_ref]: /report/fcn.0040a8a8@2f226b8c6cd8e0f731b233309d01c72c
+[virustotal_ref]: https://www.virustotal.com/gui/file/513a8bfcd5da1a9aee6dd942ecac565e

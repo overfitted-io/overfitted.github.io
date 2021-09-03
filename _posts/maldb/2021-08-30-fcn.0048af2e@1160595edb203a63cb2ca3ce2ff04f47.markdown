@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.0048af2e @ 1160595edb203a63cb2ca3ce2ff04f47"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0048af2e
+- **Origin (md5):** 1160595edb203a63cb2ca3ce2ff04f47
+- **VirusTotal:** [virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0043ff78][similar_1_ref] (sim.: 0.85487990985575)
+2. [fcn.0048532e][similar_2_ref] (sim.: 0.8537868614019495)
+3. [fcn.00437d5b][similar_3_ref] (sim.: 0.8419988181545275)
+4. [fcn.00468098][similar_4_ref] (sim.: 0.8315129694451162)
+5. [fcn.004b2515][similar_5_ref] (sim.: 0.8087471141405652)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+0x14]
+push edi
+mov edi,dword[ebp+0xc]
+imul edi,dword[ebp+0x10]
+cmp byte[esi],0
+je 0x48af62
+push 0
+lea eax,[ebp+0x10]
+push eax
+push edi
+push dword[ebp+8]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x48af5d
+mov byte[esi+8],1
+mov eax,dword[ebp+0x10]
+jmp 0x48af8a
+mov ecx,dword[esi+0x18]
+mov eax,dword[esi+0x14]
+lea edx,[ecx+edi]
+cmp edx,eax
+jbe 0x48af73
+sub eax,ecx
+mov edi,eax
+mov eax,dword[esi+0x10]
+push edi
+add eax,ecx
+push eax
+push dword[ebp+8]
+call fcn.004ebbf0
+add esp,0xc
+add dword[esi+0x18],edi
+mov eax,edi
+xor edx,edx
+div dword[ebp+0xc]
+pop edi
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043ff78@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.0048532e@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00437d5b@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.00468098@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.004b2515@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47

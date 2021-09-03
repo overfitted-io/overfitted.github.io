@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.10029920 @ 3785b40cea34bd176ce2c160dcf987f8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10029920
+- **Origin (md5):** 3785b40cea34bd176ce2c160dcf987f8
+- **VirusTotal:** [virustotal.com/gui/file/3785b40cea34bd176ce2c160dcf987f8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.00409264][similar_1_ref] (sim.: 0.8505474734333416)
+2. [fcn.00692164][similar_2_ref] (sim.: 0.8274684539553455)
+3. [fcn.0040a8f4][similar_3_ref] (sim.: 0.8240998046566952)
+4. [fcn.004138f4][similar_4_ref] (sim.: 0.8191935469666412)
+5. [fcn.00411924][similar_5_ref] (sim.: 0.8180847606186281)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+test esi,esi
+je 0x10029946
+push 0xffffffffffffffe0
+xor edx,edx
+pop eax
+div esi
+cmp eax,dword[ebp+0xc]
+jae 0x10029946
+call fcn.10021d18
+mov dword[eax],0xc
+xor eax,eax
+jmp 0x10029997
+imul esi,dword[ebp+0xc]
+test esi,esi
+jne 0x1002994f
+inc esi
+xor ecx,ecx
+cmp esi,0xffffffe0
+ja 0x1002996b
+push esi
+push 8
+push dword[0x1005bedc]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov ecx,eax
+test ecx,ecx
+jne 0x10029995
+cmp dword[0x1005c8b8],0
+je 0x10029988
+push esi
+call fcn.100243d3
+pop ecx
+test eax,eax
+jne 0x1002994f
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x10029942
+jmp 0x1002993c
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x10029995
+mov dword[eax],0xc
+mov eax,ecx
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409264@39cc9d1efb3c13c15792b3ba0142fd3c
+[similar_2_ref]: /report/fcn.00692164@c3923bc2d28b85b235b8ead7fd2e963d
+[similar_3_ref]: /report/fcn.0040a8f4@77717b0243ef40f58615132b9a9cda50
+[similar_4_ref]: /report/fcn.004138f4@235127bd7ddea75fb72313b9d5061e79
+[similar_5_ref]: /report/fcn.00411924@2e1edbc8d641dbbe3e09e9f1f72cd2fc
+[virustotal_ref]: https://www.virustotal.com/gui/file/3785b40cea34bd176ce2c160dcf987f8

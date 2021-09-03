@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "fcn.00411fcf @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00411fcf
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00402626][similar_1_ref] (sim.: 0.8076035886915235)
+2. [fcn.00404539][similar_2_ref] (sim.: 0.8041569424271012)
+3. [fcn.100013fa][similar_3_ref] (sim.: 0.7896798442170714)
+4. [fcn.0040a47a][similar_4_ref] (sim.: 0.787100366358773)
+5. [fcn.0040a47a][similar_5_ref] (sim.: 0.787100366358773)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+push edi
+push dword[esp+0x14]
+xor ebp,ebp
+xor ebx,ebx
+call fcn.00411f98
+mov edi,eax
+pop ecx
+test edi,edi
+jne 0x411fee
+push 7
+pop eax
+jmp 0x412077
+push esi
+call fcn.00411897
+test eax,eax
+je 0x41202a
+push edi
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
+mov esi,eax
+cmp esi,0xffffffff
+jne 0x41201a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov ebx,eax
+cmp ebx,5
+jne 0x41205c
+inc ebp
+cmp ebp,5
+jge 0x41205c
+push 0x64
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x411ff8
+push edi
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
+mov esi,eax
+cmp esi,0xffffffff
+jne 0x41204c
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov ebx,eax
+cmp ebx,5
+jne 0x41205c
+inc ebp
+cmp ebp,5
+jge 0x41205c
+push 0x64
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x41202a
+push edi
+call fcn.0045484a
+pop ecx
+cmp esi,0xffffffff
+pop esi
+jne 0x412072
+cmp ebx,2
+jne 0x412072
+xor eax,eax
+jmp 0x412077
+mov eax,0xa0a
+pop edi
+pop ebp
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402626@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00404539@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.100013fa@dc3e2cdf680078d293de3e2d92ba613c
+[similar_4_ref]: /report/fcn.0040a47a@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_5_ref]: /report/fcn.0040a47a@6f11dca39a331a6e158b2810d4d8234f
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

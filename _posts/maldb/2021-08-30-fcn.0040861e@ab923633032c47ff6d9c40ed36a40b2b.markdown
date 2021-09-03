@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "fcn.0040861e @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040861e
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00401426][similar_1_ref] (sim.: 0.8549298651004296)
+2. [fcn.00446ac0][similar_2_ref] (sim.: 0.8490995681930373)
+3. [fcn.0048e81b][similar_3_ref] (sim.: 0.8490312093830942)
+4. [fcn.00405aa1][similar_4_ref] (sim.: 0.8478789185246176)
+5. [fcn.00418014][similar_5_ref] (sim.: 0.8475124314437772)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0
+mov eax,0x46caf3
+call fcn.00454d4e
+mov esi,dword[ebp+8]
+xor ebx,ebx
+mov dword[ebp-4],ebx
+cmp esi,ebx
+je 0x408750
+push str.PATH
+call fcn.0045561c
+pop ecx
+cmp eax,ebx
+je 0x408673
+push ebx
+push esi
+push 0x4703fc
+push eax
+call fcn.00407b4d
+mov edi,eax
+push ebx
+push edi
+push 0x4703f4
+call fcn.00407b4d
+push eax
+call fcn.004566b6
+push edi
+call fcn.00454950
+add esp,0x24
+push ebx
+push str._nss3.dll
+push esi
+call fcn.00407b4d
+add esp,0xc
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x40871b
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.NSS_Init
+push edi
+call esi
+push str.NSS_Shutdown
+push edi
+mov dword[0x484860],eax
+call esi
+push str.PK11_GetInternalKeySlot
+push edi
+mov dword[0x484880],eax
+call esi
+push str.PK11_FreeSlot
+push edi
+mov dword[0x48483c],eax
+call esi
+push str.PK11_Authenticate
+push edi
+mov dword[0x484858],eax
+call esi
+push str.PK11SDR_Decrypt
+push edi
+mov dword[0x48486c],eax
+call esi
+push str.sqlite3_open
+push edi
+mov dword[0x484854],eax
+call esi
+push str.sqlite3_prepare_v2
+push edi
+mov dword[0x48485c],eax
+call esi
+push str.sqlite3_step
+push edi
+mov dword[0x484870],eax
+call esi
+push str.sqlite3_column_text
+push edi
+mov dword[0x484864],eax
+call esi
+mov dword[0x484834],eax
+cmp dword[0x484860],ebx
+je 0x408750
+cmp dword[0x484880],ebx
+je 0x408750
+cmp dword[0x48483c],ebx
+je 0x408750
+cmp dword[0x48486c],ebx
+je 0x408750
+cmp dword[0x484854],ebx
+je 0x408750
+cmp dword[0x484858],ebx
+je 0x408750
+xor esi,esi
+inc esi
+jmp 0x408752
+xor esi,esi
+push ebx
+push 1
+lea ecx,[ebp+0xc]
+call fcn.0040239d
+mov eax,esi
+call fcn.00454e26
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401426@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00446ac0@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.0048e81b@a4175bd1311845689d3bca41d1d095ff
+[similar_4_ref]: /report/fcn.00405aa1@e38ba004520fa1a86a35b63e8d5843ef
+[similar_5_ref]: /report/fcn.00418014@820356b443df86d107b675e725c13af0
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

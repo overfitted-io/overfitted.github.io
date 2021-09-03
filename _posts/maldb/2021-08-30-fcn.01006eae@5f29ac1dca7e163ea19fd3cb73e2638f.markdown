@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "fcn.01006eae @ 5f29ac1dca7e163ea19fd3cb73e2638f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.01006eae
+- **Origin (md5):** 5f29ac1dca7e163ea19fd3cb73e2638f
+- **VirusTotal:** [virustotal.com/gui/file/5f29ac1dca7e163ea19fd3cb73e2638f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00417ba7][similar_1_ref] (sim.: 0.874671435963359)
+2. [fcn.0040ddb6][similar_2_ref] (sim.: 0.8674845686230639)
+3. [fcn.0040ba7c][similar_3_ref] (sim.: 0.8671972168728571)
+4. [fcn.10004102][similar_4_ref] (sim.: 0.8415305517686801)
+5. [fcn.00408ec1][similar_5_ref] (sim.: 0.8414583035454595)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x4c
+push ebx
+push esi
+push edi
+push 4
+pop eax
+call fcn.01006fa0
+mov esi,esp
+push 0x1c
+lea eax,[ebp-0x28]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_VirtualQuery]
+test eax,eax
+je 0x1006f49
+mov ebx,dword[ebp-0x24]
+lea eax,[ebp-0x4c]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+mov ecx,dword[ebp-0x48]
+mov eax,dword[0x1008bb8]
+lea edi,[ecx-1]
+not edi
+and edi,esi
+sub edi,ecx
+mov esi,eax
+dec esi
+neg esi
+sbb esi,esi
+and esi,0xfffffff1
+add esi,0x11
+imul esi,ecx
+add esi,ebx
+cmp edi,esi
+mov dword[ebp-8],ecx
+jb 0x1006f49
+cmp eax,1
+je 0x1006f6a
+mov dword[ebp-4],ebx
+mov ebx,0x1000
+push 0x1c
+lea eax,[ebp-0x28]
+push eax
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_VirtualQuery]
+test eax,eax
+je 0x1006f49
+mov eax,dword[ebp-0x1c]
+add dword[ebp-4],eax
+test dword[ebp-0x18],ebx
+je 0x1006f16
+test byte[ebp-0x13],1
+mov eax,dword[ebp-0x28]
+mov dword[ebp-4],eax
+je 0x1006f45
+xor eax,eax
+inc eax
+jmp 0x1006f89
+cmp edi,eax
+jae 0x1006f4d
+xor eax,eax
+jmp 0x1006f89
+cmp eax,esi
+jae 0x1006f54
+mov dword[ebp-4],esi
+push 4
+push ebx
+push dword[ebp-8]
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov eax,dword[0x1008bb8]
+jmp 0x1006f6d
+mov dword[ebp-4],edi
+dec eax
+neg eax
+sbb eax,eax
+and eax,0x103
+lea ecx,[ebp-0xc]
+push ecx
+inc eax
+push eax
+push dword[ebp-8]
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_VirtualProtect]
+lea esp,[ebp-0x58]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00417ba7@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.0040ddb6@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.0040ba7c@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.10004102@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_5_ref]: /report/fcn.00408ec1@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f29ac1dca7e163ea19fd3cb73e2638f

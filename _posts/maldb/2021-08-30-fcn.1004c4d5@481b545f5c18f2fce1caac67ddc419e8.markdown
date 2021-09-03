@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.1004c4d5 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1004c4d5
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.1001275b][similar_1_ref] (sim.: 0.7860141386077687)
+2. [fcn.1000d04f][similar_2_ref] (sim.: 0.780514622070056)
+3. [fcn.0040a663][similar_3_ref] (sim.: 0.7611013651196057)
+4. [fcn.10905f08][similar_4_ref] (sim.: 0.7498380796142915)
+5. [fcn.30008aa9][similar_5_ref] (sim.: 0.7444593056429065)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x98
+mov eax,dword[0x10062200]
+xor eax,ebp
+mov dword[ebp-4],eax
+lea eax,[ebp-0x98]
+push eax
+mov dword[ebp-0x98],0x94
+call dword[sym.imp.KERNEL32.dll_GetVersionExA]
+cmp dword[ebp-0x88],2
+jne 0x1004c516
+cmp dword[ebp-0x94],5
+mov eax,0x1004c4d1
+jae 0x1004c51b
+mov eax,fcn.1004c46c
+push eax
+push 0x10063540
+call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
+call dword[0x10063540]
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.1002288b
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001275b@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_2_ref]: /report/fcn.1000d04f@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.0040a663@de21a548b66aa6c0b17491b6a31e14fa
+[similar_4_ref]: /report/fcn.10905f08@2585b133c2e70968905cce13b1fc2654
+[similar_5_ref]: /report/fcn.30008aa9@34331352e23fe6219f517c1709e63c61
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

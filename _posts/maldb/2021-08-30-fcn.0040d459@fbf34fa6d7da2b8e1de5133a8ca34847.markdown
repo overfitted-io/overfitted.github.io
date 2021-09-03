@@ -1,0 +1,144 @@
+---
+layout: post
+title:  "fcn.0040d459 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d459
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040d459][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040d1bf][similar_2_ref] (sim.: 0.8808934062741559)
+3. [fcn.0040d1bf][similar_3_ref] (sim.: 0.8808934062741559)
+4. [fcn.0040a700][similar_4_ref] (sim.: 0.8733544237093989)
+5. [fcn.0040a700][similar_5_ref] (sim.: 0.8733544237093989)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+0x10]
+push ebx
+mov ebx,dword[esp+8]
+push ebp
+push esi
+push edi
+push 4
+pop ecx
+add ebx,ecx
+mov edi,eax
+xor ebp,ebp
+mov edx,ebx
+and edi,3
+mov esi,ebp
+and edx,3
+je 0x40d47e
+sub ecx,edx
+add ebx,ecx
+test al,4
+je 0x40d532
+push 0x40d622
+push 0x4175f4
+call fcn.0040d683
+push 0x4175fc
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov eax,dword[0x4175f8]
+mov ebp,dword[esp+0x20]
+jmp 0x40d4b7
+cmp dword[eax+0xc],ebx
+jne 0x40d4b5
+cmp dword[eax+0x10],ebp
+je 0x40d4bd
+mov eax,dword[eax]
+test eax,eax
+jne 0x40d4ab
+jmp 0x40d4c7
+inc dword[eax+0x14]
+mov esi,dword[eax+8]
+test esi,esi
+jne 0x40d525
+push 0x18
+push 0
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+test edi,edi
+je 0x40d525
+mov eax,ebp
+and eax,0xfffffffb
+push eax
+push dword[esp+0x20]
+lea eax,[ebx-4]
+push dword[esp+0x20]
+push eax
+call fcn.0040d459
+mov esi,eax
+test esi,esi
+je 0x40d525
+mov eax,dword[0x4175f8]
+mov dword[esi+8],edi
+and dword[edi+4],0
+mov dword[edi+8],esi
+mov dword[edi+0xc],ebx
+mov dword[edi+0x10],ebp
+mov dword[edi+0x14],1
+mov dword[edi],eax
+test eax,eax
+je 0x40d51f
+mov dword[eax+4],edi
+mov dword[0x4175f8],edi
+push 0x4175fc
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+jmp 0x40d57d
+push 0x38
+push ebp
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov esi,eax
+test esi,esi
+je 0x40d57d
+mov eax,dword[esp+0x18]
+mov dword[esi+0x14],eax
+mov eax,dword[esp+0x1c]
+mov dword[esi+0x18],eax
+xor eax,eax
+inc eax
+mov dword[esi],ebp
+mov dword[esi+4],ebp
+mov dword[esi+8],ebp
+mov dword[esi+0x10],ebx
+cmp edi,eax
+je 0x40d570
+test edi,edi
+je 0x40d570
+mov dword[esi+0x1c],ebp
+jmp 0x40d57d
+mov dword[esi+0x1c],eax
+lea eax,[esi+0x20]
+push eax
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+pop edi
+mov eax,esi
+pop esi
+pop ebp
+pop ebx
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040d459@6f11dca39a331a6e158b2810d4d8234f
+[similar_2_ref]: /report/fcn.0040d1bf@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_3_ref]: /report/fcn.0040d1bf@6f11dca39a331a6e158b2810d4d8234f
+[similar_4_ref]: /report/fcn.0040a700@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_5_ref]: /report/fcn.0040a700@6f11dca39a331a6e158b2810d4d8234f
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

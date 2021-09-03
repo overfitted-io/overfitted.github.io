@@ -1,0 +1,147 @@
+---
+layout: post
+title:  "fcn.0040d3f1 @ 53687e619dcac7d709f306d061d8daeb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d3f1
+- **Origin (md5):** 53687e619dcac7d709f306d061d8daeb
+- **VirusTotal:** [virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0040d3f1][similar_1_ref] (sim.: 1.0)
+2. [fcn.00403389][similar_2_ref] (sim.: 0.8844305335723331)
+3. [fcn.00415181][similar_3_ref] (sim.: 0.8747694396915748)
+4. [fcn.00415181][similar_4_ref] (sim.: 0.8747694396915748)
+5. [fcn.00402d24][similar_5_ref] (sim.: 0.8708533032990787)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x560
+lea eax,[ebp-0x25c]
+push ebx
+push esi
+push edi
+mov esi,0x104
+xor ebx,ebx
+push esi
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+lea eax,[ebp-0x360]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_GetTempPathA]
+mov eax,dword[0x4ae264]
+mov esi,dword[sym.imp.KERNEL32.dll_GetTempFileNameA]
+test byte[eax+0xaf68],1
+je 0x40d451
+lea ecx,[ebp-0x158]
+add eax,0xb07b
+push ecx
+push ebx
+push eax
+lea eax,[ebp-0x360]
+push eax
+call esi
+mov eax,dword[0x4ae264]
+test byte[eax+0xaf68],2
+je 0x40d471
+lea ecx,[ebp-0x158]
+add eax,0xa8de
+push ecx
+push ebx
+push eax
+lea eax,[ebp-0x360]
+push eax
+call esi
+push ebx
+lea eax,[ebp-0x158]
+push eax
+lea eax,[ebp-0x25c]
+push eax
+call dword[sym.imp.KERNEL32.dll_CopyFileA]
+push ebx
+push 0x4000000
+push 3
+push ebx
+push 1
+push ebx
+lea eax,[ebp-0x158]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+push eax
+push 1
+push 0x100000
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov edi,eax
+lea eax,[ebp-0x25c]
+push eax
+push edi
+lea eax,[ebp-0x158]
+push eax
+lea eax,[ebp-0x560]
+push str._s__cleanup__d___s_
+push eax
+call dword[sym.imp.USER32.dll_wsprintfA]
+push 0x44
+pop ebx
+push ebx
+lea eax,[ebp-0x54]
+push 0
+push eax
+call fcn.00443b90
+add esp,0x20
+mov dword[ebp-0x54],ebx
+lea eax,[ebp-0x10]
+xor ecx,ecx
+push eax
+lea eax,[ebp-0x54]
+push eax
+push ecx
+push ecx
+push ecx
+push 1
+push ecx
+push ecx
+lea eax,[ebp-0x560]
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_CreateProcessA]
+push 0x1f4
+call dword[sym.imp.KERNEL32.dll_Sleep]
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+call esi
+push edi
+call esi
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040d3f1@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_2_ref]: /report/fcn.00403389@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00415181@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.00415181@53687e619dcac7d709f306d061d8daeb
+[similar_5_ref]: /report/fcn.00402d24@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb

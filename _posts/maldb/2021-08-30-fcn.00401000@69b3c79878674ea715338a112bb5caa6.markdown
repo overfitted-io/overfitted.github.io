@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00401000 @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401000
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0040191d][similar_1_ref] (sim.: 0.7796447595337594)
+2. [main][similar_2_ref] (sim.: 0.777925240437461)
+3. [fcn.00442ca0][similar_3_ref] (sim.: 0.7706856193722014)
+4. [fcn.004015a0][similar_4_ref] (sim.: 0.7703355152589951)
+5. [fcn.00402322][similar_5_ref] (sim.: 0.767897612043993)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x10008
+call fcn.004181d0
+mov eax,dword[0x42e364]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+push edi
+mov ebx,0x10000
+push ebx
+lea eax,[ebp-0x10004]
+push 0xcc
+push eax
+call fcn.00411550
+mov esi,dword[sym.imp.WS2_32.dll_send]
+mov edi,dword[sym.imp.KERNEL32.dll_Sleep]
+add esp,0xc
+push 6
+push 1
+push 2
+call dword[sym.imp.WS2_32.dll_socket]
+push 0x10
+push 0x430ac0
+push eax
+mov dword[ebp-0x10008],eax
+call dword[sym.imp.WS2_32.dll_connect]
+push 0
+push ebx
+lea eax,[ebp-0x10004]
+push eax
+push dword[ebp-0x10008]
+call esi
+push 0x64
+call edi
+push 0
+push ebx
+lea eax,[ebp-0x10004]
+push eax
+push dword[ebp-0x10008]
+call esi
+push dword[ebp-0x10008]
+call dword[sym.imp.WS2_32.dll_closesocket]
+push 0x3e8
+call edi
+jmp 0x401040
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040191d@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/main@a6cf94ccbcdc43329b71e021286f4210
+[similar_3_ref]: /report/fcn.00442ca0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_4_ref]: /report/fcn.004015a0@2d591d102f09b733d7d0e893e5642beb
+[similar_5_ref]: /report/fcn.00402322@d287262b3c4caae6c69c406382125319
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00421a34 @ 59aef7c08025d70f84c85db2092fc99e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00421a34
+- **Origin (md5):** 59aef7c08025d70f84c85db2092fc99e
+- **VirusTotal:** [virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [method.CWinApp.virtual\_176][similar_1_ref] (sim.: 0.8661792340953097)
+2. [fcn.00420a04][similar_2_ref] (sim.: 0.7901634216103083)
+3. [fcn.00420a04][similar_3_ref] (sim.: 0.7901634216103083)
+4. [fcn.0040191d][similar_4_ref] (sim.: 0.7871243479118588)
+5. [method.CWinApp.virtual\_176][similar_5_ref] (sim.: 0.7854298159242741)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x110
+mov eax,dword[0x433138]
+push ebx
+mov dword[ebp-4],eax
+mov ebx,0x104
+push ebx
+lea eax,[ebp-0x110]
+push eax
+push dword[ecx+0x40]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+test eax,eax
+je 0x421aab
+cmp eax,ebx
+je 0x421aab
+push esi
+push edi
+lea eax,[ebp-0x110]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFindExtensionA]
+mov esi,str._s.dll
+lea edi,[ebp-0xc]
+movsd dword es:[edi],dword ptr[esi]
+movsw word es:[edi],word ptr[esi]
+mov ecx,eax
+lea edx,[ebp-0x110]
+sub ecx,edx
+movsb byte es:[edi],byte ptr[esi]
+add ecx,7
+cmp ecx,ebx
+pop edi
+pop esi
+ja 0x421aab
+lea ecx,[ebp-0xc]
+push ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcpyA]
+lea eax,[ebp-0x110]
+push eax
+call fcn.0042174e
+jmp 0x421aad
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop ebx
+call fcn.0040d1cb
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CWinApp.virtual_176@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_2_ref]: /report/fcn.00420a04@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.00420a04@53687e619dcac7d709f306d061d8daeb
+[similar_4_ref]: /report/fcn.0040191d@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/method.CWinApp.virtual_176@a1c6b07868a0eea8f4ee5a872aa71909
+[virustotal_ref]: https://www.virustotal.com/gui/file/59aef7c08025d70f84c85db2092fc99e

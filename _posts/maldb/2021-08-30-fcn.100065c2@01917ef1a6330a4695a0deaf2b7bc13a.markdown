@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.100065c2 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100065c2
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10006632][similar_1_ref] (sim.: 0.8087654987330811)
+2. [fcn.100060a0][similar_2_ref] (sim.: 0.7809960745155511)
+3. [fcn.10007609][similar_3_ref] (sim.: 0.7744563391399931)
+4. [fcn.004035b0][similar_4_ref] (sim.: 0.7518340695899939)
+5. [fcn.005645df][similar_5_ref] (sim.: 0.7511206373584384)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_ReadFile]
+push edi
+xor ebx,ebx
+push ebx
+lea eax,[ebp-4]
+push eax
+push 4
+lea eax,[ebp-8]
+push eax
+push dword[ebp+8]
+mov dword[ebp-4],ebx
+mov dword[ebp-8],ebx
+xor edi,edi
+call esi
+test eax,eax
+je 0x1000662a
+cmp dword[ebp-4],4
+jne 0x1000662a
+mov eax,dword[ebp-8]
+cmp eax,dword[ebp+0x10]
+jg 0x1000662a
+cmp eax,ebx
+jle 0x10006626
+push ebx
+lea ecx,[ebp-4]
+push ecx
+sub eax,edi
+push eax
+mov eax,dword[ebp+0xc]
+add eax,edi
+push eax
+push dword[ebp+8]
+call esi
+test eax,eax
+je 0x1000662a
+cmp dword[ebp-4],ebx
+je 0x1000662a
+add edi,dword[ebp-4]
+mov eax,dword[ebp-8]
+cmp edi,eax
+jl 0x10006600
+mov eax,edi
+jmp 0x1000662d
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10006632@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.100060a0@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.10007609@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.004035b0@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.005645df@14b20b07906a36e23f2230c8042160f2
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

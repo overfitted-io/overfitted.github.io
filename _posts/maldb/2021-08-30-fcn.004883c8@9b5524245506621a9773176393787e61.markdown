@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.004883c8 @ 9b5524245506621a9773176393787e61"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004883c8
+- **Origin (md5):** 9b5524245506621a9773176393787e61
+- **VirusTotal:** [virustotal.com/gui/file/9b5524245506621a9773176393787e61][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0048a4c6][similar_1_ref] (sim.: 0.8651672467060338)
+2. [fcn.0048a576][similar_2_ref] (sim.: 0.8510943154537658)
+3. [fcn.004830b8][similar_3_ref] (sim.: 0.8314195855809641)
+4. [fcn.00433fe1][similar_4_ref] (sim.: 0.8267143631254807)
+5. [fcn.00438e0a][similar_5_ref] (sim.: 0.8215401912652329)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,dword[ebp+8]
+push edi
+lea edi,[eax*4+0x4ebed4]
+mov eax,dword[edi]
+mov edx,dword[0x4e11d0]
+mov ecx,edx
+and ecx,0x1f
+xor edx,eax
+ror edx,cl
+cmp edx,0xffffffff
+jne 0x4883f0
+xor eax,eax
+jmp 0x488434
+test edx,edx
+je 0x4883f8
+mov eax,edx
+jmp 0x488434
+push esi
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call fcn.00488302
+pop ecx
+pop ecx
+test eax,eax
+je 0x488427
+push dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x488427
+push esi
+call fcn.0048265c
+pop ecx
+xchg dword[edi],eax
+mov eax,esi
+jmp 0x488433
+push 0xffffffffffffffff
+call fcn.0048265c
+pop ecx
+xchg dword[edi],eax
+xor eax,eax
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0048a4c6@843c4207147f5bab0e104024677fd9ec
+[similar_2_ref]: /report/fcn.0048a576@ba63c5f75a2177720b184529dbf918cf
+[similar_3_ref]: /report/fcn.004830b8@2fcce874fb2a3a396274d2df89c397e3
+[similar_4_ref]: /report/fcn.00433fe1@215ca4d81c84c96857c4ea7774d942de
+[similar_5_ref]: /report/fcn.00438e0a@69982c7dea94d393fc4e41acd090553c
+[virustotal_ref]: https://www.virustotal.com/gui/file/9b5524245506621a9773176393787e61

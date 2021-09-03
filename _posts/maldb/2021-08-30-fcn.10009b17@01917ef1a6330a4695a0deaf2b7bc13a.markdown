@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.10009b17 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10009b17
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Similar Functions
+
+1. [method.CWinApp.virtual\_124][similar_1_ref] (sim.: 0.7925320932689733)
+2. [fcn.00402bcd][similar_2_ref] (sim.: 0.7901676145875488)
+3. [fcn.00402bcd][similar_3_ref] (sim.: 0.7901676145875488)
+4. [fcn.1000b902][similar_4_ref] (sim.: 0.7877988290923976)
+5. [fcn.10006106][similar_5_ref] (sim.: 0.7835854182026506)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+push esi
+mov esi,dword[sym.imp.ADVAPI32.dll_CryptAcquireContextA]
+push edi
+push 0xf0000020
+push 1
+mov edi,str.Microsoft_Base_Cryptographic_Provider_v1.0
+push edi
+push 0
+lea eax,[ebp-4]
+push eax
+call esi
+test eax,eax
+jne 0x10009b57
+push 0xf0000028
+push 1
+push edi
+push eax
+lea eax,[ebp-4]
+push eax
+call esi
+test eax,eax
+jne 0x10009b57
+pop edi
+pop esi
+leave 
+ret 
+push dword[ebp+8]
+mov esi,dword[ebp+0xc]
+push esi
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_CryptGenRandom]
+cmp eax,1
+jne 0x10009b7b
+push 0
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
+mov eax,esi
+jmp 0x10009b53
+xor esi,esi
+jmp 0x10009b6c
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CWinApp.virtual_124@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.00402bcd@510c8408eb3f0420e19240592ddc0b5b
+[similar_3_ref]: /report/fcn.00402bcd@a1f10d79c30d691bdf7d8fda931463b8
+[similar_4_ref]: /report/fcn.1000b902@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.10006106@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.004078e1 @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004078e1
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004945e1][similar_1_ref] (sim.: 0.7903071591468417)
+2. [fcn.0040b7d9][similar_2_ref] (sim.: 0.7528506294114641)
+3. [fcn.004072b9][similar_3_ref] (sim.: 0.7427291238624038)
+4. [fcn.00417147][similar_4_ref] (sim.: 0.7374598036724682)
+5. [fcn.00417147][similar_5_ref] (sim.: 0.7374598036724682)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+push esi
+push str.IsWow64Process
+push 0x4d2e5c
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x407914
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call esi
+mov eax,dword[ebp-4]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004945e1@3b2d901eaca41ce14deca6a48c0c801a
+[similar_2_ref]: /report/fcn.0040b7d9@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.004072b9@77717b0243ef40f58615132b9a9cda50
+[similar_4_ref]: /report/fcn.00417147@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_5_ref]: /report/fcn.00417147@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

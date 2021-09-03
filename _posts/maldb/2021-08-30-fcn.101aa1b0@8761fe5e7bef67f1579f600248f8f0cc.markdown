@@ -1,0 +1,143 @@
+---
+layout: post
+title:  "fcn.101aa1b0 @ 8761fe5e7bef67f1579f600248f8f0cc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.101aa1b0
+- **Origin (md5):** 8761fe5e7bef67f1579f600248f8f0cc
+- **VirusTotal:** [virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.101ba330][similar_1_ref] (sim.: 0.9337191992207746)
+2. [fcn.1018b2f0][similar_2_ref] (sim.: 0.9269127117558192)
+3. [fcn.10085850][similar_3_ref] (sim.: 0.9153802456494027)
+4. [fcn.1017a4b0][similar_4_ref] (sim.: 0.914673093397334)
+5. [fcn.100810f0][similar_5_ref] (sim.: 0.9121282597763258)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x101f8dd6
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,0x208
+push ebx
+push ebp
+push esi
+push edi
+lea ecx,[esp+0x18]
+call sub.MFC42.DLL_CString::CString_1
+xor ebx,ebx
+xor esi,esi
+mov dword[esp+0x220],ebx
+mov edi,dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+lea eax,[esp+0x10]
+push eax
+push 0xf003f
+push ebx
+push str.Software91KBOX
+push reloc.OLEAUT32.dll_SysReAllocString
+mov byte[esp+0x234],1
+mov dword[esp+0x24],ebx
+call edi
+mov ebp,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+cmp eax,ebx
+jne 0x101aa21c
+mov esi,dword[esp+0x10]
+jmp 0x101aa264
+lea ecx,[esp+0x10]
+mov dword[esp+0x10],ebx
+push ecx
+push 0xf003f
+push ebx
+push str.Software9158VirtualCamera
+push reloc.OLEAUT32.dll_SysReAllocString
+call edi
+cmp eax,ebx
+jne 0x101aa241
+mov esi,dword[esp+0x10]
+jmp 0x101aa264
+lea edx,[esp+0x10]
+mov dword[esp+0x10],ebx
+push edx
+push 0xf003f
+push ebx
+push str.SoftwareSinaVirtualCamera
+push reloc.OLEAUT32.dll_SysReAllocString
+call edi
+cmp eax,ebx
+jne 0x101aa2bb
+mov esi,dword[esp+0x10]
+mov ecx,0x7c
+xor eax,eax
+lea edi,[esp+0x25]
+mov byte[esp+0x24],bl
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+stosb byte es:[edi],al
+lea eax,[esp+0x1c]
+lea ecx,[esp+0x24]
+push eax
+lea edx,[esp+0x24]
+push ecx
+push edx
+push ebx
+push str.Version
+push esi
+mov dword[esp+0x28],esi
+mov dword[esp+0x34],0x1f3
+mov dword[esp+0x38],ebx
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+lea eax,[esp+0x24]
+lea ecx,[esp+0x18]
+push eax
+call fcn.101bf41e
+cmp esi,ebx
+je 0x101aa2bb
+push esi
+call ebp
+xor esi,esi
+mov ecx,dword[esp+0x18]
+push str.5.0.0.3
+push ecx
+call dword[sym.imp.MSVCRT.dll__mbscmp]
+add esp,8
+test eax,eax
+setg byte[esp+0x17]
+cmp esi,ebx
+je 0x101aa2dc
+push esi
+call ebp
+lea ecx,[esp+0x18]
+mov dword[esp+0x220],0xffffffff
+call sub.MFC42.DLL_CString::CString
+mov ecx,dword[esp+0x218]
+mov al,byte[esp+0x17]
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov dword fs:[0],ecx
+add esp,0x214
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.101ba330@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.1018b2f0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.10085850@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.1017a4b0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.100810f0@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc

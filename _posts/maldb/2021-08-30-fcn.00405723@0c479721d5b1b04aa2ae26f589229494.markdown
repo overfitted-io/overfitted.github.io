@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.00405723 @ 0c479721d5b1b04aa2ae26f589229494"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405723
+- **Origin (md5):** 0c479721d5b1b04aa2ae26f589229494
+- **VirusTotal:** [virustotal.com/gui/file/0c479721d5b1b04aa2ae26f589229494][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00405766][similar_1_ref] (sim.: 0.8251380693015279)
+2. [fcn.00403d10][similar_2_ref] (sim.: 0.706763244967886)
+3. [fcn.00405eff][similar_3_ref] (sim.: 0.6925651979309466)
+4. [fcn.00405eff][similar_4_ref] (sim.: 0.6925651979309466)
+5. [fcn.00405eff][similar_5_ref] (sim.: 0.6925651979309466)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+push esi
+mov esi,dword[ebp+0xc]
+test esi,esi
+je 0x405760
+mov eax,dword[esi]
+test eax,eax
+je 0x405760
+push 0
+lea ecx,[ebp-4]
+push ecx
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x405760
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x26
+jne 0x40575d
+xor eax,eax
+mov dword[esi+4],eax
+mov eax,dword[ebp-4]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405766@0c479721d5b1b04aa2ae26f589229494
+[similar_2_ref]: /report/fcn.00403d10@b3771987fba16f4fba07d1109ec72c76
+[similar_3_ref]: /report/fcn.00405eff@b93f1b299c2350a78f7c5ebe407cc0c0
+[similar_4_ref]: /report/fcn.00405eff@999ae3491971c32d67bd4c32561ea381
+[similar_5_ref]: /report/fcn.00405eff@346d8c7390034d82397102a5b98b7c41
+[virustotal_ref]: https://www.virustotal.com/gui/file/0c479721d5b1b04aa2ae26f589229494

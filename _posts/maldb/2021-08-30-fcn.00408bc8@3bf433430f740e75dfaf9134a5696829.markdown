@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.00408bc8 @ 3bf433430f740e75dfaf9134a5696829"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408bc8
+- **Origin (md5):** 3bf433430f740e75dfaf9134a5696829
+- **VirusTotal:** [virustotal.com/gui/file/3bf433430f740e75dfaf9134a5696829][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.00408bc8][similar_1_ref] (sim.: 0.9998445752508868)
+2. [fcn.00419889][similar_2_ref] (sim.: 0.8082313210217431)
+3. [fcn.0040b15a][similar_3_ref] (sim.: 0.8073917579635146)
+4. [fcn.004071be][similar_4_ref] (sim.: 0.7923243985999618)
+5. [fcn.004079e9][similar_5_ref] (sim.: 0.7865301783723109)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push edi
+push ebx
+mov dword[esi],ebx
+call dword[sym.imp.USER32.dll_GetDC]
+push eax
+mov dword[ebp-4],eax
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+push 0xff
+mov dword[esi+4],eax
+call dword[sym.imp.GDI32.dll_CreateSolidBrush]
+push dword[ebp+0xc]
+mov dword[esi+8],eax
+push dword[ebp+8]
+push dword[ebp-4]
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+push dword[esi+8]
+mov edi,dword[sym.imp.GDI32.dll_SelectObject]
+push dword[esi+4]
+mov dword[esi+0xc],eax
+call edi
+push dword[esi+0xc]
+push dword[esi+4]
+call edi
+push dword[ebp-4]
+push ebx
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[ebp+8]
+mov dword[esi+0x10],eax
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x14],eax
+pop edi
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408bc8@4bd33f73402d0d03c0318f793884eb34
+[similar_2_ref]: /report/fcn.00419889@319cf4affa41f752783e62f81908d682
+[similar_3_ref]: /report/fcn.0040b15a@4c2db4ba96e80258daff665d7d7a016a
+[similar_4_ref]: /report/fcn.004071be@0cb2d61ee2bb08c35289961542a08513
+[similar_5_ref]: /report/fcn.004079e9@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bf433430f740e75dfaf9134a5696829

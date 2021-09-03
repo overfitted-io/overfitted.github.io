@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00401c80 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401c80
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00401d11][similar_1_ref] (sim.: 0.8460909078091422)
+2. [fcn.00406434][similar_2_ref] (sim.: 0.8020742280216874)
+3. [fcn.01001cf4][similar_3_ref] (sim.: 0.8016252948657405)
+4. [fcn.01001cf4][similar_4_ref] (sim.: 0.8016252948657405)
+5. [fcn.00402928][similar_5_ref] (sim.: 0.8004473338796334)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x104
+push edi
+push 0x40
+pop ecx
+mov byte[ebp-0x104],0
+xor eax,eax
+lea edi,[ebp-0x103]
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+push 0x42e644
+push dword[ebp+0xc]
+stosb byte es:[edi],al
+call dword[sym.imp.SHLWAPI.dll_StrStrIA]
+test eax,eax
+pop edi
+je 0x401d0a
+push esi
+push dword[ebp+0xc]
+call dword[sym.imp.SHLWAPI.dll_PathFindFileNameA]
+mov esi,eax
+lea eax,[ebp-0x104]
+push eax
+push 0x104
+call dword[sym.imp.KERNEL32.dll_GetTempPathA]
+push esi
+lea eax,[ebp-0x104]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathAppendA]
+push dword[ebp+0x24]
+lea eax,[ebp-0x104]
+push dword[ebp+0x20]
+push dword[ebp+0x1c]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov ecx,dword[ebp+8]
+mov dword[ecx+0x20],eax
+xor eax,eax
+pop esi
+jmp 0x401d0d
+xor eax,eax
+inc eax
+leave 
+ret 0x20
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401d11@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00406434@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.01001cf4@7be42d186738ec1816397d616de2cb9d
+[similar_4_ref]: /report/fcn.01001cf4@bcf1729ded12dd6e2e4c565a6c795602
+[similar_5_ref]: /report/fcn.00402928@1123b7aa5760238fe93045e585b8234c
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

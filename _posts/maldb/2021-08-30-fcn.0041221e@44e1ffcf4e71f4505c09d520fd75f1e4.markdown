@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.0041221e @ 44e1ffcf4e71f4505c09d520fd75f1e4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041221e
+- **Origin (md5):** 44e1ffcf4e71f4505c09d520fd75f1e4
+- **VirusTotal:** [virustotal.com/gui/file/44e1ffcf4e71f4505c09d520fd75f1e4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0041221e][similar_1_ref] (sim.: 1.0)
+2. [fcn.0041221e][similar_2_ref] (sim.: 1.0)
+3. [fcn.00411bdd][similar_3_ref] (sim.: 0.7283939038596333)
+4. [fcn.00411bdd][similar_4_ref] (sim.: 0.7283939038596333)
+5. [fcn.00411bdd][similar_5_ref] (sim.: 0.7283939038596333)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 4
+mov eax,0x458ede
+call fcn.0043d92e
+mov edi,ecx
+mov dword[ebp-0x10],edi
+mov dword[edi],vtable.RememberTempFile.0
+mov dword[ebp-4],1
+lea esi,[edi+4]
+mov eax,dword[esi]
+mov ecx,dword[eax-0xc]
+test ecx,ecx
+je 0x412260
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+test eax,eax
+jne 0x412260
+mov eax,dword[esi]
+push 4
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_MoveFileExW]
+mov byte[ebp-4],0
+mov ecx,esi
+call fcn.00401b66
+or dword[ebp-4],0xffffffff
+mov dword[edi],vtable.CProgressPageProxy::Caller.0
+call fcn.0043da06
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041221e@ff219f45286905b4a87327ca719363be
+[similar_2_ref]: /report/fcn.0041221e@8e21fa3f0489a6a256cf202e57f712bc
+[similar_3_ref]: /report/fcn.00411bdd@ff219f45286905b4a87327ca719363be
+[similar_4_ref]: /report/fcn.00411bdd@8e21fa3f0489a6a256cf202e57f712bc
+[similar_5_ref]: /report/fcn.00411bdd@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/44e1ffcf4e71f4505c09d520fd75f1e4

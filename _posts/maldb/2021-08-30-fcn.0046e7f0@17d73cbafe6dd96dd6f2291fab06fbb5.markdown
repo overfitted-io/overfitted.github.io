@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.0046e7f0 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0046e7f0
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0045e420][similar_1_ref] (sim.: 0.7927503178129552)
+2. [fcn.00443110][similar_2_ref] (sim.: 0.7685241680638555)
+3. [fcn.0046e9c0][similar_3_ref] (sim.: 0.7497779549768477)
+4. [fcn.0046e780][similar_4_ref] (sim.: 0.7492615926755948)
+5. [fcn.0045e800][similar_5_ref] (sim.: 0.7385255408559626)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+mov dword[ebp-4],0
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+jne 0x46e815
+xor eax,eax
+jmp 0x46e861
+push 0x538a44
+mov eax,dword[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0xc],eax
+cmp dword[ebp-0xc],0
+je 0x46e85f
+lea ecx,[ebp-4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[ebp-0xc]
+mov dword[ebp-0x10],eax
+cmp dword[ebp-0x10],0
+je 0x46e853
+cmp dword[ebp-4],0
+je 0x46e853
+mov dword[ebp-0x14],1
+jmp 0x46e85a
+mov dword[ebp-0x14],0
+mov eax,dword[ebp-0x14]
+jmp 0x46e861
+xor eax,eax
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045e420@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.00443110@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.0046e9c0@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.0046e780@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.0045e800@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

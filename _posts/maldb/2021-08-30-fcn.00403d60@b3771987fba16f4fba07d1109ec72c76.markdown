@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.00403d60 @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403d60
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00403d10][similar_1_ref] (sim.: 0.8596779185338331)
+2. [fcn.00405766][similar_2_ref] (sim.: 0.7170616524164497)
+3. [fcn.004049d0][similar_3_ref] (sim.: 0.6987779379999903)
+4. [fcn.0040a996][similar_4_ref] (sim.: 0.6904792771311725)
+5. [fcn.0040a996][similar_5_ref] (sim.: 0.6904792771311725)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+mov esi,dword[ebp+0xc]
+xor eax,eax
+mov dword[ebp-4],eax
+test esi,esi
+je 0x403da2
+mov ecx,dword[esi]
+test ecx,ecx
+je 0x403da2
+mov edx,dword[ebp+0x14]
+push eax
+lea eax,[ebp-4]
+push eax
+mov eax,dword[ebp+0x10]
+push edx
+push eax
+push ecx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+jne 0x403d9f
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x26
+jne 0x403d9c
+xor eax,eax
+mov dword[esi+4],eax
+mov eax,dword[ebp-4]
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403d10@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.00405766@0c479721d5b1b04aa2ae26f589229494
+[similar_3_ref]: /report/fcn.004049d0@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.0040a996@d3ad46676721a96e1408ac558c298889
+[similar_5_ref]: /report/fcn.0040a996@074a6a8502a27e18f8b5ea831bacabad
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

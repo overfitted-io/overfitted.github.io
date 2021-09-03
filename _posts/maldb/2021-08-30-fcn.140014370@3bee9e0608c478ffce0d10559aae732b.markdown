@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.140014370 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140014370
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.140010270][similar_1_ref] (sim.: 0.8582521260309668)
+2. [fcn.14003f0a0][similar_2_ref] (sim.: 0.8449794463037041)
+3. [fcn.14001d040][similar_3_ref] (sim.: 0.8445324673407699)
+4. [fcn.14008d6ec][similar_4_ref] (sim.: 0.843589104379905)
+5. [fcn.140017868][similar_5_ref] (sim.: 0.8428223777000756)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x10],rbp
+mov qword[rsp+0x18],rsi
+mov qword[rsp+0x20],rdi
+push r12
+sub rsp,0x40
+mov rsi,qword[rsp+0x70]
+xor r12d,r12d
+mov edi,r9d
+lea rax,[rsp+0x30]
+mov rbp,r8
+lea r9d,[r12+1]
+xor r8d,r8d
+mov word[rsi],r12w
+mov qword[rsp+0x20],rax
+call qword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x14002c280
+mov rcx,qword[rsp+0x30]
+lea eax,[rdi+rdi]
+xor r9d,r9d
+mov dword[rsp+0x70],eax
+lea rax,[rsp+0x70]
+xor r8d,r8d
+mov qword[rsp+0x28],rax
+mov rdx,rbp
+mov qword[rsp+0x50],rbx
+mov qword[rsp+0x20],rsi
+call qword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x14001442c
+mov eax,dword[rsp+0x70]
+shr eax,1
+mov dword[rsp+0x70],eax
+cmp eax,edi
+jae 0x14002c287
+mov word[rsi+rax*2],r12w
+mov bl,1
+mov rcx,qword[rsp+0x30]
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+movzx eax,bl
+mov rbx,qword[rsp+0x50]
+mov rbp,qword[rsp+0x58]
+mov rsi,qword[rsp+0x60]
+mov rdi,qword[rsp+0x68]
+add rsp,0x40
+pop r12
+ret 
+xor bl,bl
+jmp 0x140014403
+xor al,al
+jmp 0x140014416
+lea eax,[rdi-1]
+jmp 0x1400143fc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140010270@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14003f0a0@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14001d040@a5e8b4820319974b4ce1027132e98e27
+[similar_4_ref]: /report/fcn.14008d6ec@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.140017868@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

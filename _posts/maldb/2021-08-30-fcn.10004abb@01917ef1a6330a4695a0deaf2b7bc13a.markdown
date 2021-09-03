@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.10004abb @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10004abb
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.10005287][similar_1_ref] (sim.: 0.7548695953846245)
+2. [fcn.10003975][similar_2_ref] (sim.: 0.7424555558133971)
+3. [fcn.00405174][similar_3_ref] (sim.: 0.735092251405917)
+4. [fcn.0040d082][similar_4_ref] (sim.: 0.7304289776955863)
+5. [fcn.100052ac][similar_5_ref] (sim.: 0.7292009286555656)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+push str.IsWow64Process
+push str.kernel32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x10004aed
+lea ecx,[ebp-4]
+push ecx
+push dword[ebp+8]
+call eax
+test eax,eax
+jne 0x10004aed
+leave 
+ret 
+mov eax,dword[ebp-4]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10005287@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.10003975@b9edf77857f539db509c59673523150a
+[similar_3_ref]: /report/fcn.00405174@e0cc7cebcb82056439e2ac38557ff8fc
+[similar_4_ref]: /report/fcn.0040d082@470263fe7e7cc115b95cd041d643e3b5
+[similar_5_ref]: /report/fcn.100052ac@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

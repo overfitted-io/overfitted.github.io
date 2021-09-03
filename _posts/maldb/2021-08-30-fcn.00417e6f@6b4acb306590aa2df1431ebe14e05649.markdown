@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00417e6f @ 6b4acb306590aa2df1431ebe14e05649"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00417e6f
+- **Origin (md5):** 6b4acb306590aa2df1431ebe14e05649
+- **VirusTotal:** [virustotal.com/gui/file/6b4acb306590aa2df1431ebe14e05649][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00417e6f][similar_1_ref] (sim.: 1.0)
+2. [fcn.00417e6f][similar_2_ref] (sim.: 1.0)
+3. [fcn.00417e6f][similar_3_ref] (sim.: 1.0)
+4. [fcn.00417e6f][similar_4_ref] (sim.: 1.0)
+5. [fcn.00417e6f][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+jmp 0x417f1f
+mov ebx,dword[edi]
+lea eax,[ebx*4+0x4c35ec]
+mov esi,dword[eax]
+mov dword[ebp-4],eax
+test esi,esi
+je 0x417e9b
+cmp esi,0xffffffff
+je 0x417f1c
+jmp 0x417f18
+mov ebx,dword[ebx*4+0x4b44ac]
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x417f06
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x417ef6
+push 7
+push 0x4b4544
+push ebx
+call fcn.0041ed35
+add esp,0xc
+test eax,eax
+je 0x417ef6
+push 7
+push 0x4b4554
+push ebx
+call fcn.0041ed35
+add esp,0xc
+test eax,eax
+je 0x417ef6
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x417ef8
+xor esi,esi
+test esi,esi
+jne 0x417f06
+mov ecx,dword[ebp-4]
+or eax,0xffffffff
+xchg dword[ecx],eax
+jmp 0x417f1c
+mov ecx,dword[ebp-4]
+mov eax,esi
+xchg dword[ecx],eax
+test eax,eax
+je 0x417f18
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test esi,esi
+jne 0x417f2f
+add edi,4
+cmp edi,dword[ebp+0xc]
+jne 0x417e7e
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+mov eax,esi
+jmp 0x417f2a
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00417e6f@1a3c6bb61923404c2dc3230a918fec57
+[similar_2_ref]: /report/fcn.00417e6f@f21c4ba909d0cb7fba4a47ab9c31a20c
+[similar_3_ref]: /report/fcn.00417e6f@729080d2e8e21552844be59be90fb0e5
+[similar_4_ref]: /report/fcn.00417e6f@f6af23c92f87a6fedb29da0c792d7dc0
+[similar_5_ref]: /report/fcn.00417e6f@d67a70fc91decd57fa1d3b72ab927976
+[virustotal_ref]: https://www.virustotal.com/gui/file/6b4acb306590aa2df1431ebe14e05649

@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.30078aa0 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.30078aa0
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.30078b50][similar_1_ref] (sim.: 0.8077812684736823)
+2. [fcn.300783c0][similar_2_ref] (sim.: 0.7785865165856044)
+3. [fcn.30078360][similar_3_ref] (sim.: 0.7510134033884691)
+4. [fcn.30078b00][similar_4_ref] (sim.: 0.7455812970233149)
+5. [fcn.0050f140][similar_5_ref] (sim.: 0.7411854252189901)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+sub esp,8
+push esi
+push edi
+push eax
+or edi,0xffffffff
+call fcn.30078b00
+mov esi,eax
+add esp,4
+test esi,esi
+je 0x30078af0
+lea ecx,[esp+0x14]
+lea edx,[esp+8]
+push ecx
+lea eax,[esp+0x10]
+xor edi,edi
+push edx
+push eax
+push edi
+push str.ReferenceCount
+push esi
+mov dword[esp+0x2c],4
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+jne 0x30078ae9
+mov edi,dword[esp+8]
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,edi
+pop edi
+pop esi
+add esp,8
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.30078b50@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.300783c0@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.30078360@0a3653d3e8fb1320d70b4e1441359302
+[similar_4_ref]: /report/fcn.30078b00@0a3653d3e8fb1320d70b4e1441359302
+[similar_5_ref]: /report/fcn.0050f140@7453c96a6fbd42ec690b8deb53eafcba
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

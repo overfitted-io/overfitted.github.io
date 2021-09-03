@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.0043613f @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0043613f
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0043613f][similar_1_ref] (sim.: 1.0)
+2. [fcn.0043613f][similar_2_ref] (sim.: 1.0)
+3. [fcn.00411706][similar_3_ref] (sim.: 0.901391316237552)
+4. [fcn.10004a25][similar_4_ref] (sim.: 0.8628324129428819)
+5. [fcn.00421eba][similar_5_ref] (sim.: 0.8589851096790215)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+sub esp,0x20c
+lea ebp,[esp-4]
+mov eax,dword[0x478030]
+xor eax,ebp
+mov dword[ebp+0x20c],eax
+push 0x18
+mov eax,0x457a96
+call fcn.0043d961
+mov edi,dword[ebp+0x21c]
+mov eax,dword[edi]
+mov ecx,dword[ebp+0x218]
+lea edx,[ebp-0x18]
+push edx
+push eax
+push ecx
+mov dword[ebp-0x20],ecx
+mov dword[ebp-0x1c],edi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
+mov esi,eax
+test esi,esi
+jne 0x436227
+push 0x104
+lea eax,[ebp]
+push eax
+push 0
+push dword[ebp-0x18]
+call dword[sym.imp.ADVAPI32.dll_RegEnumKeyW]
+mov esi,eax
+test esi,esi
+jne 0x436201
+and dword[ebp-4],eax
+lea eax,[ebp]
+push eax
+lea ecx,[ebp-0x14]
+call fcn.0040151c
+lea eax,[ebp-0x14]
+push eax
+push dword[ebp-0x18]
+mov byte[ebp-4],1
+call fcn.0043613f
+mov ecx,dword[ebp-0x14]
+mov esi,eax
+test esi,esi
+setne bl
+add ecx,0xfffffff0
+mov byte[ebp-4],0
+call fcn.00401724
+test bl,bl
+jne 0x436201
+or dword[ebp-4],0xffffffff
+jmp 0x43618d
+cmp esi,0x103
+je 0x436211
+cmp esi,0x3f2
+jne 0x43621e
+push dword[edi]
+push dword[ebp-0x20]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+mov esi,eax
+push dword[ebp-0x18]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,esi
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp+0x20c]
+xor ecx,ebp
+call fcn.00439777
+add ebp,0x210
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043613f@ff219f45286905b4a87327ca719363be
+[similar_2_ref]: /report/fcn.0043613f@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_3_ref]: /report/fcn.00411706@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.10004a25@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.00421eba@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

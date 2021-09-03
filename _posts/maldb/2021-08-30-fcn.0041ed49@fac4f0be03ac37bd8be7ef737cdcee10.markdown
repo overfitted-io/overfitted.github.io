@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.0041ed49 @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041ed49
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004a2df5][similar_1_ref] (sim.: 0.8476964765827876)
+2. [fcn.0041ac8a][similar_2_ref] (sim.: 0.8385834484646796)
+3. [fcn.0049ddf4][similar_3_ref] (sim.: 0.8314456161908008)
+4. [fcn.0040ce3e][similar_4_ref] (sim.: 0.8242589670371042)
+5. [fcn.0040b1a9][similar_5_ref] (sim.: 0.8085090630752425)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+mov esi,str.COMCTL32.DLL
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov ebx,eax
+test ebx,ebx
+je 0x41edbb
+push 0x42f268
+push ebx
+xor esi,esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x41ed94
+mov eax,dword[esp+0x14]
+mov edi,0x3fc0
+and eax,edi
+cmp eax,dword[esp+0x14]
+jne 0x41edb2
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+mov esi,edi
+jmp 0x41edb2
+push dword[esp+0x10]
+call eax
+test eax,eax
+je 0x41edb2
+test edi,edi
+mov esi,dword[esp+0x14]
+jne 0x41edb2
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+or esi,0x3fc0
+push ebx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,esi
+pop edi
+pop esi
+pop ebx
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004a2df5@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/fcn.0041ac8a@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.0049ddf4@18980bd3439a28c3ca084fb94b418e27
+[similar_4_ref]: /report/fcn.0040ce3e@a2475448bf4050c1583e1970984a4d00
+[similar_5_ref]: /report/fcn.0040b1a9@d4e56c7d970c209a3a2b3c4b4cc5e586
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

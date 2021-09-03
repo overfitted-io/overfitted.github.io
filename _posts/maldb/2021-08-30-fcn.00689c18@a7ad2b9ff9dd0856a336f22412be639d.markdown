@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.00689c18 @ a7ad2b9ff9dd0856a336f22412be639d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00689c18
+- **Origin (md5):** a7ad2b9ff9dd0856a336f22412be639d
+- **VirusTotal:** [virustotal.com/gui/file/a7ad2b9ff9dd0856a336f22412be639d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0069d03f][similar_1_ref] (sim.: 0.8608683730742971)
+2. [fcn.0069d03f][similar_2_ref] (sim.: 0.8608683730742971)
+3. [fcn.005ac328][similar_3_ref] (sim.: 0.8578964154708169)
+4. [fcn.005ac328][similar_4_ref] (sim.: 0.8578964154708169)
+5. [fcn.005ac328][similar_5_ref] (sim.: 0.8578964154708169)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+call fcn.00689cbd
+push 1
+pop edi
+cmp dword[0x46a1edc],edi
+jne 0x689c3a
+push dword[esp+8]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+cmp dword[esp+0xc],0
+push ebx
+mov ebx,dword[esp+0x14]
+mov dword[0x46a1ed8],edi
+mov byte[0x46a1ed4],bl
+jne 0x689c8e
+mov eax,dword[0x46a2550]
+test eax,eax
+je 0x689c7d
+mov ecx,dword[0x46a254c]
+push esi
+lea esi,[ecx-4]
+cmp esi,eax
+jb 0x689c7c
+mov eax,dword[esi]
+test eax,eax
+je 0x689c71
+call eax
+sub esi,4
+cmp esi,dword[0x46a2550]
+jae 0x689c69
+pop esi
+push 0x698018
+push 0x698014
+call fcn.00689ccf
+pop ecx
+pop ecx
+push 0x698020
+push 0x69801c
+call fcn.00689ccf
+pop ecx
+pop ecx
+test ebx,ebx
+pop ebx
+je 0x689cab
+call fcn.00689cc6
+pop edi
+ret 
+push dword[esp+8]
+mov dword[0x46a1edc],edi
+call dword[sym.imp.KERNEL32.dll_ExitProcess]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0069d03f@0fb0e1c162f9df68f5d89a2b2a71a217
+[similar_2_ref]: /report/fcn.0069d03f@80027f5c3423b7f316310a6367726335
+[similar_3_ref]: /report/fcn.005ac328@eb03a31db82a6f11507dce47c754d9ee
+[similar_4_ref]: /report/fcn.005ac328@792ba17bc3097e6be31d5d8d17300850
+[similar_5_ref]: /report/fcn.005ac328@4e8d6f73c8261716f687f8d06429ef4d
+[virustotal_ref]: https://www.virustotal.com/gui/file/a7ad2b9ff9dd0856a336f22412be639d

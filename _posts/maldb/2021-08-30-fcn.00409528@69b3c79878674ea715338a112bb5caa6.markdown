@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.00409528 @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409528
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040933e][similar_1_ref] (sim.: 0.9613741347639359)
+2. [fcn.004095f7][similar_2_ref] (sim.: 0.951623857111046)
+3. [fcn.0040c178][similar_3_ref] (sim.: 0.8381339650990497)
+4. [fcn.00409ce7][similar_4_ref] (sim.: 0.830950920767415)
+5. [fcn.0044c21d][similar_5_ref] (sim.: 0.8289319547942546)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x40c
+mov eax,dword[0x42e364]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+xor ebx,ebx
+xor eax,eax
+mov dword[ebp-0x408],ebx
+push 0x1fc
+mov word[ebp-0x204],ax
+lea eax,[ebp-0x202]
+push ebx
+push eax
+mov dword[ebp-0x408],0xff
+call fcn.00411550
+add esp,0xc
+lea eax,[ebp-0x40c]
+push eax
+push 0x20119
+push ebx
+push str.HARDWAREDESCRIPTIONSystemCentralProcessor0
+push 0x80000002
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x4095ae
+lea eax,[ebp-0x408]
+push eax
+lea eax,[ebp-0x204]
+push eax
+push ebx
+push ebx
+push str.ProcessorNameString
+push dword[ebp-0x40c]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+push dword[ebp-0x40c]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea eax,[ebp-0x404]
+push eax
+lea eax,[ebp-0x204]
+push eax
+call dword[sym.imp.USER32.dll_CharToOemW]
+lea eax,[ebp-0x404]
+mov dword[esi+0x14],0xf
+mov dword[esi+0x10],ebx
+push eax
+mov ecx,esi
+mov byte[esi],bl
+call fcn.00401caf
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+mov eax,esi
+pop ebx
+call fcn.0040c22b
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040933e@69b3c79878674ea715338a112bb5caa6
+[similar_2_ref]: /report/fcn.004095f7@69b3c79878674ea715338a112bb5caa6
+[similar_3_ref]: /report/fcn.0040c178@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_4_ref]: /report/fcn.00409ce7@69b3c79878674ea715338a112bb5caa6
+[similar_5_ref]: /report/fcn.0044c21d@ab923633032c47ff6d9c40ed36a40b2b
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.0040d0f1 @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d0f1
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.0045d4ed][similar_1_ref] (sim.: 0.8500231615508047)
+2. [fcn.0045d4ed][similar_2_ref] (sim.: 0.8500231615508047)
+3. [fcn.100f5c9a][similar_3_ref] (sim.: 0.8082055180848786)
+4. [fcn.00488f2d][similar_4_ref] (sim.: 0.7789531649348003)
+5. [fcn.0046fc37][similar_5_ref] (sim.: 0.7754770350204607)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push 0
+push 1
+push 2
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
+test eax,eax
+je 0x40d12a
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+jmp 0x40d12e
+and dword[ebp-8],0
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov edx,eax
+mov eax,dword[ebp-8]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045d4ed@53687e619dcac7d709f306d061d8daeb
+[similar_2_ref]: /report/fcn.0045d4ed@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.100f5c9a@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.00488f2d@94f83197373b17ab8b5225c0900d14de
+[similar_5_ref]: /report/fcn.0046fc37@ba63c5f75a2177720b184529dbf918cf
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

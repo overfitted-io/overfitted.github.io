@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.0040f37f @ b7a5b92638cb734d6411e4abb8a97a82"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040f37f
+- **Origin (md5):** b7a5b92638cb734d6411e4abb8a97a82
+- **VirusTotal:** [virustotal.com/gui/file/b7a5b92638cb734d6411e4abb8a97a82][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00403b97][similar_1_ref] (sim.: 0.9232250309614993)
+2. [fcn.00410595][similar_2_ref] (sim.: 0.9194536092020429)
+3. [fcn.00410812][similar_3_ref] (sim.: 0.9035512497260823)
+4. [fcn.0041e254][similar_4_ref] (sim.: 0.9021057255656137)
+5. [fcn.0041e254][similar_5_ref] (sim.: 0.9021057255656137)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+push 0x41eb90
+call fcn.0040eb10
+mov esi,str.KERNEL32.DLL
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+jne 0x40f3a2
+push esi
+call fcn.0040ecfc
+pop ecx
+mov dword[ebp-0x1c],eax
+mov esi,dword[ebp+8]
+mov dword[esi+0x5c],0x418dd0
+xor edi,edi
+inc edi
+mov dword[esi+0x14],edi
+test eax,eax
+je 0x40f3dd
+push str.EncodePointer
+push eax
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+call ebx
+mov dword[esi+0x1f8],eax
+push str.DecodePointer
+push dword[ebp-0x1c]
+call ebx
+mov dword[esi+0x1fc],eax
+mov dword[esi+0x70],edi
+mov byte[esi+0xc8],0x43
+mov byte[esi+0x14b],0x43
+mov dword[esi+0x68],0x420490
+push 0xd
+call fcn.0040e019
+pop ecx
+and dword[ebp-4],0
+push dword[esi+0x68]
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+mov dword[ebp-4],0xfffffffe
+call fcn.0040f454
+push 0xc
+call fcn.0040e019
+pop ecx
+mov dword[ebp-4],edi
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x6c],eax
+test eax,eax
+jne 0x40f433
+mov eax,dword[0x420a98]
+mov dword[esi+0x6c],eax
+push dword[esi+0x6c]
+call fcn.004106c4
+pop ecx
+mov dword[ebp-4],0xfffffffe
+call fcn.0040f45d
+call fcn.0040eb55
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403b97@eb7f7fa38880dd66bab8caf5987e5b1a
+[similar_2_ref]: /report/fcn.00410595@d9409903542212823b7b4709144a636b
+[similar_3_ref]: /report/fcn.00410812@591592f0b79217fc95d61f8c4f595f30
+[similar_4_ref]: /report/fcn.0041e254@7e044e51324f9f80f4e97d8f3549c003
+[similar_5_ref]: /report/fcn.0041e254@88e03379526f823ce2de3b236adcaf80
+[virustotal_ref]: https://www.virustotal.com/gui/file/b7a5b92638cb734d6411e4abb8a97a82

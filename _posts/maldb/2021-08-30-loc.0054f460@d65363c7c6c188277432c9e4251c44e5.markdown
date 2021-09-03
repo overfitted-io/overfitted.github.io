@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "loc.0054f460 @ d65363c7c6c188277432c9e4251c44e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.0054f460
+- **Origin (md5):** d65363c7c6c188277432c9e4251c44e5
+- **VirusTotal:** [virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0052159a][similar_1_ref] (sim.: 0.7462177757902216)
+2. [fcn.005aaef0][similar_2_ref] (sim.: 0.7107559269109556)
+3. [fcn.0053b230][similar_3_ref] (sim.: 0.7009558766260827)
+4. [fcn.0051d224][similar_4_ref] (sim.: 0.6973796464949071)
+5. [fcn.005ad080][similar_5_ref] (sim.: 0.6962983516583033)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc0
+push ebx
+push esi
+push edi
+lea edi,[ebp-0xc0]
+mov ecx,0x30
+mov eax,0xcccccccc
+rep stosd dword es:[edi],eax
+mov ecx,0x7ec046
+call fcn.0052068b
+mov esi,esp
+mov eax,dword[0x7e70a0]
+push eax
+call dword[sym.imp.WS2_32.dll_closesocket]
+cmp esi,esp
+call fcn.00520929
+mov esi,esp
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+cmp esi,esp
+call fcn.00520929
+pop edi
+pop esi
+pop ebx
+add esp,0xc0
+cmp ebp,esp
+call fcn.00520929
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0052159a@d65363c7c6c188277432c9e4251c44e5
+[similar_2_ref]: /report/fcn.005aaef0@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.0053b230@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.0051d224@d65363c7c6c188277432c9e4251c44e5
+[similar_5_ref]: /report/fcn.005ad080@d65363c7c6c188277432c9e4251c44e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5

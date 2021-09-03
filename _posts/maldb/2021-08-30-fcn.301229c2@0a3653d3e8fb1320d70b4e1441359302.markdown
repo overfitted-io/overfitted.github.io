@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.301229c2 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.301229c2
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004a2df5][similar_1_ref] (sim.: 0.8139121031909289)
+2. [fcn.005a28ed][similar_2_ref] (sim.: 0.8001853202339726)
+3. [fcn.0041ed49][similar_3_ref] (sim.: 0.7854175974747588)
+4. [fcn.004b7a07][similar_4_ref] (sim.: 0.7812663223337113)
+5. [fcn.0041ac8a][similar_5_ref] (sim.: 0.7786768268646301)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+mov esi,str.COMCTL32.DLL
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov ebx,eax
+test ebx,ebx
+je 0x30122a33
+push 0x30157e00
+push ebx
+xor esi,esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x30122a0d
+mov eax,dword[esp+0x14]
+mov edi,0x3fc0
+and eax,edi
+cmp eax,dword[esp+0x14]
+jne 0x30122a2a
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+mov esi,edi
+jmp 0x30122a2a
+push dword[esp+0x10]
+call eax
+test eax,eax
+je 0x30122a2a
+mov esi,dword[esp+0x14]
+test edi,edi
+jne 0x30122a2a
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+or si,0x3fc0
+push ebx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov eax,esi
+pop edi
+pop esi
+pop ebx
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004a2df5@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/fcn.005a28ed@7453c96a6fbd42ec690b8deb53eafcba
+[similar_3_ref]: /report/fcn.0041ed49@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_4_ref]: /report/fcn.004b7a07@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_5_ref]: /report/fcn.0041ac8a@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

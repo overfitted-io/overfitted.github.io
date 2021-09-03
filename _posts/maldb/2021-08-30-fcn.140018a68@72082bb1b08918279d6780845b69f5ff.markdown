@@ -1,0 +1,167 @@
+---
+layout: post
+title:  "fcn.140018a68 @ 72082bb1b08918279d6780845b69f5ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140018a68
+- **Origin (md5):** 72082bb1b08918279d6780845b69f5ff
+- **VirusTotal:** [virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.14008c750][similar_1_ref] (sim.: 0.9347029978501634)
+2. [fcn.140018c24][similar_2_ref] (sim.: 0.9179639734031847)
+3. [fcn.140014a38][similar_3_ref] (sim.: 0.8994661989608623)
+4. [fcn.14009b154][similar_4_ref] (sim.: 0.8980493995404032)
+5. [fcn.140080568][similar_5_ref] (sim.: 0.8872350092455404)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x18],rbx
+mov qword[rsp+0x20],rbp
+push rsi
+push rdi
+push r12
+push r14
+push r15
+sub rsp,0x30
+movsxd r15,ecx
+mov r10,r8
+mov r9,r15
+lea rcx,[0x14003abb0]
+and r9d,0x3f
+mov rax,r15
+sar rax,6
+mov rdi,rdx
+shl r9,6
+mov rsi,r15
+mov r11d,0xa
+mov r8,qword[rcx+rax*8]
+mov r12,qword[r8+r9+0x28]
+test r10,r10
+je 0x140018ac4
+cmp byte[rdx],r11b
+jne 0x140018ac4
+or byte[r8+r9+0x38],4
+jmp 0x140018aca
+and byte[r8+r9+0x38],0xfb
+lea rbp,[rdx+r10]
+mov r14,rdi
+mov rbx,rdi
+cmp rdi,rbp
+jae 0x140018c09
+mov al,byte[r14]
+cmp al,0x1a
+je 0x140018bda
+cmp al,0xd
+je 0x140018af9
+mov byte[rbx],al
+inc rbx
+inc r14
+jmp 0x140018bcf
+lea rax,[r14+1]
+cmp rax,rbp
+jae 0x140018b25
+mov cl,byte[rax]
+mov eax,0xd
+cmp cl,r11b
+cmove eax,r11d
+mov byte[rbx],al
+xor eax,eax
+cmp cl,r11b
+sete al
+inc rax
+add r14,rax
+jmp 0x140018bcc
+and qword[rsp+0x20],0
+lea r9,[rsp+0x68]
+mov r8d,1
+lea rdx,[rsp+0x60]
+mov rcx,r12
+mov r14,rax
+call qword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x140018bc3
+cmp dword[rsp+0x68],0
+je 0x140018bc3
+mov rcx,rsi
+lea r9,[0x14003abb0]
+and ecx,0x3f
+mov r8,rsi
+sar r8,6
+mov r11d,0xa
+shl rcx,6
+mov rax,qword[r9+r8*8]
+test byte[rcx+rax+0x38],0x48
+je 0x140018b96
+mov dl,byte[rsp+0x60]
+cmp dl,r11b
+jne 0x140018b89
+mov byte[rbx],r11b
+jmp 0x140018bcc
+mov byte[rbx],0xd
+mov rax,qword[r9+r8*8]
+mov byte[rcx+rax+0x3a],dl
+jmp 0x140018bcc
+cmp byte[rsp+0x60],r11b
+jne 0x140018ba2
+cmp rbx,rdi
+je 0x140018b84
+mov r8d,1
+or rdx,0xffffffffffffffff
+mov ecx,r15d
+call fcn.14001e364
+mov r11d,0xa
+cmp byte[rsp+0x60],r11b
+je 0x140018bcf
+jmp 0x140018bc9
+mov r11d,0xa
+mov byte[rbx],0xd
+inc rbx
+cmp r14,rbp
+jb 0x140018add
+jmp 0x140018c09
+mov rax,rsi
+lea rcx,[0x14003abb0]
+sar rax,6
+and esi,0x3f
+shl rsi,6
+mov rcx,qword[rcx+rax*8]
+mov al,byte[rcx+rsi+0x38]
+test al,0x40
+jne 0x140018c03
+or al,2
+mov byte[rcx+rsi+0x38],al
+jmp 0x140018c09
+mov byte[rbx],0x1a
+inc rbx
+mov rbp,qword[rsp+0x78]
+sub ebx,edi
+mov eax,ebx
+mov rbx,qword[rsp+0x70]
+add rsp,0x30
+pop r15
+pop r14
+pop r12
+pop rdi
+pop rsi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14008c750@a5e8b4820319974b4ce1027132e98e27
+[similar_2_ref]: /report/fcn.140018c24@72082bb1b08918279d6780845b69f5ff
+[similar_3_ref]: /report/fcn.140014a38@72082bb1b08918279d6780845b69f5ff
+[similar_4_ref]: /report/fcn.14009b154@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.140080568@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff

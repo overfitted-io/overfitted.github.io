@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "fcn.007539f0 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.007539f0
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00703b40][similar_1_ref] (sim.: 0.8552201101946597)
+2. [fcn.0068b9d0][similar_2_ref] (sim.: 0.8477202589220225)
+3. [fcn.0068f270][similar_3_ref] (sim.: 0.8467524875212487)
+4. [fcn.006821a0][similar_4_ref] (sim.: 0.8455801614412067)
+5. [fcn.00a64d60][similar_5_ref] (sim.: 0.8449914939984902)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rsi
+push rbx
+sub rsp,0x28
+mov esi,dword[rcx+8]
+mov rbx,rcx
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp esi,eax
+jne 0x753a38
+mov eax,dword[rbx+0xc]
+test eax,eax
+je 0x753a38
+sub eax,1
+test eax,eax
+mov dword[rbx+0xc],eax
+je 0x753a20
+add rsp,0x28
+pop rbx
+pop rsi
+ret 
+lea rcx,[rbx+0x10]
+mov dword[rbx+8],0
+add rsp,0x28
+pop rbx
+pop rsi
+jmp qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+call sub.msvcrt.dll_abort
+nop 
+nop 
+push rbx
+sub rsp,0x20
+mov eax,dword[rcx+8]
+mov rbx,rcx
+test eax,eax
+jne 0x753a65
+lea rcx,[rcx+0x10]
+call qword[sym.imp.KERNEL32.dll_DeleteCriticalSection]
+mov dword[rbx],0
+add rsp,0x20
+pop rbx
+ret 
+call sub.msvcrt.dll_abort
+nop 
+nop dword[rax+rax]
+push rsi
+push rbx
+sub rsp,0x38
+mov eax,dword[rcx]
+mov rbx,rcx
+test eax,eax
+jle 0x753a90
+add rsp,0x38
+pop rbx
+pop rsi
+ret 
+lea rax,[rcx+4]
+lock add dword[rax],1
+je 0x753ae1
+lock sub dword[rax],1
+mov eax,dword[rcx]
+mov rsi,qword[sym.imp.KERNEL32.dll_Sleep]
+test eax,eax
+jns 0x753aba
+nop dword[rax+rax]
+xor ecx,ecx
+call rsi
+mov eax,dword[rbx]
+test eax,eax
+js 0x753ab0
+mov eax,dword[rbx]
+test eax,eax
+jg 0x753a7f
+lea rsi,[rbx+8]
+mov rcx,rsi
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rcx,rsi
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov eax,dword[rbx]
+test eax,eax
+jg 0x753a7f
+call sub.msvcrt.dll_abort
+lea rsi,[rcx+8]
+mov qword[rsp+0x28],rdx
+mov rcx,rsi
+call qword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov rcx,rsi
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rdx,qword[rsp+0x28]
+mov dword[rbx],0
+call rdx
+mov rcx,rsi
+mov dword[rbx],1
+add rsp,0x38
+pop rbx
+pop rsi
+jmp qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00703b40@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.0068b9d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00a64d60@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

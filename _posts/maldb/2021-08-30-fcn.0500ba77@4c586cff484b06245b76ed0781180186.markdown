@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.0500ba77 @ 4c586cff484b06245b76ed0781180186"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0500ba77
+- **Origin (md5):** 4c586cff484b06245b76ed0781180186
+- **VirusTotal:** [virustotal.com/gui/file/4c586cff484b06245b76ed0781180186][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.100ef252][similar_1_ref] (sim.: 0.8244999778510672)
+2. [fcn.1003291d][similar_2_ref] (sim.: 0.7985127397154703)
+3. [fcn.00492c87][similar_3_ref] (sim.: 0.7980491216528081)
+4. [fcn.004580d6][similar_4_ref] (sim.: 0.7662623888657012)
+5. [fcn.004580d6][similar_5_ref] (sim.: 0.7662623888657012)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+call fcn.050062bf
+test eax,eax
+je 0x500badd
+push str.CreateFile2
+push 0x5012c30
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov ecx,eax
+test ecx,ecx
+jne 0x500baa8
+or eax,0xffffffff
+jmp 0x500bafb
+mov eax,dword[ebp+0x1c]
+and dword[ebp-0xc],0
+and dword[ebp-4],0
+mov dword[ebp-0x14],eax
+mov eax,dword[ebp+0x20]
+mov dword[ebp-0x10],eax
+mov eax,dword[ebp+0x14]
+mov dword[ebp-8],eax
+lea eax,[ebp-0x18]
+push eax
+push dword[ebp+0x18]
+mov dword[ebp-0x18],0x18
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call ecx
+jmp 0x500bafb
+mov eax,dword[ebp+0x1c]
+or eax,dword[ebp+0x20]
+push 0
+push eax
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100ef252@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.1003291d@3785b40cea34bd176ce2c160dcf987f8
+[similar_3_ref]: /report/fcn.00492c87@ca482108b30ec675315f128a8f4fc7af
+[similar_4_ref]: /report/fcn.004580d6@53687e619dcac7d709f306d061d8daeb
+[similar_5_ref]: /report/fcn.004580d6@ba5ec83721de3ca10b3c9583f3b2c6a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c586cff484b06245b76ed0781180186

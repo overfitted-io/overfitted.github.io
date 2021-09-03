@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "fcn.783bfd10 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.783bfd10
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.0055a300][similar_1_ref] (sim.: 0.7378801259248917)
+2. [fcn.0047d551][similar_2_ref] (sim.: 0.732519395036564)
+3. [fcn.782a9730][similar_3_ref] (sim.: 0.7317314378520646)
+4. [fcn.783a3f55][similar_4_ref] (sim.: 0.7307190710078348)
+5. [fcn.783a3d70][similar_5_ref] (sim.: 0.7281303913669046)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+and eax,0x80000000
+je 0x783bfd44
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+and eax,0xffff
+movzx eax,ax
+xor ecx,ecx
+cmp eax,4
+sete cl
+and ecx,0xff
+movzx edx,cl
+test edx,edx
+jne 0x783bfd7d
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+and eax,0x80000000
+jne 0x783bfd74
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+and eax,0xffff
+movzx eax,ax
+xor ecx,ecx
+cmp eax,3
+sete cl
+and ecx,0xff
+movzx edx,cl
+test edx,edx
+jne 0x783bfd7d
+mov dword[ebp-4],0
+jmp 0x783bfd8b
+push 0x781d6d30
+call dword[sym.imp.USER32.dll_RegisterWindowMessageA]
+mov dword[ebp-4],eax
+mov eax,dword[ebp-4]
+mov dword[0x783eb208],eax
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0055a300@2db66bac8e26cd758cb6fa211bf2d229
+[similar_2_ref]: /report/fcn.0047d551@843c4207147f5bab0e104024677fd9ec
+[similar_3_ref]: /report/fcn.782a9730@ebea46c6b17785efc2ebcb24ad99656c
+[similar_4_ref]: /report/fcn.783a3f55@ebea46c6b17785efc2ebcb24ad99656c
+[similar_5_ref]: /report/fcn.783a3d70@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

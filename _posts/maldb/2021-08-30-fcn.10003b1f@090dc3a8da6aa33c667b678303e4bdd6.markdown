@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.10003b1f @ 090dc3a8da6aa33c667b678303e4bdd6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10003b1f
+- **Origin (md5):** 090dc3a8da6aa33c667b678303e4bdd6
+- **VirusTotal:** [virustotal.com/gui/file/090dc3a8da6aa33c667b678303e4bdd6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.100049cb][similar_1_ref] (sim.: 0.8698954356726014)
+2. [fcn.100023d2][similar_2_ref] (sim.: 0.848048923830334)
+3. [fcn.1000447b][similar_3_ref] (sim.: 0.8360093968122218)
+4. [fcn.10002023][similar_4_ref] (sim.: 0.8340768896503051)
+5. [fcn.10009568][similar_5_ref] (sim.: 0.8336325478993004)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x20
+mov eax,0x100102be
+call fcn.1000d920
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov dword[0x1001a02c],eax
+call fcn.100039c8
+push fcn.10003beb
+push dword[0x1001a024]
+call dword[sym.imp.ADVAPI32.dll_RegisterServiceCtrlHandlerW]
+mov dword[0x1001a028],eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov ebx,eax
+lea eax,[ebp-0x10]
+push eax
+mov edi,str.KeyDownSvc::ServiceMain
+call fcn.10001303
+push ebx
+xor esi,esi
+mov dword[ebp-4],esi
+push dword[0x1001a028]
+lea eax,[ebp-0x10]
+push dword[0x1001a024]
+push str.RegisterServiceCtrlHandler__s_._m_hSvcStatus__0x_p__dwLastError___lu
+push eax
+call fcn.100023d2
+or dword[ebp-4],0xffffffff
+mov eax,dword[ebp-0x10]
+add esp,0x14
+add eax,0xfffffff0
+call fcn.100010aa
+cmp dword[0x1001a028],esi
+je 0x10003be5
+push 2
+pop ecx
+call fcn.10003a3f
+push esi
+call dword[sym.imp.ole32.dll_CoInitialize]
+push 4
+pop ecx
+call fcn.10003a3f
+mov edi,dword[sym.imp.USER32.dll_GetMessageW]
+jmp 0x10003bca
+lea eax,[ebp-0x2c]
+push eax
+call dword[sym.imp.USER32.dll_DispatchMessageW]
+push esi
+push esi
+push esi
+lea eax,[ebp-0x2c]
+push eax
+call edi
+test eax,eax
+jne 0x10003bc0
+call dword[sym.imp.ole32.dll_CoUninitialize]
+xor ecx,ecx
+inc ecx
+call fcn.10003a3f
+call fcn.1000d9bf
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100049cb@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.100023d2@090dc3a8da6aa33c667b678303e4bdd6
+[similar_3_ref]: /report/fcn.1000447b@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.10002023@dc3e2cdf680078d293de3e2d92ba613c
+[similar_5_ref]: /report/fcn.10009568@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/090dc3a8da6aa33c667b678303e4bdd6

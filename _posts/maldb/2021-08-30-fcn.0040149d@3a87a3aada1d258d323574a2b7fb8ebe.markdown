@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "fcn.0040149d @ 3a87a3aada1d258d323574a2b7fb8ebe"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040149d
+- **Origin (md5):** 3a87a3aada1d258d323574a2b7fb8ebe
+- **VirusTotal:** [virustotal.com/gui/file/3a87a3aada1d258d323574a2b7fb8ebe][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040149d][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040149d][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040149d][similar_3_ref] (sim.: 1.0)
+4. [fcn.0040149d][similar_4_ref] (sim.: 1.0)
+5. [fcn.0040149d][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x210
+push ebx
+push esi
+push edi
+lea eax,[ebp-4]
+push eax
+mov eax,dword[0x472eb0]
+or eax,8
+push eax
+xor ebx,ebx
+push ebx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+cmp eax,ebx
+jne 0x401532
+mov esi,dword[sym.imp.ADVAPI32.dll_RegEnumKeyW]
+mov edi,0x105
+jmp 0x4014ef
+cmp dword[ebp+0x10],ebx
+jne 0x401526
+push ebx
+lea eax,[ebp-0x210]
+push eax
+push dword[ebp-4]
+call fcn.0040149d
+test eax,eax
+jne 0x401501
+push edi
+lea eax,[ebp-0x210]
+push eax
+push ebx
+push dword[ebp-4]
+call esi
+test eax,eax
+je 0x4014d6
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push 2
+call fcn.004062fc
+cmp eax,ebx
+je 0x401539
+push ebx
+push dword[0x472eb0]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x401532
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0xc
+cmp dword[0x472eb0],ebx
+jne 0x40152f
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+test eax,eax
+jne 0x40152f
+jmp 0x401532
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040149d@e7f0482c425f7bc9cd320f60c1cfa28c
+[similar_2_ref]: /report/fcn.0040149d@a80355b9dc44bcf04d9725001d7455b7
+[similar_3_ref]: /report/fcn.0040149d@fc08a944a357dc216338592f13f65b60
+[similar_4_ref]: /report/fcn.0040149d@dc4cc1ead08d2906c5f9debe9d97897c
+[similar_5_ref]: /report/fcn.0040149d@1d3eceba10cee3c9f2855b7075c73af3
+[virustotal_ref]: https://www.virustotal.com/gui/file/3a87a3aada1d258d323574a2b7fb8ebe

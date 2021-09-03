@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.10006ef0 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10006ef0
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.100099bc][similar_1_ref] (sim.: 0.8657176271439031)
+2. [fcn.10006fda][similar_2_ref] (sim.: 0.8315484105378095)
+3. [fcn.10004057][similar_3_ref] (sim.: 0.8285089763571538)
+4. [fcn.01003f28][similar_4_ref] (sim.: 0.8003264015858288)
+5. [fcn.10009e8d][similar_5_ref] (sim.: 0.7995141023660374)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+mov eax,dword[0x1002f010]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+xor esi,esi
+inc esi
+push edi
+mov dword[ebp-0x18],esi
+call fcn.10002485
+push 0
+push esi
+push 2
+call sub.WS2_32.dll_socket
+mov esi,eax
+or edi,0xffffffff
+cmp esi,edi
+jne 0x10006f24
+mov eax,edi
+jmp 0x10006f78
+push 2
+pop eax
+push dword[ebp+8]
+mov word[ebp-0x14],ax
+call sub.WS2_32.dll_htons
+and dword[ebp-0x10],0
+mov word[ebp-0x12],ax
+lea eax,[ebp-0x18]
+push eax
+push 0x8004667e
+push esi
+call dword[sym.imp.WS2_32.dll_ioctlsocket]
+cmp eax,edi
+jne 0x10006f57
+push esi
+call sub.WS2_32.dll_closesocket
+jmp 0x10006f20
+push 0x10
+lea eax,[ebp-0x14]
+push eax
+push esi
+call dword[sym.imp.WS2_32.dll_bind]
+cmp eax,edi
+je 0x10006f4f
+push dword[ebp+0xc]
+push esi
+call dword[sym.imp.WS2_32.dll_listen]
+cmp eax,edi
+je 0x10006f4f
+mov eax,esi
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.100149fd
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100099bc@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.10006fda@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.10004057@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.01003f28@b115515a4c22598417d07022f1942d1e
+[similar_5_ref]: /report/fcn.10009e8d@a0ac129ff3ea4c0dfa9529c259a9502c
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

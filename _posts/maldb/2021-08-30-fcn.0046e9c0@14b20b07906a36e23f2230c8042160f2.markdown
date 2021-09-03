@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.0046e9c0 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0046e9c0
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0046e780][similar_1_ref] (sim.: 0.9451443127775488)
+2. [fcn.006aeda0][similar_2_ref] (sim.: 0.8395378915101981)
+3. [fcn.0046eab0][similar_3_ref] (sim.: 0.8377397683202015)
+4. [fcn.0045e2e0][similar_4_ref] (sim.: 0.8359376418804413)
+5. [fcn.0046e870][similar_5_ref] (sim.: 0.833713428722722)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xfffffffffffffffe
+push 0x5eaee8
+push fcn.0057a8c0
+mov eax,dword fs:[0]
+push eax
+add esp,0xffffffe4
+push ebx
+push esi
+push edi
+mov eax,dword[0x5ffcc0]
+xor dword[ebp-8],eax
+xor eax,ebp
+push eax
+lea eax,[ebp-0x10]
+mov dword fs:[0],eax
+mov dword[ebp-0x2c],ecx
+mov dword[ebp-0x20],0x80004005
+mov dword[ebp-0x1c],0
+mov dword[ebp-4],0
+mov eax,dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[ebp-0x1c],eax
+cmp dword[ebp-0x1c],0
+jne 0x46ea1d
+jmp 0x46ea6f
+push str.IsBrowserInstalled
+mov ecx,dword[ebp-0x1c]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0x28],eax
+push str.BrowserLaunch
+mov edx,dword[ebp-0x1c]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0x24],eax
+cmp dword[ebp-0x28],0
+je 0x46ea4d
+cmp dword[ebp-0x24],0
+jne 0x46ea56
+mov dword[ebp-0x20],0x80004002
+jmp 0x46ea6f
+push 1
+push 1
+call dword[ebp-0x28]
+test eax,eax
+jne 0x46ea6f
+mov eax,dword[ebp+0x10]
+push eax
+mov ecx,dword[ebp+8]
+push ecx
+call dword[ebp-0x24]
+mov dword[ebp-0x20],eax
+mov dword[ebp-4],0xfffffffe
+call fcn.0046ea7d
+jmp 0x46ea8e
+mov eax,dword[ebp-0x20]
+mov ecx,dword[ebp-0x10]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046e780@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.006aeda0@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.0046eab0@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.0045e2e0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.0046e870@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

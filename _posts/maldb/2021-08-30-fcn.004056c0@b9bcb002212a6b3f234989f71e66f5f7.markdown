@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.004056c0 @ b9bcb002212a6b3f234989f71e66f5f7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004056c0
+- **Origin (md5):** b9bcb002212a6b3f234989f71e66f5f7
+- **VirusTotal:** [virustotal.com/gui/file/b9bcb002212a6b3f234989f71e66f5f7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00405880][similar_1_ref] (sim.: 0.9356558803871841)
+2. [fcn.00405d40][similar_2_ref] (sim.: 0.9198169657795138)
+3. [fcn.00416000][similar_3_ref] (sim.: 0.8277855454875633)
+4. [fcn.00405610][similar_4_ref] (sim.: 0.8250521417272196)
+5. [fcn.0040b280][similar_5_ref] (sim.: 0.8201889521744321)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x11c
+mov eax,dword[0x424014]
+xor eax,esp
+mov dword[esp+0x118],eax
+push ebx
+push esi
+mov esi,ecx
+push edi
+mov edi,dword[esp+0x12c]
+cmp esi,0xffffffff
+jne 0x40570d
+call fcn.0040bc00
+mov dword[edi+4],eax
+or eax,esi
+mov dword[edi],0x2719
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[esp+0x118]
+xor ecx,esp
+call fcn.0040bdcf
+add esp,0x11c
+ret 
+push 0
+mov dword[esp+0x20],esi
+mov dword[esp+0x1c],1
+mov dword[esp+0x14],0
+mov dword[esp+0x18],0
+call dword[sym.imp.WS2_32.dll_WSASetLastError]
+push 0
+push 0
+push 0
+lea eax,[esp+0x24]
+push eax
+lea eax,[esi+1]
+push eax
+call dword[sym.imp.WS2_32.dll_select]
+mov ebx,eax
+call fcn.0040bc00
+mov esi,eax
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[edi],eax
+mov dword[edi+4],esi
+test ebx,ebx
+je 0x405760
+jle 0x40576e
+call fcn.0040bc00
+mov dword[edi+4],eax
+mov dword[edi],0
+mov ecx,dword[esp+0x124]
+mov eax,ebx
+pop edi
+pop esi
+pop ebx
+xor ecx,esp
+call fcn.0040bdcf
+add esp,0x11c
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405880@b9bcb002212a6b3f234989f71e66f5f7
+[similar_2_ref]: /report/fcn.00405d40@b9bcb002212a6b3f234989f71e66f5f7
+[similar_3_ref]: /report/fcn.00416000@0aa2d73a5300dff2412388945614b507
+[similar_4_ref]: /report/fcn.00405610@b9bcb002212a6b3f234989f71e66f5f7
+[similar_5_ref]: /report/fcn.0040b280@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/b9bcb002212a6b3f234989f71e66f5f7

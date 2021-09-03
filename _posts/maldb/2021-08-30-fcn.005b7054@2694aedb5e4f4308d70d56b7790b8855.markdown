@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.005b7054 @ 2694aedb5e4f4308d70d56b7790b8855"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005b7054
+- **Origin (md5):** 2694aedb5e4f4308d70d56b7790b8855
+- **VirusTotal:** [virustotal.com/gui/file/2694aedb5e4f4308d70d56b7790b8855][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00556224][similar_1_ref] (sim.: 0.8567279882904262)
+2. [fcn.005af0f4][similar_2_ref] (sim.: 0.84372739673785)
+3. [fcn.00598b54][similar_3_ref] (sim.: 0.8381342307175174)
+4. [fcn.005c7e84][similar_4_ref] (sim.: 0.8348571249264929)
+5. [fcn.00599c74][similar_5_ref] (sim.: 0.8330858102289886)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x4695f3c],ebx
+push esi
+push edi
+jne 0x5b70a3
+push 0x5c0560
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x5b70d9
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x5c0554
+push edi
+call esi
+test eax,eax
+mov dword[0x4695f3c],eax
+je 0x5b70d9
+push 0x5c0544
+push edi
+call esi
+push 0x5c0530
+push edi
+mov dword[0x4695f40],eax
+call esi
+mov dword[0x4695f44],eax
+mov eax,dword[0x4695f40]
+test eax,eax
+je 0x5b70c2
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x5b70c2
+mov eax,dword[0x4695f44]
+test eax,eax
+je 0x5b70c2
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x4695f3c]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x5b70d5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00556224@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_2_ref]: /report/fcn.005af0f4@4e8d6f73c8261716f687f8d06429ef4d
+[similar_3_ref]: /report/fcn.00598b54@fd515d36e5c3696f076b92b737a2556c
+[similar_4_ref]: /report/fcn.005c7e84@9df9a5aa1b4726bd0de47365be1d7f48
+[similar_5_ref]: /report/fcn.00599c74@661071a934c3ddee44d06c85d99d90b2
+[virustotal_ref]: https://www.virustotal.com/gui/file/2694aedb5e4f4308d70d56b7790b8855

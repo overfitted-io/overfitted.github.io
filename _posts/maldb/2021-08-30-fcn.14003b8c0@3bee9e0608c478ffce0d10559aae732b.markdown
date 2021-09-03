@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.14003b8c0 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14003b8c0
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.14003b740][similar_1_ref] (sim.: 0.8933289894003904)
+2. [fcn.140061150][similar_2_ref] (sim.: 0.8762593316225269)
+3. [fcn.1400391d0][similar_3_ref] (sim.: 0.8706262564274189)
+4. [fcn.140057370][similar_4_ref] (sim.: 0.8703599739135268)
+5. [fcn.140015338][similar_5_ref] (sim.: 0.8668665218805423)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rsi
+mov qword[rax+0x20],rdi
+push rbp
+push r12
+push r13
+lea rbp,[rax-0x7b8]
+sub rsp,0x8a0
+mov r12,rdx
+xor edx,edx
+mov r13,rcx
+lea ecx,[rdx+2]
+mov rbx,r8
+mov dword[rsp+0x30],0x238
+call qword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+lea rdx,[rsp+0x30]
+mov rcx,rax
+mov rdi,rax
+call qword[sym.imp.KERNEL32.dll_Process32FirstW]
+mov rcx,r13
+mov byte[rbx],0
+call fcn.14003b6e0
+mov esi,eax
+jmp 0x14003b9a2
+lea rdx,[rsp+0x30]
+mov rcx,rdi
+call qword[sym.imp.KERNEL32.dll_Process32NextW]
+cmp eax,1
+jne 0x14003b9ab
+lea rax,[rbp+0x380]
+lea r9,[rbp+0x170]
+lea r8,[rbp+0x590]
+lea rdx,[rbp+0x7d0]
+lea rcx,[rsp+0x5c]
+mov qword[rsp+0x20],rax
+call fcn.14001633c
+lea rdx,[rbp+0x380]
+lea rcx,[rbp+0x170]
+call fcn.140014ce8
+lea rcx,[rbp+0x170]
+mov rdx,r13
+call fcn.140015250
+test eax,eax
+jne 0x14003b98f
+mov eax,dword[rsp+0x38]
+mov dword[r12],eax
+jmp 0x14003b99f
+test esi,esi
+je 0x14003b9a2
+mov ecx,dword[rsp+0x38]
+cmp esi,ecx
+jne 0x14003b9a2
+mov dword[r12],ecx
+mov byte[rbx],1
+cmp byte[rbx],0
+je 0x14003b921
+mov rcx,rdi
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+lea r11,[rsp+0x8a0]
+mov al,1
+mov rbx,qword[r11+0x20]
+mov rsi,qword[r11+0x28]
+mov rdi,qword[r11+0x38]
+mov rsp,r11
+pop r13
+pop r12
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14003b740@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.140061150@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.1400391d0@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140057370@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.140015338@c5b958b285b208bffd52d8455e15d93a
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

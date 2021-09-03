@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.14003e460 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14003e460
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.14003b9e0][similar_1_ref] (sim.: 0.8464721462013151)
+2. [fcn.14004d580][similar_2_ref] (sim.: 0.822989595352605)
+3. [fcn.14003ba70][similar_3_ref] (sim.: 0.8101769383523165)
+4. [fcn.14003be50][similar_4_ref] (sim.: 0.8064302001376107)
+5. [fcn.14000fd70][similar_5_ref] (sim.: 0.7983279451529262)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+sub rsp,0x40
+mov rbx,rcx
+cmp dl,1
+jne 0x14003e4b6
+lea rax,[rsp+0x60]
+xor r9d,r9d
+xor r8d,r8d
+mov qword[rsp+0x30],rax
+xor edx,edx
+mov dword[rsp+0x28],0x1388
+mov dword[rsp+0x20],2
+call qword[sym.imp.USER32.dll_SendMessageTimeoutW]
+test rax,rax
+je 0x14003e4d3
+xor edx,edx
+mov rcx,rbx
+call qword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+mov ebx,eax
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov r8d,1
+jmp 0x14003e4c9
+xor edx,edx
+call qword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+mov ebx,eax
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor r8d,r8d
+mov edx,ebx
+mov ecx,eax
+call qword[sym.imp.USER32.dll_AttachThreadInput]
+add rsp,0x40
+pop rbx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14003b9e0@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14004d580@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14003ba70@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.14003be50@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14000fd70@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

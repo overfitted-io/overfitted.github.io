@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "loc.10907059 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.10907059
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [loc.1008e19c][similar_1_ref] (sim.: 0.8838931304938871)
+2. [fcn.02772c52][similar_2_ref] (sim.: 0.8592295355875694)
+3. [loc.1011390e][similar_3_ref] (sim.: 0.8585378081793764)
+4. [loc.00413f73][similar_4_ref] (sim.: 0.8579885945654905)
+5. [loc.00414ac2][similar_5_ref] (sim.: 0.8522837264931066)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x328
+mov dword[0x11b825e8],eax
+mov dword[0x11b825e4],ecx
+mov dword[0x11b825e0],edx
+mov dword[0x11b825dc],ebx
+mov dword[0x11b825d8],esi
+mov dword[0x11b825d4],edi
+mov word[0x11b82600],ss
+mov word[0x11b825f4],cs
+mov word[0x11b825d0],ds
+mov word[0x11b825cc],es
+mov word[0x11b825c8],fs
+mov word[0x11b825c4],gs
+pushfd 
+pop dword[0x11b825f8]
+mov eax,dword[ebp]
+mov dword[0x11b825ec],eax
+mov eax,dword[ebp+4]
+mov dword[0x11b825f0],eax
+lea eax,[ebp+8]
+mov dword[0x11b825fc],eax
+mov eax,dword[ebp-0x320]
+mov dword[0x11b82538],0x10001
+mov eax,dword[0x11b825f0]
+mov dword[0x11b824ec],eax
+mov dword[0x11b824e0],0xc0000409
+mov dword[0x11b824e4],1
+mov eax,dword[0x10c992e8]
+mov dword[ebp-0x328],eax
+mov eax,dword[0x10c992ec]
+mov dword[ebp-0x324],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x11b82530],eax
+push 1
+call sub.MSVCR80.dll__crt_debugger_hook
+pop ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x10bb6588
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x11b82530],0
+jne 0x10907149
+push 1
+call sub.MSVCR80.dll__crt_debugger_hook
+pop ecx
+push 0xc0000409
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.1008e19c@880ba8b1983575bc0c5ed1cb79dcde8f
+[similar_2_ref]: /report/fcn.02772c52@2dadd8501024f4fa324714af30565d9d
+[similar_3_ref]: /report/loc.1011390e@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/loc.00413f73@e16f74a2849182d98050864255e902f8
+[similar_5_ref]: /report/loc.00414ac2@20a93604f17ee6f3c2aa7b1f7a497fcf
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

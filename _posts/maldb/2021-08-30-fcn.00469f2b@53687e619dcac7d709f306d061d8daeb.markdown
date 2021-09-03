@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "fcn.00469f2b @ 53687e619dcac7d709f306d061d8daeb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00469f2b
+- **Origin (md5):** 53687e619dcac7d709f306d061d8daeb
+- **VirusTotal:** [virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00469f2b][similar_1_ref] (sim.: 1.0)
+2. [fcn.00499a26][similar_2_ref] (sim.: 0.8349752871991342)
+3. [fcn.0047db49][similar_3_ref] (sim.: 0.8237352812552412)
+4. [fcn.00420fd2][similar_4_ref] (sim.: 0.8235803877430634)
+5. [fcn.0047dbfb][similar_5_ref] (sim.: 0.823255384575057)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+push 0x800
+push 0
+mov esi,0x480c60
+mov ebx,ecx
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov edi,eax
+test edi,edi
+jne 0x469f65
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x469fdb
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov edi,eax
+test edi,edi
+je 0x469fdb
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.RegisterTraceGuidsW
+push edi
+call esi
+push eax
+call fcn.0046249f
+mov dword[esp],str.UnregisterTraceGuids
+push edi
+mov dword[ebx],eax
+call esi
+push eax
+call fcn.0046249f
+mov dword[esp],str.TraceEvent
+push edi
+mov dword[ebx+4],eax
+call esi
+push eax
+call fcn.0046249f
+mov dword[esp],str.GetTraceLoggerHandle
+push edi
+mov dword[ebx+8],eax
+call esi
+push eax
+call fcn.0046249f
+mov dword[esp],str.GetTraceEnableLevel
+push edi
+mov dword[ebx+0xc],eax
+call esi
+push eax
+call fcn.0046249f
+mov dword[esp],str.GetTraceEnableFlags
+push edi
+mov dword[ebx+0x10],eax
+call esi
+push eax
+call fcn.0046249f
+pop ecx
+mov dword[ebx+0x14],eax
+pop edi
+pop esi
+mov eax,ebx
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00469f2b@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_2_ref]: /report/fcn.00499a26@94f83197373b17ab8b5225c0900d14de
+[similar_3_ref]: /report/fcn.0047db49@843c4207147f5bab0e104024677fd9ec
+[similar_4_ref]: /report/fcn.00420fd2@065d95e046989885ac0aa05648eeda39
+[similar_5_ref]: /report/fcn.0047dbfb@ba63c5f75a2177720b184529dbf918cf
+[virustotal_ref]: https://www.virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb

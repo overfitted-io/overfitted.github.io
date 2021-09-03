@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "fcn.00405ea0 @ b9bcb002212a6b3f234989f71e66f5f7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405ea0
+- **Origin (md5):** b9bcb002212a6b3f234989f71e66f5f7
+- **VirusTotal:** [virustotal.com/gui/file/b9bcb002212a6b3f234989f71e66f5f7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004079c0][similar_1_ref] (sim.: 0.8589817420163057)
+2. [fcn.004040f0][similar_2_ref] (sim.: 0.8337343177179336)
+3. [fcn.0040483b][similar_3_ref] (sim.: 0.8268185045375757)
+4. [fcn.0040483b][similar_4_ref] (sim.: 0.8268185045375757)
+5. [fcn.00405610][similar_5_ref] (sim.: 0.8265127587084792)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0xc
+push ebx
+push esi
+mov esi,ecx
+mov dword[esp+0xc],esi
+push edi
+mov edi,edx
+cmp esi,0xffffffff
+jne 0x405ecc
+call fcn.0040bc00
+mov ebx,dword[ebp+0xc]
+mov dword[ebx],0x2719
+mov dword[ebx+4],eax
+jmp 0x405f08
+push 0
+call dword[sym.imp.WS2_32.dll_WSASetLastError]
+push dword[ebp+8]
+push edi
+push esi
+call dword[sym.imp.WS2_32.dll_connect]
+mov edi,eax
+call fcn.0040bc00
+mov esi,eax
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ebx,dword[ebp+0xc]
+mov dword[ebx],eax
+mov dword[ebx+4],esi
+test edi,edi
+jne 0x405f04
+call fcn.0040bc00
+mov dword[ebx],edi
+mov dword[ebx+4],eax
+mov esi,dword[esp+0x10]
+call fcn.0040bc00
+cmp dword[ebx+4],eax
+jne 0x405f1a
+cmp dword[ebx],0x2734
+je 0x405f2c
+call fcn.0040bc00
+cmp dword[ebx+4],eax
+jne 0x405f74
+cmp dword[ebx],0x2733
+jne 0x405f74
+mov edx,ebx
+mov ecx,esi
+call fcn.00405d40
+test eax,eax
+js 0x405f74
+push ebx
+lea eax,[esp+0x14]
+mov dword[esp+0x18],0
+push eax
+lea eax,[esp+0x1c]
+mov dword[esp+0x18],4
+push eax
+sub esp,8
+mov ecx,esi
+call fcn.00405e10
+add esp,0x14
+cmp eax,0xffffffff
+je 0x405f74
+call fcn.0040bc00
+mov ecx,dword[esp+0x14]
+mov dword[ebx],ecx
+mov dword[ebx+4],eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004079c0@b9bcb002212a6b3f234989f71e66f5f7
+[similar_2_ref]: /report/fcn.004040f0@065d95e046989885ac0aa05648eeda39
+[similar_3_ref]: /report/fcn.0040483b@617bd594ba13d0dcc08a315774c342d4
+[similar_4_ref]: /report/fcn.0040483b@b8b9b802e96d8e813c605554cf6f7018
+[similar_5_ref]: /report/fcn.00405610@b9bcb002212a6b3f234989f71e66f5f7
+[virustotal_ref]: https://www.virustotal.com/gui/file/b9bcb002212a6b3f234989f71e66f5f7

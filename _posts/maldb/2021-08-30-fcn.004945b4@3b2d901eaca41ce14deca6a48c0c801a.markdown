@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.004945b4 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004945b4
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004920a9][similar_1_ref] (sim.: 0.7820249855957704)
+2. [fcn.0045d4b5][similar_2_ref] (sim.: 0.7516976175885752)
+3. [fcn.10005287][similar_3_ref] (sim.: 0.733091214679328)
+4. [fcn.100052ac][similar_4_ref] (sim.: 0.7204305293880724)
+5. [fcn.00414576][similar_5_ref] (sim.: 0.7194902020668386)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push str.GetNativeSystemInfo
+push str.kernel32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push dword[ebp+8]
+test eax,eax
+jne 0x4945dd
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+pop ebp
+ret 
+call eax
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004920a9@3b2d901eaca41ce14deca6a48c0c801a
+[similar_2_ref]: /report/fcn.0045d4b5@ab923633032c47ff6d9c40ed36a40b2b
+[similar_3_ref]: /report/fcn.10005287@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.100052ac@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_5_ref]: /report/fcn.00414576@82c78d277667bbc35c5b584ddcd52df6
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

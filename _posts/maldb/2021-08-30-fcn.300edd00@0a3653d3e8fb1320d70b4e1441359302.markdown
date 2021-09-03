@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.300edd00 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.300edd00
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.300e5eb0][similar_1_ref] (sim.: 0.8811012052932797)
+2. [fcn.300e4cc0][similar_2_ref] (sim.: 0.8336108810214333)
+3. [fcn.300db990][similar_3_ref] (sim.: 0.8297005787488534)
+4. [fcn.300ed0b0][similar_4_ref] (sim.: 0.8274978806870197)
+5. [fcn.300e81e0][similar_5_ref] (sim.: 0.8205662632078322)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+8]
+push ebx
+push ebp
+push esi
+mov esi,dword[esp+0x10]
+push edi
+mov ecx,dword[esi]
+mov dword[esi+0x2eb4],eax
+push ecx
+call dword[sym.imp.USER32.dll_GetDC]
+mov edx,dword[esi+0x2eb4]
+mov ebx,dword[sym.imp.GDI32.dll_SelectObject]
+mov edi,eax
+push edx
+push edi
+call ebx
+mov ebp,eax
+lea eax,[esi+0x2eb8]
+push eax
+push edi
+call dword[sym.imp.GDI32.dll_GetTextMetricsA]
+push ebp
+push edi
+call ebx
+mov ecx,dword[esi]
+push edi
+push ecx
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov edx,dword[esi+0x54]
+push esi
+shl edx,5
+call dword[edx+0x30156888]
+mov eax,dword[esi+0x2e94]
+add esp,4
+test eax,eax
+je 0x300edd84
+mov eax,dword[esi+0x54]
+mov ecx,dword[esi+0x2e98]
+push 0
+push ecx
+shl eax,5
+push esi
+call dword[eax+0x30156874]
+push esi
+call fcn.300ec140
+add esp,0x10
+mov eax,dword[esp+0x1c]
+test eax,eax
+je 0x300edd95
+mov edx,dword[esi]
+push edx
+call dword[sym.imp.USER32.dll_UpdateWindow]
+push esi
+call fcn.300ec140
+add esp,4
+pop edi
+pop esi
+pop ebp
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300e5eb0@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.300e4cc0@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.300db990@0a3653d3e8fb1320d70b4e1441359302
+[similar_4_ref]: /report/fcn.300ed0b0@0a3653d3e8fb1320d70b4e1441359302
+[similar_5_ref]: /report/fcn.300e81e0@0a3653d3e8fb1320d70b4e1441359302
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.00568310 @ 2db66bac8e26cd758cb6fa211bf2d229"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00568310
+- **Origin (md5):** 2db66bac8e26cd758cb6fa211bf2d229
+- **VirusTotal:** [virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00433720][similar_1_ref] (sim.: 0.7889480084202523)
+2. [fcn.004580e0][similar_2_ref] (sim.: 0.7884575059741068)
+3. [fcn.0056d6d0][similar_3_ref] (sim.: 0.7865888041626867)
+4. [fcn.0045f030][similar_4_ref] (sim.: 0.7860767297024127)
+5. [fcn.00560820][similar_5_ref] (sim.: 0.7860565806443612)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x468
+mov eax,dword[0x5b7500]
+xor eax,ebp
+mov dword[ebp-8],eax
+push 0x104
+lea eax,[ebp-0x468]
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+jne 0x56833f
+xor al,al
+jmp 0x5683a7
+lea ecx,[ebp-0x258]
+push ecx
+lea edx,[ebp-0x468]
+push edx
+call dword[sym.imp.KERNEL32.dll_FindFirstFileW]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0xffffffff
+jne 0x568360
+xor al,al
+jmp 0x5683a7
+mov eax,dword[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_FindClose]
+lea ecx,[ebp-0x22c]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call fcn.0057f1c8
+add esp,8
+push 0x2e
+mov eax,dword[ebp+8]
+push eax
+call fcn.0055ab10
+add esp,8
+mov dword[ebp-0x25c],eax
+cmp dword[ebp-0x25c],0
+je 0x5683a5
+mov ecx,dword[ebp-0x25c]
+mov word[ecx],0
+mov al,1
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.0057d645
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00433720@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.004580e0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.0056d6d0@2db66bac8e26cd758cb6fa211bf2d229
+[similar_4_ref]: /report/fcn.0045f030@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.00560820@2db66bac8e26cd758cb6fa211bf2d229
+[virustotal_ref]: https://www.virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229

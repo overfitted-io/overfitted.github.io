@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.10026e5c @ 4273a82ae1a72b0dac50947c5ab8a473"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10026e5c
+- **Origin (md5):** 4273a82ae1a72b0dac50947c5ab8a473
+- **VirusTotal:** [virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.10026ef0][similar_1_ref] (sim.: 0.7324384383221518)
+2. [fcn.100e8ff0][similar_2_ref] (sim.: 0.709957534715224)
+3. [fcn.0070c9e0][similar_3_ref] (sim.: 0.6993289635112812)
+4. [fcn.004671a0][similar_4_ref] (sim.: 0.6944341274153392)
+5. [fcn.10026f54][similar_5_ref] (sim.: 0.6920988477926164)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+mov edi,ecx
+mov eax,dword[edi+0xd0]
+test eax,eax
+je 0x10026e70
+mov ecx,edi
+call fcn.10026ec8
+push 4
+push 0x1000
+push 0x780
+push 0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[edi+0xd0],eax
+test eax,eax
+je 0x10026ec1
+mov dword[edi+0xcc],eax
+lea ecx,[eax+0x300]
+mov dword[edi+0xe8],ecx
+lea edx,[eax+0x480]
+mov dword[edi+0xec],edx
+add eax,0x600
+mov dword[edi+0xf0],eax
+mov dword[edi+0xf4],ecx
+xor eax,eax
+pop edi
+ret 
+mov eax,0xffffffff
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10026ef0@4273a82ae1a72b0dac50947c5ab8a473
+[similar_2_ref]: /report/fcn.100e8ff0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.0070c9e0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.004671a0@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_5_ref]: /report/fcn.10026f54@4273a82ae1a72b0dac50947c5ab8a473
+[virustotal_ref]: https://www.virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473

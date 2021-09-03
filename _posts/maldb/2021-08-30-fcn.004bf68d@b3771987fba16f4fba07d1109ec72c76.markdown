@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.004bf68d @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004bf68d
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0049b366][similar_1_ref] (sim.: 0.8009944699776468)
+2. [fcn.00428d93][similar_2_ref] (sim.: 0.7772479512902635)
+3. [fcn.004bec4e][similar_3_ref] (sim.: 0.7761332833904651)
+4. [fcn.005a9e83][similar_4_ref] (sim.: 0.7755286408941897)
+5. [fcn.00441443][similar_5_ref] (sim.: 0.7730371017214552)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+push edi
+xor ebx,ebx
+push ebx
+push 0x80
+push 3
+push ebx
+push 1
+push 0x80000000
+push dword[ebp+8]
+mov dword[ebp-0xc],ecx
+mov byte[ebp-1],bl
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov edi,eax
+cmp edi,0xffffffff
+je 0x4bf70f
+push esi
+push ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+mov esi,eax
+cmp esi,ebx
+jbe 0x4bf70e
+lea eax,[esi+1]
+push eax
+call fcn.00447a91
+pop ecx
+push ebx
+lea ecx,[ebp+8]
+push ecx
+push esi
+push eax
+push edi
+mov dword[ebp-8],eax
+mov dword[ebp+8],ebx
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+cmp dword[ebp+8],esi
+jne 0x4bf705
+mov ecx,dword[ebp-0xc]
+push esi
+push dword[ebp-8]
+call fcn.004bf500
+mov byte[ebp-1],al
+push dword[ebp-8]
+call fcn.0044aecc
+pop ecx
+pop esi
+mov al,byte[ebp-1]
+pop edi
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0049b366@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.00428d93@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.004bec4e@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.005a9e83@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.00441443@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

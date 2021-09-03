@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "fcn.0040276f @ bdd97566e720668726279189e068b6a8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040276f
+- **Origin (md5):** bdd97566e720668726279189e068b6a8
+- **VirusTotal:** [virustotal.com/gui/file/bdd97566e720668726279189e068b6a8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040276f][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040276f][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040276f][similar_3_ref] (sim.: 1.0)
+4. [fcn.0040276f][similar_4_ref] (sim.: 1.0)
+5. [fcn.0040276f][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x34
+cmp word[ebp+0x10],8
+push esi
+mov esi,0x80070057
+jne 0x4027ac
+push dword[ebp+0x18]
+mov eax,dword[ebp+8]
+push dword[ebp+0xc]
+add eax,8
+push eax
+call fcn.00404c5f
+test eax,eax
+jle 0x4027a5
+and eax,0xffff
+or eax,0x80070000
+mov esi,eax
+jmp 0x402893
+cmp word[ebp+0x10],0
+je 0x402893
+lea eax,[esp+0x28]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantClear]
+push 0x17
+push 0
+lea eax,[ebp+0x10]
+push eax
+lea eax,[esp+0x34]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantTimeToDosDateTime]
+mov esi,eax
+test esi,esi
+js 0x402888
+mov eax,dword[esp+0x30]
+push 4
+mov dword[esp+8],eax
+lea eax,[esp+8]
+push eax
+mov eax,dword[ebp+8]
+push 4
+push 0
+push dword[ebp+0xc]
+push dword[eax+8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+fldz 
+fstp qword[esp+0x18]
+mov ecx,eax
+fld qword[0x477948]
+fstp qword[esp+8]
+fld qword[0x477940]
+fst qword[esp+0x18]
+fld qword[0x477938]
+fstp qword[esp+0x10]
+fld qword[0x477930]
+fstp qword[esp+0x20]
+fld qword[esp+8]
+fld qword[esp+8]
+fucompp 
+fnstsw ax
+test ah,0x44
+jp 0x402874
+fld qword[esp+0x10]
+fsub qword[0x477978]
+fsub qword[esp+0x18]
+fsub qword[esp+0x10]
+fsub qword[esp+0x18]
+fld qword[esp+8]
+fdivrp st(2)
+fsubrp st(1)
+fsub qword[esp+0x10]
+fsub qword[0x477928]
+fadd qword[esp+8]
+fstp qword[esp+0x18]
+jmp 0x402876
+fstp st(0)
+test ecx,ecx
+jle 0x402886
+and ecx,0xffff
+or ecx,0x80070000
+mov esi,ecx
+lea eax,[esp+0x28]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantCopy]
+mov eax,esi
+pop esi
+mov esp,ebp
+pop ebp
+ret 0x18
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040276f@96a869ae624ddb4834a1d5a829f85469
+[similar_2_ref]: /report/fcn.0040276f@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_3_ref]: /report/fcn.0040276f@505be53c36227b94e2fcc406f247f6e5
+[similar_4_ref]: /report/fcn.0040276f@4c537a3700803bd0868438c678e579fa
+[similar_5_ref]: /report/fcn.0040276f@19194271be14ff080bcaeeab4e376f0f
+[virustotal_ref]: https://www.virustotal.com/gui/file/bdd97566e720668726279189e068b6a8

@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.004037e1 @ 0d7eb0bfa8278c92cad79678ce8bc0fd"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004037e1
+- **Origin (md5):** 0d7eb0bfa8278c92cad79678ce8bc0fd
+- **VirusTotal:** [virustotal.com/gui/file/0d7eb0bfa8278c92cad79678ce8bc0fd][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0040390e][similar_1_ref] (sim.: 0.7747607568767511)
+2. [fcn.00405670][similar_2_ref] (sim.: 0.7466926067467714)
+3. [fcn.00405670][similar_3_ref] (sim.: 0.7466926067467714)
+4. [fcn.00408b30][similar_4_ref] (sim.: 0.7439269113698517)
+5. [fcn.004156b0][similar_5_ref] (sim.: 0.7242218156143649)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x4130e3
+mov eax,dword fs:[0]
+push eax
+push ecx
+mov eax,dword[0x4af014]
+xor eax,ebp
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-0x10],ecx
+and dword[ebp-4],0
+mov ecx,dword[ecx+4]
+test ecx,ecx
+je 0x403818
+push ecx
+call fcn.0040375b
+or dword[ebp-4],0xffffffff
+push 0x4b08b0
+call dword[sym.imp.KERNEL32.dll_InterlockedDecrement]
+test eax,eax
+jne 0x403831
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040390e@0d7eb0bfa8278c92cad79678ce8bc0fd
+[similar_2_ref]: /report/fcn.00405670@b8b9b802e96d8e813c605554cf6f7018
+[similar_3_ref]: /report/fcn.00405670@617bd594ba13d0dcc08a315774c342d4
+[similar_4_ref]: /report/fcn.00408b30@b9bcb002212a6b3f234989f71e66f5f7
+[similar_5_ref]: /report/fcn.004156b0@3b2d901eaca41ce14deca6a48c0c801a
+[virustotal_ref]: https://www.virustotal.com/gui/file/0d7eb0bfa8278c92cad79678ce8bc0fd

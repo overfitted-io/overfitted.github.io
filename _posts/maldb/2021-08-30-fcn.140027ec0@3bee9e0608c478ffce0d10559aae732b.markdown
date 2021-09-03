@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.140027ec0 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140027ec0
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.180001ba8][similar_1_ref] (sim.: 0.8876348883623231)
+2. [fcn.140011620][similar_2_ref] (sim.: 0.8856012374824472)
+3. [fcn.140015820][similar_3_ref] (sim.: 0.8850726092998098)
+4. [fcn.14003b740][similar_4_ref] (sim.: 0.883088382427678)
+5. [fcn.1400154a8][similar_5_ref] (sim.: 0.8819686677769929)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rcx
+sub rsp,0x88
+lea rcx,[0x1400b3410]
+call qword[sym.imp.KERNEL32.dll_RtlCaptureContext]
+mov rax,qword[0x1400b3508]
+mov qword[rsp+0x58],rax
+xor r8d,r8d
+lea rdx,[rsp+0x60]
+mov rcx,qword[rsp+0x58]
+call sub.KERNEL32.dll_RtlLookupFunctionEntry
+mov qword[rsp+0x50],rax
+cmp qword[rsp+0x50],0
+je 0x140027f45
+mov qword[rsp+0x38],0
+lea rax,[rsp+0x48]
+mov qword[rsp+0x30],rax
+lea rax,[rsp+0x40]
+mov qword[rsp+0x28],rax
+lea rax,[0x1400b3410]
+mov qword[rsp+0x20],rax
+mov r9,qword[rsp+0x50]
+mov r8,qword[rsp+0x58]
+mov rdx,qword[rsp+0x60]
+xor ecx,ecx
+call sub.KERNEL32.dll_RtlVirtualUnwind
+jmp 0x140027f67
+mov rax,qword[rsp+0x88]
+mov qword[0x1400b3508],rax
+lea rax,[rsp+0x88]
+add rax,8
+mov qword[0x1400b34a8],rax
+mov rax,qword[0x1400b3508]
+mov qword[0x1400b3380],rax
+mov rax,qword[rsp+0x90]
+mov qword[0x1400b3490],rax
+mov dword[0x1400b3370],0xc0000409
+mov dword[0x1400b3374],1
+mov rax,qword[0x1400ac1f0]
+mov qword[rsp+0x68],rax
+mov rax,qword[0x1400ac1f8]
+mov qword[rsp+0x70],rax
+call qword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+mov dword[0x1400b3408],eax
+mov ecx,1
+call fcn.140025aac
+xor ecx,ecx
+call qword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+lea rcx,str.p3_v_
+call qword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+cmp dword[0x1400b3408],0
+jne 0x140027fee
+mov ecx,1
+call fcn.140025aac
+call qword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov edx,0xc0000409
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_TerminateProcess]
+add rsp,0x88
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.180001ba8@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_2_ref]: /report/fcn.140011620@72082bb1b08918279d6780845b69f5ff
+[similar_3_ref]: /report/fcn.140015820@c5b958b285b208bffd52d8455e15d93a
+[similar_4_ref]: /report/fcn.14003b740@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.1400154a8@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.1001d340 @ a7a698c732cb880967bd1318dc083d69"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001d340
+- **Origin (md5):** a7a698c732cb880967bd1318dc083d69
+- **VirusTotal:** [virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.1001c6d0][similar_1_ref] (sim.: 0.9015455836490558)
+2. [fcn.1001e440][similar_2_ref] (sim.: 0.8682933104526626)
+3. [fcn.10001800][similar_3_ref] (sim.: 0.8492141446163644)
+4. [fcn.10001990][similar_4_ref] (sim.: 0.8392826701082119)
+5. [fcn.00412e20][similar_5_ref] (sim.: 0.8365248294488378)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x338
+push esi
+mov esi,ecx
+push edi
+mov ecx,0xb
+xor eax,eax
+lea edi,[esp+0xc]
+rep stosd dword es:[edi],eax
+mov eax,dword[esi+0xc]
+mov edi,0x1003ecd0
+mov dword[esp+0x28],eax
+mov eax,dword[esp+0x348]
+lea ecx,[eax+eax*4+0x55]
+mov eax,dword[esp+0x344]
+mov dword[esp+0x10],eax
+xor eax,eax
+mov edx,dword[esi+ecx*4]
+or ecx,0xffffffff
+repne scasb al,byte es:[edi]
+not ecx
+dec ecx
+mov dword[esp+0x20],edx
+je 0x1001d3c9
+push eax
+lea ecx,[esp+0x140]
+push eax
+lea edx,[esp+0x10]
+push ecx
+push edx
+push 0x1003ecd0
+call fcn.1001a920
+add esp,0x14
+lea eax,[esp+0x13c]
+lea ecx,[esp+8]
+lea edx,[esp+0x38]
+push eax
+push ecx
+push str._s_s
+push edx
+call fcn.10021c0b
+add esp,0x10
+jmp 0x1001d3db
+lea eax,[esp+0x38]
+push 0x1003edd4
+push eax
+call fcn.10021c0b
+add esp,8
+lea ecx,[esp+0x38]
+push str.libm4vdec.dll
+push ecx
+lea edx,[esp+0x244]
+push str._s_s
+push edx
+call fcn.10021c0b
+lea eax,[esp+0x24c]
+push eax
+call fcn.1001b120
+add esp,0x14
+mov dword[esi+0x130],eax
+push str.CreateVideoDecoder
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+xor ecx,ecx
+pop edi
+test eax,eax
+pop esi
+je 0x1001d434
+lea ecx,[esp+4]
+push ecx
+call eax
+add esp,4
+add esp,0x338
+ret 8
+mov eax,ecx
+add esp,0x338
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001c6d0@a7a698c732cb880967bd1318dc083d69
+[similar_2_ref]: /report/fcn.1001e440@a7a698c732cb880967bd1318dc083d69
+[similar_3_ref]: /report/fcn.10001800@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.10001990@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.00412e20@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69

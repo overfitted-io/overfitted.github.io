@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "fcn.005a25d0 @ 7453c96a6fbd42ec690b8deb53eafcba"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005a25d0
+- **Origin (md5):** 7453c96a6fbd42ec690b8deb53eafcba
+- **VirusTotal:** [virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.004a2ad8][similar_1_ref] (sim.: 0.853688212600312)
+2. [fcn.301226a5][similar_2_ref] (sim.: 0.8077399458292037)
+3. [fcn.0049dad7][similar_3_ref] (sim.: 0.7955056161241384)
+4. [fcn.004b76ea][similar_4_ref] (sim.: 0.7656228554864156)
+5. [fcn.00421659][similar_5_ref] (sim.: 0.7520823090208284)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+push edi
+xor edi,edi
+cmp dword[esp+0x10],edi
+mov ebx,ecx
+je 0x5a2612
+call fcn.005a8b23
+mov esi,dword[eax+0xc]
+push 0xf0
+push dword[esp+0x14]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+cmp eax,edi
+je 0x5a2612
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+cmp eax,edi
+jne 0x5a2609
+xor eax,eax
+jmp 0x5a261a
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov edi,eax
+push edi
+mov ecx,ebx
+call fcn.005a2620
+pop edi
+pop esi
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004a2ad8@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/fcn.301226a5@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.0049dad7@18980bd3439a28c3ca084fb94b418e27
+[similar_4_ref]: /report/fcn.004b76ea@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_5_ref]: /report/fcn.00421659@fac4f0be03ac37bd8be7ef737cdcee10
+[virustotal_ref]: https://www.virustotal.com/gui/file/7453c96a6fbd42ec690b8deb53eafcba

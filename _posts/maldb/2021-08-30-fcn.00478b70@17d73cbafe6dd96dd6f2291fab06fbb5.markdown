@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.00478b70 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00478b70
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00474780][similar_1_ref] (sim.: 0.7127991780011649)
+2. [fcn.0056dae0][similar_2_ref] (sim.: 0.6966985248526754)
+3. [fcn.0046e7f0][similar_3_ref] (sim.: 0.6861985509326054)
+4. [fcn.00443110][similar_4_ref] (sim.: 0.6842485698700622)
+5. [fcn.0051c61c][similar_5_ref] (sim.: 0.673705774458446)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+mov dword[ebp-0xc],ecx
+mov dword[ebp-4],0
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_IsWow64Process]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+je 0x478ba9
+cmp dword[ebp-4],0
+je 0x478ba9
+mov dword[ebp-0x10],1
+jmp 0x478bb0
+mov dword[ebp-0x10],0
+mov eax,dword[ebp-0x10]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00474780@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.0056dae0@2db66bac8e26cd758cb6fa211bf2d229
+[similar_3_ref]: /report/fcn.0046e7f0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/fcn.00443110@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0051c61c@d65363c7c6c188277432c9e4251c44e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

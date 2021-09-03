@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.00412e24 @ 64e66e284dcd12bef07260fe06b1f0e9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00412e24
+- **Origin (md5):** 64e66e284dcd12bef07260fe06b1f0e9
+- **VirusTotal:** [virustotal.com/gui/file/64e66e284dcd12bef07260fe06b1f0e9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00412de2][similar_1_ref] (sim.: 0.903420859517552)
+2. [fcn.00412de2][similar_2_ref] (sim.: 0.903420859517552)
+3. [fcn.00412de2][similar_3_ref] (sim.: 0.903420859517552)
+4. [fcn.00412de2][similar_4_ref] (sim.: 0.9010213097120142)
+5. [fcn.00421966][similar_5_ref] (sim.: 0.8974223122836053)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+jmp 0x412ed6
+mov ebx,dword[edi]
+lea eax,[ebx*4+0x65b998]
+mov esi,dword[eax]
+mov dword[ebp-4],eax
+test esi,esi
+je 0x412e52
+cmp esi,0xffffffff
+je 0x412ed3
+jmp 0x412ecf
+mov ebx,dword[ebx*4+0x650b20]
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x412ebd
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x412ead
+push 7
+push str.api_ms_
+push ebx
+call fcn.00419e91
+add esp,0xc
+test eax,eax
+je 0x412ead
+push 7
+push str.ext_ms_
+push ebx
+call fcn.00419e91
+add esp,0xc
+test eax,eax
+je 0x412ead
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x412eaf
+xor esi,esi
+test esi,esi
+jne 0x412ebd
+mov ecx,dword[ebp-4]
+or eax,0xffffffff
+xchg dword[ecx],eax
+jmp 0x412ed3
+mov ecx,dword[ebp-4]
+mov eax,esi
+xchg dword[ecx],eax
+test eax,eax
+je 0x412ecf
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test esi,esi
+jne 0x412ee8
+add edi,4
+cmp edi,dword[ebp+0xc]
+jne 0x412e35
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,esi
+jmp 0x412ee1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00412de2@e71d3562ad1716eb3653036c0b2af0b5
+[similar_2_ref]: /report/fcn.00412de2@1efd54b6a8c6c82ca2f05c2c8a5b387f
+[similar_3_ref]: /report/fcn.00412de2@26a70557d762e2486c462d7a5a1deee4
+[similar_4_ref]: /report/fcn.00412de2@33755acdcc496b7cf141bfd1caed6919
+[similar_5_ref]: /report/fcn.00421966@6b4acb306590aa2df1431ebe14e05649
+[virustotal_ref]: https://www.virustotal.com/gui/file/64e66e284dcd12bef07260fe06b1f0e9

@@ -1,0 +1,123 @@
+---
+layout: post
+title:  "fcn.00405288 @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405288
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00425e1d][similar_1_ref] (sim.: 0.8751777806538292)
+2. [fcn.00425e1d][similar_2_ref] (sim.: 0.8751777806538292)
+3. [fcn.00404ba4][similar_3_ref] (sim.: 0.8698730003984527)
+4. [fcn.00404ba4][similar_4_ref] (sim.: 0.8698730003984527)
+5. [fcn.0045245d][similar_5_ref] (sim.: 0.8696236131163826)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+push edi
+xor edi,edi
+push 2
+push edi
+push edi
+mov dword[ebp-0xc],edi
+call dword[sym.imp.ADVAPI32.dll_OpenSCManagerW]
+cmp eax,edi
+mov dword[ebp-0x14],eax
+jne 0x4052b0
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+jmp 0x405376
+push ebx
+push esi
+push edi
+push edi
+push edi
+push edi
+push str.COM_Infrastructure
+push dword[ebp+8]
+mov ebx,str.QQPCRTP
+push 1
+push 2
+push 0x110
+push 0xf01ff
+push str.QQPCMgr_RTP_Service
+push ebx
+push eax
+call dword[sym.imp.ADVAPI32.dll_CreateServiceW]
+cmp eax,edi
+mov esi,dword[sym.imp.ADVAPI32.dll_CloseServiceHandle]
+mov dword[ebp-0x10],eax
+jne 0x4052f6
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[ebp-0xc],eax
+jmp 0x40530f
+lea ecx,[ebp+8]
+push ecx
+push 1
+push eax
+mov dword[ebp+8],0x43e28c
+call dword[sym.imp.ADVAPI32.dll_ChangeServiceConfig2W]
+push dword[ebp-0x10]
+call esi
+push dword[ebp-0x14]
+call esi
+push edi
+push str.SYSTEMCurrentControlSetControlSafeBootMinimal
+lea esi,[ebp-8]
+mov dword[ebp-8],edi
+mov dword[ebp-4],edi
+call fcn.0040424c
+test eax,eax
+je 0x405337
+push str.service
+push ebx
+call fcn.004040cc
+push edi
+push str.SYSTEMCurrentControlSetControlSafeBootNetwork
+lea esi,[ebp-4]
+call fcn.0040424c
+test eax,eax
+je 0x405354
+push str.service
+push ebx
+call fcn.004040cc
+cmp dword[ebp-4],edi
+mov esi,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+je 0x405364
+push dword[ebp-4]
+call esi
+cmp dword[ebp-8],edi
+mov dword[ebp-4],edi
+je 0x405371
+push dword[ebp-8]
+call esi
+mov eax,dword[ebp-0xc]
+pop esi
+pop ebx
+pop edi
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00425e1d@53687e619dcac7d709f306d061d8daeb
+[similar_2_ref]: /report/fcn.00425e1d@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.00404ba4@3f1595e66dc63331ba0930a0c79684ce
+[similar_4_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[similar_5_ref]: /report/fcn.0045245d@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

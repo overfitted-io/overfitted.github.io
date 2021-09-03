@@ -1,0 +1,75 @@
+---
+layout: post
+title:  "fcn.0045b6bd @ c3466bab32f3a73706b87b6042748ed4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0045b6bd
+- **Origin (md5):** c3466bab32f3a73706b87b6042748ed4
+- **VirusTotal:** [virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0041bb32][similar_1_ref] (sim.: 0.8035533624046967)
+2. [fcn.00493584][similar_2_ref] (sim.: 0.7983943307971091)
+3. [fcn.0048e930][similar_3_ref] (sim.: 0.7973025440310303)
+4. [fcn.0058ba9c][similar_4_ref] (sim.: 0.7940706692705095)
+5. [fcn.0043e166][similar_5_ref] (sim.: 0.7896189227242244)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+fld qword[0x46a2b0]
+fstp qword[ebp-8]
+fld qword[0x46a2a8]
+fstp qword[ebp-0x10]
+fld qword[ebp-0x10]
+fdiv qword[ebp-8]
+fmul qword[ebp-8]
+fsubr qword[ebp-0x10]
+fstp qword[ebp-0x18]
+fld qword[ebp-0x18]
+fcomp qword[0x46a2a0]
+fnstsw ax
+sahf 
+jbe 0x45b6b9
+push 1
+pop eax
+leave 
+ret 
+xor eax,eax
+leave 
+ret 
+push str.KERNEL32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+test eax,eax
+je 0x45b6e1
+push 0x46a2b8
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x45b6e1
+push 0
+call eax
+ret 
+jmp 0x45b67f
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041bb32@6a695c8c50dfc99993406e2740c7c273
+[similar_2_ref]: /report/fcn.00493584@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_3_ref]: /report/fcn.0048e930@18980bd3439a28c3ca084fb94b418e27
+[similar_4_ref]: /report/fcn.0058ba9c@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.0043e166@f86ab4114e997e148e8eceeac9acf240
+[virustotal_ref]: https://www.virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4

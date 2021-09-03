@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "fcn.004370c6 @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004370c6
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0042c795][similar_1_ref] (sim.: 0.8863415446111119)
+2. [fcn.00424384][similar_2_ref] (sim.: 0.855977644578231)
+3. [fcn.0056f0a5][similar_3_ref] (sim.: 0.8524610078475638)
+4. [fcn.00432b6c][similar_4_ref] (sim.: 0.8520506747468014)
+5. [fcn.00423c4c][similar_5_ref] (sim.: 0.845031308309527)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x64
+mov eax,dword[0x478030]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+mov esi,dword[sym.imp.GDI32.dll_GetStockObject]
+push edi
+push 0xa
+pop edi
+push 0x11
+mov dword[ebp-0x64],ecx
+mov ebx,0x45fc04
+call esi
+test eax,eax
+jne 0x4370fa
+push 0xd
+call esi
+test eax,eax
+je 0x437142
+lea ecx,[ebp-0x60]
+push ecx
+push 0x5c
+push eax
+call dword[sym.imp.GDI32.dll_GetObjectW]
+test eax,eax
+je 0x437142
+push 0
+lea ebx,[ebp-0x44]
+call dword[sym.imp.USER32.dll_GetDC]
+cmp dword[ebp-0x60],0
+mov esi,eax
+jge 0x437121
+neg dword[ebp-0x60]
+push 0x5a
+push esi
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push eax
+push 0x48
+push dword[ebp-0x60]
+call dword[sym.imp.KERNEL32.dll_MulDiv]
+push esi
+push 0
+movzx edi,ax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[ebp+8]
+test ax,ax
+jne 0x43714d
+movzx eax,di
+mov ecx,dword[ebp-0x64]
+push eax
+push ebx
+call fcn.00436fa6
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00439777
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042c795@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.00424384@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.0056f0a5@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.00432b6c@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.00423c4c@a1c6b07868a0eea8f4ee5a872aa71909
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.00589047 @ 2db66bac8e26cd758cb6fa211bf2d229"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00589047
+- **Origin (md5):** 2db66bac8e26cd758cb6fa211bf2d229
+- **VirusTotal:** [virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0058a280][similar_1_ref] (sim.: 0.8759920056075117)
+2. [fcn.005b0ed0][similar_2_ref] (sim.: 0.8616677803120302)
+3. [fcn.10028e32][similar_3_ref] (sim.: 0.8517364955313547)
+4. [fcn.00489690][similar_4_ref] (sim.: 0.8446432492145579)
+5. [fcn.00468a5c][similar_5_ref] (sim.: 0.8369389855582605)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+push ebx
+xor ebx,ebx
+cmp dword[0x5c753c],ebx
+push esi
+push edi
+jne 0x58905f
+call fcn.00586794
+push 0x104
+mov esi,0x5c61e8
+push esi
+push ebx
+mov byte[0x5c62ec],bl
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+mov eax,dword[0x5c752c]
+cmp eax,ebx
+mov dword[0x5c58dc],esi
+je 0x58908d
+cmp byte[eax],bl
+mov dword[ebp-4],eax
+jne 0x589090
+mov dword[ebp-4],esi
+mov edx,dword[ebp-4]
+lea eax,[ebp-8]
+push eax
+push ebx
+push ebx
+lea edi,[ebp-0xc]
+call fcn.00588eaf
+mov eax,dword[ebp-8]
+add esp,0xc
+cmp eax,0x3fffffff
+jae 0x5890f8
+mov ecx,dword[ebp-0xc]
+cmp ecx,0xffffffff
+jae 0x5890f8
+mov edi,eax
+shl edi,2
+lea eax,[edi+ecx]
+cmp eax,ecx
+jb 0x5890f8
+push eax
+call fcn.00582bf3
+mov esi,eax
+cmp esi,ebx
+pop ecx
+je 0x5890f8
+mov edx,dword[ebp-4]
+lea eax,[ebp-8]
+push eax
+add edi,esi
+push edi
+push esi
+lea edi,[ebp-0xc]
+call fcn.00588eaf
+mov eax,dword[ebp-8]
+add esp,0xc
+dec eax
+mov dword[0x5c58c0],eax
+mov dword[0x5c58c4],esi
+xor eax,eax
+jmp 0x5890fb
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0058a280@7453c96a6fbd42ec690b8deb53eafcba
+[similar_2_ref]: /report/fcn.005b0ed0@b38ce64a273c3fc98fc78af14b8bdcc0
+[similar_3_ref]: /report/fcn.10028e32@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.00489690@a4175bd1311845689d3bca41d1d095ff
+[similar_5_ref]: /report/fcn.00468a5c@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229

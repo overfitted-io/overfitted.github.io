@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.3010d5d0 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.3010d5d0
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.10021ce0][similar_1_ref] (sim.: 0.8536644776929462)
+2. [fcn.1c69a69a][similar_2_ref] (sim.: 0.8398090500202475)
+3. [fcn.10016236][similar_3_ref] (sim.: 0.824602639388842)
+4. [fcn.00561050][similar_4_ref] (sim.: 0.819227773803482)
+5. [fcn.100d596c][similar_5_ref] (sim.: 0.813768764082097)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+8]
+cmp eax,1
+jne 0x3010d665
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+push 1
+mov dword[0x30199604],eax
+call fcn.30112dc3
+test eax,eax
+pop ecx
+je 0x3010d630
+mov eax,dword[0x30199604]
+xor ecx,ecx
+mov cl,byte[0x30199605]
+and eax,0xff
+shr dword[0x30199604],0x10
+mov dword[0x3019960c],eax
+mov dword[0x30199610],ecx
+shl eax,8
+add eax,ecx
+mov dword[0x30199608],eax
+call fcn.301117ac
+test eax,eax
+jne 0x3010d634
+call fcn.30112e20
+xor eax,eax
+jmp 0x3010d6a6
+call dword[sym.imp.KERNEL32.dll_GetCommandLineA]
+mov dword[0x3019af44],eax
+call fcn.30116c7d
+mov dword[0x301995a4],eax
+call fcn.30116767
+call fcn.30116a30
+call fcn.30116977
+call fcn.3010fd74
+inc dword[0x301995a0]
+jmp 0x3010d6a3
+xor ecx,ecx
+cmp eax,ecx
+jne 0x3010d697
+cmp dword[0x301995a0],ecx
+jle 0x3010d630
+dec dword[0x301995a0]
+cmp dword[0x3019963c],ecx
+jne 0x3010d686
+call fcn.3010fdb2
+call fcn.30116923
+call fcn.30111800
+call fcn.30112e20
+jmp 0x3010d6a3
+cmp eax,3
+jne 0x3010d6a3
+push ecx
+call fcn.30111898
+pop ecx
+push 1
+pop eax
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10021ce0@a7a698c732cb880967bd1318dc083d69
+[similar_2_ref]: /report/fcn.1c69a69a@2d079ba83dda3113f0607d58292b7a26
+[similar_3_ref]: /report/fcn.10016236@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.00561050@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.100d596c@a0ac129ff3ea4c0dfa9529c259a9502c
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

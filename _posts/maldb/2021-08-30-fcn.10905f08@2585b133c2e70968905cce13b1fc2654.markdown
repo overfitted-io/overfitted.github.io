@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "fcn.10905f08 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10905f08
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.459da2f6][similar_1_ref] (sim.: 0.7716352433398055)
+2. [fcn.004194db][similar_2_ref] (sim.: 0.7696904228646352)
+3. [fcn.1004c4d5][similar_3_ref] (sim.: 0.7498380796142915)
+4. [fcn.004554a7][similar_4_ref] (sim.: 0.746525210193863)
+5. [fcn.004554a7][similar_5_ref] (sim.: 0.746525210193863)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x98
+mov eax,dword[0x10c992e8]
+xor eax,ebp
+mov dword[ebp-4],eax
+lea eax,[ebp-0x98]
+push eax
+mov dword[ebp-0x98],0x94
+call dword[sym.imp.KERNEL32.dll_GetVersionExA]
+cmp dword[ebp-0x88],2
+jne 0x10905f49
+cmp dword[ebp-0x94],5
+mov eax,0x10905f04
+jae 0x10905f4e
+mov eax,fcn.10905e9f
+push eax
+push 0x10c992cc
+call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
+call dword[0x10c992cc]
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.1090658a
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.459da2f6@284c9c9722cef7520dddfe58806fd72f
+[similar_2_ref]: /report/fcn.004194db@0aa2d73a5300dff2412388945614b507
+[similar_3_ref]: /report/fcn.1004c4d5@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.004554a7@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_5_ref]: /report/fcn.004554a7@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

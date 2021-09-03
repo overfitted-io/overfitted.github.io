@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.0040d77d @ 319cf4affa41f752783e62f81908d682"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d77d
+- **Origin (md5):** 319cf4affa41f752783e62f81908d682
+- **VirusTotal:** [virustotal.com/gui/file/319cf4affa41f752783e62f81908d682][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040d779][similar_1_ref] (sim.: 0.8545014604574882)
+2. [fcn.0040d779][similar_2_ref] (sim.: 0.8545014604574882)
+3. [fcn.0040d807][similar_3_ref] (sim.: 0.8187989327873437)
+4. [fcn.0041b549][similar_4_ref] (sim.: 0.8177595108049016)
+5. [fcn.0041b549][similar_5_ref] (sim.: 0.8177595108049016)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x1008
+call fcn.0041a670
+push ebx
+xor ebx,ebx
+cmp byte[0x440878],bl
+je 0x40d802
+cmp word[0x437818],bx
+je 0x40d802
+push esi
+push 0x437818
+lea esi,[ebp-0x1008]
+call fcn.0040d740
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-4]
+push eax
+push ebx
+push 0x20006
+push ebx
+push ebx
+push ebx
+push str.SoftwareWinRAR_SFX
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+pop esi
+test eax,eax
+jne 0x40d802
+push dword[ebp+8]
+call fcn.0041a32f
+pop ecx
+lea eax,[eax+eax+2]
+push eax
+push dword[ebp+8]
+lea eax,[ebp-0x1008]
+push 1
+push ebx
+push eax
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop ebx
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040d779@88e03379526f823ce2de3b236adcaf80
+[similar_2_ref]: /report/fcn.0040d779@7e044e51324f9f80f4e97d8f3549c003
+[similar_3_ref]: /report/fcn.0040d807@319cf4affa41f752783e62f81908d682
+[similar_4_ref]: /report/fcn.0041b549@f068e0a788db6c075da6c407576e943b
+[similar_5_ref]: /report/fcn.0041b549@e02c832a2c768752009e071574e12967
+[virustotal_ref]: https://www.virustotal.com/gui/file/319cf4affa41f752783e62f81908d682

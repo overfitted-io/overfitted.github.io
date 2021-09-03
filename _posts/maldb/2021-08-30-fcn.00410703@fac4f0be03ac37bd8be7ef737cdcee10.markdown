@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.00410703 @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00410703
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.004186d2][similar_1_ref] (sim.: 0.794625622140573)
+2. [fcn.00440307][similar_2_ref] (sim.: 0.7799443771653507)
+3. [fcn.00440307][similar_3_ref] (sim.: 0.7799443771653507)
+4. [fcn.004148be][similar_4_ref] (sim.: 0.7752588673947219)
+5. [fcn.0040a910][similar_5_ref] (sim.: 0.7734971529075509)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push edi
+mov edi,dword[esp+0xc]
+xor ebx,ebx
+test edi,edi
+jne 0x41071f
+call fcn.00411069
+mov dword[eax],0x16
+or eax,0xffffffff
+jmp 0x410791
+push esi
+push 0x8c
+push 1
+call fcn.00411145
+mov esi,eax
+test esi,esi
+pop ecx
+pop ecx
+je 0x410777
+push esi
+call fcn.00413ebe
+mov eax,dword[esp+0x1c]
+pop ecx
+push esi
+push 4
+push esi
+push 0x410671
+push dword[esp+0x24]
+mov dword[esi+0x4c],edi
+push 0
+mov dword[esi+0x50],eax
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+mov edi,eax
+test edi,edi
+mov dword[esi+4],edi
+je 0x41076f
+push edi
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+cmp eax,0xffffffff
+jne 0x41078e
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov ebx,eax
+push esi
+call fcn.0040dd45
+test ebx,ebx
+pop ecx
+je 0x410789
+push ebx
+call fcn.0041107b
+pop ecx
+or eax,0xffffffff
+jmp 0x410790
+mov eax,edi
+pop esi
+pop edi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004186d2@1123b7aa5760238fe93045e585b8234c
+[similar_2_ref]: /report/fcn.00440307@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.00440307@53687e619dcac7d709f306d061d8daeb
+[similar_4_ref]: /report/fcn.004148be@f360d53698056c0bd2342cbdb569d856
+[similar_5_ref]: /report/fcn.0040a910@6f11dca39a331a6e158b2810d4d8234f
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

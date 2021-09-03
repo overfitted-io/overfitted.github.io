@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.0044c21d @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0044c21d
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0044c09e][similar_1_ref] (sim.: 0.9626052289299614)
+2. [fcn.0044bcf4][similar_2_ref] (sim.: 0.9407710327725413)
+3. [fcn.00494ed1][similar_3_ref] (sim.: 0.8382057579763256)
+4. [fcn.0040933e][similar_4_ref] (sim.: 0.8309471831361191)
+5. [fcn.004095f7][similar_5_ref] (sim.: 0.8297986299089384)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+lea ebp,[esp-0x18c]
+sub esp,0x20c
+mov eax,dword[0x483380]
+xor eax,ebp
+mov dword[ebp+0x188],eax
+push ebx
+push esi
+mov esi,dword[ebp+0x194]
+xor ebx,ebx
+push 0xfe
+lea eax,[ebp+0x89]
+mov dword[ebp-0x7c],ebx
+push ebx
+push eax
+mov dword[ebp-0x7c],0xff
+mov byte[ebp+0x88],bl
+call fcn.004544d0
+add esp,0xc
+lea eax,[ebp-0x80]
+push eax
+push 0x20119
+push ebx
+push str.SOFTWAREMicrosoftCryptography
+push 0x80000002
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x44c2a0
+lea eax,[ebp-0x7c]
+push eax
+lea eax,[ebp+0x88]
+push eax
+push ebx
+push ebx
+push str.MachineGuid
+push dword[ebp-0x80]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+push dword[ebp-0x80]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea eax,[ebp-0x78]
+push eax
+lea eax,[ebp+0x88]
+push eax
+call dword[sym.imp.USER32.dll_CharToOemA]
+lea eax,[ebp-0x78]
+mov dword[esi+0x14],0xf
+mov dword[esi+0x10],ebx
+push eax
+mov ecx,esi
+mov byte[esi],bl
+call fcn.0040310d
+mov ecx,dword[ebp+0x188]
+mov eax,esi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00454d3f
+add ebp,0x18c
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0044c09e@ab923633032c47ff6d9c40ed36a40b2b
+[similar_2_ref]: /report/fcn.0044bcf4@ab923633032c47ff6d9c40ed36a40b2b
+[similar_3_ref]: /report/fcn.00494ed1@3b2d901eaca41ce14deca6a48c0c801a
+[similar_4_ref]: /report/fcn.0040933e@69b3c79878674ea715338a112bb5caa6
+[similar_5_ref]: /report/fcn.004095f7@69b3c79878674ea715338a112bb5caa6
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

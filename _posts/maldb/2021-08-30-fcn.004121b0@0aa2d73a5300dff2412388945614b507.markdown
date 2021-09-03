@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.004121b0 @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004121b0
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00419100][similar_1_ref] (sim.: 0.8471768509689311)
+2. [fcn.00408cb0][similar_2_ref] (sim.: 0.8385629389244218)
+3. [fcn.004181e0][similar_3_ref] (sim.: 0.8334158791206294)
+4. [fcn.00416000][similar_4_ref] (sim.: 0.8294591884799365)
+5. [fcn.00407fb0][similar_5_ref] (sim.: 0.8267099614480156)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x210
+mov eax,dword[0x444120]
+xor eax,esp
+mov dword[esp+0x20c],eax
+cmp dword[esi+4],0
+jne 0x412258
+push edi
+push 0x208
+lea eax,[esp+0xa]
+push 0
+push eax
+mov word[esp+0x10],0
+call fcn.0041dba0
+add esp,0xc
+push 0x104
+lea ecx,[esp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryW]
+lea edx,[esp+4]
+push edx
+call dword[sym.imp.SHLWAPI.dll_PathAddBackslashW]
+push 0xc
+push 0x43ee28
+lea eax,[esp+0xc]
+push 0x104
+push eax
+call fcn.0041c72e
+mov edi,dword[sym.imp.KERNEL32.dll_GetTickCount]
+add esp,0x10
+call edi
+lea ecx,[esp+4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[esi+4],eax
+call edi
+cmp dword[esi+4],0
+pop edi
+jne 0x412258
+or dword[esi+0x1c],1
+xor eax,eax
+mov ecx,dword[esp+0x20c]
+xor ecx,esp
+call fcn.0041a8a0
+add esp,0x210
+ret 
+mov ecx,dword[esp+0x20c]
+xor ecx,esp
+mov eax,1
+call fcn.0041a8a0
+add esp,0x210
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00419100@0aa2d73a5300dff2412388945614b507
+[similar_2_ref]: /report/fcn.00408cb0@0aa2d73a5300dff2412388945614b507
+[similar_3_ref]: /report/fcn.004181e0@0aa2d73a5300dff2412388945614b507
+[similar_4_ref]: /report/fcn.00416000@0aa2d73a5300dff2412388945614b507
+[similar_5_ref]: /report/fcn.00407fb0@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

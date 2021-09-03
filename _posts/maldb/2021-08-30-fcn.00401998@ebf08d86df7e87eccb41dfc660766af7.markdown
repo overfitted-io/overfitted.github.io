@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.00401998 @ ebf08d86df7e87eccb41dfc660766af7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401998
+- **Origin (md5):** ebf08d86df7e87eccb41dfc660766af7
+- **VirusTotal:** [virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00401a0f][similar_1_ref] (sim.: 0.817517551353554)
+2. [fcn.0040224f][similar_2_ref] (sim.: 0.7890463062260573)
+3. [fcn.00407c90][similar_3_ref] (sim.: 0.7712173495990868)
+4. [fcn.00401000][similar_4_ref] (sim.: 0.7703951845504943)
+5. [fcn.004198b0][similar_5_ref] (sim.: 0.7672043857887321)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x230
+push ebp
+push esi
+push edi
+xor edi,edi
+mov dword[esp+0xc],edx
+push edi
+push 2
+mov ebp,ecx
+call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+mov esi,eax
+mov dword[esp+0x10],0x22c
+lea eax,[esp+0x10]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_Process32FirstW]
+test eax,eax
+je 0x4019fc
+jmp 0x4019e7
+cmp dword[esp+0x18],ebp
+jne 0x4019e7
+push ecx
+push ecx
+mov ecx,dword[esp+0x14]
+lea edx,[esp+0x3c]
+call fcn.004027f5
+test eax,eax
+je 0x4019f9
+lea eax,[esp+0x10]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_Process32NextW]
+test eax,eax
+jne 0x4019ce
+jmp 0x4019fc
+xor edi,edi
+inc edi
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,edi
+pop edi
+pop esi
+pop ebp
+add esp,0x230
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401a0f@ebf08d86df7e87eccb41dfc660766af7
+[similar_2_ref]: /report/fcn.0040224f@ebf08d86df7e87eccb41dfc660766af7
+[similar_3_ref]: /report/fcn.00407c90@0403abd1e9e066fc89cddd5736647282
+[similar_4_ref]: /report/fcn.00401000@ebf08d86df7e87eccb41dfc660766af7
+[similar_5_ref]: /report/fcn.004198b0@1160595edb203a63cb2ca3ce2ff04f47
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7

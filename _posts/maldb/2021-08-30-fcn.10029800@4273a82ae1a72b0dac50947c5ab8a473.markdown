@@ -1,0 +1,153 @@
+---
+layout: post
+title:  "fcn.10029800 @ 4273a82ae1a72b0dac50947c5ab8a473"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10029800
+- **Origin (md5):** 4273a82ae1a72b0dac50947c5ab8a473
+- **VirusTotal:** [virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.100295a0][similar_1_ref] (sim.: 0.9284981267282262)
+2. [fcn.1001fea0][similar_2_ref] (sim.: 0.874998886615818)
+3. [fcn.100bb0a0][similar_3_ref] (sim.: 0.8682449489187893)
+4. [fcn.100096b0][similar_4_ref] (sim.: 0.8671440836929387)
+5. [fcn.00709310][similar_5_ref] (sim.: 0.8630761653188868)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x30
+mov eax,dword[esp+0x3c]
+push ebx
+push ebp
+push esi
+push edi
+lea ecx,[esp+0x1c]
+xor edi,edi
+push ecx
+mov dword[eax],edi
+mov dword[esp+0x34],edi
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+mov eax,dword[esp+0x44]
+mov ecx,dword[esp+0x48]
+mov edx,dword[esp+0x30]
+push ecx
+mov dword[eax],edx
+call fcn.10029780
+add esp,4
+call fcn.100294d0
+test eax,eax
+je 0x10029928
+mov byte[esp+0x13],0
+call fcn.100296f0
+and eax,0xff
+mov esi,eax
+cmp esi,1
+jl 0x1002992d
+or bl,0xff
+cmp esi,1
+mov al,1
+jle 0x1002987c
+shl al,1
+mov byte[esp+0x14],al
+mov edx,dword[esp+0x14]
+and edx,0xff
+shl bl,1
+cmp edx,esi
+jl 0x10029866
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov ebp,eax
+lea eax,[esp+0x18]
+lea ecx,[esp+0x14]
+push eax
+push ecx
+push ebp
+call dword[sym.imp.KERNEL32.dll_GetProcessAffinityMask]
+mov eax,dword[esp+0x14]
+mov ecx,dword[esp+0x18]
+cmp eax,ecx
+je 0x100298b8
+mov edx,dword[esp+0x44]
+pop edi
+pop esi
+pop ebp
+mov dword[edx],0xffffffff
+mov eax,4
+pop ebx
+add esp,0x30
+ret 
+mov edi,1
+cmp edi,eax
+ja 0x100298f3
+test eax,edi
+je 0x100298ef
+push edi
+push ebp
+call dword[sym.imp.KERNEL32.dll_SetProcessAffinityMask]
+test eax,eax
+je 0x100298eb
+push 0
+call dword[sym.imp.KERNEL32.dll_Sleep]
+call fcn.10029720
+mov cl,bl
+not cl
+test cl,al
+je 0x100298eb
+mov byte[esp+0x13],1
+mov eax,dword[esp+0x14]
+shl edi,1
+jne 0x100298bd
+push eax
+push ebp
+call dword[sym.imp.KERNEL32.dll_SetProcessAffinityMask]
+cmp esi,1
+jne 0x10029907
+mov edi,2
+jmp 0x1002992d
+mov al,byte[esp+0x13]
+test al,al
+je 0x10029921
+mov ecx,dword[esp+0x44]
+mov edi,1
+mov eax,dword[ecx]
+cdq 
+idiv esi
+mov dword[ecx],eax
+jmp 0x1002992d
+mov edi,3
+jmp 0x1002992d
+mov esi,1
+mov ecx,dword[esp+0x48]
+mov eax,esi
+cdq 
+idiv dword[ecx]
+mov edx,dword[esp+0x4c]
+mov dword[edx],eax
+mov eax,edi
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,0x30
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100295a0@4273a82ae1a72b0dac50947c5ab8a473
+[similar_2_ref]: /report/fcn.1001fea0@a7a698c732cb880967bd1318dc083d69
+[similar_3_ref]: /report/fcn.100bb0a0@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/fcn.100096b0@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.00709310@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473

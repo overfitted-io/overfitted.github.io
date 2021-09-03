@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.0042cd9c @ c3466bab32f3a73706b87b6042748ed4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0042cd9c
+- **Origin (md5):** c3466bab32f3a73706b87b6042748ed4
+- **VirusTotal:** [virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004207ba][similar_1_ref] (sim.: 0.7586275464932178)
+2. [fcn.004197b1][similar_2_ref] (sim.: 0.7561894345779909)
+3. [fcn.004288ea][similar_3_ref] (sim.: 0.7368528275282265)
+4. [fcn.004283e4][similar_4_ref] (sim.: 0.7354594309920484)
+5. [fcn.0045012c][similar_5_ref] (sim.: 0.7353052963897784)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x463118
+call fcn.00454534
+push esi
+push edi
+mov edi,ecx
+push dword[ebp+0x34]
+and dword[ebp-4],0
+lea eax,[ebp+8]
+push eax
+call fcn.0042cd33
+lea ecx,[ebp+8]
+call fcn.00404e03
+mov esi,dword[sym.imp.KERNEL32.dll_DeleteFileA]
+push eax
+call esi
+test eax,eax
+jne 0x42cdfc
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,3
+je 0x42cdfc
+cmp eax,2
+je 0x42cdfc
+push dword[ebp+0x34]
+mov ecx,edi
+push eax
+lea eax,[ebp+8]
+push dword[ebp+0x30]
+push eax
+call fcn.0042cc5c
+lea ecx,[ebp+8]
+call fcn.00404e03
+push eax
+jmp 0x42cdc9
+or dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.00405f2f
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+mov dword fs:[0],ecx
+leave 
+ret 0x30
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004207ba@c3466bab32f3a73706b87b6042748ed4
+[similar_2_ref]: /report/fcn.004197b1@c3466bab32f3a73706b87b6042748ed4
+[similar_3_ref]: /report/fcn.004288ea@c3466bab32f3a73706b87b6042748ed4
+[similar_4_ref]: /report/fcn.004283e4@c3466bab32f3a73706b87b6042748ed4
+[similar_5_ref]: /report/fcn.0045012c@4fe38de7c6c86a1bad209560fa052231
+[virustotal_ref]: https://www.virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4

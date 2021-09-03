@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.00411503 @ 820356b443df86d107b675e725c13af0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00411503
+- **Origin (md5):** 820356b443df86d107b675e725c13af0
+- **VirusTotal:** [virustotal.com/gui/file/820356b443df86d107b675e725c13af0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004107ff][similar_1_ref] (sim.: 0.8857923025381045)
+2. [fcn.004107ff][similar_2_ref] (sim.: 0.8857923025381045)
+3. [fcn.004113e8][similar_3_ref] (sim.: 0.8742109199449447)
+4. [fcn.0041044c][similar_4_ref] (sim.: 0.872492728940985)
+5. [fcn.00411d80][similar_5_ref] (sim.: 0.8716746525195205)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+jne 0x411516
+inc eax
+mov dword[0x4840e0],eax
+ret 
+mov eax,dword fs:[0x18]
+push ebx
+push esi
+mov esi,dword[eax+0x30]
+add esi,0x34
+mov eax,dword[esi]
+push edi
+test eax,eax
+jne 0x411565
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push 8
+push eax
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+xor eax,eax
+cmp edi,eax
+je 0x41156d
+push eax
+push edi
+push esi
+mov dword[edi],eax
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+test eax,eax
+je 0x411563
+push edi
+push 0
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x4840e0],eax
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004107ff@9d452aab9b3572c423f4d04fdfadb250
+[similar_2_ref]: /report/fcn.004107ff@56a02334aea008c131d2741a089910fb
+[similar_3_ref]: /report/fcn.004113e8@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_4_ref]: /report/fcn.0041044c@0b645351d6df77d56852ad106e75fced
+[similar_5_ref]: /report/fcn.00411d80@f5b8476c36459986b226c45654aeb016
+[virustotal_ref]: https://www.virustotal.com/gui/file/820356b443df86d107b675e725c13af0

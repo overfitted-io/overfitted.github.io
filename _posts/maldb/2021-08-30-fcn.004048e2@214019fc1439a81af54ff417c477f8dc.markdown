@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.004048e2 @ 214019fc1439a81af54ff417c477f8dc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004048e2
+- **Origin (md5):** 214019fc1439a81af54ff417c477f8dc
+- **VirusTotal:** [virustotal.com/gui/file/214019fc1439a81af54ff417c477f8dc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00404758][similar_1_ref] (sim.: 0.883550776748114)
+2. [fcn.004047b1][similar_2_ref] (sim.: 0.8600164018390765)
+3. [fcn.004047b1][similar_3_ref] (sim.: 0.8600164018390765)
+4. [fcn.004047b1][similar_4_ref] (sim.: 0.8600164018390765)
+5. [fcn.00404a3e][similar_5_ref] (sim.: 0.8472900613544241)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+xor edi,edi
+cmp dword[esi],edi
+je 0x40491a
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+cmp eax,edi
+je 0x404927
+push str.RegDeleteKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+cmp eax,edi
+je 0x404927
+push edi
+push dword[esi]
+push edi
+push edi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x40492a
+cmp dword[esi+4],edi
+je 0x404927
+pop edi
+pop ebp
+jmp dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+xor eax,eax
+inc eax
+pop edi
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404758@e16f74a2849182d98050864255e902f8
+[similar_2_ref]: /report/fcn.004047b1@ab22d984f64f202bfb2e0f0e1f3a3f8f
+[similar_3_ref]: /report/fcn.004047b1@d3ad46676721a96e1408ac558c298889
+[similar_4_ref]: /report/fcn.004047b1@074a6a8502a27e18f8b5ea831bacabad
+[similar_5_ref]: /report/fcn.00404a3e@5eead96f991d1eaa139e848643009945
+[virustotal_ref]: https://www.virustotal.com/gui/file/214019fc1439a81af54ff417c477f8dc

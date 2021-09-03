@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "fcn.300b2120 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.300b2120
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.100e7270][similar_1_ref] (sim.: 0.8446905577609342)
+2. [fcn.00401fb0][similar_2_ref] (sim.: 0.8405676184185683)
+3. [fcn.00401540][similar_3_ref] (sim.: 0.839632850112409)
+4. [fcn.00402730][similar_4_ref] (sim.: 0.8362406746066176)
+5. [fcn.00450290][similar_5_ref] (sim.: 0.8359558936637234)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[esp+4]
+sub esp,0x10
+push ebx
+push ebp
+xor ebx,ebx
+push esi
+push ebx
+push ebx
+push eax
+call fcn.300b1e90
+mov esi,eax
+add esp,0xc
+cmp esi,ebx
+jne 0x300b2146
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+add esp,0x10
+ret 
+mov ecx,dword[esp+0x24]
+push ebx
+push 0x80
+push 2
+push ebx
+push ebx
+push 0x40000000
+push ecx
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov ebp,eax
+cmp ebp,0xffffffff
+jne 0x300b2177
+push esi
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+pop esi
+pop ebp
+xor eax,eax
+pop ebx
+add esp,0x10
+ret 
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_GlobalLock]
+push esi
+mov edi,eax
+mov word[esp+0x14],0x4d42
+call dword[sym.imp.KERNEL32.dll_GlobalSize]
+add eax,0xe
+push edi
+mov dword[esp+0x16],eax
+mov word[esp+0x1a],bx
+mov word[esp+0x1c],bx
+call fcn.300b20c0
+mov edx,dword[edi]
+and eax,0xffff
+lea ecx,[esp+0x14]
+lea eax,[eax+edx+0xe]
+push ecx
+push ebp
+mov dword[esp+0x26],eax
+call fcn.300b22b0
+mov ebx,eax
+add esp,0xc
+test ebx,ebx
+je 0x300b21e9
+mov ebx,dword[sym.imp.KERNEL32.dll_GlobalSize]
+push esi
+call ebx
+push eax
+push edi
+push ebp
+call fcn.300b2220
+add esp,0xc
+mov edi,eax
+push esi
+call ebx
+xor ebx,ebx
+cmp edi,eax
+sete bl
+push esi
+call dword[sym.imp.KERNEL32.dll_GlobalUnlock]
+push ebp
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+push esi
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+test ebx,ebx
+pop edi
+jne 0x300b220e
+mov edx,dword[esp+0x24]
+push edx
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+pop esi
+mov eax,ebx
+pop ebp
+pop ebx
+add esp,0x10
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100e7270@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.00401fb0@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.00401540@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_4_ref]: /report/fcn.00402730@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_5_ref]: /report/fcn.00450290@ec199daf84c7d2c754bb8d013dd4880e
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

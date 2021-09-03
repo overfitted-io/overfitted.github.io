@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.00402870 @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402870
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004016e0][similar_1_ref] (sim.: 0.7863770682984164)
+2. [fcn.00401700][similar_2_ref] (sim.: 0.7733846065682273)
+3. [fcn.00428940][similar_3_ref] (sim.: 0.7648611376119776)
+4. [fcn.00402050][similar_4_ref] (sim.: 0.7604187636030537)
+5. [fcn.00401190][similar_5_ref] (sim.: 0.7580460886946251)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov al,byte[0x4381bd]
+push ebx
+push ebp
+xor ebx,ebx
+cmp al,bl
+push esi
+push edi
+je 0x40289f
+mov esi,dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+push ebx
+mov byte[0x4381bd],bl
+call esi
+push str.AutoRunGUI.DLL
+mov dword[0x43f18c],eax
+call esi
+mov dword[0x43f188],eax
+mov ebp,dword[esp+0x1c]
+mov esi,dword[esp+0x18]
+mov edi,dword[esp+0x14]
+mov eax,dword[0x43f188]
+push ebp
+push esi
+push edi
+push eax
+call fcn.00402730
+add esp,0x10
+test ax,ax
+jne 0x4028ee
+mov ecx,dword[0x43f18c]
+push ebp
+push esi
+push edi
+push ecx
+call fcn.00402730
+add esp,0x10
+test ax,ax
+je 0x4028df
+pop edi
+pop esi
+pop ebp
+mov al,1
+pop ebx
+ret 
+push edi
+push str.Cant_get_string_id__d
+push esi
+call fcn.0040e844
+add esp,0xc
+pop edi
+pop esi
+pop ebp
+mov al,bl
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004016e0@591592f0b79217fc95d61f8c4f595f30
+[similar_2_ref]: /report/fcn.00401700@2eb7544c38a76e8aaeea362abfc44c72
+[similar_3_ref]: /report/fcn.00428940@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00402050@2eb7544c38a76e8aaeea362abfc44c72
+[similar_5_ref]: /report/fcn.00401190@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

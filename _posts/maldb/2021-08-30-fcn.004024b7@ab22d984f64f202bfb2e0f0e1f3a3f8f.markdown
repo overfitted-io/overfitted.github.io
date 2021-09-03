@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "fcn.004024b7 @ ab22d984f64f202bfb2e0f0e1f3a3f8f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004024b7
+- **Origin (md5):** ab22d984f64f202bfb2e0f0e1f3a3f8f
+- **VirusTotal:** [virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004024b7][similar_1_ref] (sim.: 1.0)
+2. [fcn.004024b7][similar_2_ref] (sim.: 1.0)
+3. [fcn.00402af0][similar_3_ref] (sim.: 0.9198317265772201)
+4. [fcn.0040242e][similar_4_ref] (sim.: 0.8831594069086722)
+5. [fcn.10004dd1][similar_5_ref] (sim.: 0.8596391951557887)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20
+push ebx
+push esi
+push 0x2e
+pop esi
+mov dword[ebp-4],esi
+mov dword[ebp-8],0x2a
+mov eax,dword[ebp-4]
+mov ecx,dword[ebp-8]
+cmp word[ebp+0x10],8
+lea eax,[ecx+eax+0x5a]
+mov ebx,0x80070057
+mov dword[ebp-4],eax
+jne 0x40250c
+push dword[ebp+0x18]
+mov eax,dword[ebp+8]
+push dword[ebp+0xc]
+add eax,8
+push eax
+call fcn.00404979
+test eax,eax
+jle 0x402505
+and eax,0xffff
+or eax,0x80070000
+mov ebx,eax
+jmp 0x402606
+cmp word[ebp+0x10],0
+je 0x402606
+push edi
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantClear]
+mov dword[ebp-0xc],0x26
+push 0x60
+mov dword[ebp-0xc],0xd
+pop edi
+mov dword[ebp-8],7
+mov dword[ebp-4],edi
+mov ecx,dword[ebp-8]
+mov eax,dword[ebp-0xc]
+imul ecx,eax
+mov eax,dword[ebp-4]
+imul ecx,ecx,0x48
+push 0x24
+cdq 
+pop ebx
+idiv ebx
+push 0x17
+push 0
+add ecx,eax
+mov dword[ebp-0xc],ecx
+mov eax,dword[ebp-4]
+sub eax,esi
+mov dword[ebp-8],eax
+lea eax,[ebp+0x10]
+push eax
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantTimeToDosDateTime]
+mov ebx,eax
+test ebx,ebx
+js 0x4025fb
+mov eax,dword[ebp-0x18]
+push 4
+mov dword[ebp-0x10],eax
+lea eax,[ebp-0x10]
+push eax
+mov eax,dword[ebp+8]
+push 4
+push 0
+push dword[ebp+0xc]
+push dword[eax+8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+mov dword[ebp+0xc],esi
+mov dword[ebp+8],0x2a
+mov ecx,dword[ebp+0xc]
+mov edx,dword[ebp+8]
+lea ecx,[edx+ecx+0x5a]
+mov dword[ebp+0xc],ecx
+test eax,eax
+jle 0x4025bf
+and eax,0xffff
+or eax,0x80070000
+mov dword[ebp+8],0x26
+mov dword[ebp-0xc],0xd
+mov dword[ebp+8],7
+mov dword[ebp+0xc],edi
+mov ecx,dword[ebp+8]
+mov ebx,eax
+mov eax,dword[ebp-0xc]
+imul ecx,eax
+mov eax,dword[ebp+0xc]
+imul ecx,ecx,0x48
+cdq 
+push 0x24
+pop edi
+idiv edi
+add ecx,eax
+mov dword[ebp+8],ecx
+mov eax,dword[ebp+0xc]
+sub eax,esi
+mov dword[ebp+8],eax
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantCopy]
+pop edi
+pop esi
+mov eax,ebx
+pop ebx
+leave 
+ret 0x18
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004024b7@d3ad46676721a96e1408ac558c298889
+[similar_2_ref]: /report/fcn.004024b7@074a6a8502a27e18f8b5ea831bacabad
+[similar_3_ref]: /report/fcn.00402af0@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_4_ref]: /report/fcn.0040242e@214019fc1439a81af54ff417c477f8dc
+[similar_5_ref]: /report/fcn.10004dd1@880ba8b1983575bc0c5ed1cb79dcde8f
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f

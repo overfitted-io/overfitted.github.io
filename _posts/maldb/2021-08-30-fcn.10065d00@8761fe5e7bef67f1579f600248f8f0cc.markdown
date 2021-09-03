@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.10065d00 @ 8761fe5e7bef67f1579f600248f8f0cc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10065d00
+- **Origin (md5):** 8761fe5e7bef67f1579f600248f8f0cc
+- **VirusTotal:** [virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.10065190][similar_1_ref] (sim.: 0.9209824332112642)
+2. [fcn.1009c8c0][similar_2_ref] (sim.: 0.9048593827341213)
+3. [fcn.1009c810][similar_3_ref] (sim.: 0.8931853182684739)
+4. [fcn.1009ca20][similar_4_ref] (sim.: 0.8571338343363588)
+5. [fcn.1009c970][similar_5_ref] (sim.: 0.8454396967036507)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x101d1b96
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+push ecx
+push esi
+mov esi,ecx
+mov dword[esp+4],esi
+mov dword[esi],0x10204ac4
+mov eax,dword[esi+0x10]
+mov dword[esp+0x10],1
+test eax,eax
+je 0x10065d41
+mov ecx,dword[eax]
+push eax
+call dword[ecx]
+add esp,4
+mov dword[esi+0x10],0
+mov eax,dword[esi+0xc]
+test eax,eax
+je 0x10065d56
+push eax
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov dword[esi+0xc],0
+lea ecx,[esi+8]
+mov byte[esp+0x10],0
+call sub.MFC42.DLL_CString::CString
+lea ecx,[esi+4]
+mov dword[esp+0x10],0xffffffff
+call sub.MFC42.DLL_CString::CString
+mov ecx,dword[esp+8]
+pop esi
+mov dword fs:[0],ecx
+add esp,0x10
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10065190@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.1009c8c0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.1009c810@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.1009ca20@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.1009c970@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc

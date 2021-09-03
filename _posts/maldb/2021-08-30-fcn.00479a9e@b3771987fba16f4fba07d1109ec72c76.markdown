@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.00479a9e @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00479a9e
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004a9f2d][similar_1_ref] (sim.: 0.7976437309528202)
+2. [fcn.0042a180][similar_2_ref] (sim.: 0.7853356921229617)
+3. [fcn.005a9e83][similar_3_ref] (sim.: 0.7848394219615172)
+4. [fcn.004a4892][similar_4_ref] (sim.: 0.7832631091648168)
+5. [fcn.0043f258][similar_5_ref] (sim.: 0.777111366479611)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push esi
+push 4
+pop eax
+mov dword[ebp-0x10],eax
+mov dword[ebp-0xc],eax
+lea eax,[ebp-4]
+push eax
+push 0x20319
+xor esi,esi
+push esi
+push str.SoftwareMicrosoftWindowsDWM
+push 0x80000001
+mov dword[ebp-8],esi
+mov dword[ebp-4],esi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+je 0x479ad8
+xor eax,eax
+jmp 0x479b06
+lea eax,[ebp-0xc]
+push eax
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-0x10]
+push eax
+push esi
+push str.ColorizationColor
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+je 0x479afa
+mov dword[ebp-8],esi
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,dword[ebp-8]
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004a9f2d@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/fcn.0042a180@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.005a9e83@7453c96a6fbd42ec690b8deb53eafcba
+[similar_4_ref]: /report/fcn.004a4892@18980bd3439a28c3ca084fb94b418e27
+[similar_5_ref]: /report/fcn.0043f258@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "fcn.10900c50 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10900c50
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.10085850][similar_1_ref] (sim.: 0.9007898421901415)
+2. [fcn.100810f0][similar_2_ref] (sim.: 0.8974091926285744)
+3. [fcn.10147b70][similar_3_ref] (sim.: 0.8951261544666285)
+4. [fcn.100958c0][similar_4_ref] (sim.: 0.8933879567002249)
+5. [fcn.10086fd0][similar_5_ref] (sim.: 0.8902819756070308)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x109ca1f9
+mov eax,dword fs:[0]
+push eax
+sub esp,0x10c
+mov eax,dword[0x10c992e8]
+xor eax,esp
+mov dword[esp+0x108],eax
+push ebx
+push esi
+push edi
+mov eax,dword[0x10c992e8]
+xor eax,esp
+push eax
+lea eax,[esp+0x11c]
+mov dword fs:[0],eax
+mov edi,dword[esp+0x148]
+mov esi,ecx
+mov eax,dword[esi+4]
+xor ebx,ebx
+cmp eax,ebx
+mov dword[esp+0x124],ebx
+mov dword[esp+0x10],ebx
+je 0x10900cba
+mov ecx,dword[esi+0xc]
+push 0x8000
+push ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_VirtualFree]
+mov dword[esi+4],ebx
+push 0x103
+lea edx,[esp+0x19]
+push ebx
+push edx
+mov byte[esp+0x20],bl
+call sub.MSVCR80.dll_memset
+add esp,0xc
+lea ecx,[esp+0x12c]
+call dword[sym.imp.MSVCP80.dll_public:_char_const____thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::c_str_void_const]
+push eax
+lea eax,[esp+0x18]
+push str.rez__s
+push eax
+call fcn.1063c2b0
+add esp,0xc
+cmp edi,ebx
+je 0x10900d5f
+mov edx,dword[edi]
+mov edx,dword[edx+0x40]
+lea eax,[esp+0x10]
+push eax
+lea ecx,[esp+0x18]
+push ecx
+mov ecx,edi
+call edx
+mov edi,eax
+cmp edi,ebx
+je 0x10900d5f
+mov eax,dword[esp+0x10]
+push 4
+push 0x1000
+push eax
+push ebx
+mov dword[esi+0xc],eax
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+cmp eax,ebx
+mov dword[esi+4],eax
+je 0x10900d3a
+mov ecx,dword[esp+0x10]
+push ecx
+push edi
+push eax
+call sub.MSVCR80.dll_memcpy
+add esp,0xc
+push edi
+call sub.MSVCR80.dll_void___cdecl_operator_delete___void__
+add esp,4
+lea ecx,[esp+0x12c]
+mov dword[esp+0x124],0xffffffff
+call dword[sym.imp.MSVCP80.dll_public:_void___thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::destructor_void_]
+mov al,1
+jmp 0x10900d79
+lea ecx,[esp+0x12c]
+mov dword[esp+0x124],0xffffffff
+call dword[sym.imp.MSVCP80.dll_public:_void___thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::destructor_void_]
+xor al,al
+mov ecx,dword[esp+0x11c]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[esp+0x108]
+xor ecx,esp
+call fcn.1090658a
+add esp,0x118
+ret 0x20
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10085850@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.100810f0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.10147b70@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.100958c0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.10086fd0@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

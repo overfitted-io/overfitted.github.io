@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.100365a1 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100365a1
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.10043333][similar_1_ref] (sim.: 0.7880304673689995)
+2. [fcn.10004432][similar_2_ref] (sim.: 0.7780244299624077)
+3. [fcn.10015fef][similar_3_ref] (sim.: 0.7778931575211097)
+4. [fcn.100432cc][similar_4_ref] (sim.: 0.7758319392388336)
+5. [fcn.10015245][similar_5_ref] (sim.: 0.7686428046551891)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+mov edx,dword[ebp+0xc]
+push ebx
+push esi
+mov esi,ecx
+xor ebx,ebx
+mov dword[ebp-8],ebx
+mov ecx,dword[esi+8]
+test ecx,ecx
+je 0x100365d9
+push edi
+lea edi,[ebp-8]
+push edi
+push dword[ebp+0x10]
+push ecx
+push edx
+push eax
+call fcn.100364f5
+pop edi
+jmp 0x100365e9
+lea ecx,[ebp-8]
+push ecx
+push dword[ebp+0x10]
+push ebx
+push edx
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+mov ecx,eax
+test ecx,ecx
+jne 0x10036609
+mov ecx,ebx
+cmp dword[esi],ecx
+je 0x10036601
+push dword[esi]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov ecx,eax
+mov dword[esi],ebx
+mov eax,dword[ebp-8]
+mov dword[esi+4],ebx
+mov dword[esi],eax
+mov eax,ecx
+mov ecx,dword[ebp-4]
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10043333@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.10004432@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.10015fef@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.100432cc@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.10015245@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

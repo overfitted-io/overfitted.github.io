@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.00440090 @ 0b645351d6df77d56852ad106e75fced"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00440090
+- **Origin (md5):** 0b645351d6df77d56852ad106e75fced
+- **VirusTotal:** [virustotal.com/gui/file/0b645351d6df77d56852ad106e75fced][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0044786f][similar_1_ref] (sim.: 0.8107653591493131)
+2. [fcn.004424b4][similar_2_ref] (sim.: 0.7309324954466501)
+3. [fcn.00430290][similar_3_ref] (sim.: 0.7302366699249551)
+4. [fcn.00439c6c][similar_4_ref] (sim.: 0.728106220086342)
+5. [fcn.00440767][similar_5_ref] (sim.: 0.727419084083091)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov dword[ebp-0xc],0x51
+mov dword[ebp-0xc],0x19
+mov dword[ebp-4],0x3c
+mov dword[ebp-8],0x20
+mov eax,dword[ebp-4]
+cdq 
+push 0x27
+pop ecx
+idiv ecx
+mov ecx,dword[ebp-4]
+sub eax,ecx
+add eax,dword[ebp-8]
+mov dword[ebp-4],eax
+mov eax,dword[ebp-0xc]
+sub eax,0x31
+mov dword[ebp-4],eax
+mov eax,dword[ebp-8]
+mov ecx,dword[ebp-0xc]
+cmp ecx,eax
+jl 0x4400e2
+mov eax,dword[ebp-4]
+add eax,0x37
+mov dword[ebp-8],eax
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+test eax,eax
+je 0x4400f3
+xor eax,eax
+jmp 0x440109
+call fcn.0043d195
+call dword[eax+0x44]
+test eax,eax
+jle 0x440109
+and eax,0xffff
+or eax,0x80070000
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0044786f@820356b443df86d107b675e725c13af0
+[similar_2_ref]: /report/fcn.004424b4@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_3_ref]: /report/fcn.00430290@46f6c2adf1fd4d1453ed312ca79dd9bf
+[similar_4_ref]: /report/fcn.00439c6c@214019fc1439a81af54ff417c477f8dc
+[similar_5_ref]: /report/fcn.00440767@f5b8476c36459986b226c45654aeb016
+[virustotal_ref]: https://www.virustotal.com/gui/file/0b645351d6df77d56852ad106e75fced

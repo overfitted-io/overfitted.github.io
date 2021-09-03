@@ -1,0 +1,148 @@
+---
+layout: post
+title:  "fcn.00416bb5 @ 074a6a8502a27e18f8b5ea831bacabad"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00416bb5
+- **Origin (md5):** 074a6a8502a27e18f8b5ea831bacabad
+- **VirusTotal:** [virustotal.com/gui/file/074a6a8502a27e18f8b5ea831bacabad][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00416bb5][similar_1_ref] (sim.: 1.0)
+2. [fcn.00416bb5][similar_2_ref] (sim.: 1.0)
+3. [fcn.00417216][similar_3_ref] (sim.: 0.9417993509543952)
+4. [fcn.00417233][similar_4_ref] (sim.: 0.9308463030761942)
+5. [fcn.00417233][similar_5_ref] (sim.: 0.9308463030761942)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push edi
+push str.KERNEL32.DLL
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,eax
+test edi,edi
+jne 0x416bd2
+call fcn.00416902
+xor eax,eax
+pop edi
+ret 
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.FlsAlloc
+push edi
+call esi
+push str.FlsGetValue
+push edi
+mov dword[0x479b58],eax
+call esi
+push str.FlsSetValue
+push edi
+mov dword[0x479b5c],eax
+call esi
+push str.FlsFree
+push edi
+mov dword[0x479b60],eax
+call esi
+cmp dword[0x479b58],0
+mov esi,dword[sym.imp.KERNEL32.dll_TlsSetValue]
+mov dword[0x479b64],eax
+je 0x416c32
+cmp dword[0x479b5c],0
+je 0x416c32
+cmp dword[0x479b60],0
+je 0x416c32
+test eax,eax
+jne 0x416c56
+mov eax,dword[sym.imp.KERNEL32.dll_TlsGetValue]
+mov dword[0x479b5c],eax
+mov eax,dword[sym.imp.KERNEL32.dll_TlsFree]
+mov dword[0x479b58],0x4168c5
+mov dword[0x479b60],esi
+mov dword[0x479b64],eax
+call dword[sym.imp.KERNEL32.dll_TlsAlloc]
+mov dword[0x477210],eax
+cmp eax,0xffffffff
+je 0x416d2b
+push dword[0x479b5c]
+push eax
+call esi
+test eax,eax
+je 0x416d2b
+call fcn.00413f7b
+push dword[0x479b58]
+mov esi,dword[sym.imp.KERNEL32.dll_EncodePointer]
+call esi
+push dword[0x479b5c]
+mov dword[0x479b58],eax
+call esi
+push dword[0x479b60]
+mov dword[0x479b5c],eax
+call esi
+push dword[0x479b64]
+mov dword[0x479b60],eax
+call esi
+mov dword[0x479b64],eax
+call fcn.0041b52c
+test eax,eax
+je 0x416d26
+mov edi,dword[sym.imp.KERNEL32.dll_DecodePointer]
+push 0x416a86
+push dword[0x479b58]
+call edi
+call eax
+mov dword[0x47720c],eax
+cmp eax,0xffffffff
+je 0x416d26
+push 0x214
+push 1
+call fcn.00413e07
+mov esi,eax
+pop ecx
+pop ecx
+test esi,esi
+je 0x416d26
+push esi
+push dword[0x47720c]
+push dword[0x479b60]
+call edi
+call eax
+test eax,eax
+je 0x416d26
+push 0
+push esi
+call fcn.0041693f
+pop ecx
+pop ecx
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+or dword[esi+4],0xffffffff
+mov dword[esi],eax
+xor eax,eax
+inc eax
+jmp 0x416d2d
+call fcn.00416902
+xor eax,eax
+pop esi
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416bb5@d3ad46676721a96e1408ac558c298889
+[similar_2_ref]: /report/fcn.00416bb5@ab22d984f64f202bfb2e0f0e1f3a3f8f
+[similar_3_ref]: /report/fcn.00417216@214019fc1439a81af54ff417c477f8dc
+[similar_4_ref]: /report/fcn.00417233@38222995e97af76fefbfcbebfb4f9df6
+[similar_5_ref]: /report/fcn.00417233@146b14fc12cf789043a79d4f548a23bf
+[virustotal_ref]: https://www.virustotal.com/gui/file/074a6a8502a27e18f8b5ea831bacabad

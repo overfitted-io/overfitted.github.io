@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.14002516c @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14002516c
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.140021908][similar_1_ref] (sim.: 0.8790344090231815)
+2. [fcn.180005064][similar_2_ref] (sim.: 0.8539052703203107)
+3. [fcn.140015dc8][similar_3_ref] (sim.: 0.8331311930414738)
+4. [fcn.1400182a4][similar_4_ref] (sim.: 0.80315273386438)
+5. [fcn.14002c900][similar_5_ref] (sim.: 0.8025523222908406)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+push rdi
+sub rsp,0x20
+mov rbx,r8
+mov rdi,rdx
+test rcx,rcx
+je 0x14002519e
+xor edx,edx
+lea rax,[rdx-0x20]
+div rcx
+cmp rax,rdi
+jae 0x14002519e
+call fcn.14001c210
+mov dword[rax],0xc
+xor eax,eax
+jmp 0x1400251fb
+imul rdi,rcx
+mov eax,1
+test rdi,rdi
+cmove rdi,rax
+xor eax,eax
+cmp rdi,0xffffffffffffffe0
+ja 0x1400251ce
+mov rcx,qword[0x1400b3030]
+lea edx,[rax+8]
+mov r8,rdi
+call qword[sym.imp.KERNEL32.dll_HeapAlloc]
+test rax,rax
+jne 0x1400251fb
+cmp dword[0x1400b3028],0
+je 0x1400251f0
+mov rcx,rdi
+call fcn.1400156f0
+test eax,eax
+jne 0x1400251ae
+test rbx,rbx
+je 0x14002519a
+mov dword[rbx],0xc
+jmp 0x14002519a
+test rbx,rbx
+je 0x1400251fb
+mov dword[rbx],0xc
+mov rbx,qword[rsp+0x30]
+add rsp,0x20
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140021908@c5b958b285b208bffd52d8455e15d93a
+[similar_2_ref]: /report/fcn.180005064@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_3_ref]: /report/fcn.140015dc8@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.1400182a4@c5b958b285b208bffd52d8455e15d93a
+[similar_5_ref]: /report/fcn.14002c900@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

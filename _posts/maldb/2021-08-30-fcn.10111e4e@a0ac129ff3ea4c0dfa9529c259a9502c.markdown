@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "fcn.10111e4e @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10111e4e
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.10120bee][similar_1_ref] (sim.: 0.8515627905398379)
+2. [fcn.10112092][similar_2_ref] (sim.: 0.8490321295613574)
+3. [fcn.0048d511][similar_3_ref] (sim.: 0.8163181701352997)
+4. [fcn.10125569][similar_4_ref] (sim.: 0.8150286683654966)
+5. [fcn.1000d5f1][similar_5_ref] (sim.: 0.8130387686418042)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+push esi
+push edi
+push 0x1018a600
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+push str.SetThreadGroupAffinity
+push esi
+call edi
+push str.GetThreadGroupAffinity
+push esi
+mov dword[ebp-4],eax
+call edi
+mov esi,eax
+mov eax,dword[ebp-4]
+test eax,eax
+je 0x10111ed6
+test esi,esi
+je 0x10111ed6
+push eax
+call fcn.10114ad0
+push esi
+mov dword[0x101bd210],eax
+call fcn.10114ad0
+pop ecx
+pop ecx
+push str.GetCurrentProcessorNumberEx
+push 0x1018a600
+mov dword[0x101bd214],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call edi
+test eax,eax
+jne 0x10111ec4
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x10111eea
+jmp 0x10111ee2
+push eax
+call fcn.10114ad0
+pop ecx
+pop edi
+mov dword[0x101bd20c],eax
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x10111eea
+jmp 0x10111ee2
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x14]
+call fcn.10114f2f
+push 0x101af7ec
+lea eax,[ebp-0x14]
+push eax
+call fcn.100daac8
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10120bee@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.10112092@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.0048d511@94f83197373b17ab8b5225c0900d14de
+[similar_4_ref]: /report/fcn.10125569@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.1000d5f1@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

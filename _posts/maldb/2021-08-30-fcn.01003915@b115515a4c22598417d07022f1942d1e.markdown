@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.01003915 @ b115515a4c22598417d07022f1942d1e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.01003915
+- **Origin (md5):** b115515a4c22598417d07022f1942d1e
+- **VirusTotal:** [virustotal.com/gui/file/b115515a4c22598417d07022f1942d1e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.010039c0][similar_1_ref] (sim.: 0.9273884723770061)
+2. [fcn.004207ba][similar_2_ref] (sim.: 0.8213073956510216)
+3. [fcn.01003495][similar_3_ref] (sim.: 0.8178013267408203)
+4. [fcn.01003af0][similar_4_ref] (sim.: 0.8171743153750131)
+5. [fcn.01003352][similar_5_ref] (sim.: 0.815959585203874)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x1007a34
+call sub.MSVCRT.dll__EH_prolog
+push ecx
+push ebx
+push esi
+push edi
+mov edi,ecx
+xor ebx,ebx
+mov dword[ebp-0x10],edi
+lea esi,[edi+4]
+lea eax,[esi+0x10]
+mov dword[esi+8],0x105
+mov dword[esi+4],eax
+mov dword[esi+0xc],ebx
+mov word[eax],bx
+mov dword[esi],0x10012b8
+cmp dword[ebp+0x14],ebx
+push 0xffffffffffffffff
+mov dword[ebp-4],ebx
+mov dword[edi+0x220],1
+mov dword[edi],0x10016d0
+push ebx
+je 0x1003976
+push dword[ebp+0x14]
+mov ecx,esi
+call fcn.010030f4
+push esi
+call fcn.010041ff
+push 0xffffffffffffffff
+push dword[esi+0xc]
+push dword[ebp+0xc]
+mov ecx,esi
+call fcn.010030f4
+mov esi,dword[sym.imp.KERNEL32.dll_SetLastError]
+push ebx
+call esi
+lea eax,[edi+0x224]
+push eax
+push dword[ebp+0x10]
+push ebx
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+cmp eax,ebx
+je 0x10039ad
+push eax
+mov dword[edi+0x224],ebx
+call esi
+mov ecx,dword[ebp-0xc]
+mov eax,edi
+pop edi
+pop esi
+mov dword fs:[0],ecx
+pop ebx
+leave 
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.010039c0@b115515a4c22598417d07022f1942d1e
+[similar_2_ref]: /report/fcn.004207ba@c3466bab32f3a73706b87b6042748ed4
+[similar_3_ref]: /report/fcn.01003495@b115515a4c22598417d07022f1942d1e
+[similar_4_ref]: /report/fcn.01003af0@b115515a4c22598417d07022f1942d1e
+[similar_5_ref]: /report/fcn.01003352@b115515a4c22598417d07022f1942d1e
+[virustotal_ref]: https://www.virustotal.com/gui/file/b115515a4c22598417d07022f1942d1e

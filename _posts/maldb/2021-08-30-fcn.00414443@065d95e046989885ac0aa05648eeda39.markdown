@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "fcn.00414443 @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00414443
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0046e68e][similar_1_ref] (sim.: 0.8722349557044339)
+2. [fcn.0046e68e][similar_2_ref] (sim.: 0.8722349557044339)
+3. [fcn.00471628][similar_3_ref] (sim.: 0.8570709301913777)
+4. [fcn.00414682][similar_4_ref] (sim.: 0.8570259173474726)
+5. [fcn.0045f8e4][similar_5_ref] (sim.: 0.8547386767219123)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push ebx
+push esi
+push edi
+mov ebx,str.kernel32.dll
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+push str.SetThreadGroupAffinity
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.GetThreadGroupAffinity
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test edi,edi
+je 0x4144c0
+test esi,esi
+je 0x4144c0
+push edi
+call fcn.00414a07
+push esi
+mov dword[0x45ba40],eax
+call fcn.00414a07
+pop ecx
+pop ecx
+push str.GetCurrentProcessorNumberEx
+push ebx
+mov dword[0x45ba44],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x4144cc
+push eax
+call fcn.00414a07
+pop ecx
+pop edi
+pop esi
+mov dword[0x45ba3c],eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x4144de
+jmp 0x4144d6
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x4144de
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.00414e25
+push 0x4547e4
+lea eax,[ebp-0x10]
+push eax
+call fcn.00429324
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046e68e@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_2_ref]: /report/fcn.0046e68e@9b5524245506621a9773176393787e61
+[similar_3_ref]: /report/fcn.00471628@843c4207147f5bab0e104024677fd9ec
+[similar_4_ref]: /report/fcn.00414682@065d95e046989885ac0aa05648eeda39
+[similar_5_ref]: /report/fcn.0045f8e4@ba5ec83721de3ca10b3c9583f3b2c6a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

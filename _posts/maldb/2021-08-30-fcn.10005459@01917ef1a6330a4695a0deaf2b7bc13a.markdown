@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.10005459 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10005459
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.100054e0][similar_1_ref] (sim.: 0.8011525698841849)
+2. [fcn.100053c7][similar_2_ref] (sim.: 0.793247384829803)
+3. [fcn.10005634][similar_3_ref] (sim.: 0.7771168306309469)
+4. [fcn.1000cade][similar_4_ref] (sim.: 0.7643852252088092)
+5. [method.CWinApp.virtual\_136][similar_5_ref] (sim.: 0.762788972054282)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+push dword[ebp+0xc]
+push ebx
+call fcn.100053c7
+pop ecx
+pop ecx
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call fcn.10004abb
+pop ecx
+test eax,eax
+je 0x10005495
+push ebx
+call fcn.10004abb
+pop ecx
+test eax,eax
+jne 0x10005495
+push dword[ebp+0x10]
+add esi,edi
+push esi
+push ebx
+call fcn.10005b3c
+jmp 0x100054c3
+xor eax,eax
+push eax
+push eax
+push dword[ebp+0x10]
+add esi,edi
+push esi
+push eax
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_CreateRemoteThread]
+test eax,eax
+jne 0x100054dd
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push dword[ebp+0x10]
+mov ecx,esi
+push dword[ebp+8]
+mov dword[ebp-4],eax
+push ebx
+call fcn.10005971
+add esp,0xc
+test eax,eax
+jne 0x100054dd
+push dword[ebp-4]
+push dword[ebp+8]
+push str.could_not_create_remote_thread_in__d:__d
+call fcn.10001d95
+add esp,0xc
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100054e0@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.100053c7@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.10005634@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.1000cade@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/method.CWinApp.virtual_136@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

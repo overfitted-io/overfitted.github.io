@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "method.DownloadStream.virtual_0 @ ba5ec83721de3ca10b3c9583f3b2c6a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.DownloadStream.virtual\_0
+- **Origin (md5):** ba5ec83721de3ca10b3c9583f3b2c6a1
+- **VirusTotal:** [virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.00435fba][similar_1_ref] (sim.: 0.8174784485205556)
+2. [fcn.00435fba][similar_2_ref] (sim.: 0.8174784485205556)
+3. [fcn.00425ff0][similar_3_ref] (sim.: 0.7472488687364258)
+4. [method.DuiLib꞉꞉CActiveXCtrl.3.virtual\_92][similar_4_ref] (sim.: 0.7471609110781142)
+5. [fcn.0043f7eb][similar_5_ref] (sim.: 0.7411997686162471)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+and dword[ebp-4],0
+lea eax,[ebp-4]
+push esi
+push eax
+push dword[ebp+0xc]
+mov esi,ecx
+push dword[ebp+8]
+push dword[esi+8]
+call dword[sym.imp.WININET.dll_InternetReadFile]
+test eax,eax
+jne 0x4361e1
+push edi
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+or eax,0xc000
+movzx edi,ax
+call fcn.004323c2
+mov edx,dword[eax]
+test edx,edx
+je 0x4361e0
+lea ecx,[esi+0xc]
+cmp dword[ecx+0x14],0x10
+jb 0x4361ce
+mov ecx,dword[ecx]
+mov eax,dword[edx]
+push ecx
+push edi
+push 0x8a
+push str.download_stream.cpp
+mov ecx,edx
+call dword[eax]
+pop edi
+mov eax,dword[ebp-4]
+pop esi
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00435fba@53687e619dcac7d709f306d061d8daeb
+[similar_2_ref]: /report/fcn.00435fba@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.00425ff0@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_4_ref]: /report/method.DuiLib꞉꞉CActiveXCtrl.3.virtual_92@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0043f7eb@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1

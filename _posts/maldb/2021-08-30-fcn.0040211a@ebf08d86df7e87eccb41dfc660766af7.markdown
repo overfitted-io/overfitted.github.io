@@ -1,0 +1,130 @@
+---
+layout: post
+title:  "fcn.0040211a @ ebf08d86df7e87eccb41dfc660766af7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040211a
+- **Origin (md5):** ebf08d86df7e87eccb41dfc660766af7
+- **VirusTotal:** [virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004023cf][similar_1_ref] (sim.: 0.8250134562946706)
+2. [fcn.00407cf9][similar_2_ref] (sim.: 0.8105006324007321)
+3. [fcn.00407cf9][similar_3_ref] (sim.: 0.8105006324007321)
+4. [fcn.0040514a][similar_4_ref] (sim.: 0.8098492600268852)
+5. [fcn.0040121c][similar_5_ref] (sim.: 0.8035894675435593)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x6c
+lea edx,[ebp-0x20]
+push ebx
+push esi
+push 8
+pop ecx
+call fcn.0040299c
+push 0xc
+lea edx,[ebp-0x6c]
+pop ecx
+call fcn.00402954
+lea eax,[ebp-0x6c]
+push eax
+lea eax,[ebp-0x20]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x4021dd
+xor ebx,ebx
+lea eax,[ebp-4]
+push ebx
+push 4
+push eax
+push 7
+push 0xffffffffffffffff
+mov dword[ebp-4],ebx
+call esi
+test eax,eax
+jne 0x402177
+cmp dword[ebp-4],ebx
+je 0x402177
+xor eax,eax
+inc eax
+jmp 0x4021df
+push ebx
+push 4
+lea eax,[ebp-8]
+mov dword[ebp-8],ebx
+push eax
+push 0x1e
+push 0xffffffffffffffff
+call esi
+test eax,eax
+jne 0x402190
+cmp dword[ebp-8],ebx
+jne 0x402172
+push ebx
+push 4
+lea eax,[ebp-0xc]
+mov dword[ebp-0xc],ebx
+push eax
+push 0x1f
+push 0xffffffffffffffff
+call esi
+test eax,eax
+jne 0x4021a9
+cmp dword[ebp-0xc],ebx
+je 0x402172
+push 0x18
+pop eax
+dec eax
+mov byte[ebp+eax-0x50],bl
+jne 0x4021ac
+push ebx
+push 0x18
+lea eax,[ebp-0x50]
+push eax
+push ebx
+push 0xffffffffffffffff
+call esi
+push 0x50
+lea edx,[ebp-0x38]
+pop ecx
+call fcn.0040299c
+mov ecx,dword[ebp-0x3c]
+test ecx,ecx
+je 0x4021dd
+lea edx,[ebp-0x38]
+call fcn.00401998
+test eax,eax
+jne 0x402172
+xor eax,eax
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004023cf@ebf08d86df7e87eccb41dfc660766af7
+[similar_2_ref]: /report/fcn.00407cf9@3bf433430f740e75dfaf9134a5696829
+[similar_3_ref]: /report/fcn.00407cf9@4bd33f73402d0d03c0318f793884eb34
+[similar_4_ref]: /report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.0040121c@ebf08d86df7e87eccb41dfc660766af7
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7

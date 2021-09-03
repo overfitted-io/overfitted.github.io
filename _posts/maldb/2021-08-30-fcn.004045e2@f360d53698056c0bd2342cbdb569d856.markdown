@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.004045e2 @ f360d53698056c0bd2342cbdb569d856"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004045e2
+- **Origin (md5):** f360d53698056c0bd2342cbdb569d856
+- **VirusTotal:** [virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00406fce][similar_1_ref] (sim.: 0.8463435109719465)
+2. [fcn.004059b3][similar_2_ref] (sim.: 0.838646703605493)
+3. [fcn.0041a0b3][similar_3_ref] (sim.: 0.8238535573643686)
+4. [fcn.004198aa][similar_4_ref] (sim.: 0.8204030216866689)
+5. [fcn.0044541a][similar_5_ref] (sim.: 0.8173645361433979)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x41953c
+call fcn.00413954
+sub esp,0x224
+push ebx
+push esi
+mov esi,edx
+xor ebx,ebx
+push edi
+mov edi,ecx
+mov eax,dword[esi]
+mov dword[esi+4],ebx
+mov word[eax],bx
+cmp byte[0x423148],bl
+je 0x40463f
+lea eax,[ebp-0x230]
+push 0x105
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+cmp eax,0x104
+ja 0x40463b
+cmp eax,ebx
+je 0x40463b
+lea eax,[ebp-0x230]
+mov ecx,esi
+push eax
+call fcn.00401d1b
+mov al,1
+jmp 0x40469c
+xor al,al
+jmp 0x40469c
+push 3
+lea ecx,[ebp-0x18]
+mov dword[ebp-0x18],ebx
+mov dword[ebp-0x14],ebx
+mov dword[ebp-0x10],ebx
+call fcn.0040243e
+lea edx,[ebp-0x18]
+mov ecx,edi
+mov dword[ebp-4],ebx
+call fcn.00404598
+test al,al
+je 0x404691
+call dword[sym.imp.KERNEL32.dll_AreFileApisANSI]
+neg eax
+sbb eax,eax
+lea edx,[ebp-0x18]
+inc eax
+lea ecx,[ebp-0x24]
+push eax
+call fcn.00403b9c
+push eax
+mov ecx,esi
+mov byte[ebp-4],1
+call fcn.00401d7a
+push dword[ebp-0x24]
+call fcn.00403a9c
+pop ecx
+mov bl,1
+push dword[ebp-0x18]
+call fcn.00403a9c
+pop ecx
+mov al,bl
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+pop ebx
+mov dword fs:[0],ecx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406fce@623952564c193310b2e5c9b0fe299d07
+[similar_2_ref]: /report/fcn.004059b3@f360d53698056c0bd2342cbdb569d856
+[similar_3_ref]: /report/fcn.0041a0b3@c3466bab32f3a73706b87b6042748ed4
+[similar_4_ref]: /report/fcn.004198aa@c3466bab32f3a73706b87b6042748ed4
+[similar_5_ref]: /report/fcn.0044541a@c3466bab32f3a73706b87b6042748ed4
+[virustotal_ref]: https://www.virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856

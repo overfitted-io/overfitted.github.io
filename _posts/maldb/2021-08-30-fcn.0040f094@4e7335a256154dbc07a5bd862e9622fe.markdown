@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0040f094 @ 4e7335a256154dbc07a5bd862e9622fe"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040f094
+- **Origin (md5):** 4e7335a256154dbc07a5bd862e9622fe
+- **VirusTotal:** [virustotal.com/gui/file/4e7335a256154dbc07a5bd862e9622fe][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040af94][similar_1_ref] (sim.: 0.9022342279857485)
+2. [fcn.0040bef4][similar_2_ref] (sim.: 0.8839104715852798)
+3. [fcn.0040bef4][similar_3_ref] (sim.: 0.8823979072208328)
+4. [fcn.0040b024][similar_4_ref] (sim.: 0.8801212818476075)
+5. [fcn.0040b044][similar_5_ref] (sim.: 0.8764865871944114)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,dword[ebp+8]
+test esi,esi
+je 0x40f0ba
+push 0xffffffffffffffe0
+xor edx,edx
+pop eax
+div esi
+cmp eax,dword[ebp+0xc]
+jae 0x40f0ba
+call fcn.0040dc77
+mov dword[eax],0xc
+xor eax,eax
+jmp 0x40f10b
+imul esi,dword[ebp+0xc]
+test esi,esi
+jne 0x40f0c3
+inc esi
+xor ecx,ecx
+cmp esi,0xffffffe0
+ja 0x40f0df
+push esi
+push 8
+push dword[0xb85d0c]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov ecx,eax
+test ecx,ecx
+jne 0x40f109
+cmp dword[0xb86b40],0
+je 0x40f0fc
+push esi
+call fcn.0040df70
+pop ecx
+test eax,eax
+jne 0x40f0c3
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x40f0b6
+jmp 0x40f0b0
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x40f109
+mov dword[eax],0xc
+mov eax,ecx
+pop esi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040af94@513a8bfcd5da1a9aee6dd942ecac565e
+[similar_2_ref]: /report/fcn.0040bef4@ed8dcc04880716413628e726708b2463
+[similar_3_ref]: /report/fcn.0040bef4@1fd683a7f72f257d6d6de6e845d6c40a
+[similar_4_ref]: /report/fcn.0040b024@451ddfcc92b1bb3ecaf608812dc38f69
+[similar_5_ref]: /report/fcn.0040b044@61a87c9dd8afa91b0d188f5b18051873
+[virustotal_ref]: https://www.virustotal.com/gui/file/4e7335a256154dbc07a5bd862e9622fe

@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.005c3448 @ 43f1a4b17a22b06cf1d6e21e3bb2b62d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005c3448
+- **Origin (md5):** 43f1a4b17a22b06cf1d6e21e3bb2b62d
+- **VirusTotal:** [virustotal.com/gui/file/43f1a4b17a22b06cf1d6e21e3bb2b62d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.0067800a][similar_1_ref] (sim.: 0.8655009868243536)
+2. [fcn.0067355f][similar_2_ref] (sim.: 0.8541566876863841)
+3. [fcn.006687c8][similar_3_ref] (sim.: 0.8411134074514954)
+4. [fcn.0054835e][similar_4_ref] (sim.: 0.8398054641709334)
+5. [fcn.00405c95][similar_5_ref] (sim.: 0.8389727123291272)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x154
+mov dword[ebp-0xc],edx
+mov dword[ebp-4],ecx
+mov eax,dword[ebp-8]
+add eax,dword[ebp-0x30]
+mov dword[ebp-0x18],eax
+mov eax,dword[ebp-0x38]
+add eax,dword[ebp-8]
+add eax,dword[ebp+8]
+mov dword[ebp-0x20],eax
+lea eax,[ebp-0x10]
+push eax
+push 0xcc627f8
+push 0
+push 0
+call sub.WINSPOOL.DRV_ReadPrinter
+mov dword[ebp+8],eax
+and dword[ebp-0x28],0
+mov eax,dword[ebp-0x14]
+add eax,dword[ebp-4]
+add eax,dword[ebp-0xc]
+mov dword[ebp+0x24],eax
+and dword[ebp-0x154],0
+push 0x118
+push 0
+lea eax,[ebp-0x150]
+push eax
+call sub.MSVCRT.dll_memset
+add esp,0xc
+mov eax,dword[ebp-0x1c]
+xor ecx,ecx
+push ecx
+push eax
+push 0xbc03ab4
+lea eax,[ebp-0x154]
+push eax
+call dword[sym.imp.KERNEL32.dll_VerifyVersionInfoW]
+mov dword[ebp-0x24],eax
+call dword[sym.imp.USER32.dll_GetDoubleClickTime]
+mov dword[ebp-0x2c],eax
+mov eax,dword[ebp-0x34]
+mov esp,ebp
+pop ebp
+ret 0x20
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0067800a@3ea8e9c55e713ee4d068576585ceafcc
+[similar_2_ref]: /report/fcn.0067355f@91d2dbd35d267fbd0e76a6957e77ff88
+[similar_3_ref]: /report/fcn.006687c8@e9229cc473a58c8bbd38371810f2aa0f
+[similar_4_ref]: /report/fcn.0054835e@008ebacd307f3ac8942baa09393de50a
+[similar_5_ref]: /report/fcn.00405c95@f7fdde1e34169179beb179f5c2c38adb
+[virustotal_ref]: https://www.virustotal.com/gui/file/43f1a4b17a22b06cf1d6e21e3bb2b62d

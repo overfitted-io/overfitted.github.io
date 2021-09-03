@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.0040cf18 @ 7e044e51324f9f80f4e97d8f3549c003"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040cf18
+- **Origin (md5):** 7e044e51324f9f80f4e97d8f3549c003
+- **VirusTotal:** [virustotal.com/gui/file/7e044e51324f9f80f4e97d8f3549c003][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040cf18][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0040cf5b][similar_2_ref] (sim.: 0.8734538219345703)
+3. [fcn.0040cf5b][similar_3_ref] (sim.: 0.8734538219345703)
+4. [fcn.00419991][similar_4_ref] (sim.: 0.7581254327254834)
+5. [fcn.0040b21f][similar_5_ref] (sim.: 0.7566596361841033)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+cmp dword[0x44c3e0],0
+jne 0x40cf48
+push esi
+push 0
+call dword[sym.imp.USER32.dll_GetDC]
+mov esi,eax
+test esi,esi
+je 0x40cf47
+push 0x58
+push esi
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+push esi
+push 0
+mov dword[0x44c3e0],eax
+call dword[sym.imp.USER32.dll_ReleaseDC]
+pop esi
+mov eax,dword[0x44c3e0]
+imul eax,dword[esp+4]
+push 0x60
+cdq 
+pop ecx
+idiv ecx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040cf18@88e03379526f823ce2de3b236adcaf80
+[similar_2_ref]: /report/fcn.0040cf5b@7e044e51324f9f80f4e97d8f3549c003
+[similar_3_ref]: /report/fcn.0040cf5b@88e03379526f823ce2de3b236adcaf80
+[similar_4_ref]: /report/fcn.00419991@319cf4affa41f752783e62f81908d682
+[similar_5_ref]: /report/fcn.0040b21f@4c2db4ba96e80258daff665d7d7a016a
+[virustotal_ref]: https://www.virustotal.com/gui/file/7e044e51324f9f80f4e97d8f3549c003

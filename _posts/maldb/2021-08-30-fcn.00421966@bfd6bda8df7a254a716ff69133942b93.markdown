@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.00421966 @ bfd6bda8df7a254a716ff69133942b93"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00421966
+- **Origin (md5):** bfd6bda8df7a254a716ff69133942b93
+- **VirusTotal:** [virustotal.com/gui/file/bfd6bda8df7a254a716ff69133942b93][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00421966][similar_1_ref] (sim.: 1.0)
+2. [fcn.00421966][similar_2_ref] (sim.: 1.0)
+3. [fcn.00421966][similar_3_ref] (sim.: 1.0)
+4. [fcn.00421966][similar_4_ref] (sim.: 1.0)
+5. [fcn.00421966][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+8]
+jmp 0x421a18
+mov ebx,dword[edi]
+lea eax,[ebx*4+0x4c3b48]
+mov esi,dword[eax]
+mov dword[ebp-4],eax
+test esi,esi
+je 0x421994
+cmp esi,0xffffffff
+je 0x421a15
+jmp 0x421a11
+mov ebx,dword[ebx*4+0x4b6aa0]
+push 0x800
+push 0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+test esi,esi
+jne 0x4219ff
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x4219ef
+push 7
+push str.api_ms_
+push ebx
+call fcn.0041ed35
+add esp,0xc
+test eax,eax
+je 0x4219ef
+push 7
+push str.ext_ms_
+push ebx
+call fcn.0041ed35
+add esp,0xc
+test eax,eax
+je 0x4219ef
+push esi
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov esi,eax
+jmp 0x4219f1
+xor esi,esi
+test esi,esi
+jne 0x4219ff
+mov ecx,dword[ebp-4]
+or eax,0xffffffff
+xchg dword[ecx],eax
+jmp 0x421a15
+mov ecx,dword[ebp-4]
+mov eax,esi
+xchg dword[ecx],eax
+test eax,eax
+je 0x421a11
+push esi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test esi,esi
+jne 0x421a2a
+add edi,4
+cmp edi,dword[ebp+0xc]
+jne 0x421977
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+mov eax,esi
+jmp 0x421a23
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00421966@6b4acb306590aa2df1431ebe14e05649
+[similar_2_ref]: /report/fcn.00421966@de1132113c1d9c77b079a3c0743bdd0c
+[similar_3_ref]: /report/fcn.00421966@b41633237f937bbe6f9bcfbdce811f10
+[similar_4_ref]: /report/fcn.00421966@1a3c6bb61923404c2dc3230a918fec57
+[similar_5_ref]: /report/fcn.00421966@ee2e4219e96936cd9ef5f09e021a8510
+[virustotal_ref]: https://www.virustotal.com/gui/file/bfd6bda8df7a254a716ff69133942b93

@@ -1,0 +1,149 @@
+---
+layout: post
+title:  "fcn.004a816f @ a9fa810a69d3f4d771518b9f44e2d98d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004a816f
+- **Origin (md5):** a9fa810a69d3f4d771518b9f44e2d98d
+- **VirusTotal:** [virustotal.com/gui/file/a9fa810a69d3f4d771518b9f44e2d98d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.004aa75a][similar_1_ref] (sim.: 0.8633287020770741)
+2. [fcn.0042aeb2][similar_2_ref] (sim.: 0.8538784238823229)
+3. [fcn.00409347][similar_3_ref] (sim.: 0.8534453139979534)
+4. [fcn.004727c8][similar_4_ref] (sim.: 0.8527016392065729)
+5. [fcn.0041fbcd][similar_5_ref] (sim.: 0.852269231313868)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x82c
+xor eax,eax
+push ebx
+cmp dword[ebp+0xc],eax
+push esi
+push edi
+je 0x4a81f2
+cmp dword[ebp+8],eax
+je 0x4a81f2
+mov dword[ebp-8],eax
+mov eax,dword[ebp+0x18]
+mov esi,eax
+and eax,0xc0000000
+and esi,0x3e000000
+mov dword[ebp+0x18],eax
+lea eax,[ebp-4]
+mov edi,dword[sym.imp.WININET.dll_InternetCanonicalizeUrlA]
+push esi
+push eax
+lea eax,[ebp-0x82c]
+mov dword[ebp-4],0x824
+push eax
+push dword[ebp+8]
+call edi
+test eax,eax
+jne 0x4a81fb
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x7a
+jne 0x4a81f2
+push dword[ebp-4]
+call fcn.0049ed7f
+pop ecx
+mov ebx,eax
+lea eax,[ebp-4]
+push esi
+push eax
+push ebx
+push dword[ebp+8]
+mov dword[ebp-8],1
+call edi
+test eax,eax
+jne 0x4a8201
+push ebx
+call fcn.0049eda8
+pop ecx
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0x14
+lea ebx,[ebp-0x82c]
+mov esi,dword[ebp+0xc]
+push esi
+push dword[ebp+0x18]
+push 0
+push ebx
+call dword[sym.imp.WININET.dll_InternetCrackUrlA]
+cmp dword[ebp-8],0
+mov edi,eax
+je 0x4a8220
+push ebx
+call fcn.0049eda8
+pop ecx
+test edi,edi
+jne 0x4a822f
+mov eax,dword[ebp+0x10]
+mov dword[eax],0x1000
+jmp 0x4a829c
+mov ecx,dword[ebp+0x14]
+mov ax,word[esi+0x18]
+mov word[ecx],ax
+mov eax,dword[esi+0xc]
+dec eax
+je 0x4a8293
+dec eax
+je 0x4a8288
+dec eax
+je 0x4a827d
+dec eax
+je 0x4a8272
+dec eax
+je 0x4a8267
+dec eax
+je 0x4a825c
+dec eax
+mov eax,dword[ebp+0x10]
+jne 0x4a8227
+mov dword[eax],0x1002
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],0x1006
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],0x1001
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],0x100b
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],3
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],2
+jmp 0x4a829c
+mov eax,dword[ebp+0x10]
+mov dword[eax],1
+mov eax,edi
+jmp 0x4a81f4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004aa75a@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.0042aeb2@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.00409347@b3771987fba16f4fba07d1109ec72c76
+[similar_4_ref]: /report/fcn.004727c8@4fe38de7c6c86a1bad209560fa052231
+[similar_5_ref]: /report/fcn.0041fbcd@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/a9fa810a69d3f4d771518b9f44e2d98d

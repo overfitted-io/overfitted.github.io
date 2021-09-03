@@ -1,0 +1,122 @@
+---
+layout: post
+title:  "fcn.140011760 @ a5e8b4820319974b4ce1027132e98e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140011760
+- **Origin (md5):** a5e8b4820319974b4ce1027132e98e27
+- **VirusTotal:** [virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.140080fe4][similar_1_ref] (sim.: 0.9017514853934101)
+2. [fcn.140011aa0][similar_2_ref] (sim.: 0.9011621064726549)
+3. [fcn.14001bfb8][similar_3_ref] (sim.: 0.8963114104742241)
+4. [fcn.140006cf0][similar_4_ref] (sim.: 0.8953369416935142)
+5. [fcn.140019f70][similar_5_ref] (sim.: 0.8949908977483145)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbp
+push rdi
+sub rsp,0x78
+mov rax,qword[0x1400da170]
+xor rax,rsp
+mov qword[rsp+0x60],rax
+mov rbp,rcx
+or edx,0xffffffff
+mov rcx,qword[0x1400eccd8]
+xor edi,edi
+call qword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+test eax,eax
+jne 0x1400118c3
+mov eax,2
+mov qword[rsp+0xa0],rsi
+xchg dword[0x1400eca24],eax
+cmp eax,1
+je 0x1400117cd
+mov rcx,qword[0x1400eccd8]
+lea edx,[rdi+1]
+xor r8d,r8d
+call qword[sym.imp.KERNEL32.dll_ReleaseSemaphore]
+test eax,eax
+je 0x1400118c9
+xor eax,eax
+jmp 0x1400118a7
+xor r9d,r9d
+mov qword[rsp+0x30],rdi
+mov qword[rsp+0x98],rbx
+lea rcx,str.conout_
+mov dword[rsp+0x28],0x80
+mov edx,0xc0000000
+mov qword[rsp+0x70],r14
+lea r8d,[r9+3]
+mov dword[rsp+0x20],3
+call qword[sym.imp.KERNEL32.dll_CreateFileA]
+mov rbx,rax
+cmp rax,0xffffffffffffffff
+je 0x14001182d
+lea rdx,[0x1400eccb8]
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_GetConsoleScreenBufferInfo]
+test eax,eax
+je 0x14001182d
+lock or dword[0x1400eccd0],1
+mov esi,1
+mov dword[rsp+0x50],0xd0001
+mov r14d,0xd
+mov word[rsp+0x48],si
+mov ecx,r14d
+mov dword[rsp+0x4c],esi
+xor edx,edx
+call qword[sym.imp.USER32.dll_MapVirtualKeyW]
+mov rcx,qword[rbp+0x110]
+lea r9,[rsp+0x40]
+mov r8d,esi
+mov word[rsp+0x54],ax
+lea rdx,[rsp+0x48]
+mov word[rsp+0x56],r14w
+mov dword[rsp+0x58],edi
+call qword[sym.imp.KERNEL32.dll_WriteConsoleInputW]
+mov r14,qword[rsp+0x70]
+test eax,eax
+jne 0x14001188e
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+mov edi,eax
+cmp rbx,0xffffffffffffffff
+je 0x14001189d
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+mov rbx,qword[rsp+0x98]
+mov eax,edi
+mov rsi,qword[rsp+0xa0]
+mov rcx,qword[rsp+0x60]
+xor rcx,rsp
+call fcn.14007cac0
+add rsp,0x78
+pop rdi
+pop rbp
+ret 
+call fcn.14008bf14
+int3 
+call fcn.14008bf14
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140080fe4@a5e8b4820319974b4ce1027132e98e27
+[similar_2_ref]: /report/fcn.140011aa0@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.14001bfb8@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140006cf0@72082bb1b08918279d6780845b69f5ff
+[similar_5_ref]: /report/fcn.140019f70@a5e8b4820319974b4ce1027132e98e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27

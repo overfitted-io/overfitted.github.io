@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.005e7074 @ 8481303ca93a816ad088ab207da601a7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005e7074
+- **Origin (md5):** 8481303ca93a816ad088ab207da601a7
+- **VirusTotal:** [virustotal.com/gui/file/8481303ca93a816ad088ab207da601a7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.005c7e84][similar_1_ref] (sim.: 0.8800264940001259)
+2. [fcn.00520c64][similar_2_ref] (sim.: 0.8648188975719894)
+3. [fcn.00520c64][similar_3_ref] (sim.: 0.8648188975719894)
+4. [fcn.00596e04][similar_4_ref] (sim.: 0.8578596842312803)
+5. [fcn.00596e04][similar_5_ref] (sim.: 0.8578596842312803)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x46128c4],ebx
+push esi
+push edi
+jne 0x5e70c3
+push 0x5ee5f8
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x5e70f9
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x5ee5ec
+push edi
+call esi
+test eax,eax
+mov dword[0x46128c4],eax
+je 0x5e70f9
+push 0x5ee5dc
+push edi
+call esi
+push 0x5ee5c8
+push edi
+mov dword[0x46128c8],eax
+call esi
+mov dword[0x46128cc],eax
+mov eax,dword[0x46128c8]
+test eax,eax
+je 0x5e70e2
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x5e70e2
+mov eax,dword[0x46128cc]
+test eax,eax
+je 0x5e70e2
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x46128c4]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x5e70f5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005c7e84@9df9a5aa1b4726bd0de47365be1d7f48
+[similar_2_ref]: /report/fcn.00520c64@cc49f2546fb252f16a4d5a9a02301eb1
+[similar_3_ref]: /report/fcn.00520c64@da37d90419c1292c0f16cbfd1f66402d
+[similar_4_ref]: /report/fcn.00596e04@009ea4ad185ccb9becba67b3b2163e8b
+[similar_5_ref]: /report/fcn.00596e04@096ef9f81a4dc8cb7c74a7404f69cfcb
+[virustotal_ref]: https://www.virustotal.com/gui/file/8481303ca93a816ad088ab207da601a7

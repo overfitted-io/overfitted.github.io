@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "fcn.0041b433 @ 7a3a0c983ae0c0ae537e7010d24072c9"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041b433
+- **Origin (md5):** 7a3a0c983ae0c0ae537e7010d24072c9
+- **VirusTotal:** [virustotal.com/gui/file/7a3a0c983ae0c0ae537e7010d24072c9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0041b433][similar_1_ref] (sim.: 1.0)
+2. [fcn.0041b433][similar_2_ref] (sim.: 1.0)
+3. [fcn.0041a7a3][similar_3_ref] (sim.: 0.9285033205179075)
+4. [fcn.00408ab2][similar_4_ref] (sim.: 0.9247607657940682)
+5. [fcn.00415d31][similar_5_ref] (sim.: 0.9226405470096494)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,0x1410
+call fcn.0041ead0
+mov eax,dword[0x428004]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov ecx,dword[ebp+0xc]
+mov eax,ecx
+mov edx,dword[ebp+0x14]
+and ecx,0x3f
+sar eax,6
+imul ecx,ecx,0x30
+push ebx
+mov ebx,dword[ebp+8]
+mov eax,dword[eax*4+0x429a30]
+push esi
+push edi
+mov edi,ebx
+mov eax,dword[eax+ecx+0x18]
+mov ecx,dword[ebp+0x10]
+add edx,ecx
+mov dword[ebp-0x1408],eax
+xor eax,eax
+stosd dword es:[edi],eax
+mov dword[ebp-0x1410],edx
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+jmp 0x41b4fd
+lea esi,[ebp-0x1404]
+cmp ecx,edx
+jae 0x41b4b7
+movzx eax,word[ecx]
+add ecx,2
+cmp eax,0xa
+jne 0x41b4aa
+add dword[ebx+8],2
+push 0xd
+pop edi
+mov word[esi],di
+add esi,2
+mov word[esi],ax
+add esi,2
+lea eax,[ebp-6]
+cmp esi,eax
+jb 0x41b48e
+mov edi,dword[ebp-0x1408]
+lea eax,[ebp-0x1404]
+sub esi,eax
+mov dword[ebp+0x10],ecx
+push 0
+lea eax,[ebp-0x140c]
+and esi,0xfffffffe
+push eax
+push esi
+lea eax,[ebp-0x1404]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x41b503
+mov eax,dword[ebp-0x140c]
+add dword[ebx+4],eax
+cmp eax,esi
+jb 0x41b50b
+mov ecx,dword[ebp+0x10]
+mov edx,dword[ebp-0x1410]
+cmp ecx,edx
+jb 0x41b488
+jmp 0x41b50b
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[ebx],eax
+mov ecx,dword[ebp-4]
+mov eax,ebx
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00411453
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041b433@5a99618b63178d7a221552fe962992e3
+[similar_2_ref]: /report/fcn.0041b433@912beaab0bb0679fee17cef9ce127a44
+[similar_3_ref]: /report/fcn.0041a7a3@33755acdcc496b7cf141bfd1caed6919
+[similar_4_ref]: /report/fcn.00408ab2@7bcc89a15d575deafd22288432159007
+[similar_5_ref]: /report/fcn.00415d31@b9bcb002212a6b3f234989f71e66f5f7
+[virustotal_ref]: https://www.virustotal.com/gui/file/7a3a0c983ae0c0ae537e7010d24072c9

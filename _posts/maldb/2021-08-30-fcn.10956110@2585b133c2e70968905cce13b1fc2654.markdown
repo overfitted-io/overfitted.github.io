@@ -1,0 +1,146 @@
+---
+layout: post
+title:  "fcn.10956110 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10956110
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.10604500][similar_1_ref] (sim.: 0.8730200480040314)
+2. [fcn.10566dc0][similar_2_ref] (sim.: 0.8701009959074972)
+3. [fcn.004924a0][similar_3_ref] (sim.: 0.8608041123778559)
+4. [fcn.100295a0][similar_4_ref] (sim.: 0.8598832131502612)
+5. [fcn.0050b490][similar_5_ref] (sim.: 0.8578314812418325)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x84
+mov eax,dword[0x10c992e8]
+xor eax,esp
+mov dword[esp+0x80],eax
+push ebx
+push ebp
+mov ebp,dword[esp+0x94]
+push esi
+mov esi,dword[esp+0x94]
+xor eax,eax
+mov dword[ebp],eax
+push edi
+mov dword[ebp+4],eax
+mov dword[ebp+8],eax
+push 0x3a
+mov dword[ebp+0xc],eax
+push esi
+mov word[ebp],2
+call dword[sym.imp.MSVCR80.dll_strchr]
+mov edi,eax
+add esp,8
+test edi,edi
+je 0x10956196
+mov ebx,edi
+sub ebx,esi
+cmp ebx,0x80
+jge 0x10956217
+push ebx
+lea eax,[esp+0x14]
+push esi
+push eax
+call sub.MSVCR80.dll_memcpy
+add edi,1
+add esp,0xc
+test edi,edi
+mov byte[esp+ebx+0x10],0
+je 0x109561cc
+push edi
+call dword[sym.imp.MSVCR80.dll_atoi]
+add esp,4
+movzx eax,ax
+jmp 0x109561ce
+mov eax,esi
+lea edx,[eax+1]
+jmp 0x109561a0
+mov cl,byte[eax]
+add eax,1
+test cl,cl
+jne 0x109561a0
+sub eax,edx
+cmp eax,0x80
+jae 0x10956217
+lea edx,[esp+0x10]
+mov eax,esi
+sub edx,esi
+lea ebx,[ebx]
+mov cl,byte[eax]
+mov byte[edx+eax],cl
+add eax,1
+test cl,cl
+jne 0x109561c0
+xor eax,eax
+push eax
+call dword[sym.imp.WS2_32.dll_htons]
+lea ecx,[esp+0x10]
+push str.1234567890.
+push ecx
+mov word[ebp+2],ax
+call dword[sym.imp.MSVCR80.dll_strspn]
+lea ecx,[esp+0x18]
+add esp,8
+lea esi,[ecx+1]
+mov dl,byte[ecx]
+add ecx,1
+test dl,dl
+jne 0x109561f3
+sub ecx,esi
+cmp eax,ecx
+jne 0x1095621c
+add ebp,4
+lea edx,[esp+0x10]
+push ebp
+push edx
+call fcn.10956670
+add esp,8
+test eax,eax
+jne 0x10956235
+or eax,0xffffffff
+jmp 0x10956237
+lea eax,[esp+0x10]
+push eax
+call dword[sym.imp.WS2_32.dll_gethostbyname]
+test eax,eax
+je 0x10956217
+mov ecx,dword[eax+0xc]
+mov edx,dword[ecx]
+mov eax,dword[edx]
+mov dword[ebp+4],eax
+xor eax,eax
+mov ecx,dword[esp+0x90]
+pop edi
+pop esi
+pop ebp
+pop ebx
+xor ecx,esp
+call fcn.1090658a
+add esp,0x84
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10604500@2585b133c2e70968905cce13b1fc2654
+[similar_2_ref]: /report/fcn.10566dc0@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.004924a0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.100295a0@4273a82ae1a72b0dac50947c5ab8a473
+[similar_5_ref]: /report/fcn.0050b490@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

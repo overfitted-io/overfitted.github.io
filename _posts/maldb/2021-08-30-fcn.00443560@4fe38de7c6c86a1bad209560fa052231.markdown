@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.00443560 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00443560
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00443500][similar_1_ref] (sim.: 0.9074039033047926)
+2. [fcn.00404730][similar_2_ref] (sim.: 0.7165299221895642)
+3. [fcn.00432c30][similar_3_ref] (sim.: 0.7090869132690198)
+4. [fcn.00432a20][similar_4_ref] (sim.: 0.7050970962108523)
+5. [fcn.00404930][similar_5_ref] (sim.: 0.7027170409035706)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov byte[ebp-1],0
+mov ecx,dword[ebp+8]
+add ecx,0x90
+call fcn.00404720
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[ebp-8],eax
+cmp dword[ebp-8],0
+je 0x4435a7
+push str.SetupJuZi
+mov eax,dword[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0xc],eax
+cmp dword[ebp-0xc],0
+je 0x4435a7
+call dword[ebp-0xc]
+mov byte[ebp-1],1
+mov ecx,dword[ebp-8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov al,byte[ebp-1]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00443500@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.00404730@f86ab4114e997e148e8eceeac9acf240
+[similar_3_ref]: /report/fcn.00432c30@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00432a20@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00404930@56cd87aa2339510296a6c2526bbc75b7
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.006fbd20 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.006fbd20
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.005ff610][similar_1_ref] (sim.: 0.8620677542925513)
+2. [fcn.006a9fd0][similar_2_ref] (sim.: 0.8610207432110315)
+3. [fcn.0070ceb0][similar_3_ref] (sim.: 0.8552309531199671)
+4. [fcn.0070e010][similar_4_ref] (sim.: 0.8551861300035388)
+5. [fcn.00a64d60][similar_5_ref] (sim.: 0.8501713956285417)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push r12
+push rbp
+push rdi
+push rsi
+push rbx
+sub rsp,0x140
+mov rbp,rcx
+mov ecx,0x400
+call sub.msvcrt.dll_malloc
+mov rbx,qword[0x00c1e6a8]
+mov rsi,rax
+test rbx,rbx
+je 0x6fbdb0
+mov rcx,rbx
+call sub.msvcrt.dll_strlen
+cdqe 
+mov r9,rbx
+cmp byte[rbx+rax-1],0x2f
+mov qword[rsp+0x20],rbp
+je 0x6fbd90
+lea r8,[0x00ac5223]
+mov edx,0x3ff
+mov rcx,rsi
+call qword[sym.imp.msvcrt.dll__snprintf]
+mov rax,rsi
+add rsp,0x140
+pop rbx
+pop rsi
+pop rdi
+pop rbp
+pop r12
+ret 
+lea r8,[0x00ac5229]
+mov edx,0x3ff
+mov rcx,rsi
+call qword[sym.imp.msvcrt.dll__snprintf]
+jmp 0x6fbd77
+lea r12,[rsp+0x30]
+mov rax,rbx
+mov ecx,0x20
+mov rdi,r12
+rep stosq qword[rdi],rax
+mov dword[rdi],0
+call qword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov r8d,0x103
+mov rdx,r12
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+movsxd r9,eax
+add r9,r12
+cmp r9,r12
+ja 0x6fbdf9
+jmp 0x6fbe0a
+sub r9,1
+cmp r9,r12
+je 0x6fbe14
+cmp byte[r9],0x5c
+jne 0x6fbdf0
+test rbx,rbx
+je 0x6fbe43
+mov byte[r9],0x2f
+jmp 0x6fbdf0
+mov byte[0],0
+ud2 
+xor eax,eax
+mov rdi,rsi
+mov ecx,0x80
+rep stosq qword[rdi],rax
+mov byte[rbx],0
+lea r8,[0x00ac5223]
+mov qword[rsp+0x20],rbp
+mov edx,0x3ff
+mov rcx,rsi
+call qword[sym.imp.msvcrt.dll__snprintf]
+jmp 0x6fbd77
+mov rbx,r9
+jmp 0x6fbdf0
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005ff610@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.006a9fd0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.0070ceb0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.0070e010@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.00a64d60@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

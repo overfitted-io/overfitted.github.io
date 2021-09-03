@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.004010df @ 7b8f4ef4fb1f8ad81aca09da2f992561"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004010df
+- **Origin (md5):** 7b8f4ef4fb1f8ad81aca09da2f992561
+- **VirusTotal:** [virustotal.com/gui/file/7b8f4ef4fb1f8ad81aca09da2f992561][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004064b1][similar_1_ref] (sim.: 0.8040296732355666)
+2. [fcn.00401b74][similar_2_ref] (sim.: 0.80182181458636)
+3. [fcn.00401c80][similar_3_ref] (sim.: 0.7942745883627298)
+4. [fcn.0040121f][similar_4_ref] (sim.: 0.7929158170910942)
+5. [fcn.0040514a][similar_5_ref] (sim.: 0.7918493589431875)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x2c
+push ebx
+lea eax,[ebp-4]
+push eax
+push 0x20019
+xor ebx,ebx
+push ebx
+push str.SoftwareWildTangent
+push 0x80000002
+mov dword[ebp-4],ebx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x401161
+push edi
+movzx edx,ax
+push 7
+pop ecx
+mov eax,edx
+shl edx,0x10
+or eax,edx
+lea edi,[ebp-0x2c]
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-0x2c]
+push eax
+lea eax,[ebp-0xc]
+push eax
+push ebx
+push str.InstallSemaphore_1
+push dword[ebp-4]
+mov dword[ebp-0xc],1
+mov dword[ebp-8],0x1e
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+pop edi
+test eax,eax
+jne 0x401161
+lea eax,[ebp-0x2c]
+push eax
+push str.Success
+call dword[sym.imp.SHLWAPI.dll_StrCmpW]
+test eax,eax
+jne 0x401161
+mov bl,1
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov al,bl
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004064b1@319cf4affa41f752783e62f81908d682
+[similar_2_ref]: /report/fcn.00401b74@73677cb40830e94fbfb5483ff33e40b9
+[similar_3_ref]: /report/fcn.00401c80@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.0040121f@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b8f4ef4fb1f8ad81aca09da2f992561

@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.0041289f @ 6a695c8c50dfc99993406e2740c7c273"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041289f
+- **Origin (md5):** 6a695c8c50dfc99993406e2740c7c273
+- **VirusTotal:** [virustotal.com/gui/file/6a695c8c50dfc99993406e2740c7c273][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004413ee][similar_1_ref] (sim.: 0.9003083897446464)
+2. [fcn.004413ee][similar_2_ref] (sim.: 0.9003083897446464)
+3. [fcn.004413ee][similar_3_ref] (sim.: 0.9003083897446464)
+4. [fcn.00422347][similar_4_ref] (sim.: 0.8964905416715816)
+5. [fcn.0041198b][similar_5_ref] (sim.: 0.8887032532713731)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+push 0x458d68
+call fcn.00413d94
+push str.KERNEL32.DLL
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov dword[ebp-0x1c],eax
+mov esi,dword[ebp+8]
+mov dword[esi+0x5c],0x45df80
+xor edi,edi
+inc edi
+mov dword[esi+0x14],edi
+test eax,eax
+je 0x4128f1
+push 0x456cb0
+push eax
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+call ebx
+mov dword[esi+0x1f8],eax
+push 0x456cd0
+push dword[ebp-0x1c]
+call ebx
+mov dword[esi+0x1fc],eax
+mov dword[esi+0x70],edi
+mov byte[esi+0xc8],0x43
+mov byte[esi+0x14b],0x43
+mov eax,0x45d408
+mov dword[esi+0x68],eax
+push eax
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+push 0xc
+call fcn.00413264
+pop ecx
+and dword[ebp-4],0
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x6c],eax
+test eax,eax
+jne 0x41292f
+mov eax,dword[0x45da10]
+mov dword[esi+0x6c],eax
+push dword[esi+0x6c]
+call fcn.004104b4
+pop ecx
+mov dword[ebp-4],0xfffffffe
+call fcn.0041294a
+call fcn.00413dd9
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004413ee@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_2_ref]: /report/fcn.004413ee@8e21fa3f0489a6a256cf202e57f712bc
+[similar_3_ref]: /report/fcn.004413ee@ff219f45286905b4a87327ca719363be
+[similar_4_ref]: /report/fcn.00422347@0aa2d73a5300dff2412388945614b507
+[similar_5_ref]: /report/fcn.0041198b@de21a548b66aa6c0b17491b6a31e14fa
+[virustotal_ref]: https://www.virustotal.com/gui/file/6a695c8c50dfc99993406e2740c7c273

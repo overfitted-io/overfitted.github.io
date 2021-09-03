@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "fcn.1400157d8 @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1400157d8
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.140010578][similar_1_ref] (sim.: 0.8745146546627856)
+2. [fcn.140006278][similar_2_ref] (sim.: 0.8719667759157723)
+3. [fcn.14000feb8][similar_3_ref] (sim.: 0.8690640878141247)
+4. [fcn.14000fcec][similar_4_ref] (sim.: 0.8686548171872333)
+5. [fcn.14000bfb4][similar_5_ref] (sim.: 0.8575641267676957)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+mov qword[rsp+0x10],rsi
+push rdi
+sub rsp,0x20
+mov rdi,rcx
+mov rcx,qword[rcx+0x18]
+call qword[sym.imp.KERNEL32.dll_UnregisterWait]
+mov rcx,qword[rdi+0x20]
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+lea rcx,[0x14001f118]
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rcx,qword[rdi]
+mov rax,qword[rdi+8]
+test rcx,rcx
+je 0x14001581d
+mov qword[rcx+8],rax
+jmp 0x140015824
+mov qword[0x14001f110],rax
+mov rdx,qword[rdi+8]
+test rdx,rdx
+je 0x140015833
+mov rax,qword[rdi]
+mov qword[rdx],rax
+lea rcx,[0x14001f118]
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov rsi,qword[rdi+0x10]
+jmp 0x140015865
+mov rbx,rsi
+mov rsi,qword[rsi]
+mov rcx,qword[rbx+0x10]
+call qword[rbx+8]
+mov rcx,qword[0x14001e444]
+mov r8,rbx
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+test rsi,rsi
+jne 0x140015846
+mov rcx,qword[0x14001e444]
+mov r8,rdi
+xor edx,edx
+mov rbx,qword[rsp+0x30]
+mov rsi,qword[rsp+0x38]
+add rsp,0x20
+pop rdi
+jmp qword[sym.imp.KERNEL32.dll_HeapFree]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140010578@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.140006278@c4af5ec7826361dc5a22db79be296638
+[similar_3_ref]: /report/fcn.14000feb8@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.14000fcec@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.14000bfb4@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

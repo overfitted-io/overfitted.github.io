@@ -1,0 +1,78 @@
+---
+layout: post
+title:  "fcn.0051f8d0 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0051f8d0
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Similar Functions
+
+1. [fcn.004e12a0][similar_1_ref] (sim.: 0.8827254053051611)
+2. [fcn.004a6910][similar_2_ref] (sim.: 0.8481243879342888)
+3. [fcn.00472260][similar_3_ref] (sim.: 0.8251968658466331)
+4. [fcn.00401720][similar_4_ref] (sim.: 0.7741873814686762)
+5. [fcn.0055fe80][similar_5_ref] (sim.: 0.7632689066799615)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push esi
+mov esi,dword[esp+0x10]
+mov ecx,dword[esi+4]
+push edi
+mov edi,dword[sym.imp.ADVAPI32.dll_CryptGetHashParam]
+push 0
+lea eax,[esp+0xc]
+push eax
+push 0
+push 2
+push ecx
+mov dword[esp+0x1c],0
+call edi
+cmp dword[esp+8],0x10
+jne 0x51f911
+mov eax,dword[esp+0x10]
+mov ecx,dword[esi+4]
+push 0
+lea edx,[esp+0xc]
+push edx
+push eax
+push 2
+push ecx
+call edi
+mov eax,dword[esi+4]
+test eax,eax
+je 0x51f91f
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]
+mov esi,dword[esi]
+test esi,esi
+je 0x51f92e
+push 0
+push esi
+call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
+pop edi
+pop esi
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004e12a0@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.004a6910@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.00472260@289859175c221b107317af7727d26c17
+[similar_4_ref]: /report/fcn.00401720@e9782a46c2d4ab52d9b2b1b712934fbe
+[similar_5_ref]: /report/fcn.0055fe80@7453c96a6fbd42ec690b8deb53eafcba
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

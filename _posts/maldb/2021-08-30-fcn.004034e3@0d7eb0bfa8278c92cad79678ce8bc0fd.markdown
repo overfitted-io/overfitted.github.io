@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "fcn.004034e3 @ 0d7eb0bfa8278c92cad79678ce8bc0fd"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004034e3
+- **Origin (md5):** 0d7eb0bfa8278c92cad79678ce8bc0fd
+- **VirusTotal:** [virustotal.com/gui/file/0d7eb0bfa8278c92cad79678ce8bc0fd][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0040483b][similar_1_ref] (sim.: 0.879607936213238)
+2. [fcn.0040483b][similar_2_ref] (sim.: 0.879607936213238)
+3. [fcn.004079c0][similar_3_ref] (sim.: 0.8409798108486047)
+4. [fcn.004040f0][similar_4_ref] (sim.: 0.8369656612415189)
+5. [fcn.00405ea0][similar_5_ref] (sim.: 0.8247387688535499)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x14
+push ebx
+push ebp
+push esi
+mov esi,dword[esp+0x28]
+mov ebx,ecx
+push edi
+xor edi,edi
+mov ebp,edx
+cmp ebx,0xffffffff
+je 0x4035a1
+test byte[ebp],8
+je 0x403527
+xor eax,eax
+mov dword[esp+0x14],eax
+call fcn.00405ce0
+lea eax,[esp+0x18]
+mov edx,ebp
+push eax
+push ecx
+lea eax,[esp+0x1c]
+push eax
+push ecx
+push ecx
+mov ecx,ebx
+call fcn.00403461
+add esp,0x14
+push 0
+call dword[sym.imp.WS2_32.dll_WSASetLastError]
+push ebx
+call dword[sym.imp.WS2_32.dll_closesocket]
+mov edx,esi
+mov ecx,eax
+call fcn.004034c4
+mov edi,eax
+test edi,edi
+je 0x4035a1
+call fcn.00405ce0
+cmp dword[esi+4],eax
+jne 0x403557
+cmp dword[esi],0x2733
+je 0x403569
+call fcn.00405ce0
+cmp dword[esi+4],eax
+jne 0x40359d
+cmp dword[esi],0x4d5
+jne 0x40359d
+and dword[esp+0x14],0
+lea eax,[esp+0x14]
+push eax
+push 0x8004667e
+push ebx
+call dword[sym.imp.WS2_32.dll_ioctlsocket]
+and byte[ebp],0xfc
+push 0
+call dword[sym.imp.WS2_32.dll_WSASetLastError]
+push ebx
+call dword[sym.imp.WS2_32.dll_closesocket]
+mov edx,esi
+mov ecx,eax
+call fcn.004034c4
+mov edi,eax
+test edi,edi
+jne 0x4035ac
+call fcn.00405ce0
+and dword[esi],0
+mov dword[esi+4],eax
+mov eax,edi
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,0x14
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040483b@617bd594ba13d0dcc08a315774c342d4
+[similar_2_ref]: /report/fcn.0040483b@b8b9b802e96d8e813c605554cf6f7018
+[similar_3_ref]: /report/fcn.004079c0@b9bcb002212a6b3f234989f71e66f5f7
+[similar_4_ref]: /report/fcn.004040f0@065d95e046989885ac0aa05648eeda39
+[similar_5_ref]: /report/fcn.00405ea0@b9bcb002212a6b3f234989f71e66f5f7
+[virustotal_ref]: https://www.virustotal.com/gui/file/0d7eb0bfa8278c92cad79678ce8bc0fd

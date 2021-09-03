@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "fcn.100acf79 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100acf79
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004ac2dc][similar_1_ref] (sim.: 0.8194052448854162)
+2. [fcn.004a816f][similar_2_ref] (sim.: 0.8014505938049699)
+3. [fcn.004aa75a][similar_3_ref] (sim.: 0.8003858242316079)
+4. [fcn.10120604][similar_4_ref] (sim.: 0.7992119234135073)
+5. [fcn.10007869][similar_5_ref] (sim.: 0.798861022444898)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push esi
+mov esi,ecx
+mov ebx,edx
+push edi
+mov eax,dword[esi]
+dec eax
+je 0x100acfd5
+dec eax
+je 0x100acfa2
+or dword[0x101ee2e4],0xffffffff
+call fcn.100d417a
+mov dword[eax],0x16
+or eax,0xffffffff
+jmp 0x100ad009
+mov eax,dword[ebp+8]
+mov edi,ebx
+push 7
+pop ecx
+push 0x17
+mov dword[eax],0x1c
+xor eax,eax
+rep stosd dword es:[edi],eax
+pop eax
+mov word[ebx],ax
+movzx eax,word[esi+4]
+push eax
+call dword[sym.imp.WS2_32.dll_htons]
+add esi,6
+mov word[ebx+2],ax
+lea edi,[ebx+8]
+movsd dword es:[edi],dword ptr[esi]
+movsd dword es:[edi],dword ptr[esi]
+movsd dword es:[edi],dword ptr[esi]
+movsd dword es:[edi],dword ptr[esi]
+jmp 0x100ad007
+mov eax,dword[ebp+8]
+mov edi,ebx
+push 2
+mov dword[eax],0x10
+xor eax,eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+pop eax
+mov word[ebx],ax
+movzx eax,word[esi+4]
+push eax
+call dword[sym.imp.WS2_32.dll_htons]
+mov word[ebx+2],ax
+push dword[esi+8]
+call dword[sym.imp.WS2_32.dll_htonl]
+mov dword[ebx+4],eax
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004ac2dc@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.004a816f@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_3_ref]: /report/fcn.004aa75a@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/fcn.10120604@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.10007869@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

@@ -1,0 +1,107 @@
+---
+layout: post
+title:  "fcn.00440caa @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00440caa
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0043e5a4][similar_1_ref] (sim.: 0.8809705589526555)
+2. [fcn.00412b25][similar_2_ref] (sim.: 0.8658306383155452)
+3. [fcn.0041b58e][similar_3_ref] (sim.: 0.8647477213090136)
+4. [fcn.0041b58e][similar_4_ref] (sim.: 0.8647477213090136)
+5. [fcn.0041b25e][similar_5_ref] (sim.: 0.8583526721073738)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+push edi
+push 0x104
+mov esi,0x47d4c0
+xor ebx,ebx
+push esi
+push ebx
+mov word[0x47d6c8],bx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+mov eax,dword[0x47f358]
+cmp eax,ebx
+mov dword[0x47d184],esi
+je 0x440ce3
+cmp word[eax],bx
+mov edi,eax
+jne 0x440ce5
+mov edi,esi
+lea eax,[ebp-4]
+push eax
+push ebx
+lea ebx,[ebp-8]
+xor ecx,ecx
+mov eax,edi
+call fcn.00440b5e
+mov ebx,dword[ebp-4]
+cmp ebx,0x3fffffff
+pop ecx
+pop ecx
+jae 0x440d4d
+mov ecx,dword[ebp-8]
+cmp ecx,0x7fffffff
+jae 0x440d4d
+lea eax,[ecx+ebx*2]
+add eax,eax
+add ecx,ecx
+cmp eax,ecx
+jb 0x440d4d
+push eax
+call fcn.00447881
+mov esi,eax
+test esi,esi
+pop ecx
+je 0x440d4d
+lea eax,[ebp-4]
+push eax
+lea ecx,[esi+ebx*4]
+push esi
+lea ebx,[ebp-8]
+mov eax,edi
+call fcn.00440b5e
+mov eax,dword[ebp-4]
+dec eax
+pop ecx
+mov dword[0x47d164],eax
+pop ecx
+mov dword[0x47d16c],esi
+xor eax,eax
+jmp 0x440d50
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043e5a4@f86ab4114e997e148e8eceeac9acf240
+[similar_2_ref]: /report/fcn.00412b25@591592f0b79217fc95d61f8c4f595f30
+[similar_3_ref]: /report/fcn.0041b58e@56a02334aea008c131d2741a089910fb
+[similar_4_ref]: /report/fcn.0041b58e@9d452aab9b3572c423f4d04fdfadb250
+[similar_5_ref]: /report/fcn.0041b25e@0b645351d6df77d56852ad106e75fced
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.0065c184 @ a3857e94f1b398200ad05eae6ee38355"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0065c184
+- **Origin (md5):** a3857e94f1b398200ad05eae6ee38355
+- **VirusTotal:** [virustotal.com/gui/file/a3857e94f1b398200ad05eae6ee38355][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.006a8544][similar_1_ref] (sim.: 0.8686293178143318)
+2. [fcn.005af0f4][similar_2_ref] (sim.: 0.8500078220842937)
+3. [fcn.00624e14][similar_3_ref] (sim.: 0.8368104072471351)
+4. [fcn.0069f9c4][similar_4_ref] (sim.: 0.8337997357519842)
+5. [fcn.00598b54][similar_5_ref] (sim.: 0.8315549561357641)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x4661bec],ebx
+push esi
+push edi
+jne 0x65c1d3
+push 0x66a5e0
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x65c209
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x66a5d4
+push edi
+call esi
+test eax,eax
+mov dword[0x4661bec],eax
+je 0x65c209
+push 0x66a5c4
+push edi
+call esi
+push 0x66a5b0
+push edi
+mov dword[0x4661bf0],eax
+call esi
+mov dword[0x4661bf4],eax
+mov eax,dword[0x4661bf0]
+test eax,eax
+je 0x65c1f2
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x65c1f2
+mov eax,dword[0x4661bf4]
+test eax,eax
+je 0x65c1f2
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x4661bec]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x65c205
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006a8544@3bf23deea18f4cf41dad4db83464f7ba
+[similar_2_ref]: /report/fcn.005af0f4@4e8d6f73c8261716f687f8d06429ef4d
+[similar_3_ref]: /report/fcn.00624e14@ce339585d9f7e59bebf6e94a72861741
+[similar_4_ref]: /report/fcn.0069f9c4@0fb0e1c162f9df68f5d89a2b2a71a217
+[similar_5_ref]: /report/fcn.00598b54@fd515d36e5c3696f076b92b737a2556c
+[virustotal_ref]: https://www.virustotal.com/gui/file/a3857e94f1b398200ad05eae6ee38355

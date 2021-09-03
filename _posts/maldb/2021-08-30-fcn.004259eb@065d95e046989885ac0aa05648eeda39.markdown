@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "fcn.004259eb @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004259eb
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.004824dd][similar_1_ref] (sim.: 0.8876047027207412)
+2. [fcn.0048258f][similar_2_ref] (sim.: 0.8813655620732808)
+3. [fcn.0049e3b6][similar_3_ref] (sim.: 0.8686683447563394)
+4. [fcn.00470a51][similar_4_ref] (sim.: 0.8650548426623179)
+5. [fcn.00470a51][similar_5_ref] (sim.: 0.8650548426623179)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push ebx
+mov bl,byte[ebp+8]
+push esi
+mov esi,ecx
+mov byte[esi+0x98],bl
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov dword[esi+0x44],eax
+test bl,bl
+jne 0x425a7e
+push edi
+push 2
+push 0
+push 0
+lea edi,[esi+0xa4]
+push edi
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
+test eax,eax
+je 0x425a86
+call fcn.00416ee9
+push esi
+cmp eax,3
+jl 0x425a68
+push fcn.00425967
+push dword[edi]
+call fcn.00414c05
+add esp,0xc
+mov dword[esi+0xac],eax
+test eax,eax
+jne 0x425a7d
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x425a98
+jmp 0x425a90
+push fcn.00425989
+push dword[edi]
+call fcn.00414800
+add esp,0xc
+mov dword[esi+0xac],eax
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 4
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x425a98
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.00414e25
+push 0x4547e4
+lea eax,[ebp-0x10]
+push eax
+call fcn.00429324
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004824dd@843c4207147f5bab0e104024677fd9ec
+[similar_2_ref]: /report/fcn.0048258f@ba63c5f75a2177720b184529dbf918cf
+[similar_3_ref]: /report/fcn.0049e3b6@94f83197373b17ab8b5225c0900d14de
+[similar_4_ref]: /report/fcn.00470a51@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_5_ref]: /report/fcn.00470a51@53687e619dcac7d709f306d061d8daeb
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

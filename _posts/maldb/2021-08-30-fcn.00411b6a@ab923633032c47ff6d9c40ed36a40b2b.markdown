@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.00411b6a @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00411b6a
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00411afb][similar_1_ref] (sim.: 0.8037084835898468)
+2. [fcn.004186d2][similar_2_ref] (sim.: 0.7428320320458986)
+3. [fcn.00401da4][similar_3_ref] (sim.: 0.7227506877308827)
+4. [fcn.00411145][similar_4_ref] (sim.: 0.7205980018319715)
+5. [fcn.100149d4][similar_5_ref] (sim.: 0.7205559392503329)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push esi
+push edi
+push dword[ebp+0x18]
+mov edi,dword[ebp+8]
+push dword[ebp+0x14]
+call fcn.00411a7e
+pop ecx
+pop ecx
+test eax,eax
+jne 0x411bc0
+mov ebx,dword[ebp+0x10]
+mov esi,dword[ebp+0xc]
+test ebx,ebx
+jle 0x411bd6
+push 0
+lea eax,[ebp+8]
+push eax
+push ebx
+push esi
+push dword[edi+8]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x411bb3
+cmp dword[ebp+8],0
+jbe 0x411bb3
+sub ebx,dword[ebp+8]
+add esi,dword[ebp+8]
+test ebx,ebx
+jg 0x411b8e
+test ebx,ebx
+jle 0x411bd6
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[edi+0x10],eax
+xor eax,eax
+cmp dword[edi+0x10],0x27
+setne al
+dec eax
+and eax,0xfffffd03
+add eax,0x30a
+jmp 0x411bd8
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00411afb@ab923633032c47ff6d9c40ed36a40b2b
+[similar_2_ref]: /report/fcn.004186d2@1123b7aa5760238fe93045e585b8234c
+[similar_3_ref]: /report/fcn.00401da4@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.00411145@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_5_ref]: /report/fcn.100149d4@4c3818fdf32d89a09257dbc9d3e142ea
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

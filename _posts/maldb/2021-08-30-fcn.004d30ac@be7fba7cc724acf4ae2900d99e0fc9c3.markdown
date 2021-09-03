@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.004d30ac @ be7fba7cc724acf4ae2900d99e0fc9c3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004d30ac
+- **Origin (md5):** be7fba7cc724acf4ae2900d99e0fc9c3
+- **VirusTotal:** [virustotal.com/gui/file/be7fba7cc724acf4ae2900d99e0fc9c3][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.004f912c][similar_1_ref] (sim.: 0.8700397234188179)
+2. [fcn.004d11ac][similar_2_ref] (sim.: 0.8642737630988577)
+3. [fcn.004334d2][similar_3_ref] (sim.: 0.863909533774993)
+4. [fcn.0043c372][similar_4_ref] (sim.: 0.8592652707578521)
+5. [fcn.00446cb8][similar_5_ref] (sim.: 0.8486708504997591)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x570030]
+push esi
+mov esi,dword[0x570020]
+push edi
+xor edi,edi
+cmp esi,eax
+jne 0x4d30f3
+add eax,0x10
+imul eax,eax,0x14
+push eax
+push dword[0x570024]
+push edi
+push dword[0x56f9f8]
+call dword[sym.imp.KERNEL32.dll_HeapReAlloc]
+cmp eax,edi
+jne 0x4d30e1
+xor eax,eax
+jmp 0x4d3159
+add dword[0x570030],0x10
+mov esi,dword[0x570020]
+mov dword[0x570024],eax
+imul esi,esi,0x14
+add esi,dword[0x570024]
+push 0x41c4
+push 8
+push dword[0x56f9f8]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov dword[esi+0x10],eax
+cmp eax,edi
+je 0x4d30dd
+push 4
+push 0x2000
+push 0x100000
+push edi
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[esi+0xc],eax
+cmp eax,edi
+jne 0x4d3142
+push dword[esi+0x10]
+push edi
+push dword[0x56f9f8]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+jmp 0x4d30dd
+or dword[esi+8],0xffffffff
+mov dword[esi],edi
+mov dword[esi+4],edi
+inc dword[0x570020]
+mov eax,dword[esi+0x10]
+or dword[eax],0xffffffff
+mov eax,esi
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004f912c@1160595edb203a63cb2ca3ce2ff04f47
+[similar_2_ref]: /report/fcn.004d11ac@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.004334d2@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.0043c372@f86ab4114e997e148e8eceeac9acf240
+[similar_5_ref]: /report/fcn.00446cb8@8e21fa3f0489a6a256cf202e57f712bc
+[virustotal_ref]: https://www.virustotal.com/gui/file/be7fba7cc724acf4ae2900d99e0fc9c3

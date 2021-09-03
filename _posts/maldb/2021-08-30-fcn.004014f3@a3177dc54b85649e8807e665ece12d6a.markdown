@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.004014f3 @ a3177dc54b85649e8807e665ece12d6a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004014f3
+- **Origin (md5):** a3177dc54b85649e8807e665ece12d6a
+- **VirusTotal:** [virustotal.com/gui/file/a3177dc54b85649e8807e665ece12d6a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004014f3][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00403cf2][similar_2_ref] (sim.: 0.8626216731478655)
+3. [fcn.00403cf2][similar_3_ref] (sim.: 0.8626216731478655)
+4. [fcn.00403b03][similar_4_ref] (sim.: 0.8572285273201019)
+5. [fcn.00403b03][similar_5_ref] (sim.: 0.8572285273201019)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+mov esi,eax
+push ebx
+mov ebx,edx
+sub esp,0x14c
+lea eax,[ebp-0x1c]
+mov dword[esp+0x10],eax
+mov eax,dword[0x427b38]
+mov dword[ebp-0x130],ecx
+mov dword[esp+8],0
+mov dword[esp+4],edx
+or eax,8
+mov dword[esp+0xc],eax
+mov dword[esp],esi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+sub esp,0x14
+test eax,eax
+je 0x40156c
+jmp 0x401607
+cmp dword[ebp-0x130],0
+mov eax,dword[ebp-0x1c]
+je 0x40155d
+mov dword[esp],eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,1
+push ecx
+jmp 0x401607
+xor ecx,ecx
+mov edx,edi
+call fcn.004014f3
+test eax,eax
+je 0x40157d
+jmp 0x4015a4
+mov eax,dword[sym.imp.ADVAPI32.dll_RegEnumKeyA]
+lea edi,[ebp-0x121]
+mov dword[ebp-0x12c],eax
+mov eax,dword[ebp-0x1c]
+mov dword[esp+0xc],0x105
+mov dword[esp+8],edi
+mov dword[esp+4],0
+mov dword[esp],eax
+call dword[ebp-0x12c]
+sub esp,0x10
+test eax,eax
+je 0x40153d
+mov eax,dword[ebp-0x1c]
+mov dword[esp],eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push edi
+mov dword[esp],2
+call fcn.00407ef3
+test eax,eax
+push edx
+je 0x4015e2
+mov edx,dword[0x427b38]
+mov dword[esp+0xc],0
+mov dword[esp+4],ebx
+mov dword[esp],esi
+mov dword[esp+8],edx
+call eax
+sub esp,0x10
+jmp 0x401607
+cmp dword[0x427b38],0
+mov eax,1
+jne 0x401607
+mov dword[esp+4],ebx
+mov dword[esp],esi
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyA]
+test eax,eax
+push ecx
+setne al
+push ecx
+movzx eax,al
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004014f3@35bedc5498306afe90b32d21d460d74f
+[similar_2_ref]: /report/fcn.00403cf2@35bedc5498306afe90b32d21d460d74f
+[similar_3_ref]: /report/fcn.00403cf2@a3177dc54b85649e8807e665ece12d6a
+[similar_4_ref]: /report/fcn.00403b03@a3177dc54b85649e8807e665ece12d6a
+[similar_5_ref]: /report/fcn.00403b03@35bedc5498306afe90b32d21d460d74f
+[virustotal_ref]: https://www.virustotal.com/gui/file/a3177dc54b85649e8807e665ece12d6a

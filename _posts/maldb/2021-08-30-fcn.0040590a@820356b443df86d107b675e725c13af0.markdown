@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "fcn.0040590a @ 820356b443df86d107b675e725c13af0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040590a
+- **Origin (md5):** 820356b443df86d107b675e725c13af0
+- **VirusTotal:** [virustotal.com/gui/file/820356b443df86d107b675e725c13af0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040482d][similar_1_ref] (sim.: 0.9265586043928494)
+2. [fcn.0040482d][similar_2_ref] (sim.: 0.9265586043928494)
+3. [fcn.0040482d][similar_3_ref] (sim.: 0.9265586043928494)
+4. [fcn.0040482d][similar_4_ref] (sim.: 0.9265586043928494)
+5. [fcn.0040482d][similar_5_ref] (sim.: 0.9265586043928494)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x22c
+mov eax,dword[0x482084]
+xor eax,esp
+mov dword[esp+0x228],eax
+push ebx
+push esi
+push edi
+mov edi,ecx
+mov ecx,dword[ebp+8]
+mov eax,dword[edi+4]
+push ecx
+push dword[edi]
+xor esi,esi
+or eax,0x2001f
+lea ebx,[esp+0x18]
+mov dword[esp+0x28],ecx
+mov dword[esp+0x18],esi
+mov dword[esp+0x1c],esi
+mov dword[esp+0x20],esi
+call fcn.00405b7a
+mov ebx,eax
+cmp ebx,esi
+je 0x40596c
+cmp dword[esp+0x10],esi
+je 0x405968
+push dword[esp+0x10]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,ebx
+jmp 0x4059e2
+mov ebx,dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
+jmp 0x40598a
+lea eax,[esp+0x30]
+push eax
+lea ecx,[esp+0x14]
+call fcn.0040590a
+mov dword[esp+0x24],eax
+cmp eax,esi
+jne 0x4059f9
+lea eax,[esp+0x28]
+push eax
+push esi
+push esi
+push esi
+lea eax,[esp+0x2c]
+push eax
+lea eax,[esp+0x44]
+push eax
+push esi
+push dword[esp+0x2c]
+mov dword[esp+0x3c],0x100
+call ebx
+test eax,eax
+je 0x405974
+mov ebx,dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+cmp dword[esp+0x10],esi
+je 0x4059c5
+push dword[esp+0x10]
+call ebx
+mov dword[esp+0x10],esi
+push dword[esp+0x20]
+mov dword[esp+0x18],esi
+call fcn.0040589c
+mov edi,eax
+cmp dword[esp+0x10],esi
+je 0x4059e0
+push dword[esp+0x10]
+call ebx
+mov eax,edi
+mov ecx,dword[esp+0x234]
+pop edi
+pop esi
+pop ebx
+xor ecx,esp
+call fcn.00411949
+mov esp,ebp
+pop ebp
+ret 4
+cmp dword[esp+0x10],esi
+je 0x405a09
+push dword[esp+0x10]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,dword[esp+0x24]
+jmp 0x4059e2
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040482d@e3d061f479f25b8f541d0905c967999c
+[similar_2_ref]: /report/fcn.0040482d@44a756939733df3681808b122b91651f
+[similar_3_ref]: /report/fcn.0040482d@f675eb7591a3862690b6cdc54d5604df
+[similar_4_ref]: /report/fcn.0040482d@c6d5547a6b11db0106596d8a93b709be
+[similar_5_ref]: /report/fcn.0040482d@b8b9cf6862b0d68d10750002e5baaf97
+[virustotal_ref]: https://www.virustotal.com/gui/file/820356b443df86d107b675e725c13af0

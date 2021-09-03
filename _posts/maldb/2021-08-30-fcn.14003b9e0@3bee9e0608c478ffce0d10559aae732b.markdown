@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "fcn.14003b9e0 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14003b9e0
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.14003e460][similar_1_ref] (sim.: 0.8464721462013151)
+2. [fcn.14003ba70][similar_2_ref] (sim.: 0.8376210368651293)
+3. [fcn.14000fd70][similar_3_ref] (sim.: 0.8109247302299468)
+4. [fcn.14003f380][similar_4_ref] (sim.: 0.7986124794501003)
+5. [fcn.14000bb9c][similar_5_ref] (sim.: 0.7969147031226598)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+sub rsp,0x40
+xor r9d,r9d
+xor r8d,r8d
+mov rbx,rcx
+lea edx,[r9+0x10]
+call qword[sym.imp.USER32.dll_PostMessageW]
+xor r9d,r9d
+lea r11,[rsp+0x60]
+mov qword[rsp+0x30],r11
+lea edx,[r9+0x10]
+xor r8d,r8d
+mov rcx,rbx
+mov dword[rsp+0x28],0x1f4
+mov dword[rsp+0x20],2
+call qword[sym.imp.USER32.dll_SendMessageTimeoutW]
+test rax,rax
+jne 0x14003ba62
+lea rdx,[rsp+0x58]
+mov rcx,rbx
+call qword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+mov r8d,dword[rsp+0x58]
+xor edx,edx
+mov ecx,0x1f0fff
+call qword[sym.imp.KERNEL32.dll_OpenProcess]
+xor edx,edx
+mov rcx,rax
+mov rbx,rax
+call qword[sym.imp.KERNEL32.dll_TerminateProcess]
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+add rsp,0x40
+pop rbx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14003e460@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14003ba70@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14000fd70@a5e8b4820319974b4ce1027132e98e27
+[similar_4_ref]: /report/fcn.14003f380@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14000bb9c@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

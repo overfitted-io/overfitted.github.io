@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.0040d683 @ 6f11dca39a331a6e158b2810d4d8234f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d683
+- **Origin (md5):** 6f11dca39a331a6e158b2810d4d8234f
+- **VirusTotal:** [virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004074e1][similar_1_ref] (sim.: 0.7670934521329624)
+2. [fcn.01002e55][similar_2_ref] (sim.: 0.7622897990624402)
+3. [fcn.01002e55][similar_3_ref] (sim.: 0.7622897990624402)
+4. [fcn.00404fe9][similar_4_ref] (sim.: 0.762190381864521)
+5. [fcn.00414682][similar_5_ref] (sim.: 0.7613726374661414)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+push edi
+push 0x412700
+xor ebx,ebx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov esi,dword[ebp+8]
+mov edi,eax
+test edi,edi
+je 0x40d6cb
+push str.InitOnceExecuteOnce
+push edi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x40d6c0
+lea ecx,[ebp-4]
+push ecx
+push dword[ebp+0xc]
+push 0x40d663
+push esi
+call eax
+inc ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+test ebx,ebx
+jne 0x40d6fb
+push 0
+push 1
+push esi
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+sub eax,0
+je 0x40d6ef
+dec eax
+jne 0x40d6fb
+jmp 0x40d6e8
+push 0
+call dword[sym.imp.KERNEL32.dll_Sleep]
+cmp dword[esi],2
+jne 0x40d6e0
+jmp 0x40d6fb
+call dword[ebp+0xc]
+push 2
+push esi
+call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004074e1@470263fe7e7cc115b95cd041d643e3b5
+[similar_2_ref]: /report/fcn.01002e55@7be42d186738ec1816397d616de2cb9d
+[similar_3_ref]: /report/fcn.01002e55@bcf1729ded12dd6e2e4c565a6c795602
+[similar_4_ref]: /report/fcn.00404fe9@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/fcn.00414682@065d95e046989885ac0aa05648eeda39
+[virustotal_ref]: https://www.virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f

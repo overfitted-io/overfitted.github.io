@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.100ad173 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100ad173
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.100ad1a8][similar_1_ref] (sim.: 0.7592873807125364)
+2. [fcn.100ad1db][similar_2_ref] (sim.: 0.7558430680960806)
+3. [fcn.100acf3c][similar_3_ref] (sim.: 0.6939872243433957)
+4. [fcn.100ad271][similar_4_ref] (sim.: 0.6804746816534055)
+5. [fcn.14000cf50][similar_5_ref] (sim.: 0.6783868066606188)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+sub edx,0
+je 0x100ad181
+xor esi,esi
+dec edx
+jne 0x100ad184
+inc esi
+jmp 0x100ad184
+push 2
+pop esi
+push 0
+push esi
+push 2
+call dword[sym.imp.WS2_32.dll_socket]
+test eax,eax
+jns 0x100ad1a6
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2714
+je 0x100ad184
+pop esi
+jmp fcn.100acf3c
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100ad1a8@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.100ad1db@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.100acf3c@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.100ad271@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.14000cf50@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

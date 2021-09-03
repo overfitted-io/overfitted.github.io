@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "fcn.14000baf8 @ 72082bb1b08918279d6780845b69f5ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14000baf8
+- **Origin (md5):** 72082bb1b08918279d6780845b69f5ff
+- **VirusTotal:** [virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.140087158][similar_1_ref] (sim.: 0.8160223280804997)
+2. [fcn.14007d788][similar_2_ref] (sim.: 0.7988589354426515)
+3. [fcn.10006d44][similar_3_ref] (sim.: 0.7475327959056737)
+4. [fcn.004054ad][similar_4_ref] (sim.: 0.7447347140484395)
+5. [fcn.1000d338][similar_5_ref] (sim.: 0.7434799703524129)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub rsp,0x28
+xor ecx,ecx
+call qword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov rcx,rax
+test rax,rax
+jne 0x14000bb10
+xor al,al
+jmp 0x14000bb47
+mov eax,0x5a4d
+cmp word[rcx],ax
+jne 0x14000bb0c
+movsxd rax,dword[rcx+0x3c]
+add rax,rcx
+cmp dword[rax],0x4550
+jne 0x14000bb0c
+mov ecx,0x20b
+cmp word[rax+0x18],cx
+jne 0x14000bb0c
+cmp dword[rax+0x84],0xe
+jbe 0x14000bb0c
+cmp dword[rax+0xf8],0
+setne al
+add rsp,0x28
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140087158@aa94a542c4d350c292b6898de288bcf0
+[similar_2_ref]: /report/fcn.14007d788@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.10006d44@b74a1e462e0b6bacec09e2503391e156
+[similar_4_ref]: /report/fcn.004054ad@8e7d8d161cdcb697942011baea931489
+[similar_5_ref]: /report/fcn.1000d338@f306bc4e89ecdab5df7aa72172ee5f69
+[virustotal_ref]: https://www.virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff

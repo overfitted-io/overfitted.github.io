@@ -1,0 +1,173 @@
+---
+layout: post
+title:  "fcn.300e4ac0 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.300e4ac0
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.300cbf70][similar_1_ref] (sim.: 0.8981034718713324)
+2. [fcn.0050b490][similar_2_ref] (sim.: 0.8926920268284175)
+3. [fcn.300cb930][similar_3_ref] (sim.: 0.8849832761172903)
+4. [fcn.004b9de0][similar_4_ref] (sim.: 0.8839052066477946)
+5. [fcn.300ed0b0][similar_5_ref] (sim.: 0.8834573075065971)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,8
+push ebp
+push esi
+mov esi,dword[esp+0x14]
+xor ebp,ebp
+push edi
+mov eax,dword[esi+0x60]
+mov ecx,dword[esi+0x64]
+shl eax,4
+cmp dword[eax+ecx-0x10],0xffffffff
+jne 0x300e4b9d
+mov edx,dword[esi]
+push ebx
+push edx
+call dword[sym.imp.USER32.dll_GetDC]
+mov ebx,eax
+mov eax,dword[esi+0x94]
+push eax
+push ebx
+call dword[sym.imp.GDI32.dll_SelectObject]
+mov dword[esp+0x14],eax
+mov eax,dword[esi+0x24]
+xor edi,edi
+test eax,eax
+mov dword[esp+0x1c],edi
+jle 0x300e4b52
+mov ecx,dword[esi+0x50]
+mov edx,dword[esp+0x1c]
+xor eax,eax
+mov ecx,dword[ecx+edx*4]
+mov ax,word[ecx]
+cmp ebp,eax
+jg 0x300e4b20
+mov ebp,eax
+lea edx,[esp+0x10]
+add ecx,0x14
+push edx
+push 1
+push 0
+push ecx
+push eax
+push ebx
+push esi
+call fcn.300e8310
+mov eax,dword[esp+0x2c]
+add esp,0x1c
+cmp edi,eax
+jg 0x300e4b42
+mov edi,eax
+mov eax,dword[esp+0x1c]
+mov ecx,dword[esi+0x24]
+inc eax
+cmp eax,ecx
+mov dword[esp+0x1c],eax
+jl 0x300e4b0b
+mov eax,dword[esp+0x14]
+push eax
+push ebx
+call dword[sym.imp.GDI32.dll_SelectObject]
+mov ecx,dword[esi]
+push ebx
+push ecx
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov eax,dword[esi+0x5c]
+pop ebx
+cmp eax,ebp
+je 0x300e4bff
+push esi
+mov dword[esi+0x5c],ebp
+call fcn.300e3480
+push esi
+call fcn.300e3580
+mov eax,dword[esi+0x60]
+add esp,8
+cmp eax,1
+jle 0x300e4bff
+push 1
+push 0
+push esi
+call fcn.300e0b70
+add esp,0xc
+jmp 0x300e4bff
+mov eax,dword[esi+0x24]
+test eax,eax
+jle 0x300e4bbc
+mov edx,dword[esi+0x50]
+mov edi,eax
+mov ecx,dword[edx]
+xor eax,eax
+mov ax,word[ecx]
+cmp ebp,eax
+jg 0x300e4bb6
+mov ebp,eax
+add edx,4
+dec edi
+jne 0x300e4ba9
+cmp dword[esi+0x5c],ebp
+je 0x300e4be8
+push esi
+mov dword[esi+0x5c],ebp
+call fcn.300e3480
+push esi
+call fcn.300e3580
+mov eax,dword[esi+0x60]
+add esp,8
+cmp eax,1
+jle 0x300e4be8
+push 1
+push 0
+push esi
+call fcn.300e0b70
+add esp,0xc
+mov ecx,dword[esi+0x60]
+mov edi,dword[esi+0x6c]
+test ecx,ecx
+jle 0x300e4bff
+mov eax,dword[esi+0x64]
+mov ebp,dword[eax]
+add eax,0x10
+add edi,ebp
+dec ecx
+jne 0x300e4bf5
+push edi
+push esi
+call fcn.300e4a50
+mov edx,dword[esi+0x16c]
+push edx
+push esi
+call fcn.300e18d0
+add esp,0x10
+pop edi
+pop esi
+pop ebp
+add esp,8
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300cbf70@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.0050b490@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.300cb930@0a3653d3e8fb1320d70b4e1441359302
+[similar_4_ref]: /report/fcn.004b9de0@1160595edb203a63cb2ca3ce2ff04f47
+[similar_5_ref]: /report/fcn.300ed0b0@0a3653d3e8fb1320d70b4e1441359302
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

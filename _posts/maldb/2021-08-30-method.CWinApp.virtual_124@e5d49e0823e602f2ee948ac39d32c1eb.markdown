@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "method.CWinApp.virtual_124 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CWinApp.virtual\_124
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.100076e0][similar_1_ref] (sim.: 0.8351234833313758)
+2. [fcn.100077d0][similar_2_ref] (sim.: 0.8210841433289007)
+3. [fcn.10007cef][similar_3_ref] (sim.: 0.8144148051138418)
+4. [fcn.10007609][similar_4_ref] (sim.: 0.8034347447861108)
+5. [fcn.10009b17][similar_5_ref] (sim.: 0.7925320932689733)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push esi
+xor esi,esi
+push edi
+cmp dword[ecx+0x58],esi
+je 0x10007f90
+push esi
+push dword[ebp+8]
+call fcn.10008130
+mov edi,eax
+test edi,edi
+jne 0x10007f60
+mov eax,dword[ebp+0x10]
+jmp 0x10007fa2
+lea eax,[ebp+8]
+mov dword[ebp+8],4
+push eax
+lea eax,[ebp-4]
+push eax
+lea eax,[ebp-8]
+push eax
+push esi
+push dword[ebp+0xc]
+push edi
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+push edi
+mov esi,eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test esi,esi
+jne 0x10007f5b
+mov eax,dword[ebp-4]
+jmp 0x10007fa2
+push dword[ecx+0x6c]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_GetPrivateProfileIntW]
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100076e0@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.100077d0@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.10007cef@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.10007609@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.10009b17@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

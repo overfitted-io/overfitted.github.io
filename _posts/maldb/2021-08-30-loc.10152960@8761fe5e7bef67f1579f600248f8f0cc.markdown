@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "loc.10152960 @ 8761fe5e7bef67f1579f600248f8f0cc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.10152960
+- **Origin (md5):** 8761fe5e7bef67f1579f600248f8f0cc
+- **VirusTotal:** [virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1015cd20][similar_1_ref] (sim.: 0.791145432058227)
+2. [fcn.103a4810][similar_2_ref] (sim.: 0.7678202791243902)
+3. [fcn.1008d5e0][similar_3_ref] (sim.: 0.7664002827959446)
+4. [fcn.1018b6d0][similar_4_ref] (sim.: 0.7664002827959446)
+5. [fcn.10956660][similar_5_ref] (sim.: 0.7580296203496263)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push edi
+mov ebx,ecx
+push 0x10152a30
+mov dword[0x1027c05c],0
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+push 0x104
+push 0x1027c068
+push 0
+mov dword[0x1027c064],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+push 0x2e
+push 0x1027c068
+call dword[sym.imp.MSVCRT.dll__mbsrchr]
+mov edx,eax
+add esp,8
+test edx,edx
+je 0x101529df
+inc edx
+or ecx,0xffffffff
+mov edi,edx
+xor eax,eax
+repne scasb al,byte es:[edi]
+not ecx
+dec ecx
+cmp ecx,3
+jb 0x101529df
+mov edi,0x102765ac
+or ecx,0xffffffff
+repne scasb al,byte es:[edi]
+not ecx
+sub edi,ecx
+push esi
+mov eax,ecx
+mov esi,edi
+mov edi,edx
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,eax
+mov eax,ebx
+and ecx,3
+rep movsb byte es:[edi],byte ptr[esi]
+pop esi
+pop edi
+pop ebx
+ret 
+mov eax,ebx
+pop edi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1015cd20@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.103a4810@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.1008d5e0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_4_ref]: /report/fcn.1018b6d0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_5_ref]: /report/fcn.10956660@2585b133c2e70968905cce13b1fc2654
+[virustotal_ref]: https://www.virustotal.com/gui/file/8761fe5e7bef67f1579f600248f8f0cc

@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "fcn.00408999 @ 660cd3b83f136e5b13d894f881f74c3b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408999
+- **Origin (md5):** 660cd3b83f136e5b13d894f881f74c3b
+- **VirusTotal:** [virustotal.com/gui/file/660cd3b83f136e5b13d894f881f74c3b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00408d28][similar_1_ref] (sim.: 0.918820744743572)
+2. [fcn.0040b19b][similar_2_ref] (sim.: 0.9037932850684207)
+3. [fcn.0040a354][similar_3_ref] (sim.: 0.9010962520654073)
+4. [fcn.0040d91f][similar_4_ref] (sim.: 0.9000896434501029)
+5. [fcn.0040d91f][similar_5_ref] (sim.: 0.9000896434501029)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+push edi
+push 0x104
+mov ebx,0xc54cf8
+xor eax,eax
+push ebx
+xor edi,edi
+mov word[0xc54f00],ax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+mov esi,dword[0xc56afc]
+mov dword[0xc54bd8],ebx
+test esi,esi
+je 0x4089d2
+cmp word[esi],di
+jne 0x4089d4
+mov esi,ebx
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-4]
+push eax
+push edi
+push edi
+push esi
+call fcn.00408a47
+mov ebx,dword[ebp-4]
+add esp,0x14
+cmp ebx,0x3fffffff
+jae 0x408a3d
+mov eax,dword[ebp-8]
+cmp eax,0x7fffffff
+jae 0x408a3d
+lea ecx,[eax+ebx*2]
+add eax,eax
+add ecx,ecx
+cmp ecx,eax
+jb 0x408a3d
+push ecx
+call fcn.004098c8
+mov edi,eax
+pop ecx
+test edi,edi
+je 0x408a3d
+lea eax,[ebp-8]
+push eax
+lea eax,[ebp-4]
+push eax
+lea eax,[edi+ebx*4]
+push eax
+push edi
+push esi
+call fcn.00408a47
+mov eax,dword[ebp-4]
+add esp,0x14
+dec eax
+mov dword[0xc54bc8],edi
+mov dword[0xc54bc0],eax
+xor eax,eax
+jmp 0x408a40
+or eax,0xffffffff
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408d28@d5337b9620c223d0a47057760eb166f6
+[similar_2_ref]: /report/fcn.0040b19b@d04f0467adc195bee31b9e49798c6efb
+[similar_3_ref]: /report/fcn.0040a354@01be4434cc5f975da87a4b25d209e100
+[similar_4_ref]: /report/fcn.0040d91f@6e195fbdf6b398dc597c28abc7c7a2ae
+[similar_5_ref]: /report/fcn.0040d91f@2ca98b1a48611ae895fe2088fc2aa0ae
+[virustotal_ref]: https://www.virustotal.com/gui/file/660cd3b83f136e5b13d894f881f74c3b

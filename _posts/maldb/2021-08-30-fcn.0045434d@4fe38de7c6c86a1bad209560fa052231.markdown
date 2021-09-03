@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.0045434d @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0045434d
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004541ce][similar_1_ref] (sim.: 0.801174730053492)
+2. [fcn.00422f0e][similar_2_ref] (sim.: 0.786578539906184)
+3. [fcn.00468420][similar_3_ref] (sim.: 0.7787631149211447)
+4. [fcn.00468420][similar_4_ref] (sim.: 0.7787631149211447)
+5. [fcn.10050a1c][similar_5_ref] (sim.: 0.7715278006696117)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+mov ebx,dword[ebp+8]
+push esi
+mov esi,ecx
+cmp dword[esi+0xa8],0
+mov byte[esi+0x248],bl
+je 0x4543d7
+push edi
+push str.User32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x45438a
+push str.SetLayeredWindowAttributes
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov edi,eax
+test edi,edi
+je 0x4543d6
+jmp 0x45438d
+mov edi,dword[ebp+8]
+push 0xffffffffffffffec
+push dword[esi+0xa8]
+call dword[sym.imp.USER32.dll_GetWindowLongW]
+movzx ecx,bl
+cmp ecx,0x100
+mov ecx,eax
+jae 0x4543b0
+or ecx,0x80000
+jmp 0x4543b6
+and ecx,0xfff7ffff
+cmp eax,ecx
+je 0x4543c9
+push ecx
+push 0xffffffffffffffec
+push dword[esi+0xa8]
+call dword[sym.imp.USER32.dll_SetWindowLongW]
+push 2
+push ebx
+push 0
+push dword[esi+0xa8]
+call edi
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004541ce@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.00422f0e@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/fcn.00468420@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.00468420@ec199daf84c7d2c754bb8d013dd4880e
+[similar_5_ref]: /report/fcn.10050a1c@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

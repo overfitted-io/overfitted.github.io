@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.005011f0 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005011f0
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004530f0][similar_1_ref] (sim.: 0.8707824590591875)
+2. [fcn.004c2be0][similar_2_ref] (sim.: 0.8358243935494529)
+3. [fcn.004abc20][similar_3_ref] (sim.: 0.8318249573082043)
+4. [fcn.004877d0][similar_4_ref] (sim.: 0.8222291676250103)
+5. [fcn.004d3a30][similar_5_ref] (sim.: 0.7769162886878163)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push esi
+mov esi,dword[edi]
+mov eax,dword[esi+0x364]
+push 4
+lea ecx,[esp+8]
+push ecx
+push 1
+push 6
+push edx
+mov dword[esp+0x18],eax
+call dword[sym.imp.WS2_32.dll_setsockopt]
+test eax,eax
+jge 0x501233
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push eax
+push edi
+call fcn.004f3450
+push eax
+push str.Could_not_set_TCP_NODELAY:__s_n
+push esi
+call fcn.004fe9d0
+add esp,0x14
+pop esi
+pop ecx
+ret 
+push str.TCP_NODELAY_set_n
+push esi
+call fcn.004fe9d0
+add esp,8
+pop esi
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004530f0@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.004c2be0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.004abc20@1160595edb203a63cb2ca3ce2ff04f47
+[similar_4_ref]: /report/fcn.004877d0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.004d3a30@4fe38de7c6c86a1bad209560fa052231
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

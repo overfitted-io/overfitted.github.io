@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.10004432 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10004432
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.10043333][similar_1_ref] (sim.: 0.8110176397754066)
+2. [fcn.0041cf20][similar_2_ref] (sim.: 0.8047124075613525)
+3. [fcn.0041cf20][similar_3_ref] (sim.: 0.8047124075613525)
+4. [fcn.0041cf20][similar_4_ref] (sim.: 0.8047124075613525)
+5. [fcn.100413ee][similar_5_ref] (sim.: 0.8007541611553486)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xc
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+mov esi,dword[ebp+8]
+lea eax,[ebp-0xc]
+push edi
+mov edi,dword[ebp+0x10]
+xor ebx,ebx
+push eax
+push 0x20019
+push ebx
+push edx
+push reloc.OLEAUT32.dll_SysReAllocString
+mov dword[ebp-8],ebx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+je 0x1000446e
+xor al,al
+jmp 0x10004493
+lea eax,[ebp+0x14]
+push eax
+push edi
+lea eax,[ebp-8]
+push eax
+push ebx
+push esi
+push dword[ebp-0xc]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x10004488
+mov bl,1
+push dword[ebp-0xc]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov al,bl
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10043333@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.0041cf20@fb9b7d22bc1c143ac66b0575cbdd088d
+[similar_3_ref]: /report/fcn.0041cf20@152885a790b99953ce23874f0947b7bd
+[similar_4_ref]: /report/fcn.0041cf20@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_5_ref]: /report/fcn.100413ee@a0ac129ff3ea4c0dfa9529c259a9502c
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

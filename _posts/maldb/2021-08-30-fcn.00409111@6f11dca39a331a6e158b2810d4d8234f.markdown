@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "fcn.00409111 @ 6f11dca39a331a6e158b2810d4d8234f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409111
+- **Origin (md5):** 6f11dca39a331a6e158b2810d4d8234f
+- **VirusTotal:** [virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00409111][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.004945e1][similar_2_ref] (sim.: 0.7237168559344763)
+3. [fcn.00401f38][similar_3_ref] (sim.: 0.7071351487681933)
+4. [fcn.004078e1][similar_4_ref] (sim.: 0.6952501452936788)
+5. [fcn.0040b7d9][similar_5_ref] (sim.: 0.6842399182971135)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+call dword[sym.imp.USER32.DLL_GetForegroundWindow]
+mov esi,eax
+test esi,esi
+je 0x409140
+lea eax,[ebp-4]
+push eax
+push esi
+call dword[sym.imp.USER32.DLL_GetWindowThreadProcessId]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov ecx,dword[ebp-4]
+sub ecx,eax
+neg ecx
+sbb ecx,ecx
+not ecx
+and esi,ecx
+mov eax,esi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409111@fbf34fa6d7da2b8e1de5133a8ca34847
+[similar_2_ref]: /report/fcn.004945e1@3b2d901eaca41ce14deca6a48c0c801a
+[similar_3_ref]: /report/fcn.00401f38@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.004078e1@b3771987fba16f4fba07d1109ec72c76
+[similar_5_ref]: /report/fcn.0040b7d9@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f

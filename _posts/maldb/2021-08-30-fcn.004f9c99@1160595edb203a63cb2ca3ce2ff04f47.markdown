@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.004f9c99 @ 1160595edb203a63cb2ca3ce2ff04f47"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004f9c99
+- **Origin (md5):** 1160595edb203a63cb2ca3ce2ff04f47
+- **VirusTotal:** [virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004ce874][similar_1_ref] (sim.: 0.9147677674083295)
+2. [fcn.0049bda9][similar_2_ref] (sim.: 0.9083837318867263)
+3. [fcn.0057c675][similar_3_ref] (sim.: 0.9014334547101813)
+4. [fcn.0042eeec][similar_4_ref] (sim.: 0.898515284846415)
+5. [fcn.0041e254][similar_5_ref] (sim.: 0.8896668411812804)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+push 0x5599b8
+call fcn.004f24e0
+mov esi,str.KERNEL32.DLL
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+jne 0x4f9cbc
+push esi
+call fcn.004f6484
+pop ecx
+mov dword[ebp-0x1c],eax
+mov esi,dword[ebp+8]
+mov dword[esi+0x5c],0x546468
+xor edi,edi
+inc edi
+mov dword[esi+0x14],edi
+test eax,eax
+je 0x4f9cf7
+push str.EncodePointer
+push eax
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+call ebx
+mov dword[esi+0x1f8],eax
+push str.DecodePointer
+push dword[ebp-0x1c]
+call ebx
+mov dword[esi+0x1fc],eax
+mov dword[esi+0x70],edi
+mov byte[esi+0xc8],0x43
+mov byte[esi+0x14b],0x43
+mov dword[esi+0x68],0x5acd90
+push 0xd
+call fcn.004f8db3
+pop ecx
+and dword[ebp-4],0
+push dword[esi+0x68]
+call dword[sym.imp.KERNEL32.dll_InterlockedIncrement]
+mov dword[ebp-4],0xfffffffe
+call fcn.004f9d6e
+push 0xc
+call fcn.004f8db3
+pop ecx
+mov dword[ebp-4],edi
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x6c],eax
+test eax,eax
+jne 0x4f9d4d
+mov eax,dword[0x5ad398]
+mov dword[esi+0x6c],eax
+push dword[esi+0x6c]
+call fcn.004f0cea
+pop ecx
+mov dword[ebp-4],0xfffffffe
+call fcn.004f9d77
+call fcn.004f2525
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004ce874@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_2_ref]: /report/fcn.0049bda9@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.0057c675@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.0042eeec@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_5_ref]: /report/fcn.0041e254@7e044e51324f9f80f4e97d8f3549c003
+[virustotal_ref]: https://www.virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47

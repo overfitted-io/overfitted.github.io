@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "fcn.0052455b @ d65363c7c6c188277432c9e4251c44e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0052455b
+- **Origin (md5):** d65363c7c6c188277432c9e4251c44e5
+- **VirusTotal:** [virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [loc.00639520][similar_1_ref] (sim.: 0.8774058642520781)
+2. [fcn.782957c0][similar_2_ref] (sim.: 0.8695464035196399)
+3. [fcn.00521545][similar_3_ref] (sim.: 0.868904033714574)
+4. [loc.00680490][similar_4_ref] (sim.: 0.8652302646875011)
+5. [fcn.0042e670][similar_5_ref] (sim.: 0.8644055762634651)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+jmp 0x66fc80
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x76c790
+mov eax,dword fs:[0]
+push eax
+sub esp,8
+mov eax,dword[0x7e2f74]
+xor eax,ebp
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-0x14],ecx
+push 0x800
+push 0
+push str.advapi32.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[ebp-0x10],eax
+cmp dword[ebp-0x10],0
+jne 0x66fcdc
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x66fcdc
+push str.advapi32.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[ebp-0x10],eax
+cmp dword[ebp-0x10],0
+je 0x66fd99
+push str.RegisterTraceGuidsW
+mov eax,dword[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx],eax
+push str.UnregisterTraceGuids
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx+4],eax
+push str.TraceEvent
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx+8],eax
+push str.GetTraceLoggerHandle
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx+0xc],eax
+push str.GetTraceEnableLevel
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx+0x10],eax
+push str.GetTraceEnableFlags
+mov edx,dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call fcn.005243c1
+add esp,4
+mov ecx,dword[ebp-0x14]
+mov dword[ecx+0x14],eax
+mov eax,dword[ebp-0x14]
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.00639520@d65363c7c6c188277432c9e4251c44e5
+[similar_2_ref]: /report/fcn.782957c0@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/fcn.00521545@d65363c7c6c188277432c9e4251c44e5
+[similar_4_ref]: /report/loc.00680490@d65363c7c6c188277432c9e4251c44e5
+[similar_5_ref]: /report/fcn.0042e670@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5

@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.1004a550 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1004a550
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004019c0][similar_1_ref] (sim.: 0.7124739851056814)
+2. [fcn.00408cb0][similar_2_ref] (sim.: 0.7105783230197875)
+3. [fcn.004019c0][similar_3_ref] (sim.: 0.7090449076056242)
+4. [fcn.004019d0][similar_4_ref] (sim.: 0.7077974684174599)
+5. [fcn.1014cc10][similar_5_ref] (sim.: 0.7075903998491223)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+cmp dword[0x10ca82d8],0
+mov dword[esp],0
+jne 0x1004a590
+push str.TenProxy.dll
+push str.TenProxy.dll
+call dword[sym.imp.MSVCR80.dll__mbscmp]
+add esp,8
+test eax,eax
+jne 0x1004a590
+cmp dword[0x10ca82d8],eax
+jne 0x1004a590
+push str.TenProxy.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov dword[0x10ca82d8],eax
+mov eax,dword[0x10ca82d8]
+push str.Invoke
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x1004a5b3
+lea ecx,[esp]
+push ecx
+push 0x566
+call eax
+add esp,8
+mov eax,dword[esp]
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004019c0@ba63c5f75a2177720b184529dbf918cf
+[similar_2_ref]: /report/fcn.00408cb0@0aa2d73a5300dff2412388945614b507
+[similar_3_ref]: /report/fcn.004019c0@843c4207147f5bab0e104024677fd9ec
+[similar_4_ref]: /report/fcn.004019d0@2eb7544c38a76e8aaeea362abfc44c72
+[similar_5_ref]: /report/fcn.1014cc10@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00415557 @ 73e5ff5234ddfa5605498d12656e5816"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00415557
+- **Origin (md5):** 73e5ff5234ddfa5605498d12656e5816
+- **VirusTotal:** [virustotal.com/gui/file/73e5ff5234ddfa5605498d12656e5816][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00415557][similar_1_ref] (sim.: 1.0)
+2. [fcn.00415557][similar_2_ref] (sim.: 1.0)
+3. [fcn.00415557][similar_3_ref] (sim.: 1.0)
+4. [fcn.00414747][similar_4_ref] (sim.: 0.933737740338459)
+5. [fcn.00409bfb][similar_5_ref] (sim.: 0.9328011743644558)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x324
+push ebx
+push esi
+push 0x17
+call sub.KERNEL32.dll_IsProcessorFeaturePresent
+test eax,eax
+je 0x415572
+mov ecx,dword[ebp+8]
+int 0x29
+xor esi,esi
+lea eax,[ebp-0x324]
+push 0x2cc
+push esi
+push eax
+mov dword[0x4c69bc],esi
+call fcn.004166d0
+add esp,0xc
+mov dword[ebp-0x274],eax
+mov dword[ebp-0x278],ecx
+mov dword[ebp-0x27c],edx
+mov dword[ebp-0x280],ebx
+mov dword[ebp-0x284],esi
+mov dword[ebp-0x288],edi
+mov word[ebp-0x25c],ss
+mov word[ebp-0x268],cs
+mov word[ebp-0x28c],ds
+mov word[ebp-0x290],es
+mov word[ebp-0x294],fs
+mov word[ebp-0x298],gs
+pushfd 
+pop dword[ebp-0x264]
+mov eax,dword[ebp+4]
+mov dword[ebp-0x26c],eax
+lea eax,[ebp+4]
+mov dword[ebp-0x260],eax
+mov dword[ebp-0x324],0x10001
+mov eax,dword[eax-4]
+push 0x50
+mov dword[ebp-0x270],eax
+lea eax,[ebp-0x58]
+push esi
+push eax
+call fcn.004166d0
+mov eax,dword[ebp+4]
+add esp,0xc
+mov dword[ebp-0x58],0x40000015
+mov dword[ebp-0x54],1
+mov dword[ebp-0x4c],eax
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+push esi
+lea ebx,[eax-1]
+neg ebx
+lea eax,[ebp-0x58]
+mov dword[ebp-8],eax
+lea eax,[ebp-0x324]
+sbb bl,bl
+mov dword[ebp-4],eax
+inc bl
+call dword[sym.imp.KERNEL32.dll_SetUnhandledExceptionFilter]
+lea eax,[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_UnhandledExceptionFilter]
+test eax,eax
+jne 0x41566c
+movzx eax,bl
+neg eax
+sbb eax,eax
+and dword[0x4c69bc],eax
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00415557@d6c070ac2399cf914ec1db85b3c8036a
+[similar_2_ref]: /report/fcn.00415557@851499833994008ff3b082d4905c1c28
+[similar_3_ref]: /report/fcn.00415557@53f4678414ce7afa3232e70113298724
+[similar_4_ref]: /report/fcn.00414747@d32515577b2cd57bf3dd6c5e3c37e219
+[similar_5_ref]: /report/fcn.00409bfb@ae0d797b2405ef533e147073f508f04b
+[virustotal_ref]: https://www.virustotal.com/gui/file/73e5ff5234ddfa5605498d12656e5816

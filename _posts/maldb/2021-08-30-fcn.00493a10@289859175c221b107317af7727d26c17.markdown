@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "fcn.00493a10 @ 289859175c221b107317af7727d26c17"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00493a10
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.005134f0][similar_1_ref] (sim.: 0.8348372604596568)
+2. [fcn.005a2f00][similar_2_ref] (sim.: 0.8191900559810654)
+3. [fcn.005a2ea0][similar_3_ref] (sim.: 0.8092049455151806)
+4. [fcn.004e4990][similar_4_ref] (sim.: 0.7972903635270104)
+5. [fcn.0040ae30][similar_5_ref] (sim.: 0.7645874746992325)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+mov eax,dword[esi+8]
+mov dword[esi],fcn.00493a10
+test eax,eax
+je 0x493a2d
+mov ecx,dword[eax]
+mov edx,dword[ecx+8]
+push eax
+call edx
+cmp dword[esi+0xc],0
+je 0x493a4a
+call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+test eax,eax
+je 0x493a4a
+mov ecx,dword[esi+0xc]
+push ecx
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+test byte[ebp+8],1
+je 0x493a59
+push esi
+call fcn.00475951
+add esp,4
+mov eax,esi
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005134f0@1160595edb203a63cb2ca3ce2ff04f47
+[similar_2_ref]: /report/fcn.005a2f00@14b20b07906a36e23f2230c8042160f2
+[similar_3_ref]: /report/fcn.005a2ea0@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.004e4990@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.0040ae30@d9409903542212823b7b4709144a636b
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

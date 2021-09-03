@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.004025e0 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004025e0
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004109c0][similar_1_ref] (sim.: 0.8189111186444611)
+2. [fcn.00410000][similar_2_ref] (sim.: 0.8187477253413162)
+3. [method.CUWPApiIsTypePresent.virtual\_24][similar_3_ref] (sim.: 0.8182319322224941)
+4. [fcn.004098ce][similar_4_ref] (sim.: 0.8179017874398625)
+5. [fcn.004098ce][similar_5_ref] (sim.: 0.8179017874398625)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x108
+mov eax,dword[0x51f0b0]
+xor eax,ebp
+mov dword[ebp-4],eax
+cmp dword[ebp+8],1
+push esi
+mov esi,dword[ebp+0xc]
+jne 0x4026c9
+test esi,esi
+je 0x4026c9
+cmp dword[esi],0x10
+jb 0x4026c9
+mov eax,dword[esi+0xc]
+test eax,eax
+je 0x4026c9
+push str.api_ms_win_core_
+push eax
+call fcn.0049c6e0
+add esp,8
+cmp eax,dword[esi+0xc]
+je 0x4026c9
+push 0x104
+lea eax,[ebp-0x108]
+push 0
+push eax
+call fcn.0049d220
+add esp,0xc
+lea eax,[ebp-0x108]
+push 0x104
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
+test eax,eax
+je 0x4026c9
+cmp byte[ebp-0x108],0
+lea eax,[ebp-0x108]
+je 0x402676
+nop 
+inc eax
+cmp byte[eax],0
+jne 0x402670
+cmp byte[eax-1],0x5c
+je 0x402680
+mov byte[eax],0x5c
+inc eax
+mov esi,dword[esi+0xc]
+mov dl,byte[esi]
+test dl,dl
+je 0x4026ab
+push edi
+lea edi,[ebp-0x108]
+mov ecx,eax
+sub ecx,edi
+sub esi,eax
+pop edi
+cmp ecx,0x103
+jge 0x4026ab
+mov byte[eax],dl
+inc ecx
+mov dl,byte[esi+eax+1]
+inc eax
+test dl,dl
+jne 0x402697
+lea eax,[ebp-0x108]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.0049b1fa
+mov esp,ebp
+pop ebp
+ret 8
+mov ecx,dword[ebp-4]
+xor eax,eax
+xor ecx,ebp
+pop esi
+call fcn.0049b1fa
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004109c0@3b2d901eaca41ce14deca6a48c0c801a
+[similar_2_ref]: /report/fcn.00410000@4fe38de7c6c86a1bad209560fa052231
+[similar_3_ref]: /report/method.CUWPApiIsTypePresent.virtual_24@3b2d901eaca41ce14deca6a48c0c801a
+[similar_4_ref]: /report/fcn.004098ce@f068e0a788db6c075da6c407576e943b
+[similar_5_ref]: /report/fcn.004098ce@e02c832a2c768752009e071574e12967
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

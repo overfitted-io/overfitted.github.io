@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.00402ba0 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402ba0
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00402b40][similar_1_ref] (sim.: 0.7456828012234804)
+2. [fcn.00402c00][similar_2_ref] (sim.: 0.7438171729971867)
+3. [fcn.00402c50][similar_3_ref] (sim.: 0.7416509595291696)
+4. [fcn.00425eb3][similar_4_ref] (sim.: 0.7229656299895133)
+5. [fcn.004e7700][similar_5_ref] (sim.: 0.7217970984590103)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+lea eax,[ebp-4]
+mov dword[ebp-4],0
+push eax
+push dword[ebp+0x14]
+push 0
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x402bef
+mov dword[ebp-8],eax
+lea eax,[ebp-8]
+push eax
+push dword[ebp+0x10]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+test eax,eax
+jne 0x402be6
+push dword[ebp-8]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402b40@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.00402c00@4fe38de7c6c86a1bad209560fa052231
+[similar_3_ref]: /report/fcn.00402c50@4fe38de7c6c86a1bad209560fa052231
+[similar_4_ref]: /report/fcn.00425eb3@805156a7be59534194996cc728d4bbeb
+[similar_5_ref]: /report/fcn.004e7700@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

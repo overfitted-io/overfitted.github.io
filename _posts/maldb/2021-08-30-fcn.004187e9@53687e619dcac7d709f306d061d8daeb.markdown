@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.004187e9 @ 53687e619dcac7d709f306d061d8daeb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004187e9
+- **Origin (md5):** 53687e619dcac7d709f306d061d8daeb
+- **VirusTotal:** [virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.004187e9][similar_1_ref] (sim.: 1.0)
+2. [fcn.004207ba][similar_2_ref] (sim.: 0.8022450017236854)
+3. [fcn.01003915][similar_3_ref] (sim.: 0.7911359646571273)
+4. [fcn.010039c0][similar_4_ref] (sim.: 0.7882701311178761)
+5. [fcn.10189d00][similar_5_ref] (sim.: 0.7780760548088844)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x4744f9
+call fcn.00473d84
+push ecx
+push ebx
+push esi
+mov esi,ecx
+mov dword[ebp-0x10],esi
+xor ebx,ebx
+mov dword[ebp-4],ebx
+lea ecx,[esi+0xc]
+mov dword[esi],vtable.FileReadStream.0
+mov dword[ecx+0x14],0xf
+mov dword[ecx+0x10],ebx
+mov byte[ecx],bl
+mov eax,dword[ebp+8]
+mov byte[ebp-4],2
+mov dword[esi+4],eax
+lea eax,[ebp+0xc]
+cmp ecx,eax
+je 0x41882f
+push 0xffffffffffffffff
+push ebx
+push eax
+call fcn.004080f2
+cmp dword[ebp+0x20],0x10
+lea eax,[ebp+0xc]
+push ebx
+cmovae eax,dword[ebp+0xc]
+push ebx
+push 3
+push ebx
+push 1
+push 0x80000000
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+push ebx
+push 1
+lea ecx,[ebp+0xc]
+mov dword[esi+8],eax
+call fcn.00408186
+mov ecx,dword[ebp-0xc]
+mov eax,esi
+pop esi
+pop ebx
+mov dword fs:[0],ecx
+mov esp,ebp
+pop ebp
+ret 0x1c
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004187e9@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_2_ref]: /report/fcn.004207ba@c3466bab32f3a73706b87b6042748ed4
+[similar_3_ref]: /report/fcn.01003915@b115515a4c22598417d07022f1942d1e
+[similar_4_ref]: /report/fcn.010039c0@b115515a4c22598417d07022f1942d1e
+[similar_5_ref]: /report/fcn.10189d00@8761fe5e7bef67f1579f600248f8f0cc
+[virustotal_ref]: https://www.virustotal.com/gui/file/53687e619dcac7d709f306d061d8daeb

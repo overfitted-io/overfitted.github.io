@@ -1,0 +1,175 @@
+---
+layout: post
+title:  "fcn.10004dd1 @ 880ba8b1983575bc0c5ed1cb79dcde8f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10004dd1
+- **Origin (md5):** 880ba8b1983575bc0c5ed1cb79dcde8f
+- **VirusTotal:** [virustotal.com/gui/file/880ba8b1983575bc0c5ed1cb79dcde8f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.0040db90][similar_1_ref] (sim.: 0.8878861160009196)
+2. [fcn.0040a6e8][similar_2_ref] (sim.: 0.8866052088858222)
+3. [fcn.0040a6e8][similar_3_ref] (sim.: 0.8866052088858222)
+4. [fcn.00404ba4][similar_4_ref] (sim.: 0.8864362470812289)
+5. [fcn.00404ba4][similar_5_ref] (sim.: 0.8864362470812289)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x38
+push ebx
+push edi
+push 0x2c
+xor edi,edi
+lea eax,[ebp-0x38]
+push edi
+push eax
+call sub.MSVCR90.dll_memset
+add esp,0xc
+push edi
+mov dword[ebp-0x38],0x28
+mov dword[ebp-0xc],edi
+mov dword[ebp-4],edi
+call dword[sym.imp.USER32.dll_GetDC]
+push 0x20
+push edi
+push esi
+mov dword[ebp-8],eax
+call sub.MSVCR90.dll_memset
+add esp,0xc
+push edi
+lea eax,[ebp-0x38]
+push eax
+push edi
+push edi
+push edi
+push dword[ebp+8]
+push dword[ebp-8]
+call dword[sym.imp.GDI32.dll_GetDIBits]
+test eax,eax
+jle 0x10004f20
+mov ebx,dword[ebp-0x30]
+imul ebx,dword[ebp-0x34]
+shl ebx,2
+push ebx
+call dword[sym.imp.MSVCR90.dll_malloc]
+pop ecx
+mov dword[ebp-4],eax
+cmp eax,edi
+je 0x10004f20
+push ebx
+push edi
+push eax
+call sub.MSVCR90.dll_memset
+add esp,0xc
+cmp dword[ebp-0x30],edi
+push 0x20
+pop eax
+mov dword[ebp-0x38],0x28
+mov word[ebp-0x2a],ax
+mov dword[ebp-0x28],edi
+jge 0x10004e6a
+neg dword[ebp-0x30]
+push edi
+lea eax,[ebp-0x38]
+push eax
+push dword[ebp-4]
+push dword[ebp-0x30]
+push edi
+push dword[ebp+8]
+push dword[ebp-8]
+call dword[sym.imp.GDI32.dll_GetDIBits]
+test eax,eax
+jle 0x10004f20
+movzx eax,word[ebp-0x2a]
+mov edx,dword[ebp-0x30]
+mov ecx,dword[ebp-0x34]
+mov edi,eax
+shr edi,3
+imul edi,edx
+lea ebx,[ecx+0x1f]
+imul edi,ecx
+shr ebx,3
+and ebx,0x1ffffffc
+imul ebx,edx
+mov dword[esi+8],eax
+lea eax,[ebx+edi+0x28]
+push eax
+mov dword[esi],ecx
+mov dword[esi+4],edx
+mov dword[esi+0x10],eax
+call dword[sym.imp.MSVCR90.dll_malloc]
+pop ecx
+mov dword[esi+0xc],eax
+test eax,eax
+je 0x10004f1e
+push dword[esi+0x10]
+push 0
+push eax
+call sub.MSVCR90.dll_memset
+push 0x28
+lea eax,[ebp-0x38]
+push eax
+push dword[esi+0xc]
+call sub.MSVCR90.dll_memcpy
+mov eax,dword[esi+0xc]
+push edi
+push dword[ebp-4]
+add eax,0x28
+push eax
+call sub.MSVCR90.dll_memcpy
+mov eax,dword[esi+0xc]
+lea edi,[eax+edi+0x28]
+push ebx
+push 0
+push edi
+mov dword[esi+0x14],eax
+mov dword[esi+0x18],edi
+mov dword[esi+0x1c],edi
+call sub.MSVCR90.dll_memset
+mov eax,dword[esi+0x14]
+add esp,0x30
+shl dword[eax+8],1
+mov dword[ebp-0xc],1
+xor edi,edi
+push dword[ebp-8]
+push edi
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov ebx,dword[sym.imp.MSVCR90.dll_free]
+cmp dword[ebp-4],edi
+je 0x10004f3b
+push dword[ebp-4]
+call ebx
+pop ecx
+cmp dword[ebp-0xc],edi
+jne 0x10004f46
+push dword[esi+0xc]
+call ebx
+pop ecx
+mov eax,dword[ebp-0xc]
+pop edi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040db90@a9db83c79f22c1884abda377efdebe4d
+[similar_2_ref]: /report/fcn.0040a6e8@53687e619dcac7d709f306d061d8daeb
+[similar_3_ref]: /report/fcn.0040a6e8@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.00404ba4@3f1595e66dc63331ba0930a0c79684ce
+[similar_5_ref]: /report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/880ba8b1983575bc0c5ed1cb79dcde8f

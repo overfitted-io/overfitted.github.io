@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.0040d2ba @ ba5ec83721de3ca10b3c9583f3b2c6a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040d2ba
+- **Origin (md5):** ba5ec83721de3ca10b3c9583f3b2c6a1
+- **VirusTotal:** [virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0040d2ba][similar_1_ref] (sim.: 1.0)
+2. [fcn.004019c0][similar_2_ref] (sim.: 0.7957243339595603)
+3. [fcn.004019c0][similar_3_ref] (sim.: 0.790371913134723)
+4. [fcn.00403bbc][similar_4_ref] (sim.: 0.7737091543902891)
+5. [fcn.10005f16][similar_5_ref] (sim.: 0.7681619972831155)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x190
+call fcn.0041026f
+test eax,eax
+jne 0x40d2e6
+push 0x30
+push str.Cannot_start_install
+push str.There_is_a_problem_with_the_install_program.
+push eax
+call dword[sym.imp.USER32.dll_MessageBoxA]
+xor eax,eax
+jmp 0x40d33f
+push 0
+call dword[sym.imp.ole32.dll_OleInitialize]
+call fcn.0040dbe5
+lea eax,[esp]
+push eax
+push 0x101
+call dword[sym.imp.WSOCK32.dll_WSAStartup]
+mov eax,dword[0x4ae264]
+add eax,0xd851
+push eax
+call fcn.00421785
+mov edx,dword[0x4ae264]
+pop ecx
+lea ecx,[edx+0xa4d8]
+cmp byte[ecx],0
+jne 0x40d32d
+cmp dword[edx+0xa5d7],0
+je 0x40d33c
+mov edx,dword[edx+0xa5d7]
+push ecx
+push ecx
+call fcn.00407301
+pop ecx
+pop ecx
+xor eax,eax
+inc eax
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040d2ba@53687e619dcac7d709f306d061d8daeb
+[similar_2_ref]: /report/fcn.004019c0@843c4207147f5bab0e104024677fd9ec
+[similar_3_ref]: /report/fcn.004019c0@ba63c5f75a2177720b184529dbf918cf
+[similar_4_ref]: /report/fcn.00403bbc@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.10005f16@a0ac129ff3ea4c0dfa9529c259a9502c
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1

@@ -1,0 +1,132 @@
+---
+layout: post
+title:  "fcn.0043c430 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0043c430
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.0047e330][similar_1_ref] (sim.: 0.8800101584643609)
+2. [fcn.004435c0][similar_2_ref] (sim.: 0.8796669319721939)
+3. [fcn.0045a400][similar_3_ref] (sim.: 0.877592859653355)
+4. [fcn.0042e670][similar_4_ref] (sim.: 0.8771256842005)
+5. [fcn.0047f790][similar_5_ref] (sim.: 0.8767662360090541)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x4fba68
+mov eax,dword fs:[0]
+push eax
+sub esp,0xa4
+mov eax,dword[0x537474]
+xor eax,ebp
+mov dword[ebp-0x10],eax
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-0xb0],ecx
+mov eax,dword[ebp+8]
+push eax
+call fcn.004541c1
+add esp,4
+push 4
+call fcn.00454436
+add esp,4
+lea ecx,[ebp-0x94]
+push ecx
+call fcn.0044ff6b
+add esp,4
+mov dword[ebp-4],0
+call fcn.004500b5
+mov dword[ebp-0xa0],eax
+cmp dword[ebp-0xa0],1
+je 0x43c4af
+cmp dword[ebp-0xa0],4
+je 0x43c4d8
+jmp 0x43c592
+push str...skinInstall
+lea ecx,[ebp-0x94]
+call fcn.0044dcba
+lea ecx,[ebp-0x94]
+call fcn.00403040
+push eax
+call fcn.004543ed
+add esp,4
+jmp 0x43c592
+call fcn.0044ff65
+mov dword[ebp-0xac],eax
+push str.ZIPRES
+push str.SKINDATA
+mov edx,dword[ebp-0xac]
+push edx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov dword[ebp-0x98],eax
+cmp dword[ebp-0x98],0
+je 0x43c592
+mov dword[ebp-0x9c],0
+call fcn.004500a0
+mov dword[ebp-0xa4],eax
+mov eax,dword[ebp-0x98]
+push eax
+mov ecx,dword[ebp-0xa4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0xa8],eax
+cmp dword[ebp-0xa8],0
+je 0x43c585
+mov edx,dword[ebp-0x98]
+push edx
+mov eax,dword[ebp-0xa4]
+push eax
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebp-0x9c],eax
+cmp dword[ebp-0x9c],0
+jbe 0x43c585
+mov ecx,dword[ebp-0x9c]
+push ecx
+mov edx,dword[ebp-0xa8]
+push edx
+call dword[sym.imp.KERNEL32.dll_LockResource]
+push eax
+call fcn.00454443
+add esp,8
+mov eax,dword[ebp-0x98]
+push eax
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp-0x94]
+call fcn.0044db62
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+mov ecx,dword[ebp-0x10]
+xor ecx,ebp
+call fcn.00497b95
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047e330@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.004435c0@4fe38de7c6c86a1bad209560fa052231
+[similar_3_ref]: /report/fcn.0045a400@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/fcn.0042e670@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0047f790@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

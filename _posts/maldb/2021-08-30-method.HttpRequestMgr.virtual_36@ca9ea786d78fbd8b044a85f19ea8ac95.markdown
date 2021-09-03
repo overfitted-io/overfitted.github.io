@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "method.HttpRequestMgr.virtual_36 @ ca9ea786d78fbd8b044a85f19ea8ac95"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.HttpRequestMgr.virtual\_36
+- **Origin (md5):** ca9ea786d78fbd8b044a85f19ea8ac95
+- **VirusTotal:** [virustotal.com/gui/file/ca9ea786d78fbd8b044a85f19ea8ac95][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0040d0b0][similar_1_ref] (sim.: 0.8054840861283301)
+2. [fcn.00414420][similar_2_ref] (sim.: 0.8006563566409834)
+3. [fcn.10006410][similar_3_ref] (sim.: 0.7996996937839848)
+4. [fcn.10004e60][similar_4_ref] (sim.: 0.7963724619935515)
+5. [fcn.10005020][similar_5_ref] (sim.: 0.795146082555328)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x1001ac1e
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,0x14
+push esi
+push edi
+lea eax,[ebp-0x10]
+mov dword[ebp-4],0
+cmp dword[ebp+0x1c],0x10
+lea esi,[ebp+8]
+push eax
+cmovae esi,dword[ebp+8]
+lea eax,[ebp-0x20]
+push eax
+push 0
+push 2
+push esi
+lea edi,[ecx+0x30]
+mov dword[ebp-0x10],0x10
+call dword[sym.imp.WS2_32.dll_WSAStringToAddressA]
+test eax,eax
+je 0x100114c8
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+jmp 0x100114f6
+cmp byte[esi],0
+jne 0x100114d1
+xor ecx,ecx
+jmp 0x100114df
+mov ecx,esi
+lea edx,[ecx+1]
+mov al,byte[ecx]
+inc ecx
+test al,al
+jne 0x100114d6
+sub ecx,edx
+push ecx
+push esi
+mov ecx,edi
+call fcn.10001c00
+mov eax,dword[ebp-0x1c]
+mov dword[edi+0x18],eax
+mov ax,word[ebp+0x20]
+mov word[edi+0x1c],ax
+cmp dword[ebp+0x1c],0x10
+pop edi
+pop esi
+jb 0x1001150a
+push dword[ebp+8]
+call dword[sym.imp.MSVCR120.dll_void___cdecl_operator_delete_void__]
+add esp,4
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+mov esp,ebp
+pop ebp
+ret 0x1c
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040d0b0@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.00414420@3b2d901eaca41ce14deca6a48c0c801a
+[similar_3_ref]: /report/fcn.10006410@3785b40cea34bd176ce2c160dcf987f8
+[similar_4_ref]: /report/fcn.10004e60@3785b40cea34bd176ce2c160dcf987f8
+[similar_5_ref]: /report/fcn.10005020@3785b40cea34bd176ce2c160dcf987f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/ca9ea786d78fbd8b044a85f19ea8ac95

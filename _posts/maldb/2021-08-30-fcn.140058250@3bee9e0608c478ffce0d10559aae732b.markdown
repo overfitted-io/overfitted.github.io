@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.140058250 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140058250
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.1400203dc][similar_1_ref] (sim.: 0.8555555199147765)
+2. [fcn.140017f94][similar_2_ref] (sim.: 0.849197714216861)
+3. [fcn.14000c76c][similar_3_ref] (sim.: 0.8397542946704013)
+4. [fcn.140016230][similar_4_ref] (sim.: 0.8384319321015914)
+5. [fcn.14000fcec][similar_5_ref] (sim.: 0.8343557321231709)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rbp
+mov qword[rax+0x18],rsi
+mov qword[rax+0x20],rdi
+push r12
+sub rsp,0x20
+mov rbp,rdx
+mov r12,rcx
+test rcx,rcx
+jne 0x14005827f
+mov ecx,0x80004003
+call fcn.140050c40
+int3 
+test rdx,rdx
+jne 0x14005828f
+mov ecx,0x80004003
+call fcn.140050c40
+int3 
+xor ecx,ecx
+call qword[sym.imp.USER32.dll_GetDC]
+mov edx,0x58
+mov rcx,rax
+mov rdi,rax
+call qword[sym.imp.GDI32.dll_GetDeviceCaps]
+mov edx,0x5a
+mov rcx,rdi
+mov ebx,eax
+call qword[sym.imp.GDI32.dll_GetDeviceCaps]
+mov rdx,rdi
+xor ecx,ecx
+mov esi,eax
+call qword[sym.imp.USER32.dll_ReleaseDC]
+mov edx,dword[r12]
+mov r8d,ebx
+mov ebx,0x9ec
+mov ecx,ebx
+call qword[sym.imp.KERNEL32.dll_MulDiv]
+mov edx,dword[r12+4]
+mov r8d,esi
+mov ecx,ebx
+mov dword[rbp],eax
+call qword[sym.imp.KERNEL32.dll_MulDiv]
+mov rbx,qword[rsp+0x30]
+mov rsi,qword[rsp+0x40]
+mov rdi,qword[rsp+0x48]
+mov dword[rbp+4],eax
+mov rbp,qword[rsp+0x38]
+add rsp,0x20
+pop r12
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1400203dc@72082bb1b08918279d6780845b69f5ff
+[similar_2_ref]: /report/fcn.140017f94@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14000c76c@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.140016230@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.14000fcec@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

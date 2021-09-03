@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.10112092 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10112092
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.10111e4e][similar_1_ref] (sim.: 0.8490321295613574)
+2. [fcn.10120bee][similar_2_ref] (sim.: 0.8415197467888681)
+3. [method.Concurrency꞉꞉details꞉꞉SchedulerBase.virtual\_24][similar_3_ref] (sim.: 0.8268025294840169)
+4. [fcn.10125569][similar_4_ref] (sim.: 0.8247974705349166)
+5. [fcn.1011f6fa][similar_5_ref] (sim.: 0.8139032998359985)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+push ebx
+push esi
+push edi
+push str.GetLogicalProcessorInformationEx
+push 0x1018a600
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov edi,eax
+test edi,edi
+jne 0x101120c4
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x10112136
+jmp 0x1011212e
+mov ebx,dword[ebp+0xc]
+push ebx
+push 0
+push dword[ebp+8]
+call edi
+mov esi,dword[sym.imp.KERNEL32.dll_GetLastError]
+call esi
+cmp eax,0x7a
+je 0x101120e4
+call esi
+test eax,eax
+jle 0x10112136
+jmp 0x1011212e
+push dword[ebx]
+call fcn.100d3615
+mov ebx,eax
+pop ecx
+test ebx,ebx
+jne 0x10112118
+push 1
+lea eax,[ebp-4]
+mov dword[ebp-4],0x1018a5ac
+push eax
+lea ecx,[ebp-0x10]
+call fcn.100d0276
+mov dword[ebp-0x10],0x10140978
+lea eax,[ebp-0x10]
+push 0x101b0cb8
+jmp 0x10112147
+push dword[ebp+0xc]
+push ebx
+push dword[ebp+8]
+call edi
+test eax,eax
+je 0x101120dc
+pop edi
+pop esi
+mov eax,ebx
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x14]
+call fcn.10114f2f
+push 0x101af7ec
+lea eax,[ebp-0x14]
+push eax
+call fcn.100daac8
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10111e4e@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.10120bee@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/method.Concurrency꞉꞉details꞉꞉SchedulerBase.virtual_24@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.10125569@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.1011f6fa@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

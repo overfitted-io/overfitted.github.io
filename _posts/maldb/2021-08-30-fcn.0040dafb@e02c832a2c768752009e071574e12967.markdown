@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "fcn.0040dafb @ e02c832a2c768752009e071574e12967"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040dafb
+- **Origin (md5):** e02c832a2c768752009e071574e12967
+- **VirusTotal:** [virustotal.com/gui/file/e02c832a2c768752009e071574e12967][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0040dafb][similar_1_ref] (sim.: 0.9998900981078187)
+2. [fcn.00404b8b][similar_2_ref] (sim.: 0.7757562759210281)
+3. [fcn.0040acf9][similar_3_ref] (sim.: 0.7666913626910733)
+4. [fcn.0040cba9][similar_4_ref] (sim.: 0.7361743810434195)
+5. [fcn.0040cb53][similar_5_ref] (sim.: 0.6884012300216915)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push edi
+mov edi,ecx
+cmp byte[edi+4],0
+jne 0x40db37
+push str.Crypt32.dll
+call fcn.0040ef1e
+mov dword[edi],eax
+test eax,eax
+je 0x40db33
+push str.CryptProtectMemory
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CryptUnprotectMemory
+push dword[edi]
+mov dword[edi+8],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[edi+0xc],eax
+mov byte[edi+4],1
+pop edi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040dafb@f068e0a788db6c075da6c407576e943b
+[similar_2_ref]: /report/fcn.00404b8b@5f763449465a14d1cdb5ea67e2f984d0
+[similar_3_ref]: /report/fcn.0040acf9@4c2db4ba96e80258daff665d7d7a016a
+[similar_4_ref]: /report/fcn.0040cba9@319cf4affa41f752783e62f81908d682
+[similar_5_ref]: /report/fcn.0040cb53@88e03379526f823ce2de3b236adcaf80
+[virustotal_ref]: https://www.virustotal.com/gui/file/e02c832a2c768752009e071574e12967

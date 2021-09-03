@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "method.CDialogEx.virtual_360 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CDialogEx.virtual\_360
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.CMFCToolBarNameDialog.virtual\_356][similar_1_ref] (sim.: 0.7943143931873928)
+2. [fcn.1001cf02][similar_2_ref] (sim.: 0.7943143931873928)
+3. [method.CDialog.virtual\_320][similar_3_ref] (sim.: 0.788119240855462)
+4. [fcn.00410720][similar_4_ref] (sim.: 0.7822876632876005)
+5. [method.CFileDialog.virtual\_312][similar_5_ref] (sim.: 0.7772869592595233)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push esi
+mov ebx,ecx
+push edi
+mov edi,dword[ebp+8]
+mov dword[ebx+0x84],edi
+test edi,0xffff0000
+jne 0x4106e6
+cmp dword[ebx+0x80],0
+jne 0x4106e6
+movzx eax,di
+mov dword[ebx+0x80],eax
+call fcn.0042d89f
+push 5
+push edi
+mov esi,dword[eax+0xc]
+push esi
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+push esi
+push dword[ebp+0xc]
+mov edi,eax
+mov ecx,ebx
+push edi
+call fcn.00410979
+push edi
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+pop edi
+mov eax,esi
+pop esi
+pop ebx
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CMFCToolBarNameDialog.virtual_356@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.1001cf02@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/method.CDialog.virtual_320@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.00410720@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/method.CFileDialog.virtual_312@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

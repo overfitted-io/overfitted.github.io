@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.004049ae @ ab22d984f64f202bfb2e0f0e1f3a3f8f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004049ae
+- **Origin (md5):** ab22d984f64f202bfb2e0f0e1f3a3f8f
+- **VirusTotal:** [virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004049ae][similar_1_ref] (sim.: 1.0)
+2. [fcn.004049ae][similar_2_ref] (sim.: 1.0)
+3. [fcn.00404e3c][similar_3_ref] (sim.: 0.8740915149573295)
+4. [fcn.00405a4c][similar_4_ref] (sim.: 0.8468737708108857)
+5. [fcn.0040496f][similar_5_ref] (sim.: 0.8447486807734962)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+xor esi,esi
+cmp dword[edi],esi
+je 0x4049f1
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+cmp eax,esi
+je 0x404a11
+push str.RegCreateKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+cmp eax,esi
+je 0x404a11
+push esi
+push dword[edi]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x404a14
+cmp dword[edi+4],esi
+je 0x404a11
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+jmp 0x404a14
+xor eax,eax
+inc eax
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004049ae@d3ad46676721a96e1408ac558c298889
+[similar_2_ref]: /report/fcn.004049ae@074a6a8502a27e18f8b5ea831bacabad
+[similar_3_ref]: /report/fcn.00404e3c@40a770684b117e1d21b6dd3201f1566a
+[similar_4_ref]: /report/fcn.00405a4c@820356b443df86d107b675e725c13af0
+[similar_5_ref]: /report/fcn.0040496f@5ee3fd17c9a95f310f59023fc9b4737e
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f

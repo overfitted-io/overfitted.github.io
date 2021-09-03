@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "fcn.004062fc @ 1d3eceba10cee3c9f2855b7075c73af3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004062fc
+- **Origin (md5):** 1d3eceba10cee3c9f2855b7075c73af3
+- **VirusTotal:** [virustotal.com/gui/file/1d3eceba10cee3c9f2855b7075c73af3][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00406328][similar_1_ref] (sim.: 0.8617188454624498)
+2. [fcn.00406328][similar_2_ref] (sim.: 0.8617188454624498)
+3. [fcn.0040645d][similar_3_ref] (sim.: 0.8539761145602018)
+4. [fcn.00406482][similar_4_ref] (sim.: 0.8212338572809579)
+5. [fcn.00406482][similar_5_ref] (sim.: 0.8212338572809579)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push edi
+mov edi,dword[esi*8+0x40b060]
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+test eax,eax
+jne 0x40631f
+push edi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+je 0x40632d
+push dword[esi*8+0x40b064]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+pop edi
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406328@346d8c7390034d82397102a5b98b7c41
+[similar_2_ref]: /report/fcn.00406328@999ae3491971c32d67bd4c32561ea381
+[similar_3_ref]: /report/fcn.0040645d@d6ea03fac5cc8539ee4d47aca4467735
+[similar_4_ref]: /report/fcn.00406482@8f8b2c5d43e03af62d4bc097b3275f12
+[similar_5_ref]: /report/fcn.00406482@e88e20d68d7b3df5aa8f6d5028e52001
+[virustotal_ref]: https://www.virustotal.com/gui/file/1d3eceba10cee3c9f2855b7075c73af3

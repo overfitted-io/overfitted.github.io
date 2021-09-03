@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.1000b902 @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1000b902
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040b15a][similar_1_ref] (sim.: 0.8052008230052514)
+2. [fcn.00419889][similar_2_ref] (sim.: 0.7958793413082242)
+3. [fcn.004088f4][similar_3_ref] (sim.: 0.7937393102320254)
+4. [fcn.004069d2][similar_4_ref] (sim.: 0.7932579147047734)
+5. [fcn.10016851][similar_5_ref] (sim.: 0.7909847898034977)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push esi
+mov esi,dword[sym.imp.ole32.dll_CoTreatAsClass]
+push edi
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+call esi
+mov edi,eax
+test edi,edi
+je 0x1000b980
+cmp dword[ebp+8],0
+je 0x1000b980
+lea eax,[ebp-8]
+push eax
+push str.CLSID
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
+and dword[ebp-4],0
+lea eax,[ebp-4]
+push eax
+push dword[ebp+0xc]
+call dword[sym.imp.ole32.dll_StringFromCLSID]
+push dword[ebp+8]
+mov edi,dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+add eax,eax
+push eax
+push dword[ebp+8]
+push 1
+push edi
+push dword[ebp-8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueW]
+push edi
+call dword[sym.imp.ole32.dll_CoTaskMemFree]
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+call esi
+push dword[ebp-8]
+mov edi,eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,edi
+pop edi
+pop esi
+leave 
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040b15a@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.00419889@319cf4affa41f752783e62f81908d682
+[similar_3_ref]: /report/fcn.004088f4@470263fe7e7cc115b95cd041d643e3b5
+[similar_4_ref]: /report/fcn.004069d2@470263fe7e7cc115b95cd041d643e3b5
+[similar_5_ref]: /report/fcn.10016851@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

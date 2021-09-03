@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.0040496f @ b8ffcf0d951c7d37479fa3db3e1274bb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040496f
+- **Origin (md5):** b8ffcf0d951c7d37479fa3db3e1274bb
+- **VirusTotal:** [virustotal.com/gui/file/b8ffcf0d951c7d37479fa3db3e1274bb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0040496f][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040496f][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040496f][similar_3_ref] (sim.: 1.0)
+4. [fcn.0040496f][similar_4_ref] (sim.: 1.0)
+5. [fcn.0040496f][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+xor esi,esi
+cmp dword[edi],esi
+je 0x4049b2
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+cmp eax,esi
+je 0x4049d2
+push str.RegCreateKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+cmp eax,esi
+je 0x4049d2
+push esi
+push dword[edi]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x4049d5
+cmp dword[edi+4],esi
+je 0x4049d2
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+jmp 0x4049d5
+xor eax,eax
+inc eax
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040496f@5ee3fd17c9a95f310f59023fc9b4737e
+[similar_2_ref]: /report/fcn.0040496f@13ef005ca8ff2306b83fd3ae03f29104
+[similar_3_ref]: /report/fcn.0040496f@f675eb7591a3862690b6cdc54d5604df
+[similar_4_ref]: /report/fcn.0040496f@c6d5547a6b11db0106596d8a93b709be
+[similar_5_ref]: /report/fcn.0040496f@4e3033826014f003be2266887761c806
+[virustotal_ref]: https://www.virustotal.com/gui/file/b8ffcf0d951c7d37479fa3db3e1274bb

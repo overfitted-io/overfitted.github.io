@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.1400557c0 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1400557c0
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.1400558f0][similar_1_ref] (sim.: 0.9253912586590773)
+2. [fcn.14004b4a0][similar_2_ref] (sim.: 0.8896659399757649)
+3. [fcn.14000bb9c][similar_3_ref] (sim.: 0.884500220474615)
+4. [fcn.1400857f0][similar_4_ref] (sim.: 0.883330446229138)
+5. [fcn.14003b740][similar_5_ref] (sim.: 0.8779882517153079)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x10],rbx
+push rbp
+push rsi
+push rdi
+sub rsp,0x60
+mov eax,dword[rcx+0x90]
+and qword[rsp+0x28],0
+mov rsi,rdx
+mov rdx,qword[rcx+0x28]
+mov rbx,rcx
+mov rcx,qword[rcx+8]
+and eax,0x80000000
+mov bpl,r8b
+xor r9d,r9d
+xor r8d,r8d
+mov dword[rsp+0x20],eax
+call qword[sym.imp.WININET.dll_InternetOpenUrlW]
+mov rcx,qword[sym.imp.WININET.dll_InternetCloseHandle]
+mov qword[rsp+0x38],rcx
+mov rcx,rbx
+mov rdi,rax
+mov qword[rsp+0x30],rax
+test rax,rax
+jne 0x140055822
+lea edx,[rax+0x29]
+jmp 0x1400558c3
+mov r8,rsi
+mov rdx,rax
+call fcn.14004be00
+and dword[rsp+0x20],0
+xor r9d,r9d
+xor r8d,r8d
+xor edx,edx
+mov rcx,rdi
+call qword[sym.imp.WININET.dll_HttpSendRequestW]
+test eax,eax
+je 0x1400558bb
+mov rcx,rdi
+call fcn.140038da0
+cmp eax,0xc8
+jne 0x1400558bb
+and dword[rsp+0x80],0
+lea rax,[rsp+0x80]
+lea r9,[rsp+0x98]
+lea r8,[rsp+0x40]
+mov edx,5
+mov rcx,rdi
+mov qword[rsp+0x20],rax
+mov dword[rsp+0x98],0x20
+call qword[sym.imp.WININET.dll_HttpQueryInfoW]
+lea rcx,[rsp+0x40]
+call fcn.140015924
+mov rcx,rbx
+mov qword[rbx+0x18],rax
+test bpl,bpl
+je 0x1400558b1
+mov rdx,rdi
+call fcn.14004bdf0
+jmp 0x1400558d1
+xor r8d,r8d
+mov r9b,1
+xor edx,edx
+jmp 0x1400558cc
+mov edx,0x2a
+mov rcx,rbx
+mov r8d,0xdeadbeef
+xor r9d,r9d
+call fcn.14004bbc0
+lea rcx,[rsp+0x30]
+mov bl,al
+call fcn.140038cf0
+mov al,bl
+mov rbx,qword[rsp+0x88]
+add rsp,0x60
+pop rdi
+pop rsi
+pop rbp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1400558f0@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.14004b4a0@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14000bb9c@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.1400857f0@aa94a542c4d350c292b6898de288bcf0
+[similar_5_ref]: /report/fcn.14003b740@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

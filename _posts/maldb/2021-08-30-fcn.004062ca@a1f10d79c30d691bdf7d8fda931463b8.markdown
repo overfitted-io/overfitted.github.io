@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.004062ca @ a1f10d79c30d691bdf7d8fda931463b8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004062ca
+- **Origin (md5):** a1f10d79c30d691bdf7d8fda931463b8
+- **VirusTotal:** [virustotal.com/gui/file/a1f10d79c30d691bdf7d8fda931463b8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004062ca][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040628f][similar_2_ref] (sim.: 0.8534591925628919)
+3. [fcn.004058c2][similar_3_ref] (sim.: 0.7772645144990008)
+4. [fcn.004058c2][similar_4_ref] (sim.: 0.7772645144990008)
+5. [fcn.004060f0][similar_5_ref] (sim.: 0.7320041900729205)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x120
+push esi
+mov esi,0x104
+lea eax,[ebp-0x120]
+push esi
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
+cmp eax,esi
+pop esi
+jbe 0x4062ee
+xor eax,eax
+test eax,eax
+je 0x406300
+cmp byte[ebp+eax-0x121],0x5c
+je 0x406300
+xor ecx,ecx
+jmp 0x406303
+xor ecx,ecx
+inc ecx
+push dword[ebp+8]
+lea ecx,[ecx+0x40a014]
+lea eax,[ebp+eax-0x120]
+push ecx
+push str._s_s.dll
+push eax
+call dword[sym.imp.USER32.dll_wsprintfA]
+add esp,0x10
+lea eax,[ebp-0x120]
+push 8
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExA]
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004062ca@510c8408eb3f0420e19240592ddc0b5b
+[similar_2_ref]: /report/fcn.0040628f@84dc68a2818105dbfcb17693062b25c0
+[similar_3_ref]: /report/fcn.004058c2@ca0b3b300c37cf83aa8195cdd053964b
+[similar_4_ref]: /report/fcn.004058c2@24d6dc92d07ce9e45a7cf05669535b54
+[similar_5_ref]: /report/fcn.004060f0@858dbd4ce0c289ef03f5cd172ced5d27
+[virustotal_ref]: https://www.virustotal.com/gui/file/a1f10d79c30d691bdf7d8fda931463b8

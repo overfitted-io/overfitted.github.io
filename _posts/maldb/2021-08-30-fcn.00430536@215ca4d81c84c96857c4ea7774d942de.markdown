@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.00430536 @ 215ca4d81c84c96857c4ea7774d942de"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00430536
+- **Origin (md5):** 215ca4d81c84c96857c4ea7774d942de
+- **VirusTotal:** [virustotal.com/gui/file/215ca4d81c84c96857c4ea7774d942de][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0048671b][similar_1_ref] (sim.: 0.8562449895659939)
+2. [fcn.00415727][similar_2_ref] (sim.: 0.831077412076294)
+3. [fcn.0046cf17][similar_3_ref] (sim.: 0.8237908903787337)
+4. [fcn.0041479a][similar_4_ref] (sim.: 0.8127581237579075)
+5. [fcn.0041479a][similar_5_ref] (sim.: 0.8127581237579075)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x430576
+mov ecx,0x5a4d
+cmp word[eax],cx
+jne 0x430576
+mov ecx,dword[eax+0x3c]
+add ecx,eax
+cmp dword[ecx],0x4550
+jne 0x430576
+mov eax,0x10b
+cmp word[ecx+0x18],ax
+jne 0x430576
+cmp dword[ecx+0x74],0xe
+jbe 0x430576
+cmp dword[ecx+0xe8],0
+je 0x430576
+mov al,1
+ret 
+xor al,al
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0048671b@ba63c5f75a2177720b184529dbf918cf
+[similar_2_ref]: /report/fcn.00415727@d59f9c4f445b9f980173dec064f55091
+[similar_3_ref]: /report/fcn.0046cf17@2fcce874fb2a3a396274d2df89c397e3
+[similar_4_ref]: /report/fcn.0041479a@4e7c37abf424044823775b5a322a4f56
+[similar_5_ref]: /report/fcn.0041479a@bfd6bda8df7a254a716ff69133942b93
+[virustotal_ref]: https://www.virustotal.com/gui/file/215ca4d81c84c96857c4ea7774d942de

@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.00417147 @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00417147
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00417147][similar_1_ref] (sim.: 1.0)
+2. [fcn.00417147][similar_2_ref] (sim.: 1.0)
+3. [fcn.004945e1][similar_3_ref] (sim.: 0.7511232745703679)
+4. [fcn.004078e1][similar_4_ref] (sim.: 0.7374598036724682)
+5. [fcn.00407ae1][similar_5_ref] (sim.: 0.7152224532276945)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push esi
+push str.IsWow64Process
+push str.kernel32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+and dword[ebp-4],0
+mov esi,eax
+test esi,esi
+je 0x417189
+lea eax,[ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call esi
+test eax,eax
+je 0x417189
+cmp dword[ebp-4],0
+je 0x417189
+xor eax,eax
+inc eax
+jmp 0x41718b
+xor eax,eax
+pop esi
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00417147@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_2_ref]: /report/fcn.00417147@ff219f45286905b4a87327ca719363be
+[similar_3_ref]: /report/fcn.004945e1@3b2d901eaca41ce14deca6a48c0c801a
+[similar_4_ref]: /report/fcn.004078e1@b3771987fba16f4fba07d1109ec72c76
+[similar_5_ref]: /report/fcn.00407ae1@ad31b5a684d4322296b17fe829c17502
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

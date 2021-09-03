@@ -1,0 +1,184 @@
+---
+layout: post
+title:  "fcn.0046b830 @ ec199daf84c7d2c754bb8d013dd4880e"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0046b830
+- **Origin (md5):** ec199daf84c7d2c754bb8d013dd4880e
+- **VirusTotal:** [virustotal.com/gui/file/ec199daf84c7d2c754bb8d013dd4880e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0046b830][similar_1_ref] (sim.: 1.0)
+2. [fcn.00451290][similar_2_ref] (sim.: 0.9079743663960964)
+3. [fcn.00451290][similar_3_ref] (sim.: 0.9079743663960964)
+4. [fcn.00477480][similar_4_ref] (sim.: 0.9003481186783187)
+5. [fcn.00477480][similar_5_ref] (sim.: 0.9003481186783187)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x18
+push ebx
+push ebp
+mov ebp,dword[esp+0x24]
+xor ebx,ebx
+push esi
+cmp dword[edi+0x18],ebx
+jne 0x46b84a
+cmp byte[edi+0x10],bl
+je 0x46ba00
+cmp dword[edi+0x20],ebx
+jne 0x46b865
+xor eax,eax
+mov ecx,edi
+call fcn.0046b420
+test eax,eax
+jne 0x46b865
+pop esi
+pop ebp
+pop ebx
+add esp,0x18
+ret 8
+cmp edi,dword[0x4c9164]
+jne 0x46b8ad
+movzx eax,byte[0x4c6610]
+mov ecx,dword[edi+0x20]
+mov esi,dword[sym.imp.USER32.dll_CheckMenuItem]
+neg eax
+sbb eax,eax
+and eax,8
+push eax
+push 0xff19
+push ecx
+call esi
+mov edx,dword[0x4c28ec]
+movzx eax,byte[edx+0xf4]
+mov ecx,dword[edi+0x20]
+neg eax
+sbb eax,eax
+and eax,8
+push eax
+push 0xff1a
+push ecx
+call esi
+mov esi,dword[esp+0x2c]
+cmp ebp,0x80000000
+je 0x46b8c1
+cmp esi,0x80000000
+jne 0x46b8cc
+lea edx,[esp+0x18]
+push edx
+call dword[sym.imp.USER32.dll_GetCursorPos]
+cmp ebp,0x80000000
+jne 0x46b8d8
+cmp esi,ebp
+je 0x46b912
+mov dword[esp+0x10],ebx
+mov dword[esp+0x14],ebx
+push 8
+lea ebx,[esp+0x14]
+call fcn.00474d10
+add esp,4
+cmp ebp,0x80000000
+je 0x46b900
+mov eax,dword[esp+0x10]
+add eax,ebp
+mov dword[esp+0x18],eax
+cmp esi,0x80000000
+je 0x46b912
+mov ecx,dword[esp+0x14]
+add ecx,esi
+mov dword[esp+0x1c],ecx
+call dword[sym.imp.USER32.dll_GetForegroundWindow]
+mov ebp,dword[sym.imp.USER32.dll_SetForegroundWindow]
+mov esi,eax
+test esi,esi
+je 0x46b939
+push 0
+push esi
+call dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
+cmp eax,dword[0x4c85cc]
+jne 0x46b939
+xor bl,bl
+jmp 0x46b96b
+mov edx,dword[0x4c64b8]
+push edx
+mov bl,1
+call ebp
+test eax,eax
+jne 0x46b96b
+push 1
+push 0xa
+mov dword[0x4c28b4],eax
+call fcn.00401340
+mov eax,dword[0x4c64b8]
+add esp,8
+push eax
+mov dword[0x4c28b4],1
+call ebp
+mov ecx,dword[0x4c64b8]
+mov edx,dword[esp+0x1c]
+mov eax,dword[esp+0x18]
+push 0
+push ecx
+mov ecx,dword[edi+0x20]
+push edx
+push eax
+push 0
+push ecx
+mov dword[0x4c6648],1
+call dword[sym.imp.USER32.dll_TrackPopupMenuEx]
+mov dword[0x4c6648],0
+cmp edi,dword[0x4c9164]
+jne 0x46b9bb
+mov edx,dword[0x4c64b8]
+push 0
+push 0
+push 0
+push edx
+call dword[sym.imp.USER32.dll_PostMessageW]
+jmp 0x46b9f4
+test bl,bl
+je 0x46b9f4
+test esi,esi
+je 0x46b9f4
+call dword[sym.imp.USER32.dll_GetForegroundWindow]
+cmp eax,dword[0x4c64b8]
+jne 0x46b9f4
+push esi
+call ebp
+push 1
+push 0
+mov dword[0x4c28b4],0
+call fcn.00401340
+add esp,8
+mov dword[0x4c28b4],1
+push 1
+push 0xffffffffffffffff
+call fcn.00401340
+add esp,8
+pop esi
+pop ebp
+mov eax,1
+pop ebx
+add esp,0x18
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046b830@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.00451290@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.00451290@ec199daf84c7d2c754bb8d013dd4880e
+[similar_4_ref]: /report/fcn.00477480@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00477480@ec199daf84c7d2c754bb8d013dd4880e
+[virustotal_ref]: https://www.virustotal.com/gui/file/ec199daf84c7d2c754bb8d013dd4880e

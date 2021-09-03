@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "fcn.0045dae3 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0045dae3
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.0045da5d][similar_1_ref] (sim.: 0.8460441874179445)
+2. [fcn.00455612][similar_2_ref] (sim.: 0.8458461783366311)
+3. [fcn.0047d56e][similar_3_ref] (sim.: 0.8413342786937806)
+4. [fcn.00464189][similar_4_ref] (sim.: 0.841162679677258)
+5. [method.CInternetException.virtual\_16][similar_5_ref] (sim.: 0.839904350131917)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+mov eax,dword[ebp+8]
+mov edx,eax
+push ebx
+push esi
+push edi
+shr edx,0x10
+mov esi,ecx
+push 0x3c
+pop edi
+test dx,dx
+je 0x45db1b
+cmp word[eax],di
+je 0x45db1b
+push eax
+call fcn.004556d9
+mov ecx,eax
+call fcn.00478abc
+mov ecx,eax
+mov eax,dword[ebp+8]
+test ecx,ecx
+cmovne eax,ecx
+mov dword[ebp+8],eax
+mov ecx,eax
+shr ecx,0x10
+test cx,cx
+je 0x45db4b
+mov ecx,esi
+cmp word[eax],di
+jne 0x45db41
+push eax
+call fcn.0045c039
+test al,al
+jne 0x45dbc1
+xor eax,eax
+jmp 0x45dbd1
+push 0
+push eax
+call fcn.0045c087
+jmp 0x45db32
+mov ebx,dword[esi+0x148]
+test ebx,ebx
+jne 0x45db5f
+call fcn.004500a0
+mov ebx,eax
+mov eax,dword[ebp+8]
+push dword[ebp+0xc]
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov edi,eax
+test edi,edi
+je 0x45db3a
+push edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-4],eax
+test eax,eax
+jne 0x45db88
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+jmp 0x45db3a
+mov eax,dword[ebp+0x10]
+push 0
+push edi
+push ebx
+mov dword[esi+0x140],eax
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+push eax
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_LockResource]
+push eax
+mov ecx,esi
+call fcn.0045c2c9
+test al,al
+je 0x45db3a
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,dword[ebp+0xc]
+mov dword[esi+0x144],eax
+push dword[ebp+0x18]
+mov ecx,esi
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+call fcn.0045cbf0
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045da5d@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00455612@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.0047d56e@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00464189@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_5_ref]: /report/method.CInternetException.virtual_16@14b20b07906a36e23f2230c8042160f2
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

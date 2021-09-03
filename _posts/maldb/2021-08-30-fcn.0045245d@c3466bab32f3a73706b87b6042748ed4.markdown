@@ -1,0 +1,159 @@
+---
+layout: post
+title:  "fcn.0045245d @ c3466bab32f3a73706b87b6042748ed4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0045245d
+- **Origin (md5):** c3466bab32f3a73706b87b6042748ed4
+- **VirusTotal:** [virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00498d06][similar_1_ref] (sim.: 0.893914175343905)
+2. [fcn.00425e1d][similar_2_ref] (sim.: 0.889074312784408)
+3. [fcn.00425e1d][similar_3_ref] (sim.: 0.889074312784408)
+4. [fcn.0040514a][similar_4_ref] (sim.: 0.877347807644133)
+5. [fcn.01001760][similar_5_ref] (sim.: 0.875293609278504)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+push ebx
+push esi
+lea eax,[ebp-0xc]
+push edi
+xor ebx,ebx
+push eax
+push ebx
+push 8
+mov byte[ebp-0x1c],bl
+mov byte[ebp-0x1b],bl
+mov byte[ebp-0x1a],bl
+mov byte[ebp-0x19],bl
+mov byte[ebp-0x18],bl
+mov byte[ebp-0x17],5
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]
+mov esi,dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jne 0x4524c7
+call esi
+cmp eax,0x3f0
+jne 0x4524b7
+lea eax,[ebp-0xc]
+push eax
+push 8
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+call esi
+cmp eax,0x78
+jne 0x4524c3
+mov al,1
+jmp 0x452582
+cmp eax,ebx
+je 0x452536
+lea eax,[ebp-8]
+mov edi,dword[sym.imp.ADVAPI32.dll_GetTokenInformation]
+push eax
+push ebx
+push ebx
+push 2
+push dword[ebp-0xc]
+call edi
+test eax,eax
+jne 0x452536
+call esi
+cmp eax,0x7a
+jne 0x452536
+push dword[ebp-8]
+call fcn.00454b65
+mov esi,eax
+pop ecx
+lea eax,[ebp-8]
+cmp esi,ebx
+push eax
+push dword[ebp-8]
+setne byte[ebp-0x24]
+push esi
+push 2
+push dword[ebp-0xc]
+call edi
+test eax,eax
+je 0x45252a
+lea eax,[ebp-0x14]
+push eax
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+push 0x220
+push 0x20
+lea eax,[ebp-0x1c]
+push 2
+push eax
+call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]
+test eax,eax
+jne 0x45253a
+cmp byte[ebp-0x24],bl
+je 0x452536
+push esi
+call fcn.0044ef14
+pop ecx
+xor al,al
+jmp 0x452582
+xor edi,edi
+cmp dword[esi],ebx
+mov byte[ebp-1],bl
+jbe 0x45256a
+lea eax,[esi+4]
+mov dword[ebp-0x10],eax
+push dword[ebp-0x14]
+mov eax,dword[ebp-0x10]
+push dword[eax]
+call dword[sym.imp.ADVAPI32.dll_EqualSid]
+test eax,eax
+jne 0x452566
+add dword[ebp-0x10],8
+inc edi
+cmp edi,dword[esi]
+jb 0x452549
+jmp 0x45256a
+mov byte[ebp-1],1
+push dword[ebp-0x14]
+call dword[sym.imp.ADVAPI32.dll_FreeSid]
+cmp byte[ebp-0x24],bl
+je 0x45257f
+push esi
+call fcn.0044ef14
+pop ecx
+mov al,byte[ebp-1]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00498d06@3b2d901eaca41ce14deca6a48c0c801a
+[similar_2_ref]: /report/fcn.00425e1d@53687e619dcac7d709f306d061d8daeb
+[similar_3_ref]: /report/fcn.00425e1d@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9
+[similar_5_ref]: /report/fcn.01001760@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4

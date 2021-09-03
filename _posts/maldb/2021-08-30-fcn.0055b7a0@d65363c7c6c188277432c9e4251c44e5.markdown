@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.0055b7a0 @ d65363c7c6c188277432c9e4251c44e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0055b7a0
+- **Origin (md5):** d65363c7c6c188277432c9e4251c44e5
+- **VirusTotal:** [virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.005ae290][similar_1_ref] (sim.: 0.8872141202503288)
+2. [fcn.005575d0][similar_2_ref] (sim.: 0.8293302307138571)
+3. [fcn.0051eaed][similar_3_ref] (sim.: 0.8131101441186308)
+4. [fcn.0050e370][similar_4_ref] (sim.: 0.8088097621534523)
+5. [fcn.00587820][similar_5_ref] (sim.: 0.8075901370134081)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x1a8
+push esi
+push edi
+lea edi,[ebp-0x1a8]
+mov ecx,0x6a
+mov eax,0xcccccccc
+rep stosd dword es:[edi],eax
+mov eax,dword[0x7e2f74]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,0x202
+mov word[ebp-8],ax
+mov esi,esp
+lea ecx,[ebp-0x19c]
+push ecx
+movzx edx,word[ebp-8]
+push edx
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+cmp esi,esp
+call fcn.00520929
+mov dword[ebp-0x1a4],eax
+cmp dword[ebp-0x1a4],0
+je 0x55b801
+mov eax,2
+jmp 0x55b87b
+movzx eax,word[ebp-0x19c]
+and eax,0xff
+movzx ecx,al
+movzx edx,word[ebp-8]
+and edx,0xff
+movzx eax,dl
+cmp ecx,eax
+jne 0x55b847
+movzx ecx,word[ebp-0x19c]
+shr ecx,8
+and ecx,0xff
+movzx edx,cl
+movzx eax,word[ebp-8]
+shr eax,8
+and eax,0xff
+movzx ecx,al
+cmp edx,ecx
+je 0x55b85d
+mov esi,esp
+call dword[sym.imp.WS2_32.dll_WSACleanup]
+cmp esi,esp
+call fcn.00520929
+mov eax,2
+jmp 0x55b87b
+call fcn.00521cb1
+mov dword[ebp-0x1a8],eax
+cmp dword[ebp-0x1a8],0
+je 0x55b879
+mov eax,dword[ebp-0x1a8]
+jmp 0x55b87b
+xor eax,eax
+push edx
+mov ecx,ebp
+push eax
+lea edx,[0x55b8ac]
+call fcn.00520dbb
+pop eax
+pop edx
+pop edi
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.0051fccc
+add esp,0x1a8
+cmp ebp,esp
+call fcn.00520929
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005ae290@d65363c7c6c188277432c9e4251c44e5
+[similar_2_ref]: /report/fcn.005575d0@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.0051eaed@d65363c7c6c188277432c9e4251c44e5
+[similar_4_ref]: /report/fcn.0050e370@14b20b07906a36e23f2230c8042160f2
+[similar_5_ref]: /report/fcn.00587820@d65363c7c6c188277432c9e4251c44e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5

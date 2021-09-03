@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.0048f6d4 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0048f6d4
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0049f73e][similar_1_ref] (sim.: 0.8032583361780475)
+2. [method.CSharedFile.virtual\_32][similar_2_ref] (sim.: 0.8032583361780475)
+3. [fcn.0043df10][similar_3_ref] (sim.: 0.7931822893324632)
+4. [fcn.004c0bc0][similar_4_ref] (sim.: 0.7906933683989106)
+5. [fcn.0043a7c0][similar_5_ref] (sim.: 0.7903608899683124)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+0x10]
+test edi,edi
+je 0x48f765
+mov esi,dword[ebp+8]
+lea eax,[ebp+0x10]
+push edi
+push esi
+push eax
+xor ebx,ebx
+push ebx
+push dword[ebp+0xc]
+mov dword[ebp+0x10],ebx
+push dword[ecx]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov edx,eax
+test edx,edx
+jne 0x48f75c
+test esi,esi
+je 0x48f75c
+mov ecx,dword[edi]
+test ecx,ecx
+je 0x48f757
+mov eax,dword[ebp+0x10]
+test eax,eax
+je 0x48f74d
+cmp eax,2
+jbe 0x48f73f
+cmp eax,7
+jne 0x48f74d
+test cl,1
+jne 0x48f74d
+shr ecx,1
+cmp ecx,1
+jb 0x48f74d
+cmp word[esi+ecx*2-2],bx
+jne 0x48f74d
+cmp ecx,1
+jbe 0x48f75c
+cmp word[esi+ecx*2-4],bx
+jmp 0x48f74b
+test cl,1
+jne 0x48f74d
+shr ecx,1
+cmp word[esi+ecx*2-2],bx
+je 0x48f75c
+xor eax,eax
+push 0xd
+mov word[esi],ax
+pop eax
+jmp 0x48f75e
+xor eax,eax
+mov word[esi],ax
+mov eax,edx
+pop edi
+pop esi
+pop ebx
+pop ebp
+ret 0xc
+push 0x80004005
+call fcn.0040af20
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0049f73e@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_2_ref]: /report/method.CSharedFile.virtual_32@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_3_ref]: /report/fcn.0043df10@3b2d901eaca41ce14deca6a48c0c801a
+[similar_4_ref]: /report/fcn.004c0bc0@a9db83c79f22c1884abda377efdebe4d
+[similar_5_ref]: /report/fcn.0043a7c0@4fe6510221c33bf023f6abed461fc13f
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

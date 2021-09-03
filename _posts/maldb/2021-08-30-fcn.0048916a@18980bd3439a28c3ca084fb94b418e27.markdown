@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.0048916a @ 18980bd3439a28c3ca084fb94b418e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0048916a
+- **Origin (md5):** 18980bd3439a28c3ca084fb94b418e27
+- **VirusTotal:** [virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.300fd03e][similar_1_ref] (sim.: 0.8564662971814762)
+2. [fcn.0040c890][similar_2_ref] (sim.: 0.8520493561408367)
+3. [fcn.004297f4][similar_3_ref] (sim.: 0.8503585048663046)
+4. [fcn.004297f4][similar_4_ref] (sim.: 0.8503585048663046)
+5. [fcn.004297f4][similar_5_ref] (sim.: 0.8503585048663046)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x4f84e0],ebx
+push esi
+push edi
+je 0x489187
+xor eax,eax
+cmp dword[0x4f84d8],ebx
+setne al
+jmp 0x48923e
+push str.USER32
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov edi,eax
+cmp edi,ebx
+je 0x48920e
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x4b8c00
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84c8],eax
+je 0x48920e
+push 0x4b8bec
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84cc],eax
+je 0x48920e
+push str.MonitorFromRect
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84d0],eax
+je 0x48920e
+push str.MonitorFromPoint
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84d4],eax
+je 0x48920e
+push str.EnumDisplayMonitors
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84dc],eax
+je 0x48920e
+push 0x4b8ba4
+push edi
+call esi
+cmp eax,ebx
+mov dword[0x4f84d8],eax
+je 0x48920e
+push 1
+pop eax
+mov dword[0x4f84e0],eax
+jmp 0x48923e
+mov dword[0x4f84c8],ebx
+mov dword[0x4f84cc],ebx
+mov dword[0x4f84d0],ebx
+mov dword[0x4f84d4],ebx
+mov dword[0x4f84d8],ebx
+mov dword[0x4f84dc],ebx
+mov dword[0x4f84e0],1
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300fd03e@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.0040c890@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_3_ref]: /report/fcn.004297f4@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_4_ref]: /report/fcn.004297f4@8e21fa3f0489a6a256cf202e57f712bc
+[similar_5_ref]: /report/fcn.004297f4@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/18980bd3439a28c3ca084fb94b418e27

@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "fcn.00420ced @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00420ced
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+<span class="tag" id="HOOK">HOOK</span>
+
+
+# Similar Functions
+
+1. [fcn.0042d6de][similar_1_ref] (sim.: 0.8235611114314059)
+2. [fcn.0042d6de][similar_2_ref] (sim.: 0.8235611114314059)
+3. [fcn.0042d6de][similar_3_ref] (sim.: 0.8235611114314059)
+4. [fcn.0041ca0a][similar_4_ref] (sim.: 0.8194460932112024)
+5. [fcn.0040d45c][similar_5_ref] (sim.: 0.7875762977346891)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push edi
+push 0x428d2e
+mov ecx,0x461d2c
+call fcn.0042ab7b
+mov edi,dword[esp+0xc]
+mov esi,eax
+cmp dword[esi+0x14],edi
+je 0x420d34
+cmp dword[esi+0x28],0
+jne 0x420d31
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push fcn.00420ace
+push 5
+call dword[sym.imp.USER32.dll_SetWindowsHookExA]
+test eax,eax
+mov dword[esi+0x28],eax
+jne 0x420d31
+call fcn.0041d8e1
+mov dword[esi+0x14],edi
+pop edi
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042d6de@ff219f45286905b4a87327ca719363be
+[similar_2_ref]: /report/fcn.0042d6de@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_3_ref]: /report/fcn.0042d6de@8e21fa3f0489a6a256cf202e57f712bc
+[similar_4_ref]: /report/fcn.0041ca0a@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/fcn.0040d45c@a1c6b07868a0eea8f4ee5a872aa71909
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

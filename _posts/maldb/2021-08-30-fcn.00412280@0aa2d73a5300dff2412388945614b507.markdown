@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.00412280 @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00412280
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00412410][similar_1_ref] (sim.: 0.793022823388091)
+2. [fcn.10010138][similar_2_ref] (sim.: 0.7718125246942628)
+3. [fcn.004091f7][similar_3_ref] (sim.: 0.7683533753891097)
+4. [fcn.004091f7][similar_4_ref] (sim.: 0.7683533753891097)
+5. [fcn.00401acc][similar_5_ref] (sim.: 0.7666659012636674)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,eax
+call fcn.004121b0
+test eax,eax
+jne 0x412297
+or dword[esi+0x1c],0x80
+pop esi
+ret 8
+mov eax,dword[esi+4]
+push str.GetAdaptersInfo
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x4122cc
+or dword[esi+0x1c],0x100
+mov eax,dword[esi+4]
+test eax,eax
+je 0x4122c6
+push eax
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov dword[esi+4],0
+xor eax,eax
+pop esi
+ret 8
+mov edx,dword[esp+8]
+lea ecx,[esp+0xc]
+push ecx
+push edx
+call eax
+test eax,eax
+je 0x412321
+add eax,0xffffffce
+cmp eax,0xb6
+ja case.0x4122ed.51
+movzx eax,byte[eax+0x412354]
+jmp dword[eax*4+0x412340]
+or dword[esi+0x1c],0x200
+jmp 0x4122b1
+or dword[esi+0x1c],0x400
+jmp 0x4122b1
+or dword[esi+0x1c],0x800
+jmp 0x4122b1
+or dword[esi+0x1c],0x1000
+jmp 0x4122b1
+or dword[esi+0x1c],0x2000
+jmp 0x4122b1
+mov eax,dword[esi+4]
+test eax,eax
+je 0x412336
+push eax
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov dword[esi+4],0
+mov eax,1
+pop esi
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00412410@0aa2d73a5300dff2412388945614b507
+[similar_2_ref]: /report/fcn.10010138@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_3_ref]: /report/fcn.004091f7@e02c832a2c768752009e071574e12967
+[similar_4_ref]: /report/fcn.004091f7@f068e0a788db6c075da6c407576e943b
+[similar_5_ref]: /report/fcn.00401acc@5f763449465a14d1cdb5ea67e2f984d0
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

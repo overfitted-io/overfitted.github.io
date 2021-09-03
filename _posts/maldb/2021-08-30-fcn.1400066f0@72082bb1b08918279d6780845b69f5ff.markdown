@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "fcn.1400066f0 @ 72082bb1b08918279d6780845b69f5ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1400066f0
+- **Origin (md5):** 72082bb1b08918279d6780845b69f5ff
+- **VirusTotal:** [virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.140006750][similar_1_ref] (sim.: 0.8660609295270608)
+2. [fcn.140006650][similar_2_ref] (sim.: 0.7635719204333901)
+3. [fcn.14004bf90][similar_3_ref] (sim.: 0.7496134233088412)
+4. [fcn.1400267a0][similar_4_ref] (sim.: 0.7484819076090901)
+5. [fcn.140005640][similar_5_ref] (sim.: 0.7469974229112308)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+sub rsp,0x40
+mov rbx,rcx
+mov rax,r8
+mov r10,rdx
+lea rcx,[rsp+0x30]
+xor r8d,r8d
+mov rdx,rax
+mov qword[rsp+0x20],rcx
+mov rcx,r10
+call qword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+je 0x140006724
+xor al,al
+add rsp,0x40
+pop rbx
+ret 
+mov rcx,qword[rbx]
+test rcx,rcx
+je 0x140006732
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov rax,qword[rsp+0x30]
+mov qword[rbx],rax
+mov al,1
+add rsp,0x40
+pop rbx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140006750@72082bb1b08918279d6780845b69f5ff
+[similar_2_ref]: /report/fcn.140006650@72082bb1b08918279d6780845b69f5ff
+[similar_3_ref]: /report/fcn.14004bf90@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.1400267a0@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.140005640@c5b958b285b208bffd52d8455e15d93a
+[virustotal_ref]: https://www.virustotal.com/gui/file/72082bb1b08918279d6780845b69f5ff

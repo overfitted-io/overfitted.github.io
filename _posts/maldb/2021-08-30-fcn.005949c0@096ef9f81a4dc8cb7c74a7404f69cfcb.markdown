@@ -1,0 +1,154 @@
+---
+layout: post
+title:  "fcn.005949c0 @ 096ef9f81a4dc8cb7c74a7404f69cfcb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005949c0
+- **Origin (md5):** 096ef9f81a4dc8cb7c74a7404f69cfcb
+- **VirusTotal:** [virustotal.com/gui/file/096ef9f81a4dc8cb7c74a7404f69cfcb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.005949c0][similar_1_ref] (sim.: 1.0)
+2. [fcn.00596c03][similar_2_ref] (sim.: 0.9227306343588897)
+3. [fcn.005542d3][similar_3_ref] (sim.: 0.9143551955233392)
+4. [fcn.00597830][similar_4_ref] (sim.: 0.9116080460072908)
+5. [fcn.00597830][similar_5_ref] (sim.: 0.9116080460072908)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x122c
+call fcn.00595f60
+lea eax,[ebp-0x98]
+push ebx
+push eax
+mov dword[ebp-0x98],0x94
+call dword[sym.imp.KERNEL32.dll_GetVersionExA]
+test eax,eax
+je 0x594a03
+cmp dword[ebp-0x88],2
+jne 0x594a03
+cmp dword[ebp-0x94],5
+jb 0x594a03
+push 1
+pop eax
+jmp 0x594b05
+lea eax,[ebp-0x122c]
+push 0x1090
+push eax
+push 0x5a41a4
+call dword[sym.imp.KERNEL32.dll_GetEnvironmentVariableA]
+test eax,eax
+je 0x594af2
+xor ebx,ebx
+lea ecx,[ebp-0x122c]
+cmp byte[ebp-0x122c],bl
+je 0x594a45
+mov al,byte[ecx]
+cmp al,0x61
+jl 0x594a40
+cmp al,0x7a
+jg 0x594a40
+sub al,0x20
+mov byte[ecx],al
+inc ecx
+cmp byte[ecx],bl
+jne 0x594a32
+lea eax,[ebp-0x122c]
+push 0x16
+push eax
+push 0x5a418c
+call fcn.00595f20
+add esp,0xc
+test eax,eax
+jne 0x594a67
+lea eax,[ebp-0x122c]
+jmp 0x594ab0
+lea eax,[ebp-0x19c]
+push 0x104
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+cmp byte[ebp-0x19c],bl
+lea ecx,[ebp-0x19c]
+je 0x594a9b
+mov al,byte[ecx]
+cmp al,0x61
+jl 0x594a96
+cmp al,0x7a
+jg 0x594a96
+sub al,0x20
+mov byte[ecx],al
+inc ecx
+cmp byte[ecx],bl
+jne 0x594a88
+lea eax,[ebp-0x19c]
+push eax
+lea eax,[ebp-0x122c]
+push eax
+call fcn.00595ea0
+pop ecx
+pop ecx
+cmp eax,ebx
+je 0x594af2
+push 0x2c
+push eax
+call fcn.00595de0
+pop ecx
+cmp eax,ebx
+pop ecx
+je 0x594af2
+inc eax
+mov ecx,eax
+cmp byte[eax],bl
+je 0x594ad7
+cmp byte[ecx],0x3b
+jne 0x594ad2
+mov byte[ecx],bl
+jmp 0x594ad3
+inc ecx
+cmp byte[ecx],bl
+jne 0x594ac9
+push 0xa
+push ebx
+push eax
+call fcn.00595bb2
+add esp,0xc
+cmp eax,2
+je 0x594b05
+cmp eax,3
+je 0x594b05
+cmp eax,1
+je 0x594b05
+lea eax,[ebp-4]
+push eax
+call fcn.00594993
+cmp byte[ebp-4],6
+pop ecx
+sbb eax,eax
+add eax,3
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005949c0@009ea4ad185ccb9becba67b3b2163e8b
+[similar_2_ref]: /report/fcn.00596c03@fd515d36e5c3696f076b92b737a2556c
+[similar_3_ref]: /report/fcn.005542d3@e4fcd7637c2a9a1e4f16c358278a6a06
+[similar_4_ref]: /report/fcn.00597830@661071a934c3ddee44d06c85d99d90b2
+[similar_5_ref]: /report/fcn.00597830@140d3779c34998b2115004c062b02ca8
+[virustotal_ref]: https://www.virustotal.com/gui/file/096ef9f81a4dc8cb7c74a7404f69cfcb

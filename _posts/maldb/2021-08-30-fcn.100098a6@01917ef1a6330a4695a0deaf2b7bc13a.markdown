@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.100098a6 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100098a6
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.10001050][similar_1_ref] (sim.: 0.7023334119451881)
+2. [fcn.100097de][similar_2_ref] (sim.: 0.700063550356516)
+3. [fcn.10006e28][similar_3_ref] (sim.: 0.6985644756156797)
+4. [fcn.01002970][similar_4_ref] (sim.: 0.6985197378766161)
+5. [fcn.00409e54][similar_5_ref] (sim.: 0.6935521223205181)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+xor esi,esi
+push 0
+push 1
+lea eax,[esi+edi]
+push eax
+push dword[ebp+8]
+call dword[sym.imp.WS2_32.dll_recv]
+cmp eax,0xffffffff
+je 0x100098e3
+test eax,eax
+jbe 0x100098e3
+add esi,eax
+cmp esi,2
+jb 0x100098db
+cmp byte[esi+edi-1],0xa
+jne 0x100098db
+cmp byte[esi+edi-2],0xd
+je 0x100098e9
+cmp esi,0x800
+jb 0x100098ac
+or eax,0xffffffff
+pop esi
+pop ebp
+ret 
+mov byte[esi+edi-2],0
+mov eax,esi
+jmp 0x100098e6
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10001050@090dc3a8da6aa33c667b678303e4bdd6
+[similar_2_ref]: /report/fcn.100097de@b74a1e462e0b6bacec09e2503391e156
+[similar_3_ref]: /report/fcn.10006e28@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.01002970@5f29ac1dca7e163ea19fd3cb73e2638f
+[similar_5_ref]: /report/fcn.00409e54@96a2e39ddab0a9c2476004c9c075324f
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

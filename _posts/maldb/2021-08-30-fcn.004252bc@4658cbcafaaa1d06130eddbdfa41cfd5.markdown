@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "fcn.004252bc @ 4658cbcafaaa1d06130eddbdfa41cfd5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004252bc
+- **Origin (md5):** 4658cbcafaaa1d06130eddbdfa41cfd5
+- **VirusTotal:** [virustotal.com/gui/file/4658cbcafaaa1d06130eddbdfa41cfd5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004252bc][similar_1_ref] (sim.: 1.0)
+2. [fcn.004252bc][similar_2_ref] (sim.: 1.0)
+3. [fcn.004252bc][similar_3_ref] (sim.: 1.0)
+4. [fcn.004252bc][similar_4_ref] (sim.: 1.0)
+5. [fcn.004252bc][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x436a5b
+mov eax,dword fs:[0]
+push eax
+push ebx
+push esi
+push edi
+mov eax,dword[0x443008]
+xor eax,ebp
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+push 0xfa0
+push 0x56ab40
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSectionAndSpinCount]
+push str.api_ms_win_core_synch_l1_2_0.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+jne 0x425317
+push 0x438dc8
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+je 0x4253a3
+push str.InitializeConditionVariable
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.SleepConditionVariableCS
+push esi
+mov ebx,eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.WakeAllConditionVariable
+push esi
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test ebx,ebx
+je 0x42538d
+test edi,edi
+je 0x42538d
+test esi,esi
+je 0x42538d
+and dword[0x56ab5c],0
+mov ecx,ebx
+push 0x56ab58
+call dword[0x4381b8]
+call ebx
+push edi
+call fcn.0042529f
+push esi
+mov dword[0x56ab60],eax
+call fcn.0042529f
+pop ecx
+pop ecx
+mov dword[0x56ab64],eax
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+xor eax,eax
+push eax
+push eax
+push 1
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateEventW]
+mov dword[0x56ab5c],eax
+test eax,eax
+jne 0x42537b
+push 7
+call fcn.00425bb1
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004252bc@0e9d24a190b04adb41c502951b72134c
+[similar_2_ref]: /report/fcn.004252bc@9868510768324dde7e5ccf745520e27a
+[similar_3_ref]: /report/fcn.004252bc@38d41d729f8f30faf0dd96f0c7acba4b
+[similar_4_ref]: /report/fcn.004252bc@b087b9611605c28cc2f86356efd33bcb
+[similar_5_ref]: /report/fcn.004252bc@d50bcea10641ce5b9a5d746273df8a0a
+[virustotal_ref]: https://www.virustotal.com/gui/file/4658cbcafaaa1d06130eddbdfa41cfd5

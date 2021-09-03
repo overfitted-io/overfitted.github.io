@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00418320 @ f360d53698056c0bd2342cbdb569d856"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00418320
+- **Origin (md5):** f360d53698056c0bd2342cbdb569d856
+- **VirusTotal:** [virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00403f74][similar_1_ref] (sim.: 0.8362940070003867)
+2. [fcn.00403602][similar_2_ref] (sim.: 0.8066600360031816)
+3. [fcn.00403f74][similar_3_ref] (sim.: 0.7997205827791963)
+4. [fcn.00403fc4][similar_4_ref] (sim.: 0.7980743743799894)
+5. [fcn.00403f74][similar_5_ref] (sim.: 0.7958255535685104)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x423514],ebx
+push esi
+push edi
+jne 0x41836f
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x4183a5
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.MessageBoxA
+push edi
+call esi
+test eax,eax
+mov dword[0x423514],eax
+je 0x4183a5
+push str.GetActiveWindow
+push edi
+call esi
+push str.GetLastActivePopup
+push edi
+mov dword[0x423518],eax
+call esi
+mov dword[0x42351c],eax
+mov eax,dword[0x423518]
+test eax,eax
+je 0x41838e
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x41838e
+mov eax,dword[0x42351c]
+test eax,eax
+je 0x41838e
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x423514]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x4183a1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403f74@96146d48f33d2b81d37cf455f4bd8c4b
+[similar_2_ref]: /report/fcn.00403602@a2475448bf4050c1583e1970984a4d00
+[similar_3_ref]: /report/fcn.00403f74@c8832014b4500a21301c7da70c07fabf
+[similar_4_ref]: /report/fcn.00403fc4@f7fdde1e34169179beb179f5c2c38adb
+[similar_5_ref]: /report/fcn.00403f74@275ffea927e41707a9ee6cdb506c57a4
+[virustotal_ref]: https://www.virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856

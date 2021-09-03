@@ -1,0 +1,80 @@
+---
+layout: post
+title:  "fcn.14003d660 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14003d660
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.140022bd0][similar_1_ref] (sim.: 0.8418241740119998)
+2. [fcn.14003aca0][similar_2_ref] (sim.: 0.8373735373714549)
+3. [fcn.14003ba70][similar_3_ref] (sim.: 0.8270681669244874)
+4. [fcn.140016230][similar_4_ref] (sim.: 0.8214898945110949)
+5. [fcn.1400557c0][similar_5_ref] (sim.: 0.820912477907761)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+push rdi
+sub rsp,0x230
+mov rbx,rcx
+mov rcx,qword[rcx+0x20]
+lea rdx,[rsp+0x20]
+mov r8d,0x104
+call qword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x14003d6f1
+lea r8,[rbx+0x18]
+lea rcx,[rsp+0x20]
+mov edx,2
+call qword[sym.imp.OLEAUT32.dll_SystemTimeToVariantTime]
+test eax,eax
+js 0x14003d6e8
+mov rcx,qword[rbx+0x18]
+lea rdx,[rsp+0x20]
+xor r8d,r8d
+call qword[sym.imp.OLEAUT32.dll_QueryPathOfRegTypeLib]
+test eax,eax
+js 0x14003d6c0
+mov dword[rbx+0x28],2
+jmp 0x14003d6f8
+mov rcx,qword[rbx+0x18]
+lea rdx,[rsp+0x20]
+xor r8d,r8d
+call qword[sym.imp.OLEAUT32.dll_UnRegisterTypeLibForUser]
+test eax,eax
+js 0x14003d6df
+mov dword[rbx+0x28],1
+jmp 0x14003d6f8
+mov dword[rbx+8],0x8002801c
+jmp 0x14003d6f8
+mov dword[rbx+8],0x80029c4a
+jmp 0x14003d6f8
+mov dword[rbx+8],0x80004005
+mov eax,dword[rbx+8]
+mov rbx,qword[rsp+0x240]
+add rsp,0x230
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140022bd0@a5e8b4820319974b4ce1027132e98e27
+[similar_2_ref]: /report/fcn.14003aca0@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.14003ba70@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140016230@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.1400557c0@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

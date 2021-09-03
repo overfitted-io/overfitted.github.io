@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.00409a56 @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409a56
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00409af8][similar_1_ref] (sim.: 0.8146598571230637)
+2. [fcn.00409bdc][similar_2_ref] (sim.: 0.8034182384956166)
+3. [fcn.0044ff6b][similar_3_ref] (sim.: 0.7817538650312164)
+4. [fcn.0040337b][similar_4_ref] (sim.: 0.7700661781327243)
+5. [fcn.00482b6a][similar_5_ref] (sim.: 0.7671827378836127)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x248
+mov eax,0x423c1e
+call fcn.0041ef8f
+mov eax,dword[ebp+8]
+push eax
+xor edi,edi
+push edi
+push 0x410
+mov dword[ebp-4],edi
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov esi,eax
+cmp esi,edi
+je 0x409a9b
+push 0x104
+lea eax,[ebp-0x21c]
+push eax
+push edi
+push esi
+call dword[sym.imp.PSAPI.DLL_GetModuleFileNameExW]
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea eax,[ebp-0x21c]
+push eax
+lea esi,[ebp-0x238]
+call fcn.00401bc8
+lea eax,[ebp-0x254]
+push eax
+mov ecx,esi
+mov byte[ebp-4],1
+call fcn.00409f0e
+cmp dword[eax+0x14],0x10
+jb 0x409ac9
+mov ebx,dword[eax]
+jmp 0x409acb
+mov ebx,eax
+push edi
+push 1
+lea ecx,[ebp-0x254]
+call fcn.00401cd0
+push 1
+xor edi,edi
+lea esi,[ebp-0x238]
+call fcn.00401e8b
+mov eax,ebx
+call fcn.0041efeb
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00409af8@69b3c79878674ea715338a112bb5caa6
+[similar_2_ref]: /report/fcn.00409bdc@69b3c79878674ea715338a112bb5caa6
+[similar_3_ref]: /report/fcn.0044ff6b@4fe38de7c6c86a1bad209560fa052231
+[similar_4_ref]: /report/fcn.0040337b@0d7eb0bfa8278c92cad79678ce8bc0fd
+[similar_5_ref]: /report/fcn.00482b6a@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

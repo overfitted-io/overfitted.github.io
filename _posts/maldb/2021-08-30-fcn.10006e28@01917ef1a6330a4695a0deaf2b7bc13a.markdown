@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.10006e28 @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10006e28
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.10006632][similar_1_ref] (sim.: 0.7436998834709395)
+2. [fcn.100065c2][similar_2_ref] (sim.: 0.725377863076885)
+3. [fcn.10004620][similar_3_ref] (sim.: 0.7162465831754949)
+4. [fcn.100060a0][similar_4_ref] (sim.: 0.7144136449934788)
+5. [fcn.100129f8][similar_5_ref] (sim.: 0.7135071271086366)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+xor esi,esi
+cmp dword[ebp+0xc],esi
+push edi
+mov edi,eax
+jle 0x10006e56
+mov eax,dword[ebp+0xc]
+push 0
+sub eax,esi
+push eax
+push edi
+push dword[ebp+8]
+call dword[sym.imp.WS2_32.dll_recv]
+add edi,eax
+add esi,eax
+cmp eax,0xffffffff
+je 0x10006e5c
+cmp esi,dword[ebp+0xc]
+jl 0x10006e36
+mov eax,esi
+pop edi
+pop esi
+pop ebp
+ret 
+push 2
+push dword[ebp+8]
+call dword[sym.imp.WS2_32.dll_shutdown]
+push dword[ebp+8]
+call sub.WS2_32.dll_closesocket
+or eax,0xffffffff
+jmp 0x10006e58
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10006632@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.100065c2@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_3_ref]: /report/fcn.10004620@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.100060a0@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_5_ref]: /report/fcn.100129f8@880ba8b1983575bc0c5ed1cb79dcde8f
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

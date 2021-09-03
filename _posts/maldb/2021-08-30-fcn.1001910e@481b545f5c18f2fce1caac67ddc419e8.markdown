@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "fcn.1001910e @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001910e
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00431bd1][similar_1_ref] (sim.: 0.7847171426026263)
+2. [fcn.100147bf][similar_2_ref] (sim.: 0.753575653991861)
+3. [method.CRLangApp.virtual\_176][similar_3_ref] (sim.: 0.7499562608596804)
+4. [fcn.00419686][similar_4_ref] (sim.: 0.7495630127182169)
+5. [fcn.1000558b][similar_5_ref] (sim.: 0.7470965365451869)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x1c
+mov eax,dword[0x10062200]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+mov ebx,dword[ebp+8]
+push esi
+push edi
+push 6
+pop ecx
+lea eax,[ebp-0x1c]
+mov esi,str.mfcm80u.dll
+lea edi,[ebp-0x1c]
+push eax
+rep movsd dword es:[edi],dword ptr[esi]
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x10019153
+push str.MFCM80ReleaseManagedReferences
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x10019153
+push ebx
+call eax
+pop ecx
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.1002288b
+leave 
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00431bd1@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.100147bf@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/method.CRLangApp.virtual_176@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.00419686@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_5_ref]: /report/fcn.1000558b@01917ef1a6330a4695a0deaf2b7bc13a
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

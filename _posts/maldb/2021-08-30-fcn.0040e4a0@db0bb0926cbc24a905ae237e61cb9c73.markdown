@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "fcn.0040e4a0 @ db0bb0926cbc24a905ae237e61cb9c73"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040e4a0
+- **Origin (md5):** db0bb0926cbc24a905ae237e61cb9c73
+- **VirusTotal:** [virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.6a101460][similar_1_ref] (sim.: 0.7197055427531709)
+2. [fcn.00403a85][similar_2_ref] (sim.: 0.7132152503581047)
+3. [fcn.00403a85][similar_3_ref] (sim.: 0.7132152503581047)
+4. [fcn.00410dc0][similar_4_ref] (sim.: 0.7117623932306523)
+5. [fcn.006b9220][similar_5_ref] (sim.: 0.702033547667877)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x28
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+lea edx,[ebp-0xc]
+mov dword[esp+8],edx
+lea edx,[ebp-0x10]
+mov dword[esp+4],edx
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetProcessAffinityMask]
+sub esp,0xc
+test eax,eax
+jne 0x40e4d1
+mov eax,1
+leave 
+ret 
+mov edx,dword[ebp-0x10]
+test edx,edx
+je 0x40e4ca
+xor eax,eax
+lea esi,[esi]
+mov ecx,edx
+and ecx,1
+add eax,ecx
+shr edx,1
+jne 0x40e4e0
+test eax,eax
+je 0x40e4ca
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6a101460@2182c8ee2ffd92cca7175fb65ca30561
+[similar_2_ref]: /report/fcn.00403a85@a3177dc54b85649e8807e665ece12d6a
+[similar_3_ref]: /report/fcn.00403a85@35bedc5498306afe90b32d21d460d74f
+[similar_4_ref]: /report/fcn.00410dc0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_5_ref]: /report/fcn.006b9220@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73

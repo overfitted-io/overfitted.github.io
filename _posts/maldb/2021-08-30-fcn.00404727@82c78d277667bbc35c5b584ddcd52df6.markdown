@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "fcn.00404727 @ 82c78d277667bbc35c5b584ddcd52df6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00404727
+- **Origin (md5):** 82c78d277667bbc35c5b584ddcd52df6
+- **VirusTotal:** [virustotal.com/gui/file/82c78d277667bbc35c5b584ddcd52df6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00404897][similar_1_ref] (sim.: 0.8711392320932084)
+2. [fcn.00404766][similar_2_ref] (sim.: 0.8640606137648841)
+3. [fcn.00404766][similar_3_ref] (sim.: 0.8640606137648841)
+4. [fcn.00404ff5][similar_4_ref] (sim.: 0.8586046396831303)
+5. [fcn.00404a4c][similar_5_ref] (sim.: 0.8446608938699138)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[edi+0xc],0
+push esi
+mov esi,eax
+jne 0x40473f
+call fcn.00410810
+mov dword[edi+0xc],eax
+test eax,eax
+je 0x40476d
+mov eax,dword[edi+0xc]
+mov ecx,dword[ebp+8]
+sub esi,eax
+push 0xd
+sub esi,0xd
+push eax
+mov dword[eax],0x42444c7
+mov dword[eax+4],ecx
+mov byte[eax+8],0xe9
+mov dword[eax+9],esi
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_FlushInstructionCache]
+xor eax,eax
+inc eax
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404897@214019fc1439a81af54ff417c477f8dc
+[similar_2_ref]: /report/fcn.00404766@074a6a8502a27e18f8b5ea831bacabad
+[similar_3_ref]: /report/fcn.00404766@d3ad46676721a96e1408ac558c298889
+[similar_4_ref]: /report/fcn.00404ff5@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_5_ref]: /report/fcn.00404a4c@505be53c36227b94e2fcc406f247f6e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/82c78d277667bbc35c5b584ddcd52df6

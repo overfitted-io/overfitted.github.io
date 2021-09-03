@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "fcn.10017e54 @ 4273a82ae1a72b0dac50947c5ab8a473"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10017e54
+- **Origin (md5):** 4273a82ae1a72b0dac50947c5ab8a473
+- **VirusTotal:** [virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.100179b4][similar_1_ref] (sim.: 0.9056960524483263)
+2. [fcn.1c6976a4][similar_2_ref] (sim.: 0.8754885827201864)
+3. [fcn.1c697070][similar_3_ref] (sim.: 0.8672976775718994)
+4. [fcn.10011870][similar_4_ref] (sim.: 0.8638753543700214)
+5. [fcn.1400070a0][similar_5_ref] (sim.: 0.8634601547594754)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10c
+mov eax,dword[0x10032ba0]
+test eax,eax
+jle 0x10017fb6
+mov dword[esp+0x104],edi
+mov dword[esp+0x108],ebp
+xor ecx,ecx
+mov ebp,ecx
+mov edi,ecx
+mov edx,dword[ebp+0x10032aa4]
+test edx,edx
+je 0x10017f9a
+push dword[edx+4]
+call dword[sym.imp.pthreadVC2.dll_pthread_mutex_lock]
+pop ecx
+mov eax,dword[ebp+0x10032aa4]
+mov edx,dword[eax+8]
+mov ecx,dword[edx]
+test ecx,ecx
+je 0x10017ebf
+push dword[eax+4]
+push dword[eax]
+call dword[sym.imp.pthreadVC2.dll_pthread_cond_wait]
+add esp,8
+mov eax,dword[ebp+0x10032aa4]
+mov edx,dword[eax+8]
+mov ecx,dword[edx]
+test ecx,ecx
+jne 0x10017ea2
+mov dword[edx],0x3e7
+mov eax,dword[ebp+0x10032aa4]
+push dword[eax]
+call dword[sym.imp.pthreadVC2.dll_pthread_cond_signal]
+mov eax,dword[ebp+0x10032aa4]
+push dword[eax+4]
+call dword[sym.imp.pthreadVC2.dll_pthread_mutex_unlock]
+push 0
+push dword[ebp+0x10032ab0]
+push dword[ebp+0x10032aac]
+call dword[sym.imp.pthreadVC2.dll_pthread_join]
+lea eax,[ebp+0x10032aa8]
+push eax
+call dword[sym.imp.pthreadVC2.dll_pthread_attr_destroy]
+mov eax,dword[ebp+0x10032aa4]
+push dword[eax+4]
+call dword[sym.imp.pthreadVC2.dll_pthread_mutex_destroy]
+mov eax,dword[ebp+0x10032aa4]
+push dword[eax]
+call dword[sym.imp.pthreadVC2.dll_pthread_cond_destroy]
+add esp,0x20
+mov eax,dword[ebp+0x10032aa0]
+test eax,eax
+je 0x10017f76
+push 0x1003712c
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x10017f3f
+call eax
+lea eax,[esp]
+push 0x104
+push eax
+push dword[ebp+0x10032aa0]
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+push dword[ebp+0x10032aa0]
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+movzx eax,byte[ebp+0x10032ab8]
+mov dword[ebp+0x10032aa0],0
+cmp eax,1
+je 0x10017fc7
+lea edx,[ebp+0x10032aa0]
+xor eax,eax
+mov dword[edx],eax
+mov dword[edx+4],eax
+mov dword[edx+8],eax
+mov dword[edx+0xc],eax
+mov dword[edx+0x10],eax
+mov dword[edx+0x14],eax
+mov dword[edx+0x18],eax
+mov dword[edx+0x1c],eax
+mov eax,dword[0x10032ba0]
+add ebp,0x20
+add edi,1
+cmp edi,eax
+jl 0x10017e7b
+mov edi,dword[esp+0x104]
+mov ebp,dword[esp+0x108]
+mov dword[0x10032ba0],0
+add esp,0x10c
+ret 
+lea eax,[esp]
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+jmp 0x10017f76
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100179b4@4273a82ae1a72b0dac50947c5ab8a473
+[similar_2_ref]: /report/fcn.1c6976a4@2d079ba83dda3113f0607d58292b7a26
+[similar_3_ref]: /report/fcn.1c697070@2d079ba83dda3113f0607d58292b7a26
+[similar_4_ref]: /report/fcn.10011870@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.1400070a0@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473

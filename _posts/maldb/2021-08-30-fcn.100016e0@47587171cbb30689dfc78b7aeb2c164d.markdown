@@ -1,0 +1,73 @@
+---
+layout: post
+title:  "fcn.100016e0 @ 47587171cbb30689dfc78b7aeb2c164d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100016e0
+- **Origin (md5):** 47587171cbb30689dfc78b7aeb2c164d
+- **VirusTotal:** [virustotal.com/gui/file/47587171cbb30689dfc78b7aeb2c164d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.100cbb70][similar_1_ref] (sim.: 0.7548600710652819)
+2. [fcn.10001510][similar_2_ref] (sim.: 0.7518049843677782)
+3. [fcn.00401a90][similar_3_ref] (sim.: 0.7504504440188785)
+4. [fcn.1001e440][similar_4_ref] (sim.: 0.7459716423343812)
+5. [fcn.00407c90][similar_5_ref] (sim.: 0.7458053651735868)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x100079b4]
+sub esp,0x410
+test eax,eax
+jne 0x1000175e
+push edi
+mov ecx,0x81
+lea edi,[esp+6]
+mov word[esp+4],ax
+rep stosd dword es:[edi],eax
+mov ecx,dword[esp+0x418]
+push 0x104
+stosw word es:[edi],ax
+lea eax,[esp+8]
+push eax
+push ecx
+call fcn.10001ad0
+mov ecx,0x81
+xor eax,eax
+lea edi,[esp+0x21a]
+mov word[esp+0x218],0
+rep stosd dword es:[edi],eax
+stosw word es:[edi],ax
+lea edx,[esp+0x218]
+push 0x104
+lea eax,[esp+0x14]
+push edx
+push eax
+call fcn.10001770
+add esp,0x18
+lea ecx,[esp+0x20c]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+pop edi
+add esp,0x410
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100cbb70@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/fcn.10001510@9058155dd9c058150440a66ebc2b54ac
+[similar_3_ref]: /report/fcn.00401a90@e9782a46c2d4ab52d9b2b1b712934fbe
+[similar_4_ref]: /report/fcn.1001e440@a7a698c732cb880967bd1318dc083d69
+[similar_5_ref]: /report/fcn.00407c90@0403abd1e9e066fc89cddd5736647282
+[virustotal_ref]: https://www.virustotal.com/gui/file/47587171cbb30689dfc78b7aeb2c164d

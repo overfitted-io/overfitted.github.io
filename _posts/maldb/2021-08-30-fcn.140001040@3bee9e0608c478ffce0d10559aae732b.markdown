@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "fcn.140001040 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140001040
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.140011a40][similar_1_ref] (sim.: 0.880161987877786)
+2. [fcn.140038560][similar_2_ref] (sim.: 0.7740088668856188)
+3. [fcn.140038630][similar_3_ref] (sim.: 0.7728141529632974)
+4. [fcn.140038670][similar_4_ref] (sim.: 0.7717163708089472)
+5. [fcn.14003d870][similar_5_ref] (sim.: 0.7712490720332321)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub rsp,0x28
+cmp qword[rcx+0x10],0
+jne 0x140001081
+mov qword[rsp+0x20],rbx
+mov rbx,rcx
+lea rcx,str.uxtheme.dll
+call qword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov qword[rbx],rax
+test rax,rax
+je 0x14000107c
+lea rdx,str.IsThemeActive
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov qword[rbx+0x10],rax
+mov rbx,qword[rsp+0x20]
+add rsp,0x28
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140011a40@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.140038560@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.140038630@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140038670@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14003d870@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

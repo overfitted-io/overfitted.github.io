@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "method.CInternetFile.virtual_92 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CInternetFile.virtual\_92
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [method.CInternetFile.virtual\_92][similar_1_ref] (sim.: 0.9501696386889465)
+2. [method.CInternetFile.virtual\_52][similar_2_ref] (sim.: 0.878876204766531)
+3. [method.CInternetFile.virtual\_52][similar_3_ref] (sim.: 0.8742369979866508)
+4. [method.CInternetFile.virtual\_92][similar_4_ref] (sim.: 0.8671106631978749)
+5. [fcn.00455612][similar_5_ref] (sim.: 0.8628722557130404)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push ecx
+push esi
+push edi
+mov esi,ecx
+xor edi,edi
+cmp dword[esi+0x3c],edi
+jne 0x555718
+push 0x1000
+call fcn.00554fb4
+test eax,eax
+je 0x55578a
+lea eax,[ebp-4]
+push eax
+push dword[esi+0x34]
+push dword[esi+0x3c]
+push dword[esi+0x14]
+call dword[sym.imp.WININET.dll_InternetReadFile]
+test eax,eax
+jne 0x55570f
+push edi
+push dword[esi+0x1c]
+call fcn.00555250
+mov eax,dword[ebp-4]
+mov dword[esi+0x40],eax
+mov dword[esi+0x38],edi
+mov eax,dword[esi+0x38]
+mov edi,dword[ebp+0xc]
+add eax,dword[esi+0x3c]
+push ebx
+mov ebx,dword[ebp+8]
+lea edi,[edi+edi-2]
+jmp 0x555771
+mov ecx,dword[esi+0x38]
+cmp ecx,dword[esi+0x40]
+jb 0x55575b
+lea eax,[ebp-4]
+push eax
+push dword[esi+0x34]
+push dword[esi+0x3c]
+push dword[esi+0x14]
+call dword[sym.imp.WININET.dll_InternetReadFile]
+test eax,eax
+je 0x555790
+mov eax,dword[ebp-4]
+mov dword[esi+0x40],eax
+test eax,eax
+je 0x555797
+and dword[esi+0x38],0
+mov eax,dword[esi+0x3c]
+mov cl,byte[eax]
+cmp cl,0xd
+je 0x555766
+mov byte[ebx],cl
+inc ebx
+dec edi
+inc dword[esi+0x38]
+mov cl,byte[eax]
+inc eax
+cmp cl,0xa
+je 0x555775
+test edi,edi
+jne 0x55572b
+and edi,1
+inc edi
+inc edi
+push edi
+push 0
+push ebx
+call fcn.0057a200
+mov eax,dword[ebp+8]
+add esp,0xc
+pop ebx
+pop edi
+pop esi
+leave 
+ret 8
+push 0
+jmp 0x555707
+and edi,1
+inc edi
+inc edi
+push edi
+push 0
+push ebx
+call fcn.0057a200
+mov eax,ebx
+sub eax,dword[ebp+8]
+add esp,0xc
+neg eax
+sbb eax,eax
+and eax,dword[ebp+8]
+jmp 0x555789
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CInternetFile.virtual_92@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/method.CInternetFile.virtual_52@14b20b07906a36e23f2230c8042160f2
+[similar_3_ref]: /report/method.CInternetFile.virtual_52@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/method.CInternetFile.virtual_92@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_5_ref]: /report/fcn.00455612@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

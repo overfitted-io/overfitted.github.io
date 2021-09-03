@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "fcn.0040554d @ 6f11dca39a331a6e158b2810d4d8234f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040554d
+- **Origin (md5):** 6f11dca39a331a6e158b2810d4d8234f
+- **VirusTotal:** [virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0040592c][similar_1_ref] (sim.: 0.7080824580605787)
+2. [fcn.0040592c][similar_2_ref] (sim.: 0.7080824580605787)
+3. [fcn.004014c0][similar_3_ref] (sim.: 0.7030622690206192)
+4. [fcn.00405040][similar_4_ref] (sim.: 0.701848108031911)
+5. [fcn.10001690][similar_5_ref] (sim.: 0.700143653297282)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push edi
+mov edi,0x11c
+push edi
+push 0
+push esi
+call sub.MSVCRT.dll_memset
+add esp,0xc
+mov dword[esi],edi
+push str.ntdll.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x40558f
+push str.RtlGetVersion
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x40558f
+push esi
+call eax
+neg eax
+sbb eax,eax
+inc eax
+jmp 0x405591
+xor eax,eax
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040592c@24d6dc92d07ce9e45a7cf05669535b54
+[similar_2_ref]: /report/fcn.0040592c@ca0b3b300c37cf83aa8195cdd053964b
+[similar_3_ref]: /report/fcn.004014c0@2d591d102f09b733d7d0e893e5642beb
+[similar_4_ref]: /report/fcn.00405040@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_5_ref]: /report/fcn.10001690@47587171cbb30689dfc78b7aeb2c164d
+[virustotal_ref]: https://www.virustotal.com/gui/file/6f11dca39a331a6e158b2810d4d8234f

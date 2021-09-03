@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "fcn.00408a10 @ 843c4207147f5bab0e104024677fd9ec"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408a10
+- **Origin (md5):** 843c4207147f5bab0e104024677fd9ec
+- **VirusTotal:** [virustotal.com/gui/file/843c4207147f5bab0e104024677fd9ec][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.00408a10][similar_1_ref] (sim.: 0.9594082806263526)
+2. [fcn.00430190][similar_2_ref] (sim.: 0.8799274088252915)
+3. [fcn.00402b20][similar_3_ref] (sim.: 0.8273776693576274)
+4. [fcn.00430250][similar_4_ref] (sim.: 0.7886592621730899)
+5. [fcn.00493849][similar_5_ref] (sim.: 0.7844904562131727)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[ebp+0x34],8
+lea ecx,[ebp+0x20]
+push ebx
+cmovae ecx,dword[ebp+0x20]
+lea eax,[ebp+8]
+cmp dword[ebp+0x1c],8
+push 0
+cmovae eax,dword[ebp+8]
+push 0
+push ecx
+push eax
+push 0
+call dword[sym.imp.urlmon.dll_URLDownloadToFileW]
+mov edx,dword[ebp+0x1c]
+test eax,eax
+sete bl
+cmp edx,8
+jb 0x408a73
+mov ecx,dword[ebp+8]
+lea edx,[edx*2+2]
+mov eax,ecx
+cmp edx,0x1000
+jb 0x408a69
+mov ecx,dword[ecx-4]
+add edx,0x23
+sub eax,ecx
+add eax,0xfffffffc
+cmp eax,0x1f
+ja 0x408ac2
+push edx
+push ecx
+call fcn.0048530a
+add esp,8
+mov edx,dword[ebp+0x34]
+xor eax,eax
+mov dword[ebp+0x18],0
+mov dword[ebp+0x1c],7
+mov word[ebp+8],ax
+cmp edx,8
+jb 0x408abd
+mov ecx,dword[ebp+0x20]
+lea edx,[edx*2+2]
+mov eax,ecx
+cmp edx,0x1000
+jb 0x408ab3
+mov ecx,dword[ecx-4]
+add edx,0x23
+sub eax,ecx
+add eax,0xfffffffc
+cmp eax,0x1f
+ja 0x408ac2
+push edx
+push ecx
+call fcn.0048530a
+add esp,8
+mov al,bl
+pop ebx
+pop ebp
+ret 
+call fcn.0048d14a
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408a10@ba63c5f75a2177720b184529dbf918cf
+[similar_2_ref]: /report/fcn.00430190@94f83197373b17ab8b5225c0900d14de
+[similar_3_ref]: /report/fcn.00402b20@fca52b995e756cff97168f6fef94b37d
+[similar_4_ref]: /report/fcn.00430250@94f83197373b17ab8b5225c0900d14de
+[similar_5_ref]: /report/fcn.00493849@3b2d901eaca41ce14deca6a48c0c801a
+[virustotal_ref]: https://www.virustotal.com/gui/file/843c4207147f5bab0e104024677fd9ec

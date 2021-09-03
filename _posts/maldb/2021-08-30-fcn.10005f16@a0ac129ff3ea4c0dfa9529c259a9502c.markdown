@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.10005f16 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10005f16
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.10006bd8][similar_1_ref] (sim.: 0.8094195842098484)
+2. [fcn.1001a3b3][similar_2_ref] (sim.: 0.808465255000816)
+3. [fcn.10bf27c9][similar_3_ref] (sim.: 0.8050740091596615)
+4. [fcn.10115394][similar_4_ref] (sim.: 0.8046035609078293)
+5. [fcn.0040a47a][similar_5_ref] (sim.: 0.803316620458965)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push esi
+push edi
+call fcn.10005cc1
+push 0xffffffffffffffff
+push dword[eax+0x18]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+call fcn.10005e2a
+mov esi,eax
+call sub.KERNEL32.dll_GetCurrentProcessId
+add eax,esi
+push eax
+call fcn.100d0df5
+pop ecx
+push 0x1a
+xor esi,esi
+pop edi
+call fcn.100d0dd4
+push 3
+pop ecx
+movd xmm0,eax
+cvtdq2pd xmm0,xmm0
+divsd xmm0,qword[0x10191858]
+mulsd xmm0,qword[0x10191860]
+addsd xmm0,qword[0x101917c0]
+cvttsd2si eax,xmm0
+cdq 
+idiv ecx
+test edx,edx
+jne 0x10005faa
+call fcn.100d0dd4
+push 0xa
+pop ecx
+movd xmm0,eax
+cvtdq2pd xmm0,xmm0
+divsd xmm0,qword[0x10191858]
+mulsd xmm0,qword[0x10191860]
+addsd xmm0,qword[0x101917c0]
+cvttsd2si eax,xmm0
+cdq 
+idiv ecx
+add edx,0x30
+jmp 0x1000600f
+cmp edx,1
+jne 0x10005fe0
+call fcn.100d0dd4
+movd xmm0,eax
+cvtdq2pd xmm0,xmm0
+divsd xmm0,qword[0x10191858]
+mulsd xmm0,qword[0x10191860]
+addsd xmm0,qword[0x101917c0]
+cvttsd2si eax,xmm0
+cdq 
+idiv edi
+add edx,0x61
+jmp 0x1000600f
+call fcn.100d0dd4
+movd xmm0,eax
+cvtdq2pd xmm0,xmm0
+divsd xmm0,qword[0x10191858]
+mulsd xmm0,qword[0x10191860]
+addsd xmm0,qword[0x101917c0]
+cvttsd2si eax,xmm0
+cdq 
+idiv edi
+add edx,0x41
+mov byte[esi+0x101ee578],dl
+inc esi
+cmp esi,8
+jb 0x10005f43
+call fcn.10005cc1
+push dword[eax+0x18]
+call dword[sym.imp.KERNEL32.dll_ReleaseMutex]
+pop edi
+mov eax,0x101ee578
+pop esi
+pop ecx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10006bd8@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.1001a3b3@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_3_ref]: /report/fcn.10bf27c9@89dc67d2f980e8488f97b1bf8cb24258
+[similar_4_ref]: /report/fcn.10115394@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.0040a47a@fbf34fa6d7da2b8e1de5133a8ca34847
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

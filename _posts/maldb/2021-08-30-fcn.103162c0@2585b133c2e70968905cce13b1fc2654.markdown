@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "fcn.103162c0 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.103162c0
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.10316330][similar_1_ref] (sim.: 0.9135712415886033)
+2. [fcn.10153050][similar_2_ref] (sim.: 0.7402486837470705)
+3. [fcn.3003d5c0][similar_3_ref] (sim.: 0.7371828964198672)
+4. [fcn.300914c0][similar_4_ref] (sim.: 0.727890234326588)
+5. [fcn.100c9180][similar_5_ref] (sim.: 0.7243694046186803)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebx
+mov ebx,dword[esp+0xc]
+push edi
+xor edi,edi
+cmp ebx,edi
+jne 0x103162d5
+pop edi
+xor eax,eax
+pop ebx
+pop ecx
+ret 4
+push esi
+push 0x100
+call fcn.10905e95
+add esp,4
+mov esi,eax
+lea eax,[esp+0xc]
+push eax
+lea ecx,[esp+0x18]
+push ecx
+push esi
+push 0x13
+push ebx
+mov dword[esp+0x28],0xff
+mov dword[esp+0x20],edi
+call dword[sym.imp.WININET.dll_HttpQueryInfoA]
+test eax,eax
+je 0x1031631d
+mov edx,dword[esp+0x14]
+push esi
+mov byte[edx+esi],0
+call dword[sym.imp.MSVCR80.dll_atoi]
+add esp,4
+mov edi,eax
+push esi
+call sub.MSVCR80.dll_void___cdecl_operator_delete___void__
+add esp,4
+pop esi
+mov eax,edi
+pop edi
+pop ebx
+pop ecx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10316330@2585b133c2e70968905cce13b1fc2654
+[similar_2_ref]: /report/fcn.10153050@8761fe5e7bef67f1579f600248f8f0cc
+[similar_3_ref]: /report/fcn.3003d5c0@0a3653d3e8fb1320d70b4e1441359302
+[similar_4_ref]: /report/fcn.300914c0@0a3653d3e8fb1320d70b4e1441359302
+[similar_5_ref]: /report/fcn.100c9180@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

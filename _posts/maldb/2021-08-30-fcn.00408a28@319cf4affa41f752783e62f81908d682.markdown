@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.00408a28 @ 319cf4affa41f752783e62f81908d682"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408a28
+- **Origin (md5):** 319cf4affa41f752783e62f81908d682
+- **VirusTotal:** [virustotal.com/gui/file/319cf4affa41f752783e62f81908d682][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00408a1c][similar_1_ref] (sim.: 0.9206646064850731)
+2. [fcn.00408a1c][similar_2_ref] (sim.: 0.9206646064850731)
+3. [fcn.00409319][similar_3_ref] (sim.: 0.8572841933618376)
+4. [fcn.00409319][similar_4_ref] (sim.: 0.8572841933618376)
+5. [fcn.00408835][similar_5_ref] (sim.: 0.8316546389521509)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push esi
+mov esi,ecx
+cmp dword[esi+0xc],1
+push edi
+jne 0x408a42
+push 0xfffffffffffffff6
+call dword[sym.imp.KERNEL32.dll_GetStdHandle]
+mov dword[esi+4],eax
+push 0
+lea eax,[ebp-4]
+push eax
+push dword[ebp+0xc]
+push dword[ebp+8]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x408ab3
+mov ecx,esi
+call fcn.004089e2
+test al,al
+je 0x408a7d
+mov eax,0x4e20
+cmp dword[ebp+0xc],eax
+jbe 0x408a7d
+push eax
+push dword[ebp+8]
+mov ecx,esi
+call fcn.00408a28
+jmp 0x408ab6
+cmp dword[esi+0xc],1
+mov ebx,dword[sym.imp.KERNEL32.dll_GetLastError]
+jne 0x408a94
+call ebx
+cmp eax,0x6d
+jne 0x408a94
+xor eax,eax
+jmp 0x408ab6
+cmp dword[esi+0xc],0
+jne 0x408aae
+mov edi,0x8000
+cmp dword[ebp+0xc],edi
+jbe 0x408aae
+call ebx
+cmp eax,0x21
+jne 0x408aae
+push edi
+jmp 0x408a71
+or eax,0xffffffff
+jmp 0x408ab6
+mov eax,dword[ebp-4]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00408a1c@7e044e51324f9f80f4e97d8f3549c003
+[similar_2_ref]: /report/fcn.00408a1c@88e03379526f823ce2de3b236adcaf80
+[similar_3_ref]: /report/fcn.00409319@f068e0a788db6c075da6c407576e943b
+[similar_4_ref]: /report/fcn.00409319@e02c832a2c768752009e071574e12967
+[similar_5_ref]: /report/fcn.00408835@88e03379526f823ce2de3b236adcaf80
+[virustotal_ref]: https://www.virustotal.com/gui/file/319cf4affa41f752783e62f81908d682

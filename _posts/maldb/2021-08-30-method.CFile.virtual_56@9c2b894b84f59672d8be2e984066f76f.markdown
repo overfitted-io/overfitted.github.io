@@ -1,0 +1,65 @@
+---
+layout: post
+title:  "method.CFile.virtual_56 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CFile.virtual\_56
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [method.CFile.virtual\_60][similar_1_ref] (sim.: 0.769643484286839)
+2. [method.CMirrorFile.virtual\_52][similar_2_ref] (sim.: 0.7493350551546678)
+3. [method.CFile.virtual\_52][similar_3_ref] (sim.: 0.7427076277392659)
+4. [method.CFile.virtual\_56][similar_4_ref] (sim.: 0.7408831514027217)
+5. [method.CFile.virtual\_56][similar_5_ref] (sim.: 0.7286537925575522)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+cmp dword[ebp+0xc],0
+push esi
+mov esi,ecx
+jne 0x4cc8ab
+xor eax,eax
+jmp 0x4cc8d6
+push 0
+lea eax,[ebp-4]
+push eax
+push dword[ebp+0xc]
+push dword[ebp+8]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x4cc8d3
+push dword[esi+0xc]
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+call fcn.004eb584
+mov eax,dword[ebp-4]
+pop esi
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CFile.virtual_60@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/method.CMirrorFile.virtual_52@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/method.CFile.virtual_52@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/method.CFile.virtual_56@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/method.CFile.virtual_56@18980bd3439a28c3ca084fb94b418e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

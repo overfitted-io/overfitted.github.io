@@ -1,0 +1,147 @@
+---
+layout: post
+title:  "fcn.00703b40 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00703b40
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.007077b0][similar_1_ref] (sim.: 0.9301162649472191)
+2. [fcn.007d7ef0][similar_2_ref] (sim.: 0.9112779676292762)
+3. [fcn.00719540][similar_3_ref] (sim.: 0.9082287245380625)
+4. [fcn.007197a0][similar_4_ref] (sim.: 0.9079122970520139)
+5. [fcn.005fe7f0][similar_5_ref] (sim.: 0.904460784277808)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push r15
+push r14
+push r13
+push r12
+push rbp
+push rdi
+push rsi
+push rbx
+sub rsp,0x858
+mov r14,qword[rsp+0x8c0]
+mov r15,r8
+mov r8d,dword[rsp+0x8d0]
+movzx ebx,dx
+mov dword[r9],0
+mov edx,ebx
+mov rbp,rcx
+mov r13,r9
+call fcn.007070d0
+test eax,eax
+mov r12d,eax
+js 0x703ce0
+test r14,r14
+movsxd rdi,eax
+lea rsi,[rsp+0x50]
+je 0x703bfa
+lea rsi,[rsp+0x50]
+movsxd rdi,eax
+mov dword[rsp+0x4c],0x80
+lea r8,[rsp+0x4c]
+mov rcx,rdi
+mov rdx,rsi
+call qword[sym.imp.WS2_32.dll_getsockname]
+test eax,eax
+js 0x703cb1
+mov r8,r14
+mov dword[rsp+0x30],0xa
+mov dword[rsp+0x28],0
+mov qword[rsp+0x20],0
+mov r9d,dword[rsp+0x8c8]
+mov rcx,rsi
+mov edx,dword[rsp+0x4c]
+call qword[sym.imp.WS2_32.dll_getnameinfo]
+test eax,eax
+mov r14d,eax
+jne 0x703cc2
+lea rax,[0x00ac72bc]
+mov dword[rsp+0x30],ebx
+mov qword[rsp+0x28],rbp
+mov r9,r15
+lea r8,str.GET__s_HTTP__s_r_nHost:__s:_d_r_nConnection:_Close_r_nUser_Agent:_MSWindows_6.1.7601__UPnP_1.1__MiniUPnPc_2.0_r_n_r_n
+mov edx,0x800
+mov qword[rsp+0x20],rax
+mov rcx,rsi
+call qword[sym.imp.msvcrt.dll__snprintf]
+cmp eax,0x7ff
+mov r14d,eax
+ja 0x703c6b
+xor ebx,ebx
+test eax,eax
+mov rbp,qword[sym.imp.WS2_32.dll_send]
+jne 0x703c47
+jmp 0x703c90
+add ebx,eax
+cmp r14d,ebx
+jle 0x703c90
+movsxd rdx,ebx
+mov r8d,r14d
+xor r9d,r9d
+add rdx,rsi
+sub r8d,ebx
+mov rcx,rdi
+call rbp
+test eax,eax
+jns 0x703c40
+lea rcx,[0x00ac72c0]
+call sub.msvcrt.dll_perror
+xor ebx,ebx
+mov rcx,rdi
+call qword[sym.imp.WS2_32.dll_closesocket]
+mov rax,rbx
+add rsp,0x858
+pop rbx
+pop rsi
+pop rdi
+pop rbp
+pop r12
+pop r13
+pop r14
+pop r15
+ret 
+mov r8,qword[rsp+0x8d8]
+mov ecx,r12d
+mov rdx,r13
+call fcn.00703270
+mov rcx,rdi
+mov rbx,rax
+call qword[sym.imp.WS2_32.dll_closesocket]
+jmp 0x703c76
+lea rcx,str.getsockname
+call sub.msvcrt.dll_perror
+jmp 0x703bfa
+call qword[sym.imp.msvcrt.dll___iob_func]
+lea rdx,str.getnameinfo___failed_:__d_n
+lea rcx,[rax+0x60]
+mov r8d,r14d
+call sub.msvcrt.dll_fprintf
+jmp 0x703bfa
+xor ebx,ebx
+jmp 0x703c76
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.007077b0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.007d7ef0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.00719540@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.007197a0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.005fe7f0@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

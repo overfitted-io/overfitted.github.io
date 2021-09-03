@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "fcn.14000ba00 @ a5e8b4820319974b4ce1027132e98e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14000ba00
+- **Origin (md5):** a5e8b4820319974b4ce1027132e98e27
+- **VirusTotal:** [virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.14000b9a0][similar_1_ref] (sim.: 0.8602297124414056)
+2. [fcn.14000ba60][similar_2_ref] (sim.: 0.8374401317158625)
+3. [fcn.140014724][similar_3_ref] (sim.: 0.772439099686873)
+4. [fcn.14007c578][similar_4_ref] (sim.: 0.7708481778744477)
+5. [fcn.14000ece8][similar_5_ref] (sim.: 0.7620970549186119)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+test rcx,rcx
+je 0x14000ba54
+push rbx
+mov eax,0x20
+call fcn.14007ca50
+sub rsp,rax
+cmp qword[0x1400ea7e8],0
+mov rbx,rcx
+je 0x14000ba4f
+lea rcx,[0x1400ea7f0]
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov rcx,qword[0x1400ea7e8]
+mov r8,rbx
+mov edx,1
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+lea rcx,[0x1400ea7f0]
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+add rsp,0x20
+pop rbx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14000b9a0@a5e8b4820319974b4ce1027132e98e27
+[similar_2_ref]: /report/fcn.14000ba60@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.140014724@72082bb1b08918279d6780845b69f5ff
+[similar_4_ref]: /report/fcn.14007c578@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.14000ece8@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27

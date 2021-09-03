@@ -1,0 +1,98 @@
+---
+layout: post
+title:  "fcn.1001decc @ 4273a82ae1a72b0dac50947c5ab8a473"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001decc
+- **Origin (md5):** 4273a82ae1a72b0dac50947c5ab8a473
+- **VirusTotal:** [virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.14000fcec][similar_1_ref] (sim.: 0.7926975925471123)
+2. [fcn.180001ba8][similar_2_ref] (sim.: 0.7872485624910146)
+3. [fcn.140010304][similar_3_ref] (sim.: 0.7836591463001914)
+4. [fcn.140010e20][similar_4_ref] (sim.: 0.7832003662881911)
+5. [fcn.140015820][similar_5_ref] (sim.: 0.7827226704467395)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov ecx,dword[esp+4]
+mov eax,dword[ecx*4+0x10030c20]
+mov edx,dword[ecx*4+0x10030c34]
+cmp ecx,2
+mov dword[0x10032d08],eax
+mov dword[0x10032d0c],edx
+je 0x1001dfb1
+cmp ecx,3
+je 0x1001dfb1
+push dword[esp+8]
+call fcn.100221f8
+pop ecx
+mov edx,dword[0x10032d44]
+mov eax,dword[0x10032d00]
+shl edx,5
+mov dword[0x10032d68],edx
+test eax,eax
+je 0x1001df1e
+ret 
+push 4
+push 0x1000
+push edx
+push 0
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+push dword[0x10032d68]
+mov dword[0x10032d00],eax
+push 0
+push eax
+call fcn.1002a428
+add esp,0xc
+mov edx,dword[0x10032d00]
+mov eax,dword[0x10032d44]
+mov dword[0x10032cd0],edx
+lea ecx,[edx+eax*4]
+mov dword[0x10032cd4],ecx
+lea ecx,[edx+eax*8]
+mov dword[0x10032cd8],ecx
+lea ecx,[eax*8]
+lea ecx,[ecx+eax*4]
+add ecx,edx
+mov dword[0x10032cdc],ecx
+mov ecx,eax
+shl ecx,4
+add ecx,edx
+mov dword[0x10032ce0],ecx
+lea ecx,[eax+eax*4]
+lea ecx,[edx+ecx*4]
+mov dword[0x10032ce4],ecx
+lea ecx,[eax+eax*2]
+lea ecx,[edx+ecx*8]
+mov dword[0x10032ce8],ecx
+mov ecx,eax
+shl ecx,2
+shl eax,5
+sub eax,ecx
+add edx,eax
+mov dword[0x10032cec],edx
+ret 
+call fcn.100208a4
+jmp 0x1001defb
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.14000fcec@c4af5ec7826361dc5a22db79be296638
+[similar_2_ref]: /report/fcn.180001ba8@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_3_ref]: /report/fcn.140010304@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.140010e20@c4af5ec7826361dc5a22db79be296638
+[similar_5_ref]: /report/fcn.140015820@c5b958b285b208bffd52d8455e15d93a
+[virustotal_ref]: https://www.virustotal.com/gui/file/4273a82ae1a72b0dac50947c5ab8a473

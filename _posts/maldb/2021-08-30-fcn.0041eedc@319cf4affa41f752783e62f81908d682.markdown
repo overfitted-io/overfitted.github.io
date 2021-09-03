@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.0041eedc @ 319cf4affa41f752783e62f81908d682"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041eedc
+- **Origin (md5):** 319cf4affa41f752783e62f81908d682
+- **VirusTotal:** [virustotal.com/gui/file/319cf4affa41f752783e62f81908d682][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0041ed1c][similar_1_ref] (sim.: 0.8878683575090776)
+2. [fcn.0041ed1c][similar_2_ref] (sim.: 0.8878683575090776)
+3. [fcn.004334d2][similar_3_ref] (sim.: 0.8859588358309928)
+4. [fcn.0042851d][similar_4_ref] (sim.: 0.8665484437654444)
+5. [fcn.004142e1][similar_5_ref] (sim.: 0.8614780054032162)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x450418]
+push esi
+mov esi,dword[0x450408]
+push edi
+xor edi,edi
+cmp esi,eax
+jne 0x41ef23
+add eax,0x10
+imul eax,eax,0x14
+push eax
+push dword[0x45040c]
+push edi
+push dword[0x44e848]
+call dword[sym.imp.KERNEL32.dll_HeapReAlloc]
+cmp eax,edi
+jne 0x41ef11
+xor eax,eax
+jmp 0x41ef89
+add dword[0x450418],0x10
+mov esi,dword[0x450408]
+mov dword[0x45040c],eax
+imul esi,esi,0x14
+add esi,dword[0x45040c]
+push 0x41c4
+push 8
+push dword[0x44e848]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov dword[esi+0x10],eax
+cmp eax,edi
+je 0x41ef0d
+push 4
+push 0x2000
+push 0x100000
+push edi
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[esi+0xc],eax
+cmp eax,edi
+jne 0x41ef72
+push dword[esi+0x10]
+push edi
+push dword[0x44e848]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+jmp 0x41ef0d
+or dword[esi+8],0xffffffff
+mov dword[esi],edi
+mov dword[esi+4],edi
+inc dword[0x450408]
+mov eax,dword[esi+0x10]
+or dword[eax],0xffffffff
+mov eax,esi
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041ed1c@7e044e51324f9f80f4e97d8f3549c003
+[similar_2_ref]: /report/fcn.0041ed1c@88e03379526f823ce2de3b236adcaf80
+[similar_3_ref]: /report/fcn.004334d2@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.0042851d@0aa2d73a5300dff2412388945614b507
+[similar_5_ref]: /report/fcn.004142e1@92f468935bc264872869f37147ba28fd
+[virustotal_ref]: https://www.virustotal.com/gui/file/319cf4affa41f752783e62f81908d682

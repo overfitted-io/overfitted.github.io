@@ -1,0 +1,158 @@
+---
+layout: post
+title:  "method.CDialog.virtual_320 @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CDialog.virtual\_320
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042283d][similar_1_ref] (sim.: 1.0)
+2. [fcn.0049b0f5][similar_2_ref] (sim.: 0.9174998715354562)
+3. [method.CDialog.virtual\_184][similar_3_ref] (sim.: 0.9174998715354562)
+4. [fcn.004a00f2][similar_4_ref] (sim.: 0.9096196451306663)
+5. [method.CDialog.virtual\_184][similar_5_ref] (sim.: 0.9096196451306663)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x42bb35
+call fcn.00411264
+sub esp,0x18
+push ebx
+push esi
+mov esi,ecx
+mov eax,dword[esi+0x58]
+mov ebx,dword[esi+0x5c]
+push edi
+mov dword[ebp-0x10],esp
+mov dword[ebp-0x1c],esi
+mov dword[ebp-0x18],eax
+call fcn.0042a5c3
+cmp dword[esi+0x54],0
+mov edi,dword[eax+0xc]
+je 0x42288b
+call fcn.0042a5c3
+mov edi,dword[eax+0xc]
+push 5
+push dword[esi+0x54]
+push edi
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x18],eax
+cmp dword[ebp-0x18],0
+je 0x42289c
+push dword[ebp-0x18]
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov ebx,eax
+test ebx,ebx
+jne 0x4228a8
+or eax,0xffffffff
+jmp 0x4229ab
+mov ecx,esi
+call fcn.0042237d
+mov dword[ebp-0x14],eax
+call fcn.0041f981
+and dword[ebp-0x20],0
+cmp dword[ebp-0x14],0
+je 0x4228eb
+call dword[sym.imp.USER32.dll_GetDesktopWindow]
+cmp dword[ebp-0x14],eax
+je 0x4228eb
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_IsWindowEnabled]
+test eax,eax
+je 0x4228eb
+push 0
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_EnableWindow]
+mov dword[ebp-0x20],1
+and dword[ebp-4],0
+push esi
+call fcn.00420ced
+push dword[ebp-0x14]
+call fcn.0041f8d9
+push edi
+push eax
+push ebx
+mov ecx,esi
+call fcn.00422630
+xor ebx,ebx
+cmp eax,ebx
+je 0x42295f
+test byte[esi+0x38],0x10
+je 0x42292d
+push 4
+pop edi
+mov ecx,esi
+call fcn.004219fb
+test ah,1
+je 0x422925
+push 5
+pop edi
+push edi
+mov ecx,esi
+call fcn.0041f37d
+cmp dword[esi+0x1c],ebx
+je 0x42295f
+push 0x97
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+mov ecx,esi
+call fcn.00421b1d
+jmp 0x42295f
+or dword[ebp-4],0xffffffff
+cmp dword[ebp-0x20],ebx
+je 0x422973
+push 1
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_EnableWindow]
+cmp dword[ebp-0x14],ebx
+je 0x42298c
+call dword[sym.imp.USER32.dll_GetActiveWindow]
+cmp eax,dword[esi+0x1c]
+jne 0x42298c
+push dword[ebp-0x14]
+call dword[sym.imp.USER32.dll_SetActiveWindow]
+mov eax,dword[esi]
+mov ecx,esi
+call dword[eax+0x60]
+mov ecx,esi
+call fcn.004223b7
+cmp dword[esi+0x54],ebx
+je 0x4229a8
+push dword[ebp-0x18]
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,dword[esi+0x40]
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+mov dword fs:[0],ecx
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042283d@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_2_ref]: /report/fcn.0049b0f5@18980bd3439a28c3ca084fb94b418e27
+[similar_3_ref]: /report/method.CDialog.virtual_184@18980bd3439a28c3ca084fb94b418e27
+[similar_4_ref]: /report/fcn.004a00f2@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_5_ref]: /report/method.CDialog.virtual_184@a9fa810a69d3f4d771518b9f44e2d98d
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

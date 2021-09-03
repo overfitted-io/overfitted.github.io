@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.0040224f @ ebf08d86df7e87eccb41dfc660766af7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040224f
+- **Origin (md5):** ebf08d86df7e87eccb41dfc660766af7
+- **VirusTotal:** [virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.004099bb][similar_1_ref] (sim.: 0.8058705230533713)
+2. [fcn.00402026][similar_2_ref] (sim.: 0.8028552980987738)
+3. [fcn.0040211a][similar_3_ref] (sim.: 0.7989828654305919)
+4. [fcn.00401a0f][similar_4_ref] (sim.: 0.7942942251565935)
+5. [fcn.00406b38][similar_5_ref] (sim.: 0.7917894430059683)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x240
+push ebx
+push esi
+push 0x51
+lea edx,[ebp-0x14]
+pop ecx
+call fcn.0040299c
+xor ebx,ebx
+push ebx
+push 2
+call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+mov esi,eax
+mov dword[ebp-0x240],0x22c
+lea eax,[ebp-0x240]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_Process32FirstW]
+test eax,eax
+je 0x4022be
+jmp 0x4022a4
+push ecx
+push ecx
+lea edx,[ebp-0x21c]
+lea ecx,[ebp-0x14]
+call fcn.004027f5
+test eax,eax
+je 0x4022b8
+lea eax,[ebp-0x240]
+push eax
+push esi
+call dword[sym.imp.KERNEL32.dll_Process32NextW]
+test eax,eax
+jne 0x402290
+jmp 0x4022be
+mov ebx,dword[ebp-0x238]
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+call esi
+push ebx
+push 0
+push 0x1fffff
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+test eax,eax
+je 0x4022e1
+push eax
+call esi
+xor eax,eax
+inc eax
+jmp 0x4022e3
+xor eax,eax
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004099bb@69b3c79878674ea715338a112bb5caa6
+[similar_2_ref]: /report/fcn.00402026@ebf08d86df7e87eccb41dfc660766af7
+[similar_3_ref]: /report/fcn.0040211a@ebf08d86df7e87eccb41dfc660766af7
+[similar_4_ref]: /report/fcn.00401a0f@ebf08d86df7e87eccb41dfc660766af7
+[similar_5_ref]: /report/fcn.00406b38@73677cb40830e94fbfb5483ff33e40b9
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7

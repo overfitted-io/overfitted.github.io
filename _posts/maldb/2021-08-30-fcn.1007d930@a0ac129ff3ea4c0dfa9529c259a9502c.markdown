@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.1007d930 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1007d930
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0043d620][similar_1_ref] (sim.: 0.818427617142215)
+2. [fcn.0044ce10][similar_2_ref] (sim.: 0.8159563977822614)
+3. [fcn.00478fe0][similar_3_ref] (sim.: 0.8157777883354655)
+4. [fcn.0043d7b0][similar_4_ref] (sim.: 0.8153845022485067)
+5. [fcn.0043d660][similar_5_ref] (sim.: 0.8080932563367703)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x23c
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov dword[ebp-0x23c],ecx
+mov dword[ebp-0x238],0
+push 0
+push 2
+call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
+mov dword[ebp-0x234],eax
+mov dword[ebp-0x230],0x22c
+lea eax,[ebp-0x230]
+push eax
+mov ecx,dword[ebp-0x234]
+push ecx
+call dword[sym.imp.KERNEL32.dll_Process32FirstW]
+test eax,eax
+jne 0x1007d989
+xor eax,eax
+jmp 0x1007d9f0
+mov edx,1
+test edx,edx
+je 0x1007d9dd
+mov dword[ebp-0x230],0x22c
+lea eax,[ebp-0x230]
+push eax
+mov ecx,dword[ebp-0x234]
+push ecx
+call dword[sym.imp.KERNEL32.dll_Process32NextW]
+test eax,eax
+jne 0x1007d9b6
+jmp 0x1007d9dd
+mov edx,dword[ebp+8]
+push edx
+lea eax,[ebp-0x20c]
+push eax
+call fcn.100d55e6
+add esp,8
+test eax,eax
+jne 0x1007d9db
+mov ecx,dword[ebp-0x228]
+mov dword[ebp-0x238],ecx
+jmp 0x1007d9dd
+jmp 0x1007d989
+mov edx,dword[ebp-0x234]
+push edx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[ebp-0x238]
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043d620@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.0044ce10@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00478fe0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/fcn.0043d7b0@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_5_ref]: /report/fcn.0043d660@1160595edb203a63cb2ca3ce2ff04f47
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "method.CMirrorFile.virtual_52 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CMirrorFile.virtual\_52
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [method.CFile.virtual\_52][similar_1_ref] (sim.: 0.7976473357748821)
+2. [method.CMirrorFile.virtual\_56][similar_2_ref] (sim.: 0.763612598004447)
+3. [method.CFile.virtual\_56][similar_3_ref] (sim.: 0.7493350551546678)
+4. [fcn.0049a85e][similar_4_ref] (sim.: 0.7455872165205957)
+5. [method.CFile.virtual\_52][similar_5_ref] (sim.: 0.7455872165205957)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+cmp dword[ebp+0xc],0
+push esi
+mov esi,ecx
+jne 0x428a20
+xor eax,eax
+jmp 0x428a4b
+push 0
+lea eax,[ebp+0xc]
+push eax
+push dword[ebp+0xc]
+push dword[ebp+8]
+push dword[esi+4]
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+jne 0x428a48
+push dword[esi+0xc]
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+call fcn.0042d9de
+mov eax,dword[ebp+0xc]
+pop esi
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CFile.virtual_52@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_2_ref]: /report/method.CMirrorFile.virtual_56@7b00dd8f2abf54a73bfb09681334ff78
+[similar_3_ref]: /report/method.CFile.virtual_56@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.0049a85e@18980bd3439a28c3ca084fb94b418e27
+[similar_5_ref]: /report/method.CFile.virtual_52@18980bd3439a28c3ca084fb94b418e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

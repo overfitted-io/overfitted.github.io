@@ -1,0 +1,168 @@
+---
+layout: post
+title:  "fcn.1400062b0 @ c5b958b285b208bffd52d8455e15d93a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1400062b0
+- **Origin (md5):** c5b958b285b208bffd52d8455e15d93a
+- **VirusTotal:** [virustotal.com/gui/file/c5b958b285b208bffd52d8455e15d93a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.140006030][similar_1_ref] (sim.: 0.9446653220460671)
+2. [fcn.140006360][similar_2_ref] (sim.: 0.90505693646949)
+3. [fcn.140062360][similar_3_ref] (sim.: 0.9004718968842774)
+4. [fcn.14003ce50][similar_4_ref] (sim.: 0.8982220705171706)
+5. [fcn.140002a10][similar_5_ref] (sim.: 0.8959539069894171)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+push rsi
+push rdi
+sub rsp,0x260
+mov rax,qword[0x1400392b0]
+xor rax,rsp
+mov qword[rsp+0x250],rax
+mov dword[rsp+0x30],r8d
+mov r8,rcx
+mov rsi,rdx
+lea rcx,[rsp+0x50]
+mov edx,0x100
+call fcn.140012a50
+lea rcx,[rsp+0x50]
+mov edx,0x5c
+call fcn.140013790
+lea rcx,[rsp+0x50]
+mov edx,0x5c
+mov rdi,rax
+call fcn.14001381c
+xor ecx,ecx
+mov word[rdi],cx
+lea r8,[rsp+0x50]
+lea r9,[0x14002b558]
+mov word[rax],cx
+mov rbx,rax
+mov edx,ecx
+nop dword[rax]
+nop word[rax+rax]
+movzx eax,word[r8+rdx*2]
+inc rdx
+cmp ax,word[r9+rdx*2-2]
+jne 0x140006352
+cmp rdx,5
+jne 0x140006330
+mov rcx,0xffffffff80000000
+jmp 0x14000646c
+mov rdx,rcx
+lea r8,[rsp+0x50]
+lea r9,[0x14002b568]
+nop dword[rax]
+nop word[rax+rax]
+movzx eax,word[r8+rdx*2]
+inc rdx
+cmp ax,word[r9+rdx*2-2]
+jne 0x140006392
+cmp rdx,5
+jne 0x140006370
+mov rcx,0xffffffff80000001
+jmp 0x14000646c
+mov rdx,rcx
+lea r8,[rsp+0x50]
+lea r9,[0x14002b578]
+nop dword[rax]
+nop word[rax+rax]
+movzx eax,word[r8+rdx*2]
+inc rdx
+cmp ax,word[r9+rdx*2-2]
+jne 0x1400063d2
+cmp rdx,5
+jne 0x1400063b0
+mov rcx,0xffffffff80000002
+jmp 0x14000646c
+mov rdx,rcx
+lea r8,[rsp+0x50]
+lea r9,[0x14002b588]
+nop dword[rax]
+nop word[rax+rax]
+movzx eax,word[r8+rdx*2]
+inc rdx
+cmp ax,word[r9+rdx*2-2]
+jne 0x14000640f
+cmp rdx,4
+jne 0x1400063f0
+mov rcx,0xffffffff80000003
+jmp 0x14000646c
+mov rdx,rcx
+lea r8,[rsp+0x50]
+lea r9,[0x14002b590]
+nop 
+movzx eax,word[r8+rdx*2]
+inc rdx
+cmp ax,word[r9+rdx*2-2]
+jne 0x14000643f
+cmp rdx,5
+jne 0x140006420
+mov rcx,0xffffffff80000005
+jmp 0x14000646c
+lea rdx,[rsp+0x50]
+lea r8,[0x14002b5a0]
+nop dword[rax+rax]
+movzx eax,word[rdx+rcx*2]
+inc rcx
+cmp ax,word[r8+rcx*2-2]
+jne 0x1400064c2
+cmp rcx,5
+jne 0x140006450
+mov rcx,0xffffffff80000006
+lea rax,[rsp+0x38]
+lea rdx,[rdi+2]
+mov r9d,1
+xor r8d,r8d
+mov qword[rsp+0x20],rax
+call qword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x1400064c2
+mov rcx,qword[rsp+0x38]
+lea rax,[rsp+0x30]
+lea r9,[rsp+0x40]
+mov qword[rsp+0x28],rax
+lea rdx,[rbx+2]
+xor r8d,r8d
+mov qword[rsp+0x20],rsi
+call qword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov rcx,qword[rsp+0x38]
+test eax,eax
+je 0x1400064df
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+mov rcx,qword[rsp+0x250]
+xor rcx,rsp
+call fcn.140012a30
+add rsp,0x260
+pop rdi
+pop rsi
+pop rbx
+ret 
+call qword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax,dword[rsp+0x30]
+jmp 0x1400064c4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140006030@c5b958b285b208bffd52d8455e15d93a
+[similar_2_ref]: /report/fcn.140006360@72082bb1b08918279d6780845b69f5ff
+[similar_3_ref]: /report/fcn.140062360@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.14003ce50@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.140002a10@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/c5b958b285b208bffd52d8455e15d93a

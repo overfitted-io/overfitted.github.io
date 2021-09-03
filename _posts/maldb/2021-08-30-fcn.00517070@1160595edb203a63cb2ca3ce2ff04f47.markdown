@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.00517070 @ 1160595edb203a63cb2ca3ce2ff04f47"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00517070
+- **Origin (md5):** 1160595edb203a63cb2ca3ce2ff04f47
+- **VirusTotal:** [virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004e76a0][similar_1_ref] (sim.: 0.8193159781075137)
+2. [fcn.004e7770][similar_2_ref] (sim.: 0.8081049435493501)
+3. [fcn.004ea470][similar_3_ref] (sim.: 0.7921605499508724)
+4. [fcn.004e7700][similar_4_ref] (sim.: 0.7551713379639575)
+5. [fcn.00402c50][similar_5_ref] (sim.: 0.735441444827234)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+mov dword[ebp-8],0
+lea eax,[ebp-8]
+push eax
+mov ecx,dword[ebp+0xc]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax,eax
+je 0x517097
+xor al,al
+jmp 0x5170bd
+push 0
+push 0
+push 0
+mov eax,dword[ebp-8]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueA]
+mov dword[ebp-4],eax
+mov ecx,dword[ebp-8]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+cmp dword[ebp-4],0
+sete al
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004e76a0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_2_ref]: /report/fcn.004e7770@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.004ea470@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.004e7700@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00402c50@4fe38de7c6c86a1bad209560fa052231
+[virustotal_ref]: https://www.virustotal.com/gui/file/1160595edb203a63cb2ca3ce2ff04f47

@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.00405a4c @ 820356b443df86d107b675e725c13af0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405a4c
+- **Origin (md5):** 820356b443df86d107b675e725c13af0
+- **VirusTotal:** [virustotal.com/gui/file/820356b443df86d107b675e725c13af0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0040523d][similar_1_ref] (sim.: 0.875960434955348)
+2. [fcn.00404e3c][similar_2_ref] (sim.: 0.8589389110383854)
+3. [fcn.00405bc4][similar_3_ref] (sim.: 0.8540183289238221)
+4. [fcn.00404840][similar_4_ref] (sim.: 0.8531408962611955)
+5. [fcn.004049ae][similar_5_ref] (sim.: 0.8468737708108857)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+xor esi,esi
+cmp dword[edi],esi
+je 0x405a8f
+push str.Advapi32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+cmp eax,esi
+je 0x405aaf
+push str.RegCreateKeyTransactedW
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+cmp eax,esi
+je 0x405aaf
+push esi
+push dword[edi]
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call eax
+jmp 0x405ab2
+cmp dword[edi+4],esi
+je 0x405aaf
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push esi
+push dword[ebp+0x10]
+push esi
+push esi
+push esi
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
+jmp 0x405ab2
+xor eax,eax
+inc eax
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040523d@20a93604f17ee6f3c2aa7b1f7a497fcf
+[similar_2_ref]: /report/fcn.00404e3c@40a770684b117e1d21b6dd3201f1566a
+[similar_3_ref]: /report/fcn.00405bc4@f5b8476c36459986b226c45654aeb016
+[similar_4_ref]: /report/fcn.00404840@0b645351d6df77d56852ad106e75fced
+[similar_5_ref]: /report/fcn.004049ae@ab22d984f64f202bfb2e0f0e1f3a3f8f
+[virustotal_ref]: https://www.virustotal.com/gui/file/820356b443df86d107b675e725c13af0

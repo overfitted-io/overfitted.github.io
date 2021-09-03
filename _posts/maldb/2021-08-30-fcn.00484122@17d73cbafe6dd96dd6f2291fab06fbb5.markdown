@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.00484122 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00484122
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00456ec0][similar_1_ref] (sim.: 0.8809878051803098)
+2. [fcn.0047dbfb][similar_2_ref] (sim.: 0.829522747184713)
+3. [fcn.0040861e][similar_3_ref] (sim.: 0.8267649254980864)
+4. [fcn.00499a26][similar_4_ref] (sim.: 0.8239697464712495)
+5. [fcn.00418014][similar_5_ref] (sim.: 0.822858816202747)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+jne 0x484135
+inc eax
+mov dword[0x58f478],eax
+ret 
+push ebx
+push esi
+push edi
+push 0x53c7f0
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+xor ebx,ebx
+cmp edi,ebx
+je 0x48416b
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.InterlockedPushEntrySList
+push edi
+call esi
+push str.InterlockedPopEntrySList
+push edi
+mov dword[0x58f47c],eax
+call esi
+mov dword[0x58f480],eax
+cmp dword[0x58f47c],ebx
+je 0x4841d1
+cmp dword[0x58f480],ebx
+je 0x4841d1
+mov eax,dword fs:[0x18]
+mov esi,dword[eax+0x30]
+add esi,0x34
+mov eax,dword[esi]
+cmp eax,ebx
+jne 0x4841c7
+push 8
+push ebx
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+xor eax,eax
+cmp edi,eax
+je 0x4841d1
+push eax
+push edi
+push esi
+mov dword[edi],eax
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+test eax,eax
+je 0x4841c5
+push edi
+push 0
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x58f478],eax
+xor eax,eax
+inc eax
+jmp 0x4841d3
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00456ec0@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0047dbfb@ba63c5f75a2177720b184529dbf918cf
+[similar_3_ref]: /report/fcn.0040861e@ab923633032c47ff6d9c40ed36a40b2b
+[similar_4_ref]: /report/fcn.00499a26@94f83197373b17ab8b5225c0900d14de
+[similar_5_ref]: /report/fcn.00418014@820356b443df86d107b675e725c13af0
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

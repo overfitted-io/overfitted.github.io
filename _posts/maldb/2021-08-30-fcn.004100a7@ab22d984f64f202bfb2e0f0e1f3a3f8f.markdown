@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.004100a7 @ ab22d984f64f202bfb2e0f0e1f3a3f8f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004100a7
+- **Origin (md5):** ab22d984f64f202bfb2e0f0e1f3a3f8f
+- **VirusTotal:** [virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004100a7][similar_1_ref] (sim.: 1.0)
+2. [fcn.004100a7][similar_2_ref] (sim.: 1.0)
+3. [fcn.0041069e][similar_3_ref] (sim.: 0.8996532228212606)
+4. [fcn.004107ff][similar_4_ref] (sim.: 0.8855718392098946)
+5. [fcn.004107ff][similar_5_ref] (sim.: 0.8855718392098946)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xc
+call dword[sym.imp.KERNEL32.dll_IsProcessorFeaturePresent]
+test eax,eax
+jne 0x4100ba
+inc eax
+mov dword[0x479100],eax
+ret 
+mov eax,dword fs:[0x18]
+push ebx
+push esi
+mov esi,dword[eax+0x30]
+add esi,0x34
+mov eax,dword[esi]
+push edi
+test eax,eax
+jne 0x410109
+mov ebx,dword[sym.imp.KERNEL32.dll_GetProcessHeap]
+push 8
+push eax
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov edi,eax
+xor eax,eax
+cmp edi,eax
+je 0x410111
+push eax
+push edi
+push esi
+mov dword[edi],eax
+mov dword[edi+4],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedCompareExchange]
+test eax,eax
+je 0x410107
+push edi
+push 0
+call ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[esi]
+mov dword[0x479100],eax
+xor eax,eax
+inc eax
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004100a7@074a6a8502a27e18f8b5ea831bacabad
+[similar_2_ref]: /report/fcn.004100a7@d3ad46676721a96e1408ac558c298889
+[similar_3_ref]: /report/fcn.0041069e@214019fc1439a81af54ff417c477f8dc
+[similar_4_ref]: /report/fcn.004107ff@9d452aab9b3572c423f4d04fdfadb250
+[similar_5_ref]: /report/fcn.004107ff@56a02334aea008c131d2741a089910fb
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab22d984f64f202bfb2e0f0e1f3a3f8f

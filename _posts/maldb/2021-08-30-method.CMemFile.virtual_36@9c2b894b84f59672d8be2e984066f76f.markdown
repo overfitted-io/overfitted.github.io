@@ -1,0 +1,184 @@
+---
+layout: post
+title:  "method.CMemFile.virtual_36 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CMemFile.virtual\_36
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [method.CFile.virtual\_36][similar_1_ref] (sim.: 0.9076942812082567)
+2. [method.CMemBuffer.virtual\_32][similar_2_ref] (sim.: 0.8984836952215036)
+3. [fcn.00431a6b][similar_3_ref] (sim.: 0.8984836952215036)
+4. [fcn.00431a6b][similar_4_ref] (sim.: 0.8984836952215036)
+5. [method.CMemBuffer.virtual\_32][similar_5_ref] (sim.: 0.8984836952215036)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x220
+mov eax,dword[0x5d9004]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,ecx
+push ebx
+mov ebx,dword[ebp+8]
+push esi
+and dword[eax+8],0
+or dword[eax+4],0xffffffff
+mov esi,dword[ebp+0xc]
+mov dword[ebp-0x214],eax
+and esi,0xffff7fff
+add eax,0xc
+push edi
+mov edi,dword[ebp+0x10]
+mov ecx,eax
+mov dword[ebp-0x210],eax
+call fcn.00404300
+test ebx,ebx
+je 0x4cc871
+push 0
+push 0x104
+push ebx
+call fcn.004cc971
+test eax,eax
+js 0x4cc871
+push edi
+push ebx
+lea eax,[ebp-0x20c]
+push eax
+call fcn.004ccaaa
+test eax,eax
+je 0x4cc885
+mov ecx,dword[ebp-0x210]
+lea eax,[ebp-0x20c]
+push eax
+call fcn.00404480
+and dword[ebp-0x210],0
+mov eax,esi
+push 3
+pop ecx
+and eax,ecx
+sub eax,0
+je 0x4cc783
+sub eax,1
+je 0x4cc777
+sub eax,1
+jne 0x4cc78d
+mov dword[ebp-0x210],0xc0000000
+jmp 0x4cc78d
+mov dword[ebp-0x210],0x40000000
+jmp 0x4cc78d
+mov dword[ebp-0x210],0x80000000
+mov eax,esi
+and eax,0x70
+je 0x4cc7b6
+cmp eax,0x10
+je 0x4cc7b6
+cmp eax,0x20
+je 0x4cc7b1
+cmp eax,0x30
+je 0x4cc7ac
+cmp eax,0x40
+jne 0x4cc7b6
+mov edx,ecx
+jmp 0x4cc7b8
+push 2
+pop edx
+jmp 0x4cc7b8
+xor edx,edx
+inc edx
+jmp 0x4cc7b8
+xor edx,edx
+and dword[ebp-0x21c],0
+mov eax,esi
+shr eax,7
+not eax
+mov dword[ebp-0x220],0xc
+and eax,1
+mov dword[ebp-0x218],eax
+test esi,0x1000
+je 0x4cc7f3
+mov ecx,esi
+and ecx,0x2000
+neg ecx
+sbb ecx,ecx
+and ecx,2
+add ecx,2
+mov eax,esi
+and eax,0x10000
+shl eax,0xd
+or eax,0x80
+test esi,0x20000
+je 0x4cc80f
+or eax,0x80000000
+test esi,0x40000
+je 0x4cc81c
+or eax,0x10000000
+test esi,0x80000
+je 0x4cc829
+or eax,0x8000000
+mov esi,dword[ebp-0x214]
+push 0
+push eax
+push ecx
+cmp dword[esi+0x10],0
+lea eax,[ebp-0x220]
+push eax
+push edx
+push dword[ebp-0x210]
+push ebx
+je 0x4cc852
+mov ecx,dword[esi+0x10]
+call fcn.004cc499
+jmp 0x4cc858
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+cmp eax,0xffffffff
+jne 0x4cc866
+push ebx
+push edi
+call fcn.004cca7d
+jmp 0x4cc885
+mov dword[esi+4],eax
+xor eax,eax
+inc eax
+mov dword[esi+8],eax
+jmp 0x4cc887
+test edi,edi
+je 0x4cc885
+push ebx
+lea ecx,[edi+0x10]
+mov dword[edi+8],3
+call fcn.00404480
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00553199
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CFile.virtual_36@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/method.CMemBuffer.virtual_32@8e21fa3f0489a6a256cf202e57f712bc
+[similar_3_ref]: /report/fcn.00431a6b@8e21fa3f0489a6a256cf202e57f712bc
+[similar_4_ref]: /report/fcn.00431a6b@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_5_ref]: /report/method.CMemBuffer.virtual_32@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

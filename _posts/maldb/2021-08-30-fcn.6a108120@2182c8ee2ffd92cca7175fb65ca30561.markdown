@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "fcn.6a108120 @ 2182c8ee2ffd92cca7175fb65ca30561"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.6a108120
+- **Origin (md5):** 2182c8ee2ffd92cca7175fb65ca30561
+- **VirusTotal:** [virustotal.com/gui/file/2182c8ee2ffd92cca7175fb65ca30561][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.006ac160][similar_1_ref] (sim.: 0.8336159277723201)
+2. [fcn.0067aed0][similar_2_ref] (sim.: 0.8317746795268139)
+3. [fcn.0068c9c0][similar_3_ref] (sim.: 0.8166029510781938)
+4. [fcn.0068f270][similar_4_ref] (sim.: 0.815108202123832)
+5. [fcn.0068bbc0][similar_5_ref] (sim.: 0.8145403857308315)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x4c
+mov eax,dword[0x6a10e038]
+mov dword[esp+0x3c],ebx
+mov dword[esp+0x40],esi
+mov dword[esp+0x44],edi
+cmp eax,0xbb40e64e
+mov dword[esp+0x48],ebp
+mov dword[esp+0x20],0
+mov dword[esp+0x24],0
+je 0x6a108170
+not eax
+mov dword[0x6a10e03c],eax
+mov ebx,dword[esp+0x3c]
+mov esi,dword[esp+0x40]
+mov edi,dword[esp+0x44]
+mov ebp,dword[esp+0x48]
+add esp,0x4c
+ret 
+lea eax,[esp+0x20]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+sub esp,4
+mov eax,dword[esp+0x24]
+mov ebp,dword[esp+0x20]
+mov dword[esp+0x1c],eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov edi,eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+mov ebx,eax
+lea eax,[esp+0x28]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+sub esp,4
+xor ebp,dword[esp+0x1c]
+xor ebp,dword[esp+0x28]
+xor ebp,dword[esp+0x2c]
+xor ebp,edi
+xor ebp,esi
+xor ebp,ebx
+mov eax,ebp
+cmp ebp,0xbb40e64e
+not eax
+je 0x6a1081e2
+mov dword[0x6a10e038],ebp
+mov dword[0x6a10e03c],eax
+jmp 0x6a108156
+mov eax,0x44bf19b0
+mov ebp,0xbb40e64f
+jmp 0x6a1081d2
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.006ac160@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0067aed0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0068c9c0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068f270@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068bbc0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/2182c8ee2ffd92cca7175fb65ca30561

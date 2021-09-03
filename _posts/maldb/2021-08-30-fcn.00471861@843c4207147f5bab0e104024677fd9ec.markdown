@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.00471861 @ 843c4207147f5bab0e104024677fd9ec"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00471861
+- **Origin (md5):** 843c4207147f5bab0e104024677fd9ec
+- **VirusTotal:** [virustotal.com/gui/file/843c4207147f5bab0e104024677fd9ec][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00471911][similar_1_ref] (sim.: 0.926741269264465)
+2. [fcn.0048d74a][similar_2_ref] (sim.: 0.8946725160692535)
+3. [fcn.0046e8cd][similar_3_ref] (sim.: 0.8767238793498262)
+4. [fcn.0046e8cd][similar_4_ref] (sim.: 0.8767238793498262)
+5. [fcn.0045fb28][similar_5_ref] (sim.: 0.8653557409543786)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push ebx
+push esi
+push edi
+push str.GetLogicalProcessorInformationEx
+push str.kernel32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+test esi,esi
+je 0x4718eb
+mov ebx,dword[ebp+0xc]
+mov ecx,esi
+push ebx
+push 0
+push dword[ebp+8]
+call dword[0x4b52a4]
+call esi
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x7a
+je 0x4718b1
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x4718fd
+jmp 0x4718f5
+push dword[ebx]
+call fcn.004957c9
+mov edi,eax
+pop ecx
+test edi,edi
+jne 0x4718d1
+lea ecx,[ebp-0xc]
+call fcn.0046bd4a
+push 0x4dfd90
+lea eax,[ebp-0xc]
+jmp 0x47190e
+push ebx
+push edi
+push dword[ebp+8]
+mov ecx,esi
+call dword[0x4b52a4]
+call esi
+test eax,eax
+je 0x4718a5
+mov eax,edi
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x4718fd
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.00471ffe
+push 0x4e0248
+lea eax,[ebp-0x10]
+push eax
+call fcn.00486f32
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00471911@ba63c5f75a2177720b184529dbf918cf
+[similar_2_ref]: /report/fcn.0048d74a@94f83197373b17ab8b5225c0900d14de
+[similar_3_ref]: /report/fcn.0046e8cd@27ac6b5c7fa1ad11790cdc733c25a701
+[similar_4_ref]: /report/fcn.0046e8cd@9b5524245506621a9773176393787e61
+[similar_5_ref]: /report/fcn.0045fb28@ba5ec83721de3ca10b3c9583f3b2c6a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/843c4207147f5bab0e104024677fd9ec

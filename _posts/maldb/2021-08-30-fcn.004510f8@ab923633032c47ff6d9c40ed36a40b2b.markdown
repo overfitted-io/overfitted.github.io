@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.004510f8 @ ab923633032c47ff6d9c40ed36a40b2b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004510f8
+- **Origin (md5):** ab923633032c47ff6d9c40ed36a40b2b
+- **VirusTotal:** [virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00444eca][similar_1_ref] (sim.: 0.8415501031851792)
+2. [fcn.00450d41][similar_2_ref] (sim.: 0.795420124923027)
+3. [method.CInternetFile.virtual\_52][similar_3_ref] (sim.: 0.7815415410117674)
+4. [fcn.00420e5a][similar_4_ref] (sim.: 0.7798566282072636)
+5. [method.CInternetFile.virtual\_52][similar_5_ref] (sim.: 0.7782999901499223)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+mov ecx,dword[esi+0x84]
+push edi
+test ecx,ecx
+je 0x45114e
+mov eax,dword[esi+0x8c]
+mov edi,dword[esi+0x88]
+cmp eax,edi
+jae 0x45118a
+sub edi,eax
+cmp edi,dword[ebp+0xc]
+jbe 0x451123
+mov edi,dword[ebp+0xc]
+push edi
+add eax,ecx
+push eax
+push dword[ebp+8]
+call fcn.00453df0
+add dword[esi+0x8c],edi
+add dword[esi+0x74],edi
+push edi
+push dword[ebp+8]
+push dword[esi+0x78]
+call fcn.004506c8
+add esp,0x18
+mov dword[esi+0x78],eax
+mov eax,edi
+jmp 0x45118c
+mov eax,dword[esi+0x7c]
+test eax,eax
+je 0x451183
+push 0
+lea ecx,[ebp+0xc]
+push ecx
+push dword[ebp+0xc]
+push dword[ebp+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x45118a
+mov edi,dword[ebp+0xc]
+add dword[esi+0x74],edi
+push edi
+push dword[ebp+8]
+push dword[esi+0x78]
+call fcn.004506c8
+add esp,0xc
+jmp 0x451147
+mov dword[esi+0x14],0x1000000
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00444eca@b3771987fba16f4fba07d1109ec72c76
+[similar_2_ref]: /report/fcn.00450d41@ab923633032c47ff6d9c40ed36a40b2b
+[similar_3_ref]: /report/method.CInternetFile.virtual_52@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.00420e5a@59aef7c08025d70f84c85db2092fc99e
+[similar_5_ref]: /report/method.CInternetFile.virtual_52@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/ab923633032c47ff6d9c40ed36a40b2b

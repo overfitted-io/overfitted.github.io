@@ -1,0 +1,69 @@
+---
+layout: post
+title:  "fcn.00401570 @ fac4f0be03ac37bd8be7ef737cdcee10"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401570
+- **Origin (md5):** fac4f0be03ac37bd8be7ef737cdcee10
+- **VirusTotal:** [virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.1001416f][similar_1_ref] (sim.: 0.7500943445174009)
+2. [fcn.0041bfa5][similar_2_ref] (sim.: 0.7415854845768759)
+3. [fcn.0041bfa5][similar_3_ref] (sim.: 0.7415854845768759)
+4. [fcn.10014582][similar_4_ref] (sim.: 0.7316088169837152)
+5. [fcn.0041bb9a][similar_5_ref] (sim.: 0.7310494814089343)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x43b1a8]
+test eax,eax
+jne 0x4015db
+mov eax,dword[0x43b1ac]
+test eax,eax
+jne 0x4015db
+push str.oleacc.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+mov dword[0x43b1a8],eax
+jne 0x4015a1
+mov dword[0x43b1ac],1
+ret 
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.AccessibleObjectFromWindow
+push eax
+call esi
+mov dword[0x43b1b0],eax
+mov eax,dword[0x43b1a8]
+push str.CreateStdAccessibleObject
+push eax
+call esi
+mov ecx,dword[0x43b1a8]
+push str.LresultFromObject
+push ecx
+mov dword[0x43b1b4],eax
+call esi
+mov dword[0x43b1b8],eax
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001416f@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.0041bfa5@f068e0a788db6c075da6c407576e943b
+[similar_3_ref]: /report/fcn.0041bfa5@e02c832a2c768752009e071574e12967
+[similar_4_ref]: /report/fcn.10014582@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_5_ref]: /report/fcn.0041bb9a@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/fac4f0be03ac37bd8be7ef737cdcee10

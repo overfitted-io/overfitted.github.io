@@ -1,0 +1,123 @@
+---
+layout: post
+title:  "fcn.0043f2fb @ c3466bab32f3a73706b87b6042748ed4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0043f2fb
+- **Origin (md5):** c3466bab32f3a73706b87b6042748ed4
+- **VirusTotal:** [virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0043dfb0][similar_1_ref] (sim.: 0.87204007712649)
+2. [fcn.301033a0][similar_2_ref] (sim.: 0.860895579994491)
+3. [fcn.0040735c][similar_3_ref] (sim.: 0.8608155814038372)
+4. [fcn.0040735c][similar_4_ref] (sim.: 0.8608155814038372)
+5. [fcn.0041247b][similar_5_ref] (sim.: 0.8583175440650174)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x464cd0
+call fcn.00454534
+push ecx
+push ecx
+push ebx
+push esi
+push edi
+mov esi,dword[sym.imp.KERNEL32.dll_lstrcmpiA]
+xor ebx,ebx
+cmp dword[ebp+0x10],ebx
+mov dword[ebp-4],ebx
+mov dword[ebp-0x10],0x80000000
+mov edi,0x482f00
+je 0x43f33b
+push edi
+push dword[ebp+0x10]
+call esi
+test eax,eax
+je 0x43f33b
+push dword[ebp+0x10]
+lea ecx,[ebp-0x10]
+call fcn.00421b75
+cmp dword[ebp+0x14],ebx
+je 0x43f355
+push edi
+push dword[ebp+0x14]
+call esi
+test eax,eax
+je 0x43f355
+push dword[ebp+0x14]
+lea ecx,[ebp-0x10]
+call fcn.00421b75
+lea eax,[ebp-0x14]
+push eax
+push dword[ebp+0xc]
+call dword[sym.imp.ole32.dll_StringFromCLSID]
+mov eax,dword[ebp-0x14]
+cmp eax,ebx
+mov dword[ebp+0x10],eax
+jne 0x43f370
+xor esi,esi
+jmp 0x43f39c
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+lea edi,[eax+eax+2]
+mov eax,edi
+add eax,3
+and al,0xfc
+call fcn.00455540
+mov esi,esp
+push ebx
+push ebx
+push edi
+push esi
+push 0xffffffffffffffff
+push dword[ebp+0x10]
+mov byte[esi],bl
+push ebx
+push ebx
+call dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]
+push 0x2001f
+push str.CLSID
+push dword[ebp-0x10]
+lea ecx,[ebp-0x10]
+call fcn.00421b37
+test eax,eax
+jne 0x43f3be
+push esi
+lea ecx,[ebp-0x10]
+call fcn.00421b75
+push dword[ebp-0x14]
+call dword[sym.imp.ole32.dll_CoTaskMemFree]
+cmp dword[ebp-0x10],ebx
+je 0x43f3d5
+push dword[ebp-0x10]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov ecx,dword[ebp-0xc]
+lea esp,[ebp-0x20]
+xor eax,eax
+mov dword fs:[0],ecx
+pop edi
+pop esi
+pop ebx
+leave 
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043dfb0@c3466bab32f3a73706b87b6042748ed4
+[similar_2_ref]: /report/fcn.301033a0@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.0040735c@3bf433430f740e75dfaf9134a5696829
+[similar_4_ref]: /report/fcn.0040735c@4bd33f73402d0d03c0318f793884eb34
+[similar_5_ref]: /report/fcn.0041247b@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/c3466bab32f3a73706b87b6042748ed4

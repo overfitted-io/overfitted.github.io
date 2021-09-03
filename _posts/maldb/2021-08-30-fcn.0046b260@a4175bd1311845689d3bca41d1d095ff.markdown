@@ -1,0 +1,94 @@
+---
+layout: post
+title:  "fcn.0046b260 @ a4175bd1311845689d3bca41d1d095ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0046b260
+- **Origin (md5):** a4175bd1311845689d3bca41d1d095ff
+- **VirusTotal:** [virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0046af10][similar_1_ref] (sim.: 0.8529704261231605)
+2. [fcn.00472790][similar_2_ref] (sim.: 0.8345477173570914)
+3. [fcn.0046ad60][similar_3_ref] (sim.: 0.8129761585744124)
+4. [fcn.00471760][similar_4_ref] (sim.: 0.7982564937851088)
+5. [fcn.0047ca40][similar_5_ref] (sim.: 0.7940123090986013)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push edi
+push 0x10
+mov edi,eax
+call fcn.004869eb
+lea ecx,[eax+8]
+mov dword[eax],0xfe12ab75
+mov dword[eax+4],8
+mov eax,dword[0x4c0a40]
+add eax,8
+add esp,4
+cmp eax,dword[0x4c0a44]
+mov dword[0x4c0a40],eax
+jle 0x46b298
+mov dword[0x4c0a44],eax
+xor ebx,ebx
+cmp ecx,ebx
+je 0x46b2a7
+mov dword[ecx],ebx
+mov dword[ecx+4],ebx
+mov eax,ecx
+jmp 0x46b2a9
+xor eax,eax
+push 0x142
+mov dword[esi+0x28],eax
+call fcn.00470660
+cmp eax,ebx
+jne 0x46b2c1
+pop edi
+xor al,al
+pop ebx
+ret 4
+mov edx,dword[esp+0xc]
+push ebx
+lea ecx,[esp+0x10]
+push ecx
+push edi
+push eax
+mov eax,dword[edx]
+push eax
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x46b2e2
+cmp dword[esp+0xc],edi
+jne 0x46b2e2
+mov bl,1
+mov eax,dword[esi+0x28]
+mov eax,dword[eax]
+mov ecx,dword[eax]
+mov edx,dword[ecx+0x30]
+push eax
+call edx
+pop edi
+mov al,bl
+pop ebx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0046af10@a4175bd1311845689d3bca41d1d095ff
+[similar_2_ref]: /report/fcn.00472790@a4175bd1311845689d3bca41d1d095ff
+[similar_3_ref]: /report/fcn.0046ad60@a4175bd1311845689d3bca41d1d095ff
+[similar_4_ref]: /report/fcn.00471760@a4175bd1311845689d3bca41d1d095ff
+[similar_5_ref]: /report/fcn.0047ca40@a9fa810a69d3f4d771518b9f44e2d98d
+[virustotal_ref]: https://www.virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff

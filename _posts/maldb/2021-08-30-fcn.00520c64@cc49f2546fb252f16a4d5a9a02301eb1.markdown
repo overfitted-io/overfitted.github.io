@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00520c64 @ cc49f2546fb252f16a4d5a9a02301eb1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00520c64
+- **Origin (md5):** cc49f2546fb252f16a4d5a9a02301eb1
+- **VirusTotal:** [virustotal.com/gui/file/cc49f2546fb252f16a4d5a9a02301eb1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.005e7074][similar_1_ref] (sim.: 0.8648188975719894)
+2. [fcn.00500664][similar_2_ref] (sim.: 0.8570263537206695)
+3. [fcn.00598b54][similar_3_ref] (sim.: 0.8478015476595195)
+4. [fcn.00624c44][similar_4_ref] (sim.: 0.842509868086426)
+5. [fcn.0056e154][similar_5_ref] (sim.: 0.8333647855110883)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x456f81c],ebx
+push esi
+push edi
+jne 0x520cb3
+push 0x52bee8
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x520ce9
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x52bedc
+push edi
+call esi
+test eax,eax
+mov dword[0x456f81c],eax
+je 0x520ce9
+push 0x52becc
+push edi
+call esi
+push 0x52beb8
+push edi
+mov dword[0x456f820],eax
+call esi
+mov dword[0x456f824],eax
+mov eax,dword[0x456f820]
+test eax,eax
+je 0x520cd2
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x520cd2
+mov eax,dword[0x456f824]
+test eax,eax
+je 0x520cd2
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x456f81c]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x520ce5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005e7074@8481303ca93a816ad088ab207da601a7
+[similar_2_ref]: /report/fcn.00500664@557dcbbf2711fedc520328fbbc657056
+[similar_3_ref]: /report/fcn.00598b54@fd515d36e5c3696f076b92b737a2556c
+[similar_4_ref]: /report/fcn.00624c44@7614e1bbe9b9fd3db78e405e68b1fab4
+[similar_5_ref]: /report/fcn.0056e154@411abc0a88b1072e29c624228aa4fa16
+[virustotal_ref]: https://www.virustotal.com/gui/file/cc49f2546fb252f16a4d5a9a02301eb1

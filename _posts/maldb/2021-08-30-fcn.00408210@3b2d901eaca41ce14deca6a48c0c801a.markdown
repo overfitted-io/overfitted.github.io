@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.00408210 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00408210
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040103d][similar_1_ref] (sim.: 0.7816242052734722)
+2. [fcn.00418222][similar_2_ref] (sim.: 0.7749241881253913)
+3. [fcn.00418222][similar_3_ref] (sim.: 0.7749241881253913)
+4. [fcn.00403834][similar_4_ref] (sim.: 0.7649519222096958)
+5. [fcn.00403834][similar_5_ref] (sim.: 0.7649519222096958)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,8
+push esi
+push edi
+xor edi,edi
+mov dword[ebp-4],edx
+mov esi,ecx
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+push edi
+push edi
+push edi
+push 4
+push edi
+push esi
+mov dword[ebp-8],eax
+call dword[sym.imp.KERNEL32.dll_CreateFileMappingW]
+mov esi,eax
+test esi,esi
+je 0x408272
+push ebx
+push edi
+push edi
+push edi
+push 2
+push esi
+call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
+mov ebx,eax
+test ebx,ebx
+je 0x40826a
+mov edx,dword[ebp-8]
+mov ecx,ebx
+push edi
+push dword[ebp-4]
+call fcn.004081a0
+add esp,8
+mov edi,eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_UnmapViewOfFile]
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop ebx
+mov eax,edi
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040103d@7b8f4ef4fb1f8ad81aca09da2f992561
+[similar_2_ref]: /report/fcn.00418222@53687e619dcac7d709f306d061d8daeb
+[similar_3_ref]: /report/fcn.00418222@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.00403834@3f1595e66dc63331ba0930a0c79684ce
+[similar_5_ref]: /report/fcn.00403834@4c8869bb42f854640703b6ddda29ee38
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

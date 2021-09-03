@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "fcn.100409b1 @ 3785b40cea34bd176ce2c160dcf987f8"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100409b1
+- **Origin (md5):** 3785b40cea34bd176ce2c160dcf987f8
+- **VirusTotal:** [virustotal.com/gui/file/3785b40cea34bd176ce2c160dcf987f8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004cac38][similar_1_ref] (sim.: 0.8177763206593589)
+2. [fcn.1000a380][similar_2_ref] (sim.: 0.8155654453432689)
+3. [fcn.0044eeb8][similar_3_ref] (sim.: 0.7948608083209938)
+4. [fcn.00404b24][similar_4_ref] (sim.: 0.7839310826928964)
+5. [fcn.005542ac][similar_5_ref] (sim.: 0.7809810291266294)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+call fcn.10040a04
+mov eax,0x10000000
+mov dword[esi],0x38
+lea ecx,[esi+0x14]
+mov dword[esi+8],eax
+mov dword[esi+4],eax
+mov dword[esi+0xc],0xc00
+mov dword[esi+0x10],0x1004cc08
+call fcn.10001cc0
+test eax,eax
+jns 0x10040a00
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x100409f9
+push str.ERROR_:_Unable_to_initialize_critical_section_in_CAtlBaseModule_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[0x1005cd3c],1
+mov eax,esi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004cac38@a9db83c79f22c1884abda377efdebe4d
+[similar_2_ref]: /report/fcn.1000a380@b7467517f3ef2950fbbab46c56c44481
+[similar_3_ref]: /report/fcn.0044eeb8@3dfcfb1d918b690c00de324bcfcdc082
+[similar_4_ref]: /report/fcn.00404b24@fca52b995e756cff97168f6fef94b37d
+[similar_5_ref]: /report/fcn.005542ac@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/3785b40cea34bd176ce2c160dcf987f8

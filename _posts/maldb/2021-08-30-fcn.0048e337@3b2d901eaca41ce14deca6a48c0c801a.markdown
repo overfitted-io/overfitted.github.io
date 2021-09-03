@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.0048e337 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0048e337
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0041bfa5][similar_1_ref] (sim.: 0.8172130387530575)
+2. [fcn.0041bfa5][similar_2_ref] (sim.: 0.8172130387530575)
+3. [fcn.00411469][similar_3_ref] (sim.: 0.8029869120495303)
+4. [fcn.004130c2][similar_4_ref] (sim.: 0.7721844284945699)
+5. [fcn.0048916a][similar_5_ref] (sim.: 0.7696435412050822)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[0x524868]
+push ebx
+xor ebx,ebx
+inc ebx
+cmp eax,ebx
+jne 0x48e348
+xor al,al
+pop ebx
+ret 
+test eax,eax
+je 0x48e350
+mov al,bl
+pop ebx
+ret 
+push esi
+push str.KERNEL32.DLL
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov esi,eax
+test esi,esi
+jne 0x48e366
+mov esi,ebx
+jmp 0x48e390
+push str.AcquireSRWLockExclusive
+push esi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x48e362
+push str.ReleaseSRWLockExclusive
+push esi
+mov dword[0x52486c],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x48e362
+mov dword[0x524870],eax
+mov ecx,esi
+mov edx,0x524868
+xor eax,eax
+lock cmpxchg dword[edx],ecx
+test eax,eax
+jne 0x48e3a5
+cmp esi,ebx
+je 0x48e3a9
+cmp eax,ebx
+jne 0x48e3ad
+xor al,al
+jmp 0x48e3af
+mov al,bl
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041bfa5@f068e0a788db6c075da6c407576e943b
+[similar_2_ref]: /report/fcn.0041bfa5@e02c832a2c768752009e071574e12967
+[similar_3_ref]: /report/fcn.00411469@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.004130c2@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.0048916a@18980bd3439a28c3ca084fb94b418e27
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

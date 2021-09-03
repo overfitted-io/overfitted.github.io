@@ -1,0 +1,109 @@
+---
+layout: post
+title:  "fcn.0062423c @ 30ae0be98a500ebab0e80cb562d02ecf"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0062423c
+- **Origin (md5):** 30ae0be98a500ebab0e80cb562d02ecf
+- **VirusTotal:** [virustotal.com/gui/file/30ae0be98a500ebab0e80cb562d02ecf][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0062423c][similar_1_ref] (sim.: 1.0)
+2. [fcn.00520000][similar_2_ref] (sim.: 0.8400234989874382)
+3. [fcn.0069f3a0][similar_3_ref] (sim.: 0.8055810368690488)
+4. [fcn.0069f3a0][similar_4_ref] (sim.: 0.8055810368690488)
+5. [fcn.004ab8fc][similar_5_ref] (sim.: 0.8012022405376491)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+add byte[eax],al
+add byte[ecx+0x46fa79c],ah
+test eax,eax
+je 0x624328
+mov ecx,dword[0x46fa794]
+mov esi,dword[sym.imp.KERNEL32.dll_VirtualFree]
+shl ecx,0xf
+add ecx,dword[eax+0xc]
+mov ebx,0x8000
+push 0x4000
+push ebx
+push ecx
+call esi
+mov ecx,dword[0x46fa794]
+mov eax,dword[0x46fa79c]
+mov edx,0x80000000
+shr edx,cl
+or dword[eax+8],edx
+mov eax,dword[0x46fa79c]
+mov ecx,dword[0x46fa794]
+mov eax,dword[eax+0x10]
+and dword[eax+ecx*4+0xc4],0
+mov eax,dword[0x46fa79c]
+mov eax,dword[eax+0x10]
+dec byte[eax+0x43]
+mov eax,dword[0x46fa79c]
+mov ecx,dword[eax+0x10]
+cmp byte[ecx+0x43],0
+jne 0x6242b9
+and dword[eax+4],0xfffffffe
+mov eax,dword[0x46fa79c]
+cmp dword[eax+8],0xffffffff
+jne 0x624328
+push ebx
+push 0
+push dword[eax+0xc]
+call esi
+mov eax,dword[0x46fa79c]
+push dword[eax+0x10]
+push 0
+push dword[0x46fa7ac]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+mov eax,dword[0x46fa7a0]
+mov edx,dword[0x46fa7a4]
+lea eax,[eax+eax*4]
+shl eax,2
+mov ecx,eax
+mov eax,dword[0x46fa79c]
+sub ecx,eax
+lea ecx,[ecx+edx-0x14]
+push ecx
+lea ecx,[eax+0x14]
+push ecx
+push eax
+call fcn.006252d0
+mov eax,dword[ebp+8]
+add esp,0xc
+dec dword[0x46fa7a0]
+cmp eax,dword[0x46fa79c]
+jbe 0x62431e
+sub dword[ebp+8],0x14
+mov eax,dword[0x46fa7a4]
+mov dword[0x46fa798],eax
+mov eax,dword[ebp+8]
+mov dword[0x46fa794],edi
+mov dword[0x46fa79c],eax
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0062423c@ce339585d9f7e59bebf6e94a72861741
+[similar_2_ref]: /report/fcn.00520000@cc49f2546fb252f16a4d5a9a02301eb1
+[similar_3_ref]: /report/fcn.0069f3a0@80027f5c3423b7f316310a6367726335
+[similar_4_ref]: /report/fcn.0069f3a0@0fb0e1c162f9df68f5d89a2b2a71a217
+[similar_5_ref]: /report/fcn.004ab8fc@3e981d1767f44f5fe2446a49ffe52f4e
+[virustotal_ref]: https://www.virustotal.com/gui/file/30ae0be98a500ebab0e80cb562d02ecf

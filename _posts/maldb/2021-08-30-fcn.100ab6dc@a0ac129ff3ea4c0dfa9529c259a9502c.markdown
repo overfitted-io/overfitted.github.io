@@ -1,0 +1,119 @@
+---
+layout: post
+title:  "fcn.100ab6dc @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100ab6dc
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1000aa57][similar_1_ref] (sim.: 0.8550471641130506)
+2. [fcn.10009e8d][similar_2_ref] (sim.: 0.8442983910660893)
+3. [fcn.10066d7f][similar_3_ref] (sim.: 0.8261895200060083)
+4. [fcn.100ccd50][similar_4_ref] (sim.: 0.8205839458086834)
+5. [fcn.100b4750][similar_5_ref] (sim.: 0.8178309431999713)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x81c
+mov eax,0x1013bcc1
+call fcn.100eff85
+mov edi,ecx
+xor esi,esi
+push esi
+push 0x1018ee90
+call fcn.1006f790
+cmp eax,1
+je 0x100ab718
+push esi
+push 0x1018ee88
+mov ecx,edi
+call fcn.1006f790
+cmp eax,1
+je 0x100ab718
+xor eax,eax
+jmp 0x100ab7ee
+push esi
+push 0x1018ea7c
+mov ecx,edi
+call fcn.1006f790
+inc eax
+mov ecx,edi
+push eax
+lea eax,[ebp-0x820]
+push eax
+call fcn.100abf99
+lea eax,[ebp-0x820]
+mov dword[ebp-4],esi
+push eax
+lea ecx,[ebp-0x824]
+call fcn.100ac03c
+pop ecx
+push esi
+push 0x80
+push 3
+push esi
+push 1
+push 0x20000
+push dword[ebp-0x824]
+mov dword[ebp-0x828],esi
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov edi,eax
+cmp edi,0xffffffff
+je 0x100ab7d0
+push esi
+lea eax,[ebp-0x828]
+mov dword[ebp-0x81c],esi
+push eax
+mov ecx,0x800
+mov dword[ebp-0x818],esi
+push ecx
+lea eax,[ebp-0x810]
+mov dword[ebp-0x80c],ecx
+push eax
+push 0xc
+lea eax,[ebp-0x81c]
+push eax
+push 0x2d1400
+push edi
+call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
+test eax,eax
+je 0x100ab7c9
+cmp dword[ebp-0x7f4],4
+je 0x100ab7c6
+cmp dword[ebp-0x7f4],7
+jne 0x100ab7c9
+xor esi,esi
+inc esi
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov ecx,dword[ebp-0x824]
+add ecx,0xfffffff0
+call fcn.1000550a
+mov ecx,dword[ebp-0x820]
+add ecx,0xfffffff0
+call fcn.1000550a
+mov eax,esi
+call fcn.100eff34
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1000aa57@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.10009e8d@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.10066d7f@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.100ccd50@89dc67d2f980e8488f97b1bf8cb24258
+[similar_5_ref]: /report/fcn.100b4750@89dc67d2f980e8488f97b1bf8cb24258
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "fcn.004048de @ 8e21fa3f0489a6a256cf202e57f712bc"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004048de
+- **Origin (md5):** 8e21fa3f0489a6a256cf202e57f712bc
+- **VirusTotal:** [virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.004048de][similar_1_ref] (sim.: 1.0)
+2. [fcn.004048de][similar_2_ref] (sim.: 1.0)
+3. [fcn.0040b621][similar_3_ref] (sim.: 0.749242828628125)
+4. [fcn.1000fd52][similar_4_ref] (sim.: 0.7268336609802301)
+5. [fcn.00415718][similar_5_ref] (sim.: 0.7250360310816735)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,ecx
+cmp dword[esi+4],0
+jne 0x40490b
+push dword[esi+0xc]
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+mov dword[esi+4],eax
+jne 0x40490b
+push dword[esi+0xc]
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+test eax,eax
+mov dword[esi+4],eax
+setne al
+mov byte[esi+8],al
+mov eax,dword[esi+4]
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004048de@ff219f45286905b4a87327ca719363be
+[similar_2_ref]: /report/fcn.004048de@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_3_ref]: /report/fcn.0040b621@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.1000fd52@481b545f5c18f2fce1caac67ddc419e8
+[similar_5_ref]: /report/fcn.00415718@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/8e21fa3f0489a6a256cf202e57f712bc

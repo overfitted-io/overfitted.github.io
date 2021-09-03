@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "fcn.00560448 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00560448
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+<span class="tag" id="HOOK">HOOK</span>
+
+
+# Similar Functions
+
+1. [fcn.005604c5][similar_1_ref] (sim.: 0.8801099361444862)
+2. [fcn.0040d45c][similar_2_ref] (sim.: 0.7501789819448659)
+3. [fcn.00409857][similar_3_ref] (sim.: 0.7315516331221641)
+4. [fcn.005754b8][similar_4_ref] (sim.: 0.7298004105644682)
+5. [fcn.005a085e][similar_5_ref] (sim.: 0.7270115494626135)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+push esi
+push edi
+push 0x554758
+mov ecx,0x60d8dc
+call fcn.00564d06
+mov esi,eax
+test esi,esi
+jne 0x560469
+call fcn.0055473c
+mov edi,dword[ebp+8]
+cmp dword[esi+0x14],edi
+je 0x56049c
+cmp dword[esi+0x28],0
+jne 0x560499
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x560228
+push 5
+call dword[sym.imp.USER32.dll_SetWindowsHookExW]
+mov dword[esi+0x28],eax
+test eax,eax
+jne 0x560499
+call fcn.00554704
+mov dword[esi+0x14],edi
+pop edi
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005604c5@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0040d45c@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/fcn.00409857@d4e56c7d970c209a3a2b3c4b4cc5e586
+[similar_4_ref]: /report/fcn.005754b8@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.005a085e@7453c96a6fbd42ec690b8deb53eafcba
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

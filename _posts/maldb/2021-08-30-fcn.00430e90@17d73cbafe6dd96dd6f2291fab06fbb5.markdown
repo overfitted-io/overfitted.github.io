@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.00430e90 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00430e90
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00430d30][similar_1_ref] (sim.: 0.8664435244706938)
+2. [fcn.0052a470][similar_2_ref] (sim.: 0.8657072016190449)
+3. [fcn.0052a6c0][similar_3_ref] (sim.: 0.8625732452093754)
+4. [fcn.00420570][similar_4_ref] (sim.: 0.8423822953309283)
+5. [fcn.00404880][similar_5_ref] (sim.: 0.8398417400645252)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x5321d0
+mov eax,dword fs:[0]
+push eax
+sub esp,0x6c
+mov eax,dword[0x589c98]
+xor eax,esp
+mov dword[esp+0x68],eax
+push ebx
+push edi
+mov eax,dword[0x589c98]
+xor eax,esp
+push eax
+lea eax,[esp+0x78]
+mov dword fs:[0],eax
+push str.SoftwareKuaiZipReport
+lea ecx,[esp+0x14]
+call fcn.00403420
+xor edi,edi
+push edi
+push 1
+lea eax,[esp+0x18]
+push eax
+push reloc.WS2_32.dll_accept
+lea ecx,[esp+0x58]
+mov dword[esp+0x90],edi
+call fcn.005246d0
+lea ecx,[esp+0x10]
+mov byte[esp+0x80],2
+call fcn.00402bf0
+lea ecx,[esp+0x48]
+call fcn.005244f0
+test al,al
+jne 0x430f18
+lea ecx,[esp+0x48]
+call fcn.005246b0
+mov al,1
+jmp 0x430f88
+push str.timestamp
+lea ecx,[esp+0x30]
+mov dword[esp+0x10],edi
+call fcn.00403420
+lea ecx,[esp+0xc]
+push ecx
+lea edx,[esp+0x30]
+push edx
+lea ecx,[esp+0x50]
+call fcn.00524580
+test al,al
+lea ecx,[esp+0x2c]
+sete bl
+call fcn.00402bf0
+test bl,bl
+jne 0x430f0b
+mov eax,dword[esp+0xc]
+push eax
+call fcn.0043bf60
+add esp,4
+mov edi,eax
+call fcn.0043bf00
+cmp eax,edi
+jne 0x430f0b
+lea ecx,[esi+0x118]
+call fcn.00402b40
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsA]
+lea ecx,[esp+0x48]
+test eax,eax
+je 0x430f0f
+call fcn.005246b0
+xor al,al
+mov ecx,dword[esp+0x78]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop ebx
+mov ecx,dword[esp+0x68]
+xor ecx,esp
+call fcn.004bbd2d
+add esp,0x78
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00430d30@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_2_ref]: /report/fcn.0052a470@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.0052a6c0@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.00420570@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00404880@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

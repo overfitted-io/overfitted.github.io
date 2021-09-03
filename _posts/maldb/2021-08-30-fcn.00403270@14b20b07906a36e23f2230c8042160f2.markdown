@@ -1,0 +1,100 @@
+---
+layout: post
+title:  "fcn.00403270 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403270
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.00403270][similar_1_ref] (sim.: 1.0)
+2. [fcn.00401110][similar_2_ref] (sim.: 0.8899272136842655)
+3. [fcn.00401120][similar_3_ref] (sim.: 0.8815030860349442)
+4. [fcn.00427c80][similar_4_ref] (sim.: 0.8559277841972899)
+5. [fcn.782152b0][similar_5_ref] (sim.: 0.8299492924983802)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+mov eax,dword[ebp+0xc]
+push eax
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x14],eax
+cmp dword[ebp-0x14],0
+jne 0x403294
+xor eax,eax
+jmp 0x403314
+mov edx,dword[ebp-0x14]
+push edx
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+jne 0x4032ab
+xor eax,eax
+jmp 0x403314
+mov eax,dword[ebp+0xc]
+push eax
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebp-0xc],eax
+mov edx,dword[ebp-4]
+add edx,dword[ebp-0xc]
+mov dword[ebp-8],edx
+mov eax,dword[ebp+0x10]
+and eax,0xf
+mov dword[ebp-0x10],eax
+cmp dword[ebp-0x10],0
+jbe 0x4032f7
+mov ecx,dword[ebp-4]
+cmp ecx,dword[ebp-8]
+jae 0x4032f7
+mov edx,dword[ebp-4]
+movzx eax,word[edx]
+mov ecx,dword[ebp-4]
+lea edx,[ecx+eax*2+2]
+mov dword[ebp-4],edx
+mov eax,dword[ebp-0x10]
+sub eax,1
+mov dword[ebp-0x10],eax
+jmp 0x4032ce
+mov ecx,dword[ebp-4]
+cmp ecx,dword[ebp-8]
+jb 0x403303
+xor eax,eax
+jmp 0x403314
+mov edx,dword[ebp-4]
+movzx eax,word[edx]
+test eax,eax
+jne 0x403311
+xor eax,eax
+jmp 0x403314
+mov eax,dword[ebp-4]
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403270@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.00401110@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.00401120@1160595edb203a63cb2ca3ce2ff04f47
+[similar_4_ref]: /report/fcn.00427c80@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.782152b0@ebea46c6b17785efc2ebcb24ad99656c
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

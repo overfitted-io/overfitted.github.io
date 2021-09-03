@@ -1,0 +1,76 @@
+---
+layout: post
+title:  "fcn.004039da @ 0aa2d73a5300dff2412388945614b507"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004039da
+- **Origin (md5):** 0aa2d73a5300dff2412388945614b507
+- **VirusTotal:** [virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [loc.004024dd][similar_1_ref] (sim.: 0.7787802283395651)
+2. [fcn.00401fd3][similar_2_ref] (sim.: 0.7749160488166303)
+3. [fcn.00401aad][similar_3_ref] (sim.: 0.7735446416950302)
+4. [fcn.004012a0][similar_4_ref] (sim.: 0.770755571892951)
+5. [fcn.00401a52][similar_5_ref] (sim.: 0.7658172312865456)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+push dword[esp+0xc]
+mov esi,eax
+push dword[esp+0xc]
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+test eax,eax
+jne 0x4039f1
+pop esi
+ret 
+push edi
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov edi,eax
+test edi,edi
+je 0x403a26
+push dword[esp+0x10]
+push dword[esp+0x10]
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+add eax,edi
+and esi,0xf
+jbe 0x403a22
+cmp edi,eax
+jae 0x403a26
+dec esi
+movzx ecx,word[edi]
+lea edi,[edi+ecx*2+2]
+jne 0x403a14
+cmp edi,eax
+jb 0x403a2a
+xor eax,eax
+jmp 0x403a34
+mov ax,word[edi]
+neg ax
+sbb eax,eax
+and eax,edi
+pop edi
+pop esi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/loc.004024dd@de21a548b66aa6c0b17491b6a31e14fa
+[similar_2_ref]: /report/fcn.00401fd3@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/fcn.00401aad@1123b7aa5760238fe93045e585b8234c
+[similar_4_ref]: /report/fcn.004012a0@7b00dd8f2abf54a73bfb09681334ff78
+[similar_5_ref]: /report/fcn.00401a52@ff219f45286905b4a87327ca719363be
+[virustotal_ref]: https://www.virustotal.com/gui/file/0aa2d73a5300dff2412388945614b507

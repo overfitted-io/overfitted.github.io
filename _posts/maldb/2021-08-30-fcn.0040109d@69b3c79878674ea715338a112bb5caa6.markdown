@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "fcn.0040109d @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040109d
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00405d40][similar_1_ref] (sim.: 0.7877542241625679)
+2. [fcn.00442ca0][similar_2_ref] (sim.: 0.7799537497027117)
+3. [fcn.00401700][similar_3_ref] (sim.: 0.7788640309661315)
+4. [fcn.004261b0][similar_4_ref] (sim.: 0.7784713709798466)
+5. [fcn.00402f47][similar_5_ref] (sim.: 0.7780423781817267)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x198
+mov eax,dword[0x42e364]
+xor eax,esp
+mov dword[esp+0x194],eax
+push esi
+push edi
+lea eax,[esp+8]
+push eax
+push 0x101
+mov esi,ecx
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+jne 0x40111a
+push esi
+call dword[sym.imp.WS2_32.dll_gethostbyname]
+push 2
+pop ecx
+push dword[ebp+8]
+mov dword[0x430ad0],eax
+mov word[0x430ac0],cx
+mov eax,dword[eax+0xc]
+mov eax,dword[eax]
+mov eax,dword[eax]
+mov dword[0x430ac4],eax
+call dword[sym.imp.WS2_32.dll_htons]
+mov word[0x430ac2],ax
+mov edi,0x3e8
+xor esi,esi
+push esi
+push esi
+push esi
+push fcn.00401000
+push esi
+push esi
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+dec edi
+jne 0x401107
+mov ecx,dword[esp+0x19c]
+pop edi
+pop esi
+xor ecx,esp
+call fcn.0040c22b
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405d40@b9bcb002212a6b3f234989f71e66f5f7
+[similar_2_ref]: /report/fcn.00442ca0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_3_ref]: /report/fcn.00401700@2eb7544c38a76e8aaeea362abfc44c72
+[similar_4_ref]: /report/fcn.004261b0@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00402f47@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "fcn.0040a223 @ 69b3c79878674ea715338a112bb5caa6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040a223
+- **Origin (md5):** 69b3c79878674ea715338a112bb5caa6
+- **VirusTotal:** [virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0040a41c][similar_1_ref] (sim.: 0.7232599352517501)
+2. [fcn.0040a1f3][similar_2_ref] (sim.: 0.6988679636878006)
+3. [fcn.00402b5c][similar_3_ref] (sim.: 0.6778329162644261)
+4. [fcn.0040d27e][similar_4_ref] (sim.: 0.6746394992634821)
+5. [fcn.0042a4a9][similar_5_ref] (sim.: 0.6737689157627732)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+push dword[ebp+8]
+push 0
+push 1
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov esi,eax
+test esi,esi
+je 0x40a243
+push 0
+push esi
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+pop esi
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040a41c@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.0040a1f3@5d44fc96ec059e83cbab5efb708e5e9e
+[similar_3_ref]: /report/fcn.00402b5c@beda3471296946b3846562e37a7f6ab6
+[similar_4_ref]: /report/fcn.0040d27e@e69fcfbd512770c44a9d6b90a42edeb0
+[similar_5_ref]: /report/fcn.0042a4a9@3bf433430f740e75dfaf9134a5696829
+[virustotal_ref]: https://www.virustotal.com/gui/file/69b3c79878674ea715338a112bb5caa6

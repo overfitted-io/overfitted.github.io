@@ -1,0 +1,149 @@
+---
+layout: post
+title:  "fcn.004174a7 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004174a7
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00418378][similar_1_ref] (sim.: 0.8836574794811478)
+2. [fcn.004d9462][similar_2_ref] (sim.: 0.8650399490553777)
+3. [fcn.004c7a00][similar_3_ref] (sim.: 0.8617311492893297)
+4. [entry0][similar_4_ref] (sim.: 0.8606521311824493)
+5. [fcn.00495d67][similar_5_ref] (sim.: 0.8600183180865937)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ebx
+push edi
+movzx edi,word[ebp+8]
+mov ebx,ecx
+test edi,edi
+jne 0x4174c1
+call fcn.004158be
+jmp 0x41758d
+mov eax,dword fs:[0x2c]
+mov ecx,dword[0x5e36e0]
+push esi
+mov esi,dword[eax+ecx*4]
+mov eax,dword[0x5df988]
+cmp eax,dword[esi+4]
+jg 0x417595
+cmp dword[0x5df984],0
+je 0x4175cd
+mov eax,dword[0x5df990]
+cmp eax,dword[esi+4]
+jg 0x4175d2
+cmp dword[0x5df98c],0
+je 0x417585
+cmp dword[0x5df994],0
+je 0x417585
+xor ecx,ecx
+mov eax,edi
+push 0x28
+pop esi
+mul esi
+seto cl
+neg ecx
+or ecx,eax
+push ecx
+call fcn.0040e427
+mov dword[ebp-4],eax
+pop ecx
+test eax,eax
+je 0x417585
+push esi
+mov esi,dword[0x5df98c]
+mov ecx,esi
+push eax
+push edi
+push dword[ebp+0xc]
+call fcn.00553897
+call esi
+test eax,eax
+je 0x417585
+mov eax,dword[ebx]
+push dword[ebp-4]
+push edi
+mov esi,dword[eax+0x128]
+mov ecx,esi
+call fcn.00553897
+mov ecx,ebx
+call esi
+push dword[ebp-4]
+mov edi,eax
+call fcn.0040e422
+mov esi,dword[0x5df994]
+pop ecx
+push dword[ebp+0xc]
+mov ecx,esi
+call fcn.00553897
+call esi
+test edi,edi
+je 0x417585
+xor eax,eax
+jmp 0x41758c
+mov ecx,ebx
+call fcn.004158be
+pop esi
+pop edi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+push 0x5df988
+call fcn.00553793
+cmp dword[0x5df988],0xffffffff
+pop ecx
+jne 0x4174e2
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push 0x5df988
+mov dword[0x5df984],eax
+call fcn.00553754
+pop ecx
+jmp 0x4174e2
+call fcn.0040f785
+mov esi,0x5df990
+push esi
+call fcn.00553793
+cmp dword[0x5df990],0xffffffff
+pop ecx
+jne 0x417500
+push str.GetTouchInputInfo
+push dword[0x5df984]
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.CloseTouchInputHandle
+push dword[0x5df984]
+mov dword[0x5df98c],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push esi
+mov dword[0x5df994],eax
+call fcn.00553754
+pop ecx
+jmp 0x417500
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00418378@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.004d9462@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_3_ref]: /report/fcn.004c7a00@17d73cbafe6dd96dd6f2291fab06fbb5
+[similar_4_ref]: /report/entry0@1123b7aa5760238fe93045e585b8234c
+[similar_5_ref]: /report/fcn.00495d67@152885a790b99953ce23874f0947b7bd
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

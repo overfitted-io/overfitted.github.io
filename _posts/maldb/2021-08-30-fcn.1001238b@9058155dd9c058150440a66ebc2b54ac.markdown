@@ -1,0 +1,92 @@
+---
+layout: post
+title:  "fcn.1001238b @ 9058155dd9c058150440a66ebc2b54ac"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001238b
+- **Origin (md5):** 9058155dd9c058150440a66ebc2b54ac
+- **VirusTotal:** [virustotal.com/gui/file/9058155dd9c058150440a66ebc2b54ac][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.10012c71][similar_1_ref] (sim.: 0.9015095638875578)
+2. [fcn.0040849b][similar_2_ref] (sim.: 0.9004879288560793)
+3. [fcn.004080ab][similar_3_ref] (sim.: 0.8968408924305079)
+4. [fcn.0040e7af][similar_4_ref] (sim.: 0.8888791780743702)
+5. [fcn.0040e7af][similar_5_ref] (sim.: 0.8888791780743702)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+and dword[ebp-0xc],0
+and dword[ebp-8],0
+mov eax,dword[0x1001d854]
+push esi
+push edi
+mov edi,0xbb40e64e
+mov esi,0xffff0000
+cmp eax,edi
+je 0x100123bb
+test esi,eax
+je 0x100123bb
+not eax
+mov dword[0x1001d858],eax
+jmp 0x10012421
+lea eax,[ebp-0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov eax,dword[ebp-8]
+xor eax,dword[ebp-0xc]
+mov dword[ebp-4],eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor dword[ebp-4],eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor dword[ebp-4],eax
+lea eax,[ebp-0x14]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov ecx,dword[ebp-0x10]
+lea eax,[ebp-4]
+xor ecx,dword[ebp-0x14]
+xor ecx,dword[ebp-4]
+xor ecx,eax
+cmp ecx,edi
+jne 0x10012403
+mov ecx,0xbb40e64f
+jmp 0x10012413
+test esi,ecx
+jne 0x10012413
+mov eax,ecx
+or eax,0x4711
+shl eax,0x10
+or ecx,eax
+mov dword[0x1001d854],ecx
+not ecx
+mov dword[0x1001d858],ecx
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10012c71@af99045963877b0873c28c377e3c62ab
+[similar_2_ref]: /report/fcn.0040849b@513a8bfcd5da1a9aee6dd942ecac565e
+[similar_3_ref]: /report/fcn.004080ab@cf071542c6e6ceb88de8b40c16fc0a1a
+[similar_4_ref]: /report/fcn.0040e7af@d9931aa9e2aa8f7bd7ae2f1864773c9d
+[similar_5_ref]: /report/fcn.0040e7af@611c38a89d4c34c8de91e651e6e21379
+[virustotal_ref]: https://www.virustotal.com/gui/file/9058155dd9c058150440a66ebc2b54ac

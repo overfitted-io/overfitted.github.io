@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "fcn.0040597a @ f360d53698056c0bd2342cbdb569d856"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040597a
+- **Origin (md5):** f360d53698056c0bd2342cbdb569d856
+- **VirusTotal:** [virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00407d49][similar_1_ref] (sim.: 0.7363043064196313)
+2. [fcn.00413fd8][similar_2_ref] (sim.: 0.7321985658730504)
+3. [fcn.00413fd8][similar_3_ref] (sim.: 0.7321985658730504)
+4. [fcn.00413811][similar_4_ref] (sim.: 0.7213966406734229)
+5. [fcn.00405380][similar_5_ref] (sim.: 0.7077530532151071)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push esi
+mov esi,ecx
+call fcn.00405a63
+test al,al
+je 0x4059ae
+push 0
+push dword[ebp+0x18]
+push dword[ebp+0x14]
+push 0
+push dword[ebp+0x10]
+push dword[ebp+0xc]
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+xor ecx,ecx
+cmp eax,0xffffffff
+setne cl
+mov dword[esi],eax
+mov al,cl
+pop esi
+pop ebp
+ret 0x14
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407d49@623952564c193310b2e5c9b0fe299d07
+[similar_2_ref]: /report/fcn.00413fd8@4c8869bb42f854640703b6ddda29ee38
+[similar_3_ref]: /report/fcn.00413fd8@3f1595e66dc63331ba0930a0c79684ce
+[similar_4_ref]: /report/fcn.00413811@0cb2d61ee2bb08c35289961542a08513
+[similar_5_ref]: /report/fcn.00405380@d59f9c4f445b9f980173dec064f55091
+[virustotal_ref]: https://www.virustotal.com/gui/file/f360d53698056c0bd2342cbdb569d856

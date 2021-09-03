@@ -1,0 +1,153 @@
+---
+layout: post
+title:  "fcn.00401180 @ 2d591d102f09b733d7d0e893e5642beb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401180
+- **Origin (md5):** 2d591d102f09b733d7d0e893e5642beb
+- **VirusTotal:** [virustotal.com/gui/file/2d591d102f09b733d7d0e893e5642beb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.100810f0][similar_1_ref] (sim.: 0.8986061168760022)
+2. [fcn.00401300][similar_2_ref] (sim.: 0.8924110309486883)
+3. [fcn.00402040][similar_3_ref] (sim.: 0.892104032918244)
+4. [fcn.00401630][similar_4_ref] (sim.: 0.8920559464892124)
+5. [fcn.00402320][similar_5_ref] (sim.: 0.8903140964688776)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x278
+mov eax,dword[0x410018]
+xor eax,esp
+mov dword[esp+0x274],eax
+mov eax,dword[esp+0x27c]
+push ebx
+push ebp
+push esi
+push edi
+push 0x128
+mov esi,ecx
+lea ecx,[esp+0x54]
+push 0
+push ecx
+mov dword[esp+0x1c],eax
+mov dword[esp+0x20],0
+lea ebp,[esp+0x184]
+mov bl,1
+call sub.MSVCR90.dll_memset
+mov edx,dword[esi+8]
+add esp,0xc
+push 0
+push 2
+mov dword[esp+0x58],0x128
+call edx
+mov edi,eax
+cmp edi,0xffffffff
+jne 0x4011f0
+xor eax,eax
+jmp 0x4012df
+test bl,bl
+je 0x401201
+lea eax,[esp+0x50]
+push eax
+push edi
+call sub.KERNEL32.dll_Process32First
+jmp 0x40120c
+lea ecx,[esp+0x50]
+push ecx
+push edi
+call sub.KERNEL32.dll_Process32Next
+test eax,eax
+je 0x4012ce
+lea eax,[esp+0x74]
+lea esi,[esp+0x18]
+xor bl,bl
+call fcn.004031d0
+cmp dword[eax+0x18],0x10
+jb 0x40122e
+mov eax,dword[eax+4]
+jmp 0x401231
+add eax,4
+push 0x5c
+push eax
+call dword[sym.imp.MSVCR90.dll_strrchr]
+add esp,8
+lea ecx,[esp+0x18]
+mov esi,eax
+call dword[sym.imp.MSVCP90.dll_public:_void___thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::destructor_void_]
+test esi,esi
+jne 0x401286
+lea eax,[esp+0x74]
+lea esi,[esp+0x34]
+call fcn.004031d0
+cmp dword[eax+0x18],0x10
+jb 0x401265
+mov ecx,dword[eax+4]
+jmp 0x401268
+lea ecx,[eax+4]
+mov edx,ebp
+lea ebx,[ebx]
+mov al,byte[ecx]
+mov byte[edx],al
+inc ecx
+inc edx
+test al,al
+jne 0x401270
+lea ecx,[esp+0x34]
+call dword[sym.imp.MSVCP90.dll_public:_void___thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::destructor_void_]
+jmp 0x401289
+lea ebp,[esi+1]
+push str.vidown.exe
+push ebp
+call dword[sym.imp.MSVCR90.dll__stricmp]
+add esp,8
+test eax,eax
+jne 0x4011f0
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov ecx,dword[esp+0x58]
+cmp ecx,eax
+je 0x4011f0
+push ecx
+push 1
+push 0x100001
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov edx,dword[esp+0x58]
+mov esi,eax
+mov eax,dword[esp+0x10]
+mov dword[eax],edx
+jmp 0x4012d2
+mov esi,dword[esp+0x14]
+test edi,edi
+je 0x4012dd
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,esi
+mov ecx,dword[esp+0x284]
+pop edi
+pop esi
+pop ebp
+pop ebx
+xor ecx,esp
+call fcn.004073b2
+add esp,0x278
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100810f0@8761fe5e7bef67f1579f600248f8f0cc
+[similar_2_ref]: /report/fcn.00401300@2d591d102f09b733d7d0e893e5642beb
+[similar_3_ref]: /report/fcn.00402040@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.00401630@a2475448bf4050c1583e1970984a4d00
+[similar_5_ref]: /report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/2d591d102f09b733d7d0e893e5642beb

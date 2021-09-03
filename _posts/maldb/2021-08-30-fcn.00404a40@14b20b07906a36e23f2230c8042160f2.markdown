@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.00404a40 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00404a40
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00404a10][similar_1_ref] (sim.: 0.9279220571899787)
+2. [fcn.004523b0][similar_2_ref] (sim.: 0.8446876454441631)
+3. [fcn.00403270][similar_3_ref] (sim.: 0.8141290375880675)
+4. [fcn.00403270][similar_4_ref] (sim.: 0.8141290375880675)
+5. [fcn.00401120][similar_5_ref] (sim.: 0.8111562356973149)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+mov dword[ebp-0x10],ecx
+xor eax,eax
+jne 0x404a49
+xor ecx,ecx
+jne 0x404a49
+mov edx,dword[ebp+0x10]
+mov eax,dword[edx]
+shl eax,1
+mov dword[ebp-8],eax
+mov ecx,dword[ebp+0x10]
+mov dword[ecx],0
+lea edx,[ebp-8]
+push edx
+mov eax,dword[ebp+0xc]
+push eax
+lea ecx,[ebp-4]
+push ecx
+push 0
+mov edx,dword[ebp+8]
+push edx
+mov eax,dword[ebp-0x10]
+mov ecx,dword[eax]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+mov dword[ebp-0xc],eax
+cmp dword[ebp-0xc],0
+je 0x404a90
+mov eax,dword[ebp-0xc]
+jmp 0x404aed
+cmp dword[ebp-4],1
+je 0x404aa3
+cmp dword[ebp-4],2
+je 0x404aa3
+mov eax,0xd
+jmp 0x404aed
+cmp dword[ebp+0xc],0
+je 0x404ae1
+cmp dword[ebp-8],0
+je 0x404ad9
+mov eax,dword[ebp-8]
+xor edx,edx
+mov ecx,2
+div ecx
+test edx,edx
+jne 0x404ad0
+mov edx,dword[ebp-8]
+shr edx,1
+mov eax,dword[ebp+0xc]
+movzx ecx,word[eax+edx*2-2]
+test ecx,ecx
+je 0x404ad7
+mov eax,0xd
+jmp 0x404aed
+jmp 0x404ae1
+xor edx,edx
+mov eax,dword[ebp+0xc]
+mov word[eax],dx
+mov ecx,dword[ebp-8]
+shr ecx,1
+mov edx,dword[ebp+0x10]
+mov dword[edx],ecx
+xor eax,eax
+mov esp,ebp
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404a10@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.004523b0@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00403270@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00403270@14b20b07906a36e23f2230c8042160f2
+[similar_5_ref]: /report/fcn.00401120@1160595edb203a63cb2ca3ce2ff04f47
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

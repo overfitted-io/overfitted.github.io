@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.00402026 @ ebf08d86df7e87eccb41dfc660766af7"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402026
+- **Origin (md5):** ebf08d86df7e87eccb41dfc660766af7
+- **VirusTotal:** [virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0040224f][similar_1_ref] (sim.: 0.8028552980987738)
+2. [fcn.00401a7a][similar_2_ref] (sim.: 0.7798083805098767)
+3. [fcn.00406669][similar_3_ref] (sim.: 0.7777832294209679)
+4. [fcn.0040211a][similar_4_ref] (sim.: 0.7764280250258988)
+5. [fcn.0040541a][similar_5_ref] (sim.: 0.7743500727801563)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x234
+lea eax,[ebp-0x234]
+push esi
+push 0x208
+push eax
+xor esi,esi
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+lea ecx,[ebp-0x234]
+call fcn.004027e0
+test eax,eax
+jle 0x402079
+mov cx,word[ebp+esi*2-0x234]
+call fcn.00402904
+mov word[ebp+esi*2-0x234],ax
+lea ecx,[ebp-0x234]
+inc esi
+call fcn.004027e0
+cmp esi,eax
+jl 0x402054
+push 0x3e
+lea edx,[ebp-0x1c]
+pop ecx
+call fcn.0040299c
+push 0x3a
+lea edx,[ebp-0xc]
+pop ecx
+call fcn.0040299c
+push 0x39
+lea edx,[ebp-0x2c]
+pop ecx
+call fcn.0040299c
+lea edx,[ebp-0x1c]
+lea ecx,[ebp-0x234]
+call fcn.004028a7
+pop esi
+test eax,eax
+jne 0x4020d1
+lea edx,[ebp-0xc]
+lea ecx,[ebp-0x234]
+call fcn.004028a7
+test eax,eax
+jne 0x4020d1
+lea edx,[ebp-0x2c]
+lea ecx,[ebp-0x234]
+call fcn.004028a7
+test eax,eax
+je 0x4020d4
+xor eax,eax
+inc eax
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040224f@ebf08d86df7e87eccb41dfc660766af7
+[similar_2_ref]: /report/fcn.00401a7a@ebf08d86df7e87eccb41dfc660766af7
+[similar_3_ref]: /report/fcn.00406669@6c5b0418e4a4c57d99cda47d2717045d
+[similar_4_ref]: /report/fcn.0040211a@ebf08d86df7e87eccb41dfc660766af7
+[similar_5_ref]: /report/fcn.0040541a@3f1595e66dc63331ba0930a0c79684ce
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebf08d86df7e87eccb41dfc660766af7

@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "fcn.00453540 @ a4175bd1311845689d3bca41d1d095ff"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00453540
+- **Origin (md5):** a4175bd1311845689d3bca41d1d095ff
+- **VirusTotal:** [virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00453180][similar_1_ref] (sim.: 0.8556492452883873)
+2. [fcn.00485a30][similar_2_ref] (sim.: 0.8425632953439337)
+3. [fcn.004559d0][similar_3_ref] (sim.: 0.8409827421381235)
+4. [fcn.004508d0][similar_4_ref] (sim.: 0.8401641249933498)
+5. [fcn.00453f00][similar_5_ref] (sim.: 0.8332400776404925)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ecx
+push ebp
+mov ebp,dword[esp+0xc]
+mov edx,dword[ebp]
+push 0
+lea eax,[esp+8]
+push eax
+push 4
+lea ecx,[esp+0x18]
+push ecx
+push edx
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+je 0x453569
+cmp dword[esp+4],4
+je 0x453570
+xor al,al
+pop ebp
+pop ecx
+ret 4
+push esi
+mov esi,dword[esp+0x10]
+cmp esi,2
+mov ecx,2
+jl 0x453581
+mov ecx,esi
+mov edx,dword[edi+0xc]
+push ebx
+mov ebx,dword[edi]
+sub edx,ebx
+mov eax,0x2aaaaaab
+imul edx
+sar edx,1
+mov eax,edx
+shr eax,0x1f
+add eax,edx
+cmp ecx,eax
+jle 0x4535b6
+lea esi,[ecx+ecx*2]
+add esi,esi
+add esi,esi
+mov eax,ebx
+call fcn.0044fe80
+add esi,eax
+mov dword[edi+0xc],esi
+mov esi,dword[esp+0x14]
+mov dword[edi],eax
+mov eax,dword[edi]
+push 0
+lea esi,[esi+esi*2]
+lea ecx,[esp+0x10]
+push ecx
+add esi,esi
+add esi,esi
+push esi
+mov dword[edi+8],eax
+mov edx,dword[ebp]
+push eax
+push edx
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+test eax,eax
+pop ebx
+je 0x4535e0
+cmp dword[esp+8],esi
+je 0x4535e8
+pop esi
+xor al,al
+pop ebp
+pop ecx
+ret 4
+mov eax,dword[esp+0x10]
+mov ecx,dword[edi]
+lea eax,[eax+eax*2]
+lea edx,[ecx+eax*4]
+pop esi
+mov dword[edi+8],edx
+mov al,1
+pop ebp
+pop ecx
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00453180@a4175bd1311845689d3bca41d1d095ff
+[similar_2_ref]: /report/fcn.00485a30@a4175bd1311845689d3bca41d1d095ff
+[similar_3_ref]: /report/fcn.004559d0@a4175bd1311845689d3bca41d1d095ff
+[similar_4_ref]: /report/fcn.004508d0@a4175bd1311845689d3bca41d1d095ff
+[similar_5_ref]: /report/fcn.00453f00@a4175bd1311845689d3bca41d1d095ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/a4175bd1311845689d3bca41d1d095ff

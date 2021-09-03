@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.00410609 @ a1c6b07868a0eea8f4ee5a872aa71909"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00410609
+- **Origin (md5):** a1c6b07868a0eea8f4ee5a872aa71909
+- **VirusTotal:** [virustotal.com/gui/file/a1c6b07868a0eea8f4ee5a872aa71909][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040f884][similar_1_ref] (sim.: 0.8839487206446319)
+2. [fcn.0042192a][similar_2_ref] (sim.: 0.8809600670231804)
+3. [method.CWinApp.virtual\_180][similar_3_ref] (sim.: 0.8679814079669392)
+4. [fcn.004354bd][similar_4_ref] (sim.: 0.8670067779178737)
+5. [fcn.004354bd][similar_5_ref] (sim.: 0.8670067779178737)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x14
+push ebx
+push edi
+xor edi,edi
+mov dword[ecx+0xa0],edi
+mov dword[ebp-0x10],ecx
+mov dword[ebp-4],edi
+mov dword[ebp-8],edi
+mov dword[ebp-0x14],4
+mov dword[ebp-0xc],edi
+mov ebx,0x452464
+cmp dword[str.SoftwareMicrosoftWindowsCurrentVersionPoliciesExplorer],edi
+je 0x4106c7
+push esi
+lea eax,[ebp-4]
+push eax
+push 1
+push edi
+push dword[ebx]
+push 0x80000001
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
+test eax,eax
+jne 0x4106bb
+mov esi,dword[ebx+4]
+jmp 0x4106a9
+lea ecx,[ebp-0x14]
+push ecx
+lea ecx,[ebp-8]
+push ecx
+lea ecx,[ebp-0xc]
+push ecx
+push edi
+push eax
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax,eax
+jne 0x410699
+cmp dword[ebp-0xc],4
+jne 0x410699
+mov ecx,dword[esi+4]
+mov eax,dword[ebp-0x10]
+cmp dword[ebp-8],edi
+je 0x410691
+or dword[eax+0xa0],ecx
+jmp 0x410699
+not ecx
+and dword[eax+0xa0],ecx
+mov dword[ebp-8],edi
+mov dword[ebp-0x14],4
+mov dword[ebp-0xc],edi
+add esi,8
+mov eax,dword[esi]
+cmp eax,edi
+jne 0x41065d
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov dword[ebp-4],edi
+add ebx,8
+cmp dword[ebx],edi
+jne 0x410640
+pop esi
+xor eax,eax
+pop edi
+inc eax
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040f884@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.0042192a@59aef7c08025d70f84c85db2092fc99e
+[similar_3_ref]: /report/method.CWinApp.virtual_180@fac4f0be03ac37bd8be7ef737cdcee10
+[similar_4_ref]: /report/fcn.004354bd@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_5_ref]: /report/fcn.004354bd@8e21fa3f0489a6a256cf202e57f712bc
+[virustotal_ref]: https://www.virustotal.com/gui/file/a1c6b07868a0eea8f4ee5a872aa71909

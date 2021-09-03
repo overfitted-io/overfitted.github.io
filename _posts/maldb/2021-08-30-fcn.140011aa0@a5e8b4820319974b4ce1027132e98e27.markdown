@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "fcn.140011aa0 @ a5e8b4820319974b4ce1027132e98e27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140011aa0
+- **Origin (md5):** a5e8b4820319974b4ce1027132e98e27
+- **VirusTotal:** [virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.140014a38][similar_1_ref] (sim.: 0.9049032666995386)
+2. [fcn.1400960c4][similar_2_ref] (sim.: 0.9023948797268514)
+3. [fcn.140006cf0][similar_3_ref] (sim.: 0.9015024585935462)
+4. [fcn.140055a30][similar_4_ref] (sim.: 0.9014526930763436)
+5. [fcn.14000e8f0][similar_5_ref] (sim.: 0.901323251505198)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+0x20],rbp
+push rsi
+push rdi
+push r14
+sub rsp,0x60
+mov rax,qword[0x1400da170]
+xor rax,rsp
+mov qword[rsp+0x50],rax
+movzx ebp,word[reloc.WS2_32.dll_getsockopt]
+xor r14d,r14d
+mov rsi,rdx
+mov rdi,rcx
+mov dword[rsp+0x30],r14d
+cmp dword[rdx],r14d
+jne 0x140011af2
+mov rcx,qword[rcx+0x110]
+movzx edx,bp
+call qword[sym.imp.KERNEL32.dll_SetConsoleTextAttribute]
+test eax,eax
+jne 0x140011afa
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[rsi],eax
+or eax,0xffffffff
+jmp 0x140011bac
+mov rcx,qword[rdi+0x110]
+mov qword[rsp+0x90],rbx
+mov ebx,dword[rsp+0x30]
+mov edx,ebx
+call qword[sym.imp.KERNEL32.dll_SetConsoleCursorPosition]
+test eax,eax
+je 0x140011b99
+nop dword[rax]
+mov rcx,qword[rdi+0x110]
+lea rdx,[rsp+0x38]
+call qword[sym.imp.KERNEL32.dll_GetConsoleScreenBufferInfo]
+test eax,eax
+je 0x140011b99
+movsx eax,word[rsp+0x38]
+mov edx,0x20
+movsx r8d,word[rsp+0x3a]
+mov r9d,ebx
+mov rcx,qword[rdi+0x110]
+imul r8d,eax
+lea rax,[rsp+0x34]
+mov qword[rsp+0x20],rax
+call qword[sym.imp.KERNEL32.dll_FillConsoleOutputCharacterW]
+test eax,eax
+je 0x140011b8e
+mov r8d,dword[rsp+0x34]
+lea rax,[rsp+0x34]
+mov rcx,qword[rdi+0x110]
+mov r9d,ebx
+movzx edx,bp
+mov qword[rsp+0x20],rax
+call qword[sym.imp.KERNEL32.dll_FillConsoleOutputAttribute]
+test eax,eax
+jne 0x140011bca
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+je 0x140011b20
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[rsi],eax
+or eax,0xffffffff
+mov rbx,qword[rsp+0x90]
+mov rcx,qword[rsp+0x50]
+xor rcx,rsp
+call fcn.14007cac0
+mov rbp,qword[rsp+0x98]
+add rsp,0x60
+pop r14
+pop rdi
+pop rsi
+ret 
+movsx eax,word[rsp+0x38]
+mov ecx,r14d
+movsx edx,word[rsp+0x48]
+movsx r8d,word[rsp+0x3a]
+mov dword[0x1400dad54],eax
+movsx eax,word[rsp+0x44]
+sub edx,eax
+movsx eax,word[rsp+0x3e]
+inc edx
+sub eax,edx
+mov dword[0x1400dad68],edx
+inc eax
+test eax,eax
+cmovg ecx,eax
+lea eax,[rdx+rcx]
+cmp eax,r8d
+jle 0x140011c0d
+mov ecx,r8d
+sub ecx,edx
+test ecx,ecx
+cmovs ecx,r14d
+xor eax,eax
+mov dword[0x1400dad6c],ecx
+jmp 0x140011ba4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140014a38@72082bb1b08918279d6780845b69f5ff
+[similar_2_ref]: /report/fcn.1400960c4@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.140006cf0@72082bb1b08918279d6780845b69f5ff
+[similar_4_ref]: /report/fcn.140055a30@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14000e8f0@72082bb1b08918279d6780845b69f5ff
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5e8b4820319974b4ce1027132e98e27

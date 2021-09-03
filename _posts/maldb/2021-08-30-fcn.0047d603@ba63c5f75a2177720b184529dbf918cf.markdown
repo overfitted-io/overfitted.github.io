@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.0047d603 @ ba63c5f75a2177720b184529dbf918cf"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0047d603
+- **Origin (md5):** ba63c5f75a2177720b184529dbf918cf
+- **VirusTotal:** [virustotal.com/gui/file/ba63c5f75a2177720b184529dbf918cf][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0047d551][similar_1_ref] (sim.: 0.9190514913010323)
+2. [fcn.0046d868][similar_2_ref] (sim.: 0.897267570553409)
+3. [fcn.0046d868][similar_3_ref] (sim.: 0.897267570553409)
+4. [fcn.0049942e][similar_4_ref] (sim.: 0.8869599518358396)
+5. [fcn.0047a72b][similar_5_ref] (sim.: 0.870424803792399)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x10
+push esi
+push 0x800
+push 0
+mov esi,str.combase.dll
+push esi
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[0x4eef20],eax
+test eax,eax
+je 0x47d686
+push str.RoInitialize
+push esi
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+jne 0x47d649
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x47d698
+jmp 0x47d690
+push eax
+call fcn.00471c88
+mov dword[esp],str.RoUninitialize
+push esi
+mov dword[0x4eef18],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x47d63d
+push eax
+call fcn.00471c88
+mov dword[0x4eef1c],eax
+xor eax,eax
+pop ecx
+inc eax
+mov ecx,0x4eef24
+xchg dword[ecx],eax
+pop esi
+leave 
+ret 
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jle 0x47d698
+movzx eax,ax
+or eax,0x80070000
+push eax
+lea ecx,[ebp-0x10]
+call fcn.004720ae
+push 0x4e0268
+lea eax,[ebp-0x10]
+push eax
+call fcn.00486fe2
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0047d551@843c4207147f5bab0e104024677fd9ec
+[similar_2_ref]: /report/fcn.0046d868@53687e619dcac7d709f306d061d8daeb
+[similar_3_ref]: /report/fcn.0046d868@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.0049942e@94f83197373b17ab8b5225c0900d14de
+[similar_5_ref]: /report/fcn.0047a72b@27ac6b5c7fa1ad11790cdc733c25a701
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba63c5f75a2177720b184529dbf918cf

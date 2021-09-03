@@ -1,0 +1,89 @@
+---
+layout: post
+title:  "fcn.0048e40f @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0048e40f
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.0041c07d][similar_1_ref] (sim.: 0.8503298180717905)
+2. [fcn.0041c07d][similar_2_ref] (sim.: 0.8503298180717905)
+3. [fcn.00411541][similar_3_ref] (sim.: 0.8112059822417698)
+4. [fcn.00480148][similar_4_ref] (sim.: 0.7493138815682407)
+5. [fcn.00480148][similar_5_ref] (sim.: 0.7493138815682407)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x40
+lea eax,[ebp-0x1c]
+push 0x1c
+push eax
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_VirtualQuery]
+test eax,eax
+jne 0x48e42f
+push 0x19
+pop ecx
+int 0x29
+test byte[ebp-8],0x44
+je 0x48e47b
+push esi
+push edi
+lea eax,[ebp-0x40]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
+mov edi,dword[ebp-0x3c]
+xor edx,edx
+lea eax,[edi-1]
+mov ecx,eax
+lea esi,[edi-1]
+and eax,dword[ebp+0xc]
+not esi
+and ecx,dword[ebp+8]
+dec eax
+add ecx,edi
+and esi,dword[ebp+8]
+add eax,ecx
+div edi
+xor edx,edx
+mov ecx,eax
+mov eax,dword[ebp+0xc]
+div edi
+add ecx,eax
+je 0x48e479
+xor eax,eax
+lock or dword[esi],eax
+add esi,edi
+sub ecx,1
+jne 0x48e46d
+pop edi
+pop esi
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041c07d@f068e0a788db6c075da6c407576e943b
+[similar_2_ref]: /report/fcn.0041c07d@e02c832a2c768752009e071574e12967
+[similar_3_ref]: /report/fcn.00411541@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.00480148@152885a790b99953ce23874f0947b7bd
+[similar_5_ref]: /report/fcn.00480148@fb9b7d22bc1c143ac66b0575cbdd088d
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

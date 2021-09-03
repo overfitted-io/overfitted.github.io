@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.004febe0 @ 17d73cbafe6dd96dd6f2291fab06fbb5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004febe0
+- **Origin (md5):** 17d73cbafe6dd96dd6f2291fab06fbb5
+- **VirusTotal:** [virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004850e0][similar_1_ref] (sim.: 0.8892722270019828)
+2. [fcn.004a9520][similar_2_ref] (sim.: 0.8890735918199956)
+3. [fcn.004c05d0][similar_3_ref] (sim.: 0.8826091972255323)
+4. [fcn.00450a00][similar_4_ref] (sim.: 0.8795185176533539)
+5. [fcn.004d2360][similar_5_ref] (sim.: 0.8246398639198186)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov ecx,dword[esp+0x10]
+mov edx,dword[esp+0xc]
+mov eax,dword[esp+8]
+push ebx
+push esi
+mov esi,dword[esp+0xc]
+mov eax,dword[esi+eax*4+0x154]
+push edi
+push 0
+push ecx
+push edx
+push eax
+call dword[sym.imp.WS2_32.dll_send]
+mov ebx,dword[esp+0x20]
+mov edi,eax
+mov dword[ebx],0
+cmp edi,0xffffffff
+jne 0x4fec5d
+push ebp
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ebp,eax
+cmp ebp,0x2733
+jne 0x4fec34
+pop ebp
+pop edi
+pop esi
+mov dword[ebx],0x51
+xor eax,eax
+pop ebx
+ret 
+push ebp
+push esi
+call fcn.004f3450
+push eax
+mov eax,dword[esi]
+push str.Send_failure:__s
+push eax
+call fcn.004fea60
+mov ecx,dword[esi]
+add esp,0x14
+mov dword[ecx+0x8614],ebp
+mov dword[ebx],0x37
+mov eax,edi
+pop ebp
+pop edi
+pop esi
+pop ebx
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004850e0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_2_ref]: /report/fcn.004a9520@1160595edb203a63cb2ca3ce2ff04f47
+[similar_3_ref]: /report/fcn.004c05d0@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.00450a00@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.004d2360@4fe38de7c6c86a1bad209560fa052231
+[virustotal_ref]: https://www.virustotal.com/gui/file/17d73cbafe6dd96dd6f2291fab06fbb5

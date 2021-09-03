@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.00410dc0 @ db0bb0926cbc24a905ae237e61cb9c73"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00410dc0
+- **Origin (md5):** db0bb0926cbc24a905ae237e61cb9c73
+- **VirusTotal:** [virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.004112d0][similar_1_ref] (sim.: 0.8886770044749378)
+2. [fcn.004113a0][similar_2_ref] (sim.: 0.8365096133051868)
+3. [fcn.00410aa0][similar_3_ref] (sim.: 0.8245979341474138)
+4. [fcn.004014f3][similar_4_ref] (sim.: 0.8198815936617815)
+5. [fcn.004014f3][similar_5_ref] (sim.: 0.8198815936617815)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+push esi
+push ebx
+sub esp,0x1c
+mov ebx,dword[ebp+8]
+mov eax,ebx
+call fcn.00410840
+test eax,eax
+jne 0x410e54
+mov esi,dword[ebx]
+mov eax,dword[esi+8]
+test eax,eax
+jne 0x410e30
+mov eax,dword[esi+0x14]
+test eax,eax
+je 0x410ea0
+mov eax,dword[esi+0x18]
+mov dword[esi+0x14],0
+test eax,eax
+je 0x410e19
+mov dword[esp+8],0
+mov dword[esp+4],1
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_ReleaseSemaphore]
+sub esp,0xc
+test eax,eax
+je 0x410e64
+xor edx,edx
+mov eax,dword[ebx]
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp fcn.00410b30
+mov edi,dword[esi+0x14]
+test edi,edi
+je 0x410e60
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+cmp edi,eax
+je 0x410e74
+mov eax,dword[ebx]
+lea esp,[ebp-0xc]
+mov edx,1
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp fcn.00410b30
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret 
+mov eax,esi
+jmp 0x410e43
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov edx,1
+mov dword[esi+0x14],eax
+jmp 0x410e1b
+cmp dword[esi+8],2
+jne 0x410deb
+lea eax,[esi+0xc]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_InterlockedDecrement]
+sub esp,4
+test eax,eax
+je 0x410deb
+xor edx,edx
+jmp 0x410e1b
+mov edx,1
+mov eax,esi
+jmp 0x410e1d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004112d0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_2_ref]: /report/fcn.004113a0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_3_ref]: /report/fcn.00410aa0@db0bb0926cbc24a905ae237e61cb9c73
+[similar_4_ref]: /report/fcn.004014f3@a3177dc54b85649e8807e665ece12d6a
+[similar_5_ref]: /report/fcn.004014f3@35bedc5498306afe90b32d21d460d74f
+[virustotal_ref]: https://www.virustotal.com/gui/file/db0bb0926cbc24a905ae237e61cb9c73

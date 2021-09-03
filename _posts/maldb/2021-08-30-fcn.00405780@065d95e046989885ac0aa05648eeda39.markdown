@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "fcn.00405780 @ 065d95e046989885ac0aa05648eeda39"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405780
+- **Origin (md5):** 065d95e046989885ac0aa05648eeda39
+- **VirusTotal:** [virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00405d40][similar_1_ref] (sim.: 0.7951162194504569)
+2. [fcn.004056c0][similar_2_ref] (sim.: 0.7886117354401153)
+3. [fcn.00405880][similar_3_ref] (sim.: 0.7879199321409315)
+4. [fcn.00408bb0][similar_4_ref] (sim.: 0.7849735592877172)
+5. [fcn.00401040][similar_5_ref] (sim.: 0.7705675519632986)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x1a0
+mov eax,dword[0x45806c]
+xor eax,esp
+mov dword[esp+0x19c],eax
+push esi
+push edi
+mov esi,ecx
+mov eax,1
+lock xadd dword[0x45c408],eax
+inc eax
+mov edi,0x45c40c
+cmp eax,1
+jne 0x4057c5
+lea eax,[esp+0x10]
+push eax
+push 2
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+xchg dword[edi],eax
+cmp byte[ebp+8],0
+je 0x4057d5
+xor eax,eax
+lock xadd dword[edi],eax
+test eax,eax
+jne 0x4057ed
+mov ecx,dword[esp+0x1a4]
+mov eax,esi
+pop edi
+pop esi
+xor ecx,esp
+call fcn.00410873
+mov esp,ebp
+pop ebp
+ret 4
+mov dword[esp+8],eax
+call fcn.004129f0
+mov edx,str.winsock
+mov dword[esp+0xc],eax
+lea ecx,[esp+8]
+call fcn.00402be0
+int3 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405d40@b9bcb002212a6b3f234989f71e66f5f7
+[similar_2_ref]: /report/fcn.004056c0@b9bcb002212a6b3f234989f71e66f5f7
+[similar_3_ref]: /report/fcn.00405880@b9bcb002212a6b3f234989f71e66f5f7
+[similar_4_ref]: /report/fcn.00408bb0@b9bcb002212a6b3f234989f71e66f5f7
+[similar_5_ref]: /report/fcn.00401040@065d95e046989885ac0aa05648eeda39
+[virustotal_ref]: https://www.virustotal.com/gui/file/065d95e046989885ac0aa05648eeda39

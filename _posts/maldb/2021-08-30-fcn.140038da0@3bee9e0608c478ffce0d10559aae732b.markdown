@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "fcn.140038da0 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140038da0
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.18000839c][similar_1_ref] (sim.: 0.7647112529051913)
+2. [fcn.14001b3e0][similar_2_ref] (sim.: 0.7325337574065689)
+3. [fcn.140010f00][similar_3_ref] (sim.: 0.7318951536919203)
+4. [fcn.14001b360][similar_4_ref] (sim.: 0.7301692787251443)
+5. [fcn.140001040][similar_5_ref] (sim.: 0.7294324530956815)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov r11,rsp
+sub rsp,0x38
+and dword[rsp+0x48],0
+lea rax,[r11+0x10]
+lea r9,[r11+0x18]
+lea r8,[r11+0x20]
+mov edx,0x20000013
+mov qword[r11-0x18],rax
+mov dword[rsp+0x50],4
+call qword[sym.imp.WININET.dll_HttpQueryInfoW]
+or ecx,0xffffffff
+test eax,eax
+cmovne ecx,dword[rsp+0x58]
+mov eax,ecx
+add rsp,0x38
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.18000839c@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_2_ref]: /report/fcn.14001b3e0@a5e8b4820319974b4ce1027132e98e27
+[similar_3_ref]: /report/fcn.140010f00@c4af5ec7826361dc5a22db79be296638
+[similar_4_ref]: /report/fcn.14001b360@a5e8b4820319974b4ce1027132e98e27
+[similar_5_ref]: /report/fcn.140001040@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

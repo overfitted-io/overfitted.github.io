@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.0040cb92 @ 88e03379526f823ce2de3b236adcaf80"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040cb92
+- **Origin (md5):** 88e03379526f823ce2de3b236adcaf80
+- **VirusTotal:** [virustotal.com/gui/file/88e03379526f823ce2de3b236adcaf80][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0040cb92][similar_1_ref] (sim.: 1.0)
+2. [fcn.0040cbe8][similar_2_ref] (sim.: 0.8649606050245194)
+3. [fcn.00404c0a][similar_3_ref] (sim.: 0.8184135583361734)
+4. [fcn.0040db7a][similar_4_ref] (sim.: 0.7915209975988391)
+5. [fcn.0040db7a][similar_5_ref] (sim.: 0.7915209975988391)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ebx
+xor ebx,ebx
+push esi
+cmp dword[0x437cc0],ebx
+jne 0x40cbab
+mov ecx,0x437cb8
+call fcn.0040cb53
+mov esi,dword[ebp+0xc]
+mov ecx,esi
+and ecx,0xf
+mov eax,esi
+sub eax,ecx
+cmp byte[ebp+0x10],bl
+je 0x40cbf5
+mov ecx,dword[0x437cc0]
+cmp ecx,ebx
+je 0x40cc11
+push ebx
+push eax
+push dword[ebp+8]
+call ecx
+test eax,eax
+jne 0x40cc32
+push str.CryptProtectMemory_failed
+mov esi,0x432a6c
+push esi
+call fcn.0040634c
+pop ecx
+pop ecx
+mov ecx,esi
+call fcn.00422fb3
+push 2
+mov ecx,esi
+call fcn.004062c3
+jmp 0x40cc32
+mov ecx,dword[0x437cc4]
+cmp ecx,ebx
+je 0x40cc11
+push ebx
+push eax
+push dword[ebp+8]
+call ecx
+test eax,eax
+jne 0x40cc32
+push str.CryptUnprotectMemory_failed
+jmp 0x40cbd6
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor ecx,ecx
+cmp esi,ebx
+jbe 0x40cc32
+mov dl,al
+add dl,0x4b
+mov eax,dword[ebp+8]
+add eax,ecx
+mov bl,dl
+add bl,cl
+xor byte[eax],bl
+inc ecx
+cmp ecx,esi
+jb 0x40cc22
+pop esi
+pop ebx
+pop ebp
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040cb92@7e044e51324f9f80f4e97d8f3549c003
+[similar_2_ref]: /report/fcn.0040cbe8@319cf4affa41f752783e62f81908d682
+[similar_3_ref]: /report/fcn.00404c0a@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.0040db7a@f068e0a788db6c075da6c407576e943b
+[similar_5_ref]: /report/fcn.0040db7a@e02c832a2c768752009e071574e12967
+[virustotal_ref]: https://www.virustotal.com/gui/file/88e03379526f823ce2de3b236adcaf80

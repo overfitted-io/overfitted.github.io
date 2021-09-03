@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "fcn.005579bd @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005579bd
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.005579ff][similar_1_ref] (sim.: 0.9199900162112351)
+2. [fcn.0040fb59][similar_2_ref] (sim.: 0.8761124446098763)
+3. [fcn.100053a7][similar_3_ref] (sim.: 0.811525217694477)
+4. [fcn.00433197][similar_4_ref] (sim.: 0.8020328105134703)
+5. [fcn.00433197][similar_5_ref] (sim.: 0.8020328105134703)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x230
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+push edi
+mov esi,ecx
+call fcn.005578c1
+mov edi,dword[esi+8]
+xor eax,eax
+mov word[ebp-6],ax
+mov word[ebp-8],ax
+push 0x105
+lea eax,[ebp-0x210]
+push eax
+push edi
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x557aab
+cmp word[ebp-8],0
+je 0x557a17
+push 0x6f
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+jmp 0x557aab
+lea eax,[ebp-0x210]
+mov dword[ebp-0x228],eax
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x230],0x20
+mov dword[ebp-0x22c],0x88
+mov dword[ebp-0x21c],2
+mov dword[ebp-0x214],edi
+call fcn.0055792f
+mov dword[esi+0x80],eax
+cmp eax,0xffffffff
+jne 0x557a7a
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x21c],3
+call fcn.0055792f
+mov dword[esi+0x80],eax
+cmp dword[esi+0x80],0xffffffff
+jne 0x557aab
+lea eax,[ebp-0x230]
+push eax
+mov dword[ebp-0x21c],1
+call fcn.0055792f
+mov dword[esi+0x80],eax
+cmp eax,0xffffffff
+jne 0x557aab
+and dword[esi+0x80],0
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.0057147f
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005579ff@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0040fb59@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/fcn.100053a7@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.00433197@ff219f45286905b4a87327ca719363be
+[similar_5_ref]: /report/fcn.00433197@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "fcn.300eb150 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.300eb150
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+<span class="tag" id="HOOK">HOOK</span>
+
+
+# Similar Functions
+
+1. [fcn.300ef970][similar_1_ref] (sim.: 0.8219178058625962)
+2. [fcn.30081900][similar_2_ref] (sim.: 0.774770945242263)
+3. [fcn.10009590][similar_3_ref] (sim.: 0.7581497178425323)
+4. [fcn.30785296][similar_4_ref] (sim.: 0.7547913517731324)
+5. [fcn.004019c0][similar_5_ref] (sim.: 0.7519697626815047)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push esi
+mov esi,dword[esp+8]
+push 0
+push esi
+call fcn.300eb1d0
+add esp,8
+test eax,eax
+jne 0x300eb168
+pop esi
+ret 4
+mov eax,dword[0x301973fc]
+mov dword[0x301973f4],esi
+test eax,eax
+je 0x300eb188
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+cmp eax,0x80000000
+jb 0x300eb188
+cmp al,4
+jb 0x300eb1c3
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push esi
+push 0x300eae90
+push 0xffffffffffffffff
+call dword[sym.imp.USER32.dll_SetWindowsHookExA]
+test eax,eax
+mov dword[0x30197400],eax
+jne 0x300eb1c3
+push str.WH_MSGFILTER_hook_cannot_be_installed
+push 0x185f
+push str.sfttree.c
+call fcn.30031360
+add esp,0xc
+xor eax,eax
+pop esi
+ret 4
+mov eax,1
+pop esi
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300ef970@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.30081900@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.10009590@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_4_ref]: /report/fcn.30785296@e0efd357fccc8f4e2c059b0b54118ba8
+[similar_5_ref]: /report/fcn.004019c0@843c4207147f5bab0e104024677fd9ec
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302

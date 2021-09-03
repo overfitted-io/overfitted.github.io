@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.0055c178 @ 14b20b07906a36e23f2230c8042160f2"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0055c178
+- **Origin (md5):** 14b20b07906a36e23f2230c8042160f2
+- **VirusTotal:** [virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0055c1e4][similar_1_ref] (sim.: 0.9411657323292033)
+2. [fcn.004090d5][similar_2_ref] (sim.: 0.8547028182287697)
+3. [fcn.1000d0a7][similar_3_ref] (sim.: 0.8526452522004249)
+4. [fcn.0048d458][similar_4_ref] (sim.: 0.8317548530054731)
+5. [fcn.00403033][similar_5_ref] (sim.: 0.8317486678897248)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebx
+xor ebx,ebx
+cmp dword[0x60f36c],ebx
+je 0x55c192
+xor eax,eax
+cmp dword[0x60f360],ebx
+pop ebx
+setne al
+ret 
+push esi
+push edi
+call fcn.0055c11e
+push str.USER32
+mov dword[0x60f370],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,eax
+cmp edi,ebx
+je 0x55c254
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push 0x5b9328
+push edi
+call esi
+mov dword[0x60f350],eax
+cmp eax,ebx
+je 0x55c254
+push str.MonitorFromWindow
+push edi
+call esi
+mov dword[0x60f354],eax
+cmp eax,ebx
+je 0x55c254
+push str.MonitorFromRect
+push edi
+call esi
+mov dword[0x60f358],eax
+cmp eax,ebx
+je 0x55c254
+push str.MonitorFromPoint
+push edi
+call esi
+mov dword[0x60f35c],eax
+cmp eax,ebx
+je 0x55c254
+push str.EnumDisplayMonitors
+push edi
+call esi
+mov dword[0x60f364],eax
+cmp eax,ebx
+je 0x55c254
+push str.EnumDisplayDevicesW
+push edi
+call esi
+mov dword[0x60f368],eax
+cmp eax,ebx
+je 0x55c254
+cmp dword[0x60f370],ebx
+je 0x55c232
+push str.GetMonitorInfoW
+jmp 0x55c237
+push str.GetMonitorInfoA
+push edi
+call esi
+mov dword[0x60f360],eax
+cmp eax,ebx
+je 0x55c254
+xor eax,eax
+inc eax
+pop edi
+pop esi
+mov dword[0x60f36c],1
+pop ebx
+ret 
+mov dword[0x60f350],ebx
+mov dword[0x60f354],ebx
+mov dword[0x60f358],ebx
+mov dword[0x60f35c],ebx
+mov dword[0x60f360],ebx
+mov dword[0x60f364],ebx
+mov dword[0x60f368],ebx
+xor eax,eax
+jmp 0x55c246
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0055c1e4@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.004090d5@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/fcn.1000d0a7@481b545f5c18f2fce1caac67ddc419e8
+[similar_4_ref]: /report/fcn.0048d458@a9fa810a69d3f4d771518b9f44e2d98d
+[similar_5_ref]: /report/fcn.00403033@59aef7c08025d70f84c85db2092fc99e
+[virustotal_ref]: https://www.virustotal.com/gui/file/14b20b07906a36e23f2230c8042160f2

@@ -1,0 +1,110 @@
+---
+layout: post
+title:  "fcn.00437ad0 @ 4fe38de7c6c86a1bad209560fa052231"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00437ad0
+- **Origin (md5):** 4fe38de7c6c86a1bad209560fa052231
+- **VirusTotal:** [virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042a730][similar_1_ref] (sim.: 0.8733933083557988)
+2. [fcn.0045f830][similar_2_ref] (sim.: 0.8588512379712893)
+3. [fcn.0040d7f0][similar_3_ref] (sim.: 0.8558735221388837)
+4. [fcn.00432af0][similar_4_ref] (sim.: 0.8515603430553853)
+5. [fcn.0045c2b0][similar_5_ref] (sim.: 0.8465768093639716)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20
+mov dword[ebp-0x20],ecx
+call fcn.0042b090
+mov ecx,eax
+call fcn.0043dfb0
+mov dword[ebp-8],eax
+push 0x5028dc
+mov eax,dword[ebp+8]
+push eax
+mov ecx,dword[ebp-8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+jne 0x437b09
+jmp 0x437b9e
+mov edx,dword[ebp-4]
+push edx
+mov eax,dword[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x10],eax
+mov ecx,dword[ebp-0x10]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-0x1c],eax
+mov edx,dword[ebp-4]
+push edx
+mov eax,dword[ebp-8]
+push eax
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebp-0x18],eax
+mov ecx,dword[ebp+0xc]
+push ecx
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsA]
+test eax,eax
+je 0x437b50
+mov edx,dword[ebp+0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+push 0
+push 0x80
+push 1
+push 0
+push 1
+push 0x40000000
+mov eax,dword[ebp+0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileA]
+mov dword[ebp-0xc],eax
+cmp dword[ebp-0xc],0xffffffff
+je 0x437b9e
+mov dword[ebp-0x14],0
+push 0
+lea ecx,[ebp-0x14]
+push ecx
+mov edx,dword[ebp-0x18]
+push edx
+mov eax,dword[ebp-0x1c]
+push eax
+mov ecx,dword[ebp-0xc]
+push ecx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+mov edx,dword[ebp-0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042a730@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0045f830@14b20b07906a36e23f2230c8042160f2
+[similar_3_ref]: /report/fcn.0040d7f0@14b20b07906a36e23f2230c8042160f2
+[similar_4_ref]: /report/fcn.00432af0@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.0045c2b0@17d73cbafe6dd96dd6f2291fab06fbb5
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe38de7c6c86a1bad209560fa052231

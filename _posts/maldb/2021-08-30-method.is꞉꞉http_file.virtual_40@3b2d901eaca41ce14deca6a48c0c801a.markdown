@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "method.is꞉꞉http_file.virtual_40 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.is꞉꞉http\_file.virtual\_40
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.004f47e0][similar_1_ref] (sim.: 0.7196622659156797)
+2. [fcn.00464021][similar_2_ref] (sim.: 0.7189649794924122)
+3. [fcn.004033c5][similar_3_ref] (sim.: 0.7139074520849902)
+4. [fcn.004033c5][similar_4_ref] (sim.: 0.7139074520849902)
+5. [fcn.004033c5][similar_5_ref] (sim.: 0.7139074520849902)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push esi
+push 0
+lea eax,[ebp-4]
+mov dword[ebp-4],4
+push eax
+lea eax,[ebp-8]
+mov esi,ecx
+push eax
+push 0x20000013
+push dword[esi+4]
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+test eax,eax
+je 0x494a46
+mov ecx,dword[ebp-8]
+lea eax,[ecx-0xc8]
+cmp eax,0x63
+jbe 0x494a46
+lea eax,[ecx+0xd3c0]
+or eax,0x80040000
+push eax
+mov dword[esi+8],eax
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+xor al,al
+jmp 0x494a48
+mov al,1
+pop esi
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004f47e0@4fe38de7c6c86a1bad209560fa052231
+[similar_2_ref]: /report/fcn.00464021@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.004033c5@d287262b3c4caae6c69c406382125319
+[similar_4_ref]: /report/fcn.004033c5@57989f43bf24a9272122210a17558c3d
+[similar_5_ref]: /report/fcn.004033c5@3a783d6a0e3505903843983e413a529e
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

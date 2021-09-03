@@ -1,0 +1,84 @@
+---
+layout: post
+title:  "fcn.00488040 @ 3b2d901eaca41ce14deca6a48c0c801a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00488040
+- **Origin (md5):** 3b2d901eaca41ce14deca6a48c0c801a
+- **VirusTotal:** [virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040390a][similar_1_ref] (sim.: 0.7638277489633024)
+2. [fcn.0048122d][similar_2_ref] (sim.: 0.763169147972584)
+3. [fcn.0041865c][similar_3_ref] (sim.: 0.7614194622074513)
+4. [fcn.0041865c][similar_4_ref] (sim.: 0.7614194622074513)
+5. [fcn.00479a9e][similar_5_ref] (sim.: 0.760277340741739)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+push ebx
+push esi
+push 0x20019
+push str.SOFTWAREInstallShield24.0Professional
+push 0x80000001
+lea ecx,[ebp-0x18]
+mov dword[ebp-0x18],0
+mov dword[ebp-0x14],0
+mov dword[ebp-0x10],0
+call fcn.00413b20
+mov esi,dword[ebp-0x18]
+test eax,eax
+jne 0x4880b6
+lea eax,[ebp-8]
+mov dword[ebp-4],0
+push eax
+lea eax,[ebp-4]
+mov dword[ebp-8],4
+push eax
+lea eax,[ebp-0xc]
+push eax
+push 0
+push str.DoVerboseLogging
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
+test eax,eax
+jne 0x4880b6
+cmp dword[ebp-0xc],4
+jne 0x4880b6
+cmp dword[ebp-4],1
+sete bl
+jmp 0x4880b8
+xor bl,bl
+test esi,esi
+je 0x4880c3
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop esi
+mov al,bl
+pop ebx
+mov esp,ebp
+pop ebp
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040390a@4c2db4ba96e80258daff665d7d7a016a
+[similar_2_ref]: /report/fcn.0048122d@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.0041865c@53687e619dcac7d709f306d061d8daeb
+[similar_4_ref]: /report/fcn.0041865c@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_5_ref]: /report/fcn.00479a9e@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/3b2d901eaca41ce14deca6a48c0c801a

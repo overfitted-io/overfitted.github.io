@@ -1,0 +1,64 @@
+---
+layout: post
+title:  "fcn.004167fb @ c05c4cef0fe62acb81d34073e4da03c6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004167fb
+- **Origin (md5):** c05c4cef0fe62acb81d34073e4da03c6
+- **VirusTotal:** [virustotal.com/gui/file/c05c4cef0fe62acb81d34073e4da03c6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.0041680b][similar_1_ref] (sim.: 1.0)
+2. [fcn.0045d6db][similar_2_ref] (sim.: 1.0)
+3. [fcn.004086c0][similar_3_ref] (sim.: 1.0)
+4. [fcn.0045d6db][similar_4_ref] (sim.: 1.0)
+5. [fcn.004086c0][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x14
+and dword[ebp-0xc],0
+lea eax,[ebp-0xc]
+and dword[ebp-8],0
+push eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+mov eax,dword[ebp-8]
+xor eax,dword[ebp-0xc]
+mov dword[ebp-4],eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+xor dword[ebp-4],eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+xor dword[ebp-4],eax
+lea eax,[ebp-0x14]
+push eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+mov eax,dword[ebp-0x10]
+lea ecx,[ebp-4]
+xor eax,dword[ebp-0x14]
+xor eax,dword[ebp-4]
+xor eax,ecx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041680b@114b798bcd6c8d19f121c452bc20962c
+[similar_2_ref]: /report/fcn.0045d6db@6f3954a480bef11309decb3759df55ad
+[similar_3_ref]: /report/fcn.004086c0@e2b833a8321c689d531f564759cfacf2
+[similar_4_ref]: /report/fcn.0045d6db@2dd6da6129e47fd72c5b6249eef16bbb
+[similar_5_ref]: /report/fcn.004086c0@6ad85ede940c1d451bf74f115f989758
+[virustotal_ref]: https://www.virustotal.com/gui/file/c05c4cef0fe62acb81d34073e4da03c6

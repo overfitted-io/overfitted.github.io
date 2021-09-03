@@ -1,0 +1,86 @@
+---
+layout: post
+title:  "fcn.0058416a @ 2db66bac8e26cd758cb6fa211bf2d229"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0058416a
+- **Origin (md5):** 2db66bac8e26cd758cb6fa211bf2d229
+- **VirusTotal:** [virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0043c422][similar_1_ref] (sim.: 0.8043454746209413)
+2. [fcn.10028140][similar_2_ref] (sim.: 0.800725379497096)
+3. [fcn.459bfd4e][similar_3_ref] (sim.: 0.7964880819180017)
+4. [fcn.00438ed6][similar_4_ref] (sim.: 0.7958373735903241)
+5. [fcn.4145cf6c][similar_5_ref] (sim.: 0.7926571616217754)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+xor esi,esi
+lea eax,[ebp-4]
+inc esi
+xor ebx,ebx
+push eax
+mov dword[ebp-8],esi
+mov dword[ebp-4],ebx
+call fcn.0057fbad
+cmp dword[ebp-4],5
+pop ecx
+jle 0x584190
+mov eax,esi
+jmp 0x5841d2
+push edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+mov esi,dword[eax+0x3c]
+add esi,eax
+cmp word[esi+6],bx
+movzx eax,word[esi+0x14]
+lea edi,[eax+esi+0x18]
+jbe 0x5841ce
+push edi
+push 0x5bdcf8
+call fcn.005848f0
+test eax,eax
+pop ecx
+pop ecx
+je 0x5841ca
+movzx eax,word[esi+6]
+inc ebx
+add edi,0x28
+cmp ebx,eax
+jb 0x5841ab
+jmp 0x5841ce
+and dword[ebp-8],0
+mov eax,dword[ebp-8]
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043c422@7b00dd8f2abf54a73bfb09681334ff78
+[similar_2_ref]: /report/fcn.10028140@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.459bfd4e@284c9c9722cef7520dddfe58806fd72f
+[similar_4_ref]: /report/fcn.00438ed6@f86ab4114e997e148e8eceeac9acf240
+[similar_5_ref]: /report/fcn.4145cf6c@5daa225ae71183cc507c1651166cc80a
+[virustotal_ref]: https://www.virustotal.com/gui/file/2db66bac8e26cd758cb6fa211bf2d229

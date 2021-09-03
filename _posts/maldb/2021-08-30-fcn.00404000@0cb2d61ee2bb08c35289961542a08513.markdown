@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.00404000 @ 0cb2d61ee2bb08c35289961542a08513"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00404000
+- **Origin (md5):** 0cb2d61ee2bb08c35289961542a08513
+- **VirusTotal:** [virustotal.com/gui/file/0cb2d61ee2bb08c35289961542a08513][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0040541a][similar_1_ref] (sim.: 0.8925368582113982)
+2. [fcn.0040541a][similar_2_ref] (sim.: 0.8925368582113982)
+3. [fcn.00401000][similar_3_ref] (sim.: 0.8270606347436527)
+4. [fcn.004053e4][similar_4_ref] (sim.: 0.8233898634107155)
+5. [fcn.00402f47][similar_5_ref] (sim.: 0.8203729878270685)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x268
+push ebx
+push esi
+push edi
+push str.kernel32
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov dword[0x422778],eax
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+call fcn.0041b390
+call fcn.00402579
+push 3
+call fcn.004025d4
+push 0x28
+mov dword[0x4227a0],eax
+call fcn.004025d4
+push 2
+mov dword[0x42279c],eax
+call fcn.004025d4
+push 5
+mov dword[0x422798],eax
+call fcn.004025d4
+push 0x15
+mov dword[0x422794],eax
+call fcn.004025d4
+push 0x16
+mov dword[0x422790],eax
+call fcn.004025d4
+push 0x17
+mov dword[0x42278c],eax
+call fcn.004025d4
+xor ebx,ebx
+add esp,0x1c
+mov dword[0x422788],eax
+mov dword[0x422780],ebx
+mov dword[0x422784],ebx
+xor edi,edi
+push ebx
+push edi
+lea eax,[ebp-0x268]
+push eax
+push ebx
+call dword[sym.imp.SHELL32.dll_SHGetSpecialFolderPathW]
+test eax,eax
+je 0x4040f4
+push edi
+lea eax,[ebp-0x5c]
+push str.SfxFolder_02d
+push eax
+call dword[sym.imp.USER32.dll_wsprintfW]
+push 1
+lea eax,[ebp-0x268]
+push eax
+lea eax,[ebp-0x5c]
+push eax
+call fcn.00403bf7
+add esp,0x18
+xor esi,esi
+cmp dword[esi+0x4223b4],edi
+jne 0x4040ec
+push ebx
+lea eax,[ebp-0x268]
+push eax
+push dword[esi+0x4223b8]
+call fcn.00403bf7
+add esp,0xc
+add esi,8
+cmp esi,0x28
+jb 0x4040ce
+inc edi
+cmp edi,0x40
+jl 0x404093
+pop edi
+pop esi
+pop ebx
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040541a@3f1595e66dc63331ba0930a0c79684ce
+[similar_2_ref]: /report/fcn.0040541a@4c8869bb42f854640703b6ddda29ee38
+[similar_3_ref]: /report/fcn.00401000@0cb2d61ee2bb08c35289961542a08513
+[similar_4_ref]: /report/fcn.004053e4@6c5b0418e4a4c57d99cda47d2717045d
+[similar_5_ref]: /report/fcn.00402f47@470263fe7e7cc115b95cd041d643e3b5
+[virustotal_ref]: https://www.virustotal.com/gui/file/0cb2d61ee2bb08c35289961542a08513

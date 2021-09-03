@@ -1,0 +1,85 @@
+---
+layout: post
+title:  "fcn.140015dc8 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140015dc8
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.1400182a4][similar_1_ref] (sim.: 0.8743706420214107)
+2. [fcn.180004ed8][similar_2_ref] (sim.: 0.8598250332194561)
+3. [fcn.14002516c][similar_3_ref] (sim.: 0.8331311930414738)
+4. [fcn.140016744][similar_4_ref] (sim.: 0.8281624201477664)
+5. [fcn.140017f94][similar_5_ref] (sim.: 0.826522890155748)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov qword[rsp+8],rbx
+mov qword[rsp+0x10],rsi
+push rdi
+sub rsp,0x20
+mov rbx,rcx
+cmp rcx,0xffffffffffffffe0
+ja 0x140015e5c
+mov edi,1
+test rcx,rcx
+cmovne rdi,rcx
+mov rcx,qword[0x1400b3030]
+test rcx,rcx
+jne 0x140015e18
+call fcn.14001cba0
+mov ecx,0x1e
+call fcn.14001c940
+mov ecx,0xff
+call fcn.140015314
+mov rcx,qword[0x1400b3030]
+mov r8,rdi
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov rsi,rax
+test rax,rax
+jne 0x140015e57
+cmp dword[0x1400b3028],eax
+je 0x140015e41
+mov rcx,rbx
+call fcn.1400156f0
+test eax,eax
+je 0x140015e4c
+jmp 0x140015dec
+call fcn.14001c210
+mov dword[rax],0xc
+call fcn.14001c210
+mov dword[rax],0xc
+mov rax,rsi
+jmp 0x140015e6e
+call fcn.1400156f0
+call fcn.14001c210
+mov dword[rax],0xc
+xor eax,eax
+mov rbx,qword[rsp+0x30]
+mov rsi,qword[rsp+0x38]
+add rsp,0x20
+pop rdi
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1400182a4@c5b958b285b208bffd52d8455e15d93a
+[similar_2_ref]: /report/fcn.180004ed8@7dc44f7522d53d03c7b1f4335f6d2a15
+[similar_3_ref]: /report/fcn.14002516c@3bee9e0608c478ffce0d10559aae732b
+[similar_4_ref]: /report/fcn.140016744@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.140017f94@3bee9e0608c478ffce0d10559aae732b
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

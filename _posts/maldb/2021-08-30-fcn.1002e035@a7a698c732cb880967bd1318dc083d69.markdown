@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "fcn.1002e035 @ a7a698c732cb880967bd1318dc083d69"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1002e035
+- **Origin (md5):** a7a698c732cb880967bd1318dc083d69
+- **VirusTotal:** [virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00403fc4][similar_1_ref] (sim.: 0.8310938235030498)
+2. [fcn.00403f74][similar_2_ref] (sim.: 0.8281241141701713)
+3. [fcn.00403f74][similar_3_ref] (sim.: 0.8154242501549266)
+4. [fcn.00403fc4][similar_4_ref] (sim.: 0.8115185013417933)
+5. [fcn.00403b24][similar_5_ref] (sim.: 0.8020306286474854)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+xor ebx,ebx
+cmp dword[0x1003f0d4],ebx
+push esi
+push edi
+jne 0x1002e084
+push str.user32.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+cmp edi,ebx
+je 0x1002e0ba
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push str.MessageBoxA
+push edi
+call esi
+test eax,eax
+mov dword[0x1003f0d4],eax
+je 0x1002e0ba
+push str.GetActiveWindow
+push edi
+call esi
+push str.GetLastActivePopup
+push edi
+mov dword[0x1003f0d8],eax
+call esi
+mov dword[0x1003f0dc],eax
+mov eax,dword[0x1003f0d8]
+test eax,eax
+je 0x1002e0a3
+call eax
+mov ebx,eax
+test ebx,ebx
+je 0x1002e0a3
+mov eax,dword[0x1003f0dc]
+test eax,eax
+je 0x1002e0a3
+push ebx
+call eax
+mov ebx,eax
+push dword[esp+0x18]
+push dword[esp+0x18]
+push dword[esp+0x18]
+push ebx
+call dword[0x1003f0d4]
+pop edi
+pop esi
+pop ebx
+ret 
+xor eax,eax
+jmp 0x1002e0b6
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403fc4@f7fdde1e34169179beb179f5c2c38adb
+[similar_2_ref]: /report/fcn.00403f74@275ffea927e41707a9ee6cdb506c57a4
+[similar_3_ref]: /report/fcn.00403f74@03566ca6c146fb1f8bfbce50f19cbb41
+[similar_4_ref]: /report/fcn.00403fc4@faca7110288761a0f664158c1f6c3986
+[similar_5_ref]: /report/fcn.00403b24@1c48774da6a3dd4bf3ea41716a332c61
+[virustotal_ref]: https://www.virustotal.com/gui/file/a7a698c732cb880967bd1318dc083d69

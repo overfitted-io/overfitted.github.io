@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "fcn.10041589 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10041589
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.10041490][similar_1_ref] (sim.: 0.9397060307830201)
+2. [fcn.100206c3][similar_2_ref] (sim.: 0.8841739556188869)
+3. [fcn.00402320][similar_3_ref] (sim.: 0.8799203509631491)
+4. [fcn.004091da][similar_4_ref] (sim.: 0.8761570021078368)
+5. [fcn.0047a5dc][similar_5_ref] (sim.: 0.875668947146144)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x2c
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+push esi
+mov esi,ecx
+mov dword[ebp-0x28],eax
+mov eax,dword[ebp+0xc]
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+push dword[esi+0x4c]
+mov dword[ebp-0x2c],eax
+push dword[esi+0xc]
+call edi
+test eax,eax
+je 0x100415c9
+mov dword[esi+0x48],0x2749
+xor al,al
+jmp 0x1004168e
+push ebx
+xor ebx,ebx
+push ebx
+push dword[esi+4]
+call edi
+cmp eax,0x80
+jne 0x100415e7
+mov dword[esi+0x48],0x2734
+xor al,al
+jmp 0x1004168d
+mov ecx,dword[ebp-0x2c]
+lea edi,[ebp-0x24]
+mov eax,dword[ebp-0x28]
+mov dword[ebp-0xc],eax
+mov dword[ebp-8],ebx
+mov eax,dword[ecx]
+mov dword[ebp-0x10],eax
+xor eax,eax
+stosd dword es:[edi],eax
+mov dword[ecx],ebx
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+lea eax,[esi+0x10]
+push eax
+mov dword[ebp-0x28],eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov eax,dword[esi+4]
+push eax
+mov dword[ebp-0x14],eax
+call dword[sym.imp.WS2_32.dll_WSAResetEvent]
+mov edi,dword[ebp-0x2c]
+lea eax,[ebp-0x24]
+push ebx
+push eax
+lea eax,[ebp-8]
+push eax
+push edi
+push 1
+lea eax,[ebp-0x10]
+push eax
+push dword[esi+0x40]
+call dword[sym.imp.WS2_32.dll_WSARecv]
+test eax,eax
+je 0x1004164b
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x3e5
+jne 0x1004167f
+push dword[esi+0x4c]
+push dword[ebp-0x14]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+test eax,eax
+jne 0x10041682
+lea eax,[ebp-8]
+mov dword[ebp-8],ebx
+push eax
+push ebx
+push edi
+lea eax,[ebp-0x24]
+push eax
+push dword[esi+0x40]
+call dword[sym.imp.WS2_32.dll_WSAGetOverlappedResult]
+test eax,eax
+je 0x10041679
+mov bl,1
+jmp 0x10041682
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esi+0x48],eax
+push dword[ebp-0x28]
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov al,bl
+pop ebx
+mov ecx,dword[ebp-4]
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10041490@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.100206c3@481b545f5c18f2fce1caac67ddc419e8
+[similar_3_ref]: /report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f
+[similar_4_ref]: /report/fcn.004091da@69b3c79878674ea715338a112bb5caa6
+[similar_5_ref]: /report/fcn.0047a5dc@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c

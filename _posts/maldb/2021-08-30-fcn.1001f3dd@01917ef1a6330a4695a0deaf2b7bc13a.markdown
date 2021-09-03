@@ -1,0 +1,191 @@
+---
+layout: post
+title:  "fcn.1001f3dd @ 01917ef1a6330a4695a0deaf2b7bc13a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001f3dd
+- **Origin (md5):** 01917ef1a6330a4695a0deaf2b7bc13a
+- **VirusTotal:** [virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.10022632][similar_1_ref] (sim.: 0.9089630552512035)
+2. [fcn.00631ca0][similar_2_ref] (sim.: 0.9060583180928047)
+3. [fcn.100036c8][similar_3_ref] (sim.: 0.9031729995416713)
+4. [fcn.301033a0][similar_4_ref] (sim.: 0.8968645514468829)
+5. [method.CWinApp.virtual\_132][similar_5_ref] (sim.: 0.8946353294837723)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0xe40
+mov eax,dword[0x1002f010]
+xor eax,ebp
+mov dword[ebp-4],eax
+push ebx
+push esi
+mov esi,ecx
+push edi
+mov edi,edx
+xor ebx,ebx
+push esi
+mov dword[ebp-0xe34],esi
+mov dword[ebp-0xe3c],edi
+mov dword[ebp-0xe38],ebx
+call fcn.1001f726
+pop ecx
+mov dword[ebp-0xe30],eax
+cmp eax,ebx
+jne 0x1001f42b
+push esi
+call fcn.1001f720
+pop ecx
+mov dword[ebp-0xe38],eax
+push ebx
+push ebx
+push 0xffffffffffffffff
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_MultiByteToWideChar]
+push ebx
+mov esi,0xfde9
+push esi
+call edi
+cmp eax,0x200
+jae 0x1001f464
+push eax
+lea eax,[ebp-0xe2c]
+push eax
+push 0xffffffffffffffff
+push dword[ebp-0xe3c]
+push ebx
+push esi
+call edi
+lea edi,[ebp-0xe2c]
+test eax,eax
+jne 0x1001f469
+mov edi,str.Runtime_Check_Error._n_r_Unable_to_display_RTC_Message.
+mov ecx,0x1002
+call fcn.1001f32b
+test eax,eax
+je 0x1001f49c
+mov ecx,dword[ebp+0xc]
+push edi
+push dword[ebp-0xe34]
+push dword[ecx*4+0x1002a860]
+call fcn.1001f37b
+add esp,0xc
+test eax,eax
+jne 0x1001f5c7
+xor al,al
+jmp 0x1001f49e
+mov al,1
+cmp dword[ebp-0xe38],ebx
+jne 0x1001f4b2
+cmp dword[ebp-0xe30],ebx
+je 0x1001f5c1
+cmp al,bl
+je 0x1001f4c4
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+jne 0x1001f5c1
+mov eax,0x104
+push eax
+lea ecx,[ebp-0x414]
+push ecx
+lea ecx,[ebp-0xe34]
+push ecx
+push eax
+lea eax,[ebp-0x20c]
+push eax
+mov eax,dword[ebp-0xe34]
+add eax,0xfffffffb
+push eax
+call fcn.100227d8
+add esp,0x18
+cmp dword[ebp-0xe30],ebx
+je 0x1001f525
+push edi
+push dword[ebp+0xc]
+lea eax,[ebp-0x414]
+push str.Run_Time_Check_Failure__d____s
+push eax
+push dword[ebp-0xe34]
+lea eax,[ebp-0x20c]
+push eax
+push dword[ebp+8]
+call dword[ebp-0xe30]
+jmp 0x1001f5b9
+mov edi,dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]
+push ebx
+push ebx
+push 0x30a
+lea eax,[ebp-0xa2c]
+push eax
+push 0xffffffffffffffff
+lea eax,[ebp-0x20c]
+push eax
+push ebx
+push esi
+mov dword[ebp-0xe30],0x1002a918
+call edi
+test eax,eax
+je 0x1001f560
+lea eax,[ebp-0xa2c]
+mov dword[ebp-0xe30],eax
+push ebx
+push ebx
+push 0x30a
+lea eax,[ebp-0x720]
+push eax
+push 0xffffffffffffffff
+lea eax,[ebp-0x414]
+push eax
+push ebx
+push esi
+mov dword[ebp-0xe40],0x1002a904
+call edi
+test eax,eax
+lea eax,[ebp-0x720]
+jne 0x1001f595
+mov eax,dword[ebp-0xe40]
+push dword[ebp-0xe3c]
+push dword[ebp+0xc]
+push 0x1002a8e4
+push eax
+push dword[ebp-0xe34]
+push dword[ebp-0xe30]
+push dword[ebp+8]
+call dword[ebp-0xe38]
+add esp,0x1c
+cmp eax,1
+jne 0x1001f5c7
+call dword[sym.imp.KERNEL32.dll_DebugBreak]
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.100149fd
+leave 
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10022632@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_2_ref]: /report/fcn.00631ca0@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.100036c8@01917ef1a6330a4695a0deaf2b7bc13a
+[similar_4_ref]: /report/fcn.301033a0@0a3653d3e8fb1320d70b4e1441359302
+[similar_5_ref]: /report/method.CWinApp.virtual_132@e5d49e0823e602f2ee948ac39d32c1eb
+[virustotal_ref]: https://www.virustotal.com/gui/file/01917ef1a6330a4695a0deaf2b7bc13a

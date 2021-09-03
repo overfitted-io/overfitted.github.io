@@ -1,0 +1,142 @@
+---
+layout: post
+title:  "fcn.300cb930 @ 0a3653d3e8fb1320d70b4e1441359302"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.300cb930
+- **Origin (md5):** 0a3653d3e8fb1320d70b4e1441359302
+- **VirusTotal:** [virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Similar Functions
+
+1. [fcn.300cbf70][similar_1_ref] (sim.: 0.9201340098798624)
+2. [fcn.300b2c50][similar_2_ref] (sim.: 0.8951581804647367)
+3. [fcn.300e4ac0][similar_3_ref] (sim.: 0.8849832761172903)
+4. [fcn.300edbb0][similar_4_ref] (sim.: 0.8725797948801548)
+5. [fcn.300f4720][similar_5_ref] (sim.: 0.8706906783922155)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x74
+push esi
+mov esi,dword[esp+0x7c]
+mov eax,dword[esi]
+test eax,eax
+jle 0x300cba58
+cmp eax,2
+jg 0x300cba58
+mov eax,dword[esp+0x84]
+test eax,eax
+je 0x300cba34
+mov eax,dword[esi+0xc]
+push edi
+push 2
+mov ecx,dword[eax+4]
+push ecx
+call dword[sym.imp.GDI32.dll_GetDeviceCaps]
+cmp eax,5
+je 0x300cb9ad
+mov edx,dword[esi+0xc]
+mov eax,dword[edx+4]
+test eax,eax
+je 0x300cb9ad
+mov ecx,dword[esi+0x11c]
+mov edi,dword[sym.imp.GDI32.dll_SelectObject]
+push ecx
+push eax
+call edi
+mov eax,dword[esi+0xc]
+lea edx,[esp+8]
+push edx
+mov ecx,dword[eax+4]
+push ecx
+call dword[sym.imp.GDI32.dll_GetTextMetricsA]
+mov eax,dword[esi+0xc]
+mov edx,dword[esi+0x120]
+push edx
+mov ecx,dword[eax+4]
+push ecx
+call edi
+jmp 0x300cb9fc
+push ebx
+mov ecx,0xe
+xor eax,eax
+lea edi,[esp+0xc]
+push ebp
+push eax
+rep stosd dword es:[edi],eax
+xor ebx,ebx
+call dword[sym.imp.USER32.dll_GetDC]
+mov ebp,dword[sym.imp.GDI32.dll_SelectObject]
+mov edi,eax
+mov eax,dword[esi+0x11c]
+test eax,eax
+je 0x300cb9dd
+push eax
+push edi
+call ebp
+mov ebx,eax
+lea edx,[esp+0x10]
+push edx
+push edi
+call dword[sym.imp.GDI32.dll_GetTextMetricsA]
+test ebx,ebx
+je 0x300cb9f1
+push ebx
+push edi
+call ebp
+push edi
+push 0
+call dword[sym.imp.USER32.dll_ReleaseDC]
+pop ebp
+pop ebx
+mov ecx,dword[esi+0x120]
+lea eax,[esp+0x40]
+push eax
+push 0x3c
+push ecx
+call dword[sym.imp.GDI32.dll_GetObjectA]
+mov ecx,dword[esp+8]
+mov eax,0x51eb851f
+imul ecx,dword[esp+0x84]
+imul ecx
+sar edx,5
+mov eax,edx
+pop edi
+shr eax,0x1f
+add edx,eax
+mov dword[esp+0x3c],edx
+jmp 0x300cba3f
+mov ecx,dword[esp+0x80]
+mov dword[esp+0x3c],ecx
+lea edx,[esp+0x3c]
+push edx
+call dword[sym.imp.GDI32.dll_CreateFontIndirectA]
+test eax,eax
+je 0x300cba58
+push eax
+push esi
+call fcn.300cba60
+add esp,8
+pop esi
+add esp,0x74
+ret 
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.300cbf70@0a3653d3e8fb1320d70b4e1441359302
+[similar_2_ref]: /report/fcn.300b2c50@0a3653d3e8fb1320d70b4e1441359302
+[similar_3_ref]: /report/fcn.300e4ac0@0a3653d3e8fb1320d70b4e1441359302
+[similar_4_ref]: /report/fcn.300edbb0@0a3653d3e8fb1320d70b4e1441359302
+[similar_5_ref]: /report/fcn.300f4720@0a3653d3e8fb1320d70b4e1441359302
+[virustotal_ref]: https://www.virustotal.com/gui/file/0a3653d3e8fb1320d70b4e1441359302
