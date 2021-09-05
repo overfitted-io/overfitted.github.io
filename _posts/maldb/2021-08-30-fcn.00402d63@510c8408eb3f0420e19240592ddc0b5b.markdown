@@ -1,0 +1,220 @@
+---
+layout: post
+title:  "fcn.00402d63 @ 510c8408eb3f0420e19240592ddc0b5b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402d63
+- **Origin (md5):** 510c8408eb3f0420e19240592ddc0b5b
+- **VirusTotal:** [virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00402c33][similar_1_ref] (sim.: 1.0)
+2. [fcn.00402c22][similar_2_ref] (sim.: 1.0)
+3. [fcn.00402c22][similar_3_ref] (sim.: 1.0)
+4. [fcn.00402c22][similar_4_ref] (sim.: 1.0)
+5. [fcn.00402c22][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x28
+push ebx
+push esi
+xor ebx,ebx
+push edi
+mov dword[ebp-8],ebx
+mov dword[ebp-4],ebx
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+mov esi,0x436c00
+push 0x400
+add eax,0x3e8
+push esi
+push ebx
+mov dword[0x42f410],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+push 3
+push 0x80000000
+push esi
+call fcn.00405b39
+mov edi,eax
+cmp edi,0xffffffff
+mov dword[ebp-0xc],edi
+mov dword[0x40a018],edi
+jne 0x402dbd
+mov eax,str.Error_launching_installer
+jmp 0x402f95
+push esi
+mov esi,0x435c00
+push esi
+call fcn.00405fa0
+push esi
+call fcn.0040597f
+push eax
+push 0x437000
+call fcn.00405fa0
+push ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+cmp eax,ebx
+mov dword[0x42142c],eax
+mov esi,eax
+jle 0x402ed8
+mov ebx,0x421430
+mov eax,dword[0x42f418]
+mov edi,esi
+neg eax
+sbb eax,eax
+and eax,0x7e00
+add eax,0x200
+cmp esi,eax
+jl 0x402e11
+mov edi,eax
+push edi
+push ebx
+call fcn.004031ae
+test eax,eax
+je 0x402f42
+cmp dword[0x42f418],0
+jne 0x402ea3
+push 0x1c
+lea eax,[ebp-0x28]
+push ebx
+push eax
+call fcn.00405af4
+mov eax,dword[ebp-0x28]
+test eax,0xfffffff0
+jne 0x402eb1
+cmp dword[ebp-0x24],0xdeadbeef
+jne 0x402eb1
+cmp dword[ebp-0x18],0x74736e49
+jne 0x402eb1
+cmp dword[ebp-0x1c],0x74666f73
+jne 0x402eb1
+cmp dword[ebp-0x20],0x6c6c754e
+jne 0x402eb1
+or dword[ebp+8],eax
+mov eax,dword[ebp+8]
+mov ecx,dword[0x415420]
+and eax,2
+or dword[0x42f4c0],eax
+mov eax,dword[ebp-0x10]
+cmp eax,esi
+mov dword[0x42f418],ecx
+jg 0x402f3b
+test byte[ebp+8],8
+jne 0x402e95
+test byte[ebp+8],4
+jne 0x402ed6
+inc dword[ebp-4]
+lea esi,[eax-4]
+cmp edi,esi
+jbe 0x402eb1
+mov edi,esi
+jmp 0x402eb1
+test byte[ebp+8],2
+jne 0x402eb1
+push 0
+call fcn.00402cff
+pop ecx
+cmp esi,dword[0x42142c]
+jge 0x402ec6
+push edi
+push ebx
+push dword[ebp-8]
+call fcn.004063ef
+mov dword[ebp-8],eax
+add dword[0x415420],edi
+sub esi,edi
+test esi,esi
+jg 0x402df6
+xor ebx,ebx
+push 1
+call fcn.00402cff
+cmp dword[0x42f418],ebx
+pop ecx
+je 0x402f3b
+cmp dword[ebp-4],ebx
+je 0x402f0f
+push dword[0x415420]
+call fcn.004031c4
+lea eax,[ebp+8]
+push 4
+push eax
+call fcn.004031ae
+test eax,eax
+je 0x402f3b
+mov eax,dword[ebp-8]
+cmp eax,dword[ebp+8]
+jne 0x402f3b
+push dword[ebp-0x14]
+push 0x40
+call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
+mov esi,eax
+mov eax,dword[0x42f418]
+add eax,0x1c
+push eax
+call fcn.004031c4
+push dword[ebp-0x14]
+push esi
+push ebx
+push 0xffffffffffffffff
+call fcn.00402f9c
+cmp eax,dword[ebp-0x14]
+je 0x402f4c
+mov eax,str.Installer_integrity_check_has_failed._Common_causes_include_nincomplete_download_and_damaged_media._Contact_the_ninstallers_author_to_obtain_a_new_copy._n_nMore_information_at:_nhttp:__nsis.sf.net_NSIS_Error
+jmp 0x402f95
+push 1
+call fcn.00402cff
+pop ecx
+jmp 0x402f3b
+test byte[ebp-0x28],1
+mov dword[0x42f414],esi
+mov eax,dword[esi]
+mov dword[0x42f41c],eax
+je 0x402f65
+inc dword[0x42f420]
+push 8
+lea eax,[esi+0x44]
+pop ecx
+sub eax,8
+add dword[eax],esi
+dec ecx
+jne 0x402f6b
+push 1
+push ebx
+push ebx
+push dword[ebp-0xc]
+call dword[sym.imp.KERNEL32.dll_SetFilePointer]
+mov dword[esi+0x3c],eax
+add esi,4
+push 0x40
+push esi
+push 0x42f440
+call fcn.00405af4
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402c33@0c82eefbb8a4714538e49f74fe0058a6
+[similar_2_ref]: /report/fcn.00402c22@88c77a55c813a535f04a021f665ec5b4
+[similar_3_ref]: /report/fcn.00402c22@8cfdb0713f3b8f9b0a5ef775f40cf182
+[similar_4_ref]: /report/fcn.00402c22@045e0ff2c8ee6fdcaf20f3769c6f3c76
+[similar_5_ref]: /report/fcn.00402c22@595b48effa204acca09e846b8e091f46
+[virustotal_ref]: https://www.virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b

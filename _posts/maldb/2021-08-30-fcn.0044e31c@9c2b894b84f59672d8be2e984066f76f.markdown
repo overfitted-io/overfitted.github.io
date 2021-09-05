@@ -1,0 +1,207 @@
+---
+layout: post
+title:  "fcn.0044e31c @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0044e31c
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.1001464a][similar_1_ref] (sim.: 0.9358276264425014)
+2. [fcn.00429360][similar_2_ref] (sim.: 0.8833810180881176)
+3. [fcn.0044476a][similar_3_ref] (sim.: 0.8754573820366027)
+4. [fcn.0041f4b0][similar_4_ref] (sim.: 0.869677552638078)
+5. [fcn.10001fef][similar_5_ref] (sim.: 0.8675648707776807)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x20
+mov eax,dword[0x5d9004]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+0xc]
+push ebx
+mov ebx,dword[ebp+0x14]
+push esi
+mov dword[ebp-0x20],eax
+mov eax,dword[0x5e0880]
+mov dword[ebp-0x18],ebx
+push edi
+mov edi,dword[ebp+0x10]
+mov dword[ebp-0x1c],edi
+test eax,eax
+jne 0x44e375
+push 0x585ae4
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+test eax,eax
+je 0x44e399
+push str.GetThreadPreferredUILanguages
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi,eax
+push esi
+call dword[sym.imp.KERNEL32.dll_EncodePointer]
+mov dword[0x5e0880],eax
+jmp 0x44e37e
+push eax
+call dword[sym.imp.KERNEL32.dll_DecodePointer]
+mov esi,eax
+test esi,esi
+je 0x44e399
+mov eax,dword[ebp-0x20]
+mov ecx,esi
+push ebx
+push edi
+push eax
+push dword[ebp+8]
+call fcn.00553897
+call esi
+jmp 0x44e4d6
+mov eax,dword[ebp-0x20]
+and dword[eax],0
+call dword[sym.imp.KERNEL32.dll_GetUserDefaultUILanguage]
+movzx ecx,ax
+lea eax,[ebp-0x14]
+mov ebx,ecx
+and ecx,0xfc00
+push 7
+and ebx,0x3ff
+push eax
+or ecx,ebx
+push ecx
+call fcn.0044e771
+lea eax,[ebp-0x14]
+push eax
+call fcn.0055e1cb
+mov esi,eax
+lea eax,[ebp-0x14]
+push eax
+mov eax,dword[ebp-0x18]
+push dword[eax]
+push edi
+call fcn.0055d900
+push 7
+lea eax,[ebp-0x14]
+push eax
+push ebx
+lea edi,[esi+1]
+call fcn.0044e771
+lea eax,[ebp-0x14]
+push eax
+call fcn.0055e1cb
+lea esi,[eax+1]
+lea eax,[ebp-0x14]
+push eax
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+mov eax,dword[ebp-0x1c]
+sub ecx,edi
+push ecx
+lea ecx,[eax+edi*2]
+push ecx
+call fcn.0055d900
+add esp,0x38
+add edi,esi
+call dword[sym.imp.KERNEL32.dll_GetSystemDefaultUILanguage]
+movzx ecx,ax
+lea eax,[ebp-0x14]
+mov ebx,ecx
+and ecx,0xfc00
+push 7
+and ebx,0x3ff
+push eax
+or ecx,ebx
+push ecx
+call fcn.0044e771
+lea eax,[ebp-0x14]
+push eax
+call fcn.0055e1cb
+lea esi,[eax+1]
+lea eax,[ebp-0x14]
+push eax
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+mov eax,dword[ebp-0x1c]
+sub ecx,edi
+push ecx
+lea ecx,[eax+edi*2]
+push ecx
+call fcn.0055d900
+push 7
+lea eax,[ebp-0x14]
+add edi,esi
+push eax
+push ebx
+call fcn.0044e771
+lea eax,[ebp-0x14]
+push eax
+call fcn.0055e1cb
+lea esi,[eax+1]
+lea eax,[ebp-0x14]
+mov ebx,dword[ebp-0x1c]
+push eax
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+sub ecx,edi
+push ecx
+lea ecx,[ebx+edi*2]
+push ecx
+call fcn.0055d900
+push 7
+lea eax,[ebp-0x14]
+add edi,esi
+push eax
+push 0x800
+call fcn.0044e771
+add esp,0x44
+lea eax,[ebp-0x14]
+push eax
+call fcn.0055e1cb
+mov esi,eax
+lea eax,[ebp-0x14]
+push eax
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+sub ecx,edi
+push ecx
+lea ecx,[ebx+edi*2]
+push ecx
+call fcn.0055d900
+lea eax,[edi+esi]
+xor ecx,ecx
+mov word[ebx+eax*2+2],cx
+add esp,0x10
+xor eax,eax
+inc eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.00553199
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001464a@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.00429360@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0044476a@b3771987fba16f4fba07d1109ec72c76
+[similar_4_ref]: /report/fcn.0041f4b0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.10001fef@481b545f5c18f2fce1caac67ddc419e8
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

@@ -1,0 +1,194 @@
+---
+layout: post
+title:  "fcn.0040dd36 @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040dd36
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [main][similar_1_ref] (sim.: 0.888765796934148)
+2. [fcn.00402c72][similar_2_ref] (sim.: 0.8846883637271273)
+3. [fcn.00402c72][similar_3_ref] (sim.: 0.8846883637271273)
+4. [fcn.00402c72][similar_4_ref] (sim.: 0.8846883637271273)
+5. [fcn.00402c72][similar_5_ref] (sim.: 0.8846883637271273)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x5c
+push ebx
+push esi
+push edi
+push 1
+call fcn.0040e96c
+xor ebx,ebx
+push ebx
+call dword[sym.imp.ole32.dll_OleInitialize]
+mov ecx,0x42d4f0
+call fcn.0040f0b5
+mov esi,0x5800
+push esi
+push ebx
+mov edi,0x41f100
+push edi
+call fcn.0040a4a0
+call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
+mov dword[ebp-8],eax
+cmp eax,ebx
+je 0x40dde4
+push eax
+call fcn.0040bbd3
+cmp byte[0x424959],bl
+je 0x40ddd6
+push str.winrarsfxmappingfile.tmp
+push ebx
+push 4
+call dword[sym.imp.KERNEL32.dll_OpenFileMappingW]
+mov dword[ebp-8],eax
+cmp eax,ebx
+je 0x40ddcb
+push esi
+push ebx
+push ebx
+push 4
+push eax
+call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
+mov dword[ebp-4],eax
+cmp eax,ebx
+je 0x40ddc2
+push esi
+push eax
+push edi
+call fcn.0040a4cd
+push edi
+push str.sfxcmd
+call dword[sym.imp.KERNEL32.dll_SetEnvironmentVariableW]
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_UnmapViewOfFile]
+push dword[ebp-8]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+jmp 0x40dde4
+push dword[ebp-8]
+push str.sfxcmd
+call dword[sym.imp.KERNEL32.dll_SetEnvironmentVariableW]
+push 0x400
+mov esi,0x41e900
+push esi
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push esi
+push str.sfxname
+call dword[sym.imp.KERNEL32.dll_SetEnvironmentVariableW]
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov edi,eax
+push 0x64
+push edi
+mov dword[0x418e84],edi
+mov dword[0x418e88],edi
+call dword[sym.imp.USER32.dll_LoadIconW]
+push 0x65
+push dword[0x418e88]
+mov dword[0x41e8fc],eax
+call dword[sym.imp.USER32.dll_LoadBitmapW]
+lea ecx,[ebp-0xc]
+mov dword[0x41e8f8],eax
+call fcn.004131a5
+push esi
+mov ecx,0x418e98
+call fcn.00409af4
+lea ecx,[ebp-0x5c]
+call fcn.00412663
+lea ecx,[ebp-0x34]
+call fcn.00412663
+push 0x64
+call fcn.0040b21f
+push 0x64
+mov dword[ebp-0x40],eax
+call fcn.0040b21f
+push ebx
+push fcn.0040d4de
+mov dword[ebp-0x18],eax
+push ebx
+lea eax,[ebp-0x5c]
+mov dword[0x41e0f4],eax
+push str.STARTDLG
+lea eax,[ebp-0x34]
+push edi
+mov dword[0x41e0f0],eax
+call dword[sym.imp.USER32.dll_DialogBoxParamW]
+lea ecx,[ebp-0x34]
+mov dword[0x41e0f0],ebx
+mov dword[0x41e0f4],ebx
+call fcn.00412685
+lea ecx,[ebp-0x5c]
+call fcn.00412685
+lea ecx,[ebp-0xc]
+call fcn.004131ff
+cmp byte[0x424950],bl
+je 0x40dec3
+call fcn.0040be0d
+mov ecx,0x42a978
+call fcn.0040aefe
+cmp dword[0x424934],ebx
+jbe 0x40dee0
+push dword[0x424928]
+call fcn.0040a41c
+push dword[0x41e8fc]
+mov esi,dword[sym.imp.GDI32.dll_DeleteObject]
+call esi
+mov eax,dword[0x41e8f8]
+cmp eax,ebx
+je 0x40defa
+push eax
+call esi
+cmp dword[0x418e8c],ebx
+jne 0x40df19
+cmp byte[0x424912],bl
+je 0x40df19
+push 0xff
+mov ecx,0x418e8c
+call fcn.00403537
+mov eax,dword[0x424944]
+mov byte[0x424912],1
+cmp eax,ebx
+je 0x40df2f
+push eax
+call fcn.0040bdce
+mov eax,dword[0x424940]
+cmp eax,ebx
+je 0x40df3f
+push eax
+call dword[sym.imp.KERNEL32.dll_Sleep]
+call dword[sym.imp.ole32.dll_OleUninitialize]
+mov eax,dword[0x42493c]
+cmp eax,ebx
+ja 0x40df53
+mov eax,dword[0x418e8c]
+push eax
+call dword[sym.imp.KERNEL32.dll_ExitProcess]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/main@f360d53698056c0bd2342cbdb569d856
+[similar_2_ref]: /report/fcn.00402c72@06689e718004fe3ee3bfc132b456240e
+[similar_3_ref]: /report/fcn.00402c72@50dd9b171f3df06f8ac5a3a1a47f5721
+[similar_4_ref]: /report/fcn.00402c72@983fe9598b69120a048e4bbfe8d8764c
+[similar_5_ref]: /report/fcn.00402c72@024d69b3dfb503973cce5c1700f282aa
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

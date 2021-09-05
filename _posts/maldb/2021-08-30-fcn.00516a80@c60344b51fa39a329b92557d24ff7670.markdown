@@ -1,0 +1,221 @@
+---
+layout: post
+title:  "fcn.00516a80 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00516a80
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00404a20][similar_1_ref] (sim.: 0.8690966924810376)
+2. [fcn.004015eb][similar_2_ref] (sim.: 0.8543312749106686)
+3. [fcn.00412a86][similar_3_ref] (sim.: 0.8501126654880534)
+4. [fcn.00409a85][similar_4_ref] (sim.: 0.8478522713004808)
+5. [fcn.0053b630][similar_5_ref] (sim.: 0.845724781210508)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+lea ebp,[esp-0x804]
+sub esp,0x804
+push 0xffffffffffffffff
+push 0x5a9fae
+mov eax,dword fs:[0]
+push eax
+sub esp,0x30
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp+0x800],eax
+push ebx
+push esi
+push edi
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-0x10],esp
+xor esi,esi
+mov dword[ebp-4],1
+cmp dword[ebp+0x814],esi
+je 0x516aef
+push ecx
+lea eax,[ebp+0x810]
+mov ecx,esp
+mov dword[ebp-0x24],esp
+push eax
+call fcn.0040f860
+call fcn.00528e50
+add esp,4
+cmp eax,esi
+jne 0x516cb8
+push esi
+push esi
+push esi
+push esi
+push 1
+push esi
+lea ecx,[ebp-0x38]
+call fcn.0055529d
+push esi
+push str.http
+lea ecx,[ebp+0x80c]
+mov dword[ebp-0x18],esi
+mov dword[ebp-0x1c],esi
+call fcn.0040fdb0
+test eax,eax
+jl 0x516bd1
+lea ecx,[ebp-0x14]
+call fcn.00421860
+push ecx
+mov bl,4
+mov byte[ebp-4],bl
+lea edx,[ebp+0x80c]
+mov ecx,esp
+mov dword[ebp-0x20],esp
+push edx
+call fcn.0040f860
+lea eax,[ebp-0x20]
+push eax
+call fcn.005169b0
+add esp,8
+push eax
+lea ecx,[ebp-0x14]
+mov byte[ebp-4],5
+call fcn.0040f980
+lea ecx,[ebp-0x20]
+mov byte[ebp-4],bl
+call fcn.00410950
+lea ecx,[ebp-0x14]
+call fcn.00410410
+test al,al
+jne 0x516b8d
+lea ecx,[ebp+0x80c]
+call fcn.00453f10
+push eax
+call dword[sym.imp.WININET.dll_DeleteUrlCacheEntryW]
+lea ecx,[ebp-0x14]
+call fcn.00453f10
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+push esi
+push 0x7d0
+push 2
+lea ecx,[ebp-0x38]
+call fcn.004053d0
+push esi
+push esi
+push 0x80400002
+push esi
+lea ecx,[ebp+0x80c]
+call fcn.00453f10
+push eax
+lea ecx,[ebp-0x38]
+call fcn.00555f46
+mov edi,eax
+mov ecx,edi
+mov dword[ebp-0x18],edi
+call fcn.00516920
+cmp eax,esi
+je 0x516c1a
+lea ecx,[ebp-0x14]
+call fcn.00410950
+lea ecx,[ebp-0x38]
+mov byte[ebp-4],1
+call fcn.00555a8f
+lea ecx,[ebp+0x80c]
+call fcn.00410950
+lea ecx,[ebp+0x810]
+call fcn.00410950
+xor eax,eax
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp+0x800]
+xor ecx,ebp
+call fcn.005713ed
+add ebp,0x804
+mov esp,ebp
+pop ebp
+ret
+push esi
+push 0x80
+push 2
+push esi
+push 2
+push 0xc0000000
+lea ecx,[ebp+0x810]
+call fcn.00453f10
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov ebx,eax
+mov dword[ebp-0x1c],ebx
+cmp ebx,0xffffffff
+je 0x516bc9
+mov dword[ebp-0x24],esi
+lea esp,[esp]
+mov edx,dword[edi]
+mov edx,dword[edx+0x34]
+push 0x400
+lea eax,[ebp]
+push eax
+mov ecx,edi
+call edx
+push 0
+mov esi,eax
+lea eax,[ebp-0x24]
+push eax
+push esi
+lea ecx,[ebp]
+push ecx
+push ebx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test esi,esi
+jg 0x516c50
+mov edx,dword[edi]
+mov eax,dword[edx+0x4c]
+mov ecx,edi
+call eax
+mov edx,dword[edi]
+mov eax,dword[edx+4]
+push 1
+mov ecx,edi
+call eax
+lea ecx,[ebp-0x38]
+mov dword[ebp-0x18],0
+call fcn.00555919
+push ebx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea ecx,[ebp-0x14]
+call fcn.00410950
+lea ecx,[ebp-0x38]
+mov byte[ebp-4],1
+call fcn.00555a8f
+lea ecx,[ebp+0x80c]
+call fcn.00410950
+lea ecx,[ebp+0x810]
+call fcn.00410950
+mov eax,1
+jmp 0x516bf5
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00404a20@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_2_ref]: /report/fcn.004015eb@de21a548b66aa6c0b17491b6a31e14fa
+[similar_3_ref]: /report/fcn.00412a86@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_4_ref]: /report/fcn.00409a85@4bd33f73402d0d03c0318f793884eb34
+[similar_5_ref]: /report/fcn.0053b630@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

@@ -1,0 +1,266 @@
+---
+layout: post
+title:  "fcn.0053b630 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0053b630
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0043e07b][similar_1_ref] (sim.: 0.9152302281333825)
+2. [fcn.0043e07b][similar_2_ref] (sim.: 0.9152302281333825)
+3. [fcn.0043e07b][similar_3_ref] (sim.: 0.9152302281333825)
+4. [fcn.0043d4f1][similar_4_ref] (sim.: 0.9117973276246648)
+5. [main][similar_5_ref] (sim.: 0.9054567491816559)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+push 0xffffffffffffffff
+push 0x5b14a8
+mov eax,dword fs:[0]
+push eax
+sub esp,0xa8
+mov eax,dword[0x5ffcc0]
+xor eax,esp
+mov dword[esp+0xa0],eax
+push ebx
+push esi
+push edi
+mov eax,dword[0x5ffcc0]
+xor eax,esp
+push eax
+lea eax,[esp+0xb8]
+mov dword fs:[0],eax
+mov bl,byte[ebp+0xc]
+mov edi,ecx
+mov dword[esp+0x10],edi
+test bl,1
+je 0x53b6d7
+push 1
+lea esi,[esp+0x44]
+call fcn.00537cc0
+add esp,4
+mov ecx,eax
+call fcn.004020c0
+push eax
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
+lea ecx,[esp+0x40]
+mov esi,eax
+call fcn.0050e2b0
+cmp esi,0xffffffff
+je 0x53b6d7
+mov eax,dword[0x6015c8]
+test eax,eax
+jne 0x53b6bf
+push 0xdc
+xor ecx,ecx
+call fcn.0052cd00
+push 1
+push esi
+call eax
+add esp,8
+test al,1
+je 0x53b6d7
+push 0x20
+mov ecx,edi
+call fcn.0053b080
+add esp,4
+test bl,4
+jne 0x53b714
+push 0
+mov ecx,edi
+lea esi,[esp+0x44]
+call fcn.00537cc0
+add esp,4
+mov ecx,eax
+call fcn.004020c0
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteFileW]
+lea ecx,[esp+0x40]
+mov esi,eax
+call fcn.0050e2b0
+test esi,esi
+je 0x53b938
+mov al,1
+jmp 0x53b7d1
+lea eax,[esp+0x78]
+push eax
+call fcn.0052c870
+lea ecx,[esp+0x78]
+mov dword[esp+0xc0],0
+call fcn.00410560
+cmp eax,0x104
+jl 0x53b83b
+push 0
+mov ecx,edi
+lea esi,[esp+0x98]
+call fcn.00537cc0
+add esp,4
+mov ecx,esi
+mov byte[esp+0xc0],1
+call fcn.004020c0
+push 0
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]
+mov esi,eax
+test esi,esi
+je 0x53b7a8
+lea ecx,[esp+0x94]
+call fcn.004020c0
+mov ebx,eax
+push esi
+mov eax,esi
+lea edi,[esp+0x7c]
+call fcn.005340c0
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]
+mov edi,eax
+or eax,0xffffffff
+lea esi,[esp+0x78]
+call fcn.00534110
+test edi,edi
+jne 0x53b7f5
+mov edi,dword[esp+0x10]
+cmp byte[ebp+8],0
+je 0x53b7ba
+push 0xda
+mov ecx,edi
+call fcn.0052cd00
+lea ecx,[esp+0x94]
+call fcn.0050e2b0
+lea ecx,[esp+0x78]
+call fcn.0050e2b0
+xor al,al
+mov ecx,dword[esp+0xb8]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[esp+0xa0]
+xor ecx,esp
+call fcn.005713ed
+mov esp,ebp
+pop ebp
+ret
+lea ecx,[esp+0x78]
+call fcn.00537be0
+test eax,eax
+jle 0x53b827
+push eax
+lea ebx,[esp+0x60]
+lea edi,[esp+0x7c]
+call fcn.0052cc90
+push eax
+mov ecx,edi
+mov byte[esp+0xc4],2
+call fcn.00403010
+mov ecx,ebx
+call fcn.0050e2b0
+lea ecx,[esp+0x94]
+mov byte[esp+0xc0],0
+call fcn.0050e2b0
+lea ecx,[esp+0x78]
+call fcn.00410560
+mov ebx,eax
+xor esi,esi
+lea edi,[ebx+ebx+4]
+mov dword[esp+0x14],0x5dff28
+mov dword[esp+0x1c],esi
+mov dword[esp+0x18],esi
+cmp edi,esi
+je 0x53b886
+jbe 0x53b880
+push edi
+call fcn.0055233a
+add esp,4
+push edi
+mov esi,eax
+push 0
+push esi
+mov dword[esp+0x24],esi
+call fcn.0057a180
+mov dword[esp+0x28],edi
+jmp 0x53b88e
+mov dword[esp+0x18],esi
+jmp 0x53b891
+push esi
+push esi
+push esi
+call fcn.0057a180
+add esp,0xc
+lea ecx,[esp+0x78]
+call fcn.004020c0
+lea ecx,[ebx+ebx]
+push ecx
+push eax
+push esi
+call fcn.0057cd10
+xor eax,eax
+mov dword[esp+0x30],eax
+mov dword[esp+0x34],eax
+mov dword[esp+0x3c],eax
+mov dword[esp+0x38],eax
+mov dword[esp+0x40],eax
+mov dword[esp+0x44],eax
+mov word[esp+0x48],ax
+add esp,0xc
+lea eax,[esp+0x20]
+mov edx,0x454
+push eax
+mov dword[esp+0x24],0
+mov dword[esp+0x28],3
+mov word[esp+0x34],dx
+mov dword[esp+0x2c],esi
+call dword[sym.imp.SHELL32.dll_SHFileOperationW]
+test eax,eax
+jne 0x53b913
+cmp dword[esp+0x32],eax
+jne 0x53b913
+lea ecx,[esp+0x14]
+call fcn.0053d700
+lea ecx,[esp+0x78]
+call fcn.0050e2b0
+mov al,1
+jmp 0x53b7d1
+test esi,esi
+je 0x53b920
+push esi
+call fcn.00552369
+add esp,4
+lea ecx,[esp+0x78]
+mov dword[esp+0xc0],0xffffffff
+call fcn.0050e2b0
+mov edi,dword[esp+0x10]
+cmp byte[ebp+8],0
+je 0x53b7cf
+push 0xda
+mov ecx,edi
+call fcn.0052cd00
+int3
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0043e07b@505be53c36227b94e2fcc406f247f6e5
+[similar_2_ref]: /report/fcn.0043e07b@96a869ae624ddb4834a1d5a829f85469
+[similar_3_ref]: /report/fcn.0043e07b@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_4_ref]: /report/fcn.0043d4f1@56a02334aea008c131d2741a089910fb
+[similar_5_ref]: /report/main@597d9ee507d1b2a81775aa98c4a2271a
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

@@ -1,0 +1,320 @@
+---
+layout: post
+title:  "fcn.00405205 @ 510c8408eb3f0420e19240592ddc0b5b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405205
+- **Origin (md5):** 510c8408eb3f0420e19240592ddc0b5b
+- **VirusTotal:** [virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00405042][similar_1_ref] (sim.: 0.9080094470065835)
+2. [fcn.00405042][similar_2_ref] (sim.: 0.9080094470065835)
+3. [fcn.00404eb9][similar_3_ref] (sim.: 0.9080094470065835)
+4. [fcn.00404eb9][similar_4_ref] (sim.: 0.9080094470065835)
+5. [fcn.00405042][similar_5_ref] (sim.: 0.9080094470065835)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x3c
+mov eax,dword[0x42ebe4]
+push ebx
+push esi
+push edi
+mov edi,dword[ebp+0xc]
+xor ebx,ebx
+cmp edi,0x110
+mov dword[ebp-4],eax
+jne 0x4053b0
+or dword[ebp-0x2c],0xffffffff
+or dword[ebp-0x20],0xffffffff
+push 2
+xor eax,eax
+pop esi
+lea edi,[ebp-0x1c]
+mov dword[ebp-0x34],esi
+mov dword[ebp-0x30],ebx
+mov dword[ebp-0x28],ebx
+mov dword[ebp-0x24],ebx
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+mov eax,dword[0x42f414]
+mov edi,dword[sym.imp.USER32.dll_GetDlgItem]
+push 0x403
+mov ecx,dword[eax+0x5c]
+mov eax,dword[eax+0x60]
+push dword[ebp+8]
+mov dword[ebp+0x10],ecx
+mov dword[ebp+0xc],eax
+call edi
+push 0x3ee
+mov dword[0x42ebd0],eax
+push dword[ebp+8]
+call edi
+push 0x3f8
+mov dword[0x42ebc8],eax
+push dword[ebp+8]
+call edi
+push dword[0x42ebd0]
+mov dword[0x42ebe4],eax
+mov dword[ebp-4],eax
+call fcn.00404074
+push 4
+call fcn.00404965
+mov dword[0x42ebd4],eax
+lea eax,[ebp-0x14]
+push eax
+mov dword[0x42ebec],ebx
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_GetClientRect]
+push esi
+call dword[sym.imp.USER32.dll_GetSystemMetrics]
+mov ecx,dword[ebp-0xc]
+mov esi,dword[sym.imp.USER32.dll_SendMessageA]
+sub ecx,eax
+lea eax,[ebp-0x34]
+push eax
+push ebx
+push 0x101b
+mov dword[ebp-0x2c],ecx
+push dword[ebp-4]
+call esi
+mov eax,0x4000
+push eax
+push eax
+push 0x1036
+push dword[ebp-4]
+call esi
+cmp dword[ebp+0x10],ebx
+jl 0x40530c
+push dword[ebp+0x10]
+push ebx
+push 0x1001
+push dword[ebp-4]
+call esi
+push dword[ebp+0x10]
+push ebx
+push 0x1026
+push dword[ebp-4]
+call esi
+cmp dword[ebp+0xc],ebx
+jl 0x40531f
+push dword[ebp+0xc]
+push ebx
+push 0x1024
+push dword[ebp-4]
+call esi
+mov eax,dword[ebp+0x14]
+push dword[eax+0x30]
+push 0x1b
+push dword[ebp+8]
+call fcn.0040403f
+test byte[0x42f41c],3
+je 0x40536c
+push ebx
+push dword[0x42ebd0]
+call dword[sym.imp.USER32.dll_ShowWindow]
+test byte[0x42f41c],2
+jne 0x40535b
+push 8
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_ShowWindow]
+jmp 0x405361
+mov dword[0x42ebd0],ebx
+push dword[0x42ebc8]
+call fcn.00404074
+push 0x3ec
+push dword[ebp+8]
+call edi
+push 0x75300000
+mov edi,eax
+push ebx
+push 0x401
+push edi
+call esi
+test byte[0x42f41c],4
+je 0x405586
+push dword[ebp+0xc]
+push ebx
+push 0x409
+push edi
+call esi
+push dword[ebp+0x10]
+push ebx
+push 0x2001
+push edi
+call esi
+jmp 0x405586
+cmp edi,0x405
+jne 0x4053e0
+lea eax,[ebp+0xc]
+push eax
+push ebx
+push 0x3ec
+push dword[ebp+8]
+call dword[sym.imp.USER32.dll_GetDlgItem]
+push eax
+push fcn.00405199
+push ebx
+push ebx
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov esi,dword[sym.imp.USER32.dll_ShowWindow]
+cmp edi,0x111
+jne 0x40540e
+cmp word[ebp+0x10],0x403
+jne 0x40542f
+push ebx
+push dword[0x42ebd0]
+call esi
+push 8
+push dword[ebp-4]
+call esi
+push dword[ebp-4]
+call fcn.00404074
+cmp edi,0x404
+jne 0x405469
+cmp dword[0x42ebcc],ebx
+je 0x405442
+push 0x78
+mov dword[0x429c40],2
+call fcn.00404018
+push dword[ebp+0x14]
+push dword[ebp+0x10]
+push edi
+call fcn.004040a6
+pop edi
+pop esi
+pop ebx
+leave
+ret 0x10
+push 8
+push dword[0x42f408]
+call esi
+cmp dword[0x42f4ac],ebx
+jne 0x405462
+mov eax,dword[0x42a048]
+push ebx
+push dword[eax+0x34]
+call fcn.004050c7
+push 1
+call fcn.00404018
+cmp edi,0x7b
+jne 0x40542f
+mov eax,dword[ebp-4]
+cmp dword[ebp+0x10],eax
+jne 0x40542f
+push ebx
+push ebx
+push 0x1004
+push eax
+call dword[sym.imp.USER32.dll_SendMessageA]
+cmp eax,ebx
+mov dword[ebp+0x10],eax
+jle 0x405586
+call dword[sym.imp.USER32.dll_CreatePopupMenu]
+push 0xffffffffffffffe1
+push ebx
+mov esi,eax
+call fcn.00405fc2
+push eax
+push 1
+push ebx
+push esi
+call dword[sym.imp.USER32.dll_AppendMenuA]
+mov ecx,dword[ebp+0x14]
+movsx eax,word[ebp+0x14]
+shr ecx,0x10
+cmp dword[ebp+0x14],0xffffffff
+movsx ecx,cx
+jne 0x4054d0
+lea eax,[ebp-0x14]
+push eax
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_GetWindowRect]
+mov eax,dword[ebp-0x14]
+mov ecx,dword[ebp-0x10]
+push ebx
+push dword[ebp+8]
+push ebx
+push ecx
+push eax
+push 0x180
+push esi
+call dword[sym.imp.USER32.dll_TrackPopupMenu]
+cmp eax,1
+jne 0x405586
+mov eax,dword[ebp+0x10]
+xor esi,esi
+inc esi
+mov dword[ebp-0x34],ebx
+mov dword[ebp-0x28],0x42a870
+mov dword[ebp-0x24],0x1000
+mov dword[ebp+8],eax
+mov edi,0x102d
+dec dword[ebp+8]
+lea eax,[ebp-0x3c]
+push eax
+push dword[ebp+8]
+push edi
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_SendMessageA]
+cmp dword[ebp+8],ebx
+lea esi,[esi+eax+2]
+jne 0x40550b
+push ebx
+call dword[sym.imp.USER32.dll_OpenClipboard]
+call dword[sym.imp.USER32.dll_EmptyClipboard]
+push esi
+push 0x42
+call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
+push eax
+mov dword[ebp+8],eax
+call dword[sym.imp.KERNEL32.dll_GlobalLock]
+mov esi,eax
+lea eax,[ebp-0x3c]
+mov dword[ebp-0x28],esi
+push eax
+push ebx
+push edi
+push dword[ebp-4]
+call dword[sym.imp.USER32.dll_SendMessageA]
+add esi,eax
+mov byte[esi],0xd
+inc esi
+mov byte[esi],0xa
+inc esi
+inc ebx
+cmp ebx,dword[ebp+0x10]
+jl 0x40554a
+push dword[ebp+8]
+call dword[sym.imp.KERNEL32.dll_GlobalUnlock]
+push dword[ebp+8]
+push 1
+call dword[sym.imp.USER32.dll_SetClipboardData]
+call dword[sym.imp.USER32.dll_CloseClipboard]
+xor eax,eax
+jmp 0x40543b
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405042@06689e718004fe3ee3bfc132b456240e
+[similar_2_ref]: /report/fcn.00405042@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_3_ref]: /report/fcn.00404eb9@045e0ff2c8ee6fdcaf20f3769c6f3c76
+[similar_4_ref]: /report/fcn.00404eb9@595b48effa204acca09e846b8e091f46
+[similar_5_ref]: /report/fcn.00405042@983fe9598b69120a048e4bbfe8d8764c
+[virustotal_ref]: https://www.virustotal.com/gui/file/510c8408eb3f0420e19240592ddc0b5b

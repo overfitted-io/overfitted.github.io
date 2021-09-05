@@ -1,0 +1,235 @@
+---
+layout: post
+title:  "fcn.00401d63 @ 4c8869bb42f854640703b6ddda29ee38"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00401d63
+- **Origin (md5):** 4c8869bb42f854640703b6ddda29ee38
+- **VirusTotal:** [virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.00401d63][similar_1_ref] (sim.: 1.0)
+2. [fcn.004050cd][similar_2_ref] (sim.: 0.8854252367884594)
+3. [fcn.0040522d][similar_3_ref] (sim.: 0.8854252367884594)
+4. [fcn.004050f9][similar_4_ref] (sim.: 0.8854252367884594)
+5. [fcn.004050cd][similar_5_ref] (sim.: 0.8854252367884594)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+lea ebp,[esp-0x74]
+sub esp,0xf4
+push ebx
+push esi
+push edi
+mov edi,ecx
+lea ecx,[ebp+0x30]
+mov esi,edx
+call fcn.004147df
+lea ecx,[ebp+0x3c]
+call fcn.004147df
+call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
+lea edx,[ebp+0x30]
+mov ecx,eax
+call fcn.00403022
+push str.sfxwaitall
+push 0x41daec
+lea eax,[ebp+0x30]
+push eax
+mov edx,0x41d9f0
+lea ecx,[ebp-0x18]
+call fcn.004147b1
+mov edx,eax
+lea ecx,[ebp-0xc]
+call fcn.00414787
+mov edx,eax
+lea ecx,[ebp]
+call fcn.00414787
+push 0x3a
+push eax
+lea ecx,[ebp+0xc]
+call fcn.004146e1
+mov eax,dword[ebp+0x7c]
+add eax,0x30
+push eax
+lea eax,[ebp+0xc]
+push eax
+lea ecx,[ebp+0x24]
+call fcn.004146e1
+push 0x20
+lea eax,[ebp+0x24]
+push eax
+lea ecx,[ebp+0x18]
+call fcn.004146e1
+push 0x22
+lea eax,[ebp+0x18]
+push eax
+lea ecx,[ebp+0x5c]
+call fcn.004146e1
+push esi
+push 0x41dae4
+push edi
+lea edx,[ebp+0x5c]
+lea ecx,[ebp-0x3c]
+call fcn.00414787
+mov edx,eax
+lea ecx,[ebp-0x30]
+call fcn.00414787
+mov edx,eax
+lea ecx,[ebp-0x24]
+call fcn.00414787
+push dword[eax]
+lea ecx,[ebp+0x3c]
+call fcn.00414864
+push dword[ebp-0x24]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp-0x30]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp-0x3c]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp+0x5c]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp+0x18]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp+0x24]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp+0xc]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp-0xc]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp-0x18]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+add esp,0x28
+lea eax,[ebp-0x80]
+push eax
+mov dword[ebp-0x80],0x44
+call dword[sym.imp.KERNEL32.dll_GetStartupInfoW]
+lea eax,[ebp+0x48]
+push eax
+lea eax,[ebp-0x80]
+push eax
+push dword[0x42289c]
+xor ebx,ebx
+push ebx
+push 0x1000004
+xor edi,edi
+inc edi
+push edi
+push ebx
+push ebx
+push dword[ebp+0x3c]
+push ebx
+call dword[sym.imp.KERNEL32.dll_CreateProcessW]
+test eax,eax
+jne 0x401ee2
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov esi,eax
+push dword[ebp+0x3c]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+push dword[ebp+0x30]
+call sub.MSVCRT.dll_void___cdecl_operator_delete_void__
+pop ecx
+pop ecx
+pop edi
+mov eax,esi
+pop esi
+pop ebx
+add ebp,0x74
+leave
+ret 4
+push ebx
+push ebx
+xor esi,esi
+call dword[sym.imp.KERNEL32.dll_CreateJobObjectW]
+mov dword[ebp+0x7c],eax
+cmp eax,ebx
+je 0x401f55
+push dword[ebp+0x48]
+push eax
+call dword[sym.imp.KERNEL32.dll_AssignProcessToJobObject]
+test eax,eax
+je 0x401f55
+push ebx
+push edi
+push ebx
+push 0xffffffffffffffff
+call dword[sym.imp.KERNEL32.dll_CreateIoCompletionPort]
+mov esi,eax
+cmp esi,ebx
+je 0x401f55
+push 8
+lea eax,[ebp+0x60]
+push eax
+push 7
+push dword[ebp+0x7c]
+mov dword[ebp+0x60],edi
+mov dword[ebp+0x64],esi
+call dword[sym.imp.KERNEL32.dll_SetInformationJobObject]
+push dword[ebp+0x4c]
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+mov edi,dword[sym.imp.KERNEL32.dll_GetQueuedCompletionStatus]
+jmp 0x401f40
+cmp dword[ebp+0x70],4
+je 0x401f69
+push 0xffffffffffffffff
+lea eax,[ebp+0x58]
+push eax
+lea eax,[ebp+0x68]
+push eax
+lea eax,[ebp+0x70]
+push eax
+push esi
+call edi
+test eax,eax
+jne 0x401f3a
+push dword[ebp+0x4c]
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+push 0xffffffffffffffff
+push dword[ebp+0x48]
+call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+push dword[ebp+0x4c]
+mov edi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+call edi
+lea eax,[ebp+0x6c]
+push eax
+push dword[ebp+0x48]
+call dword[sym.imp.KERNEL32.dll_GetExitCodeProcess]
+test eax,eax
+jne 0x401f8e
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[ebp+0x6c],eax
+push dword[ebp+0x48]
+call edi
+cmp esi,ebx
+je 0x401f9a
+push esi
+call edi
+cmp dword[ebp+0x7c],ebx
+je 0x401fa4
+push dword[ebp+0x7c]
+call edi
+mov esi,dword[ebp+0x6c]
+jmp 0x401ec4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00401d63@3f1595e66dc63331ba0930a0c79684ce
+[similar_2_ref]: /report/fcn.004050cd@3e325eb0547b921cde32ac52d0a0f75c
+[similar_3_ref]: /report/fcn.0040522d@d6ea03fac5cc8539ee4d47aca4467735
+[similar_4_ref]: /report/fcn.004050f9@5bfd33ece1aeef8bda2c7fc886262ed9
+[similar_5_ref]: /report/fcn.004050cd@e7f0482c425f7bc9cd320f60c1cfa28c
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c8869bb42f854640703b6ddda29ee38

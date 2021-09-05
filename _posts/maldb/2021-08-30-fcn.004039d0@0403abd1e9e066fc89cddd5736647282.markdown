@@ -1,0 +1,187 @@
+---
+layout: post
+title:  "fcn.004039d0 @ 0403abd1e9e066fc89cddd5736647282"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004039d0
+- **Origin (md5):** 0403abd1e9e066fc89cddd5736647282
+- **VirusTotal:** [virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00515e70][similar_1_ref] (sim.: 0.9099645317382565)
+2. [fcn.0041b500][similar_2_ref] (sim.: 0.9013299014532649)
+3. [fcn.00420570][similar_3_ref] (sim.: 0.9009787822980571)
+4. [fcn.0041f970][similar_4_ref] (sim.: 0.8893131986506291)
+5. [fcn.0040bc10][similar_5_ref] (sim.: 0.884574119326885)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x40c990
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,0x34
+push ebx
+push ebp
+push esi
+push edi
+xor esi,esi
+lea ecx,[esp+0x14]
+mov dword[esp+0x4c],esi
+call sub.MFC42.DLL_CString::CString_1
+lea ecx,[esp+0x20]
+mov byte[esp+0x4c],1
+call sub.MFC42.DLL_CString::CString_1
+lea ecx,[esp+0x28]
+mov byte[esp+0x4c],2
+call fcn.0040c0cc
+lea eax,[esp+0x54]
+lea ecx,[esp+0x10]
+push eax
+mov byte[esp+0x50],3
+call sub.MFC42.DLL_CString::CString_2
+lea ecx,[esp+0x18]
+push 1
+push ecx
+lea ecx,[esp+0x18]
+mov byte[esp+0x54],4
+call sub.MFC42.DLL_CString::Right
+mov eax,dword[eax]
+push 0x411508
+push eax
+call dword[sym.imp.MSVCRT.dll__mbscmp]
+add esp,8
+lea ecx,[esp+0x18]
+test eax,eax
+setne bl
+call fcn.0040bf10
+test bl,bl
+je 0x403a70
+push 0x411508
+lea ecx,[esp+0x14]
+call sub.MFC42.DLL_CString::operator
+push 0x4115f4
+lea ecx,[esp+0x14]
+call sub.MFC42.DLL_CString::operator
+mov edx,dword[esp+0x10]
+push esi
+push edx
+lea ecx,[esp+0x30]
+call sub.MFC42.DLL_CFileFind::FindFile
+cmp eax,esi
+je 0x403b73
+mov edi,dword[sym.imp.KERNEL32.dll_DeleteFileA]
+mov ebx,dword[sym.imp.KERNEL32.dll_SetFileAttributesA]
+lea ecx,[esp+0x28]
+call sub.MFC42.DLL_CFileFind::FindNextFileA
+mov ebp,eax
+mov eax,dword[esp+0x28]
+push 0x10
+lea ecx,[esp+0x2c]
+call dword[eax+0x40]
+test eax,eax
+je 0x403b05
+lea ecx,[esp+0x28]
+call sub.MFC42.DLL_CFileFind::IsDots
+test eax,eax
+jne 0x403b05
+push ecx
+mov ecx,esp
+mov dword[esp+0x28],esp
+push ecx
+lea ecx,[esp+0x30]
+call sub.MFC42.DLL_CFileFind::GetFilePath
+call fcn.004039d0
+add esp,4
+lea edx,[esp+0x18]
+lea ecx,[esp+0x28]
+push edx
+call sub.MFC42.DLL_CFileFind::GetFilePath
+mov eax,dword[eax]
+push eax
+call dword[sym.imp.KERNEL32.dll_RemoveDirectoryA]
+lea ecx,[esp+0x18]
+call fcn.0040bf10
+jmp 0x403b6b
+lea ecx,[esp+0x28]
+call sub.MFC42.DLL_CFileFind::IsDots
+test eax,eax
+jne 0x403b6b
+mov eax,dword[esp+0x28]
+push 0x10
+lea ecx,[esp+0x2c]
+call dword[eax+0x40]
+test eax,eax
+jne 0x403b6b
+lea ecx,[esp+0x1c]
+push ecx
+lea ecx,[esp+0x2c]
+call sub.MFC42.DLL_CFileFind::GetFilePath
+push eax
+lea ecx,[esp+0x18]
+mov byte[esp+0x50],5
+call fcn.0040bf64
+lea ecx,[esp+0x1c]
+mov byte[esp+0x4c],4
+call fcn.0040bf10
+mov edx,dword[esp+0x14]
+push edx
+call edi
+test eax,eax
+jne 0x403b6b
+mov eax,dword[esp+0x14]
+and esi,0xfffffffe
+push esi
+push eax
+call ebx
+mov ecx,dword[esp+0x14]
+push ecx
+call edi
+test ebp,ebp
+jne 0x403aa1
+lea ecx,[esp+0x28]
+call sub.MFC42.DLL_CFileFind::Close
+lea ecx,[esp+0x10]
+mov byte[esp+0x4c],3
+call fcn.0040bf10
+lea ecx,[esp+0x28]
+mov byte[esp+0x4c],2
+call sub.MFC42.DLL_CFileFind::CFileFind
+lea ecx,[esp+0x20]
+mov byte[esp+0x4c],1
+call fcn.0040bf10
+lea ecx,[esp+0x14]
+mov byte[esp+0x4c],0
+call fcn.0040bf10
+lea ecx,[esp+0x54]
+mov dword[esp+0x4c],0xffffffff
+call fcn.0040bf10
+mov ecx,dword[esp+0x44]
+pop edi
+pop esi
+pop ebp
+mov dword fs:[0],ecx
+pop ebx
+add esp,0x40
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00515e70@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.0041b500@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.00420570@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.0041f970@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.0040bc10@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282

@@ -1,0 +1,189 @@
+---
+layout: post
+title:  "fcn.00402be0 @ 368dd66411b8b6ce2bcd15b0e14af5c0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402be0
+- **Origin (md5):** 368dd66411b8b6ce2bcd15b0e14af5c0
+- **VirusTotal:** [virustotal.com/gui/file/368dd66411b8b6ce2bcd15b0e14af5c0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00402e3c][similar_1_ref] (sim.: 0.8760192789323225)
+2. [fcn.00432f50][similar_2_ref] (sim.: 0.8741722345123957)
+3. [fcn.00585460][similar_3_ref] (sim.: 0.8704250883836143)
+4. [fcn.005aafd0][similar_4_ref] (sim.: 0.861420138522748)
+5. [fcn.00402f82][similar_5_ref] (sim.: 0.854720254183901)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x60
+lea eax,[ebp-0x30]
+push eax
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetFileSizeEx]
+test eax,eax
+je 0x402c01
+mov dword[ebp-0xc],1
+jmp 0x402c08
+mov dword[ebp-0xc],0
+movzx edx,byte[ebp-0xc]
+test edx,edx
+jne 0x402c17
+xor al,al
+jmp 0x402db4
+call fcn.00412c90
+mov dword[ebp-0x60],eax
+mov dword[ebp-0x5c],edx
+mov eax,dword[ebp+0xc]
+xor ecx,ecx
+mov dword[ebp-0x38],eax
+mov dword[ebp-0x34],ecx
+cmp dword[ebp-0x34],0x7fffffff
+jb 0x402c50
+ja 0x402c3e
+cmp dword[ebp-0x38],0xffffffff
+jbe 0x402c50
+push 0xdf
+call dword[sym.imp.KERNEL32.dll_SetLastError]
+xor al,al
+jmp 0x402db4
+mov edx,dword[ebp+0xc]
+xor eax,eax
+mov dword[ebp-0x40],edx
+mov dword[ebp-0x3c],eax
+mov ecx,dword[ebp-0x3c]
+cmp ecx,dword[ebp-0x2c]
+jl 0x402d49
+jg 0x402c75
+mov edx,dword[ebp-0x40]
+cmp edx,dword[ebp-0x30]
+jbe 0x402d49
+mov eax,dword[ebp-0x30]
+mov dword[ebp-0x48],eax
+mov ecx,dword[ebp-0x2c]
+mov dword[ebp-0x44],ecx
+mov edx,dword[ebp-0x48]
+mov dword[ebp-0x50],edx
+mov eax,dword[ebp-0x44]
+mov dword[ebp-0x4c],eax
+push 0
+push 0
+mov ecx,dword[ebp-0x4c]
+push ecx
+mov edx,dword[ebp-0x50]
+push edx
+mov eax,dword[ebp+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_SetFilePointerEx]
+test eax,eax
+je 0x402cb0
+mov dword[ebp-0x10],1
+jmp 0x402cb7
+mov dword[ebp-0x10],0
+movzx ecx,byte[ebp-0x10]
+test ecx,ecx
+jne 0x402cc6
+xor al,al
+jmp 0x402db4
+mov edx,dword[ebp+0xc]
+sub edx,dword[ebp-0x30]
+mov dword[ebp-4],edx
+mov dword[ebp-8],0
+jmp 0x402ce1
+mov eax,dword[ebp-4]
+sub eax,dword[ebp-8]
+mov dword[ebp-4],eax
+cmp dword[ebp-4],0
+jbe 0x402d47
+mov dword[ebp-0x28],0x200
+cmp dword[ebp-4],0x200
+jbe 0x402d00
+mov dword[ebp-0x14],0x200
+jmp 0x402d06
+mov ecx,dword[ebp-4]
+mov dword[ebp-0x14],ecx
+mov edx,dword[ebp-0x14]
+mov dword[ebp-8],edx
+push 0
+lea eax,[ebp-0x24]
+push eax
+mov ecx,dword[ebp-8]
+push ecx
+push 0x4d7e18
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x402d32
+mov dword[ebp-0x20],1
+jmp 0x402d39
+mov dword[ebp-0x20],0
+mov eax,dword[ebp-0x24]
+cmp eax,dword[ebp-8]
+je 0x402d45
+xor al,al
+jmp 0x402db4
+jmp 0x402cd8
+jmp 0x402db2
+mov ecx,dword[ebp+0xc]
+xor edx,edx
+mov dword[ebp-0x58],ecx
+mov dword[ebp-0x54],edx
+push 0
+push 0
+mov eax,dword[ebp-0x54]
+push eax
+mov ecx,dword[ebp-0x58]
+push ecx
+mov edx,dword[ebp+8]
+push edx
+call dword[sym.imp.KERNEL32.dll_SetFilePointerEx]
+test eax,eax
+je 0x402d77
+mov dword[ebp-0x18],1
+jmp 0x402d7e
+mov dword[ebp-0x18],0
+movzx eax,byte[ebp-0x18]
+test eax,eax
+jne 0x402d8a
+xor al,al
+jmp 0x402db4
+mov ecx,dword[ebp+8]
+push ecx
+call dword[sym.imp.KERNEL32.dll_SetEndOfFile]
+test eax,eax
+je 0x402da1
+mov dword[ebp-0x1c],1
+jmp 0x402da8
+mov dword[ebp-0x1c],0
+cmp dword[ebp-0x1c],0
+jne 0x402db2
+xor al,al
+jmp 0x402db4
+mov al,1
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402e3c@8f6115b96a1ecdf25f9987837dfa155b
+[similar_2_ref]: /report/fcn.00432f50@279a61b1e76da49531f1f16fd1102a2d
+[similar_3_ref]: /report/fcn.00585460@d65363c7c6c188277432c9e4251c44e5
+[similar_4_ref]: /report/fcn.005aafd0@d65363c7c6c188277432c9e4251c44e5
+[similar_5_ref]: /report/fcn.00402f82@5d44fc96ec059e83cbab5efb708e5e9e
+[virustotal_ref]: https://www.virustotal.com/gui/file/368dd66411b8b6ce2bcd15b0e14af5c0

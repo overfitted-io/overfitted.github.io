@@ -1,0 +1,236 @@
+---
+layout: post
+title:  "fcn.00420823 @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00420823
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.00438530][similar_1_ref] (sim.: 0.9175697102197196)
+2. [fcn.004380c2][similar_2_ref] (sim.: 0.910964746537588)
+3. [fcn.0043830b][similar_3_ref] (sim.: 0.9088257589625123)
+4. [fcn.1000a104][similar_4_ref] (sim.: 0.9080500012547804)
+5. [fcn.0043883a][similar_5_ref] (sim.: 0.9066705402017841)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x140
+mov eax,0x4c84e4
+call fcn.0044a63a
+mov eax,dword[ebp+8]
+xor ebx,ebx
+push ebx
+push ebx
+push ebx
+mov dword[ebp-0x124],eax
+mov eax,dword[ebp+0x14]
+push ebx
+mov esi,ecx
+push ebx
+mov dword[ebp-0x120],esi
+mov dword[ebp-0x144],eax
+mov dword[ebp-0x12c],ebx
+call dword[sym.imp.WININET.dll_InternetOpenW]
+mov edi,eax
+mov dword[ebp-0x140],edi
+cmp edi,ebx
+jne 0x420888
+cmp dword[ebp+0x10],ebx
+je 0x420adb
+push 0x10
+push 0x4d621c
+push esi
+push ebx
+call dword[sym.imp.USER32.dll_MessageBoxW]
+jmp 0x420adb
+push 4
+lea eax,[ebp+0xc]
+push eax
+push 2
+push edi
+call dword[sym.imp.WININET.dll_InternetSetOptionW]
+push ebx
+push ebx
+push ebx
+push ebx
+push esi
+push edi
+call dword[sym.imp.WININET.dll_InternetOpenUrlW]
+mov dword[ebp-0x118],eax
+cmp eax,ebx
+jne 0x4208f6
+cmp dword[ebp+0x10],ebx
+je 0x420acf
+push 0x13
+pop ecx
+push 0xb4
+lea eax,[ebp-0xc4]
+push ebx
+mov esi,str.Internet_open_url_failed__error_code
+lea edi,[ebp-0x110]
+push eax
+rep movsd dword es:[edi],dword ptr[esi]
+call fcn.0044aee0
+add esp,0xc
+push 0x10
+lea eax,[ebp-0x110]
+push eax
+push dword[ebp-0x120]
+push ebx
+call dword[sym.imp.USER32.dll_MessageBoxW]
+jmp 0x420acf
+mov esi,dword[sym.imp.WININET.dll_HttpQueryInfoW]
+push ebx
+lea ecx,[ebp-0x120]
+push ecx
+push ebx
+push 0xb
+push eax
+mov dword[ebp-0x120],ebx
+call esi
+test eax,eax
+jne 0x420968
+mov edi,dword[ebp-0x120]
+cmp edi,ebx
+jbe 0x420968
+add edi,2
+push edi
+call fcn.0044dee8
+push edi
+push ebx
+push eax
+mov dword[ebp-0x114],eax
+call fcn.0044aee0
+mov edi,dword[ebp-0x114]
+add esp,0x10
+push ebx
+lea eax,[ebp-0x120]
+push eax
+push edi
+push 0xb
+push dword[ebp-0x118]
+call esi
+cmp edi,ebx
+je 0x420968
+mov ecx,dword[ebp-0x124]
+push edi
+call fcn.00408cc6
+push edi
+call fcn.0044c4b8
+pop ecx
+mov dword[ebp-0x11c],ebx
+xor edi,edi
+mov dword[ebp-0x13c],ebx
+mov dword[ebp-0x138],ebx
+mov dword[ebp-0x134],ebx
+mov dword[ebp-4],ebx
+mov esi,0x401
+jmp 0x4209bc
+mov eax,dword[ebp-0x11c]
+mov dword[ebp-0x124],eax
+mov eax,dword[ebp-0x114]
+mov dword[ebp-0x128],eax
+lea eax,[ebp-0x128]
+push eax
+lea ecx,[ebp-0x13c]
+call fcn.004207c3
+add edi,dword[ebp-0x11c]
+push esi
+call fcn.00447a91
+push esi
+push ebx
+push eax
+mov dword[ebp-0x114],eax
+call fcn.0044aee0
+add esp,0x10
+lea eax,[ebp-0x11c]
+push eax
+push 0x400
+push dword[ebp-0x114]
+push dword[ebp-0x118]
+call dword[sym.imp.WININET.dll_InternetReadFile]
+cmp dword[ebp-0x11c],ebx
+jne 0x42098c
+push dword[ebp-0x118]
+call dword[sym.imp.WININET.dll_InternetCloseHandle]
+cmp edi,ebx
+jle 0x420ac0
+inc edi
+push edi
+mov dword[ebp-0x124],edi
+call fcn.00447a91
+push edi
+push ebx
+push eax
+mov dword[ebp-0x12c],eax
+call fcn.0044aee0
+mov eax,dword[ebp-0x138]
+mov esi,dword[ebp-0x13c]
+sub eax,esi
+sar eax,3
+add esp,0x10
+mov dword[ebp-0x118],ebx
+cmp eax,ebx
+jbe 0x420a96
+mov dword[ebp-0x114],eax
+mov eax,dword[esi+4]
+mov edi,dword[esi]
+mov ecx,dword[ebp-0x118]
+add ecx,dword[ebp-0x12c]
+push eax
+push edi
+push ecx
+mov dword[ebp-0x148],eax
+call fcn.0044a6e0
+mov eax,dword[ebp-0x148]
+add dword[ebp-0x118],eax
+add esp,0xc
+cmp edi,ebx
+je 0x420a85
+push edi
+call fcn.0044928e
+pop ecx
+add esi,8
+dec dword[ebp-0x114]
+jne 0x420a4c
+mov edi,dword[ebp-0x124]
+push dword[ebp-0x138]
+lea eax,[ebp-0x124]
+push dword[ebp-0x13c]
+lea ecx,[ebp-0x13c]
+push eax
+call fcn.00420315
+mov eax,dword[ebp-0x144]
+cmp eax,ebx
+je 0x420ac0
+mov dword[eax],edi
+or dword[ebp-4],0xffffffff
+lea ecx,[ebp-0x13c]
+call fcn.00420347
+push dword[ebp-0x140]
+call dword[sym.imp.WININET.dll_InternetCloseHandle]
+mov eax,dword[ebp-0x12c]
+call fcn.0044a6bd
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00438530@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.004380c2@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.0043830b@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_4_ref]: /report/fcn.1000a104@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.0043883a@418e0921f3a9bd4f5bc0dcc59623b5a1
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

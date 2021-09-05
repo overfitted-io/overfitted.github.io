@@ -1,0 +1,199 @@
+---
+layout: post
+title:  "fcn.00434273 @ 418e0921f3a9bd4f5bc0dcc59623b5a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00434273
+- **Origin (md5):** 418e0921f3a9bd4f5bc0dcc59623b5a1
+- **VirusTotal:** [virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1001de75][similar_1_ref] (sim.: 0.9218056227882322)
+2. [fcn.0041e847][similar_2_ref] (sim.: 0.9214130007474426)
+3. [fcn.0042ebdd][similar_3_ref] (sim.: 0.9213957687493491)
+4. [fcn.00433e73][similar_4_ref] (sim.: 0.9209461525744853)
+5. [fcn.00406bd6][similar_5_ref] (sim.: 0.9149944537977832)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x80
+mov eax,0x47c115
+call fcn.0044efd0
+mov eax,dword[ebp+8]
+mov dword[ebp-0x88],eax
+mov eax,dword[ebp+0xc]
+mov dword[ebp-0x8c],eax
+mov eax,dword[ebp+0x10]
+xor ebx,ebx
+lea ecx,[ebp-0x80]
+mov dword[ebp-0x84],eax
+mov dword[ebp-0x80],0x4b5f64
+mov byte[ebp-0x7c],bl
+call fcn.0040640a
+push ebx
+lea ecx,[ebp-0x50]
+mov dword[ebp-4],ebx
+mov byte[ebp-0x6d],bl
+call fcn.00434432
+pop ecx
+mov byte[ebp-4],1
+cmp dword[ebp-0x3c],8
+mov eax,dword[ebp-0x50]
+jae 0x4342d1
+lea eax,[ebp-0x50]
+mov esi,dword[sym.imp.KERNEL32.dll_CreateFileW]
+push ebx
+push ebx
+push 2
+push ebx
+push ebx
+mov edi,0x40000000
+push edi
+push eax
+call esi
+mov dword[ebp-0x78],eax
+cmp eax,0xffffffff
+jne 0x434327
+push 1
+lea ecx,[ebp-0x6c]
+call fcn.00434432
+cmp dword[ebp-0x58],8
+mov eax,dword[ebp-0x6c]
+pop ecx
+jae 0x434305
+lea eax,[ebp-0x6c]
+push ebx
+push ebx
+push 2
+push ebx
+push ebx
+push edi
+push eax
+call esi
+push ebx
+push 1
+lea ecx,[ebp-0x6c]
+mov dword[ebp-0x78],eax
+call fcn.00402ec9
+cmp dword[ebp-0x78],0xffffffff
+je 0x43440b
+mov esi,dword[sym.imp.KERNEL32.dll_WriteFile]
+push ebx
+lea eax,[ebp-0x74]
+push eax
+push 4
+push 0x49527c
+push dword[ebp-0x78]
+call esi
+test eax,eax
+je 0x434402
+cmp dword[ebp-0x74],4
+jne 0x434402
+push ebx
+lea eax,[ebp-0x74]
+push eax
+push 0x10
+push dword[ebp-0x88]
+push dword[ebp-0x78]
+call esi
+test eax,eax
+je 0x434402
+cmp dword[ebp-0x74],0x10
+jne 0x434402
+xor eax,eax
+mov byte[ebp-0x34],bl
+lea edi,[ebp-0x33]
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosw word es:[edi],ax
+stosb byte es:[edi],al
+mov eax,dword[ebp-0x8c]
+cmp dword[eax+0x14],0x10
+mov ecx,dword[eax+0x10]
+jb 0x434393
+mov eax,dword[eax]
+push ecx
+push eax
+lea edx,[ebp-0x34]
+call fcn.0043aa42
+pop ecx
+pop ecx
+push ebx
+lea eax,[ebp-0x74]
+push eax
+push 0x10
+lea eax,[ebp-0x34]
+push eax
+push dword[ebp-0x78]
+call esi
+test eax,eax
+je 0x434402
+cmp dword[ebp-0x74],0x10
+jne 0x434402
+xor eax,eax
+mov byte[ebp-0x24],bl
+lea edi,[ebp-0x23]
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosw word es:[edi],ax
+stosb byte es:[edi],al
+mov eax,dword[ebp-0x84]
+cmp dword[eax+0x14],0x10
+mov ecx,dword[eax+0x10]
+jb 0x4343d8
+mov eax,dword[eax]
+push ecx
+push eax
+lea edx,[ebp-0x24]
+call fcn.0043aa42
+pop ecx
+pop ecx
+push ebx
+lea eax,[ebp-0x74]
+push eax
+push 0x10
+lea eax,[ebp-0x24]
+push eax
+push dword[ebp-0x78]
+call esi
+test eax,eax
+je 0x434402
+cmp dword[ebp-0x74],0x10
+jne 0x434402
+mov byte[ebp-0x6d],1
+push dword[ebp-0x78]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+push ebx
+push 1
+lea ecx,[ebp-0x50]
+call fcn.00402ec9
+or dword[ebp-4],0xffffffff
+cmp byte[ebp-0x7c],bl
+je 0x434427
+mov ecx,dword[ebp-0x80]
+call fcn.004053dd
+mov al,byte[ebp-0x6d]
+call fcn.0044f053
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1001de75@481b545f5c18f2fce1caac67ddc419e8
+[similar_2_ref]: /report/fcn.0041e847@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.0042ebdd@7b00dd8f2abf54a73bfb09681334ff78
+[similar_4_ref]: /report/fcn.00433e73@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_5_ref]: /report/fcn.00406bd6@617bd594ba13d0dcc08a315774c342d4
+[virustotal_ref]: https://www.virustotal.com/gui/file/418e0921f3a9bd4f5bc0dcc59623b5a1

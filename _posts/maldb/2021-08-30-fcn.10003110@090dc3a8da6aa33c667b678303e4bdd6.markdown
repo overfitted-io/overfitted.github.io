@@ -1,0 +1,250 @@
+---
+layout: post
+title:  "fcn.10003110 @ 090dc3a8da6aa33c667b678303e4bdd6"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10003110
+- **Origin (md5):** 090dc3a8da6aa33c667b678303e4bdd6
+- **VirusTotal:** [virustotal.com/gui/file/090dc3a8da6aa33c667b678303e4bdd6][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00442172][similar_1_ref] (sim.: 0.9187681143414675)
+2. [fcn.00442172][similar_2_ref] (sim.: 0.9187681143414675)
+3. [fcn.00442172][similar_3_ref] (sim.: 0.9187681143414675)
+4. [fcn.00442172][similar_4_ref] (sim.: 0.9187681143414675)
+5. [fcn.00442172][similar_5_ref] (sim.: 0.9187681143414675)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x74
+mov eax,0x1000ff77
+call fcn.1000d920
+xor eax,eax
+mov dword[ebp-0x24],eax
+cmp dword[ebp+8],eax
+je 0x100033a4
+mov dword[ebp-0x1c],eax
+lea eax,[ebp-0x1c]
+push eax
+push 0x2000000
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+mov ebx,dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[ebp-0x10],eax
+call ebx
+mov dword[ebp-0x14],eax
+lea eax,[ebp-0x20]
+mov esi,str.CreateWorkerProcess
+push eax
+mov edi,esi
+call fcn.10001303
+push dword[ebp-0x14]
+lea eax,[ebp-0x20]
+push dword[ebp-0x10]
+xor edi,edi
+push str.OpenProcessToken__._bOk___ld__dwLastError___lu
+push eax
+mov dword[ebp-4],edi
+call fcn.100023d2
+or dword[ebp-4],0xffffffff
+mov eax,dword[ebp-0x20]
+add esp,0x10
+add eax,0xfffffff0
+call fcn.100010aa
+cmp dword[ebp-0x10],edi
+je 0x100033a4
+lea eax,[ebp-0x18]
+push eax
+push 1
+push edi
+push edi
+push 0x2000000
+push dword[ebp-0x1c]
+mov dword[ebp-0x18],edi
+call dword[sym.imp.ADVAPI32.dll_DuplicateTokenEx]
+mov dword[ebp-0x10],eax
+call ebx
+mov dword[ebp-0x14],eax
+lea eax,[ebp-0x20]
+push eax
+mov edi,esi
+call fcn.10001303
+push dword[ebp-0x14]
+lea eax,[ebp-0x20]
+push dword[ebp-0x10]
+mov dword[ebp-4],1
+push str.DuplicateTokenEx__._bOk___ld__dwLastError___lu
+push eax
+call fcn.100023d2
+or dword[ebp-4],0xffffffff
+mov eax,dword[ebp-0x20]
+add esp,0x10
+add eax,0xfffffff0
+call fcn.100010aa
+cmp dword[ebp-0x10],0
+je 0x1000339b
+push 4
+lea eax,[ebp+0xc]
+push eax
+push 0xc
+push dword[ebp-0x18]
+call dword[sym.imp.ADVAPI32.dll_SetTokenInformation]
+mov dword[ebp-0x10],eax
+call ebx
+mov dword[ebp-0x14],eax
+lea eax,[ebp-0x20]
+push eax
+call fcn.10001303
+push dword[ebp-0x14]
+mov dword[ebp-4],2
+push dword[ebp-0x10]
+lea eax,[ebp-0x20]
+push dword[ebp+0xc]
+push str.SetTokenInformation_TokenSessionId___lu_._bOk___ld__dwLastError___lu
+push eax
+call fcn.100023d2
+or dword[ebp-4],0xffffffff
+mov eax,dword[ebp-0x20]
+add esp,0x14
+add eax,0xfffffff0
+call fcn.100010aa
+xor edi,edi
+cmp dword[ebp-0x10],edi
+je 0x1000338e
+push 0x40
+lea eax,[ebp-0x7c]
+push edi
+push eax
+call fcn.10007000
+or dword[ebp-0x54],0x80
+mov dword[ebp-0x34],edi
+add esp,0xc
+xor eax,eax
+lea edi,[ebp-0x30]
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+stosd dword es:[edi],eax
+mov eax,dword[ebp+8]
+mov dword[ebp-0x80],0x44
+mov dword[ebp-0x78],0x10013c40
+lea ecx,[eax+2]
+mov dx,word[eax]
+add eax,2
+test dx,dx
+jne 0x1000328a
+sub eax,ecx
+sar eax,1
+push 0x10018f24
+lea edi,[eax+0xa]
+xor ecx,ecx
+push 2
+pop edx
+mov eax,edi
+mul edx
+seto cl
+neg ecx
+or ecx,eax
+push ecx
+call fcn.100066b2
+pop ecx
+pop ecx
+mov dword[ebp-0x14],eax
+test eax,eax
+je 0x1000338e
+push edi
+push dword[ebp+8]
+push eax
+call fcn.100064cd
+mov ecx,dword[ebp-0x14]
+add esp,0xc
+xor eax,eax
+mov word[ecx+edi*2-2],ax
+lea eax,[ebp-0x34]
+push eax
+lea eax,[ebp-0x80]
+push eax
+xor eax,eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push ecx
+push eax
+push dword[ebp-0x18]
+call dword[sym.imp.ADVAPI32.dll_CreateProcessAsUserW]
+mov dword[ebp-0x10],eax
+call ebx
+mov ebx,eax
+lea eax,[ebp+8]
+push eax
+mov edi,esi
+call fcn.10001303
+push ebx
+push dword[ebp-0x10]
+lea eax,[ebp+8]
+push dword[ebp-0x14]
+mov dword[ebp-4],3
+push str.CreateProcessAsUser__s_._bOk___ld__dwLastError___lu
+push eax
+call fcn.100023d2
+or dword[ebp-4],0xffffffff
+mov eax,dword[ebp+8]
+add esp,0x14
+add eax,0xfffffff0
+call fcn.100010aa
+cmp dword[ebp-0x10],0
+je 0x10003385
+lea eax,[ebp-0x24]
+push eax
+call fcn.10001303
+mov dword[ebp-4],4
+push dword[ebp-0x28]
+lea eax,[ebp-0x24]
+push dword[ebp-0x2c]
+push str.SubProcess_PID___lu__TID___lu
+push eax
+call fcn.100023d2
+mov eax,dword[ebp-0x24]
+add esp,0x10
+add eax,0xfffffff0
+call fcn.100010aa
+push dword[ebp-0x30]
+mov esi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[ebp-0x24],1
+call esi
+push dword[ebp-0x34]
+call esi
+push dword[ebp-0x14]
+call fcn.10006519
+pop ecx
+push dword[ebp-0x18]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+and dword[ebp-0x18],0
+push dword[ebp-0x1c]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[ebp-0x24]
+call fcn.1000d9bf
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00442172@b49682c7791beec133296706671e7cb3
+[similar_2_ref]: /report/fcn.00442172@3aa98225e51cbcae2d334c8b6b4ed9fd
+[similar_3_ref]: /report/fcn.00442172@e83552e81a6f265fd7baa50402d3d47d
+[similar_4_ref]: /report/fcn.00442172@6e426bd8e348fab7a17ba317fb0f2d87
+[similar_5_ref]: /report/fcn.00442172@7307643b343733b7fbd7b4b4fb482515
+[virustotal_ref]: https://www.virustotal.com/gui/file/090dc3a8da6aa33c667b678303e4bdd6

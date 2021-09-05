@@ -1,0 +1,185 @@
+---
+layout: post
+title:  "fcn.004172d1 @ 44e1ffcf4e71f4505c09d520fd75f1e4"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004172d1
+- **Origin (md5):** 44e1ffcf4e71f4505c09d520fd75f1e4
+- **VirusTotal:** [virustotal.com/gui/file/44e1ffcf4e71f4505c09d520fd75f1e4][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.004380c2][similar_1_ref] (sim.: 0.9136270024940774)
+2. [fcn.00406b6f][similar_2_ref] (sim.: 0.9115007646054525)
+3. [fcn.100042ab][similar_3_ref] (sim.: 0.9012825265022718)
+4. [fcn.0043883a][similar_4_ref] (sim.: 0.898433123362524)
+5. [fcn.00420823][similar_5_ref] (sim.: 0.8943443539387559)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x240
+mov eax,0x45a6f3
+call fcn.0043d997
+xor ebx,ebx
+mov dword[ebp-4],ebx
+mov eax,dword[ebp+8]
+mov dword[ebp-0x22c],eax
+mov dword[ebp-0x248],ebx
+xor esi,esi
+inc esi
+mov dword[ebp-4],esi
+lea edi,[ebp+0xc]
+call fcn.00408443
+mov ecx,dword[ebp-0x22c]
+push 0x462e4c
+call fcn.0040151c
+push str.SOFTWAREMicrosoftWindowsCurrentVersionUninstall
+lea ecx,[ebp-0x230]
+mov dword[ebp-0x248],esi
+call fcn.0040151c
+mov byte[ebp-4],2
+mov esi,dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+lea eax,[ebp-0x21c]
+push eax
+push 0x20019
+push ebx
+push dword[ebp-0x230]
+push reloc.OLEAUT32.dll_SysReAllocString
+call esi
+cmp eax,ebx
+jne 0x4174ed
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+lea eax,[ebp-0x224]
+push eax
+push ebx
+push ebx
+push ebx
+push dword[ebp-0x21c]
+call dword[sym.imp.ADVAPI32.dll_RegQueryInfoKeyW]
+cmp dword[ebp-0x224],ebx
+je 0x4174ed
+mov dword[ebp-0x228],ebx
+push ebx
+push ebx
+push ebx
+push ebx
+lea eax,[ebp-0x224]
+push eax
+lea eax,[ebp-0x218]
+push eax
+push dword[ebp-0x228]
+mov dword[ebp-0x224],0x104
+push dword[ebp-0x21c]
+call dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
+cmp eax,ebx
+mov dword[ebp-0x23c],eax
+jne 0x4174d1
+lea eax,[ebp-0x218]
+push eax
+lea ecx,[ebp-0x238]
+call fcn.0040151c
+mov byte[ebp-4],3
+lea ecx,[ebp-0x220]
+call fcn.0041966f
+mov byte[ebp-4],4
+lea eax,[ebp-0x234]
+push eax
+push 0xf003f
+push ebx
+lea eax,[ebp-0x218]
+push eax
+push dword[ebp-0x21c]
+call esi
+cmp eax,ebx
+jne 0x4174b3
+push ecx
+mov ecx,esp
+mov dword[ebp-0x244],esp
+push str.DisplayName
+call fcn.0040151c
+mov byte[ebp-4],5
+push dword[ebp-0x234]
+mov byte[ebp-4],4
+lea edi,[ebp-0x24c]
+call fcn.00417236
+pop ecx
+pop ecx
+mov byte[ebp-4],6
+push eax
+lea ecx,[ebp-0x220]
+call fcn.00401b16
+mov byte[ebp-4],4
+mov ecx,edi
+call fcn.00401b66
+lea edi,[ebp-0x220]
+call fcn.00408443
+push dword[ebp+0xc]
+mov ecx,edi
+call fcn.0040440a
+test eax,eax
+jne 0x4174b3
+push ecx
+mov ecx,esp
+mov dword[ebp-0x244],esp
+push str.UninstallString
+call fcn.0040151c
+mov byte[ebp-4],7
+push dword[ebp-0x234]
+mov byte[ebp-4],4
+lea edi,[ebp-0x240]
+call fcn.00417236
+pop ecx
+pop ecx
+mov byte[ebp-4],8
+mov ecx,dword[ebp-0x22c]
+push eax
+call fcn.00401b01
+mov byte[ebp-4],4
+mov ecx,edi
+call fcn.00401b66
+mov byte[ebp-4],3
+lea ecx,[ebp-0x220]
+call fcn.00401b66
+mov byte[ebp-4],2
+lea ecx,[ebp-0x238]
+call fcn.00401b66
+inc dword[ebp-0x228]
+cmp dword[ebp-0x23c],ebx
+mov dword[ebp-0x224],0x104
+je 0x417383
+push dword[ebp-0x21c]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov byte[ebp-4],1
+lea ecx,[ebp-0x230]
+call fcn.00401b66
+mov byte[ebp-4],bl
+lea ecx,[ebp+0xc]
+call fcn.00401b66
+mov eax,dword[ebp-0x22c]
+call fcn.0043da1a
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004380c2@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.00406b6f@69b3c79878674ea715338a112bb5caa6
+[similar_3_ref]: /report/fcn.100042ab@090dc3a8da6aa33c667b678303e4bdd6
+[similar_4_ref]: /report/fcn.0043883a@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_5_ref]: /report/fcn.00420823@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/44e1ffcf4e71f4505c09d520fd75f1e4

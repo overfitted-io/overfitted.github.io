@@ -1,0 +1,215 @@
+---
+layout: post
+title:  "fcn.64088d10 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.64088d10
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.10621540][similar_1_ref] (sim.: 0.8960617480873125)
+2. [fcn.64088f50][similar_2_ref] (sim.: 0.8881581187982415)
+3. [fcn.10956110][similar_3_ref] (sim.: 0.8786578094678199)
+4. [fcn.004c2530][similar_4_ref] (sim.: 0.870821865456149)
+5. [fcn.00487120][similar_5_ref] (sim.: 0.870821865456149)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x34
+mov eax,dword[0x641b8950]
+xor eax,esp
+mov dword[esp+0x30],eax
+push ebp
+push esi
+mov esi,ecx
+xor eax,eax
+push edi
+lea ebp,[esi+0x5c]
+mov word[ebp],ax
+lea edi,[esi+0x58]
+mov ecx,edi
+call sym public: void __thiscall QHostAddress::clear(void)
+xor ecx,ecx
+mov word[esi+0x64],cx
+lea ecx,[esi+0x60]
+call sym public: void __thiscall QHostAddress::clear(void)
+mov eax,dword[esi+0x6c]
+cmp eax,0xffffffff
+jne 0x64088d60
+pop edi
+pop esi
+xor al,al
+pop ebp
+mov ecx,dword[esp+0x30]
+xor ecx,esp
+call fcn.641429ea
+add esp,0x34
+ret
+xor ecx,ecx
+mov dword[esp+0x18],0x1c
+push ebx
+mov dword[esp+0x24],ecx
+mov dword[esp+0x28],ecx
+mov dword[esp+0x2c],ecx
+mov dword[esp+0x30],ecx
+mov dword[esp+0x34],ecx
+mov dword[esp+0x38],ecx
+mov dword[esp+0x3c],ecx
+lea ecx,[esp+0x1c]
+push ecx
+lea ecx,[esp+0x28]
+push ecx
+push eax
+call dword[sym.imp.WS2_32.dll_getsockname]
+mov ebx,dword[sym.imp.WS2_32.dll_WSAGetLastError]
+test eax,eax
+jne 0x64088ef8
+push edi
+push ebp
+lea eax,[esp+0x2c]
+push eax
+push dword[esi+0x6c]
+call fcn.6408a880
+movzx eax,word[esp+0x34]
+add esp,0x10
+sub eax,2
+je 0x64088eec
+sub eax,0x15
+je 0x64088ee0
+mov dword[esi+0x54],0xffffffff
+push 5
+mov ecx,edi
+mov dword[esp+0x1c],0
+mov dword[esp+0x24],4
+call sym public: bool __thiscall QHostAddress::operator==(enum QHostAddress::SpecialAddress)const
+test al,al
+je 0x64088e48
+call dword[sym.imp.Qt5Core.dll_public:_static_enum_QSysInfo::WinVersion___cdecl_QSysInfo::windowsVersion_void_]
+cmp eax,0x80
+jl 0x64088e48
+lea eax,[esp+0x20]
+push eax
+lea eax,[esp+0x1c]
+push eax
+push 0x1b
+push 0x29
+push dword[esi+0x6c]
+call dword[sym.imp.WS2_32.dll_getsockopt]
+test eax,eax
+jne 0x64088e48
+cmp dword[esp+0x18],eax
+jne 0x64088e48
+push 4
+lea ecx,[esp+0x18]
+mov dword[esi+0x54],2
+call sym public: void __thiscall QHostAddress::constructor(enum QHostAddress::SpecialAddress)
+mov ecx,dword[edi]
+mov eax,dword[esp+0x14]
+mov dword[esp+0x14],ecx
+lea ecx,[esp+0x14]
+mov dword[edi],eax
+call sym public: void __thiscall QHostAddress::~destructor(void)
+cmp dword[esi+0x54],1
+jne 0x64088e91
+lea eax,[esp+0x13]
+mov byte[esp+0x13],0
+push eax
+mov ecx,edi
+call sym public: unsigned int __thiscall QHostAddress::toIPv4Address(bool *)const
+cmp byte[esp+0x13],0
+je 0x64088e91
+test eax,eax
+jne 0x64088e91
+push 4
+lea ecx,[esp+0x18]
+mov dword[esi+0x54],2
+call sym public: void __thiscall QHostAddress::constructor(enum QHostAddress::SpecialAddress)
+mov ecx,dword[edi]
+mov eax,dword[esp+0x14]
+mov dword[esp+0x14],ecx
+lea ecx,[esp+0x14]
+mov dword[edi],eax
+call sym public: void __thiscall QHostAddress::~destructor(void)
+xor eax,eax
+mov dword[esp+0x24],eax
+mov dword[esp+0x28],eax
+mov dword[esp+0x2c],eax
+mov dword[esp+0x30],eax
+mov dword[esp+0x34],eax
+mov dword[esp+0x38],eax
+mov dword[esp+0x3c],eax
+lea eax,[esp+0x1c]
+push eax
+lea eax,[esp+0x28]
+push eax
+push dword[esi+0x6c]
+call dword[sym.imp.WS2_32.dll_getpeername]
+test eax,eax
+jne 0x64088f25
+lea eax,[esi+0x60]
+push eax
+lea eax,[esi+0x64]
+push eax
+lea eax,[esp+0x2c]
+push eax
+push dword[esi+0x6c]
+call fcn.6408a880
+add esp,0x10
+jmp 0x64088f27
+mov dword[esi+0x54],1
+jmp 0x64088dd6
+mov dword[esi+0x54],0
+jmp 0x64088dd6
+call ebx
+cmp eax,0x2736
+jne 0x64088dd6
+push 8
+push 0xa
+mov ecx,esi
+call fcn.64087a40
+pop ebx
+pop edi
+pop esi
+xor al,al
+pop ebp
+mov ecx,dword[esp+0x30]
+xor ecx,esp
+call fcn.641429ea
+add esp,0x34
+ret
+call ebx
+push dword[esi+0x6c]
+call fcn.6408a9c0
+mov ecx,dword[esp+0x44]
+add esp,4
+mov dword[esi+0x50],eax
+mov al,1
+pop ebx
+pop edi
+pop esi
+pop ebp
+xor ecx,esp
+call fcn.641429ea
+add esp,0x34
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10621540@2585b133c2e70968905cce13b1fc2654
+[similar_2_ref]: /report/fcn.64088f50@07e4412910bcf0f5969ef64c44eecb2d
+[similar_3_ref]: /report/fcn.10956110@2585b133c2e70968905cce13b1fc2654
+[similar_4_ref]: /report/fcn.004c2530@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00487120@be7fba7cc724acf4ae2900d99e0fc9c3
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

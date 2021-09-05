@@ -1,0 +1,182 @@
+---
+layout: post
+title:  "fcn.64089910 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.64089910
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.6402c990][similar_1_ref] (sim.: 0.8859484956834993)
+2. [fcn.10bcee49][similar_2_ref] (sim.: 0.8753394284641862)
+3. [fcn.6404f410][similar_3_ref] (sim.: 0.8748531095089074)
+4. [fcn.0049da2b][similar_4_ref] (sim.: 0.8670603759301106)
+5. [fcn.004126f0][similar_5_ref] (sim.: 0.8633649874570399)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,dword[ecx+0x54]
+sub esp,0x1c
+push esi
+cmp eax,1
+je 0x64089a99
+cmp eax,2
+je 0x64089a99
+lea eax,[esp+0x14]
+mov dword[esp+0x10],0
+push eax
+lea eax,[esp+0x14]
+mov dword[esp+0x18],4
+push eax
+push 9
+push 0
+push dword[ecx+0x6c]
+call dword[sym.imp.WS2_32.dll_getsockopt]
+cmp eax,0xffffffff
+je 0x64089abd
+mov eax,dword[esp+0x10]
+push ebx
+push ebp
+push edi
+test eax,eax
+je 0x64089a4f
+cmp dword[esp+0x20],4
+jl 0x64089a4f
+push eax
+call dword[sym.imp.WS2_32.dll_ntohl]
+push eax
+lea ecx,[esp+0x1c]
+call sym public: void __thiscall QHostAddress::constructor(unsigned int)
+lea eax,[esp+0x14]
+push eax
+call sym public: static class QList<class QNetworkInterface> __cdecl QNetworkInterface::allInterfaces(void)
+add esp,4
+lea ecx,[esp+0x14]
+xor edi,edi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+test eax,eax
+jle 0x64089a3d
+push edi
+lea ecx,[esp+0x18]
+call dword[sym.imp.Qt5Core.dll_public:_void_____thiscall_QListData::at_int_const]
+mov ebp,eax
+lea eax,[esp+0x28]
+push eax
+mov ecx,ebp
+call sym public: class QFlags<enum QNetworkInterface::InterfaceFlag> __thiscall QNetworkInterface::flags(void)
+test byte[eax],0x20
+je 0x64089a2a
+lea eax,[esp+0x10]
+mov ecx,ebp
+push eax
+call sym public: class QList<class QNetworkAddressEntry> __thiscall QNetworkInterface::addressEntries(void)
+lea ecx,[esp+0x10]
+xor esi,esi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+test eax,eax
+jle 0x64089a21
+nop
+push esi
+lea ecx,[esp+0x14]
+call dword[sym.imp.Qt5Core.dll_public:_void_____thiscall_QListData::at_int_const]
+lea ecx,[esp+0x18]
+push ecx
+lea ecx,[esp+0x28]
+push ecx
+mov ecx,eax
+call sym public: class QHostAddress __thiscall QNetworkAddressEntry::ip(void)
+mov ecx,eax
+call sym public: bool __thiscall QHostAddress::operator==(class QHostAddress const &)const
+lea ecx,[esp+0x24]
+mov bl,al
+call sym public: void __thiscall QHostAddress::~destructor(void)
+test bl,bl
+jne 0x64089a66
+lea ecx,[esp+0x10]
+inc esi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+cmp esi,eax
+jl 0x640899e0
+lea ecx,[esp+0x10]
+call fcn.64071eb0
+lea ecx,[esp+0x14]
+inc edi
+call dword[sym.imp.Qt5Core.dll_public:_int___thiscall_QListData::size_void_const]
+cmp edi,eax
+jl 0x640899a5
+lea ecx,[esp+0x14]
+call fcn.64071f00
+lea ecx,[esp+0x18]
+call sym public: void __thiscall QHostAddress::~destructor(void)
+mov ecx,dword[esp+0x30]
+call sym public: void __thiscall QAuthenticator::constructor(void)
+mov eax,dword[esp+0x30]
+pop edi
+pop ebp
+pop ebx
+pop esi
+add esp,0x1c
+ret 4
+mov ecx,dword[esp+0x30]
+push ebp
+call sym public: void __thiscall QDnsDomainNameRecord::constructor(class QDnsDomainNameRecord const &)
+lea ecx,[esp+0x10]
+call fcn.64071eb0
+lea ecx,[esp+0x14]
+call fcn.64071f00
+lea ecx,[esp+0x18]
+call sym public: void __thiscall QHostAddress::~destructor(void)
+mov eax,dword[esp+0x30]
+pop edi
+pop ebp
+pop ebx
+pop esi
+add esp,0x1c
+ret 4
+lea eax,[esp+0x18]
+mov dword[esp+0x18],4
+push eax
+lea eax,[esp+0x10]
+push eax
+push 9
+push 0x29
+push dword[ecx+0x6c]
+call dword[sym.imp.WS2_32.dll_getsockopt]
+cmp eax,0xffffffff
+jne 0x64089ad1
+mov ecx,dword[esp+0x24]
+call sym public: void __thiscall QAuthenticator::constructor(void)
+mov eax,dword[esp+0x24]
+pop esi
+add esp,0x1c
+ret 4
+push dword[esp+0xc]
+mov esi,dword[esp+0x28]
+push esi
+call sym public: static class QNetworkInterface __cdecl QNetworkInterface::interfaceFromIndex(int)
+add esp,8
+mov eax,esi
+pop esi
+add esp,0x1c
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.6402c990@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.10bcee49@89dc67d2f980e8488f97b1bf8cb24258
+[similar_3_ref]: /report/fcn.6404f410@07e4412910bcf0f5969ef64c44eecb2d
+[similar_4_ref]: /report/fcn.0049da2b@b3771987fba16f4fba07d1109ec72c76
+[similar_5_ref]: /report/fcn.004126f0@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

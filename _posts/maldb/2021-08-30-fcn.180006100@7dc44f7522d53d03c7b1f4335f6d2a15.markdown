@@ -1,0 +1,201 @@
+---
+layout: post
+title:  "fcn.180006100 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.180006100
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.140023204][similar_1_ref] (sim.: 1.0)
+2. [fcn.140025bf8][similar_2_ref] (sim.: 0.9399273051961938)
+3. [fcn.140006500][similar_3_ref] (sim.: 0.8965140583923489)
+4. [fcn.0079de60][similar_4_ref] (sim.: 0.89604613351596)
+5. [fcn.14000a4ec][similar_5_ref] (sim.: 0.8840949815566086)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push rbx
+push rbp
+push rsi
+push rdi
+push r12
+push r14
+push r15
+sub rsp,0x50
+mov rax,qword[0x1800141b0]
+xor rax,rsp
+mov qword[rsp+0x48],rax
+mov r15,rcx
+xor ecx,ecx
+mov ebp,r8d
+mov r12,rdx
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+xor edi,edi
+mov rsi,rax
+call fcn.180002860
+cmp qword[0x180015270],rdi
+mov r14d,eax
+jne 0x180006241
+lea rcx,str.USER32.DLL
+xor edx,edx
+mov r8d,0x800
+call qword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov rbx,rax
+test rax,rax
+jne 0x180006193
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x180006355
+lea rcx,str.USER32.DLL
+xor r8d,r8d
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov rbx,rax
+test rax,rax
+je 0x180006355
+lea rdx,str.MessageBoxW
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+test rax,rax
+je 0x180006355
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+lea rdx,str.GetActiveWindow
+mov rcx,rbx
+mov qword[0x180015270],rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+lea rdx,str.GetLastActivePopup
+mov rcx,rbx
+mov qword[0x180015278],rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+lea rdx,str.GetUserObjectInformationW
+mov rcx,rbx
+mov qword[0x180015280],rax
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+mov qword[0x180015290],rax
+test rax,rax
+je 0x180006241
+lea rdx,str.GetProcessWindowStation
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov rcx,rax
+call qword[sym.imp.KERNEL32.dll_EncodePointer]
+mov qword[0x180015288],rax
+call qword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x180006268
+test r15,r15
+je 0x180006259
+mov rcx,r15
+call qword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+test r14d,r14d
+je 0x180006284
+mov eax,4
+jmp 0x180006357
+test r14d,r14d
+je 0x180006284
+mov rcx,qword[0x180015270]
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+mov eax,3
+jmp 0x180006357
+mov rcx,qword[0x180015288]
+cmp rcx,rsi
+je 0x1800062f3
+cmp qword[0x180015290],rsi
+je 0x1800062f3
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+mov rcx,qword[0x180015290]
+mov rbx,rax
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+mov r14,rax
+test rbx,rbx
+je 0x1800062f3
+test rax,rax
+je 0x1800062f3
+call rbx
+test rax,rax
+je 0x1800062ed
+lea rcx,[rsp+0x30]
+mov r9d,0xc
+lea r8,[rsp+0x38]
+mov qword[rsp+0x20],rcx
+lea edx,[r9-0xb]
+mov rcx,rax
+call r14
+test eax,eax
+je 0x1800062ed
+test byte[rsp+0x40],1
+jne 0x1800062f3
+bts ebp,0x15
+jmp 0x180006333
+mov rcx,qword[0x180015278]
+cmp rcx,rsi
+je 0x180006333
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+test rax,rax
+je 0x180006333
+call rax
+mov rdi,rax
+test rax,rax
+je 0x180006333
+mov rcx,qword[0x180015280]
+cmp rcx,rsi
+je 0x180006333
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+test rax,rax
+je 0x180006333
+mov rcx,rdi
+call rax
+mov rdi,rax
+mov rcx,qword[0x180015270]
+call qword[sym.imp.KERNEL32.dll_DecodePointer]
+test rax,rax
+je 0x180006355
+mov r9d,ebp
+mov r8,r12
+mov rdx,r15
+mov rcx,rdi
+call rax
+jmp 0x180006357
+xor eax,eax
+mov rcx,qword[rsp+0x48]
+xor rcx,rsp
+call fcn.180005c80
+add rsp,0x50
+pop r15
+pop r14
+pop r12
+pop rdi
+pop rsi
+pop rbp
+pop rbx
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.140023204@c5b958b285b208bffd52d8455e15d93a
+[similar_2_ref]: /report/fcn.140025bf8@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/fcn.140006500@c5b958b285b208bffd52d8455e15d93a
+[similar_4_ref]: /report/fcn.0079de60@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.14000a4ec@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

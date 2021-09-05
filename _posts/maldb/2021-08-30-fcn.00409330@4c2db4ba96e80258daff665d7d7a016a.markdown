@@ -1,0 +1,262 @@
+---
+layout: post
+title:  "fcn.00409330 @ 4c2db4ba96e80258daff665d7d7a016a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409330
+- **Origin (md5):** 4c2db4ba96e80258daff665d7d7a016a
+- **VirusTotal:** [virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00432ed0][similar_1_ref] (sim.: 0.9098556945711072)
+2. [fcn.0041c833][similar_2_ref] (sim.: 0.8929486617001069)
+3. [fcn.00403b4c][similar_3_ref] (sim.: 0.8920097573349501)
+4. [fcn.0042ece0][similar_4_ref] (sim.: 0.8770019344536627)
+5. [fcn.00402500][similar_5_ref] (sim.: 0.8757904391360055)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+mov eax,0x3438
+call fcn.00401200
+push edi
+push 0x5c
+push dword[ebp+8]
+mov edi,ecx
+call fcn.0040a9ea
+test eax,eax
+lea eax,[ebp-0x1438]
+jne 0x40937b
+push 0x400
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push 0x5c
+lea eax,[ebp-0x1438]
+push eax
+call fcn.0040aa17
+test eax,eax
+je 0x4095e9
+add eax,2
+push dword[ebp+8]
+push eax
+call fcn.0040a850
+push ebx
+lea ecx,[ebp-0xc38]
+call fcn.00405711
+push 4
+lea eax,[ebp-0x1438]
+push eax
+xor ebx,ebx
+push ebx
+lea ecx,[ebp-0xc38]
+call fcn.00405920
+test al,al
+jne 0x4093bb
+lea ecx,[ebp-0xc38]
+call fcn.004058fd
+jmp 0x4095e8
+or dword[ebp-4],0xffffffff
+mov byte[ebp+0xb],bl
+mov dword[ebp-8],ebx
+push esi
+cmp dword[ebp-4],0xffffffff
+jne 0x4094de
+lea ecx,[ebp-0xc38]
+call fcn.00405838
+mov dword[ebp-0x10],eax
+push 0x2000
+lea eax,[ebp-0x3438]
+push eax
+lea ecx,[ebp-0xc38]
+call fcn.00405f9d
+mov dword[ebp-0xc],eax
+add eax,0xfffffff0
+xor esi,esi
+cmp eax,ebx
+jl 0x4094aa
+lea ebx,[ebp+esi-0x3438]
+cmp byte[ebx],0x2a
+jne 0x409433
+cmp byte[ebp+esi-0x3437],0x2a
+jne 0x409433
+push 0xb
+push str.messages
+lea eax,[ebp+esi-0x3436]
+push eax
+call fcn.0040a759
+test eax,eax
+je 0x4094a2
+cmp word[ebx],0x2a
+jne 0x409462
+lea eax,[ebp+esi-0x3434]
+cmp word[eax-2],0x2a
+jne 0x409462
+mov ecx,dword[ebp-0xc]
+add ecx,0xffffffe0
+cmp esi,ecx
+jg 0x409462
+push 0xb
+push 0x414474
+push eax
+call fcn.0040a98b
+test eax,eax
+je 0x40949e
+cmp byte[ebx],0x52
+jne 0x40948d
+cmp byte[ebp+esi-0x3437],0x61
+jne 0x40948d
+push 4
+push 0x41446c
+lea eax,[ebp+esi-0x3436]
+push eax
+call fcn.0040a759
+test eax,eax
+je 0x4095dc
+mov eax,dword[ebp-0xc]
+inc esi
+add eax,0xfffffff0
+cmp esi,eax
+jle 0x409405
+jmp 0x4094aa
+mov byte[ebp+0xb],1
+mov eax,dword[ebp-0x10]
+add esi,eax
+mov dword[ebp-4],esi
+mov ecx,dword[ebp-0x10]
+mov eax,dword[ebp-0xc]
+xor ebx,ebx
+push ebx
+lea eax,[eax+ecx-0x10]
+push ebx
+push eax
+lea ecx,[ebp-0xc38]
+call fcn.00405de9
+inc dword[ebp-8]
+cmp dword[ebp-8],0x80
+jb 0x4093c6
+cmp dword[ebp-4],0xffffffff
+je 0x4095dc
+mov eax,dword[ebp-4]
+cdq
+push ebx
+push edx
+push eax
+lea ecx,[ebp-0xc38]
+call fcn.00405de9
+push 0x80002
+call fcn.0040a403
+mov dword[edi],eax
+lea ecx,[ebp-0xc38]
+cmp eax,ebx
+je 0x4095e2
+push 0x80000
+push eax
+call fcn.00405f9d
+cmp byte[ebp+0xb],0
+mov dword[edi+4],eax
+je 0x409525
+shr eax,1
+mov dword[edi+4],eax
+jmp 0x409558
+lea eax,[eax+eax+2]
+push eax
+call fcn.0040a403
+mov esi,eax
+cmp esi,ebx
+je 0x4095dc
+mov eax,dword[edi+4]
+mov ecx,dword[edi]
+mov byte[eax+ecx],0
+mov eax,dword[edi+4]
+inc eax
+push eax
+push esi
+push dword[edi]
+call fcn.0040ecd2
+push dword[edi]
+call fcn.0040a41c
+mov dword[edi],esi
+mov ecx,dword[edi+4]
+mov eax,0x40000
+cmp ecx,eax
+ja 0x409566
+mov eax,ecx
+mov ecx,dword[edi]
+xor edx,edx
+mov word[ecx+eax*2],dx
+xor ecx,ecx
+cmp dword[edi+4],ecx
+jbe 0x4095d1
+mov eax,dword[edi]
+movzx edx,word[eax+ebx*2]
+inc ebx
+test dx,dx
+je 0x4095d1
+cmp dx,0x5c
+jne 0x4095b8
+movzx esi,word[eax+ebx*2]
+sub esi,0x22
+je 0x4095b3
+sub esi,0x3a
+je 0x4095af
+sub esi,0x12
+je 0x4095ab
+sub esi,4
+je 0x4095a7
+dec esi
+dec esi
+jne 0x4095c7
+push 9
+jmp 0x4095b5
+push 0xd
+jmp 0x4095b5
+push 0xa
+jmp 0x4095b5
+push 0x5c
+jmp 0x4095b5
+push 0x22
+inc ebx
+jmp 0x4095c6
+cmp dx,0xd
+je 0x4095c4
+cmp dx,0xa
+jne 0x4095c7
+push 0xc
+pop edx
+mov word[eax+ecx*2],dx
+inc ecx
+cmp ebx,dword[edi+4]
+jb 0x409575
+mov eax,dword[edi]
+xor edx,edx
+mov word[eax+ecx*2],dx
+mov dword[edi+4],ecx
+lea ecx,[ebp-0xc38]
+call fcn.004058fd
+pop esi
+pop ebx
+pop edi
+leave
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00432ed0@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.0041c833@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.00403b4c@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.0042ece0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00402500@9c2b894b84f59672d8be2e984066f76f
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c2db4ba96e80258daff665d7d7a016a

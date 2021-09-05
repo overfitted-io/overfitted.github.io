@@ -1,0 +1,204 @@
+---
+layout: post
+title:  "fcn.00402e5b @ 045e0ff2c8ee6fdcaf20f3769c6f3c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00402e5b
+- **Origin (md5):** 045e0ff2c8ee6fdcaf20f3769c6f3c76
+- **VirusTotal:** [virustotal.com/gui/file/045e0ff2c8ee6fdcaf20f3769c6f3c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00402e5b][similar_1_ref] (sim.: 1.0)
+2. [fcn.00402e5b][similar_2_ref] (sim.: 1.0)
+3. [fcn.00402e6c][similar_3_ref] (sim.: 1.0)
+4. [fcn.00402f38][similar_4_ref] (sim.: 0.9918722385276337)
+5. [fcn.00402e5b][similar_5_ref] (sim.: 0.9544128462789477)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x54
+push ebx
+push esi
+mov esi,dword[ebp+0x14]
+push edi
+mov edi,dword[ebp+0x10]
+mov dword[ebp-8],esi
+test edi,edi
+jne 0x402e78
+mov dword[ebp-8],0x8000
+and dword[ebp-4],0
+mov ebx,edi
+test edi,edi
+jne 0x402e87
+mov ebx,0x40f020
+mov eax,dword[ebp+8]
+test eax,eax
+jl 0x402e9c
+mov ecx,dword[0x423ed8]
+add ecx,eax
+push ecx
+call fcn.00403080
+lea eax,[ebp+0x14]
+push 4
+push eax
+call fcn.0040304e
+test eax,eax
+je 0x402ff9
+test byte[ebp+0x17],0x80
+je 0x402fe2
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+mov ecx,0x40af90
+mov dword[ebp-0xc],eax
+call fcn.00405dd9
+and dword[ebp+0x14],0x7fffffff
+mov eax,dword[ebp+0x14]
+mov dword[ebp+8],eax
+jle 0x403044
+mov esi,0x4000
+cmp dword[ebp+0x14],esi
+jge 0x402eec
+mov esi,dword[ebp+0x14]
+mov edi,0x40b020
+push esi
+push edi
+call fcn.0040304e
+test eax,eax
+je 0x402ff9
+sub dword[ebp+0x14],esi
+mov dword[0x40afa8],edi
+mov dword[0x40afac],esi
+mov eax,dword[ebp-8]
+mov ecx,0x40af90
+mov dword[0x40afb0],ebx
+mov dword[0x40afb4],eax
+call fcn.00405df9
+test eax,eax
+mov dword[ebp-0x14],eax
+jl 0x402fda
+mov esi,dword[0x40afb0]
+sub esi,ebx
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+test byte[0x423f34],1
+mov edi,eax
+je 0x402f8e
+sub eax,dword[ebp-0xc]
+cmp eax,0xc8
+ja 0x402f5b
+cmp dword[ebp+0x14],0
+jne 0x402f8e
+mov eax,dword[ebp+8]
+push dword[ebp+8]
+sub eax,dword[ebp+0x14]
+push 0x64
+push eax
+call dword[sym.imp.KERNEL32.dll_MulDiv]
+push eax
+lea eax,[ebp-0x54]
+push str....__d__
+push eax
+call dword[sym.imp.USER32.dll_wsprintfA]
+add esp,0xc
+lea eax,[ebp-0x54]
+push eax
+push 0
+call fcn.00404d7b
+mov dword[ebp-0xc],edi
+xor eax,eax
+cmp esi,eax
+je 0x402fcf
+cmp dword[ebp+0x10],eax
+jne 0x402fb7
+push eax
+lea eax,[ebp-0x10]
+push eax
+push esi
+push ebx
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x402fde
+cmp dword[ebp-0x10],esi
+jne 0x402fde
+add dword[ebp-4],esi
+jmp 0x402fc3
+add dword[ebp-4],esi
+sub dword[ebp-8],esi
+mov ebx,dword[0x40afb0]
+cmp dword[ebp-0x14],1
+jne 0x402f0f
+jmp 0x403044
+cmp dword[ebp+0x14],eax
+jg 0x402edf
+jmp 0x403044
+push 0xfffffffffffffffc
+jmp 0x402ffb
+push 0xfffffffffffffffe
+jmp 0x402ffb
+test edi,edi
+je 0x403039
+cmp dword[ebp+0x14],esi
+jge 0x402fee
+mov esi,dword[ebp+0x14]
+push esi
+push edi
+call fcn.0040304e
+test eax,eax
+jne 0x403041
+push 0xfffffffffffffffd
+pop eax
+jmp 0x403047
+mov esi,dword[ebp-8]
+cmp dword[ebp+0x14],esi
+jge 0x403009
+mov esi,dword[ebp+0x14]
+mov edi,0x40b020
+push esi
+push edi
+call fcn.0040304e
+test eax,eax
+je 0x402ff9
+lea eax,[ebp+0x10]
+push 0
+push eax
+push esi
+push edi
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x402fde
+cmp esi,dword[ebp+0x10]
+jne 0x402fde
+add dword[ebp-4],esi
+sub dword[ebp+0x14],esi
+cmp dword[ebp+0x14],0
+jg 0x402ffe
+jmp 0x403044
+mov dword[ebp-4],esi
+mov eax,dword[ebp-4]
+pop edi
+pop esi
+pop ebx
+leave
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00402e5b@595b48effa204acca09e846b8e091f46
+[similar_2_ref]: /report/fcn.00402e5b@88c77a55c813a535f04a021f665ec5b4
+[similar_3_ref]: /report/fcn.00402e6c@0c82eefbb8a4714538e49f74fe0058a6
+[similar_4_ref]: /report/fcn.00402f38@858dbd4ce0c289ef03f5cd172ced5d27
+[similar_5_ref]: /report/fcn.00402e5b@8cfdb0713f3b8f9b0a5ef775f40cf182
+[virustotal_ref]: https://www.virustotal.com/gui/file/045e0ff2c8ee6fdcaf20f3769c6f3c76

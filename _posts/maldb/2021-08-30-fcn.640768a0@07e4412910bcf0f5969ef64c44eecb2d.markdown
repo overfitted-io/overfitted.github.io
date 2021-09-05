@@ -1,0 +1,198 @@
+---
+layout: post
+title:  "fcn.640768a0 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.640768a0
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0067dd90][similar_1_ref] (sim.: 0.861547692305498)
+2. [fcn.00693800][similar_2_ref] (sim.: 0.8399825368251659)
+3. [fcn.005202f0][similar_3_ref] (sim.: 0.83918516915781)
+4. [fcn.006821a0][similar_4_ref] (sim.: 0.8374207984859618)
+5. [fcn.00681ac0][similar_5_ref] (sim.: 0.8347707040607446)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push ebp
+push esi
+push edi
+mov ebx,ecx
+call dword[sym.imp.Qt5Core.dll_public:_static_struct_QArrayData____cdecl_QArrayData::sharedNull_void_]
+mov esi,eax
+call dword[sym.imp.Qt5Core.dll_public:_static_struct_QArrayData____cdecl_QArrayData::sharedNull_void_]
+mov ebp,dword[ebx]
+mov edi,eax
+mov dword[ebx],esi
+or esi,0xffffffff
+mov ebx,dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QArrayData::deallocate_struct_QArrayData___unsigned_int__unsigned_int_]
+mov eax,dword[ebp]
+test eax,eax
+je 0x6407684c
+cmp eax,esi
+je 0x64076866
+mov eax,esi
+lock xadd dword[ebp],eax
+setne al
+test al,al
+jne 0x64076866
+mov ecx,ebp
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+mov ecx,ebp
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+push 4
+push 4
+push ebp
+call ebx
+add esp,0xc
+mov eax,dword[edi]
+test eax,eax
+je 0x6407687d
+cmp eax,0xffffffff
+je 0x64076897
+lock xadd dword[edi],esi
+dec esi
+setne al
+test al,al
+jne 0x64076897
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+push 4
+push 4
+push edi
+call ebx
+add esp,0xc
+pop edi
+pop esi
+pop ebp
+pop ebx
+ret
+sub esp,0x14
+push ebx
+push ebp
+push esi
+mov eax,ecx
+lea ecx,[esp+0x10]
+push edi
+push eax
+mov dword[esp+0x14],eax
+call fcn.6408e5a0
+mov edi,dword[esp+0x14]
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void_const____thiscall_QArrayData::data_void_const]
+mov ecx,edi
+mov esi,eax
+call dword[sym.imp.Qt5Core.dll_public:_void_const____thiscall_QArrayData::data_void_const]
+mov ecx,dword[edi+4]
+mov ebp,dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea ebx,[eax+ecx*4]
+mov eax,1
+mov edi,edi
+cmp esi,ebx
+je 0x640768f6
+test eax,eax
+je 0x640768ee
+push dword[esi]
+call ebp
+xor eax,eax
+add esi,4
+xor eax,1
+jne 0x640768e0
+mov eax,dword[edi]
+or ebx,0xffffffff
+test eax,eax
+je 0x64076910
+cmp eax,ebx
+je 0x6407692e
+mov eax,ebx
+lock xadd dword[edi],eax
+setne al
+test al,al
+jne 0x6407692e
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+push 4
+push 4
+push edi
+call dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QArrayData::deallocate_struct_QArrayData___unsigned_int__unsigned_int_]
+add esp,0xc
+mov eax,dword[esp+0x10]
+lea ecx,[esp+0x14]
+add eax,4
+push eax
+call fcn.6408e5a0
+mov edi,dword[esp+0x14]
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void_const____thiscall_QArrayData::data_void_const]
+mov ecx,edi
+mov esi,eax
+call dword[sym.imp.Qt5Core.dll_public:_void_const____thiscall_QArrayData::data_void_const]
+mov ecx,dword[edi+4]
+lea ebp,[eax+ecx*4]
+mov eax,1
+cmp esi,ebp
+je 0x6407697a
+test eax,eax
+je 0x64076972
+push dword[esi]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+xor eax,eax
+add esi,4
+xor eax,1
+jne 0x64076960
+mov eax,dword[edi]
+test eax,eax
+je 0x64076991
+cmp eax,0xffffffff
+je 0x640769af
+lock xadd dword[edi],ebx
+dec ebx
+setne al
+test al,al
+jne 0x640769af
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+mov ecx,edi
+call dword[sym.imp.Qt5Core.dll_public:_void____thiscall_QArrayData::data_void_]
+push 4
+push 4
+push edi
+call dword[sym.imp.Qt5Core.dll_public:_static_void___cdecl_QArrayData::deallocate_struct_QArrayData___unsigned_int__unsigned_int_]
+add esp,0xc
+mov ebx,dword[esp+0x10]
+mov ecx,ebx
+call 0x64076810
+pop edi
+pop esi
+pop ebp
+lea ecx,[ebx+4]
+pop ebx
+add esp,0x14
+jmp 0x64076810
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0067dd90@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00693800@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.005202f0@7453c96a6fbd42ec690b8deb53eafcba
+[similar_4_ref]: /report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00681ac0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

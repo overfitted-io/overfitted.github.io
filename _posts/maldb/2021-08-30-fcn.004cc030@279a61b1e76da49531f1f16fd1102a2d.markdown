@@ -1,0 +1,245 @@
+---
+layout: post
+title:  "fcn.004cc030 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004cc030
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0045cd20][similar_1_ref] (sim.: 1.0)
+2. [fcn.004916b0][similar_2_ref] (sim.: 1.0)
+3. [fcn.00491930][similar_3_ref] (sim.: 0.8495999269816101)
+4. [fcn.0045cfa0][similar_4_ref] (sim.: 0.8495999269816101)
+5. [fcn.004cc2b0][similar_5_ref] (sim.: 0.8495999269816101)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebx
+push esi
+mov esi,eax
+mov eax,dword[esi+0x10]
+mov ebx,dword[eax]
+mov eax,dword[esp+0xc]
+add eax,0xfffffffd
+push edi
+cmp eax,4
+ja case.0x4cc04a.4
+jmp dword[eax*4+0x4cc290]
+lea eax,[esi+0x15c]
+call fcn.004cbd50
+movzx ecx,word[esi+0x40]
+movzx edi,ax
+lea eax,[ecx+1]
+and eax,0xffff
+cmp eax,edi
+jne 0x4cc078
+mov dword[esi+0x18],0
+jmp 0x4cc08f
+cmp ecx,edi
+jne 0x4cc104
+push edi
+push str.Received_last_DATA_packet_block__d_again._n
+push ebx
+call fcn.004c03c0
+add esp,0xc
+mov word[esi+0x40],di
+lea edi,[esi+0x160]
+mov eax,4
+mov ecx,edi
+call fcn.004cbd00
+mov ax,word[esi+0x40]
+mov ecx,edi
+call fcn.004cbd20
+mov ecx,dword[esi+0x148]
+mov eax,dword[edi]
+push ecx
+mov ecx,dword[esi+0x14]
+lea edx,[esi+0xc8]
+push edx
+push 0
+push 4
+push eax
+push ecx
+call dword[sym.imp.WS2_32.dll_sendto]
+test eax,eax
+jl 0x4cc204
+mov eax,dword[esi+0x154]
+xor ecx,ecx
+add eax,4
+cmp dword[esi+0x14c],eax
+setl cl
+add esi,0x38
+push esi
+lea ecx,[ecx+ecx+1]
+mov dword[esi-0x38],ecx
+call fcn.00493e7b
+add esp,4
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+ret
+push eax
+push edi
+push str.Received_unexpected_DATA_packet_block__d__expecting_block__d_n
+push ebx
+call fcn.004c03c0
+add esp,0x10
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+ret
+xor edx,edx
+lea edi,[esi+0x160]
+lea eax,[edx+4]
+mov ecx,edi
+mov word[esi+0x40],dx
+mov dword[esi+0x18],edx
+call fcn.004cbd00
+mov ax,word[esi+0x40]
+mov ecx,edi
+call fcn.004cbd20
+mov eax,dword[esi+0x148]
+mov edx,dword[edi]
+push eax
+mov eax,dword[esi+0x14]
+lea ecx,[esi+0xc8]
+push ecx
+push 0
+push 4
+push edx
+push eax
+call dword[sym.imp.WS2_32.dll_sendto]
+test eax,eax
+jge 0x4cc189
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ecx,dword[esi+0x10]
+push eax
+push ecx
+call fcn.004b5640
+push eax
+push 0x50a514
+push ebx
+call fcn.004c0450
+add esp,0x14
+pop edi
+pop esi
+mov eax,0x37
+pop ebx
+ret
+mov dword[esi],1
+add esi,0x38
+push esi
+call fcn.00493e7b
+add esp,4
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+ret
+movzx edx,word[esi+0x40]
+inc dword[esi+0x18]
+mov eax,dword[esi+0x18]
+push eax
+inc edx
+and edx,0xffff
+push edx
+push str.Timeout_waiting_for_block__d_ACK.__Retries___d_n
+push ebx
+call fcn.004c03c0
+mov eax,dword[esi+0x18]
+add esp,0x10
+cmp eax,dword[esi+0x20]
+jle 0x4cc1dd
+pop edi
+mov dword[esi+8],0xffffff9d
+mov dword[esi],3
+pop esi
+xor eax,eax
+pop ebx
+ret
+mov ecx,dword[esi+0x148]
+mov eax,dword[esi+0x160]
+push ecx
+mov ecx,dword[esi+0x14]
+lea edx,[esi+0xc8]
+push edx
+push 0
+push 4
+push eax
+push ecx
+call dword[sym.imp.WS2_32.dll_sendto]
+test eax,eax
+jge 0x4cc26e
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov edx,dword[esi+0x10]
+push eax
+push edx
+call fcn.004b5640
+push eax
+push 0x50a514
+push ebx
+call fcn.004c0450
+add esp,0x14
+pop edi
+pop esi
+mov eax,0x37
+pop ebx
+ret
+lea edi,[esi+0x160]
+mov eax,5
+mov ecx,edi
+call fcn.004cbd00
+mov ax,word[esi+0x40]
+mov ecx,edi
+call fcn.004cbd20
+mov eax,dword[esi+0x148]
+mov edx,dword[edi]
+push eax
+mov eax,dword[esi+0x14]
+lea ecx,[esi+0xc8]
+push ecx
+push 0
+push 4
+push edx
+push eax
+call dword[sym.imp.WS2_32.dll_sendto]
+mov dword[esi],3
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+ret
+push str.tftp_rx:_internal_error
+push 0x50a514
+push ebx
+call fcn.004c0450
+add esp,0xc
+pop edi
+pop esi
+mov eax,0x47
+pop ebx
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045cd20@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.004916b0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.00491930@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.0045cfa0@289859175c221b107317af7727d26c17
+[similar_5_ref]: /report/fcn.004cc2b0@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

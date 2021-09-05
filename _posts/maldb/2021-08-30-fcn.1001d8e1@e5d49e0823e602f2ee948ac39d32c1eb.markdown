@@ -1,0 +1,225 @@
+---
+layout: post
+title:  "fcn.1001d8e1 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.1001d8e1
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00528b15][similar_1_ref] (sim.: 0.9221781621755871)
+2. [fcn.004a4f08][similar_2_ref] (sim.: 0.9220669391854153)
+3. [fcn.00417e42][similar_3_ref] (sim.: 0.9179457405926503)
+4. [fcn.00555f46][similar_4_ref] (sim.: 0.9127600807336735)
+5. [fcn.00519850][similar_5_ref] (sim.: 0.8995174064068897)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x12c
+mov eax,0x1013b824
+call fcn.10124157
+mov esi,ecx
+mov eax,dword[ebp+0x10]
+mov edi,dword[ebp+0x20]
+mov dword[ebp-0x130],eax
+mov eax,dword[ebp+0x18]
+mov dword[ebp-0x12c],eax
+mov eax,dword[ebp+0x1c]
+push eax
+push 0
+mov dword[ebp-0x138],esi
+call fcn.1001cd19
+and dword[ebp-4],0
+lea ebx,[esi+0xb8]
+mov dword[esi],vtable.CFileDialog.0
+call fcn.10013a90
+push eax
+mov ecx,ebx
+call fcn.10006523
+xor ecx,ecx
+mov byte[ebp-4],1
+push 0x114
+push ecx
+lea eax,[ebp-0x124]
+mov dword[esi+0x34c],ecx
+push eax
+mov dword[esi+0x350],ecx
+call fcn.10123640
+add esp,0xc
+mov dword[ebp-0x124],0x114
+lea eax,[ebp-0x124]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+cmp dword[ebp-0x120],6
+jb 0x1001d987
+mov eax,dword[ebp+0x24]
+mov dword[esi+0x9c],eax
+jmp 0x1001d98e
+and dword[esi+0x9c],0
+and dword[esi+0xa0],0
+and dword[esi+0xa4],0
+test edi,edi
+jne 0x1001d9a3
+push 0x58
+pop edi
+push edi
+call fcn.10121e28
+mov dword[esi+0x98],eax
+pop ecx
+test eax,eax
+jne 0x1001d9b9
+call fcn.10009c8e
+push edi
+push 0
+push eax
+call fcn.10123640
+xor eax,eax
+lea ecx,[esi+0x13c]
+mov word[ecx],ax
+lea edx,[esi+0xbc]
+mov word[edx],ax
+add esp,0xc
+and dword[esi+0x344],eax
+and dword[esi+0x348],0
+mov eax,dword[ebp+8]
+mov dword[esi+0xb4],eax
+neg eax
+sbb eax,eax
+add eax,0x7005
+mov dword[esi+0x74],eax
+mov eax,dword[esi+0x98]
+mov dword[eax],edi
+mov edi,0x104
+mov eax,dword[esi+0x98]
+mov dword[eax+0x1c],ecx
+mov eax,dword[esi+0x98]
+mov dword[eax+0x20],edi
+mov ecx,dword[esi+0x98]
+mov eax,dword[ebp+0xc]
+mov dword[ecx+0x3c],eax
+mov eax,dword[esi+0x98]
+mov dword[eax+0x24],edx
+mov eax,dword[esi+0x98]
+mov dword[eax+0x28],0x40
+mov ecx,dword[esi+0x98]
+mov eax,dword[ebp+0x14]
+or eax,0x80020
+or dword[ecx+0x34],eax
+test byte[ebp+0x14],0x40
+je 0x1001da60
+mov eax,dword[esi+0x98]
+and dword[eax+0x34],0xff7fffff
+call fcn.1000b62f
+mov ecx,dword[eax+0xc]
+mov eax,dword[esi+0x98]
+mov dword[eax+8],ecx
+mov eax,dword[esi+0x98]
+mov dword[eax+0x44],0x10020be6
+mov eax,dword[ebp-0x130]
+test eax,eax
+je 0x1001daa1
+push 0xffffffffffffffff
+push eax
+lea eax,[esi+0x13c]
+push edi
+push eax
+call fcn.10124a0b
+push eax
+call fcn.10006a34
+add esp,0x14
+mov eax,dword[ebp-0x12c]
+test eax,eax
+je 0x1001dadf
+push eax
+mov ecx,ebx
+call fcn.1000787c
+push 0
+mov ecx,ebx
+call fcn.10007429
+jmp 0x1001dac6
+xor ecx,ecx
+mov word[eax],cx
+add eax,2
+push 0x7c
+push eax
+call fcn.10125225
+pop ecx
+pop ecx
+test eax,eax
+jne 0x1001dabe
+mov ecx,dword[esi+0x98]
+mov eax,dword[ebx]
+mov dword[ecx+0xc],eax
+cmp dword[esi+0x9c],1
+jne 0x1001db9a
+push 2
+xor ebx,ebx
+push ebx
+call dword[sym.imp.ole32.dll_CoInitializeEx]
+test eax,eax
+js 0x1001db94
+lea eax,[ebp-0x128]
+mov dword[esi+method.CFileDialog::XFileDialogControlEvents.virtual_0],0x1014d6d4
+lea edi,[esi+0x34c]
+push eax
+push 0x1014d464
+push 1
+mov dword[edi],vtable.CFileDialog::XFileDialogEvents.0
+push ebx
+cmp dword[esi+0xb4],ebx
+je 0x1001db33
+push 0x1017b1d4
+jmp 0x1001db38
+push 0x1017b1e4
+call dword[sym.imp.ole32.dll_CoCreateInstance]
+test eax,eax
+js 0x1001db94
+mov eax,dword[ebp-0x128]
+lea edx,[ebp-0x134]
+push edx
+push 0x1014d474
+push eax
+mov ecx,dword[eax]
+call dword[ecx]
+test eax,eax
+jns 0x1001db62
+call fcn.10009c74
+mov ecx,dword[ebp-0x128]
+lea eax,[esi+0xa8]
+push eax
+push edi
+push ecx
+mov edx,dword[ecx]
+call dword[edx+0x1c]
+test eax,eax
+js 0x1001db5d
+mov eax,dword[ebp-0x128]
+mov dword[esi+0xac],eax
+mov eax,dword[ebp-0x134]
+mov dword[esi+0xb0],eax
+jmp 0x1001db9a
+mov dword[esi+0x9c],ebx
+mov eax,esi
+call fcn.10124106
+ret 0x20
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00528b15@9c2b894b84f59672d8be2e984066f76f
+[similar_2_ref]: /report/fcn.004a4f08@b3771987fba16f4fba07d1109ec72c76
+[similar_3_ref]: /report/fcn.00417e42@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.00555f46@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.00519850@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

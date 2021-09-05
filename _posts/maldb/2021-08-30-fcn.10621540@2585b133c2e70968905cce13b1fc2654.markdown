@@ -1,0 +1,320 @@
+---
+layout: post
+title:  "fcn.10621540 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10621540
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.64088d10][similar_1_ref] (sim.: 0.8960617480873125)
+2. [fcn.103b7d40][similar_2_ref] (sim.: 0.8957277138914035)
+3. [fcn.0040af80][similar_3_ref] (sim.: 0.8928025525701117)
+4. [fcn.64088f50][similar_4_ref] (sim.: 0.8781338770402369)
+5. [fcn.004011af][similar_5_ref] (sim.: 0.8706010226729852)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0xacc
+mov eax,dword[0x10c992e8]
+xor eax,esp
+mov dword[esp+0xac8],eax
+push ebx
+push ebp
+mov ebx,ecx
+xor ebp,ebp
+cmp dword[ebx+8],ebp
+mov dword[esp+8],ebx
+jne 0x1062157c
+pop ebp
+xor eax,eax
+pop ebx
+mov ecx,dword[esp+0xac8]
+xor ecx,esp
+call fcn.1090658a
+add esp,0xacc
+ret
+cmp byte[0x10c8ac03],0
+push esi
+push edi
+je 0x10621713
+push 0xfd
+lea eax,[esp+0x4dd]
+push ebp
+push eax
+mov byte[0x10c8ac03],0
+mov byte[esp+0x4e4],0
+call sub.MSVCR80.dll_memset
+push 0xff
+lea ecx,[esp+0x7e9]
+push ebp
+push ecx
+mov byte[esp+0x7f0],0
+call sub.MSVCR80.dll_memset
+push 0xff
+lea edx,[esp+0x5f5]
+push ebp
+push edx
+mov byte[esp+0x5fc],0
+call sub.MSVCR80.dll_memset
+push 0xff
+lea eax,[esp+0xa01]
+push ebp
+push eax
+mov byte[esp+0xa08],0
+call sub.MSVCR80.dll_memset
+push 0xff
+lea ecx,[esp+0x90d]
+push ebp
+push ecx
+mov byte[esp+0x914],0
+call sub.MSVCR80.dll_memset
+add esp,0x3c
+push 0xff
+lea edx,[esp+0x4dc]
+push edx
+push ebp
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+lea eax,[esp+0x8d8]
+push eax
+lea ecx,[esp+0x9dc]
+push ecx
+lea edx,[esp+0x5e0]
+push edx
+lea eax,[esp+0x7e4]
+push eax
+lea ecx,[esp+0x4e8]
+push ecx
+call dword[sym.imp.MSVCR80.dll__splitpath]
+push 0xff
+lea edx,[esp+0x6f1]
+push ebp
+push edx
+mov byte[esp+0x6f8],0
+call sub.MSVCR80.dll_memset
+lea eax,[esp+0x5f8]
+add esp,0x20
+xor esi,esi
+lea edx,[eax+1]
+mov cl,byte[eax]
+add eax,1
+test cl,cl
+jne 0x10621688
+sub eax,edx
+je 0x106216ad
+mov cl,0x5c
+cmp byte[esp+eax+0x5d8],cl
+jne 0x106216a3
+add esi,1
+cmp esi,2
+je 0x106216ad
+sub eax,1
+jne 0x10621697
+push eax
+lea eax,[esp+0x5dc]
+push eax
+lea ecx,[esp+0x6e0]
+push ecx
+call dword[sym.imp.MSVCR80.dll_strncpy]
+lea eax,[esp+0x6e4]
+add esp,0xc
+add eax,0xffffffff
+mov cl,byte[eax+1]
+add eax,1
+test cl,cl
+jne 0x106216d1
+mov edx,dword[str._rez]
+mov cl,byte[0x10a7e198]
+mov edi,dword[sym.imp.MSVCR80.dll_sprintf]
+mov dword[eax],edx
+lea edx,[esp+0x6d8]
+push edx
+mov byte[eax+4],cl
+lea eax,[esp+0x7dc]
+push eax
+push str._s_s
+push 0x11b7e030
+call edi
+add esp,0x10
+jmp 0x10621719
+mov edi,dword[sym.imp.MSVCR80.dll_sprintf]
+cmp dword[ebx+0x214],ebp
+jbe 0x1062192b
+push 0xff
+lea ecx,[esp+0x4dd]
+push ebp
+push ecx
+mov byte[esp+0x4dc],0
+mov dword[esp+0x4dd],ebp
+mov byte[esp+0x4e4],0
+call sub.MSVCR80.dll_memset
+lea ecx,[ebx+0x200]
+add esp,0xc
+mov dword[esp+0x14],ecx
+call dword[sym.imp.MSVCP80.dll_public:_char_const____thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::c_str_void_const]
+push eax
+push 0x11b7e030
+lea edx,[esp+0x4e0]
+push 0x10a53238
+push edx
+call edi
+lea eax,[esp+0x4e8]
+add esp,0x10
+lea edx,[eax+1]
+mov cl,byte[eax]
+add eax,1
+test cl,cl
+jne 0x10621784
+sub eax,edx
+push 4
+lea esi,[esp+eax+0x4d4]
+push str.0000
+push esi
+call dword[sym.imp.MSVCR80.dll_strncmp]
+add esp,0xc
+test eax,eax
+jne 0x1062181d
+push eax
+lea eax,[esp+0x4d4]
+push str._.4d
+push eax
+call edi
+mov ecx,dword[esp+0x4dc]
+mov ebx,dword[sym.imp.MSVCR80.dll_fopen]
+lea edx,[esp+0x4e4]
+push 0x10bbc4c0
+push edx
+mov dword[esi],ecx
+call ebx
+add esp,0x14
+test eax,eax
+je 0x10621819
+push eax
+call dword[sym.imp.MSVCR80.dll_fclose]
+add ebp,1
+push ebp
+lea eax,[esp+0x4d8]
+push str._.4d
+push eax
+call edi
+mov ecx,dword[esp+0x4e0]
+lea edx,[esp+0x4e8]
+push 0x10bbc4c0
+push edx
+mov dword[esi],ecx
+call ebx
+add esp,0x18
+test eax,eax
+jne 0x106217e0
+mov ebx,dword[esp+0x10]
+mov eax,dword[ebx+0x4c]
+mov ecx,dword[ebx+0x50]
+sub eax,dword[ebx+0x44]
+sub ecx,dword[ebx+0x48]
+xor edi,edi
+cmp ebp,edi
+mov dword[esp+0x1c],eax
+mov dword[esp+0x18],ecx
+jle 0x1062190d
+mov esi,dword[esp+0x14]
+mov ecx,esi
+call dword[sym.imp.MSVCP80.dll_public:_char_const____thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::c_str_void_const]
+lea edx,[esp+0x4d8]
+mov edi,edi
+mov cl,byte[eax]
+mov byte[edx],cl
+add eax,1
+add edx,1
+test cl,cl
+jne 0x10621850
+mov ecx,esi
+call dword[sym.imp.MSVCP80.dll_public:_char_const____thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::c_str_void_const]
+lea edx,[eax+1]
+lea esp,[esp]
+mov cl,byte[eax]
+add eax,1
+test cl,cl
+jne 0x10621870
+sub eax,edx
+push 0x4ac
+mov esi,eax
+lea eax,[esp+0x28]
+push edi
+push eax
+mov dword[esp+0x2c],edi
+call sub.MSVCR80.dll_memset
+add esp,0xc
+cmp ebp,edi
+jle 0x1062192b
+lea ebx,[esp+esi+0x4d0]
+lea esi,[esp+0x20]
+jmp 0x106218b0
+push edi
+lea ecx,[esp+0x4d4]
+push str._.4d
+push ecx
+call dword[sym.imp.MSVCR80.dll_sprintf]
+mov edx,dword[esp+0x4dc]
+mov eax,dword[esp+0x24]
+mov ecx,dword[esp+0x28]
+add esp,0xc
+push 1
+push eax
+mov eax,dword[esp+0x18]
+push ecx
+mov ecx,dword[eax+8]
+mov dword[ebx],edx
+lea edx,[esp+0x4e4]
+push edx
+push esi
+call fcn.105f9db0
+mov ecx,dword[esp+0x10]
+push esi
+add ecx,0x29c
+call fcn.10621460
+add edi,1
+add esi,4
+cmp edi,ebp
+jl 0x106218b0
+jmp 0x1062192b
+push 1
+push ecx
+mov ecx,dword[esp+0x1c]
+push eax
+call dword[sym.imp.MSVCP80.dll_public:_char_const____thiscall_std::basic_string_char__struct_std::char_traits_char___class_std::allocator_char__::c_str_void_const]
+push eax
+lea ecx,[ebx+0x294]
+push ecx
+mov ecx,dword[ebx+8]
+call fcn.105f9db0
+mov ecx,dword[esp+0xad8]
+pop edi
+pop esi
+pop ebp
+pop ebx
+xor ecx,esp
+mov eax,1
+call fcn.1090658a
+add esp,0xacc
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.64088d10@07e4412910bcf0f5969ef64c44eecb2d
+[similar_2_ref]: /report/fcn.103b7d40@2585b133c2e70968905cce13b1fc2654
+[similar_3_ref]: /report/fcn.0040af80@0aa2d73a5300dff2412388945614b507
+[similar_4_ref]: /report/fcn.64088f50@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.004011af@e0cc7cebcb82056439e2ac38557ff8fc
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

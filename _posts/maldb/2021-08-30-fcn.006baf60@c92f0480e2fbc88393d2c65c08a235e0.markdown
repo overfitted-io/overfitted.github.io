@@ -1,0 +1,176 @@
+---
+layout: post
+title:  "fcn.006baf60 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.006baf60
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.00433690][similar_1_ref] (sim.: 0.8845552319565552)
+2. [fcn.00693800][similar_2_ref] (sim.: 0.8837916926983385)
+3. [fcn.00670670][similar_3_ref] (sim.: 0.8795368453276268)
+4. [fcn.0068bda0][similar_4_ref] (sim.: 0.8756426414314655)
+5. [fcn.0066fc20][similar_5_ref] (sim.: 0.8741129826213458)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x5c
+mov eax,dword[esp+0x70]
+mov ebx,dword[esp+0x74]
+cmp eax,1
+je 0x6bb0b0
+jle 0x6bb080
+cmp eax,2
+je 0x6bb024
+cmp eax,3
+jne 0x6bb05e
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+lea edx,[esp+0x48]
+mov dword[esp],eax
+mov dword[esp+0x10],edx
+lea edx,[esp+0x40]
+mov dword[esp+0xc],edx
+lea edx,[esp+0x38]
+mov dword[esp+8],edx
+lea edx,[esp+0x30]
+mov dword[esp+4],edx
+call dword[sym.imp.KERNEL32.dll_GetThreadTimes]
+sub esp,0x14
+test eax,eax
+je 0x6bb05e
+mov esi,dword[esp+0x48]
+add esi,dword[esp+0x40]
+mov edi,dword[esp+0x4c]
+adc edi,dword[esp+0x44]
+mov dword[esp+8],0x989680
+mov dword[esp+0xc],0
+mov dword[esp],esi
+mov dword[esp+4],edi
+call fcn.006ad2e0
+mov dword[ebx],eax
+mov dword[esp+8],0x989680
+mov dword[esp+0xc],0
+mov dword[esp],esi
+mov dword[esp+4],edi
+call fcn.006ad3f0
+imul eax,eax,0x64
+mov dword[ebx+4],eax
+xor eax,eax
+add esp,0x5c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+lea edx,[esp+0x48]
+mov dword[esp],eax
+mov dword[esp+0x10],edx
+lea edx,[esp+0x40]
+mov dword[esp+0xc],edx
+lea edx,[esp+0x38]
+mov dword[esp+8],edx
+lea edx,[esp+0x30]
+mov dword[esp+4],edx
+call dword[sym.imp.KERNEL32.dll_GetProcessTimes]
+sub esp,0x14
+test eax,eax
+jne 0x6bafca
+call dword[sym.imp.msvcrt.dll__errno]
+mov dword[eax],0x16
+add esp,0x5c
+mov eax,0xffffffff
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+test eax,eax
+jne 0x6bb05e
+lea eax,[esp+0x30]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
+sub esp,4
+mov esi,dword[esp+0x30]
+mov edi,dword[esp+0x34]
+add esi,0x2ac18000
+adc edi,0xfe624e21
+jmp 0x6bafda
+lea eax,[esp+0x40]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
+sub esp,4
+test eax,eax
+je 0x6bb05e
+lea eax,[esp+0x48]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
+sub esp,4
+test eax,eax
+je 0x6bb05e
+lea eax,[esp+0x28]
+mov edi,dword[esp+0x44]
+mov esi,dword[esp+0x40]
+mov edx,dword[esp+0x4c]
+mov dword[esp+0x10],eax
+mov eax,dword[esp+0x48]
+mov dword[esp+8],esi
+mov dword[esp+0xc],edi
+mov dword[esp+4],edx
+mov dword[esp],eax
+call fcn.006bd3c0
+mov dword[ebx],eax
+mov ebp,eax
+mov eax,0x3b9aca00
+mul dword[esp+0x28]
+imul ecx,dword[esp+0x2c],0x3b9aca00
+mov dword[esp+8],esi
+mov dword[esp+0xc],edi
+mov dword[esp+0x24],edx
+mov dword[esp+0x20],eax
+mov edx,edi
+mov eax,esi
+add dword[esp+0x24],ecx
+sar edx,1
+shrd eax,edi,1
+add eax,dword[esp+0x20]
+adc edx,dword[esp+0x24]
+mov dword[esp],eax
+mov dword[esp+4],edx
+call fcn.006ad000
+mov edx,eax
+mov dword[ebx+4],eax
+xor eax,eax
+cmp edx,0x3b9ac9ff
+jle 0x6bb01c
+add ebp,1
+sub edx,0x3b9aca00
+mov dword[ebx],ebp
+mov dword[ebx+4],edx
+jmp 0x6bb01c
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00433690@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00693800@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.00670670@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0066fc20@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

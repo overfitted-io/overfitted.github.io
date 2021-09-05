@@ -1,0 +1,254 @@
+---
+layout: post
+title:  "fcn.004036ee @ 858dbd4ce0c289ef03f5cd172ced5d27"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004036ee
+- **Origin (md5):** 858dbd4ce0c289ef03f5cd172ced5d27
+- **VirusTotal:** [virustotal.com/gui/file/858dbd4ce0c289ef03f5cd172ced5d27][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00405ab9][similar_1_ref] (sim.: 0.9641527055217597)
+2. [fcn.00405ab9][similar_2_ref] (sim.: 0.9641527055217597)
+3. [fcn.00405ab9][similar_3_ref] (sim.: 0.9641527055217597)
+4. [fcn.004036af][similar_4_ref] (sim.: 0.9582055270021957)
+5. [fcn.00403526][similar_5_ref] (sim.: 0.9582055270021957)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x10
+push ebx
+push ebp
+push esi
+mov esi,dword[0x46f1b0]
+push edi
+push 6
+call fcn.00406084
+xor edi,edi
+cmp eax,edi
+je 0x40371a
+call eax
+movzx eax,ax
+push eax
+push 0x4d0000
+call fcn.00405c61
+jmp 0x403774
+mov ebx,0x445698
+push edi
+push ebx
+push edi
+push str.Control_PanelDesktopResourceLocale
+push 0x80000001
+mov word[0x4d0000],0x30
+mov word[0x4d0002],0x78
+mov word[0x4d0004],di
+call fcn.00405be7
+cmp word[0x445698],di
+jne 0x403769
+push edi
+push ebx
+push 0x40739c
+push str..DEFAULTControl_PanelInternational
+push 0x80000003
+call fcn.00405be7
+push ebx
+push 0x4d0000
+call sub.KERNEL32.dll_lstrcatW
+call fcn.004039c4
+mov eax,dword[0x46f1b8]
+mov ebp,0x4c4000
+and eax,0x20
+push ebp
+mov dword[0x46f220],eax
+mov dword[0x46f23c],0x10000
+call fcn.0040588a
+test eax,eax
+jne 0x40382f
+mov ecx,dword[esi+0x48]
+cmp ecx,edi
+je 0x40382f
+mov edx,dword[esi+0x4c]
+mov eax,dword[0x46f1d8]
+mov ebx,0x45f140
+push edi
+lea edx,[eax+edx*2]
+push ebx
+lea eax,[eax+ecx*2]
+push edx
+push eax
+push dword[esi+0x44]
+call fcn.00405be7
+mov ax,word[0x45f140]
+cmp ax,di
+je 0x40382f
+cmp ax,0x22
+jne 0x4037ee
+mov ebx,0x45f142
+push 0x22
+push ebx
+call fcn.004057af
+mov word[eax],di
+push ebx
+call sub.KERNEL32.dll_lstrlenW
+lea eax,[ebx+eax*2-8]
+cmp eax,ebx
+jbe 0x403822
+push str..exe
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcmpiW]
+test eax,eax
+jne 0x403822
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
+cmp eax,0xffffffff
+je 0x40381c
+test al,0x10
+jne 0x403822
+push ebx
+call fcn.004057ce
+push ebx
+call fcn.00405782
+push eax
+push ebp
+call fcn.00405d1a
+push ebp
+call fcn.0040588a
+test eax,eax
+jne 0x403845
+push dword[esi+0x118]
+push ebp
+call fcn.00405d3c
+push 0x8040
+push edi
+push edi
+push 1
+push 0x67
+push dword[0x46f1a0]
+call dword[sym.imp.USER32.dll_LoadImageW]
+mov dword[0x467188],eax
+cmp dword[esi+0x50],0xffffffff
+mov ebx,0x467140
+je 0x4038eb
+mov ecx,dword[0x46f1a0]
+mov esi,0x409378
+push ebx
+mov dword[0x467144],0x401000
+mov dword[0x467150],ecx
+mov dword[0x467154],eax
+mov dword[0x467164],esi
+call dword[sym.imp.USER32.dll_RegisterClassW]
+test ax,ax
+je 0x4039ba
+lea eax,[esp+0x10]
+push edi
+push eax
+push edi
+push 0x30
+call dword[sym.imp.USER32.dll_SystemParametersInfoW]
+push edi
+push dword[0x46f1a0]
+mov eax,dword[esp+0x24]
+sub eax,dword[esp+0x1c]
+push edi
+push edi
+push eax
+mov eax,dword[esp+0x2c]
+sub eax,dword[esp+0x24]
+push eax
+push dword[esp+0x2c]
+push dword[esp+0x2c]
+push 0x80000000
+push edi
+push esi
+push 0x80
+call dword[sym.imp.USER32.dll_CreateWindowExW]
+mov dword[0x445678],eax
+push edi
+call fcn.0040140b
+test eax,eax
+je 0x4038fd
+push 2
+pop eax
+jmp 0x4039bc
+call fcn.004039c4
+cmp dword[0x46f240],edi
+jne 0x403991
+push 5
+push dword[0x445678]
+call dword[sym.imp.USER32.dll_ShowWindow]
+mov esi,dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+push str.RichEd20
+call esi
+test eax,eax
+jne 0x403934
+push str.RichEd32
+call esi
+mov esi,dword[sym.imp.USER32.dll_GetClassInfoW]
+mov ebp,str.RichEdit20A
+push ebx
+push ebp
+push edi
+call esi
+test eax,eax
+jne 0x40395e
+push ebx
+push str.RichEdit
+push edi
+call esi
+push ebx
+mov dword[0x467164],ebp
+call dword[sym.imp.USER32.dll_RegisterClassW]
+mov eax,dword[0x467180]
+push edi
+add eax,0x69
+push 0x403a91
+movzx eax,ax
+push edi
+push eax
+push dword[0x46f1a0]
+call dword[sym.imp.USER32.dll_DialogBoxParamW]
+push 5
+mov esi,eax
+call fcn.0040140b
+push 1
+call fcn.0040363e
+mov eax,esi
+jmp 0x4039bc
+push edi
+call fcn.004050a1
+test eax,eax
+je 0x4039b3
+cmp dword[0x46716c],edi
+jne 0x4038f5
+push 2
+call fcn.0040140b
+jmp 0x4038f5
+push 1
+call fcn.0040140b
+xor eax,eax
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp,0x10
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405ab9@6c8b5339bada4cbd03f0f446da640707
+[similar_2_ref]: /report/fcn.00405ab9@e7582fc3dadb394a1457ab7e7fbbe9a7
+[similar_3_ref]: /report/fcn.00405ab9@8f8b2c5d43e03af62d4bc097b3275f12
+[similar_4_ref]: /report/fcn.004036af@024d69b3dfb503973cce5c1700f282aa
+[similar_5_ref]: /report/fcn.00403526@595b48effa204acca09e846b8e091f46
+[virustotal_ref]: https://www.virustotal.com/gui/file/858dbd4ce0c289ef03f5cd172ced5d27

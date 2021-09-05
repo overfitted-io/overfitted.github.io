@@ -1,0 +1,222 @@
+---
+layout: post
+title:  "fcn.10005cd0 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10005cd0
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Similar Functions
+
+1. [fcn.100d739f][similar_1_ref] (sim.: 0.8538208795385657)
+2. [fcn.00408b10][similar_2_ref] (sim.: 0.8331310792049876)
+3. [fcn.0042192a][similar_3_ref] (sim.: 0.832404176322569)
+4. [fcn.00444ab0][similar_4_ref] (sim.: 0.8320593466332219)
+5. [fcn.0048813c][similar_5_ref] (sim.: 0.8304424511292029)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x14
+push ebx
+mov ebx,eax
+cmp dword[ebx+0xb8],0
+push esi
+push edi
+je 0x10005d06
+mov ecx,dword[ebx+0xb8]
+mov eax,dword[ecx]
+mov edx,dword[eax+0xc]
+call edx
+mov ecx,dword[ebx+0xb8]
+test ecx,ecx
+je 0x10005d06
+mov eax,dword[ecx]
+mov edx,dword[eax]
+push 1
+call edx
+mov esi,dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+lea eax,[ebx+8]
+push eax
+call esi
+lea edi,[ebx+8]
+push edi
+call esi
+mov eax,dword[ebx+0x24]
+mov ecx,dword[eax]
+lea esi,[ebx+0x20]
+push edi
+mov dword[esp+0x18],ecx
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov edi,esi
+mov esi,dword[esp+0x14]
+mov dword[esp+0x18],edi
+lea eax,[ebx+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+test edi,edi
+mov edx,dword[ebx+0x24]
+lea eax,[ebx+0x20]
+mov dword[esp+0x14],edx
+je 0x10005d51
+cmp edi,eax
+je 0x10005d57
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+cmp esi,dword[esp+0x14]
+je 0x10005e39
+lea eax,[ebx+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+test edi,edi
+jne 0x10005d75
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+cmp esi,dword[edi+4]
+jne 0x10005d80
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+cmp dword[esi+8],0
+je 0x10005e27
+cmp esi,dword[edi+4]
+jne 0x10005d95
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov edi,dword[esi+8]
+test edi,edi
+je 0x10005dba
+mov eax,dword[edi+8]
+test eax,eax
+je 0x10005db1
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]
+mov dword[edi+8],0
+push edi
+call sub.MSVCR80.dll_void___cdecl_operator_delete_void__
+add esp,4
+mov eax,dword[esp+0x18]
+cmp esi,dword[eax+4]
+mov edi,esi
+jne 0x10005dcb
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov esi,dword[esi]
+lea eax,[ebx+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+cmp dword[esp+0x18],0
+jne 0x10005de4
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov eax,dword[esp+0x18]
+cmp edi,dword[eax+4]
+jne 0x10005df3
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+cmp edi,dword[ebx+0x24]
+je 0x10005e14
+mov ecx,dword[edi+4]
+mov edx,dword[edi]
+mov dword[ecx],edx
+mov eax,dword[edi]
+mov ecx,dword[edi+4]
+push edi
+mov dword[eax+4],ecx
+call sub.MSVCR80.dll_void___cdecl_operator_delete_void__
+add esp,4
+add dword[ebx+0x28],0xffffffff
+lea eax,[ebx+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov edi,dword[esp+0x18]
+jmp 0x10005d35
+cmp esi,dword[edi+4]
+jne 0x10005e32
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov esi,dword[esi]
+jmp 0x10005d35
+mov esi,dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+lea edx,[ebx+8]
+push edx
+call esi
+lea eax,[ebx+8]
+push eax
+call esi
+lea esi,[ebx+0x34]
+mov dword[esp+0x10],4
+mov eax,dword[esi]
+cmp dword[esi-4],eax
+mov dword[esp+0xc],eax
+jbe 0x10005e67
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov edi,dword[esi-4]
+cmp edi,dword[esi]
+jbe 0x10005e74
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+lea eax,[esi-8]
+test eax,eax
+jne 0x10005e81
+call dword[sym.imp.MSVCR80.dll__invalid_parameter_noinfo]
+mov ecx,dword[esp+0xc]
+cmp edi,ecx
+je 0x10005eb9
+mov eax,dword[esi]
+sub eax,ecx
+sar eax,2
+test eax,eax
+lea ecx,[eax*4]
+lea edx,[ecx+edi]
+mov dword[esp+0x18],edx
+jle 0x10005eb3
+mov eax,dword[esp+0xc]
+push ecx
+push eax
+push ecx
+push edi
+call dword[sym.imp.MSVCR80.dll_memmove_s]
+add esp,0x10
+mov ecx,dword[esp+0x18]
+mov dword[esi],ecx
+add esi,0x1c
+sub dword[esp+0x10],1
+jne 0x10005e56
+add ebx,0x9c
+mov edi,4
+mov edi,edi
+mov esi,dword[ebx]
+test esi,esi
+je 0x10005efa
+mov eax,dword[esi+8]
+test eax,eax
+je 0x10005eeb
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]
+mov dword[esi+8],0
+push esi
+call sub.MSVCR80.dll_void___cdecl_operator_delete_void__
+add esp,4
+mov dword[ebx],0
+add ebx,4
+sub edi,1
+jne 0x10005ed0
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.100d739f@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.00408b10@e2ba7f10eb234338a49853c34d7d9c56
+[similar_3_ref]: /report/fcn.0042192a@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.00444ab0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.0048813c@b3771987fba16f4fba07d1109ec72c76
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

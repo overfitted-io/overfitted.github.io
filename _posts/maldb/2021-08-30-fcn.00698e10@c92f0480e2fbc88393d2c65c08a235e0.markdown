@@ -1,0 +1,307 @@
+---
+layout: post
+title:  "fcn.00698e10 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00698e10
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00670420][similar_1_ref] (sim.: 0.9012396955243515)
+2. [fcn.00670670][similar_2_ref] (sim.: 0.8942264572845824)
+3. [fcn.0067b010][similar_3_ref] (sim.: 0.8816695434368417)
+4. [fcn.007d71f0][similar_4_ref] (sim.: 0.8706119130301618)
+5. [fcn.00707970][similar_5_ref] (sim.: 0.8690768469869492)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+mov esi,eax
+sub esp,0x2c
+mov eax,dword[eax+0xdc]
+mov ecx,eax
+and ecx,4
+mov dword[esp+0x14],ecx
+mov ecx,eax
+and ecx,0x8000
+test ah,0x20
+mov dword[esp+0x1c],ecx
+jne 0x6991c0
+mov eax,dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+lea ebx,[esi+0x9c]
+mov dword[esp],ebx
+mov dword[esp+0x18],eax
+call eax
+sub esp,4
+mov eax,dword[esp+0x1c]
+test eax,eax
+je 0x6990d0
+mov edi,dword[esi+0x14]
+test edi,edi
+jne 0x6990b3
+nop
+lea esi,[esi]
+mov ebp,dword[esi+0xc]
+test ebp,ebp
+je 0x6991d3
+mov edi,dword[sym.imp.WS2_32.dll_shutdown]
+mov dword[esp+4],2
+mov eax,dword[ebp+0x98]
+mov dword[esp],eax
+call edi
+sub esp,8
+test byte[esi+0xdc],4
+je 0x698ee0
+cmp dword[esi+0xbc],0xffffffff
+je 0x698ee0
+mov eax,dword[esi+0xc0]
+mov dword[esp+0xc],0
+mov dword[esp+8],1
+mov dword[esp+4],0x7b9d83
+mov dword[esp],eax
+call dword[sym.imp.WS2_32.dll_send]
+sub esp,0x10
+test eax,eax
+jle 0x699185
+nop
+lea esi,[esi]
+mov ebp,dword[ebp+4]
+test ebp,ebp
+jne 0x698e81
+mov edi,dword[esp+0x14]
+test edi,edi
+je 0x6991f5
+mov edi,dword[esi+0xc]
+mov eax,dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+test edi,edi
+mov dword[esp+0x14],eax
+je 0x698f6c
+mov ebp,dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
+jmp 0x698f17
+mov edi,dword[edi+4]
+test edi,edi
+je 0x698f6c
+cmp byte[edi+0x9e],0
+jne 0x698f10
+mov dword[esp],ebx
+call dword[esp+0x14]
+sub esp,4
+mov dword[esp+4],0xffffffff
+mov eax,dword[edi+0x50]
+mov dword[esp],eax
+call ebp
+sub esp,8
+test eax,eax
+jne 0x69924f
+mov eax,dword[edi+0x50]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+sub esp,4
+mov dword[esp],ebx
+call dword[esp+0x18]
+mov byte[edi+0x9e],1
+mov edi,dword[esi+0xc]
+sub esp,4
+test edi,edi
+jne 0x698f17
+mov dword[esp],ebx
+call dword[esp+0x14]
+sub esp,4
+mov ecx,dword[esp+0x1c]
+test ecx,ecx
+jne 0x6991e2
+mov ebx,dword[esi+0xc]
+test ebx,ebx
+je 0x699072
+test byte[esi+0xdc],4
+je 0x698fa3
+cmp byte[ebx+0x9e],0
+je 0x699203
+mov edi,dword[ebx+0x10]
+test byte[edi+0xdc],4
+jne 0x699100
+lea ebp,[edi+0x9c]
+mov dword[esp+4],3
+mov dword[esp],ebx
+call fcn.00693c50
+mov dword[esp],ebp
+call dword[esp+0x18]
+mov eax,dword[ebx+0x10]
+sub esp,4
+mov edx,dword[ebx+8]
+mov eax,dword[eax+0xd4]
+cmp dword[ebx+0x8c],eax
+mov eax,dword[ebx+0xc]
+je 0x699110
+test eax,eax
+je 0x699170
+mov dword[eax+8],edx
+mov eax,dword[ebx+8]
+mov edx,dword[ebx+0xc]
+test eax,eax
+je 0x699160
+mov dword[eax+0xc],edx
+mov eax,dword[ebx+4]
+mov dword[ebx+8],0
+mov dword[ebx+0xc],0
+mov edx,dword[ebx]
+test eax,eax
+je 0x699150
+mov dword[eax],edx
+mov eax,dword[ebx]
+mov edx,dword[ebx+4]
+test eax,eax
+je 0x699140
+mov dword[eax+4],edx
+mov dword[ebx],0
+mov dword[ebx+4],0
+mov eax,dword[edi+0x18]
+mov dword[ebx],eax
+mov edx,dword[edi+0x1c]
+test edx,edx
+je 0x699130
+mov eax,dword[edi+0x18]
+mov dword[eax+4],ebx
+mov dword[edi+0x18],ebx
+mov dword[esp],ebp
+call dword[esp+0x14]
+mov ebx,dword[esi+0xc]
+sub esp,4
+test ebx,ebx
+jne 0x698f8d
+add esp,0x2c
+mov eax,esi
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp fcn.00698c20
+mov dword[esp+4],str.Initiated_daemon_shutdown_while__upgraded__connection_was_not_closed._n
+mov dword[esp],esi
+call fcn.0069df20
+mov eax,dword[edi+0xd0]
+mov byte[eax+4],1
+mov byte[edi+0xdc],1
+mov byte[esi+0xc7],1
+mov edi,dword[edi+4]
+test edi,edi
+je 0x698e70
+mov eax,dword[edi+0xd0]
+test eax,eax
+je 0x699229
+movzx edx,byte[eax+4]
+test dl,dl
+jne 0x699096
+jmp 0x699080
+mov ebp,dword[esi+0x10]
+test ebp,ebp
+jne 0x699275
+mov ebp,dword[esi+0xc]
+test ebp,ebp
+jne 0x698e7b
+mov eax,dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov dword[esp],ebx
+mov dword[esp+0x14],eax
+call eax
+sub esp,4
+jmp 0x698f82
+mov dword[esp],ebx
+call fcn.00693c00
+jmp 0x698f82
+test eax,eax
+je 0x699180
+mov dword[eax+8],edx
+mov eax,dword[ebx+8]
+mov edx,dword[ebx+0xc]
+test eax,eax
+jne 0x699007
+mov dword[edi+0x24],edx
+jmp 0x69900a
+mov dword[edi+0x1c],ebx
+jmp 0x69905a
+mov dword[edi+0xc],edx
+jmp 0x699037
+mov dword[edi+8],edx
+jmp 0x699027
+mov dword[edi+0x2c],edx
+jmp 0x69900a
+mov dword[edi+0x28],edx
+jmp 0x698ff9
+mov dword[edi+0x20],edx
+jmp 0x699117
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x2733
+je 0x698ee0
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9d88
+mov dword[esp+8],0x1846
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+lea esi,[esi]
+mov byte[esi+0xc7],1
+mov eax,esi
+call fcn.00697ca0
+jmp 0x698e3d
+mov eax,dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov dword[esp],ebx
+mov dword[esp+0x14],eax
+call eax
+push eax
+mov byte[esi+0xc7],1
+mov eax,esi
+call fcn.00697ca0
+jmp 0x698f82
+mov eax,dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov dword[esp+0x14],eax
+jmp 0x698f6c
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9ce0
+mov dword[esp+8],0x1872
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9cfc
+mov dword[esp+8],0x181e
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9ce0
+mov dword[esp+8],0x1854
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9cfc
+mov dword[esp+8],0x183d
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+nop
+lea esi,[esi]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00670420@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00670670@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0067b010@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.007d71f0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.00707970@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

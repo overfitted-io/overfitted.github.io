@@ -1,0 +1,195 @@
+---
+layout: post
+title:  "fcn.007070d0 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.007070d0
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00707970][similar_1_ref] (sim.: 0.9306621441006977)
+2. [fcn.007077b0][similar_2_ref] (sim.: 0.9107639579487373)
+3. [fcn.00703b40][similar_3_ref] (sim.: 0.8923795646466371)
+4. [fcn.00674c10][similar_4_ref] (sim.: 0.8886349324069253)
+5. [fcn.007d71f0][similar_5_ref] (sim.: 0.8865734390198078)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push r15
+push r14
+push r13
+push r12
+push rbp
+push rdi
+push rsi
+push rbx
+sub rsp,0xb8
+xor eax,eax
+lea r12,[rsp+0x30]
+mov rsi,rcx
+mov ecx,6
+lea r14,[rsp+0x20]
+movzx r9d,dx
+mov r13d,r8d
+mov rdi,r12
+lea r8,[0x00ac77d0]
+mov edx,8
+rep stosq qword[rdi],rax
+mov dword[rsp+0x30],8
+mov dword[rsp+0x38],1
+mov rcx,r14
+call qword[sym.imp.msvcrt.dll__snprintf]
+cmp byte[rsi],0x5b
+je 0x707240
+lea rbx,[rsp+0x60]
+mov r8d,0x40
+mov rdx,rsi
+mov rcx,rbx
+call sub.msvcrt.dll_strncpy
+mov byte[rsp+0xa0],0
+lea r9,[rsp+0x28]
+mov r8,r12
+mov rdx,r14
+mov rcx,rbx
+call qword[sym.imp.WS2_32.dll_getaddrinfo]
+test eax,eax
+mov edi,eax
+jne 0x707312
+mov rbx,qword[rsp+0x28]
+test rbx,rbx
+je 0x7072d4
+mov r12,qword[sym.imp.WS2_32.dll_socket]
+mov r14,qword[sym.imp.WS2_32.dll_connect]
+mov edx,dword[rbx+8]
+mov ecx,dword[rbx+4]
+mov r8d,dword[rbx+0xc]
+call r12
+test eax,eax
+mov ebp,eax
+js 0x7071ed
+mov rdx,qword[rbx+0x20]
+cmp word[rdx],0x17
+jne 0x7071b0
+test r13d,r13d
+je 0x7071b0
+mov dword[rdx+0x18],r13d
+movsxd rsi,eax
+mov r8d,dword[rbx+0x10]
+mov rcx,rsi
+call r14
+test eax,eax
+mov edi,eax
+js 0x7071e4
+mov rcx,qword[rsp+0x28]
+call qword[sym.imp.WS2_32.dll_freeaddrinfo]
+mov eax,ebp
+add rsp,0xb8
+pop rbx
+pop rsi
+pop rdi
+pop rbp
+pop r12
+pop r13
+pop r14
+pop r15
+ret
+mov rcx,rsi
+call qword[sym.imp.WS2_32.dll_closesocket]
+mov rbx,qword[rbx+0x28]
+test rbx,rbx
+jne 0x70718a
+mov rcx,qword[rsp+0x28]
+call qword[sym.imp.WS2_32.dll_freeaddrinfo]
+test ebp,ebp
+js 0x7072dc
+test edi,edi
+je 0x7071ce
+call qword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ebx,eax
+mov ebp,0xffffffff
+call qword[sym.imp.msvcrt.dll___iob_func]
+lea r8,[0x00ac780f]
+lea rcx,[rax+0x60]
+lea rdx,[0x00ac77f9]
+mov r9d,ebx
+call sub.msvcrt.dll_fprintf
+jmp 0x7071ce
+movzx eax,byte[rsi+1]
+lea rcx,[rsi+1]
+cmp al,0x5d
+je 0x70730e
+test al,al
+je 0x70730e
+mov r15d,1
+mov ebx,1
+lea rbp,[rsp+0x5f]
+lea rdi,[0x00ac77d4]
+jmp 0x70727f
+cmp al,0x5d
+je 0x7072ad
+add r15,1
+cmp r15,0x41
+je 0x7072c0
+mov rdx,rdi
+mov byte[rbp+r15],al
+mov r8d,3
+call sub.msvcrt.dll_memcmp
+lea edx,[rbx+2]
+test eax,eax
+cmove ebx,edx
+movsxd rdx,r15d
+add ebx,1
+movsxd rcx,ebx
+add rcx,rsi
+movzx eax,byte[rcx]
+test al,al
+jne 0x707271
+mov byte[rsp+rdx+0x60],0
+lea rbx,[rsp+0x60]
+jmp 0x707148
+mov edx,0x40
+lea rbx,[rsp+0x60]
+mov byte[rsp+rdx+0x60],0
+jmp 0x707148
+xor ecx,ecx
+call qword[sym.imp.WS2_32.dll_freeaddrinfo]
+call qword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ebx,eax
+mov ebp,0xffffffff
+call qword[sym.imp.msvcrt.dll___iob_func]
+lea r8,[0x00ac77f2]
+lea rcx,[rax+0x60]
+lea rdx,[0x00ac77f9]
+mov r9d,ebx
+call sub.msvcrt.dll_fprintf
+jmp 0x7071ce
+xor edx,edx
+jmp 0x7072ad
+call qword[sym.imp.msvcrt.dll___iob_func]
+lea rdx,str.getaddrinfo___error_:__d_n
+lea rcx,[rax+0x60]
+mov r8d,edi
+mov ebp,0xffffffff
+call sub.msvcrt.dll_fprintf
+jmp 0x7071ce
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00707970@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.007077b0@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.00703b40@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.00674c10@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.007d71f0@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

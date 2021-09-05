@@ -1,0 +1,284 @@
+---
+layout: post
+title:  "fcn.004029a0 @ e2ba7f10eb234338a49853c34d7d9c56"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004029a0
+- **Origin (md5):** e2ba7f10eb234338a49853c34d7d9c56
+- **VirusTotal:** [virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="CRYPTO">CRYPTO</span>
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10008855][similar_1_ref] (sim.: 0.8817943366848021)
+2. [fcn.004117af][similar_2_ref] (sim.: 0.8817943366848021)
+3. [fcn.0044476a][similar_3_ref] (sim.: 0.8807907257636334)
+4. [fcn.0041f4b0][similar_4_ref] (sim.: 0.8675723270675246)
+5. [fcn.0042cea0][similar_5_ref] (sim.: 0.8603447157515556)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x290
+mov eax,dword[0x55bdf4]
+xor eax,ebp
+mov dword[ebp-8],eax
+mov eax,dword[ebp+8]
+push ebx
+push esi
+push edi
+xor ebx,ebx
+push 0x103
+lea ecx,[ebp-0x23b]
+push ebx
+push ecx
+mov dword[ebp-0x244],eax
+mov byte[ebp-0x23c],bl
+call fcn.004f37e0
+add esp,0xc
+push 0x103
+lea edx,[ebp-0x133]
+push ebx
+push edx
+mov byte[ebp-0x134],bl
+call fcn.004f37e0
+xor eax,eax
+add esp,0xc
+mov dword[ebp-0x27],eax
+mov dword[ebp-0x23],eax
+mov dword[ebp-0x1f],eax
+mov word[ebp-0x1b],ax
+mov byte[ebp-0x19],al
+push 0x104
+lea eax,[ebp-0x23c]
+push eax
+mov byte[ebp-0x28],bl
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
+test eax,eax
+jne 0x402a47
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+push str.GetTempPath_failed__Last_error_is__d_r_n
+call fcn.004f204a
+add esp,8
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.004f166b
+mov esp,ebp
+pop ebp
+ret
+push 0xf0000000
+push 1
+push ebx
+xor eax,eax
+push ebx
+lea ecx,[ebp-0x240]
+push ecx
+mov byte[ebp-0x10],bl
+mov dword[ebp-0xf],eax
+mov word[ebp-0xb],ax
+mov byte[ebp-9],al
+call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextA]
+test eax,eax
+je 0x402a91
+mov eax,dword[ebp-0x240]
+lea edx,[ebp-0x10]
+push edx
+push 7
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptGenRandom]
+mov ecx,dword[ebp-0x240]
+push ebx
+push ecx
+call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
+lea edi,[ebp-0x28]
+xor esi,esi
+jmp 0x402aa0
+movzx edx,byte[ebp+esi-0x10]
+push edx
+push 0x555c40
+push edi
+call fcn.004f1fc6
+inc esi
+add esp,0xc
+add edi,2
+cmp esi,7
+jl 0x402aa0
+xor eax,eax
+nop
+mov cl,byte[ebp+eax-0x23c]
+mov byte[ebp+eax-0x134],cl
+inc eax
+cmp cl,bl
+jne 0x402ac0
+lea ecx,[ebp-0x134]
+call fcn.00402580
+lea edi,[ebp-0x134]
+dec edi
+mov al,byte[edi+1]
+inc edi
+cmp al,bl
+jne 0x402ae5
+mov ax,word[0x555d90]
+mov word[edi],ax
+lea eax,[ebp-0x28]
+mov edx,eax
+jmp 0x402b00
+mov cl,byte[eax]
+inc eax
+cmp cl,bl
+jne 0x402b00
+lea edi,[ebp-0x134]
+sub eax,edx
+dec edi
+mov cl,byte[edi+1]
+inc edi
+cmp cl,bl
+jne 0x402b10
+mov ecx,eax
+shr ecx,2
+mov esi,edx
+rep movsd dword es:[edi],dword ptr[esi]
+mov ecx,eax
+and ecx,3
+lea eax,[ebp-0x134]
+rep movsb byte es:[edi],byte ptr[esi]
+dec eax
+nop
+mov cl,byte[eax+1]
+inc eax
+cmp cl,bl
+jne 0x402b30
+mov ecx,dword[str..exe]
+mov dl,byte[0x555dc0]
+mov dword[eax],ecx
+mov byte[eax+4],dl
+lea eax,[ebp-0x134]
+push eax
+call fcn.004023e0
+add esp,4
+test eax,eax
+jne 0x402b7a
+push str.release_exe_failed._r_n
+call fcn.004f204a
+add esp,4
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.004f166b
+mov esp,ebp
+pop ebp
+ret
+lea edi,[ebp-0x134]
+dec edi
+mov al,byte[edi+1]
+inc edi
+cmp al,bl
+jne 0x402b81
+mov cx,word[0x555ddc]
+mov eax,dword[ebp-0x244]
+mov word[edi],cx
+mov ecx,eax
+jmp 0x402ba0
+mov dl,byte[eax]
+inc eax
+cmp dl,bl
+jne 0x402ba0
+lea edi,[ebp-0x134]
+sub eax,ecx
+mov esi,ecx
+dec edi
+mov cl,byte[edi+1]
+inc edi
+cmp cl,bl
+jne 0x402bb2
+mov ecx,eax
+shr ecx,2
+rep movsd dword es:[edi],dword ptr[esi]
+push 0x44
+mov ecx,eax
+lea edx,[ebp-0x28c]
+and ecx,3
+push ebx
+push edx
+rep movsb byte es:[edi],byte ptr[esi]
+call fcn.004f37e0
+add esp,0xc
+xor eax,eax
+mov dword[ebp-0x18],eax
+mov dword[ebp-0x14],eax
+mov dword[ebp-0x10],eax
+mov dword[ebp-0xc],eax
+lea eax,[ebp-0x18]
+push eax
+lea ecx,[ebp-0x28c]
+push ecx
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+push ebx
+lea edx,[ebp-0x134]
+push edx
+push ebx
+mov dword[ebp-0x28c],0x44
+call dword[sym.imp.KERNEL32.dll_CreateProcessA]
+test eax,eax
+jne 0x402c3a
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+push str.CreateProcess_failed___d__n
+call fcn.004f204a
+add esp,8
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-8]
+xor ecx,ebp
+call fcn.004f166b
+mov esp,ebp
+pop ebp
+ret
+mov eax,dword[ebp-0x18]
+mov esi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+push eax
+call esi
+mov ecx,dword[ebp-0x14]
+push ecx
+call esi
+mov ecx,dword[ebp-8]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.004f166b
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10008855@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.004117af@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.0044476a@b3771987fba16f4fba07d1109ec72c76
+[similar_4_ref]: /report/fcn.0041f4b0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.0042cea0@e2ba7f10eb234338a49853c34d7d9c56
+[virustotal_ref]: https://www.virustotal.com/gui/file/e2ba7f10eb234338a49853c34d7d9c56

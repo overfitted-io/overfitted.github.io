@@ -1,0 +1,276 @@
+---
+layout: post
+title:  "fcn.004b421e @ b3771987fba16f4fba07d1109ec72c76"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004b421e
+- **Origin (md5):** b3771987fba16f4fba07d1109ec72c76
+- **VirusTotal:** [virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [method.DuiLib꞉꞉CActiveXUI.virtual\_312][similar_1_ref] (sim.: 0.9568985750477007)
+2. [method.DuiLib꞉꞉CActiveXUI.virtual\_312][similar_2_ref] (sim.: 0.9568985750477007)
+3. [method.DuiLib꞉꞉CActiveXUI.virtual\_372][similar_3_ref] (sim.: 0.9532433376519385)
+4. [fcn.005077f0][similar_4_ref] (sim.: 0.8989471994476798)
+5. [fcn.1007bb10][similar_5_ref] (sim.: 0.8942104063400329)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x24
+mov eax,0x4d131f
+call fcn.0044a5d1
+mov esi,ecx
+mov eax,dword[esi]
+call dword[eax+0x238]
+mov eax,dword[esi+0x1dc]
+xor ebx,ebx
+mov byte[esi+0x1e0],1
+mov dword[ebp-0x18],ebx
+cmp dword[eax-0xc],ebx
+je 0x4b42a2
+push eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+cmp eax,ebx
+je 0x4b42a2
+push str.DllGetClassObject
+push eax
+mov dword[ebp-0x24],ebx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+lea ecx,[ebp-0x24]
+push ecx
+push 0x4e87e0
+lea ecx,[esi+0x1cc]
+push ecx
+call eax
+mov dword[ebp-0x14],eax
+cmp eax,ebx
+jl 0x4b4294
+mov eax,dword[ebp-0x24]
+mov ecx,dword[eax]
+lea edx,[ebp-0x18]
+push edx
+push 0x4e8860
+push ebx
+push eax
+call dword[ecx+0xc]
+mov dword[ebp-0x14],eax
+mov eax,dword[ebp-0x24]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+cmp dword[ebp-0x14],ebx
+jge 0x4b42c9
+lea eax,[ebp-0x18]
+push eax
+push 0x4ed060
+push 0x17
+push ebx
+lea eax,[esi+0x1cc]
+push eax
+call dword[sym.imp.ole32.dll_CoCreateInstance]
+mov dword[ebp-0x14],eax
+cmp eax,ebx
+jge 0x4b42c9
+xor al,al
+jmp 0x4b449b
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+lea edi,[esi+0x1e4]
+push edi
+push 0x4e8860
+push eax
+call dword[ecx]
+mov eax,dword[ebp-0x18]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+cmp dword[edi],ebx
+je 0x4b42c2
+push 0x44
+call fcn.0044ae4c
+pop ecx
+cmp eax,ebx
+je 0x4b42ff
+mov ecx,eax
+call fcn.004b3e75
+jmp 0x4b4301
+xor eax,eax
+mov dword[esi+0x1e8],eax
+lea edx,[ebp-0x1c]
+mov dword[eax+0x28],esi
+mov eax,dword[edi]
+push edx
+push 1
+mov dword[ebp-0x1c],ebx
+mov ecx,dword[eax]
+push eax
+call dword[ecx+0x58]
+mov eax,dword[esi+0x1e8]
+lea edx,[ebp-0x20]
+push edx
+push 0x4e8850
+mov dword[ebp-0x20],ebx
+mov ecx,dword[eax]
+push eax
+call dword[ecx]
+mov ecx,dword[ebp-0x20]
+mov dword[ebp-0x30],ecx
+test dword[ebp-0x1c],0x20000
+mov dword[ebp-4],ebx
+je 0x4b434d
+mov eax,dword[edi]
+mov edx,dword[eax]
+push ecx
+push eax
+call dword[edx+0xc]
+mov eax,dword[edi]
+lea edx,[ebp-0x28]
+push edx
+push 0x4ed0e0
+mov dword[ebp-0x28],ebx
+mov ecx,dword[eax]
+push eax
+call dword[ecx]
+mov eax,dword[ebp-0x28]
+cmp eax,ebx
+je 0x4b4379
+mov ecx,dword[eax]
+push eax
+call dword[ecx+0x20]
+mov dword[ebp-0x14],eax
+mov eax,dword[ebp-0x28]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+cmp dword[ebp-0x14],ebx
+jge 0x4b4398
+mov eax,dword[ebp-0x30]
+or dword[ebp-4],0xffffffff
+cmp eax,ebx
+je 0x4b42c2
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+jmp 0x4b42c2
+test dword[ebp-0x1c],0x20000
+jne 0x4b43ac
+mov eax,dword[edi]
+push dword[ebp-0x20]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+0xc]
+mov edx,dword[esi+0x1e8]
+mov eax,dword[edi]
+mov ecx,dword[eax]
+add edx,0x34
+push edx
+push 0x4ed1a0
+push eax
+call dword[ecx]
+mov dword[ebp-0x14],eax
+cmp eax,ebx
+jge 0x4b43ff
+mov edx,dword[esi+0x1e8]
+mov eax,dword[edi]
+mov ecx,dword[eax]
+add edx,0x34
+push edx
+push 0x4e8910
+push eax
+call dword[ecx]
+mov dword[ebp-0x14],eax
+cmp eax,ebx
+jge 0x4b43ff
+mov edx,dword[esi+0x1e8]
+mov eax,dword[edi]
+mov ecx,dword[eax]
+add edx,0x34
+push edx
+push 0x4e8900
+push eax
+call dword[ecx]
+mov dword[ebp-0x14],eax
+mov eax,dword[edi]
+mov ecx,dword[eax]
+push ebx
+push 0x4e7084
+push eax
+call dword[ecx+0x14]
+mov ecx,dword[esi+0x44]
+cmp ecx,ebx
+je 0x4b4422
+push ebx
+push ebx
+push ebx
+push str.showactivex
+push esi
+call fcn.0047cb6a
+test dword[ebp-0x1c],0x400
+jne 0x4b4451
+mov eax,dword[edi]
+mov eax,dword[eax]
+mov ecx,dword[esi+0x44]
+mov dword[ebp-0x14],eax
+lea eax,[esi+0x58]
+push eax
+call fcn.0047a3a5
+push eax
+mov eax,dword[ebp-0x14]
+push ebx
+push dword[ebp-0x20]
+push ebx
+push 0xfffffffffffffffb
+push dword[edi]
+call dword[eax+0x2c]
+mov dword[ebp-0x14],eax
+mov edi,dword[edi]
+lea ecx,[ebp-0x2c]
+push ecx
+push 0x4ed200
+mov dword[ebp-0x2c],ebx
+mov eax,dword[edi]
+push edi
+call dword[eax]
+mov eax,dword[ebp-0x2c]
+cmp eax,ebx
+je 0x4b4480
+push dword[esi+0x1e8]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+0xc]
+mov eax,dword[ebp-0x2c]
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+cmp dword[ebp-0x14],ebx
+mov eax,dword[ebp-0x30]
+setge byte[ebp-0xd]
+or dword[ebp-4],0xffffffff
+cmp eax,ebx
+je 0x4b4498
+mov ecx,dword[eax]
+push eax
+call dword[ecx+8]
+mov al,byte[ebp-0xd]
+call fcn.0044a6a9
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.DuiLib꞉꞉CActiveXUI.virtual_312@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/method.DuiLib꞉꞉CActiveXUI.virtual_312@289859175c221b107317af7727d26c17
+[similar_3_ref]: /report/method.DuiLib꞉꞉CActiveXUI.virtual_372@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.005077f0@e2ba7f10eb234338a49853c34d7d9c56
+[similar_5_ref]: /report/fcn.1007bb10@2585b133c2e70968905cce13b1fc2654
+[virustotal_ref]: https://www.virustotal.com/gui/file/b3771987fba16f4fba07d1109ec72c76

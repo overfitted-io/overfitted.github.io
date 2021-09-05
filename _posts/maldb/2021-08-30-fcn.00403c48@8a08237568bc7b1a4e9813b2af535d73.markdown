@@ -1,0 +1,218 @@
+---
+layout: post
+title:  "fcn.00403c48 @ 8a08237568bc7b1a4e9813b2af535d73"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403c48
+- **Origin (md5):** 8a08237568bc7b1a4e9813b2af535d73
+- **VirusTotal:** [virustotal.com/gui/file/8a08237568bc7b1a4e9813b2af535d73][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040dce1][similar_1_ref] (sim.: 0.8572952639601172)
+2. [fcn.00408e79][similar_2_ref] (sim.: 0.8572952639601172)
+3. [fcn.0040c8d2][similar_3_ref] (sim.: 0.8572952639601172)
+4. [fcn.0040c021][similar_4_ref] (sim.: 0.8572952639601172)
+5. [fcn.0040d4a7][similar_5_ref] (sim.: 0.8572952639601172)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push ecx
+push ecx
+push ebx
+push esi
+mov esi,dword[0x4f2bc0]
+push edi
+mov edx,dword[esi+0x10]
+cmp edx,0xffffffff
+je 0x403d01
+mov edi,dword[esi+8]
+lea ecx,[esi+0x2018]
+mov eax,edi
+sub eax,esi
+sub eax,0x18
+sar eax,3
+shl eax,0xc
+add eax,edx
+cmp edi,ecx
+mov dword[ebp-4],eax
+jae 0x403cbb
+mov ecx,dword[edi]
+mov ebx,dword[ebp+8]
+cmp ecx,ebx
+jl 0x403ca4
+cmp dword[edi+4],ebx
+jbe 0x403ca4
+push ebx
+push ecx
+push eax
+call fcn.00403e50
+add esp,0xc
+test eax,eax
+jne 0x403d13
+mov eax,dword[ebp-4]
+mov dword[edi+4],ebx
+add edi,8
+lea ecx,[esi+0x2018]
+add eax,0x1000
+cmp edi,ecx
+mov dword[ebp-4],eax
+jb 0x403c81
+jmp 0x403cbe
+mov ebx,dword[ebp+8]
+mov eax,dword[esi+8]
+mov ecx,dword[esi+0x10]
+lea edi,[esi+0x18]
+mov dword[ebp-8],eax
+cmp edi,eax
+mov dword[ebp-4],ecx
+jae 0x403d04
+mov eax,dword[edi]
+cmp eax,ebx
+jl 0x403cf0
+cmp dword[edi+4],ebx
+jbe 0x403cf0
+push ebx
+push eax
+push dword[ebp-4]
+call fcn.00403e50
+add esp,0xc
+test eax,eax
+jne 0x403d13
+mov dword[edi+4],ebx
+add dword[ebp-4],0x1000
+add edi,8
+cmp edi,dword[ebp-8]
+jb 0x403cd1
+jmp 0x403d04
+mov ebx,dword[ebp+8]
+mov esi,dword[esi]
+cmp esi,dword[0x4f2bc0]
+je 0x403d23
+jmp 0x403c56
+mov dword[0x4f2bc0],esi
+sub dword[edi],ebx
+mov dword[esi+8],edi
+jmp 0x403e4b
+mov eax,0x4f0ba0
+mov edi,eax
+cmp dword[edi+0x10],0xffffffff
+je 0x403d36
+cmp dword[edi+0xc],0
+jne 0x403d42
+mov edi,dword[edi]
+cmp edi,eax
+je 0x403e17
+jmp 0x403d2a
+mov ebx,dword[edi+0xc]
+and dword[ebp-4],0
+mov esi,ebx
+mov eax,ebx
+sub esi,edi
+sub esi,0x18
+sar esi,3
+shl esi,0xc
+add esi,dword[edi+0x10]
+cmp dword[ebx],0xffffffff
+jne 0x403d71
+cmp dword[ebp-4],0x10
+jge 0x403d71
+add eax,8
+inc dword[ebp-4]
+cmp dword[eax],0xffffffff
+je 0x403d60
+mov eax,dword[ebp-4]
+push 4
+shl eax,0xc
+push 0x1000
+push eax
+push esi
+mov dword[ebp-8],eax
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+cmp eax,esi
+jne 0x403e49
+push 0
+push dword[ebp-8]
+push esi
+call fcn.004044c0
+mov edx,dword[ebp-4]
+add esp,0xc
+test edx,edx
+mov ecx,ebx
+jle 0x403dd8
+lea eax,[esi+4]
+mov dword[ebp-4],edx
+or byte[eax+0xf4],0xff
+lea edx,[eax+4]
+mov dword[eax-4],edx
+mov edx,0xf0
+mov dword[eax],edx
+mov dword[ecx],edx
+mov dword[ecx+4],0xf1
+add eax,0x1000
+add ecx,8
+dec dword[ebp-4]
+jne 0x403dae
+mov dword[0x4f2bc0],edi
+lea eax,[edi+0x2018]
+cmp ecx,eax
+jae 0x403df4
+cmp dword[ecx],0xffffffff
+je 0x403df2
+add ecx,8
+jmp 0x403de4
+cmp ecx,eax
+sbb eax,eax
+and eax,ecx
+mov dword[edi+0xc],eax
+mov eax,dword[ebp+8]
+mov byte[esi+8],al
+mov dword[edi+8],ebx
+sub dword[ebx],eax
+sub dword[esi+4],eax
+lea ecx,[esi+eax+8]
+lea eax,[esi+0x100]
+mov dword[esi],ecx
+jmp 0x403e4b
+call fcn.00403950
+test eax,eax
+je 0x403e49
+mov ecx,dword[eax+0x10]
+mov byte[ecx+8],bl
+lea edx,[ecx+ebx+8]
+mov dword[0x4f2bc0],eax
+mov dword[ecx],edx
+mov edx,0xf0
+sub edx,ebx
+mov dword[ecx+4],edx
+movzx edx,bl
+sub dword[eax+0x18],edx
+lea eax,[ecx+0x100]
+jmp 0x403e4b
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040dce1@883dfc165005908f8666e487fe529d8c
+[similar_2_ref]: /report/fcn.00408e79@ed8dcc04880716413628e726708b2463
+[similar_3_ref]: /report/fcn.0040c8d2@8fc4c3f3e7c00776ff0a71b75e93044b
+[similar_4_ref]: /report/fcn.0040c021@4e7335a256154dbc07a5bd862e9622fe
+[similar_5_ref]: /report/fcn.0040d4a7@cdfdff164543984ae016a2e81648bb4a
+[virustotal_ref]: https://www.virustotal.com/gui/file/8a08237568bc7b1a4e9813b2af535d73

@@ -1,0 +1,235 @@
+---
+layout: post
+title:  "fcn.00405b88 @ 983fe9598b69120a048e4bbfe8d8764c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00405b88
+- **Origin (md5):** 983fe9598b69120a048e4bbfe8d8764c
+- **VirusTotal:** [virustotal.com/gui/file/983fe9598b69120a048e4bbfe8d8764c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00405add][similar_1_ref] (sim.: 0.9360486731827029)
+2. [fcn.00405a40][similar_2_ref] (sim.: 0.9339950060540093)
+3. [fcn.00406805][similar_3_ref] (sim.: 0.9298194695118474)
+4. [fcn.00406966][similar_4_ref] (sim.: 0.9298194695118474)
+5. [fcn.00406831][similar_5_ref] (sim.: 0.9298194695118474)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x18
+mov eax,dword[ebp+0xc]
+test eax,eax
+jge 0x405ba6
+mov ecx,dword[0x42367c]
+lea eax,[eax*4+4]
+sub ecx,eax
+mov eax,dword[ecx]
+mov ecx,dword[0x423ed8]
+mov edx,dword[ebp+8]
+add ecx,eax
+mov eax,0x422e40
+push ebx
+sub edx,eax
+push esi
+push edi
+cmp edx,0x800
+mov edi,eax
+jae 0x405da5
+mov edi,dword[ebp+8]
+and dword[ebp+8],0
+jmp 0x405da5
+mov esi,edi
+sub esi,eax
+cmp esi,0x400
+jge 0x405daf
+inc ecx
+cmp dl,0xfc
+mov dword[ebp+0xc],ecx
+jbe 0x405d98
+movsx eax,byte[ecx+1]
+movsx ecx,byte[ecx]
+mov esi,eax
+mov ebx,ecx
+and esi,0x7f
+and ebx,0x7f
+shl esi,7
+or esi,ebx
+mov ebx,ecx
+add dword[ebp+0xc],2
+or bh,0x80
+mov dword[ebp-0x18],ebx
+mov ebx,ecx
+mov ecx,eax
+mov dword[ebp-0x14],ebx
+or ch,0x80
+cmp dl,0xfe
+mov dword[ebp-0x10],ecx
+mov dword[ebp-0xc],eax
+jne 0x405d42
+push 2
+pop esi
+call dword[sym.imp.KERNEL32.dll_GetVersion]
+test eax,eax
+jns 0x405c52
+cmp ax,0x5a04
+je 0x405c52
+cmp dword[ebp-0xc],0x23
+je 0x405c52
+cmp dword[ebp-0xc],0x2e
+je 0x405c52
+and dword[ebp-4],0
+jmp 0x405c59
+mov dword[ebp-4],1
+cmp dword[0x423f24],0
+je 0x405c65
+push 4
+pop esi
+test bl,bl
+jns 0x405ca0
+mov eax,ebx
+and ebx,0x3f
+add ebx,dword[0x423ed8]
+and eax,0x40
+push eax
+push edi
+push ebx
+push str.SoftwareMicrosoftWindowsCurrentVersion
+push 0x80000002
+call fcn.00405a4d
+cmp byte[edi],0
+jne 0x405d29
+push dword[ebp-0xc]
+push edi
+call fcn.00405b88
+jmp 0x405d24
+cmp ebx,0x25
+jne 0x405cb3
+push 0x400
+push edi
+call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
+jmp 0x405d24
+cmp ebx,0x24
+jne 0x405d20
+push 0x400
+push edi
+call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
+xor esi,esi
+jmp 0x405d20
+mov eax,dword[0x423ea4]
+xor ecx,ecx
+dec esi
+cmp eax,ecx
+je 0x405cec
+cmp dword[ebp-4],ecx
+je 0x405cec
+push edi
+push ecx
+push ecx
+push dword[ebp+esi*4-0x18]
+push dword[0x423ea8]
+call eax
+test eax,eax
+je 0x405d24
+lea eax,[ebp-8]
+push eax
+push dword[ebp+esi*4-0x18]
+push dword[0x423ea8]
+call dword[sym.imp.SHELL32.dll_SHGetSpecialFolderLocation]
+test eax,eax
+jne 0x405d1d
+push edi
+push dword[ebp-8]
+call dword[sym.imp.SHELL32.dll_SHGetPathFromIDListA]
+push dword[ebp-8]
+mov ebx,eax
+call dword[sym.imp.ole32.dll_CoTaskMemFree]
+test ebx,ebx
+jne 0x405d24
+and byte[edi],0
+test esi,esi
+jne 0x405cc8
+cmp byte[edi],0
+je 0x405d3a
+cmp dword[ebp-0xc],0x1a
+jne 0x405d3a
+push str.MicrosoftInternet_ExplorerQuick_Launch
+push edi
+call sub.KERNEL32.dll_lstrcatA
+push edi
+call fcn.00405dc8
+jmp 0x405d86
+cmp dl,0xfd
+jne 0x405d75
+cmp esi,0x1d
+jne 0x405d5a
+push dword[0x423ea8]
+push edi
+call fcn.00405ac4
+jmp 0x405d6b
+mov eax,esi
+shl eax,0xa
+add eax,section..ndata
+push eax
+push edi
+call fcn.00405b66
+add esi,0xffffffeb
+cmp esi,7
+jae 0x405d86
+jmp 0x405d3a
+cmp dl,0xff
+jne 0x405d86
+or eax,0xffffffff
+sub eax,esi
+push eax
+push edi
+call fcn.00405b88
+push edi
+call sub.KERNEL32.dll_lstrlenA
+mov ecx,dword[ebp+0xc]
+add edi,eax
+mov eax,0x422e40
+jmp 0x405da5
+jne 0x405da2
+mov dl,byte[ecx]
+mov byte[edi],dl
+inc edi
+inc ecx
+jmp 0x405da5
+mov byte[edi],dl
+inc edi
+mov dl,byte[ecx]
+test dl,dl
+jne 0x405bd5
+and byte[edi],0
+cmp dword[ebp+8],0
+pop edi
+pop esi
+pop ebx
+je 0x405dc4
+push eax
+push dword[ebp+8]
+call fcn.00405b66
+leave
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00405add@ca0b3b300c37cf83aa8195cdd053964b
+[similar_2_ref]: /report/fcn.00405a40@e1c1647e2a46cfd9190abde0e66f29f3
+[similar_3_ref]: /report/fcn.00406805@3e325eb0547b921cde32ac52d0a0f75c
+[similar_4_ref]: /report/fcn.00406966@13efdafd5b4f5d3a5dcb240b696c267c
+[similar_5_ref]: /report/fcn.00406831@5bfd33ece1aeef8bda2c7fc886262ed9
+[virustotal_ref]: https://www.virustotal.com/gui/file/983fe9598b69120a048e4bbfe8d8764c

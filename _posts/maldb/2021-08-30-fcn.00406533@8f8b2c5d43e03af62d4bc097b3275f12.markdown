@@ -1,0 +1,295 @@
+---
+layout: post
+title:  "fcn.00406533 @ 8f8b2c5d43e03af62d4bc097b3275f12"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00406533
+- **Origin (md5):** 8f8b2c5d43e03af62d4bc097b3275f12
+- **VirusTotal:** [virustotal.com/gui/file/8f8b2c5d43e03af62d4bc097b3275f12][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.004063ac][similar_1_ref] (sim.: 0.9770381490969846)
+2. [fcn.004063ac][similar_2_ref] (sim.: 0.9770381490969846)
+3. [fcn.0040650d][similar_3_ref] (sim.: 0.9770381490969846)
+4. [fcn.004063ac][similar_4_ref] (sim.: 0.9770381490969846)
+5. [fcn.004063ac][similar_5_ref] (sim.: 0.9770381490969846)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0xb98
+push ebx
+push esi
+push edi
+push 0xfa0
+push 0x40
+call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
+mov ebx,dword[ebp+8]
+push ebx
+mov dword[ebp-4],eax
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+mov esi,eax
+lea eax,[esi-1]
+cmp eax,0x103
+ja 0x406893
+xor edi,edi
+test esi,esi
+jle 0x406596
+lea eax,[ebp-0x33c]
+sub ebx,eax
+lea eax,[ebx+edi*2]
+movzx eax,word[ebp+eax-0x33c]
+push eax
+call fcn.004061b1
+mov word[ebp+edi*2-0x33c],ax
+inc edi
+cmp edi,esi
+pop ecx
+jl 0x406577
+and word[ebp+esi*2-0x33c],0
+lea eax,[ebp-0x134]
+push eax
+mov dword[ebp-0x134],0x114
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+test eax,eax
+jne 0x4065c4
+mov eax,0x25e
+jmp 0x406898
+cmp dword[ebp-0x124],2
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+je 0x4065ea
+cmp dword[ebp-0x124],1
+je 0x406702
+mov eax,0x25f
+jmp 0x406898
+push str.PSAPI.DLL
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov ebx,eax
+test ebx,ebx
+mov dword[ebp-0x10],ebx
+jne 0x406608
+mov eax,0x25d
+jmp 0x406898
+push str.EnumProcesses
+push ebx
+call esi
+push str.EnumProcessModules
+push ebx
+mov edi,eax
+call esi
+push str.GetModuleBaseNameW
+push ebx
+mov dword[ebp+8],eax
+call esi
+test edi,edi
+mov dword[ebp-8],eax
+je 0x4067cd
+cmp dword[ebp+8],0
+je 0x4067cd
+test eax,eax
+je 0x4067cd
+lea eax,[ebp-0x14]
+push eax
+push 0x3e8
+push dword[ebp-4]
+call edi
+test eax,eax
+jne 0x406670
+mov esi,0x25d
+push ebx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+mov eax,esi
+jmp 0x406898
+mov eax,dword[ebp-0x14]
+shr eax,2
+push 0
+mov dword[ebp-0xc],eax
+pop ebx
+je 0x406702
+push str.Unknown
+lea eax,[ebp-0x770]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcpyW]
+mov eax,dword[ebp-4]
+push dword[eax+ebx*4]
+push 0
+push 0x410
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov edi,eax
+test edi,edi
+je 0x4066d2
+lea eax,[ebp-0x14]
+push eax
+push 4
+lea eax,[ebp-0x1c]
+push eax
+push edi
+call dword[ebp+8]
+test eax,eax
+je 0x4066d2
+push 0x104
+lea eax,[ebp-0x770]
+push eax
+push dword[ebp-0x1c]
+push edi
+call dword[ebp-8]
+push edi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea eax,[ebp-0x770]
+push eax
+call dword[sym.imp.USER32.dll_CharUpperW]
+lea ecx,[ebp-0x33c]
+push ecx
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcmpW]
+test eax,eax
+je 0x4067c2
+inc ebx
+cmp ebx,dword[ebp-0xc]
+jb 0x406682
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_GlobalFree]
+cmp dword[ebp-0x124],1
+jne 0x40685a
+push str.Kernel32.DLL
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov edi,eax
+xor ebx,ebx
+cmp edi,ebx
+mov dword[ebp-0x10],edi
+je 0x4065fe
+push str.CreateToolhelp32Snapshot
+push edi
+call esi
+push str.Process32FirstW
+push edi
+mov dword[ebp+8],eax
+call esi
+push str.Process32NextW
+push edi
+mov dword[ebp-0x18],eax
+call esi
+push str.Module32FirstW
+push edi
+mov dword[ebp-8],eax
+call esi
+push str.Module32NextW
+push edi
+mov dword[ebp-0xc],eax
+call esi
+cmp dword[ebp-8],ebx
+mov dword[ebp-0x20],eax
+je 0x40688d
+cmp dword[ebp-0x18],ebx
+je 0x40688d
+cmp eax,ebx
+je 0x40688d
+cmp dword[ebp-0xc],ebx
+je 0x40688d
+cmp dword[ebp+8],ebx
+je 0x40688d
+push ebx
+push 2
+call dword[ebp+8]
+cmp eax,0xffffffff
+mov dword[ebp-4],eax
+je 0x40688d
+lea ecx,[ebp-0x568]
+push ecx
+mov ebx,0x22c
+push eax
+mov dword[ebp-0x568],ebx
+call dword[ebp-0x18]
+jmp 0x40684d
+mov ebx,dword[ebp-0x10]
+xor esi,esi
+inc esi
+jmp 0x406659
+push ebx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+jmp 0x4065fe
+push dword[ebp-0x560]
+push 8
+call dword[ebp+8]
+mov esi,eax
+cmp esi,0xffffffff
+je 0x406867
+lea eax,[ebp-0xb98]
+push eax
+push esi
+mov dword[ebp-0xb98],0x428
+call dword[ebp-0xc]
+jmp 0x40682f
+lea eax,[ebp-0x33c]
+push eax
+lea eax,[ebp-0xb78]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrcmpW]
+test eax,eax
+je 0x406881
+lea eax,[ebp-0xb98]
+push eax
+push esi
+mov dword[ebp-0xb98],0x428
+call dword[ebp-0x20]
+test eax,eax
+jne 0x406802
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+lea eax,[ebp-0x568]
+push eax
+push dword[ebp-4]
+mov dword[ebp-0x568],ebx
+call dword[ebp-8]
+test eax,eax
+jne 0x4067d9
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+push dword[ebp-0x10]
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+xor eax,eax
+jmp 0x406898
+mov esi,0x25d
+push dword[ebp-4]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+push edi
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+jmp 0x406669
+push esi
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+xor esi,esi
+inc esi
+jmp 0x40686c
+push edi
+jmp 0x4067ce
+mov eax,0x278
+pop edi
+pop esi
+pop ebx
+leave
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004063ac@59b1876779e3211327c1a96e7e2c12c4
+[similar_2_ref]: /report/fcn.004063ac@dddb2d45bcd78e2cc2df460dd599efa4
+[similar_3_ref]: /report/fcn.0040650d@d6ea03fac5cc8539ee4d47aca4467735
+[similar_4_ref]: /report/fcn.004063ac@e7f0482c425f7bc9cd320f60c1cfa28c
+[similar_5_ref]: /report/fcn.004063ac@3e325eb0547b921cde32ac52d0a0f75c
+[virustotal_ref]: https://www.virustotal.com/gui/file/8f8b2c5d43e03af62d4bc097b3275f12

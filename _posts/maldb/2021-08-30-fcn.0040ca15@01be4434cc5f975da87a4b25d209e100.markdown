@@ -1,0 +1,210 @@
+---
+layout: post
+title:  "fcn.0040ca15 @ 01be4434cc5f975da87a4b25d209e100"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040ca15
+- **Origin (md5):** 01be4434cc5f975da87a4b25d209e100
+- **VirusTotal:** [virustotal.com/gui/file/01be4434cc5f975da87a4b25d209e100][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Similar Functions
+
+1. [fcn.00435ccc][similar_1_ref] (sim.: 0.9727005354860492)
+2. [fcn.00450654][similar_2_ref] (sim.: 0.9712698741018058)
+3. [fcn.100ef06c][similar_3_ref] (sim.: 0.9698939158923524)
+4. [fcn.004948e4][similar_4_ref] (sim.: 0.9698939158923524)
+5. [fcn.004948e4][similar_5_ref] (sim.: 0.9698939158923524)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x24
+mov eax,dword[0x510210]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+push ebx
+mov ebx,dword[sym.imp.KERNEL32.dll_EncodePointer]
+push esi
+push edi
+mov dword[ebp-0x1c],eax
+xor esi,esi
+mov eax,dword[ebp+0xc]
+push esi
+mov dword[ebp-0x20],eax
+call ebx
+mov edi,eax
+mov dword[ebp-0x18],edi
+call fcn.0040aae2
+mov dword[ebp-0x14],eax
+cmp dword[0xc15548],esi
+jne 0x40cb08
+push 0x800
+push esi
+push 0x41539c
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov edi,eax
+test edi,edi
+jne 0x40ca95
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x57
+jne 0x40cbe8
+push esi
+push esi
+push 0x41539c
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov edi,eax
+test edi,edi
+je 0x40cbe8
+push 0x4153b4
+push edi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax,eax
+je 0x40cbe8
+push eax
+call ebx
+push 0x4153c0
+push edi
+mov dword[0xc15548],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call ebx
+push 0x4153d0
+push edi
+mov dword[0xc1554c],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call ebx
+push 0x4153e4
+push edi
+mov dword[0xc15550],eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call ebx
+mov dword[0xc15558],eax
+test eax,eax
+je 0x40cb05
+push 0x415400
+push edi
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push eax
+call ebx
+mov dword[0xc15554],eax
+mov edi,dword[ebp-0x18]
+call dword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
+test eax,eax
+je 0x40cb2d
+mov eax,dword[ebp-0x1c]
+test eax,eax
+je 0x40cb20
+push eax
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+cmp dword[ebp-0x14],esi
+je 0x40cb42
+push 4
+pop eax
+jmp 0x40cbea
+cmp dword[ebp-0x14],esi
+je 0x40cb42
+push dword[0xc15548]
+call dword[sym.imp.KERNEL32.dll_DecodePointer]
+push 3
+jmp 0x40cb27
+mov eax,dword[0xc15554]
+mov ebx,dword[sym.imp.KERNEL32.dll_DecodePointer]
+cmp eax,edi
+je 0x40cba0
+cmp dword[0xc15558],edi
+je 0x40cba0
+push eax
+call ebx
+push dword[0xc15558]
+mov dword[ebp-0x14],eax
+call ebx
+mov ecx,dword[ebp-0x14]
+mov dword[ebp-0x18],eax
+test ecx,ecx
+je 0x40cba0
+test eax,eax
+je 0x40cba0
+call ecx
+test eax,eax
+je 0x40cb95
+lea ecx,[ebp-0x24]
+push ecx
+push 0xc
+lea ecx,[ebp-0x10]
+push ecx
+push 1
+push eax
+call dword[ebp-0x18]
+test eax,eax
+je 0x40cb95
+test byte[ebp-8],1
+jne 0x40cba0
+mov edi,dword[ebp+0x10]
+or edi,0x200000
+jmp 0x40cbd0
+mov eax,dword[0xc1554c]
+cmp eax,edi
+je 0x40cbcd
+push eax
+call ebx
+test eax,eax
+je 0x40cbcd
+call eax
+mov esi,eax
+test esi,esi
+je 0x40cbcd
+mov eax,dword[0xc15550]
+cmp eax,edi
+je 0x40cbcd
+push eax
+call ebx
+test eax,eax
+je 0x40cbcd
+push esi
+call eax
+mov esi,eax
+mov edi,dword[ebp+0x10]
+push dword[0xc15548]
+call ebx
+test eax,eax
+je 0x40cbe8
+push edi
+push dword[ebp-0x20]
+push dword[ebp-0x1c]
+push esi
+call eax
+jmp 0x40cbea
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.0040cbfb
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00435ccc@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.00450654@ba5ec83721de3ca10b3c9583f3b2c6a1
+[similar_3_ref]: /report/fcn.100ef06c@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.004948e4@912f1d013a0d6151bc7a7cef6da1b2a0
+[similar_5_ref]: /report/fcn.004948e4@fb9b7d22bc1c143ac66b0575cbdd088d
+[virustotal_ref]: https://www.virustotal.com/gui/file/01be4434cc5f975da87a4b25d209e100

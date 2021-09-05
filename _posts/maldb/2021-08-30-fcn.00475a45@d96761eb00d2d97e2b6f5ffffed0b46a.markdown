@@ -1,0 +1,201 @@
+---
+layout: post
+title:  "fcn.00475a45 @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00475a45
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00480665][similar_1_ref] (sim.: 0.9098485038997309)
+2. [fcn.0047f9a8][similar_2_ref] (sim.: 0.8997090406449778)
+3. [fcn.0047ff9c][similar_3_ref] (sim.: 0.8935889539893002)
+4. [fcn.00441ab0][similar_4_ref] (sim.: 0.8925222017638041)
+5. [fcn.00480ae2][similar_5_ref] (sim.: 0.892399818054801)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x1bc
+push ebx
+mov ebx,dword[ebp+0xc]
+push esi
+mov esi,dword[ebp+8]
+push edi
+mov edi,ecx
+mov dword[esp+0xc],0xfa0
+mov ecx,ebx
+mov esi,dword[esi+8]
+call fcn.00409a20
+and dword[ebx],0
+xor eax,eax
+inc eax
+cmp esi,eax
+mov dword[ebx+0xc],eax
+mov esi,dword[ebp+8]
+jbe 0x475a9c
+mov eax,dword[esi+4]
+mov ecx,dword[eax+4]
+call fcn.00409c9c
+test eax,eax
+jle 0x475a9c
+mov eax,dword[esi+4]
+mov ecx,dword[eax+4]
+call fcn.00409c9c
+mov dword[esp+0xc],eax
+lea eax,[esp+0x38]
+push eax
+push 0x101
+call dword[sym.imp.WSOCK32.dll_WSAStartup]
+test eax,eax
+je 0x475ac5
+mov eax,dword[edi]
+push 0
+push 4
+mov ecx,dword[eax+4]
+add ecx,edi
+call fcn.00456aa3
+jmp 0x475c1e
+lea ecx,[esp+0x28]
+call fcn.00405c18
+mov eax,dword[esi+4]
+mov esi,dword[eax]
+mov ecx,esi
+call fcn.00409997
+lea eax,[esp+0x28]
+push eax
+push dword[esi+8]
+call fcn.00405b75
+push dword[esp+0x28]
+call dword[sym.imp.WSOCK32.dll_inet_addr]
+push dword[esp+0x28]
+mov esi,eax
+call dword[sym.imp.WSOCK32.dll_gethostbyname]
+mov dword[esp+0x24],eax
+test eax,eax
+je 0x475b14
+call dword[sym.imp.IPHLPAPI.DLL_IcmpCreateFile]
+mov dword[esp+0x10],eax
+cmp eax,0xffffffff
+jne 0x475b29
+mov eax,dword[edi]
+push 0
+push 4
+mov ecx,dword[eax+4]
+add ecx,edi
+call fcn.00456aa3
+jmp 0x475c15
+mov eax,dword[str.Ping]
+mov dword[esp+0x14],eax
+mov al,byte[0x4ba974]
+push 0x29
+mov byte[esp+0x1c],al
+call fcn.00420ff6
+pop ecx
+push eax
+lea ecx,[esp+0x20]
+call fcn.0040538e
+lea eax,[esp+0x14]
+push dword[esp+0xc]
+push 0x29
+cmp esi,0xffffffff
+jne 0x475b7d
+mov esi,dword[esp+0x24]
+push esi
+push 0
+push 5
+push eax
+mov eax,dword[esp+0x3c]
+mov eax,dword[eax+0xc]
+mov eax,dword[eax]
+push dword[eax]
+push dword[esp+0x2c]
+call dword[sym.imp.IPHLPAPI.DLL_IcmpSendEcho]
+jmp 0x475b95
+push dword[esp+0x24]
+push 0
+push 5
+push eax
+push esi
+push dword[esp+0x2c]
+call dword[sym.imp.IPHLPAPI.DLL_IcmpSendEcho]
+mov esi,dword[esp+0x1c]
+test eax,eax
+je 0x475bca
+mov eax,dword[esi+4]
+test eax,eax
+je 0x475be2
+cmp eax,0x2af9
+jbe 0x475bdc
+cmp eax,0x2afd
+jbe 0x475bca
+cmp eax,0x2b02
+je 0x475bc2
+cmp eax,0x2b0a
+jne 0x475bdc
+push 0
+push 3
+jmp 0x475bce
+xor eax,eax
+push 0
+inc eax
+push eax
+jmp 0x475bce
+push 0
+push 2
+mov eax,dword[edi]
+mov ecx,dword[eax+4]
+add ecx,edi
+call fcn.00456aa3
+jmp 0x475bfc
+push 0
+push 4
+jmp 0x475bce
+mov esi,dword[esi+8]
+mov ecx,ebx
+call fcn.00409a20
+xor eax,eax
+inc eax
+mov dword[ebx+0xc],eax
+test esi,esi
+jne 0x475bfa
+mov dword[ebx],eax
+jmp 0x475bfc
+mov dword[ebx],esi
+push dword[esp+0x10]
+call dword[sym.imp.IPHLPAPI.DLL_IcmpCloseHandle]
+call dword[sym.imp.WSOCK32.dll_WSACleanup]
+lea ecx,[esp+0x1c]
+call fcn.00405371
+lea ecx,[esp+0x28]
+call fcn.00405a64
+pop edi
+pop esi
+xor eax,eax
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00480665@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_2_ref]: /report/fcn.0047f9a8@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_3_ref]: /report/fcn.0047ff9c@d96761eb00d2d97e2b6f5ffffed0b46a
+[similar_4_ref]: /report/fcn.00441ab0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.00480ae2@d96761eb00d2d97e2b6f5ffffed0b46a
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

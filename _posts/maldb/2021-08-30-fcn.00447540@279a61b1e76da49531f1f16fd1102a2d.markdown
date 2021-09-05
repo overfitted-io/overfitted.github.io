@@ -1,0 +1,204 @@
+---
+layout: post
+title:  "fcn.00447540 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00447540
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042b020][similar_1_ref] (sim.: 0.9306233495748495)
+2. [fcn.10069750][similar_2_ref] (sim.: 0.9267388597255077)
+3. [fcn.00449350][similar_3_ref] (sim.: 0.9215073047898581)
+4. [method.CMainInstallWnd.3.virtual\_16][similar_4_ref] (sim.: 0.9011763929516688)
+5. [fcn.004e7140][similar_5_ref] (sim.: 0.8978342485815478)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x4f1b13
+mov eax,dword fs:[0]
+push eax
+push ecx
+sub esp,0x454
+mov eax,dword[0x53ebd0]
+xor eax,ebp
+mov dword[ebp-0x40],eax
+push ebx
+push esi
+push edi
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-0x10],esp
+mov dword[ebp-0x464],ecx
+call fcn.004316f0
+mov dword[ebp-0x34],eax
+lea ecx,[ebp-0x3c]
+call fcn.00433120
+mov dword[ebp-4],0
+mov eax,dword[ebp-0x464]
+push eax
+lea ecx,[ebp-0x28]
+call fcn.004478d0
+lea ecx,[ebp-0x448]
+call fcn.00433120
+mov byte[ebp-4],1
+push 0x400
+mov ecx,dword[ebp+8]
+push ecx
+call fcn.00447250
+add esp,8
+mov dword[ebp-0x18],eax
+push 2
+push 0
+mov edx,dword[ebp-0x18]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
+mov dword[ebp-0x20],eax
+cmp dword[ebp-0x20],0
+jne 0x4475e8
+call fcn.00446dd0
+mov dword[ebp-0x454],eax
+jmp 0x447762
+mov eax,dword[ebp+0x10]
+push eax
+mov ecx,dword[ebp+0xc]
+push ecx
+mov edx,dword[ebp-0x20]
+push edx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+mov dword[ebp-0x450],eax
+cmp dword[ebp-0x450],0
+jne 0x447619
+call fcn.00446dd0
+mov dword[ebp-0x454],eax
+jmp 0x447762
+mov eax,dword[ebp-0x450]
+push eax
+mov ecx,dword[ebp-0x20]
+push ecx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x458],eax
+cmp dword[ebp-0x458],0
+jne 0x447649
+call fcn.00446dd0
+mov dword[ebp-0x454],eax
+jmp 0x447762
+mov edx,dword[ebp-0x450]
+push edx
+mov eax,dword[ebp-0x20]
+push eax
+call dword[sym.imp.KERNEL32.dll_SizeofResource]
+mov dword[ebp-0x2c],eax
+mov ecx,dword[ebp-0x458]
+mov dword[ebp-0x1c],ecx
+mov edx,dword[ebp-0x2c]
+add edx,1
+cmp edx,dword[ebp-0x2c]
+jae 0x4476a4
+mov dword[ebp-0x45c],0x8007000e
+mov byte[ebp-4],0
+lea ecx,[ebp-0x448]
+call fcn.0044a5c0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp-0x3c]
+call fcn.0044a280
+mov eax,dword[ebp-0x45c]
+jmp 0x4477a2
+mov byte[ebp-4],2
+mov eax,dword[ebp-0x2c]
+add eax,1
+push eax
+lea ecx,[ebp-0x448]
+call fcn.0044a560
+jmp 0x4476c9
+mov dword[ebp-4],1
+lea ecx,[ebp-0x448]
+call fcn.00427a50
+test eax,eax
+jne 0x4476eb
+mov dword[ebp-0x454],0x8007000e
+jmp 0x447762
+mov ecx,dword[ebp-0x2c]
+push ecx
+lea ecx,[ebp-0x448]
+call fcn.00427a50
+push eax
+mov edx,dword[ebp-0x2c]
+push edx
+mov eax,dword[ebp-0x1c]
+push eax
+push 0
+call fcn.004316f0
+push eax
+call dword[sym.imp.KERNEL32.dll_MultiByteToWideChar]
+mov dword[ebp-0x44c],eax
+cmp dword[ebp-0x44c],0
+jne 0x44772d
+call fcn.00446dd0
+mov dword[ebp-0x454],eax
+jmp 0x447762
+lea ecx,[ebp-0x448]
+call fcn.00427a50
+xor ecx,ecx
+mov edx,dword[ebp-0x44c]
+mov word[eax+edx*2],cx
+mov eax,dword[ebp+0x14]
+push eax
+lea ecx,[ebp-0x448]
+call fcn.00427a50
+push eax
+lea ecx,[ebp-0x28]
+call fcn.00447900
+mov dword[ebp-0x454],eax
+cmp dword[ebp-0x20],0
+je 0x447772
+mov ecx,dword[ebp-0x20]
+push ecx
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+mov edx,dword[ebp-0x454]
+mov dword[ebp-0x460],edx
+mov byte[ebp-4],0
+lea ecx,[ebp-0x448]
+call fcn.0044a5c0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp-0x3c]
+call fcn.0044a280
+mov eax,dword[ebp-0x460]
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebx
+mov ecx,dword[ebp-0x40]
+xor ecx,ebp
+call fcn.00490ace
+mov esp,ebp
+pop ebp
+ret 0x10
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042b020@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.10069750@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_3_ref]: /report/fcn.00449350@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/method.CMainInstallWnd.3.virtual_16@c60344b51fa39a329b92557d24ff7670
+[similar_5_ref]: /report/fcn.004e7140@279a61b1e76da49531f1f16fd1102a2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

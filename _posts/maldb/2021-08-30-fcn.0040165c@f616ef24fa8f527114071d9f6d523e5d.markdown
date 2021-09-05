@@ -1,0 +1,168 @@
+---
+layout: post
+title:  "fcn.0040165c @ f616ef24fa8f527114071d9f6d523e5d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040165c
+- **Origin (md5):** f616ef24fa8f527114071d9f6d523e5d
+- **VirusTotal:** [virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.00406ef2][similar_1_ref] (sim.: 0.9067752982281791)
+2. [fcn.00407f46][similar_2_ref] (sim.: 0.9040157310487646)
+3. [fcn.00407b23][similar_3_ref] (sim.: 0.8761807180424548)
+4. [fcn.00403cf2][similar_4_ref] (sim.: 0.8639485227715051)
+5. [fcn.00402072][similar_5_ref] (sim.: 0.8465218453139007)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push edi
+mov edi,eax
+push esi
+push ebx
+sub esp,0x27c
+mov dword[esp],str.msi.dll
+call sub.kernel32.dll_GetModuleHandleA
+mov word[ebp-0x26c],0
+push ecx
+mov esi,eax
+lea eax,[ebp-0x26c]
+mov dword[esp+8],0x104
+mov dword[esp+4],eax
+mov dword[esp],esi
+call sub.kernel32.dll_GetModuleFileNameW
+sub esp,0xc
+test eax,eax
+jne 0x4016e9
+test byte[section..data],2
+je 0x4016e9
+call sub.kernel32.dll_GetLastError
+mov dword[esp+0x14],0x4060e8
+mov dword[esp+0x10],0x48
+mov dword[esp+0xc],0x4065b0
+mov dword[esp+8],0x406010
+mov dword[esp+4],0x405000
+mov dword[esp+0x18],eax
+mov dword[esp],1
+call fcn.00403fae
+lea eax,[ebp-0x14]
+mov dword[esp+8],eax
+lea eax,[ebp-0x64]
+mov dword[esp+4],eax
+lea eax,[ebp-0x26c]
+mov dword[ebp-0x14],0x28
+mov word[ebp-0x64],0
+mov dword[esp+0x10],0
+mov dword[esp+0xc],0
+mov dword[esp],eax
+call sub.msi.dll_MsiGetFileVersionW
+sub esp,0x14
+test eax,eax
+je 0x40176a
+test byte[section..data],2
+je 0x40176a
+mov dword[esp+0x18],eax
+mov dword[esp+0x14],0x406106
+mov dword[esp+0x10],0x4e
+mov dword[esp+0xc],0x4065b0
+mov dword[esp+8],0x406010
+mov dword[esp+4],0x405000
+mov dword[esp],1
+call fcn.00403fae
+lea eax,[ebp-0x10]
+mov dword[esp+0xc],0
+mov dword[esp+8],eax
+mov dword[esp+4],0xa
+mov dword[esp],esi
+call sub.user32.dll_LoadStringW
+sub esp,0x10
+mov ebx,eax
+mov dword[ebp-0x14],eax
+call sub.kernel32.dll_GetProcessHeap
+lea edx,[ebx+ebx+2]
+mov dword[esp+8],edx
+mov dword[esp+4],0
+mov dword[esp],eax
+call sub.kernel32.dll_HeapAlloc
+mov dword[ebp-0x10],eax
+mov eax,dword[ebp-0x14]
+sub esp,0xc
+lea ebx,[eax+eax+0x52]
+call sub.kernel32.dll_GetProcessHeap
+mov dword[esp+8],ebx
+mov dword[esp+4],0
+mov dword[esp],eax
+call sub.kernel32.dll_HeapAlloc
+mov ebx,eax
+sub esp,0xc
+mov eax,dword[ebp-0x10]
+test ebx,ebx
+je 0x401859
+test eax,eax
+je 0x401859
+mov word[eax],0
+mov eax,dword[ebp-0x14]
+mov dword[esp+4],0xa
+mov dword[esp],esi
+inc eax
+mov dword[esp+0xc],eax
+mov eax,dword[ebp-0x10]
+mov dword[esp+8],eax
+call sub.user32.dll_LoadStringW
+lea eax,[ebp-0x64]
+sub esp,0x10
+mov dword[esp+8],eax
+mov eax,dword[ebp-0x10]
+mov dword[esp],ebx
+mov dword[esp+4],eax
+call dword[sym.imp.ntdll.dll_swprintf]
+call sub.kernel32.dll_GetUserDefaultLangID
+mov dword[esp+0x14],0
+mov dword[esp+0xc],0
+mov dword[esp+8],0
+mov dword[esp+4],ebx
+mov dword[esp],0
+movzx eax,ax
+mov dword[esp+0x10],eax
+call sub.msi.dll_MsiMessageBoxW
+sub esp,0x18
+mov esi,dword[ebp-0x10]
+call sub.kernel32.dll_GetProcessHeap
+mov dword[esp+4],0
+mov dword[esp+8],esi
+mov dword[esp],eax
+call sub.kernel32.dll_HeapFree
+sub esp,0xc
+call sub.kernel32.dll_GetProcessHeap
+mov dword[esp+8],ebx
+mov dword[esp+4],0
+mov dword[esp],eax
+call sub.kernel32.dll_HeapFree
+sub esp,0xc
+mov dword[esp],edi
+call sub.kernel32.dll_ExitProcess
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00406ef2@35bedc5498306afe90b32d21d460d74f
+[similar_2_ref]: /report/fcn.00407f46@35bedc5498306afe90b32d21d460d74f
+[similar_3_ref]: /report/fcn.00407b23@35bedc5498306afe90b32d21d460d74f
+[similar_4_ref]: /report/fcn.00403cf2@35bedc5498306afe90b32d21d460d74f
+[similar_5_ref]: /report/fcn.00402072@db0bb0926cbc24a905ae237e61cb9c73
+[virustotal_ref]: https://www.virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d

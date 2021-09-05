@@ -1,0 +1,191 @@
+---
+layout: post
+title:  "fcn.00431630 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00431630
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.0042e670][similar_1_ref] (sim.: 0.9370001090477118)
+2. [fcn.0052e1e0][similar_2_ref] (sim.: 0.911572140082279)
+3. [fcn.0052ed8f][similar_3_ref] (sim.: 0.9100130165949898)
+4. [fcn.0053b3d1][similar_4_ref] (sim.: 0.9095783414589353)
+5. [fcn.00542ed6][similar_5_ref] (sim.: 0.9093111197940325)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x238
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-0x18],eax
+mov dword[ebp-0x238],ecx
+mov dword[ebp-0x230],0x5d6640
+xor eax,eax
+mov word[ebp-0x220],ax
+push 0x206
+push 0
+lea ecx,[ebp-0x21e]
+push ecx
+call fcn.0057a180
+add esp,0xc
+push 0x208
+lea edx,[ebp-0x220]
+push edx
+push 0xffffffffffffffff
+mov eax,dword[ebp-0x230]
+push eax
+push 0
+push 0
+call dword[sym.imp.KERNEL32.dll_MultiByteToWideChar]
+push 0
+push 0x8000000
+push 3
+push 0
+push 3
+push 0xc0000000
+lea ecx,[ebp+0xc]
+call fcn.00453f10
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov dword[ebp-0x224],eax
+cmp dword[ebp-0x224],0xffffffff
+jne 0x4316e7
+push 0
+push 0
+push str.Failed_open_Icon_File_
+push 0
+call dword[sym.imp.USER32.dll_MessageBoxW]
+lea ecx,[ebp+8]
+call fcn.00410950
+lea ecx,[ebp+0xc]
+call fcn.00410950
+jmp 0x431833
+push 0
+mov ecx,dword[ebp-0x224]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+mov dword[ebp-0x10],eax
+mov edx,dword[ebp-0x10]
+push edx
+call fcn.005731f2
+add esp,4
+mov dword[ebp-0xc],eax
+push 0
+lea eax,[ebp-0x234]
+push eax
+mov ecx,dword[ebp-0x10]
+push ecx
+mov edx,dword[ebp-0xc]
+push edx
+mov eax,dword[ebp-0x224]
+push eax
+call dword[sym.imp.KERNEL32.dll_ReadFile]
+mov ecx,dword[ebp-0x224]
+push ecx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov edx,dword[ebp-0xc]
+mov dword[ebp-4],edx
+mov eax,dword[ebp-4]
+movzx ecx,word[eax+4]
+sub ecx,1
+shl ecx,4
+add ecx,0x16
+mov dword[ebp-0x228],ecx
+push 0
+lea ecx,[ebp+8]
+call fcn.00453f10
+push eax
+call dword[sym.imp.KERNEL32.dll_BeginUpdateResourceW]
+mov dword[ebp-0x22c],eax
+mov dword[ebp-0x14],0
+jmp 0x431778
+mov edx,dword[ebp-0x14]
+add edx,1
+mov dword[ebp-0x14],edx
+mov eax,dword[ebp-4]
+movzx ecx,word[eax+4]
+cmp dword[ebp-0x14],ecx
+jge 0x4317d8
+mov edx,dword[ebp-0x14]
+shl edx,4
+mov eax,dword[ebp-4]
+mov ecx,dword[ebp-0xc]
+add ecx,dword[eax+edx+0x12]
+mov dword[ebp-8],ecx
+mov edx,dword[ebp-0x14]
+shl edx,4
+mov eax,dword[ebp-4]
+mov ecx,dword[eax+edx+0xe]
+push ecx
+mov edx,dword[ebp-8]
+push edx
+mov ecx,dword[ebp-0x238]
+call fcn.00431620
+movzx eax,ax
+push eax
+mov ecx,dword[ebp-0x14]
+shl ecx,4
+mov edx,dword[ebp-4]
+movzx eax,word[edx+ecx+0x12]
+push eax
+push 3
+mov ecx,dword[ebp-0x22c]
+push ecx
+call dword[sym.imp.KERNEL32.dll_UpdateResourceW]
+jmp 0x43176f
+mov edx,dword[ebp-0x228]
+push edx
+mov eax,dword[ebp-4]
+push eax
+mov ecx,dword[ebp-0x238]
+call fcn.00431620
+movzx ecx,ax
+push ecx
+lea edx,[ebp-0x220]
+push edx
+push 0xe
+mov eax,dword[ebp-0x22c]
+push eax
+call dword[sym.imp.KERNEL32.dll_UpdateResourceW]
+push 0
+mov ecx,dword[ebp-0x22c]
+push ecx
+call dword[sym.imp.KERNEL32.dll_EndUpdateResourceW]
+mov edx,dword[ebp-0xc]
+push edx
+call fcn.0057250f
+add esp,4
+lea ecx,[ebp+8]
+call fcn.00410950
+lea ecx,[ebp+0xc]
+call fcn.00410950
+mov ecx,dword[ebp-0x18]
+xor ecx,ebp
+call fcn.005713ed
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0042e670@279a61b1e76da49531f1f16fd1102a2d
+[similar_2_ref]: /report/fcn.0052e1e0@7453c96a6fbd42ec690b8deb53eafcba
+[similar_3_ref]: /report/fcn.0052ed8f@7453c96a6fbd42ec690b8deb53eafcba
+[similar_4_ref]: /report/fcn.0053b3d1@7453c96a6fbd42ec690b8deb53eafcba
+[similar_5_ref]: /report/fcn.00542ed6@7453c96a6fbd42ec690b8deb53eafcba
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

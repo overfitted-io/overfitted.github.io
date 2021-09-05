@@ -1,0 +1,207 @@
+---
+layout: post
+title:  "fcn.00418b63 @ ba5ec83721de3ca10b3c9583f3b2c6a1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00418b63
+- **Origin (md5):** ba5ec83721de3ca10b3c9583f3b2c6a1
+- **VirusTotal:** [virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00407e1a][similar_1_ref] (sim.: 0.8898673356925417)
+2. [fcn.004097f6][similar_2_ref] (sim.: 0.8848840296741005)
+3. [fcn.004018e2][similar_3_ref] (sim.: 0.8793623814262022)
+4. [fcn.00415600][similar_4_ref] (sim.: 0.8741886933710206)
+5. [main][similar_5_ref] (sim.: 0.8729493934916172)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x474580
+call fcn.00473d84
+sub esp,0x98
+push ebx
+push esi
+push edi
+lea eax,[ebp-0x40]
+mov edi,ecx
+push eax
+call fcn.00418b0c
+xor ebx,ebx
+lea ecx,[ebp-0x28]
+push str.mupdb
+mov edx,eax
+mov dword[ebp-4],ebx
+call fcn.00419c05
+pop ecx
+xor esi,esi
+mov byte[ebp-4],2
+push ebx
+inc esi
+lea ecx,[ebp-0x40]
+push esi
+call fcn.00408186
+cmp dword[ebp-0x14],0x10
+lea eax,[ebp-0x28]
+push ebx
+cmovae eax,dword[ebp-0x28]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateDirectoryA]
+test eax,eax
+jne 0x418bc4
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+lea eax,[ebp-0x70]
+mov ecx,edi
+push eax
+call fcn.00418b29
+push 0x480b08
+mov edx,eax
+mov byte[ebp-4],3
+lea ecx,[ebp-0x88]
+call fcn.00419c05
+pop ecx
+mov byte[ebp-4],4
+lea ecx,[ebp-0x58]
+push dword[ebp+0xc]
+mov edx,eax
+call fcn.00419c37
+pop ecx
+push ebx
+push esi
+lea ecx,[ebp-0x88]
+call fcn.00408186
+push ebx
+push esi
+lea ecx,[ebp-0x70]
+mov byte[ebp-4],7
+call fcn.00408186
+push 0x480b40
+lea edx,[ebp-0x28]
+lea ecx,[ebp-0xa0]
+call fcn.0041709d
+pop ecx
+lea ecx,[ebp-0x58]
+mov byte[ebp-4],8
+push ecx
+mov edx,eax
+lea ecx,[ebp-0x40]
+call fcn.00419c37
+pop ecx
+push eax
+lea ecx,[ebp-0x28]
+call fcn.00416d27
+push ebx
+push esi
+lea ecx,[ebp-0x40]
+call fcn.00408186
+push ebx
+push esi
+lea ecx,[ebp-0xa0]
+mov byte[ebp-4],7
+call fcn.00408186
+cmp dword[ebp-0x14],0x10
+lea eax,[ebp-0x28]
+cmovae eax,dword[ebp-0x28]
+push eax
+call dword[sym.imp.SHLWAPI.dll_PathFileExistsA]
+test eax,eax
+je 0x418c8a
+cmp dword[ebp-0x14],0x10
+lea ecx,[ebp-0x28]
+cmovae ecx,dword[ebp-0x28]
+push ecx
+push ecx
+call fcn.00418222
+pop ecx
+pop ecx
+jmp 0x418cd5
+push 0x2c
+mov dword[ebp-0x3c],0x48086e
+mov dword[ebp-0x38],0x4835cc
+mov dword[ebp-0x34],0x4835d4
+mov dword[ebp-0x30],0x480b0c
+mov dword[ebp-0x2c],0x4835dc
+call fcn.0043d630
+pop ecx
+mov dword[ebp+0xc],eax
+mov byte[ebp-4],9
+test eax,eax
+je 0x418ccf
+push ecx
+lea ecx,[ebp-0x3c]
+push ecx
+push ecx
+mov ecx,eax
+call fcn.0040ab43
+jmp 0x418cd1
+mov eax,ebx
+mov byte[ebp-4],7
+mov esi,dword[ebp+8]
+mov dword[edi],eax
+cmp dword[esi],0
+je 0x418cfd
+mov eax,esi
+mov eax,dword[eax]
+mov ecx,dword[edi]
+push dword[eax+4]
+mov edx,dword[ecx]
+push str.server
+push dword[eax]
+call dword[edx+0x20]
+inc ebx
+lea eax,[esi+ebx*4]
+cmp dword[eax],0
+jne 0x418ce1
+cmp dword[ebp-0x14],0x10
+lea ecx,[ebp-0x28]
+mov edx,dword[edi]
+cmovae ecx,dword[ebp-0x28]
+call fcn.0041851e
+mov eax,dword[esi]
+xor edi,edi
+jmp 0x418d20
+push eax
+call fcn.0043d605
+inc edi
+pop ecx
+mov eax,dword[esi+edi*4]
+test eax,eax
+jne 0x418d15
+push esi
+call fcn.0041ed0a
+pop ecx
+push 0
+push 1
+lea ecx,[ebp-0x58]
+call fcn.00408186
+push 0
+push 1
+lea ecx,[ebp-0x28]
+call fcn.00408186
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+mov dword fs:[0],ecx
+pop ebx
+mov esp,ebp
+pop ebp
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00407e1a@4bd33f73402d0d03c0318f793884eb34
+[similar_2_ref]: /report/fcn.004097f6@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_3_ref]: /report/fcn.004018e2@69b3c79878674ea715338a112bb5caa6
+[similar_4_ref]: /report/fcn.00415600@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/main@f5b8476c36459986b226c45654aeb016
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba5ec83721de3ca10b3c9583f3b2c6a1

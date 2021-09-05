@@ -1,0 +1,312 @@
+---
+layout: post
+title:  "entry0 @ e1c1647e2a46cfd9190abde0e66f29f3"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** entry0
+- **Origin (md5):** e1c1647e2a46cfd9190abde0e66f29f3
+- **VirusTotal:** [virustotal.com/gui/file/e1c1647e2a46cfd9190abde0e66f29f3][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [entry0][similar_1_ref] (sim.: 0.9749573699118356)
+2. [entry0][similar_2_ref] (sim.: 0.9749573699118356)
+3. [entry0][similar_3_ref] (sim.: 0.9749573699118356)
+4. [entry0][similar_4_ref] (sim.: 0.9749573699118356)
+5. [entry0][similar_5_ref] (sim.: 0.9749573699118356)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x180
+push ebx
+push ebp
+push esi
+xor ebx,ebx
+push edi
+mov dword[esp+0x18],ebx
+mov dword[esp+0x10],0x4073a8
+xor esi,esi
+mov byte[esp+0x14],0x20
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+push 0x8001
+call dword[sym.imp.KERNEL32.dll_SetErrorMode]
+push ebx
+call dword[sym.imp.ole32.dll_OleInitialize]
+push 8
+mov dword[0x446cb8],eax
+call fcn.004058aa
+push ebx
+push 0x160
+mov dword[0x446bc0],eax
+lea eax,[esp+0x38]
+push eax
+push ebx
+push 0x40743b
+call dword[sym.imp.SHELL32.dll_SHGetFileInfoA]
+push str.NSIS_Error
+push 0x442bc0
+call fcn.004057c7
+call dword[sym.imp.KERNEL32.dll_GetCommandLineA]
+push eax
+mov edi,0x46f000
+push edi
+call fcn.004057c7
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
+cmp byte[0x46f000],0x22
+mov dword[0x446bc8],eax
+mov eax,edi
+jne 0x4033ed
+mov byte[esp+0x14],0x22
+mov eax,0x46f001
+push dword[esp+0x14]
+push eax
+call fcn.0040555c
+push eax
+call dword[sym.imp.USER32.dll_CharNextA]
+mov dword[esp+0x1c],eax
+jmp 0x403467
+cmp cl,0x20
+jne 0x40340f
+inc eax
+cmp byte[eax],0x20
+je 0x403409
+cmp byte[eax],0x22
+mov byte[esp+0x14],0x20
+jne 0x40341f
+inc eax
+mov byte[esp+0x14],0x22
+cmp byte[eax],0x2f
+jne 0x403457
+inc eax
+cmp byte[eax],0x53
+jne 0x403438
+mov cl,byte[eax+1]
+or cl,0x20
+cmp cl,0x20
+jne 0x403438
+or esi,2
+cmp dword[eax],0x4352434e
+jne 0x40344e
+mov cl,byte[eax+4]
+or cl,0x20
+cmp cl,0x20
+jne 0x40344e
+or esi,4
+cmp dword[eax-2],0x3d442f20
+je 0x40346f
+push dword[esp+0x14]
+push eax
+call fcn.0040555c
+cmp byte[eax],0x22
+jne 0x403467
+inc eax
+mov cl,byte[eax]
+cmp cl,bl
+jne 0x403404
+jmp 0x403480
+mov dword[eax-2],ebx
+add eax,2
+push eax
+push 0x471000
+call fcn.004057c7
+mov ebp,0x479000
+push ebp
+push 0x2000
+call dword[sym.imp.KERNEL32.dll_GetTempPathA]
+call fcn.004032d6
+test eax,eax
+jne 0x4034ba
+push 0x1ffb
+push ebp
+call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
+push str.Temp
+push ebp
+call sub.KERNEL32.dll_lstrcatA
+call fcn.004032d6
+test eax,eax
+je 0x403538
+push 0x477000
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+push esi
+call fcn.0040303b
+mov dword[esp+0x10],eax
+cmp eax,ebx
+jne 0x403538
+cmp dword[0x446c24],ebx
+je 0x403528
+push ebx
+push edi
+call fcn.0040555c
+mov esi,eax
+jmp 0x4034ef
+cmp dword[esi],0x3d3f5f20
+je 0x4034f3
+dec esi
+cmp esi,edi
+jae 0x4034e6
+mov dword[esp+0x10],str.Error_launching_installer
+cmp esi,edi
+jb 0x403563
+mov byte[esi],bl
+add esi,4
+push esi
+call fcn.00405968
+test eax,eax
+je 0x403538
+push esi
+push 0x471000
+call fcn.004057c7
+push esi
+push 0x473000
+call fcn.004057c7
+mov dword[esp+0x10],ebx
+or dword[0x446cac],0xffffffff
+call fcn.004051cc
+mov dword[esp+0x18],eax
+call fcn.0040330a
+call dword[sym.imp.ole32.dll_OleUninitialize]
+cmp dword[esp+0x10],ebx
+je 0x403632
+push 0x200010
+push dword[esp+0x14]
+call fcn.004054f6
+push 2
+call dword[sym.imp.KERNEL32.dll_ExitProcess]
+push str.nsu.tmp
+push ebp
+call sub.KERNEL32.dll_lstrcatA
+mov esi,0x475000
+push esi
+push ebp
+call dword[sym.imp.KERNEL32.dll_lstrcmpiA]
+test eax,eax
+je 0x403538
+push ebx
+push ebp
+call dword[sym.imp.KERNEL32.dll_CreateDirectoryA]
+push ebp
+call dword[sym.imp.KERNEL32.dll_SetCurrentDirectoryA]
+cmp byte[0x471000],bl
+jne 0x4035a1
+push esi
+push 0x471000
+call fcn.004057c7
+push dword[esp+0x1c]
+push section..ndata
+call fcn.004057c7
+push 0x41
+pop eax
+push 0x1a
+mov word[0x449000],ax
+pop edi
+mov esi,0x427990
+mov eax,dword[0x446bcc]
+push dword[eax+0x120]
+push esi
+call fcn.00405a40
+push esi
+call dword[sym.imp.KERNEL32.dll_DeleteFileA]
+cmp dword[esp+0x10],ebx
+je 0x40361d
+push 1
+push esi
+push 0x47d000
+call dword[sym.imp.KERNEL32.dll_CopyFileA]
+test eax,eax
+je 0x40361d
+push ebx
+push esi
+call fcn.00405c9a
+mov eax,dword[0x446bcc]
+push dword[eax+0x124]
+push esi
+call fcn.00405a40
+push esi
+call fcn.00405495
+cmp eax,ebx
+je 0x40361d
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[esp+0x10],ebx
+inc byte[0x449000]
+dec edi
+jne 0x4035c0
+push ebx
+push ebp
+call fcn.00405c9a
+jmp 0x403538
+cmp dword[0x446c94],ebx
+je 0x4036b5
+push 3
+call fcn.004058aa
+push 4
+mov ebp,eax
+call fcn.004058aa
+push 5
+mov esi,eax
+call fcn.004058aa
+mov edi,eax
+cmp ebp,ebx
+je 0x4036a1
+cmp esi,ebx
+je 0x4036a1
+cmp edi,ebx
+je 0x4036a1
+lea eax,[esp+0x1c]
+push eax
+push 0x28
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call ebp
+test eax,eax
+je 0x4036a1
+lea eax,[esp+0x24]
+push eax
+push str.SeShutdownPrivilege
+push ebx
+call esi
+push ebx
+push ebx
+push ebx
+lea eax,[esp+0x2c]
+push eax
+push ebx
+push dword[esp+0x30]
+mov dword[esp+0x38],1
+mov dword[esp+0x44],2
+call edi
+push ebx
+push 2
+call dword[sym.imp.USER32.dll_ExitWindowsEx]
+test eax,eax
+jne 0x4036b5
+push 9
+call fcn.0040141a
+mov eax,dword[0x446cac]
+cmp eax,0xffffffff
+je 0x4036c3
+mov dword[esp+0x18],eax
+push dword[esp+0x18]
+jmp 0x40355d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/entry0@50dd9b171f3df06f8ac5a3a1a47f5721
+[similar_2_ref]: /report/entry0@8cfdb0713f3b8f9b0a5ef775f40cf182
+[similar_3_ref]: /report/entry0@024d69b3dfb503973cce5c1700f282aa
+[similar_4_ref]: /report/entry0@3a780067b4fcdbc523bd6f0e3b89f181
+[similar_5_ref]: /report/entry0@88c77a55c813a535f04a021f665ec5b4
+[virustotal_ref]: https://www.virustotal.com/gui/file/e1c1647e2a46cfd9190abde0e66f29f3

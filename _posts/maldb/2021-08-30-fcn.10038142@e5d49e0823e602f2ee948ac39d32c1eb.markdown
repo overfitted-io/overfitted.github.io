@@ -1,0 +1,234 @@
+---
+layout: post
+title:  "fcn.10038142 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10038142
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.10066d7f][similar_1_ref] (sim.: 0.8994442759509014)
+2. [fcn.004610ae][similar_2_ref] (sim.: 0.8988515767992996)
+3. [fcn.10008a84][similar_3_ref] (sim.: 0.8955086924920185)
+4. [fcn.0042cc49][similar_4_ref] (sim.: 0.8955086924920185)
+5. [fcn.00519850][similar_5_ref] (sim.: 0.8881835327937783)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xa38
+mov eax,0x1013d103
+call fcn.10124157
+mov edi,ecx
+mov esi,dword[ebp+8]
+xor eax,eax
+cmp dword[edi+0x28],eax
+jne 0x100383c5
+test esi,esi
+setne al
+test eax,eax
+jne 0x1003816f
+call fcn.10009c74
+lea ebx,[edi+0x8c]
+push ebx
+call fcn.10012978
+push esi
+lea ecx,[ebp-0xa2c]
+call fcn.100065ad
+and dword[ebp-4],0
+lea ecx,[ebp-0xa2c]
+push 0
+push 0x1014b358
+call fcn.10006f7a
+cmp eax,0xffffffff
+jne 0x1003827f
+push 0
+push 0x1015258c
+lea ecx,[ebp-0xa2c]
+call fcn.10006f7a
+cmp eax,0xffffffff
+jne 0x1003827f
+push 0
+push 0x1014b2d4
+lea ecx,[ebp-0xa2c]
+call fcn.10006f7a
+cmp eax,0xffffffff
+jne 0x1003827f
+push 0x104
+lea eax,[ebp-0xa28]
+push eax
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+test eax,eax
+je 0x1003827f
+xor eax,eax
+push eax
+push eax
+push eax
+push eax
+push 0x100
+lea eax,[ebp-0x618]
+push eax
+push 3
+lea eax,[ebp-0x18]
+push eax
+lea eax,[ebp-0xa28]
+push eax
+call fcn.10125ee2
+mov ecx,0x100
+lea eax,[ebp-0x218]
+push ecx
+push eax
+push ecx
+lea eax,[ebp-0x418]
+push eax
+xor eax,eax
+push eax
+push eax
+push eax
+push eax
+push esi
+call fcn.10125ee2
+add esp,0x48
+lea eax,[ebp-0x218]
+push eax
+lea eax,[ebp-0x418]
+push eax
+lea eax,[ebp-0x618]
+push eax
+lea eax,[ebp-0x18]
+push eax
+lea eax,[ebp-0x820]
+push 0x104
+push eax
+call fcn.10125dbf
+add esp,0x18
+lea eax,[ebp-0x820]
+lea ecx,[ebp-0xa2c]
+push eax
+call fcn.1000787c
+cmp dword[ebp+0xc],0
+jbe 0x100382d0
+xor eax,eax
+push eax
+push eax
+push 3
+push eax
+push 1
+push 0x80000000
+push esi
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov dword[ebp-0x18],eax
+cmp eax,0xffffffff
+je 0x100382d0
+push 0
+push eax
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+push dword[ebp-0x18]
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+cmp esi,dword[ebp+0xc]
+jbe 0x100382d0
+mov ecx,dword[ebp-0xa2c]
+lea ecx,[ecx-0x10]
+call fcn.1000775d
+xor eax,eax
+jmp 0x100383c5
+cmp dword[edi+0x34],0
+mov dword[ebp-0x18],0x2010
+je 0x100382e4
+mov dword[ebp-0x18],0x3010
+mov esi,dword[ebp-0xa2c]
+call fcn.1000b62f
+push dword[ebp-0x18]
+xor ecx,ecx
+push ecx
+mov eax,dword[eax+8]
+push ecx
+push ecx
+push esi
+push eax
+call dword[sym.imp.USER32.dll_LoadImageW]
+mov dword[ebx],eax
+test eax,eax
+je 0x100382bb
+lea ecx,[ebp-0xa44]
+push ecx
+push 0x18
+push eax
+call dword[sym.imp.GDI32.dll_GetObjectW]
+test eax,eax
+jne 0x10038329
+push dword[ebx]
+call dword[sym.imp.GDI32.dll_DeleteObject]
+and dword[ebx],0
+jmp 0x100382bb
+xor esi,esi
+lea eax,[ebp-0xa2c]
+inc esi
+lea ecx,[edi+0x98]
+push eax
+mov dword[edi+0x18],esi
+call fcn.1000699f
+push dword[ebp-0xa2c]
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
+test al,1
+je 0x10038354
+mov dword[edi+0x24],esi
+mov ax,word[ebp-0xa32]
+movzx ecx,ax
+mov dword[edi+8],ecx
+push 0x20
+pop esi
+cmp ecx,8
+jle 0x10038380
+cmp ecx,esi
+jge 0x10038380
+push 0xffffffffffffffff
+push 0xffffffffffffffff
+push 0
+push ebx
+call fcn.1003871a
+mov ax,word[ebp-0xa32]
+cmp ax,si
+jb 0x1003838f
+push dword[edi+0x3c]
+push dword[ebx]
+call fcn.10039291
+mov ecx,edi
+call fcn.1003a0aa
+lea esi,[edi+0x90]
+push esi
+call fcn.10012978
+and dword[esi],0
+lea esi,[edi+0x94]
+push esi
+call fcn.10012978
+mov ecx,dword[ebp-0xa2c]
+and dword[esi],0
+add ecx,0xfffffff0
+call fcn.1000775d
+xor eax,eax
+inc eax
+call fcn.10124106
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10066d7f@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.004610ae@9c2b894b84f59672d8be2e984066f76f
+[similar_3_ref]: /report/fcn.10008a84@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_4_ref]: /report/fcn.0042cc49@9c2b894b84f59672d8be2e984066f76f
+[similar_5_ref]: /report/fcn.00519850@c60344b51fa39a329b92557d24ff7670
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

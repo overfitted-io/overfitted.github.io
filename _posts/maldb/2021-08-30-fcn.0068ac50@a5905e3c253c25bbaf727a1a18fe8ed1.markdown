@@ -1,0 +1,306 @@
+---
+layout: post
+title:  "fcn.0068ac50 @ a5905e3c253c25bbaf727a1a18fe8ed1"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0068ac50
+- **Origin (md5):** a5905e3c253c25bbaf727a1a18fe8ed1
+- **VirusTotal:** [virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.005bfd20][similar_1_ref] (sim.: 0.9721368836111677)
+2. [fcn.0062fa00][similar_2_ref] (sim.: 0.9651167890947004)
+3. [fcn.005c9c40][similar_3_ref] (sim.: 0.9627112439008912)
+4. [fcn.005c7c20][similar_4_ref] (sim.: 0.9627065362878695)
+5. [fcn.0061c530][similar_5_ref] (sim.: 0.9599220199452368)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push r15
+push r14
+push r13
+push r12
+push rbp
+push rdi
+push rsi
+push rbx
+sub rsp,0x78
+movaps xmmword[rsp+0x60],xmm6
+mov rsi,rcx
+lea rdi,[rsi+0x7c]
+call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+mov r12d,eax
+xor eax,eax
+lock cmpxchg dword[rdi],eax
+cmp r12d,eax
+je 0x68ad74
+lea rbp,[rsi+0x80]
+mov ebx,dword[rsi+0x80]
+jmp 0x68ac95
+mov ebx,eax
+mov edx,ebx
+mov r8d,ebx
+mov rcx,rbp
+or edx,0x80000000
+call fcn.008eebc0
+cmp ebx,eax
+jne 0x68ac93
+test ebx,ebx
+js 0x68ae30
+xchg dword[rdi],r12d
+xor r9d,r9d
+mov r11,qword[rsi+0x70]
+mov rbx,qword[rsi+0x58]
+mov r10,qword[rsi+0x60]
+mov r8,qword[rsi+0x38]
+pxor xmm6,xmm6
+mov rdx,r11
+sub rdx,qword[rsi+0x50]
+mov rax,rbx
+sub rax,r10
+sar rax,4
+sar rdx,3
+sub rdx,1
+mov rcx,rdx
+shl rcx,5
+lea rdx,[rcx+rax]
+mov rax,qword[rsi+0x48]
+sub rax,r8
+sar rax,4
+add rax,rdx
+cmp rax,1
+jbe 0x68ad51
+cmp rbx,r10
+mov rax,rbx
+je 0x68ae00
+mov rdx,qword[rax-0x10]
+sub rdx,qword[r8]
+mov rax,qword[rax-8]
+mov rcx,qword[r8+8]
+pxor xmm6,xmm6
+je 0x68ad51
+pxor xmm6,xmm6
+sub rax,rcx
+test rdx,rdx
+cvtsi2sd xmm6,rax
+js 0x68ae10
+pxor xmm1,xmm1
+cvtsi2sd xmm1,rdx
+divsd xmm6,xmm1
+mulsd xmm6,qword[0x00ab7c38]
+test r9d,r9d
+mov dword[rsi+0x78],r9d
+je 0x68ad80
+movapd xmm0,xmm6
+movaps xmm6,xmmword[rsp+0x60]
+add rsp,0x78
+pop rbx
+pop rsi
+pop rdi
+pop rbp
+pop r12
+pop r13
+pop r14
+pop r15
+ret
+mov r9d,dword[rsi+0x78]
+jmp 0x68acba
+xchg dword[rdi],r9d
+mov eax,0x80000000
+lea rdi,[rsi+0x80]
+lock xadd dword[rdi],eax
+test eax,0x40000000
+jne 0x68ad5a
+cmp eax,0x80000000
+je 0x68ad5a
+mov ebx,dword[rsi+0x80]
+jmp 0x68adb2
+mov ebx,eax
+mov edx,ebx
+mov r8d,ebx
+mov rcx,rdi
+or edx,0x40000000
+call fcn.008eebc0
+cmp ebx,eax
+jne 0x68adb0
+and ebx,0x40000000
+jne 0x68ad5a
+add rsi,0x88
+xor eax,eax
+lock cmpxchg qword[rsi],rax
+test rax,rax
+mov rbx,rax
+je 0x68aeff
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_SetEvent]
+jmp 0x68ad5a
+mov rax,qword[r11-8]
+add rax,0x200
+jmp 0x68ad12
+mov rax,rdx
+pxor xmm1,xmm1
+shr rax,1
+and edx,1
+or rax,rdx
+cvtsi2sd xmm1,rax
+addsd xmm1,xmm1
+jmp 0x68ad45
+mov edx,dword[rsi+0x80]
+jmp 0x68ae42
+mov edx,eax
+lea eax,[rdx+1]
+mov ebx,edx
+or ebx,0x80000000
+test edx,edx
+cmovs ebx,eax
+mov eax,edx
+lock cmpxchg dword[rbp],ebx
+cmp eax,edx
+jne 0x68ae40
+mov eax,ebx
+shr eax,0x1f
+test al,al
+je 0x68acb4
+shr edx,0x1f
+test dl,dl
+je 0x68acb4
+lea r15,[rsi+0x88]
+xor eax,eax
+lock cmpxchg qword[r15],rax
+test rax,rax
+mov r14,rax
+mov r13,rax
+je 0x68af32
+mov r15,qword[sym.imp.KERNEL32.dll_WaitForSingleObjectEx]
+mov r14d,0xffffffff
+nop
+and ebx,0x7fffffff
+xor r8d,r8d
+mov edx,r14d
+or ebx,0x40000000
+mov rcx,r13
+call r15
+mov edx,ebx
+test edx,edx
+js 0x68aee6
+nop
+lea ecx,[rdx-1]
+mov eax,edx
+and ecx,0x3fffffff
+or ecx,0x80000000
+lock cmpxchg dword[rbp],ecx
+cmp eax,edx
+mov ebx,eax
+je 0x68acb4
+mov edx,ebx
+test edx,edx
+jns 0x68aec0
+mov ecx,edx
+mov eax,edx
+and ecx,0xbfffffff
+lock cmpxchg dword[rbp],ecx
+cmp eax,edx
+mov ebx,eax
+je 0x68aea0
+mov edx,ebx
+jmp 0x68aee2
+xor ecx,ecx
+xor r9d,r9d
+xor r8d,r8d
+xor edx,edx
+call qword[sym.imp.KERNEL32.dll_CreateEventA]
+test rax,rax
+mov rcx,rax
+je 0x68af7b
+mov rax,rbx
+lock cmpxchg qword[rsi],rcx
+test rax,rax
+mov rbx,rax
+je 0x68af73
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+jmp 0x68adef
+xor r9d,r9d
+xor r8d,r8d
+xor edx,edx
+xor ecx,ecx
+call qword[sym.imp.KERNEL32.dll_CreateEventA]
+test rax,rax
+mov r13,rax
+je 0x68afcf
+mov rax,r14
+lock cmpxchg qword[r15],r13
+test rax,rax
+mov r14,rax
+je 0x68ae92
+mov rcx,r13
+mov r13,r14
+call qword[sym.imp.KERNEL32.dll_CloseHandle]
+jmp 0x68ae92
+mov rbx,rcx
+jmp 0x68adef
+lea rbx,[rsp+0x20]
+call fcn.006ea660
+lea rdx,[0x00ab782a]
+mov rcx,rbx
+mov rsi,rax
+call fcn.009de540
+lea rax,[rbx+0x30]
+mov rcx,rbx
+mov dword[rsp+0x30],0xb
+mov qword[rsp+0x38],rsi
+mov qword[rsp+0x48],0
+mov qword[rsp+0x40],rax
+lea rax,[0x00b72480]
+mov byte[rsp+0x50],0
+mov qword[rsp+0x20],rax
+call fcn.00947760
+lea rbx,[rsp+0x20]
+call fcn.006ea660
+lea rdx,[0x00ab782a]
+mov rcx,rbx
+mov rsi,rax
+call fcn.009de540
+lea rax,[rbx+0x30]
+mov rcx,rbx
+mov dword[rsp+0x30],0xb
+mov qword[rsp+0x38],rsi
+mov qword[rsp+0x48],0
+mov qword[rsp+0x40],rax
+lea rax,[0x00b72480]
+mov byte[rsp+0x50],0
+mov qword[rsp+0x20],rax
+call fcn.00947760
+lea rax,[0x00b72450]
+mov rcx,rbx
+mov qword[rsp+0x20],rax
+call fcn.00962490
+call fcn.00a55e20
+mov rsi,rax
+lea rax,[0x00b72450]
+mov rcx,rbx
+mov qword[rsp+0x20],rax
+call fcn.00962490
+mov rcx,rsi
+call fcn.008da260
+nop
+nop dword[rax]
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.005bfd20@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_2_ref]: /report/fcn.0062fa00@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_3_ref]: /report/fcn.005c9c40@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_4_ref]: /report/fcn.005c7c20@a5905e3c253c25bbaf727a1a18fe8ed1
+[similar_5_ref]: /report/fcn.0061c530@a5905e3c253c25bbaf727a1a18fe8ed1
+[virustotal_ref]: https://www.virustotal.com/gui/file/a5905e3c253c25bbaf727a1a18fe8ed1

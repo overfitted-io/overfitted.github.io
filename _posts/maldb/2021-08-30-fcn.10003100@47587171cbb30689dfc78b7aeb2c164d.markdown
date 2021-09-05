@@ -1,0 +1,175 @@
+---
+layout: post
+title:  "fcn.10003100 @ 47587171cbb30689dfc78b7aeb2c164d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10003100
+- **Origin (md5):** 47587171cbb30689dfc78b7aeb2c164d
+- **VirusTotal:** [virustotal.com/gui/file/47587171cbb30689dfc78b7aeb2c164d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0041f970][similar_1_ref] (sim.: 0.8720845966789551)
+2. [fcn.0041b500][similar_2_ref] (sim.: 0.8687492350661348)
+3. [fcn.0041fac0][similar_3_ref] (sim.: 0.86408558190085)
+4. [fcn.1007bb10][similar_4_ref] (sim.: 0.8622609063504549)
+5. [fcn.004066b0][similar_5_ref] (sim.: 0.8604791186962233)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x10005cbf
+mov eax,dword fs:[0]
+push eax
+mov dword fs:[0],esp
+sub esp,0x10
+push ebx
+push ebp
+push esi
+mov al,byte[esp+0xf]
+mov dl,byte[esp+0xf]
+mov esi,ecx
+xor ebx,ebx
+push edi
+lea ebp,[esi+4]
+mov dword[esi],0x100061b0
+mov dword[esp+0x18],esi
+mov dword[esp+0x1c],ebp
+lea ecx,[ebp+4]
+mov byte[ecx],al
+mov byte[ecx+1],dl
+mov byte[ecx+8],bl
+call fcn.10005240
+mov al,byte[esp+0x13]
+lea edi,[ebp+0x14]
+push ebx
+push ebx
+mov ecx,edi
+mov dword[esp+0x30],ebx
+mov byte[edi],al
+call fcn.100044b0
+mov dword[edi+4],eax
+mov dword[edi+8],ebx
+mov eax,1
+mov dword[ebp],0x100061ac
+mov dword[esi],0x1000617c
+mov dword[esi+4],0x10006178
+mov dword[esi+0x28],ebx
+mov dword[esi+0x24],eax
+mov dword[esi+0x2c],eax
+mov dword[esi+0x30],ebx
+mov dword[esp+0x28],eax
+mov eax,dword[0x10007020]
+cmp eax,0xffffffff
+lea edi,[esi+0x38]
+jne 0x100031a6
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov dword[0x10007020],eax
+lea ebp,[edi+4]
+push str.TenFact.dll
+mov dword[edi],ebx
+mov dword[edi+0xc],ebx
+mov dword[ebp],ebx
+mov dword[edi+8],0xffffffff
+mov word[edi+0x14],bx
+mov word[edi+0x34],bx
+mov dword[edi+0x10],0x2800000
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+cmp eax,ebx
+je 0x10003219
+push 0x169
+push eax
+mov ecx,edi
+call fcn.100053e0
+cmp eax,ebx
+je 0x10003219
+mov edx,dword[eax]
+lea ecx,[esp+0x14]
+push ecx
+push ebp
+push edi
+push 3
+push 0x10008e20
+mov ecx,eax
+mov dword[esp+0x28],ebx
+call dword[edx+0x24]
+mov eax,dword[esp+0x14]
+cmp eax,ebx
+je 0x10003219
+mov edx,dword[eax]
+mov dword[edi+0xc],edx
+mov ecx,dword[eax+4]
+mov dword[edi+8],ecx
+mov edx,dword[eax+8]
+mov dword[edi+0x10],edx
+mov cl,byte[esp+0x13]
+mov al,byte[esp+0x13]
+lea edi,[esi+0x8c]
+mov byte[edi+1],cl
+lea ecx,[esp+0x14]
+mov byte[edi],al
+mov byte[edi+8],bl
+call dword[sym.imp.MSVCP60.dll_public:_void___thiscall_std::_Lockit::constructor_void_]
+mov eax,dword[0x10008e1c]
+mov byte[esp+0x28],2
+cmp eax,ebx
+jne 0x1000326b
+push 0x20
+call sub.MSVCRT.dll_void____cdecl_operator_new_unsigned_int_
+mov dword[eax+4],ebx
+mov dword[eax+0x1c],1
+mov dword[0x10008e1c],eax
+mov dword[eax],ebx
+mov edx,dword[0x10008e1c]
+add esp,4
+mov dword[edx+8],ebx
+mov ebp,dword[0x10008e18]
+mov eax,dword[0x10008e1c]
+inc ebp
+push ebx
+push eax
+mov ecx,edi
+mov dword[0x10008e18],ebp
+call fcn.10005790
+mov dword[edi+4],eax
+mov dword[edi+0xc],ebx
+mov dword[eax],eax
+mov edi,dword[edi+4]
+lea ecx,[esp+0x14]
+mov byte[esp+0x28],1
+mov dword[edi+8],edi
+call dword[sym.imp.MSVCP60.dll_public:_void___thiscall_std::_Lockit::destructor_void_]
+lea ecx,[esi+0x9c]
+mov dword[esi],0x10006148
+push ecx
+mov dword[esi+4],0x10006144
+call dword[sym.imp.KERNEL32.dll_InitializeCriticalSection]
+mov ecx,dword[esp+0x20]
+mov eax,esi
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov dword fs:[0],ecx
+add esp,0x1c
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041f970@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_2_ref]: /report/fcn.0041b500@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.0041fac0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_4_ref]: /report/fcn.1007bb10@2585b133c2e70968905cce13b1fc2654
+[similar_5_ref]: /report/fcn.004066b0@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/47587171cbb30689dfc78b7aeb2c164d

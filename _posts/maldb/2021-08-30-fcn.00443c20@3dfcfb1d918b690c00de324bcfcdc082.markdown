@@ -1,0 +1,235 @@
+---
+layout: post
+title:  "fcn.00443c20 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00443c20
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.00432ba8][similar_1_ref] (sim.: 0.8953748397570339)
+2. [fcn.004436f0][similar_2_ref] (sim.: 0.894897343129433)
+3. [fcn.00443960][similar_3_ref] (sim.: 0.8820879968736173)
+4. [fcn.10003d80][similar_4_ref] (sim.: 0.8731669634758037)
+5. [fcn.0040e4a6][similar_5_ref] (sim.: 0.8719906246596243)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x208
+mov eax,dword[0x48800c]
+xor eax,ebp
+mov dword[ebp-4],eax
+push esi
+push edi
+push ecx
+lea eax,[ebp-0x204]
+push 0x100
+push eax
+call dword[sym.imp.MSVCR120.dll_wcscpy_s]
+lea eax,[ebp-0x204]
+push 0x5c
+push eax
+call dword[sym.imp.MSVCR120.dll_wcschr]
+mov edi,eax
+lea eax,[ebp-0x204]
+push 0x5c
+push eax
+call dword[sym.imp.MSVCR120.dll_wcsrchr]
+mov esi,eax
+lea ecx,[ebp-0x204]
+xor eax,eax
+add esp,0x1c
+mov word[edi],ax
+mov edx,str.HKCR
+add edi,2
+mov word[esi],ax
+add esi,2
+mov ax,word[ecx]
+cmp ax,word[edx]
+jne 0x443cac
+test ax,ax
+je 0x443ca8
+mov ax,word[ecx+2]
+cmp ax,word[edx+2]
+jne 0x443cac
+add ecx,4
+add edx,4
+test ax,ax
+jne 0x443c86
+xor eax,eax
+jmp 0x443cb1
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443cbf
+mov eax,0x80000000
+jmp 0x443e15
+mov ecx,str.HKCU
+lea eax,[ebp-0x204]
+lea ebx,[ebx]
+mov dx,word[eax]
+cmp dx,word[ecx]
+jne 0x443cf6
+test dx,dx
+je 0x443cf2
+mov dx,word[eax+2]
+cmp dx,word[ecx+2]
+jne 0x443cf6
+add eax,4
+add ecx,4
+test dx,dx
+jne 0x443cd0
+xor eax,eax
+jmp 0x443cfb
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443d09
+mov eax,0x80000001
+jmp 0x443e15
+mov ecx,str.HKLM
+lea eax,[ebp-0x204]
+mov dx,word[eax]
+cmp dx,word[ecx]
+jne 0x443d3a
+test dx,dx
+je 0x443d36
+mov dx,word[eax+2]
+cmp dx,word[ecx+2]
+jne 0x443d3a
+add eax,4
+add ecx,4
+test dx,dx
+jne 0x443d14
+xor eax,eax
+jmp 0x443d3f
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443d4d
+mov eax,reloc.OLEAUT32.dll_SysReAllocString
+jmp 0x443e15
+mov ecx,0x45c614
+lea eax,[ebp-0x204]
+mov dx,word[eax]
+cmp dx,word[ecx]
+jne 0x443d7e
+test dx,dx
+je 0x443d7a
+mov dx,word[eax+2]
+cmp dx,word[ecx+2]
+jne 0x443d7e
+add eax,4
+add ecx,4
+test dx,dx
+jne 0x443d58
+xor eax,eax
+jmp 0x443d83
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443d91
+mov eax,reloc.WS2_32.dll_closesocket
+jmp 0x443e15
+mov ecx,str.HKCC
+lea eax,[ebp-0x204]
+lea esp,[esp]
+mov dx,word[eax]
+cmp dx,word[ecx]
+jne 0x443dc6
+test dx,dx
+je 0x443dc2
+mov dx,word[eax+2]
+cmp dx,word[ecx+2]
+jne 0x443dc6
+add eax,4
+add ecx,4
+test dx,dx
+jne 0x443da0
+xor eax,eax
+jmp 0x443dcb
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443dd6
+mov eax,0x80000005
+jmp 0x443e15
+mov ecx,str.HKDD
+lea eax,[ebp-0x204]
+mov dx,word[eax]
+cmp dx,word[ecx]
+jne 0x443e07
+test dx,dx
+je 0x443e03
+mov dx,word[eax+2]
+cmp dx,word[ecx+2]
+jne 0x443e07
+add eax,4
+add ecx,4
+test dx,dx
+jne 0x443de1
+xor eax,eax
+jmp 0x443e0c
+sbb eax,eax
+or eax,1
+test eax,eax
+jne 0x443e4c
+mov eax,reloc.OLEAUT32.dll_SysStringLen
+lea ecx,[ebp-0x208]
+push ecx
+push 0xf003f
+push 0
+push edi
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x443e4c
+push esi
+push dword[ebp-0x208]
+call dword[sym.imp.ADVAPI32.dll_RegDeleteValueW]
+push dword[ebp-0x208]
+test eax,eax
+je 0x443e5e
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop edi
+xor al,al
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.0044e61f
+mov esp,ebp
+pop ebp
+ret
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov ecx,dword[ebp-4]
+mov al,1
+pop edi
+xor ecx,ebp
+pop esi
+call fcn.0044e61f
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00432ba8@418e0921f3a9bd4f5bc0dcc59623b5a1
+[similar_2_ref]: /report/fcn.004436f0@3dfcfb1d918b690c00de324bcfcdc082
+[similar_3_ref]: /report/fcn.00443960@3dfcfb1d918b690c00de324bcfcdc082
+[similar_4_ref]: /report/fcn.10003d80@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_5_ref]: /report/fcn.0040e4a6@44e1ffcf4e71f4505c09d520fd75f1e4
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

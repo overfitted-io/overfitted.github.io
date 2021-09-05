@@ -1,0 +1,231 @@
+---
+layout: post
+title:  "fcn.00403206 @ f616ef24fa8f527114071d9f6d523e5d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403206
+- **Origin (md5):** f616ef24fa8f527114071d9f6d523e5d
+- **VirusTotal:** [virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0041941e][similar_1_ref] (sim.: 0.968281182534859)
+2. [fcn.0040206e][similar_2_ref] (sim.: 0.9612356716512616)
+3. [fcn.0068ae70][similar_3_ref] (sim.: 0.9003599481865061)
+4. [fcn.00682940][similar_4_ref] (sim.: 0.8981935829365073)
+5. [fcn.0068d130][similar_5_ref] (sim.: 0.8861885199145821)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+xor eax,eax
+mov ebp,esp
+mov ecx,0x11
+push edi
+push esi
+push ebx
+sub esp,0x60
+cmp dword[0x4080d4],0
+lea edx,[ebp-0x50]
+mov edi,edx
+rep stosd dword es:[edi],eax
+je 0x40322f
+mov dword[esp],edx
+call sub.kernel32.dll_GetStartupInfoA
+push edi
+mov eax,dword fs:[0x18]
+mov ebx,dword[eax+4]
+jmp 0x403252
+cmp eax,ebx
+jne 0x403245
+mov ebx,1
+jmp 0x403273
+mov dword[esp],0x3e8
+call sub.kernel32.dll_Sleep
+push esi
+mov dword[esp+8],0
+mov dword[esp+4],ebx
+mov dword[esp],0x4084b0
+call sub.kernel32.dll_InterlockedCompareExchange
+sub esp,0xc
+test eax,eax
+jne 0x40323a
+xor ebx,ebx
+mov eax,dword[0x4084c0]
+dec eax
+jne 0x40328a
+mov dword[esp],0x1f
+call dword[sym.imp.msvcrt.dll__amsg_exit]
+jmp 0x4032be
+mov eax,dword[0x4084c0]
+test eax,eax
+jne 0x4032b4
+mov dword[esp+4],0x40a018
+mov dword[esp],0x40a00c
+mov dword[0x4084c0],1
+call dword[sym.imp.msvcrt.dll__initterm]
+jmp 0x4032be
+mov dword[0x407010],1
+mov eax,dword[0x4084c0]
+dec eax
+jne 0x4032e5
+mov dword[esp+4],0x40a008
+mov dword[esp],section..CRT
+call dword[sym.imp.msvcrt.dll__initterm]
+mov dword[0x4084c0],2
+test ebx,ebx
+jne 0x4032ff
+mov dword[esp+4],0
+mov dword[esp],0x4084b0
+call sub.kernel32.dll_InterlockedExchange
+push ecx
+push ecx
+mov eax,dword[entry1]
+test eax,eax
+je 0x403324
+mov dword[esp+8],0
+mov dword[esp+4],2
+mov dword[esp],0
+call eax
+sub esp,0xc
+call fcn.004044ae
+mov dword[esp],fcn.004034f6
+call sub.kernel32.dll_SetUnhandledExceptionFilter
+push edx
+mov dword[0x407014],eax
+mov dword[esp],0x406700
+call sub.kernel32.dll_GetModuleHandleA
+test eax,eax
+push edi
+jne 0x40337f
+mov dword[esp],0x40670c
+call sub.kernel32.dll_GetModuleHandleA
+test eax,eax
+push esi
+jne 0x40337f
+mov dword[esp],0x406718
+call sub.kernel32.dll_GetModuleHandleA
+test eax,eax
+push ebx
+jne 0x40337f
+mov dword[esp],0x406718
+call sub.kernel32.dll_LoadLibraryA
+test eax,eax
+push ecx
+je 0x40339e
+mov dword[esp+4],str._set_invalid_parameter_handler
+mov dword[esp],eax
+call sub.kernel32.dll_GetProcAddress
+test eax,eax
+push edx
+push edx
+je 0x40339e
+mov dword[esp],0x4030b8
+call eax
+call fcn.00404744
+cmp dword[0x4080d4],0
+je 0x403400
+mov eax,dword[sym.imp.msvcrt.dll__acmdln]
+xor edx,edx
+mov eax,dword[eax]
+jmp 0x4033c0
+cmp cl,0x22
+jne 0x4033bf
+xor edx,1
+inc eax
+mov cl,byte[eax]
+cmp cl,0x20
+jg 0x4033b7
+test dl,dl
+je 0x4033d2
+test cl,cl
+jne 0x4033bf
+jmp 0x4033d2
+inc eax
+mov dl,byte[eax]
+cmp dl,0x20
+jg 0x4033dd
+test dl,dl
+jne 0x4033d1
+test byte[ebp-0x24],1
+mov dword[0x408430],eax
+mov eax,0xa
+mov dword[0x408450],0x400000
+je 0x4033fb
+movzx eax,word[ebp-0x20]
+mov dword[0x408440],eax
+mov eax,dword[0x40701c]
+xor ebx,ebx
+mov dword[ebp-0x58],eax
+lea eax,[eax*4+4]
+mov dword[esp],eax
+call sub.msvcrt.dll_malloc
+mov edx,dword[0x407020]
+mov dword[ebp-0x54],eax
+jmp 0x403452
+mov edi,dword[edx+ebx*4]
+xor eax,eax
+or ecx,0xffffffff
+repne scasb al,byte es:[edi]
+mov dword[ebp-0x60],edx
+not ecx
+mov dword[esp],ecx
+mov dword[ebp-0x5c],ecx
+call sub.msvcrt.dll_malloc
+mov esi,dword[ebp-0x54]
+mov dword[esi+ebx*4],eax
+mov edx,dword[ebp-0x60]
+mov edi,eax
+mov ecx,dword[ebp-0x5c]
+mov esi,dword[edx+ebx*4]
+inc ebx
+rep movsb byte es:[edi],byte ptr[esi]
+cmp ebx,dword[ebp-0x58]
+jl 0x403424
+mov eax,dword[ebp-0x54]
+mov dword[eax+ebx*4],0
+mov edx,dword[0x407024]
+mov dword[0x407020],eax
+mov eax,dword[sym.imp.msvcrt.dll___initenv]
+mov dword[eax],edx
+mov eax,dword[0x407024]
+mov dword[esp+8],eax
+mov eax,dword[0x407020]
+mov dword[esp+4],eax
+mov eax,dword[0x40701c]
+mov dword[esp],eax
+call fcn.00403638
+cmp dword[0x40702c],0
+mov dword[0x407018],eax
+jne 0x4034a8
+mov dword[esp],eax
+call sub.msvcrt.dll_exit
+cmp dword[0x407010],0
+jne 0x4034b7
+call dword[sym.imp.msvcrt.dll__cexit]
+mov eax,dword[0x407018]
+lea esp,[ebp-0xc]
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0041941e@8c10f6a1b7643ed6e914352ded4b58e0
+[similar_2_ref]: /report/fcn.0040206e@7d26f9545f4fc50e0012f8444f1f8d77
+[similar_3_ref]: /report/fcn.0068ae70@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00682940@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0068d130@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/f616ef24fa8f527114071d9f6d523e5d

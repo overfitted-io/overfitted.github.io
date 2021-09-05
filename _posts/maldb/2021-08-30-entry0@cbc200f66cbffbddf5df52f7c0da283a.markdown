@@ -18,11 +18,11 @@ index: false
 
 # Similar Functions
 
-1. [entry0][similar_1_ref] (sim.: 1.0)
-2. [entry0][similar_2_ref] (sim.: 0.9632682766584207)
-3. [entry0][similar_3_ref] (sim.: 0.9587272680774201)
-4. [entry0][similar_4_ref] (sim.: 0.9575044839748847)
-5. [entry0][similar_5_ref] (sim.: 0.9562490620031279)
+1. [entry0][similar_1_ref] (sim.: 0.9998900981078187)
+2. [entry0][similar_2_ref] (sim.: 0.9998900981078187)
+3. [entry0][similar_3_ref] (sim.: 0.9998900981078187)
+4. [entry0][similar_4_ref] (sim.: 0.9998900981078187)
+5. [entry0][similar_5_ref] (sim.: 0.9998900981078187)
 
 
 # Disassembled Code
@@ -108,13 +108,13 @@ push ecx
 call fcn.00401271
 pop ecx
 pop ecx
-ret 
+ret
 {% endhighlight %}
 
 
-[similar_1_ref]: /report/entry0@78e5dc2c72c64cc6c5d52f92c1b99bab
-[similar_2_ref]: /report/entry0@90e6d872b1a6ca033a237e29666d0d93
-[similar_3_ref]: /report/entry0@48bb9a03c360009e9463dfd5be4e0ca0
-[similar_4_ref]: /report/entry0@2671e906b520b8ecce5ac840789cf6f5
-[similar_5_ref]: /report/entry0@727489e0c1d4a9104a02619fce633ab4
+[similar_1_ref]: /report/entry0@eac1782291736df208e1220cf8c38a7c
+[similar_2_ref]: /report/entry0@f360d53698056c0bd2342cbdb569d856
+[similar_3_ref]: /report/entry0@4e8d6f73c8261716f687f8d06429ef4d
+[similar_4_ref]: /report/entry0@7dd153bad1771b9e8d5266a341ebf949
+[similar_5_ref]: /report/entry0@2f7d0bff2a387da538798c888eb7f4a1
 [virustotal_ref]: https://www.virustotal.com/gui/file/cbc200f66cbffbddf5df52f7c0da283a

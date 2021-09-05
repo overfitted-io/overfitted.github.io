@@ -1,0 +1,267 @@
+---
+layout: post
+title:  "fcn.004070aa @ 4bd33f73402d0d03c0318f793884eb34"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004070aa
+- **Origin (md5):** 4bd33f73402d0d03c0318f793884eb34
+- **VirusTotal:** [virustotal.com/gui/file/4bd33f73402d0d03c0318f793884eb34][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.00415600][similar_1_ref] (sim.: 0.908841610693211)
+2. [fcn.0042bfb0][similar_2_ref] (sim.: 0.9076446579866617)
+3. [fcn.00434890][similar_3_ref] (sim.: 0.8969516553315482)
+4. [fcn.004428f0][similar_4_ref] (sim.: 0.8879717779567602)
+5. [fcn.6404f410][similar_5_ref] (sim.: 0.8866212598303717)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov eax,0x43d154
+call fcn.0043c04c
+sub esp,0x34
+mov eax,dword[ebp+8]
+push ebx
+mov ebx,dword[sym.imp.KERNEL32.dll_GetLastError]
+push esi
+mov esi,dword[sym.imp.WININET.dll_InternetCloseHandle]
+xor ecx,ecx
+push edi
+mov edi,dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[eax+4],ecx
+mov dword[ebp-0x30],ecx
+mov eax,dword[ebp+0x10]
+cmp dword[eax+0x14],8
+jb 0x4070e2
+mov eax,dword[eax]
+push ecx
+push 6
+push 2
+push ecx
+push ecx
+push 0x40000000
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov dword[ebp-0x14],eax
+xor eax,eax
+mov dword[ebp-4],eax
+cmp dword[ebp-0x14],0xffffffff
+je 0x407302
+push eax
+push eax
+push eax
+push eax
+push str.Installer__compatible__MSIE_6.0b__Windows_NT_5.0__.NET_CLR_1.0.2914_
+call dword[sym.imp.WININET.dll_InternetOpenA]
+mov dword[ebp-0x18],eax
+test eax,eax
+jne 0x40712a
+call ebx
+mov ecx,dword[ebp+8]
+mov dword[ecx+8],eax
+jmp 0x4072d8
+mov eax,dword[ebp+0xc]
+cmp dword[eax+0x14],8
+jb 0x407135
+mov eax,dword[eax]
+push 0
+push 0x84403900
+push 0xffffffffffffffff
+push 0x442560
+push eax
+push dword[ebp-0x18]
+call dword[sym.imp.WININET.dll_InternetOpenUrlW]
+mov dword[ebp-0x10],eax
+xor eax,eax
+mov byte[ebp-4],2
+cmp dword[ebp-0x10],eax
+jne 0x407168
+call ebx
+mov ecx,dword[ebp+8]
+mov dword[ecx+8],eax
+jmp 0x4072d3
+mov dword[ebp-0x24],eax
+mov dword[ebp-0x38],eax
+mov dword[ebp-0x2c],eax
+mov dword[ebp-0x20],eax
+mov dword[ebp-0x28],eax
+mov eax,0x20000
+push eax
+mov dword[ebp-0x3c],eax
+call fcn.00412076
+pop ecx
+mov dword[ebp-0x34],eax
+test eax,eax
+je 0x4071a5
+push 0x20000
+push 0
+push eax
+call fcn.004245f0
+mov eax,dword[ebp-0x34]
+add esp,0xc
+mov dword[ebp-0x40],eax
+jmp 0x4071a9
+and dword[ebp-0x40],0
+mov byte[ebp-4],3
+cmp dword[ebp-0x40],0
+jne 0x407273
+call ebx
+push 0
+jmp 0x4072c2
+xor eax,eax
+cmp dword[ebp-0x24],eax
+jbe 0x407292
+cmp dword[ebp-0x20],eax
+jne 0x407221
+push eax
+lea eax,[ebp-0x1c]
+push eax
+lea eax,[ebp-0x28]
+push eax
+push 0x20000013
+push dword[ebp-0x10]
+mov dword[ebp-0x1c],4
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+test eax,eax
+je 0x407221
+cmp dword[ebp-0x28],0xc8
+jne 0x407221
+push 0
+lea eax,[ebp-0x1c]
+push eax
+lea eax,[ebp-0x20]
+push eax
+push 0x20000005
+push dword[ebp-0x10]
+mov dword[ebp-0x1c],4
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+test eax,eax
+jne 0x407221
+and dword[ebp-0x20],eax
+mov eax,dword[ebp-0x24]
+add dword[ebp-0x2c],eax
+push 0
+lea ecx,[ebp-0x38]
+push ecx
+push eax
+push dword[ebp-0x40]
+push dword[ebp-0x14]
+call dword[sym.imp.KERNEL32.dll_WriteFile]
+test eax,eax
+je 0x407328
+mov eax,dword[ebp-0x20]
+mov dword[ebp-0x34],eax
+test eax,eax
+jg 0x407253
+mov dword[ebp-0x34],0x18cba80
+fild dword[ebp-0x2c]
+fmul qword[0x443160]
+fidiv dword[ebp-0x34]
+call fcn.0043bfa0
+mov ecx,dword[ebp+8]
+mov ecx,dword[ecx]
+test ecx,ecx
+je 0x407273
+mov edx,dword[ecx]
+push eax
+call dword[edx+4]
+lea eax,[ebp-0x24]
+push eax
+push 0x20000
+push dword[ebp-0x40]
+push dword[ebp-0x10]
+call dword[sym.imp.WININET.dll_InternetReadFile]
+test eax,eax
+jne 0x4071c0
+jmp 0x4072bd
+push eax
+lea eax,[ebp-0x1c]
+push eax
+lea eax,[ebp-0x28]
+push eax
+push 0x20000013
+push dword[ebp-0x10]
+mov dword[ebp-0x1c],4
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+test eax,eax
+je 0x4072bd
+cmp dword[ebp-0x28],0xc8
+je 0x40730c
+call ebx
+push dword[ebp-0x40]
+mov ecx,dword[ebp+8]
+mov dword[ecx+8],eax
+call fcn.00423efe
+pop ecx
+push dword[ebp-0x10]
+call esi
+push dword[ebp-0x18]
+call esi
+or dword[ebp-4],0xffffffff
+push dword[ebp-0x14]
+call edi
+mov eax,dword[ebp+8]
+inc dword[eax+4]
+push 0x1388
+call dword[sym.imp.KERNEL32.dll_Sleep]
+inc dword[ebp-0x30]
+cmp dword[ebp-0x30],3
+jge 0x407348
+xor ecx,ecx
+jmp 0x4070d7
+call ebx
+mov ecx,dword[ebp+8]
+mov dword[ecx+8],eax
+jmp 0x407348
+push dword[ebp-0x40]
+call fcn.00423efe
+pop ecx
+push dword[ebp-0x10]
+call esi
+push dword[ebp-0x18]
+call esi
+push dword[ebp-0x14]
+call edi
+xor eax,eax
+jmp 0x40734b
+call ebx
+mov ecx,dword[ebp+8]
+push dword[ebp-0x40]
+mov dword[ecx+8],eax
+call fcn.00423efe
+pop ecx
+push dword[ebp-0x10]
+call esi
+push dword[ebp-0x18]
+call esi
+push dword[ebp-0x14]
+call edi
+push 2
+pop eax
+mov ecx,dword[ebp-0xc]
+pop edi
+pop esi
+mov dword fs:[0],ecx
+pop ebx
+leave
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00415600@4fe6510221c33bf023f6abed461fc13f
+[similar_2_ref]: /report/fcn.0042bfb0@4fe6510221c33bf023f6abed461fc13f
+[similar_3_ref]: /report/fcn.00434890@4fe6510221c33bf023f6abed461fc13f
+[similar_4_ref]: /report/fcn.004428f0@4fe6510221c33bf023f6abed461fc13f
+[similar_5_ref]: /report/fcn.6404f410@07e4412910bcf0f5969ef64c44eecb2d
+[virustotal_ref]: https://www.virustotal.com/gui/file/4bd33f73402d0d03c0318f793884eb34

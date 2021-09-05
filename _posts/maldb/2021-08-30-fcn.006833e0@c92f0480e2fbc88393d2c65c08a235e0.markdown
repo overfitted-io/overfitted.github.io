@@ -1,0 +1,303 @@
+---
+layout: post
+title:  "fcn.006833e0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.006833e0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00681e40][similar_1_ref] (sim.: 0.9368798977183196)
+2. [fcn.006713a0][similar_2_ref] (sim.: 0.9319190222308401)
+3. [fcn.0067c360][similar_3_ref] (sim.: 0.9180632577918699)
+4. [fcn.0068c3f0][similar_4_ref] (sim.: 0.9177098619069387)
+5. [fcn.0067c4c0][similar_5_ref] (sim.: 0.9158250806918475)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x3c
+mov ebx,dword[esp+0x54]
+mov ebp,dword[esp+0x58]
+mov eax,dword[esp+0x64]
+mov esi,dword[esp+0x50]
+lea edi,[ebx+0x20]
+mov dword[ebx+0x20],0
+mov dword[ebx+4],3
+mov dword[ebx+0x44],ebp
+mov dword[ebx+0x3c],eax
+mov dword[edi+4],0
+mov dword[edi+8],0
+mov dword[edi+0xc],0
+mov dword[edi+0x10],0
+test byte[ebp+0x2e],0x10
+je 0x683470
+mov dword[esp+0xc],0
+mov dword[esp+8],0
+mov dword[esp+4],0
+mov dword[esp],0
+call dword[sym.imp.KERNEL32.dll_CreateEventA]
+sub esp,0x10
+test eax,eax
+mov dword[ebx+0x54],eax
+je 0x6837f9
+or eax,1
+mov dword[ebx+0x58],0xffffffff
+mov dword[ebx+0x30],eax
+lea eax,[esp+0x2c]
+mov dword[esp+0x18],0
+mov dword[esp+0x14],edi
+mov dword[esp+0x10],0
+mov dword[esp+0xc],eax
+mov eax,dword[esp+0x60]
+mov dword[esp+8],eax
+mov eax,dword[esp+0x5c]
+mov dword[esp+4],eax
+mov eax,dword[ebp+0x90]
+mov dword[esp],eax
+call dword[sym.imp.WS2_32.dll_WSASend]
+sub esp,0x1c
+test eax,eax
+jne 0x683540
+mov ecx,dword[ebp+0x2c]
+test ecx,0x40000
+je 0x6836c0
+mov eax,dword[ebp+0x40]
+mov dword[ebx+0x34],0
+add dword[ebp+0x3c],1
+add dword[ebp+0x88],1
+mov edx,eax
+lea edi,[eax+1]
+test edx,edx
+mov eax,edi
+mov dword[ebp+0x40],edi
+jne 0x683624
+test cl,1
+jne 0x6835e3
+test cl,0x40
+je 0x68360e
+nop
+lea eax,[esi+0x10]
+mov dword[ebx+8],eax
+mov edx,dword[esi+0x14]
+lea eax,[ebx+8]
+mov dword[ebx+0xc],edx
+mov dword[edx],eax
+mov dword[esi+0x14],eax
+mov eax,dword[esi+0x28]
+mov dword[ebx+0x38],0
+test eax,eax
+je 0x6835d3
+mov edx,dword[eax+0x38]
+mov dword[ebx+0x38],edx
+mov dword[eax+0x38],ebx
+mov dword[esi+0x28],ebx
+add esp,0x3c
+xor eax,eax
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x3e5
+je 0x6836c0
+mov eax,dword[ebp+0x40]
+mov dword[ebx+0x34],0
+add dword[ebp+0x3c],1
+add dword[ebp+0x88],1
+mov edi,eax
+lea ecx,[eax+1]
+test edi,edi
+mov eax,ecx
+mov dword[ebp+0x40],ecx
+jne 0x683691
+mov ecx,dword[ebp+0x2c]
+test cl,1
+jne 0x683650
+test cl,0x40
+je 0x68367b
+lea esi,[esi]
+lea eax,[esi+0x10]
+mov edi,dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[ebx+8],eax
+mov edx,dword[esi+0x14]
+lea eax,[ebx+8]
+mov dword[ebx+0xc],edx
+mov dword[edx],eax
+mov dword[esi+0x14],eax
+call edi
+test eax,eax
+jle 0x683795
+call edi
+movzx eax,ax
+or eax,0x80070000
+mov dword[ebx+0x20],eax
+mov eax,dword[esi+0x28]
+mov dword[ebx+0x38],0
+test eax,eax
+jne 0x683526
+mov dword[ebx+0x38],ebx
+mov dword[esi+0x28],ebx
+add esp,0x3c
+pop ebx
+xor eax,eax
+pop esi
+pop edi
+pop ebp
+ret
+mov dword[esp+8],0x37a
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7458
+call fcn.006b2490
+mov ecx,dword[ebp+0x2c]
+test cl,0x40
+jne 0x683810
+mov eax,dword[ebp+0x40]
+mov edi,ecx
+or edi,0x40
+and ecx,0x20
+mov dword[ebp+0x2c],edi
+je 0x683622
+mov edx,dword[ebp+4]
+add dword[edx+4],1
+mov edi,eax
+test edi,edi
+jg 0x683500
+mov dword[esp+8],0x37a
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7488
+call fcn.006b2490
+jmp 0x683500
+mov dword[esp+8],0x38f
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7458
+call fcn.006b2490
+mov ecx,dword[ebp+0x2c]
+test cl,0x40
+jne 0x683820
+mov eax,dword[ebp+0x40]
+mov edi,ecx
+or edi,0x40
+and ecx,0x20
+mov dword[ebp+0x2c],edi
+je 0x68368f
+mov edx,dword[ebp+4]
+add dword[edx+4],1
+mov ecx,eax
+test ecx,ecx
+jg 0x683590
+mov dword[esp+8],0x38f
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7488
+call fcn.006b2490
+jmp 0x683590
+mov eax,dword[esp+0x60]
+mov dword[esp+4],eax
+mov eax,dword[esp+0x5c]
+mov dword[esp],eax
+call fcn.0066cac0
+mov dword[ebx+0x34],eax
+mov eax,dword[ebp+0x40]
+add dword[ebp+0x3c],1
+add dword[ebp+0x88],1
+mov edi,eax
+lea ecx,[eax+1]
+test edi,edi
+mov eax,ecx
+mov dword[ebp+0x40],ecx
+jne 0x68371a
+mov ecx,dword[ebp+0x2c]
+test cl,1
+jne 0x6837a0
+test cl,0x40
+jne 0x683725
+mov edi,ecx
+or edi,0x40
+and ecx,0x20
+mov dword[ebp+0x2c],edi
+je 0x683718
+mov ecx,dword[ebp+4]
+add dword[ecx+4],1
+mov ecx,eax
+test ecx,ecx
+jle 0x6837d0
+mov ecx,dword[ebp+0x2c]
+lea eax,[esi+0x10]
+mov dword[ebx+8],eax
+mov edi,dword[esi+0x14]
+lea eax,[ebx+8]
+mov dword[ebx+0xc],edi
+mov dword[edi],eax
+mov dword[esi+0x14],eax
+mov eax,dword[ebx+0x34]
+add dword[ebp+0x30],eax
+and ecx,0x100000
+je 0x683532
+mov dword[esp+0x14],0xc
+mov dword[esp+0x10],0xffffffff
+mov dword[esp+0xc],ebx
+mov dword[esp+8],0x682530
+mov eax,dword[ebx+0x54]
+mov dword[esp+4],eax
+lea eax,[ebx+0x58]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_RegisterWaitForSingleObject]
+sub esp,0x18
+test eax,eax
+jne 0x683532
+mov edi,dword[sym.imp.KERNEL32.dll_GetLastError]
+call edi
+test eax,eax
+jg 0x6835b4
+call edi
+jmp 0x6835be
+mov dword[esp+8],0x381
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7458
+call fcn.006b2490
+mov ecx,dword[ebp+0x2c]
+test cl,0x40
+je 0x6837f1
+mov ecx,dword[ebp+0x40]
+jmp 0x68371a
+mov dword[esp+8],0x381
+mov dword[esp+4],0x7b7204
+mov dword[esp],0x7b7488
+call fcn.006b2490
+jmp 0x683722
+mov eax,dword[ebp+0x40]
+jmp 0x683704
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+mov dword[esp+4],0x7b741d
+mov dword[esp],eax
+call fcn.0066e2e0
+nop
+mov edi,dword[ebp+0x40]
+jmp 0x683624
+mov ecx,dword[ebp+0x40]
+jmp 0x683691
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00681e40@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.006713a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.0067c360@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.0068c3f0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.0067c4c0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

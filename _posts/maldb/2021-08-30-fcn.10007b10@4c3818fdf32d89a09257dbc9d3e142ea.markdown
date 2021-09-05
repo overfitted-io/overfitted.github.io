@@ -1,0 +1,376 @@
+---
+layout: post
+title:  "fcn.10007b10 @ 4c3818fdf32d89a09257dbc9d3e142ea"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10007b10
+- **Origin (md5):** 4c3818fdf32d89a09257dbc9d3e142ea
+- **VirusTotal:** [virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Similar Functions
+
+1. [fcn.0040c113][similar_1_ref] (sim.: 0.897273907451139)
+2. [fcn.0040c113][similar_2_ref] (sim.: 0.897273907451139)
+3. [fcn.0040c113][similar_3_ref] (sim.: 0.897273907451139)
+4. [fcn.00451ec3][similar_4_ref] (sim.: 0.8960059207772215)
+5. [fcn.0040bf31][similar_5_ref] (sim.: 0.8920694076537016)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+push 0xffffffffffffffff
+push 0x1002aa63
+mov eax,dword fs:[0]
+push eax
+sub esp,0x124
+push ebx
+push ebp
+push esi
+push edi
+mov eax,dword[0x10034390]
+xor eax,esp
+push eax
+lea eax,[esp+0x138]
+mov dword fs:[0],eax
+xor ebp,ebp
+mov dword[esp+0x2c],ebp
+mov edi,dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+call edi
+push ebp
+mov dword[0x100368b4],eax
+call dword[sym.imp.ole32.dll_CoInitialize]
+push ebp
+push ebp
+push ebp
+push ebp
+call dword[sym.imp.USER32.dll_DefWindowProcW]
+lea eax,[esp+0x20]
+push eax
+mov dword[esp+0x24],8
+mov dword[esp+0x28],4
+call dword[sym.imp.COMCTL32.dll_InitCommonControlsEx]
+push ebp
+call dword[sym.imp.ole32.dll_OleInitialize]
+lea esi,[esp+0x68]
+call fcn.10005210
+mov dword[esp+0x68],0x1002ee9c
+mov ecx,esi
+push ecx
+mov dword[esp+0x144],ebp
+call fcn.100073f0
+mov dword[esp+0x30],0x1002ee90
+mov dword[esp+0x34],ebp
+mov dword[esp+0x38],ebp
+mov dword[esp+0x3c],ebp
+mov dword[esp+0x40],ebp
+mov dword[esp+0x44],ebp
+mov dword[esp+0x48],ebp
+mov byte[esp+0x140],1
+lea edx,[esp+0x28]
+lea ebx,[esp+0x1c]
+lea esi,[esp+0x40]
+mov dword[esp+0x28],0x1002eec8
+mov dword[esp+0x1c],edx
+call fcn.100085b0
+mov ebx,dword[0x10036840]
+lea eax,[esp+0x30]
+add ebx,0x10
+push ebx
+mov dword[esp+0x20],eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+call edi
+mov esi,dword[esp+0x9c]
+lea ecx,[esp+0x1c]
+push ecx
+lea edx,[esp+0x24]
+push edx
+mov dword[esp+0x28],eax
+call fcn.100081e0
+push ebx
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+call fcn.10007760
+mov eax,dword[eax]
+sub eax,0x10
+call fcn.10004ef0
+lea ebx,[eax+0x10]
+mov dword[esp+0x1c],ebx
+push ebp
+push ebx
+push ebp
+mov byte[esp+0x14c],2
+call dword[sym.imp.SHELL32.dll_SHCreateDirectoryExW]
+xor eax,eax
+cmp eax,0x1003687a
+jne 0x10007d1f
+lea eax,[ebx-0x10]
+mov byte[esp+0x140],1
+lea ecx,[eax+0xc]
+or edx,0xffffffff
+lock xadd dword[ecx],edx
+dec edx
+test edx,edx
+jg 0x10007c81
+mov ecx,dword[eax]
+mov edx,dword[ecx]
+push eax
+mov eax,dword[edx+4]
+call eax
+mov eax,dword[esp+0x40]
+cmp eax,ebp
+je 0x10007c96
+push eax
+call fcn.1001427a
+add esp,4
+mov dword[esp+0x40],ebp
+mov eax,dword[esp+0x34]
+cmp eax,ebp
+mov dword[esp+0x44],ebp
+mov dword[esp+0x48],ebp
+je 0x10007cb3
+push eax
+call fcn.1001427a
+add esp,4
+mov dword[esp+0x34],ebp
+mov dword[esp+0x140],0xffffffff
+cmp dword[esp+0x6c],ebp
+mov dword[esp+0x38],ebp
+mov dword[esp+0x3c],ebp
+mov dword[esp+0x68],0x1002ee48
+je 0x10007d05
+cmp dword[esp+0x74],ebp
+je 0x10007ce7
+lea ebx,[esp+0x6c]
+call fcn.10007240
+mov dword[esp+0x74],ebp
+mov eax,dword[esp+0x90]
+cmp eax,ebp
+je 0x10007cfa
+mov ecx,dword[eax]
+mov edx,dword[ecx+8]
+push eax
+call edx
+lea eax,[esp+0x78]
+push eax
+call dword[sym.imp.KERNEL32.dll_DeleteCriticalSection]
+or eax,0xffffffff
+mov ecx,dword[esp+0x138]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov esp,ebp
+pop ebp
+ret
+call fcn.100076a0
+mov edi,eax
+call fcn.10011870
+test eax,eax
+je 0x10007db4
+lea eax,[ebx-0x10]
+mov byte[esp+0x140],1
+lea ecx,[eax+0xc]
+or edx,0xffffffff
+lock xadd dword[ecx],edx
+dec edx
+test edx,edx
+jg 0x10007d57
+mov ecx,dword[eax]
+mov edx,dword[ecx]
+push eax
+mov eax,dword[edx+4]
+call eax
+mov eax,dword[esp+0x40]
+cmp eax,ebp
+je 0x10007d6c
+push eax
+call fcn.1001427a
+add esp,4
+mov dword[esp+0x40],ebp
+mov eax,dword[esp+0x34]
+cmp eax,ebp
+mov dword[esp+0x44],ebp
+mov dword[esp+0x48],ebp
+je 0x10007d89
+push eax
+call fcn.1001427a
+add esp,4
+mov dword[esp+0x34],ebp
+lea eax,[esp+0x68]
+mov dword[esp+0x38],ebp
+mov dword[esp+0x3c],ebp
+call fcn.10007fa0
+or eax,0xffffffff
+mov ecx,dword[esp+0x138]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov esp,ebp
+pop ebp
+ret
+mov ecx,dword[0x10036918]
+push ecx
+call fcn.10010600
+mov edx,dword[0x10036918]
+add esp,4
+push edx
+mov byte[esp+0x1f],al
+call fcn.100111a0
+mov cl,byte[esp+0x1f]
+add esp,4
+and cl,al
+jne 0x10007e2e
+lea eax,[ebx-0x10]
+or edx,0xffffffff
+lea ecx,[eax+0xc]
+mov byte[esp+0x140],1
+lock xadd dword[ecx],edx
+dec edx
+test edx,edx
+jg 0x10007e02
+mov ecx,dword[eax]
+mov edx,dword[ecx]
+push eax
+mov eax,dword[edx+4]
+call eax
+lea esi,[esp+0x30]
+call fcn.10007ff0
+lea eax,[esp+0x68]
+call fcn.10007fa0
+or eax,0xffffffff
+mov ecx,dword[esp+0x138]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov esp,ebp
+pop ebp
+ret
+mov esi,dword[sym.imp.XLUE.dll_XLUE_LoadXAR]
+push str.SkinInstall
+call esi
+test eax,eax
+sete al
+and al,1
+push str.BaseUI
+mov byte[esp+0x1f],al
+call esi
+test eax,eax
+sete cl
+and byte[esp+0x1b],cl
+push str.InstallUI
+call esi
+test eax,eax
+mov al,byte[esp+0x1b]
+sete dl
+and al,dl
+je 0x10007dde
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+lea ecx,[esp+0x6c]
+push ecx
+call fcn.100075d0
+mov edi,eax
+call fcn.100072a0
+push 0xffffffffffffffff
+push 0xffffffffffffffff
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.KERNEL32.dll_SetProcessWorkingSetSize]
+call fcn.10010730
+lea edx,[esp+0x28]
+mov dword[esp+0x20],edx
+lea edx,[esp+0x20]
+lea esi,[esp+0x40]
+call fcn.10008620
+lea eax,[esp+0x68]
+push eax
+call fcn.10007520
+lea eax,[esp+0x68]
+call fcn.100074c0
+call dword[sym.imp.ole32.dll_OleUninitialize]
+call dword[sym.imp.ole32.dll_CoUninitialize]
+cmp dword[0x100368c0],ebp
+jg 0x10007f14
+lea ecx,[esp+0xa4]
+push ecx
+mov edi,0x189
+mov ebx,str..installUI.cpp
+call fcn.10009a80
+add eax,4
+push str.install_ui_dll_exit_
+mov byte[esp+0x144],3
+push eax
+mov dword[esp+0x34],1
+call fcn.10003ac0
+mov ebx,dword[esp+0x24]
+add esp,8
+mov dword[esp+0x140],2
+test byte[esp+0x2c],1
+je 0x10007f32
+lea ecx,[esp+0xa4]
+call fcn.10009af0
+mov eax,dword[0x1003687c]
+cmp eax,ebp
+je 0x10007f47
+push ebp
+push ebp
+push 0xbd1
+call eax
+add esp,0xc
+lea eax,[ebx-0x10]
+mov byte[esp+0x140],1
+lea edx,[eax+0xc]
+or ecx,0xffffffff
+lock xadd dword[edx],ecx
+dec ecx
+test ecx,ecx
+jg 0x10007f6b
+mov ecx,dword[eax]
+mov edx,dword[ecx]
+push eax
+mov eax,dword[edx+4]
+call eax
+lea esi,[esp+0x30]
+call fcn.10007ff0
+lea eax,[esp+0x68]
+call fcn.10007fa0
+mov eax,1
+mov ecx,dword[esp+0x138]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040c113@96a869ae624ddb4834a1d5a829f85469
+[similar_2_ref]: /report/fcn.0040c113@505be53c36227b94e2fcc406f247f6e5
+[similar_3_ref]: /report/fcn.0040c113@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_4_ref]: /report/fcn.00451ec3@56a02334aea008c131d2741a089910fb
+[similar_5_ref]: /report/fcn.0040bf31@e16f74a2849182d98050864255e902f8
+[virustotal_ref]: https://www.virustotal.com/gui/file/4c3818fdf32d89a09257dbc9d3e142ea

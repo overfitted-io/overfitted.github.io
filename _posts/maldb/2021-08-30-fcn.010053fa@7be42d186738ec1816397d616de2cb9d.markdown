@@ -1,0 +1,218 @@
+---
+layout: post
+title:  "fcn.010053fa @ 7be42d186738ec1816397d616de2cb9d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.010053fa
+- **Origin (md5):** 7be42d186738ec1816397d616de2cb9d
+- **VirusTotal:** [virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [fcn.010052d4][similar_1_ref] (sim.: 0.8970942355304723)
+2. [fcn.01005abc][similar_2_ref] (sim.: 0.8773527500449074)
+3. [fcn.00411728][similar_3_ref] (sim.: 0.8474316454840941)
+4. [fcn.010022ac][similar_4_ref] (sim.: 0.8448274461355498)
+5. [fcn.01006205][similar_5_ref] (sim.: 0.842414235951672)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+sub esp,0x114
+mov eax,dword[0x100b2d0]
+mov ecx,dword[ebp+0xc]
+push ebx
+push esi
+push edi
+mov dword[ebp-0x114],ecx
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+mov dword[ebp-0x110],eax
+mov dword[0x100c4a4],eax
+xor eax,eax
+mov ecx,0x23f
+mov edi,0x100bba0
+rep stosd dword es:[edi],eax
+push 0x41
+mov ecx,0xcb
+mov edi,0x100c880
+rep stosd dword es:[edi],eax
+pop ecx
+mov edi,0x100ba80
+rep stosd dword es:[edi],eax
+push 0x7f
+mov esi,0x100bbb4
+xor edi,edi
+push esi
+xor ebx,ebx
+inc edi
+push 0x100144c
+mov dword[ebp-0x10c],ebx
+mov dword[0x100be4c],edi
+call fcn.01002e55
+cmp eax,ebx
+je 0x100564a
+cmp eax,0x80
+ja 0x100564a
+push ebx
+push edi
+push edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_CreateEventA]
+push eax
+mov dword[0x100ba50],eax
+call dword[sym.imp.KERNEL32.dll_SetEvent]
+push 4
+push 0x100c494
+push 0x1001440
+call fcn.01002e55
+test eax,eax
+je 0x10054d3
+test byte[0x100c494],0xc0
+je 0x1005563
+push 0x104
+lea eax,[ebp-0x108]
+push eax
+push 0x1001430
+call fcn.01002e55
+test eax,eax
+jne 0x10054f2
+push ebx
+push 0x10
+push ebx
+push ebx
+push 0x4b1
+push ebx
+call fcn.01003ebe
+mov dword[0x100ba5c],0x80070714
+jmp 0x100565a
+lea eax,[ebp-0x108]
+push eax
+push edi
+push ebx
+call dword[sym.imp.KERNEL32.dll_CreateMutexA]
+cmp eax,ebx
+mov dword[0x100ba54],eax
+je 0x1005563
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0xb7
+jne 0x1005563
+test byte[0x100c494],0x80
+je 0x1005532
+push ebx
+push 0x10
+push ebx
+push esi
+push 0x54b
+push ebx
+call fcn.01003ebe
+jmp 0x1005548
+push 4
+push 0x20
+push ebx
+push esi
+push 0x524
+push ebx
+call fcn.01003ebe
+cmp eax,6
+je 0x1005563
+push dword[0x100ba54]
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov dword[0x100ba5c],0x800700b7
+jmp 0x100565a
+push dword[ebp-0x114]
+mov dword[0x100ba60],ebx
+call fcn.0100359c
+test eax,eax
+jne 0x1005587
+push ebx
+push 0x10
+push ebx
+push ebx
+push 0x520
+jmp 0x1005654
+cmp byte[0x100c89a],bl
+je 0x100559e
+push 0x100c89a
+call fcn.01002a96
+jmp 0x100565a
+push 0xa
+push 0x1001424
+push dword[ebp-0x110]
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+cmp eax,ebx
+je 0x10055c8
+push eax
+push dword[ebp-0x110]
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x10c],eax
+cmp dword[0x100b2c4],ebx
+je 0x10055d6
+call dword[sym.imp.COMCTL32.dll_InitCommonControls]
+cmp dword[0x100c884],ebx
+jne 0x1005646
+push dword[ebp-0x10c]
+call fcn.0100488c
+test eax,eax
+je 0x100565a
+mov ax,word[0x100ba64]
+cmp ax,di
+je 0x1005604
+cmp ax,2
+je 0x1005604
+cmp ax,3
+jne 0x1005646
+test byte[0x100c495],1
+je 0x1005646
+test byte[0x100c898],1
+jne 0x1005646
+call fcn.01001760
+test eax,eax
+jne 0x1005646
+push 0x83e
+push 0x547
+push fcn.0100189d
+push ebx
+push 0x7d6
+push dword[0x100c4a4]
+call fcn.01004819
+cmp eax,0x83d
+jne 0x100565a
+mov eax,edi
+jmp 0x100565c
+push ebx
+push 0x10
+push ebx
+push ebx
+push 0x4b1
+push ebx
+call fcn.01003ebe
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+pop ebx
+call fcn.010064de
+leave
+ret 0xc
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.010052d4@7be42d186738ec1816397d616de2cb9d
+[similar_2_ref]: /report/fcn.01005abc@7be42d186738ec1816397d616de2cb9d
+[similar_3_ref]: /report/fcn.00411728@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.010022ac@7be42d186738ec1816397d616de2cb9d
+[similar_5_ref]: /report/fcn.01006205@7be42d186738ec1816397d616de2cb9d
+[virustotal_ref]: https://www.virustotal.com/gui/file/7be42d186738ec1816397d616de2cb9d

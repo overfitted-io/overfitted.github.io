@@ -1,0 +1,260 @@
+---
+layout: post
+title:  "fcn.0052a880 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0052a880
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0052a610][similar_1_ref] (sim.: 0.9178709025893694)
+2. [fcn.00404a20][similar_2_ref] (sim.: 0.9125424063993748)
+3. [fcn.0041b660][similar_3_ref] (sim.: 0.8995013270032186)
+4. [fcn.0041f080][similar_4_ref] (sim.: 0.8971717771502996)
+5. [fcn.00408d80][similar_5_ref] (sim.: 0.8943522086563014)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0xffffffffffffffff
+push 0x5a9a82
+mov eax,dword fs:[0]
+push eax
+sub esp,0x430
+mov eax,dword[0x5ffcc0]
+xor eax,esp
+mov dword[esp+0x42c],eax
+push ebx
+push ebp
+push esi
+push edi
+mov eax,dword[0x5ffcc0]
+xor eax,esp
+push eax
+lea eax,[esp+0x444]
+mov dword fs:[0],eax
+mov esi,dword[esp+0x454]
+lea ecx,[esp+0x45c]
+mov dword[esp+0x44c],1
+call fcn.00410410
+test al,al
+je 0x52aa40
+lea eax,[esp+0x458]
+push eax
+lea ecx,[esp+0x24]
+call fcn.0040f860
+lea ecx,[esp+0x14]
+push ecx
+push 0x2001f
+push 0
+lea ecx,[esp+0x2c]
+mov byte[esp+0x458],2
+call fcn.00453f10
+push eax
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
+test eax,eax
+jne 0x52aa18
+push 0x1fe
+push eax
+lea edx,[esp+0x38]
+push edx
+call fcn.0057a180
+mov edx,dword[esp+0x20]
+mov edi,dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
+add esp,0xc
+push 0
+push 0
+push 0
+push 0
+lea eax,[esp+0x28]
+push eax
+lea ecx,[esp+0x44]
+push ecx
+push 0
+push edx
+mov dword[esp+0x38],0xff
+call edi
+test eax,eax
+jne 0x52aa18
+mov bl,6
+lea eax,[esp+0x30]
+push eax
+lea ecx,[esp+0x20]
+call fcn.0040f880
+push ecx
+mov byte[esp+0x450],3
+mov ecx,esp
+mov dword[esp+0x30],esp
+push 0x5dcd7c
+call fcn.0040f880
+push 0x5de088
+lea ecx,[esp+0x460]
+push ecx
+lea edx,[esp+0x30]
+push edx
+mov byte[esp+0x45c],4
+call fcn.00410080
+add esp,8
+mov ecx,esp
+mov dword[esp+0x30],esp
+lea edx,[esp+0x24]
+push edx
+push eax
+push ecx
+mov byte[esp+0x460],5
+call fcn.0041a530
+add esp,0xc
+push esi
+mov byte[esp+0x458],bl
+call fcn.0052a880
+add esp,0xc
+lea ecx,[esp+0x24]
+call fcn.00410950
+lea ecx,[esp+0x1c]
+mov byte[esp+0x44c],2
+call fcn.00410950
+mov edx,dword[esp+0x14]
+push 0
+push 0
+push 0
+push 0
+lea eax,[esp+0x28]
+push eax
+lea ecx,[esp+0x44]
+push ecx
+push 0
+push edx
+call edi
+test eax,eax
+je 0x52a965
+mov eax,dword[esp+0x14]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea ecx,[esp+0x458]
+call fcn.00453f10
+push eax
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+lea ecx,[esp+0x20]
+jmp 0x52ab59
+mov ebx,0x104
+push ebx
+lea ecx,[esp+0x34]
+push 0
+push ecx
+mov dword[esp+0x2c],ebx
+call fcn.0057a180
+xor edx,edx
+push 0x206
+push edx
+lea eax,[esp+0x24e]
+push eax
+mov word[esp+0x250],dx
+call fcn.0057a180
+add esp,0x18
+lea ecx,[esp+0x1c]
+call fcn.00421860
+lea ecx,[esp+0x18]
+call fcn.00421860
+lea ecx,[esp+0x458]
+push ecx
+lea ecx,[esp+0x1c]
+mov byte[esp+0x450],8
+call fcn.0040f980
+lea edx,[esp+0x14]
+push edx
+lea ecx,[esp+0x1c]
+xor edi,edi
+call fcn.00453f10
+push eax
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
+test eax,eax
+jne 0x52ab41
+mov esi,dword[sym.imp.ADVAPI32.dll_RegEnumValueW]
+mov ebp,dword[sym.imp.ADVAPI32.dll_RegDeleteValueW]
+lea ecx,[ecx]
+lea eax,[esp+0x20]
+push eax
+lea ecx,[esp+0x23c]
+push ecx
+mov ecx,dword[esp+0x1c]
+push 0
+push 0
+lea edx,[esp+0x34]
+push edx
+lea eax,[esp+0x44]
+push eax
+push edi
+push ecx
+mov dword[esp+0x40],ebx
+mov dword[esp+0x44],ebx
+call esi
+test eax,eax
+jne 0x52ab41
+lea edx,[esp+0x30]
+push edx
+lea ecx,[esp+0x20]
+call fcn.0040f9a0
+push 0
+lea ecx,[esp+0x460]
+call fcn.00453f10
+push eax
+lea ecx,[esp+0x24]
+call fcn.0040fdb0
+cmp eax,0xffffffff
+je 0x52ab3e
+mov ecx,dword[esp+0x14]
+lea eax,[esp+0x30]
+push eax
+push ecx
+call ebp
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+jmp 0x52aad0
+inc edi
+jmp 0x52aad0
+mov edx,dword[esp+0x14]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea ecx,[esp+0x18]
+call fcn.00410950
+lea ecx,[esp+0x1c]
+call fcn.00410950
+lea ecx,[esp+0x458]
+call fcn.00410950
+lea ecx,[esp+0x45c]
+call fcn.00410950
+xor eax,eax
+mov ecx,dword[esp+0x444]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+pop ebp
+pop ebx
+mov ecx,dword[esp+0x42c]
+xor ecx,esp
+call fcn.005713ed
+add esp,0x43c
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0052a610@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.00404a20@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_3_ref]: /report/fcn.0041b660@3e981d1767f44f5fe2446a49ffe52f4e
+[similar_4_ref]: /report/fcn.0041f080@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00408d80@0aa2d73a5300dff2412388945614b507
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

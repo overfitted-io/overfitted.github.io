@@ -1,0 +1,202 @@
+---
+layout: post
+title:  "fcn.004028d6 @ f5b8476c36459986b226c45654aeb016"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004028d6
+- **Origin (md5):** f5b8476c36459986b226c45654aeb016
+- **VirusTotal:** [virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Similar Functions
+
+1. [fcn.0040276f][similar_1_ref] (sim.: 0.9219615740310939)
+2. [fcn.0040276f][similar_2_ref] (sim.: 0.9219615740310939)
+3. [fcn.0040276f][similar_3_ref] (sim.: 0.9219615740310939)
+4. [fcn.0040233f][similar_4_ref] (sim.: 0.9136558885024423)
+5. [fcn.004021d0][similar_5_ref] (sim.: 0.8995918649552167)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+and esp,0xfffffff8
+sub esp,0x3c
+cmp word[ebp+0x10],8
+push esi
+mov esi,0x80070057
+jne 0x402913
+push dword[ebp+0x18]
+mov eax,dword[ebp+8]
+push dword[ebp+0xc]
+add eax,8
+push eax
+call fcn.00405b8f
+test eax,eax
+jle 0x40290c
+and eax,0xffff
+or eax,0x80070000
+mov esi,eax
+jmp 0x402b47
+cmp word[ebp+0x10],0
+je 0x402b47
+lea eax,[esp+0x30]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantClear]
+push 0x17
+push 0
+lea eax,[ebp+0x10]
+push eax
+lea eax,[esp+0x3c]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantTimeToDosDateTime]
+fld qword[0x478b40]
+fstp qword[esp+8]
+mov esi,eax
+fld qword[esp+8]
+fdiv qword[0x478b28]
+fdiv qword[0x478a30]
+fadd qword[esp+8]
+fld qword[esp+8]
+fdiv qword[0x478b20]
+fmul qword[esp+8]
+fsubp st(1)
+fstp qword[esp+8]
+fld qword[esp+8]
+fadd qword[esp+8]
+fadd qword[esp+8]
+fld qword[esp+8]
+fmul qword[0x478b18]
+faddp st(1)
+fadd qword[esp+8]
+fadd qword[0x478b10]
+fsub qword[esp+8]
+fsub qword[0x478b08]
+fsub qword[esp+8]
+fld qword[esp+8]
+fmul qword[0x478b00]
+faddp st(1)
+fadd qword[esp+8]
+fadd qword[esp+8]
+fadd qword[esp+8]
+fstp qword[esp+8]
+fld qword[esp+8]
+fsub qword[esp+8]
+fadd qword[0x478a60]
+fadd qword[esp+8]
+fld qword[esp+8]
+fmul qword[esp+8]
+faddp st(1)
+fsub qword[esp+8]
+fsub qword[0x478af8]
+fsub qword[esp+8]
+fld qword[esp+8]
+fmul qword[0x478af0]
+fsubp st(1)
+fsub qword[esp+8]
+fstp qword[esp+8]
+fld qword[esp+8]
+fsub qword[esp+8]
+fstp qword[esp+8]
+fld qword[esp+8]
+fadd qword[esp+8]
+fsub qword[0x478ae8]
+fld qword[esp+8]
+fmul qword[esp+8]
+faddp st(1)
+fstp qword[esp+8]
+test esi,esi
+js 0x402b3c
+mov eax,dword[esp+0x38]
+push 4
+mov dword[esp+8],eax
+lea eax,[esp+8]
+push eax
+mov eax,dword[ebp+8]
+push 4
+push 0
+push dword[ebp+0xc]
+push dword[eax+8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
+test eax,eax
+jle 0x402a5a
+and eax,0xffff
+or eax,0x80070000
+fld qword[0x478a98]
+mov esi,eax
+fst qword[esp+8]
+fld qword[0x478a30]
+fstp qword[esp+0x18]
+fld qword[0x478a90]
+fstp qword[esp+0x10]
+fld qword[0x478a88]
+fstp qword[esp+0x20]
+fstp qword[esp+0x28]
+fld qword[0x478a80]
+fstp qword[esp+0x28]
+fld qword[esp+8]
+fadd qword[0x478a78]
+fadd qword[esp+0x18]
+fadd qword[esp+0x20]
+fld qword[esp+0x20]
+fmul qword[0x478a70]
+fsubp st(1)
+fstp qword[esp+0x10]
+fld qword[esp+0x28]
+fmul qword[0x478a68]
+fadd qword[esp+0x10]
+fld qword[esp+0x10]
+fmul qword[esp+8]
+fmul qword[0x478a60]
+fdiv qword[0x478a58]
+fsubp st(1)
+fstp qword[esp+0x28]
+fld qword[esp+0x18]
+fld qword[esp+0x28]
+fmul qword[0x478a50]
+fsubp st(1)
+fadd qword[esp+0x18]
+fstp qword[esp+0x20]
+fld qword[esp+0x10]
+fmul qword[esp+0x18]
+fmul qword[esp+0x18]
+fsub qword[esp+8]
+fadd qword[0x478a48]
+fsub qword[esp+8]
+fadd qword[0x478a40]
+fstp qword[esp+0x10]
+fld qword[esp+0x10]
+fadd qword[esp+8]
+fstp qword[esp+8]
+fld qword[esp+0x20]
+fsub qword[esp+8]
+fld qword[esp+0x20]
+fmul qword[0x478a38]
+faddp st(1)
+fstp qword[esp+0x10]
+lea eax,[esp+0x30]
+push eax
+call dword[sym.imp.OLEAUT32.dll_VariantCopy]
+mov eax,esi
+pop esi
+mov esp,ebp
+pop ebp
+ret 0x18
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0040276f@c077742bdc6d4f2c0ca7d0e2a6a94acf
+[similar_2_ref]: /report/fcn.0040276f@96a869ae624ddb4834a1d5a829f85469
+[similar_3_ref]: /report/fcn.0040276f@505be53c36227b94e2fcc406f247f6e5
+[similar_4_ref]: /report/fcn.0040233f@f5b8476c36459986b226c45654aeb016
+[similar_5_ref]: /report/fcn.004021d0@146b14fc12cf789043a79d4f548a23bf
+[virustotal_ref]: https://www.virustotal.com/gui/file/f5b8476c36459986b226c45654aeb016

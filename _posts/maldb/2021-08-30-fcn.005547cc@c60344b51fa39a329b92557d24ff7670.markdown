@@ -1,0 +1,194 @@
+---
+layout: post
+title:  "fcn.005547cc @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.005547cc
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Similar Functions
+
+1. [fcn.00416cca][similar_1_ref] (sim.: 0.8607084043521112)
+2. [fcn.1012023c][similar_2_ref] (sim.: 0.8493581477713654)
+3. [fcn.00411728][similar_3_ref] (sim.: 0.8486316812621438)
+4. [fcn.0100488c][similar_4_ref] (sim.: 0.8478765659039036)
+5. [fcn.00409330][similar_5_ref] (sim.: 0.8346827653751807)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov edi,edi
+push ebp
+mov ebp,esp
+mov eax,0x106c
+call fcn.0057aa20
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+0x10]
+mov ecx,dword[ebp+8]
+mov dword[ebp-0x1050],eax
+mov eax,dword[ebp+0x14]
+push ebx
+mov ebx,dword[ebp+0xc]
+mov dword[ebp-0x106c],eax
+xor eax,eax
+push esi
+push edi
+mov dword[ebp-0x105c],ecx
+cmp ebx,eax
+je 0x5548e1
+cmp ecx,eax
+je 0x5548e1
+mov esi,dword[ebp+0x18]
+and esi,0x2e000000
+test dword[ebp+0x18],0x90000000
+mov dword[ebp-0x1058],0x824
+mov dword[ebp-0x1054],eax
+mov dword[ebp-0x1060],eax
+mov dword[ebp-0x1064],eax
+je 0x55486a
+cmp dword[ebx+0x30],eax
+je 0x55486a
+test dword[ebp+0x18],0x2000000
+je 0x554860
+mov dword[ebp-0x1064],1
+jmp 0x55486a
+mov dword[ebp-0x1060],0x80000000
+mov edi,dword[sym.imp.WININET.dll_InternetCanonicalizeUrlW]
+push esi
+lea eax,[ebp-0x1058]
+push eax
+lea eax,[ebp-0x104c]
+push eax
+push ecx
+call edi
+test eax,eax
+jne 0x5548f4
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax,0x7a
+jne 0x5548e1
+mov eax,dword[ebp-0x1058]
+xor ecx,ecx
+push 2
+pop edx
+mul edx
+seto cl
+neg ecx
+or ecx,eax
+push ecx
+call fcn.0055233a
+pop ecx
+mov dword[ebp-0x1068],eax
+test eax,eax
+je 0x5548e1
+push esi
+lea ecx,[ebp-0x1058]
+push ecx
+push eax
+push dword[ebp-0x105c]
+mov dword[ebp-0x1054],1
+call edi
+test eax,eax
+jne 0x5548fc
+push dword[ebp-0x1068]
+call fcn.00552369
+pop ecx
+xor eax,eax
+mov ecx,dword[ebp-4]
+pop edi
+pop esi
+xor ecx,ebp
+pop ebx
+call fcn.005713ed
+leave
+ret 0x14
+lea edi,[ebp-0x104c]
+jmp 0x554902
+mov edi,dword[ebp-0x1068]
+push ebx
+push dword[ebp-0x1060]
+xor esi,esi
+push esi
+push edi
+call dword[sym.imp.WININET.dll_InternetCrackUrlW]
+mov dword[ebp-0x105c],eax
+cmp dword[ebp-0x1064],esi
+je 0x55494c
+push 0x2100000
+push esi
+push esi
+push dword[ebx+0x2c]
+call dword[sym.imp.SHLWAPI.dll_UrlUnescapeW]
+test eax,eax
+jge 0x554940
+cmp dword[ebp-0x1054],esi
+je 0x5548e1
+push edi
+jmp 0x5548db
+push dword[ebx+0x2c]
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+mov dword[ebx+0x30],eax
+cmp dword[ebp-0x1054],esi
+je 0x55495b
+push edi
+call fcn.00552369
+pop ecx
+mov eax,dword[ebp-0x105c]
+cmp eax,esi
+jne 0x554976
+mov ecx,dword[ebp-0x1050]
+mov dword[ecx],0x1000
+jmp 0x5548e3
+mov cx,word[ebx+0x18]
+mov edx,dword[ebp-0x106c]
+mov word[edx],cx
+mov ebx,dword[ebx+0xc]
+dec ebx
+mov ecx,dword[ebp-0x1050]
+je 0x5549e3
+dec ebx
+je 0x5549d8
+dec ebx
+je 0x5549cd
+dec ebx
+je 0x5549c2
+dec ebx
+je 0x5549b7
+dec ebx
+je 0x5549ac
+dec ebx
+jne 0x55496b
+mov dword[ecx],0x1002
+jmp 0x5548e3
+mov dword[ecx],0x1006
+jmp 0x5548e3
+mov dword[ecx],0x1001
+jmp 0x5548e3
+mov dword[ecx],0x100b
+jmp 0x5548e3
+mov dword[ecx],3
+jmp 0x5548e3
+mov dword[ecx],2
+jmp 0x5548e3
+mov dword[ecx],1
+jmp 0x5548e3
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00416cca@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_2_ref]: /report/fcn.1012023c@89dc67d2f980e8488f97b1bf8cb24258
+[similar_3_ref]: /report/fcn.00411728@5f763449465a14d1cdb5ea67e2f984d0
+[similar_4_ref]: /report/fcn.0100488c@7be42d186738ec1816397d616de2cb9d
+[similar_5_ref]: /report/fcn.00409330@4c2db4ba96e80258daff665d7d7a016a
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

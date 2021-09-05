@@ -1,0 +1,287 @@
+---
+layout: post
+title:  "fcn.00454460 @ c60344b51fa39a329b92557d24ff7670"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00454460
+- **Origin (md5):** c60344b51fa39a329b92557d24ff7670
+- **VirusTotal:** [virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.1007d930][similar_1_ref] (sim.: 0.8507957318369239)
+2. [fcn.782d1610][similar_2_ref] (sim.: 0.8453237542424897)
+3. [fcn.00500bc0][similar_3_ref] (sim.: 0.8428264568408299)
+4. [fcn.00427100][similar_4_ref] (sim.: 0.8203095998770212)
+5. [main][similar_5_ref] (sim.: 0.8202018915883598)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x290
+mov eax,dword[0x5ffcc0]
+xor eax,ebp
+mov dword[ebp-0x14],eax
+mov dword[ebp-0x290],ecx
+lea eax,[ebp-0x1a8]
+push eax
+push 2
+call dword[sym.imp.WS2_32.dll_WSAStartup]
+test eax,eax
+je 0x454491
+jmp 0x4548f9
+push str.inetmib1.dll
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov dword[ebp-0x1e4],eax
+cmp dword[ebp-0x1e4],0x20
+jae 0x4544b0
+jmp 0x4548f9
+push str.SnmpExtensionInit
+mov ecx,dword[ebp-0x1e4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0x254],eax
+push str.SnmpExtensionInitEx
+mov edx,dword[ebp-0x1e4]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0x288],eax
+push str.SnmpExtensionQuery
+mov eax,dword[ebp-0x1e4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0xc],eax
+push str.SnmpExtensionTrap
+mov ecx,dword[ebp-0x1e4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[ebp-0x10],eax
+lea edx,[ebp-8]
+push edx
+lea eax,[ebp-0x1b0]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+push eax
+call dword[ebp-0x254]
+mov dword[ebp-0x250],0
+mov dword[ebp-0x24c],0
+mov ecx,dword[ebp-0x250]
+mov dword[ebp-0x1e0],ecx
+mov edx,dword[ebp-0x24c]
+mov dword[ebp-0x1dc],edx
+mov eax,dword[ebp-0x250]
+mov dword[ebp-0x1c8],eax
+mov ecx,dword[ebp-0x24c]
+mov dword[ebp-0x1c4],ecx
+lea edx,[ebp-0x1e0]
+mov dword[ebp-0x248],edx
+mov dword[ebp-0x238],1
+mov dword[ebp-0x234],3
+mov dword[ebp-0x230],6
+mov dword[ebp-0x22c],1
+mov dword[ebp-0x228],2
+mov dword[ebp-0x224],1
+mov dword[ebp-0x220],2
+mov dword[ebp-0x21c],2
+mov dword[ebp-0x218],1
+mov dword[ebp-0x214],3
+mov dword[ebp-0x204],1
+mov dword[ebp-0x200],3
+mov dword[ebp-0x1fc],6
+mov dword[ebp-0x1f8],1
+mov dword[ebp-0x1f4],2
+mov dword[ebp-0x1f0],1
+mov dword[ebp-0x1ec],2
+mov dword[ebp-0x1e8],1
+mov dword[ebp-0x27c],1
+mov dword[ebp-0x278],3
+mov dword[ebp-0x274],6
+mov dword[ebp-0x270],1
+mov dword[ebp-0x26c],2
+mov dword[ebp-0x268],1
+mov dword[ebp-0x264],2
+mov dword[ebp-0x260],2
+mov dword[ebp-0x25c],1
+mov dword[ebp-0x258],6
+mov dword[ebp-0x240],0xa
+lea eax,[ebp-0x27c]
+mov dword[ebp-0x23c],eax
+mov dword[ebp-0x210],0xa
+lea ecx,[ebp-0x238]
+mov dword[ebp-0x20c],ecx
+mov dword[ebp-0x284],8
+lea edx,[ebp-0x204]
+mov dword[ebp-0x280],edx
+mov dword[ebp-0x244],1
+lea eax,[ebp-0x284]
+push eax
+lea ecx,[ebp-0x1e0]
+push ecx
+call sub.snmpapi.dll_SnmpUtilOidCpy
+lea edx,[ebp-0x1ac]
+push edx
+lea eax,[ebp-0x208]
+push eax
+lea ecx,[ebp-0x248]
+push ecx
+push 0xa1
+call dword[ebp-0xc]
+mov dword[ebp-0x244],2
+lea edx,[ebp-0x210]
+push edx
+lea eax,[ebp-0x1e0]
+push eax
+call sub.snmpapi.dll_SnmpUtilOidCpy
+lea ecx,[ebp-0x240]
+push ecx
+lea edx,[ebp-0x1c8]
+push edx
+call sub.snmpapi.dll_SnmpUtilOidCpy
+mov dword[ebp-0x28c],0
+jmp 0x454751
+mov eax,dword[ebp-0x28c]
+add eax,1
+mov dword[ebp-0x28c],eax
+mov ecx,dword[ebp-0x28c]
+cmp ecx,dword[ebp-0x1d4]
+jge 0x4548e1
+lea edx,[ebp-0x1ac]
+push edx
+lea eax,[ebp-0x208]
+push eax
+lea ecx,[ebp-0x248]
+push ecx
+push 0xa1
+call dword[ebp-0xc]
+test eax,eax
+jne 0x454786
+jmp 0x454742
+mov edx,dword[ebp-0x210]
+push edx
+lea eax,[ebp-0x210]
+push eax
+lea ecx,[ebp-0x1e0]
+push ecx
+call sub.snmpapi.dll_SnmpUtilOidNCmp
+test eax,eax
+je 0x4547a6
+jmp 0x454742
+cmp dword[ebp-0x1d4],6
+je 0x4547b1
+jmp 0x454742
+mov edx,dword[ebp-0x240]
+push edx
+lea eax,[ebp-0x240]
+push eax
+lea ecx,[ebp-0x1c8]
+push ecx
+call sub.snmpapi.dll_SnmpUtilOidNCmp
+test eax,eax
+je 0x4547d4
+jmp 0x454742
+cmp dword[ebp-0x1bc],0
+jne 0x4547e2
+jmp 0x454742
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx]
+cmp eax,0x44
+jne 0x454830
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx+1]
+cmp edx,0x45
+jne 0x454830
+mov eax,dword[ebp-0x1bc]
+movzx ecx,byte[eax+2]
+cmp ecx,0x53
+jne 0x454830
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx+3]
+cmp eax,0x54
+jne 0x454830
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx+4]
+test edx,edx
+jne 0x454830
+jmp 0x454742
+mov eax,dword[ebp-0x1bc]
+movzx ecx,byte[eax]
+test ecx,ecx
+jne 0x454888
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx+1]
+test eax,eax
+jne 0x454888
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx+2]
+test edx,edx
+jne 0x454888
+mov eax,dword[ebp-0x1bc]
+movzx ecx,byte[eax+3]
+test ecx,ecx
+jne 0x454888
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx+4]
+test eax,eax
+jne 0x454888
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx+5]
+test edx,edx
+jne 0x454888
+jmp 0x454742
+mov eax,dword[ebp-0x1bc]
+movzx ecx,byte[eax+5]
+push ecx
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx+4]
+push eax
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx+3]
+push edx
+mov eax,dword[ebp-0x1bc]
+movzx ecx,byte[eax+2]
+push ecx
+mov edx,dword[ebp-0x1bc]
+movzx eax,byte[edx+1]
+push eax
+mov ecx,dword[ebp-0x1bc]
+movzx edx,byte[ecx]
+push edx
+push str._02X__02X__02X__02X__02X__02X
+mov eax,dword[ebp+8]
+push eax
+call fcn.00415100
+add esp,0x20
+jmp 0x4548e1
+lea ecx,[ebp-0x1e0]
+push ecx
+call sub.snmpapi.dll_SnmpUtilVarBindFree
+lea edx,[ebp-0x1c8]
+push edx
+call sub.snmpapi.dll_SnmpUtilVarBindFree
+mov ecx,dword[ebp-0x14]
+xor ecx,ebp
+call fcn.005713ed
+mov esp,ebp
+pop ebp
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1007d930@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_2_ref]: /report/fcn.782d1610@ebea46c6b17785efc2ebcb24ad99656c
+[similar_3_ref]: /report/fcn.00500bc0@c60344b51fa39a329b92557d24ff7670
+[similar_4_ref]: /report/fcn.00427100@44e1ffcf4e71f4505c09d520fd75f1e4
+[similar_5_ref]: /report/main@46f6c2adf1fd4d1453ed312ca79dd9bf
+[virustotal_ref]: https://www.virustotal.com/gui/file/c60344b51fa39a329b92557d24ff7670

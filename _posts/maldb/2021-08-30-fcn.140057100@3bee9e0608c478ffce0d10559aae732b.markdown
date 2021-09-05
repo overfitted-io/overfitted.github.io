@@ -1,0 +1,178 @@
+---
+layout: post
+title:  "fcn.140057100 @ 3bee9e0608c478ffce0d10559aae732b"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140057100
+- **Origin (md5):** 3bee9e0608c478ffce0d10559aae732b
+- **VirusTotal:** [virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.1400615f0][similar_1_ref] (sim.: 0.920246802864906)
+2. [fcn.140076d10][similar_2_ref] (sim.: 0.9183912207085166)
+3. [main][similar_3_ref] (sim.: 0.9060499036792022)
+4. [fcn.14004bdf0][similar_4_ref] (sim.: 0.9021617046576863)
+5. [fcn.14000a4ec][similar_5_ref] (sim.: 0.8963203561247621)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+mov rax,rsp
+mov qword[rax+8],rbx
+mov qword[rax+0x10],rsi
+mov qword[rax+0x18],rdi
+push rbp
+push r12
+push r13
+push r14
+push r15
+lea rbp,[rax-0x1028]
+mov eax,0x1100
+call fcn.140024730
+sub rsp,rax
+mov rbx,rdx
+lea rdx,[rbp+0x360]
+xor edi,edi
+mov r13b,r9b
+mov r14b,r8b
+mov sil,dil
+call fcn.1400135c0
+lea rdx,[rbp+0x570]
+mov rcx,rbx
+call fcn.1400135c0
+lea rdx,[rbp+0x570]
+lea rcx,[rbp+0x360]
+call fcn.14003b1c0
+lea rcx,[rbp+0x360]
+mov r15b,al
+call fcn.14003b270
+test al,al
+je 0x14005718e
+lea rdx,str..
+lea rcx,[rbp+0x360]
+call fcn.140014ce8
+lea rcx,[rbp+0x570]
+call fcn.14003b270
+test al,al
+je 0x1400571b1
+lea rdx,str..
+lea rcx,[rbp+0x570]
+call fcn.140014ce8
+lea rax,[rbp+0xdf0]
+lea r9,[rbp+0x9d0]
+lea r8,[rbp+0xbe0]
+lea rdx,[rsp+0x30]
+lea rcx,[rbp+0x360]
+mov qword[rsp+0x20],rax
+call fcn.14001633c
+lea rdx,[rbp+0x780]
+lea rcx,[rbp+0x360]
+call qword[sym.imp.KERNEL32.dll_FindFirstFileW]
+mov r12b,1
+mov rbx,rax
+cmp rax,0xffffffffffffffff
+je 0x14005733f
+cmp r12b,1
+jne 0x14005733f
+test byte[rbp+0x780],0x10
+jne 0x140057312
+lea rax,[rbp+0x150]
+lea r9,[rbp+0x570]
+lea r8,[rbp+0xdf0]
+lea rdx,[rbp+0x9d0]
+lea rcx,[rbp+0x7ac]
+mov qword[rsp+0x20],rax
+call fcn.14003b000
+lea rdx,[rsp+0x30]
+lea rcx,[rsp+0x40]
+call fcn.140014d14
+lea rdx,[rbp+0xbe0]
+lea rcx,[rsp+0x40]
+call fcn.140014ce8
+lea rdx,[rbp+0x7ac]
+lea rcx,[rsp+0x40]
+call fcn.140014ce8
+lea rcx,[rbp+0x150]
+call fcn.14003b2e0
+test al,al
+je 0x1400572b1
+test r14b,r14b
+je 0x140057332
+lea rdx,[rbp+0x150]
+lea rcx,[rsp+0x40]
+call qword[sym.imp.KERNEL32.dll_lstrcmpiW]
+test eax,eax
+je 0x1400572d0
+lea rcx,[rbp+0x150]
+call qword[sym.imp.KERNEL32.dll_DeleteFileW]
+lea rdx,[rbp+0x150]
+lea rcx,[rsp+0x40]
+cmp r13b,1
+jne 0x140057302
+test r15b,r15b
+jne 0x1400572e8
+call qword[sym.imp.KERNEL32.dll_MoveFileW]
+jmp 0x14005730b
+lea rdx,[rbp+0x150]
+lea rcx,[rsp+0x40]
+call qword[sym.imp.KERNEL32.dll_MoveFileW]
+test eax,eax
+je 0x140057342
+jmp 0x14005730f
+xor r8d,r8d
+call qword[sym.imp.KERNEL32.dll_CopyFileW]
+test eax,eax
+je 0x140057332
+lea rcx,[rsp+0x40]
+call qword[sym.imp.KERNEL32.dll_DeleteFileW]
+jmp 0x14005730b
+xor r8d,r8d
+call qword[sym.imp.KERNEL32.dll_CopyFileW]
+test eax,eax
+je 0x140057332
+mov sil,1
+lea rdx,[rbp+0x780]
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_FindNextFileW]
+test eax,eax
+jne 0x140057200
+mov r12b,dil
+jmp 0x140057200
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_FindClose]
+xor al,al
+jmp 0x14005734e
+mov dil,sil
+mov rcx,rbx
+call qword[sym.imp.KERNEL32.dll_FindClose]
+mov al,dil
+lea r11,[rsp+0x1100]
+mov rbx,qword[r11+0x30]
+mov rsi,qword[r11+0x38]
+mov rdi,qword[r11+0x40]
+mov rsp,r11
+pop r15
+pop r14
+pop r13
+pop r12
+pop rbp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.1400615f0@3bee9e0608c478ffce0d10559aae732b
+[similar_2_ref]: /report/fcn.140076d10@3bee9e0608c478ffce0d10559aae732b
+[similar_3_ref]: /report/main@aa94a542c4d350c292b6898de288bcf0
+[similar_4_ref]: /report/fcn.14004bdf0@3bee9e0608c478ffce0d10559aae732b
+[similar_5_ref]: /report/fcn.14000a4ec@c4af5ec7826361dc5a22db79be296638
+[virustotal_ref]: https://www.virustotal.com/gui/file/3bee9e0608c478ffce0d10559aae732b

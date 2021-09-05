@@ -1,0 +1,219 @@
+---
+layout: post
+title:  "fcn.004072f9 @ eb7f7fa38880dd66bab8caf5987e5b1a"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004072f9
+- **Origin (md5):** eb7f7fa38880dd66bab8caf5987e5b1a
+- **VirusTotal:** [virustotal.com/gui/file/eb7f7fa38880dd66bab8caf5987e5b1a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Similar Functions
+
+1. [fcn.10105f8a][similar_1_ref] (sim.: 1.0)
+2. [fcn.00573324][similar_2_ref] (sim.: 1.0)
+3. [fcn.0042ba8c][similar_3_ref] (sim.: 1.0)
+4. [fcn.004caddb][similar_4_ref] (sim.: 1.0)
+5. [fcn.00435205][similar_5_ref] (sim.: 1.0)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push 0x10
+push 0x421398
+call fcn.00401e90
+mov ebx,dword[ebp+8]
+test ebx,ebx
+jne 0x40731a
+push dword[ebp+0xc]
+call fcn.0040431a
+pop ecx
+jmp 0x4074e6
+mov esi,dword[ebp+0xc]
+test esi,esi
+jne 0x40732d
+push ebx
+call fcn.0040454e
+pop ecx
+jmp 0x4074e4
+cmp dword[0x4b27bc],3
+jne 0x4074cd
+xor edi,edi
+mov dword[ebp-0x1c],edi
+cmp esi,0xffffffe0
+ja 0x4074d2
+push 4
+call fcn.0040498a
+pop ecx
+mov dword[ebp-4],edi
+push ebx
+call fcn.00406575
+pop ecx
+mov dword[ebp-0x20],eax
+cmp eax,edi
+je 0x407403
+cmp esi,dword[0x4b27a8]
+ja 0x4073b6
+push esi
+push ebx
+push eax
+call fcn.00406a73
+add esp,0xc
+test eax,eax
+je 0x407381
+mov dword[ebp-0x1c],ebx
+jmp 0x4073b6
+push esi
+call fcn.00406d54
+pop ecx
+mov dword[ebp-0x1c],eax
+cmp eax,edi
+je 0x4073b6
+mov eax,dword[ebx-4]
+dec eax
+cmp eax,esi
+jb 0x407399
+mov eax,esi
+push eax
+push ebx
+push dword[ebp-0x1c]
+call fcn.00406210
+push ebx
+call fcn.00406575
+mov dword[ebp-0x20],eax
+push ebx
+push eax
+call fcn.004065a5
+add esp,0x18
+cmp dword[ebp-0x1c],edi
+jne 0x407403
+cmp esi,edi
+jne 0x4073c5
+xor esi,esi
+inc esi
+mov dword[ebp+0xc],esi
+add esi,0xf
+and esi,0xfffffff0
+mov dword[ebp+0xc],esi
+push esi
+push edi
+push dword[0x4238dc]
+call dword[sym.imp.KERNEL32.dll_HeapAlloc]
+mov dword[ebp-0x1c],eax
+cmp eax,edi
+je 0x407403
+mov eax,dword[ebx-4]
+dec eax
+cmp eax,esi
+jb 0x4073ed
+mov eax,esi
+push eax
+push ebx
+push dword[ebp-0x1c]
+call fcn.00406210
+push ebx
+push dword[ebp-0x20]
+call fcn.004065a5
+add esp,0x14
+mov dword[ebp-4],0xfffffffe
+call fcn.0040743d
+cmp dword[ebp-0x20],0
+jne 0x407446
+test esi,esi
+jne 0x40741a
+inc esi
+add esi,0xf
+and esi,0xfffffff0
+mov dword[ebp+0xc],esi
+push esi
+push ebx
+push 0
+push dword[0x4238dc]
+call dword[sym.imp.KERNEL32.dll_HeapReAlloc]
+mov edi,eax
+jmp 0x407449
+mov edi,dword[ebp-0x1c]
+test edi,edi
+jne 0x407510
+cmp dword[0x423ac8],edi
+je 0x407485
+push esi
+call fcn.004043f3
+pop ecx
+test eax,eax
+jne 0x40733a
+call fcn.00401e44
+cmp dword[ebp-0x20],edi
+jne 0x4074de
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+call fcn.00401e02
+pop ecx
+mov dword[esi],eax
+jmp 0x4074e4
+test edi,edi
+jne 0x407510
+call fcn.00401e44
+cmp dword[ebp-0x20],edi
+je 0x4074ff
+mov dword[eax],0xc
+jmp 0x407510
+test esi,esi
+jne 0x4074a4
+inc esi
+push esi
+push ebx
+push 0
+push dword[0x4238dc]
+call dword[sym.imp.KERNEL32.dll_HeapReAlloc]
+mov edi,eax
+test edi,edi
+jne 0x407510
+cmp dword[0x423ac8],eax
+je 0x4074f6
+push esi
+call fcn.004043f3
+pop ecx
+test eax,eax
+je 0x4074ec
+cmp esi,0xffffffe0
+jbe 0x40749f
+push esi
+call fcn.004043f3
+pop ecx
+call fcn.00401e44
+mov dword[eax],0xc
+xor eax,eax
+call fcn.00401ed5
+ret
+call fcn.00401e44
+jmp 0x407472
+test edi,edi
+jne 0x407510
+call fcn.00401e44
+mov esi,eax
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+push eax
+call fcn.00401e02
+mov dword[esi],eax
+pop ecx
+mov eax,edi
+jmp 0x4074e6
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.10105f8a@89dc67d2f980e8488f97b1bf8cb24258
+[similar_2_ref]: /report/fcn.00573324@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.0042ba8c@a1c6b07868a0eea8f4ee5a872aa71909
+[similar_4_ref]: /report/fcn.004caddb@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_5_ref]: /report/fcn.00435205@7b00dd8f2abf54a73bfb09681334ff78
+[virustotal_ref]: https://www.virustotal.com/gui/file/eb7f7fa38880dd66bab8caf5987e5b1a

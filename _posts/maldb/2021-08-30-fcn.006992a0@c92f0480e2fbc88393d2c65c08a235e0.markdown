@@ -1,0 +1,307 @@
+---
+layout: post
+title:  "fcn.006992a0 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.006992a0
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.0066ec80][similar_1_ref] (sim.: 0.9479822468913153)
+2. [fcn.0068c3f0][similar_2_ref] (sim.: 0.9363612634305303)
+3. [fcn.006795d0][similar_3_ref] (sim.: 0.934140213978489)
+4. [fcn.00682ca0][similar_4_ref] (sim.: 0.9292385903820594)
+5. [fcn.00691fc0][similar_5_ref] (sim.: 0.9262463935999761)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+mov esi,eax
+sub esp,0x5c
+mov byte[eax+0xc8],0
+mov eax,dword[eax+0xbc]
+mov dword[esp+0x1c],edx
+mov dword[esp+0x20],ecx
+cmp eax,0xffffffff
+jne 0x699570
+mov eax,dword[esi+0xb4]
+cmp eax,0xffffffff
+je 0x6992e1
+movzx edx,byte[esi+0xc5]
+test dl,dl
+je 0x6993c5
+test byte[esi+0xdc],4
+jne 0x6993b1
+mov ebx,dword[esi+0xc]
+test ebx,ebx
+je 0x6993b1
+mov dword[esp+0x28],esi
+lea esi,[esi]
+mov ebp,dword[ebx+0x98]
+mov edi,dword[ebx+4]
+cmp ebp,0xffffffff
+je 0x6993a3
+mov eax,dword[esp+0x70]
+mov dword[esp],ebp
+mov dword[esp+4],eax
+call sub.WS2_32.dll___WSAFDIsSet
+sub esp,8
+mov esi,eax
+mov eax,dword[esp+0x20]
+mov dword[esp],ebp
+mov dword[esp+4],eax
+call sub.WS2_32.dll___WSAFDIsSet
+sub esp,8
+mov dword[esp+0x24],eax
+mov eax,dword[esp+0x1c]
+mov dword[esp],ebp
+mov dword[esp+4],eax
+call sub.WS2_32.dll___WSAFDIsSet
+sub esp,8
+test esi,esi
+jne 0x699540
+mov ecx,dword[ebx+0xa8]
+mov edx,dword[ebx+0xa4]
+test ecx,ecx
+je 0x6994d3
+cmp ecx,1
+je 0x6995c0
+mov dword[esp],ebx
+call fcn.00694d80
+mov eax,dword[ebx+0x10]
+cmp byte[eax+0xc8],0
+jne 0x6993a3
+test byte[eax+0xdc],4
+jne 0x6993a3
+cmp dword[ebx+0xa8],2
+jne 0x6993a3
+mov byte[eax+0xc8],1
+test edi,edi
+mov ebx,edi
+jne 0x699300
+mov esi,dword[esp+0x28]
+mov eax,esi
+call fcn.00698c20
+add esp,0x5c
+mov eax,1
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+mov ecx,dword[esp+0x1c]
+mov dword[esp],eax
+mov dword[esp+4],ecx
+call sub.WS2_32.dll___WSAFDIsSet
+sub esp,8
+test eax,eax
+je 0x6992e1
+lea ebx,[esp+0x34]
+mov dword[esp+0x30],0x1c
+xor edx,edx
+xor eax,eax
+mov dword[ebx+eax],edx
+add eax,4
+cmp eax,0x1c
+jb 0x6993f0
+mov edx,dword[esi+0xb4]
+cmp edx,0xffffffff
+je 0x6992e1
+movzx eax,byte[esi+0xc5]
+test al,al
+jne 0x6992e1
+lea eax,[esp+0x30]
+mov dword[esp+4],ebx
+mov dword[esp],edx
+mov dword[esp+8],eax
+call dword[sym.imp.WS2_32.dll_accept]
+sub esp,0xc
+cmp eax,0xffffffff
+mov edi,eax
+je 0x699444
+mov ebp,dword[esp+0x30]
+test ebp,ebp
+jg 0x69961b
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov ebx,eax
+lea eax,[eax-0x2726]
+and eax,0xffffffdf
+je 0x6992e1
+cmp ebx,0x2733
+je 0x699661
+mov dword[esp],ebx
+call fcn.0069ee40
+mov dword[esp+4],0x7b9dcc
+mov dword[esp+8],eax
+mov dword[esp],esi
+call fcn.0069df20
+cmp edi,0xffffffff
+je 0x69949c
+mov dword[esp],edi
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp,4
+test eax,eax
+jne 0x69967e
+cmp ebx,0x2728
+je 0x6994b0
+cmp ebx,0x2747
+jne 0x6992e1
+mov ebx,dword[esi+0xcc]
+test ebx,ebx
+jne 0x6996dd
+mov dword[esp+4],str.Hit_process_or_system_resource_limit_at_FIRST_connection._This_is_really_bad_as_there_is_no_sane_way_to_proceed._Will_try_busy_waiting_for_system_resources_to_become_magically_available._n
+mov dword[esp],esi
+call fcn.0069df20
+jmp 0x6992e1
+test eax,eax
+je 0x699376
+mov dword[esp],ebx
+mov dword[esp+0x2c],edx
+call fcn.00693db0
+mov dword[esp],ebx
+call fcn.00694d80
+cmp dword[ebx+0xa8],1
+mov edx,dword[esp+0x2c]
+je 0x6995f0
+test edx,edx
+jne 0x69937e
+cmp byte[ebx+0x9c],0
+je 0x69937e
+mov eax,dword[ebx+0xa4]
+cmp eax,0xa
+je 0x699600
+and eax,0xfffffffd
+cmp eax,0xc
+jne 0x69937e
+mov dword[esp],ebx
+call fcn.00694190
+jmp 0x699376
+mov dword[esp],ebx
+mov dword[esp+4],1
+call fcn.00693c50
+mov dword[esp],ebx
+mov ebx,edi
+call fcn.00694d80
+test edi,edi
+jne 0x699300
+jmp 0x6993ad
+mov dword[esp+4],edx
+mov dword[esp],eax
+call sub.WS2_32.dll___WSAFDIsSet
+sub esp,8
+test eax,eax
+je 0x6992c7
+mov edi,dword[sym.imp.WS2_32.dll_recv]
+lea ebx,[esp+0x34]
+mov dword[esp+0xc],0
+mov dword[esp+8],4
+mov dword[esp+4],ebx
+mov eax,dword[esi+0xbc]
+mov dword[esp],eax
+call edi
+sub esp,0x10
+test eax,eax
+jg 0x699591
+jmp 0x6992c7
+mov eax,dword[esp+0x24]
+test eax,eax
+je 0x699376
+mov dword[esp],ebx
+mov dword[esp+0x24],edx
+call fcn.00694190
+mov dword[esp],ebx
+call fcn.00694d80
+mov edx,dword[esp+0x24]
+jmp 0x699500
+mov ecx,dword[esp+0x24]
+test ecx,ecx
+je 0x699500
+jmp 0x6995cc
+mov dword[esp],ebx
+call fcn.00694190
+mov dword[esp],ebx
+call fcn.00694d80
+mov eax,dword[ebx+0xa4]
+jmp 0x699524
+mov dword[esp],eax
+call fcn.0069fb30
+test eax,eax
+mov ebp,eax
+je 0x6996b6
+mov ebp,1
+mov dword[esp],edi
+call fcn.0069fb70
+test eax,eax
+je 0x6996a4
+mov eax,dword[esp+0x30]
+mov dword[esp+8],ebp
+mov ecx,ebx
+mov dword[esp+4],0
+mov edx,edi
+mov dword[esp],eax
+mov eax,esi
+call fcn.00698340
+jmp 0x6992e1
+cmp edi,0xffffffff
+je 0x6992e1
+mov dword[esp],edi
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp,4
+test eax,eax
+je 0x6992e1
+mov eax,dword[0x83a8a0]
+mov dword[esp+0xc],0x7b9bd9
+mov dword[esp+8],0xb83
+mov dword[esp+4],0x7b9b64
+mov dword[esp],eax
+call dword[0x83a8a4]
+mov dword[esp+4],str.Failed_to_set_noninheritable_mode_on_incoming_connection_socket._n
+mov dword[esp],esi
+call fcn.0069df20
+jmp 0x69963e
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[esp],eax
+call fcn.0069ee40
+mov dword[esp+4],0x7b9f38
+mov dword[esp+8],eax
+mov dword[esp],esi
+call fcn.0069df20
+jmp 0x699632
+lea ebx,[esi+0x9c]
+mov dword[esp],ebx
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+sub esp,4
+mov byte[esi+0xc6],1
+mov dword[esp],ebx
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov eax,dword[esi+0xcc]
+sub esp,4
+mov dword[esp+4],0x7b9ea8
+mov dword[esp],esi
+mov dword[esp+8],eax
+call fcn.0069df20
+jmp 0x6992e1
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0066ec80@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.0068c3f0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006795d0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00682ca0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00691fc0@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

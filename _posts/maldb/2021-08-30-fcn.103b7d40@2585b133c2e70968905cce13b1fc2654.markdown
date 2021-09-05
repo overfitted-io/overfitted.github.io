@@ -1,0 +1,231 @@
+---
+layout: post
+title:  "fcn.103b7d40 @ 2585b133c2e70968905cce13b1fc2654"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.103b7d40
+- **Origin (md5):** 2585b133c2e70968905cce13b1fc2654
+- **VirusTotal:** [virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Similar Functions
+
+1. [fcn.0045d710][similar_1_ref] (sim.: 0.9246746105467876)
+2. [fcn.004920a0][similar_2_ref] (sim.: 0.9246746105467876)
+3. [fcn.004cca20][similar_3_ref] (sim.: 0.9246746105467876)
+4. [fcn.6408be10][similar_4_ref] (sim.: 0.9083682880701031)
+5. [fcn.004538f0][similar_5_ref] (sim.: 0.9076640291620578)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x1b0
+mov eax,dword[0x10c992e8]
+xor eax,esp
+mov dword[esp+0x1ac],eax
+push ebx
+mov ebx,ecx
+call fcn.103b75d0
+push str.clientfx.fxd
+push str.rez_s
+lea eax,[esp+0xb0]
+push 0x105
+push eax
+call fcn.103b7790
+lea ecx,[esp+0xb8]
+push ecx
+call fcn.103bdf00
+add esp,0x14
+test eax,eax
+je 0x103b7dbc
+lea edx,[esp+0xa8]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+test eax,eax
+mov dword[ebx],eax
+jne 0x103b7e2a
+xor al,al
+pop ebx
+mov ecx,dword[esp+0x1ac]
+xor ecx,esp
+call fcn.1090658a
+add esp,0x1b0
+ret
+mov eax,0x11b6a7f0
+lea edx,[eax+1]
+mov cl,byte[eax]
+add eax,1
+test cl,cl
+jne 0x103b7dc4
+sub eax,edx
+jne 0x103b7e20
+lea eax,[esp+0xa8]
+push eax
+push 0x105
+call dword[sym.imp.KERNEL32.dll_GetTempPathA]
+cmp eax,0x105
+ja 0x103b7da4
+push 0x11b6a7f0
+push 0
+push 0x10a53034
+lea ecx,[esp+0xb4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_GetTempFileNameA]
+mov ecx,dword[0x10ca8248]
+mov edx,dword[ecx]
+mov eax,dword[edx+0x30]
+push 0x11b6a7f0
+push str.clientfx.fxd
+call eax
+test eax,eax
+jne 0x103b7da4
+push 0x11b6a7f0
+jmp 0x103b7d94
+mov ecx,dword[ebx]
+push esi
+mov esi,dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push edi
+push 0x10a53020
+push ecx
+call esi
+mov edi,eax
+test edi,edi
+je 0x103b7e4d
+call fcn.10586720
+push eax
+call edi
+add esp,4
+mov edx,dword[ebx]
+push str.fxGetNum
+push edx
+call esi
+test eax,eax
+mov dword[esp+0x14],eax
+je 0x103b7eb7
+mov eax,dword[ebx]
+push str.fxGetRef
+push eax
+call esi
+test eax,eax
+mov dword[esp+0x10],eax
+je 0x103b7eb7
+mov ecx,dword[ebx]
+push str.fxSetPlayer
+push ecx
+call esi
+test eax,eax
+mov dword[esp+0xc],eax
+je 0x103b7eb7
+mov edx,dword[ebx]
+push str.fxSetAppFocus
+push edx
+call esi
+test eax,eax
+mov dword[esp+0x1c],eax
+je 0x103b7eb7
+mov eax,dword[ebx]
+push str.fxDelete
+push eax
+call esi
+test eax,eax
+mov dword[esp+0x18],eax
+je 0x103b7eb7
+mov ecx,dword[ebx]
+push str.fxSetCreateFunction
+push ecx
+call esi
+mov edi,eax
+test edi,edi
+jne 0x103b7ed1
+pop edi
+pop esi
+xor al,al
+pop ebx
+mov ecx,dword[esp+0x1ac]
+xor ecx,esp
+call fcn.1090658a
+add esp,0x1b0
+ret
+mov edx,dword[ebx]
+push ebp
+push str.fxCreatePropList
+push edx
+call esi
+mov ebp,eax
+test ebp,ebp
+je 0x103b7ef2
+mov eax,dword[ebx]
+push str.fxFreePropList
+push eax
+call esi
+xor esi,esi
+cmp eax,esi
+jne 0x103b7ef6
+xor al,al
+jmp 0x103b7f6f
+mov ecx,dword[esp+0x10]
+mov edx,dword[esp+0x20]
+mov dword[ebx+0xc],ecx
+mov ecx,dword[esp+0x1c]
+mov dword[ebx+0x10],edx
+mov dword[ebx+0x14],ecx
+mov dword[ebx+0x18],edi
+mov dword[ebx+4],ebp
+mov dword[ebx+8],eax
+call dword[esp+0x18]
+push eax
+mov dword[ebx+0x20],eax
+call fcn.103b7990
+add esp,4
+cmp eax,esi
+mov dword[ebx+0x1c],eax
+jne 0x103b7f30
+mov dword[ebx+0x20],esi
+jmp 0x103b7f6d
+xor ebp,ebp
+cmp dword[ebx+0x20],esi
+jbe 0x103b7f6d
+mov dword[esp+0x10],esi
+jmp 0x103b7f40
+lea edx,[esp+0x24]
+push ebp
+push edx
+call dword[esp+0x1c]
+mov edi,dword[ebx+0x1c]
+add edi,dword[esp+0x18]
+add dword[esp+0x18],0x90
+mov ecx,0x24
+mov esi,eax
+add ebp,1
+add esp,8
+rep movsd dword es:[edi],dword ptr[esi]
+cmp ebp,dword[ebx+0x20]
+jb 0x103b7f40
+mov al,1
+mov ecx,dword[esp+0x1bc]
+pop ebp
+pop edi
+pop esi
+pop ebx
+xor ecx,esp
+call fcn.1090658a
+add esp,0x1b0
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0045d710@289859175c221b107317af7727d26c17
+[similar_2_ref]: /report/fcn.004920a0@be7fba7cc724acf4ae2900d99e0fc9c3
+[similar_3_ref]: /report/fcn.004cca20@279a61b1e76da49531f1f16fd1102a2d
+[similar_4_ref]: /report/fcn.6408be10@07e4412910bcf0f5969ef64c44eecb2d
+[similar_5_ref]: /report/fcn.004538f0@289859175c221b107317af7727d26c17
+[virustotal_ref]: https://www.virustotal.com/gui/file/2585b133c2e70968905cce13b1fc2654

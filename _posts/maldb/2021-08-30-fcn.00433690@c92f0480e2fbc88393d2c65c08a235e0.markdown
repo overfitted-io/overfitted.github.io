@@ -1,0 +1,259 @@
+---
+layout: post
+title:  "fcn.00433690 @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00433690
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Similar Functions
+
+1. [fcn.0068d130][similar_1_ref] (sim.: 0.9266878088046488)
+2. [fcn.00670420][similar_2_ref] (sim.: 0.9234493410143042)
+3. [fcn.006713a0][similar_3_ref] (sim.: 0.922332799555671)
+4. [fcn.00693800][similar_4_ref] (sim.: 0.9170905250175739)
+5. [fcn.00670670][similar_5_ref] (sim.: 0.9161457201278842)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+push edi
+push esi
+push ebx
+sub esp,0x6c
+mov eax,dword[esp+0x80]
+test al,al
+mov byte[0x745010],al
+jne 0x4336b0
+add esp,0x6c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+lea edi,[esp+0x40]
+mov esi,dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+call esi
+mov dword[esp+8],edi
+mov dword[esp+4],0x28
+mov dword[esp],eax
+mov ebx,dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+call ebx
+sub esp,0xc
+cmp eax,1
+je 0x433790
+call esi
+lea edx,[esp+0x38]
+mov dword[esp+4],8
+mov dword[esp],eax
+mov dword[esp+8],edx
+call ebx
+sub esp,0xc
+cmp eax,1
+jne 0x4336a7
+mov eax,dword[esp+0x38]
+lea ebp,[esp+0x48]
+mov dword[esp+0x48],0
+mov dword[esp+0xc],0
+mov dword[esp+8],0
+mov dword[esp+0x10],ebp
+mov dword[esp+4],1
+mov dword[esp],eax
+mov eax,dword[sym.imp.ADVAPI32.dll_GetTokenInformation]
+mov dword[esp+0x2c],eax
+call eax
+sub esp,0x14
+mov eax,dword[esp+0x48]
+test eax,eax
+jne 0x433840
+mov eax,dword[esp+0x38]
+mov dword[esp+0x10],ebp
+mov dword[esp+0xc],0
+mov dword[esp+8],0
+mov dword[esp+4],1
+mov dword[esp],eax
+call dword[esp+0x2c]
+sub esp,0x14
+mov eax,dword[esp+0x38]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+sub esp,4
+jmp 0x4336a7
+lea eax,[esp+0x4c]
+mov dword[esp+0x48],1
+mov dword[esp+0x54],2
+mov dword[esp+4],0x74ee98
+mov dword[esp],0
+mov dword[esp+8],eax
+call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
+sub esp,0xc
+cmp eax,1
+jne 0x4336df
+lea eax,[esp+0x48]
+mov dword[esp+0x14],0
+mov dword[esp+0x10],0
+mov dword[esp+0xc],0
+mov dword[esp+4],0
+mov dword[esp+8],eax
+mov eax,dword[esp+0x40]
+mov dword[esp],eax
+call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
+sub esp,0x18
+cmp eax,1
+jne 0x4336df
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jne 0x4336df
+mov eax,dword[esp+0x40]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+sub esp,4
+or dword[0x8382d4],1
+add esp,0x6c
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+mov dword[esp+4],eax
+mov dword[esp],0x40
+call dword[sym.imp.KERNEL32.dll_LocalAlloc]
+sub esp,8
+mov ecx,eax
+mov eax,dword[esp+0x48]
+mov dword[esp+0x28],ecx
+mov dword[esp+8],ecx
+mov dword[esp+0x10],ebp
+mov dword[esp+4],1
+mov dword[esp+0xc],eax
+mov eax,dword[esp+0x38]
+mov dword[esp],eax
+call dword[esp+0x2c]
+sub esp,0x14
+mov edx,dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov eax,dword[esp+0x38]
+mov dword[esp+0x2c],edx
+mov dword[esp],eax
+call edx
+sub esp,4
+mov edx,dword[esp+0x28]
+test edx,edx
+je 0x4336a7
+xor edx,edx
+xor eax,eax
+mov dword[ebp+eax],edx
+add eax,4
+cmp eax,0x18
+jb 0x4338a6
+lea eax,[esp+0x3c]
+mov dword[esp+8],0xf0fff
+mov dword[esp+4],ebp
+mov dword[esp],0
+mov dword[esp+0xc],eax
+call sub.ADVAPI32.dll_LsaOpenPolicy
+sub esp,0x10
+test eax,eax
+je 0x4338ee
+mov eax,dword[esp+0x28]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_LocalFree]
+sub esp,4
+jmp 0x4336a7
+mov dword[esp],str.SeLockMemoryPrivilege
+call sub.msvcrt.dll_wcslen
+lea edx,[eax+eax]
+lea eax,[eax+eax+2]
+mov dword[esp+0xc],1
+mov dword[esp+8],edi
+mov dword[esp+0x44],0x74ee98
+mov word[esp+0x42],ax
+mov eax,dword[esp+0x28]
+mov word[esp+0x40],dx
+mov eax,dword[eax]
+mov dword[esp+4],eax
+mov eax,dword[esp+0x3c]
+mov dword[esp],eax
+call sub.ADVAPI32.dll_LsaAddAccountRights
+sub esp,0x10
+test eax,eax
+jne 0x433a40
+mov eax,dword[0x838044]
+test eax,eax
+je 0x433a54
+mov dword[esp],eax
+mov dword[esp+8],0x74eec4
+mov dword[esp+4],2
+call fcn.0040b600
+mov eax,dword[esp+0x3c]
+mov dword[esp],eax
+call sub.ADVAPI32.dll_LsaClose
+sub esp,4
+mov eax,dword[esp+0x28]
+mov dword[esp],eax
+call dword[sym.imp.KERNEL32.dll_LocalFree]
+sub esp,4
+call esi
+mov dword[esp+8],edi
+mov dword[esp+4],0x28
+mov dword[esp],eax
+call ebx
+sub esp,0xc
+cmp eax,1
+jne 0x4336a7
+lea eax,[esp+0x4c]
+mov dword[esp+0x48],1
+mov dword[esp+0x54],2
+mov dword[esp+4],0x74ee98
+mov dword[esp],0
+mov dword[esp+8],eax
+call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
+sub esp,0xc
+cmp eax,1
+jne 0x4336a7
+mov eax,dword[esp+0x40]
+mov dword[esp+0x14],0
+mov dword[esp+0x10],0
+mov dword[esp+0xc],0
+mov dword[esp+8],ebp
+mov dword[esp+4],0
+mov dword[esp],eax
+call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
+sub esp,0x18
+cmp eax,1
+jne 0x4336a7
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+test eax,eax
+jne 0x4336a7
+mov eax,dword[esp+0x40]
+mov dword[esp],eax
+call dword[esp+0x2c]
+push eax
+jmp 0x433828
+mov eax,dword[esp+0x3c]
+mov dword[esp],eax
+call sub.ADVAPI32.dll_LsaClose
+sub esp,4
+jmp 0x4338d9
+call fcn.0040b750
+mov eax,dword[0x838044]
+jmp 0x43394d
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.0068d130@c92f0480e2fbc88393d2c65c08a235e0
+[similar_2_ref]: /report/fcn.00670420@c92f0480e2fbc88393d2c65c08a235e0
+[similar_3_ref]: /report/fcn.006713a0@c92f0480e2fbc88393d2c65c08a235e0
+[similar_4_ref]: /report/fcn.00693800@c92f0480e2fbc88393d2c65c08a235e0
+[similar_5_ref]: /report/fcn.00670670@c92f0480e2fbc88393d2c65c08a235e0
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

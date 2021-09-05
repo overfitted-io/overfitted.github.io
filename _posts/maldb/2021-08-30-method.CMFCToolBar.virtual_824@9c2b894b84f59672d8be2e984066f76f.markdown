@@ -1,0 +1,238 @@
+---
+layout: post
+title:  "method.CMFCToolBar.virtual_824 @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** method.CMFCToolBar.virtual\_824
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Similar Functions
+
+1. [method.CMFCColorBar.virtual\_820][similar_1_ref] (sim.: 0.9464823942678235)
+2. [fcn.00402e5b][similar_2_ref] (sim.: 0.8859756077399547)
+3. [method.COccManager.virtual\_32][similar_3_ref] (sim.: 0.8845139567439458)
+4. [fcn.0040337f][similar_4_ref] (sim.: 0.8843974735594755)
+5. [fcn.0040337f][similar_5_ref] (sim.: 0.8843974735594755)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x28
+push ebx
+push esi
+mov esi,dword[ebp+8]
+push edi
+mov edi,ecx
+mov dword[ebp-0x1c],edi
+test esi,esi
+je 0x43844b
+call fcn.0042d89f
+push 0xf1
+mov ebx,dword[eax+0xc]
+movzx eax,si
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax,eax
+jne 0x438240
+xor eax,eax
+jmp 0x438442
+push eax
+push ebx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0x20],eax
+test eax,eax
+je 0x438239
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov ebx,eax
+test ebx,ebx
+je 0x438239
+movzx eax,word[ebx+6]
+xor ecx,ecx
+push 4
+pop edx
+mul edx
+seto cl
+neg ecx
+or ecx,eax
+push ecx
+call fcn.0040e427
+mov dword[ebp-8],eax
+pop ecx
+test eax,eax
+je 0x43844b
+movzx eax,word[ebx+2]
+movzx ecx,word[ebx+4]
+mov dword[ebp-0x18],eax
+add eax,6
+mov dword[ebp-0x14],ecx
+add ecx,6
+cmp dword[ebp+0x10],0
+mov dword[ebp-4],eax
+mov dword[ebp-0x28],eax
+mov dword[ebp-0xc],ecx
+mov dword[ebp-0x24],ecx
+je 0x4382ae
+mov edx,dword[edi+0xc30]
+jmp 0x4382b4
+mov edx,dword[0x5dfdf8]
+test edx,edx
+jne 0x43832f
+call fcn.00410017
+fld1
+cmp dword[eax+0x1e8],0
+je 0x4382d0
+fld qword[eax+0x1e0]
+jmp 0x4382d2
+fld st(0)
+fucompp
+fnstsw ax
+test ah,0x44
+jnp 0x438329
+call fcn.00410017
+cmp dword[eax+0x1e8],0
+je 0x4382f1
+fld qword[eax+0x1e0]
+jmp 0x4382f3
+fld1
+fild dword[ebp-0x28]
+fstp qword[ebp-0x10]
+fld qword[ebp-0x10]
+fmul st(1)
+fld qword[0x5b9908]
+fadd st(1),st(0)
+fxch st(1)
+call fcn.00553a60
+fild dword[ebp-0x24]
+mov dword[ebp-4],eax
+fstp qword[ebp-0x28]
+fld qword[ebp-0x28]
+fmulp st(2)
+faddp st(1)
+call fcn.00553a60
+mov ecx,eax
+mov dword[ebp-0xc],ecx
+jmp 0x43832c
+mov ecx,dword[ebp-0xc]
+mov eax,dword[ebp-4]
+cmp dword[ebp+0x10],0
+je 0x438348
+push 0
+push dword[ebp-0x14]
+push dword[ebp-0x18]
+push ecx
+push eax
+mov ecx,edi
+call fcn.0043dc52
+jmp 0x438368
+mov ecx,0x5dff20
+call fcn.0043791d
+test eax,eax
+jne 0x438368
+push dword[ebp-0x14]
+mov eax,dword[ebp-4]
+push dword[ebp-0x18]
+push dword[ebp-0xc]
+push eax
+call fcn.0043dff3
+mov ecx,dword[ebp+0xc]
+mov dword[ebp-0x18],1
+cmp dword[ecx+4],0
+jne 0x43837b
+mov dword[ecx+4],esi
+cmp dword[edi+0xd18],0
+jne 0x4383a3
+mov eax,dword[edi]
+push dword[ebp+0x10]
+push ecx
+mov esi,dword[eax+0x334]
+mov ecx,esi
+call fcn.00553897
+mov ecx,edi
+call esi
+test eax,eax
+je 0x43842d
+mov eax,dword[edi+0xc04]
+xor esi,esi
+mov dword[ebp-0x14],eax
+xor eax,eax
+cmp ax,word[ebx+6]
+jae 0x4383f8
+mov edx,dword[ebp-8]
+lea ecx,[ebx+8]
+mov edi,dword[ebp-0x14]
+mov dword[ebp-0x18],ecx
+cmp dword[ebp+0x10],0
+movzx eax,word[ecx]
+mov dword[edx+esi*4],eax
+jne 0x4383e6
+test eax,eax
+je 0x4383e6
+push eax
+mov ecx,0x5d84a4
+call fcn.00463daf
+mov ecx,dword[ebp-0x18]
+mov edx,dword[ebp-8]
+mov dword[eax],edi
+inc edi
+movzx eax,word[ebx+6]
+inc esi
+add ecx,2
+mov dword[ebp-0x18],ecx
+cmp esi,eax
+jl 0x4383c2
+mov edi,dword[ebp-0x1c]
+mov eax,dword[ebp+8]
+mov ecx,dword[edi]
+mov dword[edi+0xd18],eax
+xor eax,eax
+inc eax
+push eax
+movzx eax,word[ebx+6]
+mov esi,dword[ecx+0x33c]
+mov ecx,esi
+push eax
+push dword[ebp-8]
+call fcn.00553897
+mov ecx,edi
+call esi
+mov dword[ebp-0x18],eax
+test eax,eax
+jne 0x43842d
+and dword[edi+0xd18],eax
+push dword[ebp-8]
+call fcn.0040e422
+pop ecx
+push dword[ebp-0x20]
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax,dword[ebp-0x18]
+pop edi
+pop esi
+pop ebx
+mov esp,ebp
+pop ebp
+ret 0xc
+call fcn.0040f785
+int3
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/method.CMFCColorBar.virtual_820@e5d49e0823e602f2ee948ac39d32c1eb
+[similar_2_ref]: /report/fcn.00402e5b@8cfdb0713f3b8f9b0a5ef775f40cf182
+[similar_3_ref]: /report/method.COccManager.virtual_32@59aef7c08025d70f84c85db2092fc99e
+[similar_4_ref]: /report/fcn.0040337f@59b1876779e3211327c1a96e7e2c12c4
+[similar_5_ref]: /report/fcn.0040337f@3e325eb0547b921cde32ac52d0a0f75c
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

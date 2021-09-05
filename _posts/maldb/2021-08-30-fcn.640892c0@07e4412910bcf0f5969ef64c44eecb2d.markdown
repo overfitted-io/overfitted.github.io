@@ -1,0 +1,161 @@
+---
+layout: post
+title:  "fcn.640892c0 @ 07e4412910bcf0f5969ef64c44eecb2d"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.640892c0
+- **Origin (md5):** 07e4412910bcf0f5969ef64c44eecb2d
+- **VirusTotal:** [virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.004057a0][similar_1_ref] (sim.: 0.8852103419616979)
+2. [method.MFX꞉꞉D3D9Device.virtual\_4][similar_2_ref] (sim.: 0.8852103419616979)
+3. [fcn.101e6930][similar_3_ref] (sim.: 0.8801442388723179)
+4. [fcn.10006d20][similar_4_ref] (sim.: 0.8699758516637044)
+5. [fcn.458c8f70][similar_5_ref] (sim.: 0.8679892721708585)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+sub esp,0x2c
+mov eax,dword[0x641b8950]
+xor eax,esp
+mov dword[esp+0x28],eax
+mov eax,dword[esp+0x30]
+push ebx
+push esi
+mov esi,ecx
+lea ecx,[esp+8]
+push eax
+call sym public: void __thiscall QHostAddress::constructor(class QHostAddress const &)
+lea ecx,[esp+8]
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+test eax,eax
+jne 0x64089322
+lea ecx,[esp+8]
+call sym public: unsigned int __thiscall QHostAddress::toIPv4Address(void)const
+and eax,0xffff0000
+cmp eax,0xefff0000
+jne 0x64089322
+push 6
+lea ecx,[esp+0x10]
+call sym public: void __thiscall QHostAddress::constructor(enum QHostAddress::SpecialAddress)
+mov edx,dword[esp+8]
+mov ecx,dword[eax]
+mov dword[esp+8],ecx
+lea ecx,[esp+0xc]
+mov dword[eax],edx
+call sym public: void __thiscall QHostAddress::~destructor(void)
+mov ebx,dword[esp+0x3c]
+lea eax,[esp+0xc]
+push eax
+lea eax,[esp+0x18]
+mov dword[esp+0x10],0
+push eax
+lea eax,[esp+0x10]
+mov ecx,esi
+push eax
+push ebx
+call fcn.6408aaf0
+cmp word[esp+0x14],0x17
+jne 0x64089384
+lea ecx,[esp+8]
+mov dword[esp+0x10],0
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+mov ecx,dword[esp+0x10]
+mov edx,1
+push 4
+cmp eax,edx
+lea eax,[esp+0x14]
+push eax
+push 0x1b
+push 0x29
+push dword[esi+0x6c]
+cmove ecx,edx
+mov dword[esp+0x24],ecx
+call dword[sym.imp.WS2_32.dll_setsockopt]
+push dword[esp+0xc]
+lea eax,[esp+0x18]
+push eax
+push dword[esi+0x6c]
+call dword[sym.imp.WS2_32.dll_bind]
+cmp eax,0xffffffff
+jne 0x6408943f
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax,0x273f
+jne 0x640893f4
+lea ecx,[esp+8]
+call sym public: enum QAbstractSocket::NetworkLayerProtocol __thiscall QHostAddress::protocol(void)
+cmp eax,2
+jne 0x640893f4
+push ebx
+mov word[esp+0x18],ax
+call dword[sym.imp.WS2_32.dll_htons]
+lea ecx,[esp+8]
+mov word[esp+0x16],ax
+call sym public: unsigned int __thiscall QHostAddress::toIPv4Address(void)const
+push eax
+call dword[sym.imp.WS2_32.dll_htonl]
+mov dword[esp+0x18],eax
+lea eax,[esp+0x14]
+push 0x10
+push eax
+push dword[esi+0x6c]
+call dword[sym.imp.WS2_32.dll_bind]
+cmp eax,0xffffffff
+jne 0x6408943f
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+add eax,0xffffd8e3
+cmp eax,0x24
+ja case.0x6408940b.10014
+movzx eax,byte[eax+0x64089478]
+jmp dword[eax*4+0x64089468]
+push 0xe
+push 8
+mov ecx,esi
+call fcn.64087a40
+xor bl,bl
+jmp 0x64089448
+push 0x10
+push 3
+mov ecx,esi
+call fcn.64087a40
+xor bl,bl
+jmp 0x64089448
+push 0xf
+push 9
+mov ecx,esi
+call fcn.64087a40
+xor bl,bl
+jmp 0x64089448
+mov dword[esi+0x4c],4
+mov bl,1
+lea ecx,[esp+8]
+call sym public: void __thiscall QHostAddress::~destructor(void)
+mov ecx,dword[esp+0x30]
+mov al,bl
+pop esi
+pop ebx
+xor ecx,esp
+call fcn.641429ea
+add esp,0x2c
+ret 8
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.004057a0@d59f9c4f445b9f980173dec064f55091
+[similar_2_ref]: /report/method.MFX꞉꞉D3D9Device.virtual_4@d59f9c4f445b9f980173dec064f55091
+[similar_3_ref]: /report/fcn.101e6930@2585b133c2e70968905cce13b1fc2654
+[similar_4_ref]: /report/fcn.10006d20@4c3818fdf32d89a09257dbc9d3e142ea
+[similar_5_ref]: /report/fcn.458c8f70@284c9c9722cef7520dddfe58806fd72f
+[virustotal_ref]: https://www.virustotal.com/gui/file/07e4412910bcf0f5969ef64c44eecb2d

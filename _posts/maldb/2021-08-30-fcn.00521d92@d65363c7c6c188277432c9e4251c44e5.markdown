@@ -1,0 +1,178 @@
+---
+layout: post
+title:  "fcn.00521d92 @ d65363c7c6c188277432c9e4251c44e5"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00521d92
+- **Origin (md5):** d65363c7c6c188277432c9e4251c44e5
+- **VirusTotal:** [virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00524114][similar_1_ref] (sim.: 0.8890832584349458)
+2. [fcn.00522760][similar_2_ref] (sim.: 0.8855878047770795)
+3. [fcn.00521f8b][similar_3_ref] (sim.: 0.8852595572692173)
+4. [fcn.005242fe][similar_4_ref] (sim.: 0.8737683047139801)
+5. [fcn.0051fd71][similar_5_ref] (sim.: 0.8667090480746781)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+jmp 0x5873f0
+push ebp
+mov ebp,esp
+sub esp,0xa8
+push esi
+push edi
+lea edi,[ebp-0xa8]
+mov ecx,0x2a
+mov eax,0xcccccccc
+rep stosd dword es:[edi],eax
+mov eax,dword[0x7e2f74]
+xor eax,ebp
+mov dword[ebp-4],eax
+mov eax,dword[ebp+8]
+mov ecx,dword[eax]
+mov dword[ebp-8],ecx
+cmp dword[ebp+0x10],0
+jne 0x58742e
+lea edx,[ebp-0x9c]
+mov dword[ebp+0x10],edx
+mov eax,dword[ebp+0x10]
+mov ecx,dword[ebp+0xc]
+mov edx,dword[ecx+4]
+mov dword[eax],edx
+mov eax,dword[ebp+0x10]
+mov ecx,dword[ebp+8]
+mov edx,dword[ecx+0x90]
+mov dword[eax+4],edx
+mov eax,dword[ebp+8]
+cmp dword[eax+0x90],2
+jne 0x587460
+mov dword[ebp-0xa8],0x11
+jmp 0x58746c
+mov ecx,dword[ebp+0xc]
+mov edx,dword[ecx+0xc]
+mov dword[ebp-0xa8],edx
+mov eax,dword[ebp+0x10]
+mov ecx,dword[ebp-0xa8]
+mov dword[eax+8],ecx
+mov edx,dword[ebp+0x10]
+mov eax,dword[ebp+0xc]
+mov ecx,dword[eax+0x10]
+mov dword[edx+0xc],ecx
+mov edx,dword[ebp+0x10]
+cmp dword[edx+0xc],0x80
+jbe 0x58749a
+mov eax,dword[ebp+0x10]
+mov dword[eax+0xc],0x80
+mov ecx,dword[ebp+0x10]
+mov edx,dword[ecx+0xc]
+push edx
+mov eax,dword[ebp+0xc]
+mov ecx,dword[eax+0x18]
+push ecx
+mov edx,dword[ebp+0x10]
+add edx,0x10
+push edx
+call fcn.005216f3
+add esp,0xc
+mov eax,dword[ebp-8]
+cmp dword[eax+0x1e0],0
+je 0x58750d
+push 1
+mov ecx,dword[ebp-8]
+push ecx
+call fcn.00521a4f
+add esp,8
+mov esi,esp
+mov edx,dword[ebp+0x10]
+push edx
+push 0
+mov eax,dword[ebp-8]
+mov ecx,dword[eax+0x1e4]
+push ecx
+mov edx,dword[ebp-8]
+mov eax,dword[edx+0x1e0]
+call eax
+add esp,0xc
+cmp esi,esp
+call fcn.00520929
+mov ecx,dword[ebp+0x14]
+mov dword[ecx],eax
+push 0
+mov edx,dword[ebp-8]
+push edx
+call fcn.00521a4f
+add esp,8
+jmp 0x587535
+mov esi,esp
+mov eax,dword[ebp+0x10]
+mov ecx,dword[eax+8]
+push ecx
+mov edx,dword[ebp+0x10]
+mov eax,dword[edx+4]
+push eax
+mov ecx,dword[ebp+0x10]
+mov edx,dword[ecx]
+push edx
+call dword[sym.imp.WS2_32.dll_socket]
+cmp esi,esp
+call fcn.00520929
+mov ecx,dword[ebp+0x14]
+mov dword[ecx],eax
+mov edx,dword[ebp+0x14]
+cmp dword[edx],0xffffffff
+jne 0x587544
+mov eax,7
+jmp 0x587578
+mov eax,dword[ebp+8]
+cmp dword[eax+0x8c],0
+je 0x587576
+mov ecx,dword[ebp+0x10]
+cmp dword[ecx],0x17
+jne 0x587576
+mov edx,dword[ebp+0x10]
+add edx,0x10
+mov dword[ebp-0xa4],edx
+mov eax,dword[ebp-0xa4]
+mov ecx,dword[ebp+8]
+mov edx,dword[ecx+0x8c]
+mov dword[eax+0x18],edx
+xor eax,eax
+push edx
+mov ecx,ebp
+push eax
+lea edx,[0x5875a8]
+call fcn.00520dbb
+pop eax
+pop edx
+pop edi
+pop esi
+mov ecx,dword[ebp-4]
+xor ecx,ebp
+call fcn.0051fccc
+add esp,0xa8
+cmp ebp,esp
+call fcn.00520929
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00524114@d65363c7c6c188277432c9e4251c44e5
+[similar_2_ref]: /report/fcn.00522760@d65363c7c6c188277432c9e4251c44e5
+[similar_3_ref]: /report/fcn.00521f8b@d65363c7c6c188277432c9e4251c44e5
+[similar_4_ref]: /report/fcn.005242fe@d65363c7c6c188277432c9e4251c44e5
+[similar_5_ref]: /report/fcn.0051fd71@d65363c7c6c188277432c9e4251c44e5
+[virustotal_ref]: https://www.virustotal.com/gui/file/d65363c7c6c188277432c9e4251c44e5

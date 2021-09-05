@@ -1,0 +1,243 @@
+---
+layout: post
+title:  "fcn.00403679 @ 13efdafd5b4f5d3a5dcb240b696c267c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403679
+- **Origin (md5):** 13efdafd5b4f5d3a5dcb240b696c267c
+- **VirusTotal:** [virustotal.com/gui/file/13efdafd5b4f5d3a5dcb240b696c267c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Similar Functions
+
+1. [fcn.00403679][similar_1_ref] (sim.: 1.0)
+2. [fcn.004031e3][similar_2_ref] (sim.: 0.9929962534701634)
+3. [fcn.0040303b][similar_3_ref] (sim.: 0.9886486026827992)
+4. [fcn.004036a2][similar_4_ref] (sim.: 0.9879827315723235)
+5. [fcn.004036a2][similar_5_ref] (sim.: 0.9879827315723235)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+sub esp,0x22c
+push ebx
+push esi
+xor ebx,ebx
+push edi
+mov dword[ebp-4],ebx
+mov dword[ebp-8],ebx
+call dword[sym.imp.KERNEL32.dll_GetTickCount]
+push 0x2004
+mov esi,0x4df0d8
+push esi
+add eax,0x3e8
+push ebx
+mov dword[0x472e20],eax
+call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
+push 3
+push 0x80000000
+push esi
+call fcn.00405fb0
+mov edi,eax
+mov dword[0x40b010],edi
+cmp edi,0xffffffff
+jne 0x4036d3
+mov eax,str.Error_launching_installer
+jmp 0x40390d
+push esi
+mov esi,0x4cf0b8
+push esi
+call fcn.0040616a
+push esi
+call fcn.004068b2
+push eax
+push 0x4e30e0
+call fcn.0040616a
+push ebx
+push edi
+call dword[sym.imp.KERNEL32.dll_GetFileSize]
+mov dword[0x42f1e0],eax
+mov esi,eax
+cmp eax,ebx
+jle 0x4037ee
+mov ebx,0x41f158
+mov eax,dword[0x472e2c]
+neg eax
+sbb eax,eax
+and eax,0x7e00
+add eax,0x200
+mov edi,esi
+cmp esi,eax
+jl 0x403727
+mov edi,eax
+push edi
+push ebx
+call fcn.00403389
+test eax,eax
+je 0x403881
+cmp dword[0x472e2c],0
+jne 0x4037b9
+push 0x1c
+push ebx
+lea eax,[ebp-0x24]
+push eax
+call fcn.00405f6c
+mov eax,dword[ebp-0x24]
+test eax,0xfffffff0
+jne 0x4037c7
+cmp dword[ebp-0x20],0xdeadbeef
+jne 0x4037c7
+cmp dword[ebp-0x14],0x74736e49
+jne 0x4037c7
+cmp dword[ebp-0x18],0x74666f73
+jne 0x4037c7
+cmp dword[ebp-0x1c],0x6c6c754e
+jne 0x4037c7
+or dword[ebp+8],eax
+mov eax,dword[ebp+8]
+mov ecx,dword[0x41f154]
+and eax,2
+or dword[0x472ea0],eax
+mov eax,dword[ebp-0xc]
+mov dword[0x472e2c],ecx
+cmp eax,esi
+jg 0x403889
+test byte[ebp+8],8
+jne 0x4037ab
+test byte[ebp+8],4
+jne 0x4037ec
+inc dword[ebp-8]
+lea esi,[eax-4]
+cmp edi,esi
+jbe 0x4037c7
+mov edi,esi
+jmp 0x4037c7
+test byte[ebp+8],2
+jne 0x4037c7
+push 0
+call fcn.004032e7
+pop ecx
+cmp esi,dword[0x42f1e0]
+jge 0x4037dc
+push edi
+push ebx
+push dword[ebp-4]
+call fcn.004073e2
+mov dword[ebp-4],eax
+add dword[0x41f154],edi
+sub esi,edi
+test esi,esi
+jg 0x40370c
+xor ebx,ebx
+push 1
+call fcn.004032e7
+pop ecx
+cmp dword[0x472e2c],ebx
+je 0x403889
+cmp dword[ebp-8],ebx
+je 0x403829
+push dword[0x41f154]
+call fcn.004033bb
+push 4
+lea eax,[ebp+8]
+push eax
+call fcn.00403389
+test eax,eax
+je 0x403889
+mov eax,dword[ebp-4]
+cmp eax,dword[ebp+8]
+jne 0x403889
+push dword[ebp-0x10]
+push 0x40
+call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
+mov ecx,0x427158
+mov esi,eax
+call fcn.00407453
+push 0x4d70c8
+lea eax,[ebp-0x22c]
+push eax
+call fcn.00405fe0
+push ebx
+push 0x4000100
+push 2
+push ebx
+push ebx
+push 0xc0000000
+lea eax,[ebp-0x22c]
+push eax
+call dword[sym.imp.KERNEL32.dll_CreateFileW]
+mov dword[0x40b014],eax
+cmp eax,0xffffffff
+jne 0x403890
+mov eax,str.Error_writing_temporary_file._Make_sure_your_temp_folder_is_valid.
+jmp 0x40390d
+push 1
+call fcn.004032e7
+pop ecx
+mov eax,str.Installer_integrity_check_has_failed._Common_causes_include_nincomplete_download_and_damaged_media._Contact_the_ninstallers_author_to_obtain_a_new_copy._n_nMore_information_at:_nhttp:__nsis.sf.net_NSIS_Error
+jmp 0x40390d
+mov eax,dword[0x472e2c]
+add eax,0x1c
+push eax
+call fcn.004033bb
+mov ecx,dword[ebp-0x24]
+push dword[ebp-0x10]
+not ecx
+and ecx,4
+mov dword[0x4331ec],eax
+sub eax,ecx
+mov ecx,dword[ebp-0xc]
+push esi
+push ebx
+lea eax,[eax+ecx-0x1c]
+push 0xffffffffffffffff
+mov dword[0x4331e8],eax
+call fcn.00403550
+cmp eax,dword[ebp-0x10]
+jne 0x403889
+test byte[ebp-0x24],1
+mov dword[0x472ddc],esi
+mov eax,dword[esi]
+mov dword[0x472e28],eax
+je 0x4038e3
+inc dword[0x472e24]
+push 8
+pop ecx
+lea eax,[esi+0x44]
+sub eax,8
+add dword[eax],esi
+dec ecx
+cmp ecx,ebx
+jne 0x4038e9
+mov eax,dword[0x42f1e4]
+mov dword[esi+0x3c],eax
+push 0x40
+add esi,4
+push esi
+push 0x472de0
+call fcn.00405f6c
+xor eax,eax
+pop edi
+pop esi
+pop ebx
+leave
+ret 4
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00403679@d6ea03fac5cc8539ee4d47aca4467735
+[similar_2_ref]: /report/fcn.004031e3@588e58b795d90bc66462e36cf410fee4
+[similar_3_ref]: /report/fcn.0040303b@e1c1647e2a46cfd9190abde0e66f29f3
+[similar_4_ref]: /report/fcn.004036a2@6c8b5339bada4cbd03f0f446da640707
+[similar_5_ref]: /report/fcn.004036a2@e7582fc3dadb394a1457ab7e7fbbe9a7
+[virustotal_ref]: https://www.virustotal.com/gui/file/13efdafd5b4f5d3a5dcb240b696c267c

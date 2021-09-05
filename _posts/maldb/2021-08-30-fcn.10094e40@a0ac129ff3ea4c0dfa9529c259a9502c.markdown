@@ -1,0 +1,194 @@
+---
+layout: post
+title:  "fcn.10094e40 @ a0ac129ff3ea4c0dfa9529c259a9502c"
+date:   2021-08-30 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10094e40
+- **Origin (md5):** a0ac129ff3ea4c0dfa9529c259a9502c
+- **VirusTotal:** [virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Similar Functions
+
+1. [fcn.00509dd0][similar_1_ref] (sim.: 0.9076924218789826)
+2. [fcn.00452070][similar_2_ref] (sim.: 0.9076924218789826)
+3. [fcn.1006d9b0][similar_3_ref] (sim.: 0.9046550272687041)
+4. [fcn.004145e0][similar_4_ref] (sim.: 0.9027711946909976)
+5. [fcn.00401c90][similar_5_ref] (sim.: 0.899763426026244)
+
+
+# Disassembled Code
+
+{% highlight nasm %}
+push ebp
+mov ebp,esp
+push 0xffffffffffffffff
+push 0x1013a088
+mov eax,dword fs:[0]
+push eax
+mov eax,0xa06c
+call fcn.100e3350
+mov eax,dword[0x101b4454]
+xor eax,ebp
+mov dword[ebp-0x10],eax
+push esi
+push edi
+push eax
+lea eax,[ebp-0xc]
+mov dword fs:[0],eax
+mov dword[ebp-4],0
+lea ecx,[ebp+8]
+call fcn.1000ac93
+cmp eax,5
+jge 0x10094ea9
+mov dword[ebp-0xa054],0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.1000ac7d
+mov eax,dword[ebp-0xa054]
+jmp 0x100950d1
+push 0
+push 0
+push 0
+push 0
+push str.Download_From_HTTP
+call dword[sym.imp.WININET.dll_InternetOpenW]
+mov dword[ebp-0xa038],eax
+cmp dword[ebp-0xa038],0
+jne 0x10094eef
+mov dword[ebp-0xa070],0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.1000ac7d
+mov eax,dword[ebp-0xa070]
+jmp 0x100950d1
+mov ecx,8
+mov esi,str.Accept:___r_n_r_n
+lea edi,[ebp-0x30]
+rep movsd dword es:[edi],dword ptr[esi]
+lea eax,[ebp-0x30]
+mov dword[ebp-0xa034],eax
+mov ecx,dword[ebp-0xa034]
+add ecx,2
+mov dword[ebp-0xa064],ecx
+mov edx,dword[ebp-0xa034]
+mov ax,word[edx]
+mov word[ebp-0xa03e],ax
+add dword[ebp-0xa034],2
+cmp word[ebp-0xa03e],0
+jne 0x10094f16
+mov ecx,dword[ebp-0xa034]
+sub ecx,dword[ebp-0xa064]
+sar ecx,1
+mov dword[ebp-0xa04c],ecx
+mov edx,dword[ebp-0xa04c]
+mov dword[ebp-0xa06c],edx
+push 0
+push 0x80000000
+mov eax,dword[ebp-0xa06c]
+push eax
+lea ecx,[ebp-0x30]
+push ecx
+lea ecx,[ebp+8]
+call fcn.1000ac90
+push eax
+mov edx,dword[ebp-0xa038]
+push edx
+call dword[sym.imp.WININET.dll_InternetOpenUrlW]
+mov dword[ebp-0xa03c],eax
+cmp dword[ebp-0xa03c],0
+jne 0x10094fbf
+mov eax,dword[ebp-0xa038]
+push eax
+call dword[sym.imp.WININET.dll_InternetCloseHandle]
+mov dword[ebp-0xa05c],0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.1000ac7d
+mov eax,dword[ebp-0xa05c]
+jmp 0x100950d1
+mov dword[ebp-0xa048],0
+mov dword[ebp-0xa060],4
+mov dword[ebp-0xa074],0
+mov dword[ebp-0xa044],0
+mov dword[ebp-0xa078],0
+push 0
+lea ecx,[ebp-0xa060]
+push ecx
+lea edx,[ebp-0xa048]
+push edx
+push 0x20000005
+mov eax,dword[ebp-0xa03c]
+push eax
+call dword[sym.imp.WININET.dll_HttpQueryInfoW]
+mov dword[ebp-0xa068],eax
+cmp dword[ebp-0xa068],0
+jne 0x1009502c
+mov dword[ebp-0xa048],0
+mov ecx,1
+test ecx,ecx
+je 0x100950a5
+lea edx,[ebp-0xa044]
+push edx
+push 0xa000
+lea eax,[ebp-0xa030]
+push eax
+mov ecx,dword[ebp-0xa03c]
+push ecx
+call dword[sym.imp.WININET.dll_InternetReadFile]
+test eax,eax
+jne 0x1009507a
+mov dword[ebp-0xa050],0
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.1000ac7d
+mov eax,dword[ebp-0xa050]
+jmp 0x100950d1
+cmp dword[ebp-0xa044],0
+jne 0x10095085
+jmp 0x100950a5
+mov edx,dword[ebp-0xa044]
+push edx
+lea eax,[ebp-0xa030]
+push eax
+mov ecx,dword[ebp+0xc]
+call fcn.100960b0
+push 1
+call dword[sym.imp.KERNEL32.dll_Sleep]
+jmp 0x1009502c
+mov ecx,dword[ebp-0xa038]
+push ecx
+call dword[sym.imp.WININET.dll_InternetCloseHandle]
+mov dword[ebp-0xa058],1
+mov dword[ebp-4],0xffffffff
+lea ecx,[ebp+8]
+call fcn.1000ac7d
+mov eax,dword[ebp-0xa058]
+mov ecx,dword[ebp-0xc]
+mov dword fs:[0],ecx
+pop ecx
+pop edi
+pop esi
+mov ecx,dword[ebp-0x10]
+xor ecx,ebp
+call fcn.100cfb59
+mov esp,ebp
+pop ebp
+ret
+{% endhighlight %}
+
+
+[similar_1_ref]: /report/fcn.00509dd0@c60344b51fa39a329b92557d24ff7670
+[similar_2_ref]: /report/fcn.00452070@c60344b51fa39a329b92557d24ff7670
+[similar_3_ref]: /report/fcn.1006d9b0@a0ac129ff3ea4c0dfa9529c259a9502c
+[similar_4_ref]: /report/fcn.004145e0@279a61b1e76da49531f1f16fd1102a2d
+[similar_5_ref]: /report/fcn.00401c90@d9b85b9b67587bbf2112c62164413bd8
+[virustotal_ref]: https://www.virustotal.com/gui/file/a0ac129ff3ea4c0dfa9529c259a9502c
