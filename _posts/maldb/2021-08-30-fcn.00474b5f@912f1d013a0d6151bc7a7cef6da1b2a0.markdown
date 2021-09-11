@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "fcn.00474b5f @ 912f1d013a0d6151bc7a7cef6da1b2a0"
-date:   2021-08-30 15:52:19 +0300
+date:   2021-09-10 15:52:19 +0300
 categories: report
 index: false
 ---
@@ -16,68 +16,133 @@ index: false
 
 
 # Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
 
-1. [fcn.004035b0][similar_1_ref] (sim.: 0.8402827426119357)
-2. [fcn.00485144][similar_2_ref] (sim.: 0.8368952533748247)
-3. [fcn.00437b71][similar_3_ref] (sim.: 0.8368952533748247)
-4. [fcn.00467eae][similar_4_ref] (sim.: 0.8368952533748247)
-5. [fcn.0040dce1][similar_5_ref] (sim.: 0.8360083153656033)
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-108.32486724853516, 35.312191009521484, '<b><a href="/report/fcn.00474b5f@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.00474b5f</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br><br>push ebp<br>mov ebp esp<br>push ecx<br>push ecx<br>push ebx<br>push esi<br>mov esi ecx<br>mov word[ebp-4] 0x500<br>xor ecx ecx<br>push edi<br>mov eax ecx<br>mov dword[ebp-8] ecx<br>lea ebx [esi+0x20]<br>mov dword[esi+0x50] eax<br>mov ax word[ebp-4]<br>lea edi [esi+0x1c]<br>push ebx<br>push 1<br>push 0xa<br>mov dword[esi] ecx<br>mov dword[esi+0x14] 0x14<br>mov dword[esi+0x18] ecx<br>mov dword[edi] ecx<br>mov dword[ebx] ecx<br>mov dword[esi+0x24] ecx<br>mov dword[esi+0x4c] ecx<br>mov word[esi+0x54] ax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThread]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]<br>test eax eax<br>jne 0x474bdc<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>cmp eax 0x3f0<br>jne 0x474cff<br>push ebx<br>push 0xa<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]<br>test eax eax<br>je 0x474cff<br>lea eax [esi+0x24]<br>push eax<br>push 2<br>push dword[ebx]<br>call dword[sym.imp.ADVAPI32.dll_DuplicateToken]<br>test eax eax<br>je 0x474cff<br>push edi<br>xor eax eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push 0x220<br>push 0x20<br>push 2<br>lea eax [esi+0x50]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]<br>test eax eax<br>je 0x474cff<br>mov ebx dword[sym.imp.KERNEL32.dll_LocalAlloc]<br>push 0x14<br>push 0x40<br>call ebx<br>mov dword[esi+0x4c] eax<br>test eax eax<br>je 0x474cff<br>push 1<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]<br>test eax eax<br>je 0x474cff<br>push dword[edi]<br>call dword[sym.imp.ADVAPI32.dll_GetLengthSid]<br>add eax 0x10<br>push eax<br>push 0x40<br>mov dword[esi+0x10] eax<br>call ebx<br>mov dword[esi+0x18] eax<br>test eax eax<br>je 0x474cff<br>push 2<br>push dword[esi+0x10]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeAcl]<br>test eax eax<br>je 0x474cff<br>push 3<br>pop eax<br>push dword[edi]<br>mov dword[esi+8] eax<br>push eax<br>push 2<br>push dword[esi+0x18]<br>call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]<br>test eax eax<br>je 0x474cff<br>xor ebx ebx<br>push ebx<br>push dword[esi+0x18]<br>push 1<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]<br>test eax eax<br>je 0x474cff<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorGroup]<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]<br>test eax eax<br>je 0x474cff<br>push esi<br>lea eax [esi+4]<br>mov dword[esi+0x40] 2<br>push eax<br>lea eax [esi+0x14]<br>mov dword[esi+0x44] ebx<br>push eax<br>lea eax [esi+0x28]<br>mov dword[esi+0x48] 3<br>push eax<br>lea ecx [esi+0x3c]<br>xor edx edx<br>inc edx<br>push ecx<br>push edx<br>push dword[esi+0x24]<br>mov dword[esi+0xc] edx<br>push dword[esi+0x4c]<br>mov dword[ecx] edx<br>call dword[sym.imp.ADVAPI32.dll_AccessCheck]<br>test eax eax<br>jne 0x474cff<br>mov dword[esi] ebx<br>pop edi<br>mov eax esi<br>pop esi<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret<br>', 'point { fill-color: #e0440e; }'],
+[-141.6139678955078, 16.555585861206055, '<b><a href="/report/fcn.004587b3@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004587b3</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push esi<br>push edi<br>mov edi edx<br>mov esi ecx<br>push edi<br>push 8<br>call dword[sym.imp.KERNEL32.dll_GetProcessHeap]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_HeapAlloc]<br>mov dword[esi] eax<br>test eax eax<br>je 0x4587e2<br>push 2<br>push edi<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeAcl]<br>test eax eax<br>je 0x4587e2<br>xor eax eax<br>inc eax<br>jmp 0x4587e4<br>xor eax eax<br>pop edi<br>pop esi<br>ret<br>', 'null'],
+[17.165311813354492, -27.389049530029297, '<b><a href="/report/fcn.01001aa7@7be42d186738ec1816397d616de2cb9d">fcn.01001aa7</a><br>@7be42d186738ec1816397d616de2cb9d</b><br><br>mov edi edi<br>push ebp<br>mov ebp esp<br>sub esp 0x220<br>mov eax dword[0x100b2d0]<br>push edi<br>push 0x40<br>pop ecx<br>mov dword[ebp-4] eax<br>xor eax eax<br>mov byte[ebp-0x108] 0<br>lea edi [ebp-0x107]<br>rep stosd<br>stosw word<br>push 0x40<br>pop ecx<br>stosb byte<br>xor eax eax<br>mov byte[ebp-0x20c] 0<br>lea edi [ebp-0x20b]<br>rep stosd<br>stosw word<br>stosb byte<br>lea eax [ebp-0x21c]<br>push eax<br>xor edi edi<br>lea eax [ebp-0x214]<br>push eax<br>push edi<br>push 0x2001f<br>push edi<br>push edi<br>push edi<br>push str.SoftwareMicrosoftWindowsCurrentVersionRunOnce<br>push 0x80000002<br>mov dword[ebp-0x218] edi<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExA]<br>test eax eax<br>jne 0x1001ce4<br>push ebx<br>push esi<br>mov dword[ebp-0x210] edi<br>mov esi 0x100b2e0<br>mov ebx 0xc8<br>push dword[ebp-0x210]<br>push str.wextract_cleanup_d<br>push esi<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0xc<br>lea eax [ebp-0x220]<br>push eax<br>push edi<br>push edi<br>push edi<br>push esi<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]<br>test eax eax<br>jne 0x1001b70<br>inc dword[ebp-0x210]<br>cmp dword[ebp-0x210] ebx<br>jl 0x1001b32<br>cmp dword[ebp-0x210] ebx<br>jne 0x1001b90<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>mov byte[0x100b2e0] 0<br>jmp 0x1001ce2<br>mov ebx dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]<br>mov esi 0x104<br>push esi<br>lea eax [ebp-0x20c]<br>push eax<br>call ebx<br>push 0x1001298<br>push esi<br>lea eax [ebp-0x20c]<br>push eax<br>call fcn.010066cf<br>lea eax [ebp-0x20c]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_LoadLibraryA]<br>cmp eax edi<br>mov dword[ebp-0x210] eax<br>je 0x1001c1a<br>push 0x1001288<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>push dword[ebp-0x210]<br>mov edi eax<br>neg edi<br>sbb edi edi<br>neg edi<br>mov dword[ebp-0x218] edi<br>call dword[sym.imp.KERNEL32.dll_FreeLibrary]<br>test edi edi<br>je 0x1001c1a<br>push esi<br>lea eax [ebp-0x108]<br>push eax<br>call ebx<br>test eax eax<br>je 0x1001c32<br>push 0x1001271<br>push esi<br>lea eax [ebp-0x108]<br>push eax<br>call fcn.010066cf<br>jmp 0x1001c32<br>push esi<br>lea eax [ebp-0x108]<br>push eax<br>push dword[0x100c4a4]<br>call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]<br>test eax eax<br>je 0x1001c70<br>mov esi dword[sym.imp.KERNEL32.dll_lstrlenA]<br>mov edi 0x100bc44<br>push edi<br>call esi<br>mov ebx eax<br>lea eax [ebp-0x108]<br>push eax<br>call esi<br>lea eax [ebx+eax+0x50]<br>push eax<br>push 0x40<br>call dword[sym.imp.KERNEL32.dll_LocalAlloc]<br>mov ebx eax<br>xor eax eax<br>cmp ebx eax<br>jne 0x1001c7e<br>push eax<br>push 0x10<br>push eax<br>push eax<br>push 0x4b5<br>push eax<br>call fcn.01003ebe<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>jmp 0x1001ce2<br>xor ecx ecx<br>cmp dword[ebp-0x218] eax<br>sete cl<br>cmp dword[ebp-0x218] eax<br>mov eax str.rundll32.exe__sadvpack.dll_DelNodeRunDLL32___s_<br>mov dword[0x100b330] ecx<br>jne 0x1001ca1<br>mov eax str._s__D:_s<br>push edi<br>lea ecx [ebp-0x108]<br>push ecx<br>push eax<br>push ebx<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0x10<br>push ebx<br>call esi<br>inc eax<br>push eax<br>push ebx<br>push 1<br>push 0<br>push 0x100b2e0<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_LocalFree]<br>pop esi<br>pop ebx<br>mov ecx dword[ebp-4]<br>pop edi<br>call fcn.010064de<br>leave<br>ret<br>', 'null'],
+[59.904502868652344, -111.51918029785156, '<b><a href="/report/fcn.0045dd22@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0045dd22</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x20c<br>lea eax [ebp-0x20c]<br>push esi<br>push edi<br>mov esi ecx<br>push 0x104<br>push eax<br>push dword[esi+0x10]<br>call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]<br>test eax eax<br>je 0x45ddad<br>lea edi [esi+0xc]<br>push edi<br>push 2<br>lea eax [ebp-0x20c]<br>push eax<br>call dword[sym.imp.OLEAUT32.dll_SystemTimeToVariantTime]<br>test eax eax<br>js 0x45dda4<br>push 0<br>lea eax [ebp-0x20c]<br>push eax<br>push dword[edi]<br>call dword[sym.imp.OLEAUT32.dll_QueryPathOfRegTypeLib]<br>test eax eax<br>js 0x45dd7d<br>mov dword[esi+0x14] 2<br>jmp 0x45ddb4<br>push 0<br>lea eax [ebp-0x20c]<br>push eax<br>push dword[edi]<br>call dword[sym.imp.OLEAUT32.dll_UnRegisterTypeLibForUser]<br>test eax eax<br>js 0x45dd9b<br>mov dword[esi+0x14] 1<br>jmp 0x45ddb4<br>mov dword[esi+4] 0x8002801c<br>jmp 0x45ddb4<br>mov dword[esi+4] 0x80029c4a<br>jmp 0x45ddb4<br>mov dword[esi+4] 0x80004005<br>mov eax dword[esi+4]<br>pop edi<br>pop esi<br>mov esp ebp<br>pop ebp<br>ret<br>', 'null'],
+[22.09799575805664, 189.49774169921875, '<b><a href="/report/fcn.00471b21@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00471b21</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x24<br>push ebx<br>push esi<br>mov esi ecx<br>xor ebx ebx<br>push edi<br>push ebx<br>mov eax dword[esi+0x54]<br>and eax 0x80000000<br>push eax<br>push ebx<br>push ebx<br>push dword[esi+0x20]<br>push dword[esi+4]<br>call dword[sym.imp.WININET.dll_InternetOpenUrlW]<br>mov edi eax<br>mov ecx esi<br>test edi edi<br>jne 0x471b58<br>push ebx<br>push 0xdeadbeef<br>push 0x29<br>jmp 0x471bd1<br>push dword[ebp+8]<br>push edi<br>call fcn.004727ae<br>push ebx<br>push ebx<br>push ebx<br>push ebx<br>push edi<br>call dword[sym.imp.WININET.dll_HttpSendRequestW]<br>test eax eax<br>je 0x471bc7<br>push edi<br>call fcn.00471cc8<br>cmp eax 0xc8<br>jne 0x471bc7<br>lea eax [ebp+8]<br>mov dword[ebp+8] ebx<br>push eax<br>lea eax [ebp-4]<br>mov dword[ebp-4] 0x20<br>push eax<br>lea eax [ebp-0x24]<br>push eax<br>push 5<br>push edi<br>call dword[sym.imp.WININET.dll_HttpQueryInfoW]<br>xor eax eax<br>mov word[ebp-6] ax<br>lea eax [ebp-0x24]<br>push eax<br>call fcn.004237d3<br>pop ecx<br>mov ecx esi<br>mov dword[esi+0x10] eax<br>mov dword[esi+0x14] edx<br>cmp byte[ebp+0xc] bl<br>je 0x471bc1<br>push edi<br>call fcn.004725e2<br>jmp 0x471bd6<br>push 1<br>push ebx<br>push ebx<br>jmp 0x471bd1<br>push ebx<br>push 0xdeadbeef<br>push 0x2a<br>mov ecx esi<br>call fcn.00472777<br>mov bl al<br>test edi edi<br>je 0x471be3<br>push edi<br>call dword[sym.imp.WININET.dll_InternetCloseHandle]<br>pop edi<br>pop esi<br>mov al bl<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret 8<br>', 'null'],
+[-18.05852699279785, -157.42111206054688, '<b><a href="/report/fcn.00458e03@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00458e03</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>push ebx<br>push edi<br>push 0xc<br>push 8<br>call dword[sym.imp.KERNEL32.dll_GetProcessHeap]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_HeapAlloc]<br>mov edi dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>mov ebx eax<br>push 2<br>push 0<br>push 0<br>push ebx<br>call edi<br>push eax<br>mov eax dword[ebp+8]<br>push dword[eax]<br>call edi<br>push eax<br>call dword[sym.imp.KERNEL32.dll_DuplicateHandle]<br>push 2<br>push 0<br>push 0<br>lea eax [ebx+8]<br>push eax<br>call edi<br>push eax<br>mov eax dword[ebp+0x10]<br>push dword[eax]<br>call edi<br>push eax<br>call dword[sym.imp.KERNEL32.dll_DuplicateHandle]<br>mov eax dword[ebp+0xc]<br>mov eax dword[eax]<br>mov dword[ebx+4] eax<br>xor eax eax<br>push eax<br>push eax<br>push ebx<br>push 0x458e74<br>push eax<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CreateThread]<br>pop edi<br>pop ebx<br>pop ebp<br>ret 0xc<br>', 'null'],
+[-27.104259490966797, 10.721240043640137, '<b><a href="/report/fcn.00432a0a@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00432a0a</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x210<br>mov eax dword[0x4a83f0]<br>xor eax ebp<br>mov dword[ebp-4] eax<br>xor eax eax<br>push 0x208<br>push eax<br>mov word[ebp-0x210] ax<br>lea eax [ebp-0x20e]<br>push eax<br>call fcn.0043fe30<br>push 0x495274<br>push edi<br>call fcn.004547a1<br>add esp 0x14<br>test eax eax<br>lea eax [ebp-0x210]<br>jne 0x432a8a<br>push ebx<br>push esi<br>push eax<br>mov esi 0x104<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GetCurrentDirectoryW]<br>mov ebx eax<br>lea eax [ebp-0x210]<br>push eax<br>call dword[sym.imp.SHLWAPI.dll_PathAddBackslashW]<br>sub esi ebx<br>push esi<br>push edi<br>lea eax [ebp-0x210]<br>push 0x105<br>push eax<br>call fcn.00454609<br>add esp 0x10<br>pop esi<br>pop ebx<br>jmp 0x432a9e<br>push 0x104<br>push edi<br>push 0x105<br>push eax<br>call fcn.0044844d<br>add esp 0x10<br>lea eax [ebp-0x210]<br>push eax<br>call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]<br>test eax eax<br>je 0x432ab3<br>xor eax eax<br>jmp 0x432ac4<br>push 0<br>lea eax [ebp-0x210]<br>push eax<br>push 0<br>call dword[sym.imp.SHELL32.dll_SHCreateDirectoryExW]<br>xor ecx ecx<br>test eax eax<br>sete cl<br>mov eax ecx<br>mov ecx dword[ebp-4]<br>xor ecx ebp<br>call fcn.0043e257<br>leave<br>ret<br>', 'null'],
+[85.7591781616211, 185.6370391845703, '<b><a href="/report/fcn.0048bced@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0048bced</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>mov eax dword[ebp+0xc]<br>sub esp 0x24<br>push ebx<br>push esi<br>push edi<br>xor edi edi<br>cmp word[eax] di<br>je 0x48be07<br>push edi<br>push edi<br>push 3<br>push edi<br>push edi<br>push 0x80000000<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CreateFileW]<br>mov edi eax<br>cmp edi 0xffffffff<br>jne 0x48bd24<br>xor eax eax<br>jmp 0x48be36<br>push 0<br>push edi<br>call dword[sym.imp.KERNEL32.dll_GetFileSize]<br>mov esi eax<br>push esi<br>push 2<br>call dword[sym.imp.KERNEL32.dll_GlobalAlloc]<br>mov ebx eax<br>test ebx ebx<br>jne 0x48bd47<br>push edi<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>jmp 0x48bd1d<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_GlobalLock]<br>push 0<br>lea ecx [ebp-0xc]<br>push ecx<br>push esi<br>push eax<br>push edi<br>call dword[sym.imp.KERNEL32.dll_ReadFile]<br>push ebx<br>mov esi eax<br>call dword[sym.imp.KERNEL32.dll_GlobalUnlock]<br>push edi<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>test esi esi<br>je 0x48bd1d<br>lea eax [ebp-8]<br>push eax<br>push 1<br>push ebx<br>call dword[sym.imp.ole32.dll_CreateStreamOnHGlobal]<br>lea eax [ebp-4]<br>xor edi edi<br>push eax<br>push 0x492cac<br>push edi<br>push edi<br>push dword[ebp-8]<br>mov dword[ebp-4] edi<br>call dword[sym.imp.OLEAUT32.dll_OleCreatePictureIndirect]<br>mov eax dword[ebp-8]<br>push eax<br>mov ecx dword[eax]<br>call dword[ecx+8]<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_GlobalFree]<br>mov ecx dword[ebp-4]<br>test ecx ecx<br>je 0x48bd1d<br>mov eax dword[ecx]<br>lea edx [ebp+0xc]<br>push edx<br>push ecx<br>call dword[eax+0xc]<br>lea eax [ebp-0x24]<br>push eax<br>push 0x18<br>push dword[ebp+0xc]<br>call dword[sym.imp.GDI32.dll_GetObjectW]<br>mov edx dword[ebp+0x10]<br>mov ecx dword[ebp+0x14]<br>cmp dword[edx] edi<br>jne 0x48bde3<br>cmp dword[ecx] edi<br>jne 0x48bde3<br>mov eax dword[ebp-0x20]<br>mov dword[edx] eax<br>mov eax dword[ebp-0x1c]<br>mov dword[ecx] eax<br>push 0x2000<br>push dword[ecx]<br>push dword[edx]<br>push edi<br>push dword[ebp+0xc]<br>call dword[sym.imp.USER32.dll_CopyImage]<br>mov dword[ebp+0xc] eax<br>mov eax dword[ebp-4]<br>push eax<br>mov ecx dword[eax]<br>call dword[ecx+8]<br>mov eax dword[ebp+0xc]<br>jmp 0x48be0c<br>mov eax edi<br>mov dword[ebp+0xc] eax<br>mov esi dword[ebp+8]<br>cmp dword[esi+0x64] 0<br>je 0x48be21<br>push dword[esi+0x64]<br>call dword[sym.imp.GDI32.dll_DeleteObject]<br>mov eax dword[ebp+0xc]<br>push eax<br>push edi<br>mov dword[esi+0x64] eax<br>mov esi dword[esi]<br>push 0x172<br>push esi<br>call dword[sym.imp.USER32.dll_SendMessageW]<br>mov eax esi<br>pop edi<br>pop esi<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret 0x10<br>', 'null'],
+[98.41447448730469, 132.21351623535156, '<b><a href="/report/fcn.00404fe9@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00404fe9</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>push ecx<br>push ebx<br>push esi<br>mov esi ecx<br>lea ebx [esi+0x10]<br>push ebx<br>push 1<br>push 0<br>call dword[sym.imp.ole32.dll_CreateStreamOnHGlobal]<br>test eax eax<br>js 0x405021<br>push edi<br>push 0<br>push 0x48faf0<br>push 0xa<br>push dword[esi+0xc]<br>call dword[sym.imp.KERNEL32.dll_FindResourceExW]<br>mov edi eax<br>test edi edi<br>jne 0x43dd5c<br>pop edi<br>pop esi<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret<br>push edi<br>push dword[esi+0xc]<br>call dword[sym.imp.KERNEL32.dll_LoadResource]<br>mov dword[ebp-4] eax<br>test eax eax<br>je 0x405020<br>push edi<br>push dword[esi+0xc]<br>call dword[sym.imp.KERNEL32.dll_SizeofResource]<br>mov edi eax<br>test edi edi<br>je 0x405020<br>push dword[ebp-4]<br>call dword[sym.imp.KERNEL32.dll_LockResource]<br>test eax eax<br>je 0x405020<br>mov ecx dword[ebx]<br>push 0<br>push edi<br>push eax<br>mov edx dword[ecx]<br>push ecx<br>call dword[edx+0x10]<br>mov eax dword[ebx]<br>xor edx edx<br>push edx<br>push edx<br>push edx<br>mov ecx dword[eax]<br>push edx<br>push eax<br>call dword[ecx+0x14]<br>mov byte[esi+0x14] 1<br>jmp 0x405020<br>', 'null'],
+[-6.440038681030273, -63.2213020324707, '<b><a href="/report/fcn.00406c13@6c8b5339bada4cbd03f0f446da640707">fcn.00406c13</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br><br>push ecx<br>push ebx<br>push ebp<br>push esi<br>push edi<br>push 0x40a920<br>mov ebx 0x45c2d8<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_lstrcpyW]<br>mov edi dword[esp+0x1c]<br>xor ebp ebp<br>cmp edi ebp<br>mov esi 0x400<br>je 0x406c61<br>push 1<br>push ebp<br>push edi<br>call fcn.00405fd9<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>push esi<br>push ebx<br>push edi<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406dd8<br>cmp eax esi<br>jg 0x406dd8<br>push esi<br>mov edi 0x461930<br>push edi<br>push dword[esp+0x20]<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406dd8<br>cmp eax esi<br>jg 0x406dd8<br>push ebp<br>push ebp<br>push esi<br>push 0x45cad8<br>push 0xffffffffffffffff<br>push ebx<br>mov ebx dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406dd8<br>push ebp<br>push ebp<br>push esi<br>mov esi 0x45d128<br>push esi<br>push 0xffffffffffffffff<br>push edi<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406dd8<br>push esi<br>push 0x45cad8<br>push str._s_s_r_n<br>push 0x45d528<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0x10<br>mov ebx eax<br>mov eax dword[0x473ddc]<br>push dword[eax+0x13c]<br>push edi<br>call fcn.00406982<br>push 4<br>push 0xc0000000<br>push edi<br>call fcn.00405fd9<br>cmp eax 0xffffffff<br>mov dword[esp+0x1c] eax<br>je 0x406dd8<br>push ebp<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetFileSize]<br>mov edi eax<br>lea eax [edi+ebx+0xa]<br>push eax<br>push 0x40<br>call dword[sym.imp.KERNEL32.dll_GlobalAlloc]<br>mov esi eax<br>cmp esi ebp<br>je 0x406dce<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_ReadFile]<br>test eax eax<br>je 0x406dce<br>cmp edi dword[esp+0x10]<br>jne 0x406dce<br>push str._Rename__r_n<br>push esi<br>call fcn.00405f3f<br>cmp eax ebp<br>jne 0x406d65<br>push str._Rename__r_n<br>lea eax [esi+edi]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_lstrcpyA]<br>add edi 0xa<br>jmp 0x406d96<br>push 0x40a914<br>add eax 0xa<br>push eax<br>call fcn.00405f3f<br>mov ebp eax<br>test ebp ebp<br>je 0x406d94<br>lea ecx [esi+edi]<br>lea eax [ecx+ebx]<br>jmp 0x406d87<br>mov dl byte[ecx]<br>mov byte[eax] dl<br>dec eax<br>dec ecx<br>cmp ecx ebp<br>ja 0x406d81<br>sub ebp esi<br>inc ebp<br>mov eax ebp<br>xor ebp ebp<br>jmp 0x406d98<br>xor ebp ebp<br>mov eax edi<br>push ebx<br>push 0x45d528<br>add eax esi<br>push eax<br>call fcn.00405f95<br>push ebp<br>push ebp<br>push ebp<br>push dword[esp+0x28]<br>call dword[sym.imp.KERNEL32.dll_SetFilePointer]<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>add edi ebx<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_WriteFile]<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GlobalFree]<br>push dword[esp+0x1c]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>pop edi<br>pop esi<br>pop ebp<br>pop ebx<br>pop ecx<br>ret<br>', 'null'],
+[54.27114486694336, -2.1428213119506836, '<b><a href="/report/fcn.01001cf4@7be42d186738ec1816397d616de2cb9d">fcn.01001cf4</a><br>@7be42d186738ec1816397d616de2cb9d</b><br><br>mov edi edi<br>push ebp<br>mov ebp esp<br>sub esp 0x348<br>mov eax dword[0x100b2d0]<br>push ebx<br>xor ebx ebx<br>cmp byte[0x100b2e0] bl<br>mov dword[ebp-4] eax<br>je 0x1001e03<br>lea eax [ebp-0x344]<br>push eax<br>push 0x2001f<br>push ebx<br>push str.SoftwareMicrosoftWindowsCurrentVersionRunOnce<br>push 0x80000002<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]<br>test eax eax<br>jne 0x1001e03<br>push esi<br>lea eax [ebp-0x348]<br>push eax<br>lea eax [ebp-0x340]<br>push eax<br>push ebx<br>push ebx<br>mov esi 0x100b2e0<br>push esi<br>push dword[ebp-0x344]<br>mov dword[ebp-0x348] 0x238<br>call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]<br>test eax eax<br>jne 0x1001df6<br>push edi<br>push 0x40<br>pop ecx<br>mov byte[ebp-0x108] bl<br>lea edi [ebp-0x107]<br>rep stosd<br>stosw word<br>stosb byte<br>mov edi 0x104<br>push edi<br>lea eax [ebp-0x108]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]<br>test eax eax<br>je 0x1001dae<br>push 0x1001271<br>push edi<br>lea eax [ebp-0x108]<br>push eax<br>call fcn.010066cf<br>push 0x100bc44<br>lea eax [ebp-0x108]<br>push eax<br>lea eax [ebp-0x340]<br>push str.rundll32.exe__sadvpack.dll_DelNodeRunDLL32___s_<br>push eax<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0x10<br>lea eax [ebp-0x340]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_lstrlenA]<br>inc eax<br>push eax<br>lea eax [ebp-0x340]<br>push eax<br>push 1<br>push ebx<br>push esi<br>push dword[ebp-0x344]<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]<br>pop edi<br>push dword[ebp-0x344]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>pop esi<br>mov ecx dword[ebp-4]<br>pop ebx<br>call fcn.010064de<br>leave<br>ret<br>', 'null'],
+[50.21504211425781, 171.34295654296875, '<b><a href="/report/fcn.00471a5b@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00471a5b</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>cmp byte[ebp+0xc] 0<br>push esi<br>mov esi ecx<br>je 0x471a77<br>push dword[ebp+0x10]<br>push dword[ebp+8]<br>call fcn.00471b21<br>jmp 0x471b1c<br>push ebx<br>mov ebx dword[esi+0x54]<br>push edi<br>mov edi dword[ebp+8]<br>push 0<br>push 0<br>push dword[edi+0x70]<br>movzx eax word[edi+0x78]<br>push dword[edi+0x30]<br>push dword[edi+0x20]<br>push eax<br>push dword[edi+0x10]<br>push dword[esi+4]<br>call dword[sym.imp.WININET.dll_InternetConnectW]<br>mov dword[esi] eax<br>push 0<br>test eax eax<br>jne 0x471ab5<br>push 0xdeadbeef<br>push 0x15<br>mov ecx esi<br>call fcn.00472777<br>jmp 0x471b1a<br>push ebx<br>push 0x80000000<br>push dword[edi+0x60]<br>push eax<br>call dword[sym.imp.WININET.dll_FtpOpenFileW]<br>mov edi eax<br>test edi edi<br>jne 0x471ad5<br>push eax<br>push 0xdeadbeef<br>push 0x16<br>jmp 0x471b04<br>lea eax [ebp+0xc]<br>push eax<br>push edi<br>call dword[sym.imp.WININET.dll_FtpGetFileSize]<br>mov edx dword[ebp+0xc]<br>xor ecx ecx<br>or ecx eax<br>xor eax eax<br>or edx eax<br>mov dword[esi+0x10] ecx<br>mov dword[esi+0x14] edx<br>cmp byte[ebp+0x10] al<br>je 0x471b00<br>push edi<br>mov ecx esi<br>call fcn.004725e2<br>jmp 0x471b0b<br>push 1<br>push eax<br>push eax<br>mov ecx esi<br>call fcn.00472777<br>mov bl al<br>test edi edi<br>je 0x471b18<br>push edi<br>call dword[sym.imp.WININET.dll_InternetCloseHandle]<br>mov al bl<br>pop edi<br>pop ebx<br>pop esi<br>pop ebp<br>ret 0xc<br>', 'null'],
+[-93.27178192138672, -150.62109375, '<b><a href="/report/fcn.010032ff@7be42d186738ec1816397d616de2cb9d">fcn.010032ff</a><br>@7be42d186738ec1816397d616de2cb9d</b><br><br>mov edi edi<br>push esi<br>push 0<br>push 0<br>mov esi 0x100135c<br>push esi<br>call fcn.01002e55<br>push 0xa<br>push esi<br>push 0<br>mov dword[0x100bba4] eax<br>call dword[sym.imp.KERNEL32.dll_FindResourceA]<br>push eax<br>push 0<br>call dword[sym.imp.KERNEL32.dll_LoadResource]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_LockResource]<br>xor ecx ecx<br>test eax eax<br>setne cl<br>mov dword[0x100bba0] eax<br>pop esi<br>mov eax ecx<br>ret<br>', 'null'],
+[-1.8140013217926025, -115.4560546875, '<b><a href="/report/fcn.004740d7@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.004740d7</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x18<br>mov eax dword[0x4b8744]<br>xor eax ebp<br>mov dword[ebp-4] eax<br>push ebx<br>push edi<br>xor ebx ebx<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov dword[0x4be23c] eax<br>call fcn.00473fde<br>test ax ax<br>jne 0x474108<br>xor eax eax<br>jmp 0x4741f2<br>push ebx<br>push dword[0x4be23c]<br>mov eax 0x80000000<br>push ebx<br>push ebx<br>push eax<br>push eax<br>push eax<br>push eax<br>push 0xc00000<br>mov eax str.Preparing_setup...<br>push eax<br>push eax<br>push 0x188<br>call dword[sym.imp.USER32.dll_CreateWindowExA]<br>mov edi eax<br>test edi edi<br>je 0x474101<br>movdqa xmm0 xmmword[0x4af340]<br>push 0xffffffffffffffec<br>push edi<br>movdqu xmmword[ebp-0x14] xmm0<br>call dword[sym.imp.USER32.dll_GetWindowLongW]<br>push eax<br>push ebx<br>push 0xfffffffffffffff0<br>push edi<br>call dword[sym.imp.USER32.dll_GetWindowLongW]<br>push eax<br>lea eax [ebp-0x14]<br>push eax<br>call dword[sym.imp.USER32.dll_AdjustWindowRectEx]<br>mov eax dword[ebp-8]<br>sub eax dword[ebp-0x10]<br>push 1<br>push eax<br>mov eax dword[ebp-0xc]<br>sub eax dword[ebp-0x14]<br>push eax<br>push dword[ebp-0x10]<br>push dword[ebp-0x14]<br>push edi<br>call dword[sym.imp.USER32.dll_MoveWindow]<br>mov ecx edi<br>call fcn.00474038<br>lea eax [ebp-0x14]<br>push eax<br>push edi<br>call dword[sym.imp.USER32.dll_GetClientRect]<br>push 0xfffffffffffffffb<br>push 0xfffffffffffffffb<br>lea eax [ebp-0x14]<br>push eax<br>call dword[sym.imp.USER32.dll_InflateRect]<br>mov eax dword[ebp-8]<br>sub eax dword[ebp-0x10]<br>push ebx<br>push dword[0x4be23c]<br>push 0x64<br>push edi<br>push eax<br>mov eax dword[ebp-0xc]<br>sub eax dword[ebp-0x14]<br>push eax<br>push dword[ebp-0x10]<br>push dword[ebp-0x14]<br>push 0x50000009<br>push ebx<br>push str.msctls_progress32<br>push ebx<br>call dword[sym.imp.USER32.dll_CreateWindowExW]<br>push ebx<br>push 1<br>push 0x40a<br>push eax<br>call dword[sym.imp.USER32.dll_SendMessageW]<br>push 5<br>push edi<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>push edi<br>call dword[sym.imp.USER32.dll_UpdateWindow]<br>xor eax eax<br>inc eax<br>mov ecx dword[ebp-4]<br>pop edi<br>xor ecx ebp<br>pop ebx<br>call fcn.0047b6bc<br>mov esp ebp<br>pop ebp<br>ret<br>', 'null'],
+[-42.554386138916016, -79.40863800048828, '<b><a href="/report/fcn.00406a99@59b1876779e3211327c1a96e7e2c12c4">fcn.00406a99</a><br>@59b1876779e3211327c1a96e7e2c12c4</b><br><br>push ecx<br>push ebx<br>push ebp<br>push esi<br>push edi<br>push 0x409888<br>mov ebx 0x45b2c8<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_lstrcpyW]<br>mov edi dword[esp+0x1c]<br>xor ebp ebp<br>mov esi 0x400<br>cmp edi ebp<br>je 0x406ae7<br>push 1<br>push ebp<br>push edi<br>call fcn.00405e50<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>push esi<br>push ebx<br>push edi<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406c62<br>cmp eax esi<br>jg 0x406c62<br>push esi<br>mov edi 0x460920<br>push edi<br>push dword[esp+0x20]<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406c62<br>cmp eax esi<br>jg 0x406c62<br>push ebp<br>push ebp<br>push esi<br>push 0x45bac8<br>push 0xffffffffffffffff<br>push ebx<br>mov ebx dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406c62<br>push ebp<br>push ebp<br>push esi<br>mov esi 0x45c118<br>push esi<br>push 0xffffffffffffffff<br>push edi<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406c62<br>push esi<br>push 0x45bac8<br>push str._s_s_r_n<br>push 0x45c518<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0x10<br>mov ebx eax<br>mov eax dword[0x472ddc]<br>push dword[eax+0x128]<br>push edi<br>call fcn.00406805<br>push 4<br>push 0xc0000000<br>push edi<br>call fcn.00405e50<br>mov dword[esp+0x1c] eax<br>cmp eax 0xffffffff<br>je 0x406c62<br>push ebp<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetFileSize]<br>mov edi eax<br>lea eax [edi+ebx+0xa]<br>push eax<br>push 0x40<br>call dword[sym.imp.KERNEL32.dll_GlobalAlloc]<br>mov esi eax<br>cmp esi ebp<br>je 0x406c58<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_ReadFile]<br>test eax eax<br>je 0x406c58<br>cmp edi dword[esp+0x10]<br>jne 0x406c58<br>push str._Rename__r_n<br>push esi<br>call fcn.00405db6<br>cmp eax ebp<br>jne 0x406beb<br>push str._Rename__r_n<br>lea eax [esi+edi]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_lstrcpyA]<br>add edi 0xa<br>jmp 0x406c20<br>push 0x40987c<br>add eax 0xa<br>push eax<br>call fcn.00405db6<br>mov ebp eax<br>test ebp ebp<br>je 0x406c1e<br>lea ecx [esi+edi]<br>lea eax [ecx+ebx]<br>cmp ecx ebp<br>jbe 0x406c15<br>sub eax ecx<br>mov dl byte[ecx]<br>mov byte[eax+ecx] dl<br>dec ecx<br>cmp ecx ebp<br>ja 0x406c0b<br>sub ebp esi<br>lea eax [ebp+1]<br>xor ebp ebp<br>jmp 0x406c22<br>xor ebp ebp<br>mov eax edi<br>push ebx<br>push 0x45c518<br>add eax esi<br>push eax<br>call fcn.00405e0c<br>push ebp<br>push ebp<br>push ebp<br>push dword[esp+0x28]<br>call dword[sym.imp.KERNEL32.dll_SetFilePointer]<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>add edi ebx<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_WriteFile]<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GlobalFree]<br>push dword[esp+0x1c]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>pop edi<br>pop esi<br>pop ebp<br>pop ebx<br>pop ecx<br>ret<br>', 'null'],
+[-41.073150634765625, -47.162471771240234, '<b><a href="/report/fcn.00406a99@e7f0482c425f7bc9cd320f60c1cfa28c">fcn.00406a99</a><br>@e7f0482c425f7bc9cd320f60c1cfa28c</b><br><br>push ecx<br>push ebx<br>push ebp<br>push esi<br>push edi<br>push 0x409888<br>mov ebx 0x45b2c8<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_lstrcpyW]<br>mov edi dword[esp+0x1c]<br>xor ebp ebp<br>mov esi 0x400<br>cmp edi ebp<br>je 0x406ae7<br>push 1<br>push ebp<br>push edi<br>call fcn.00405e50<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>push esi<br>push ebx<br>push edi<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406c62<br>cmp eax esi<br>jg 0x406c62<br>push esi<br>mov edi 0x460920<br>push edi<br>push dword[esp+0x20]<br>call dword[sym.imp.KERNEL32.dll_GetShortPathNameW]<br>cmp eax ebp<br>je 0x406c62<br>cmp eax esi<br>jg 0x406c62<br>push ebp<br>push ebp<br>push esi<br>push 0x45bac8<br>push 0xffffffffffffffff<br>push ebx<br>mov ebx dword[sym.imp.KERNEL32.dll_WideCharToMultiByte]<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406c62<br>push ebp<br>push ebp<br>push esi<br>mov esi 0x45c118<br>push esi<br>push 0xffffffffffffffff<br>push edi<br>push ebp<br>push ebp<br>call ebx<br>test eax eax<br>je 0x406c62<br>push esi<br>push 0x45bac8<br>push str._s_s_r_n<br>push 0x45c518<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0x10<br>mov ebx eax<br>mov eax dword[0x472ddc]<br>push dword[eax+0x128]<br>push edi<br>call fcn.00406805<br>push 4<br>push 0xc0000000<br>push edi<br>call fcn.00405e50<br>mov dword[esp+0x1c] eax<br>cmp eax 0xffffffff<br>je 0x406c62<br>push ebp<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetFileSize]<br>mov edi eax<br>lea eax [edi+ebx+0xa]<br>push eax<br>push 0x40<br>call dword[sym.imp.KERNEL32.dll_GlobalAlloc]<br>mov esi eax<br>cmp esi ebp<br>je 0x406c58<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_ReadFile]<br>test eax eax<br>je 0x406c58<br>cmp edi dword[esp+0x10]<br>jne 0x406c58<br>push str._Rename__r_n<br>push esi<br>call fcn.00405db6<br>cmp eax ebp<br>jne 0x406beb<br>push str._Rename__r_n<br>lea eax [esi+edi]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_lstrcpyA]<br>add edi 0xa<br>jmp 0x406c20<br>push 0x40987c<br>add eax 0xa<br>push eax<br>call fcn.00405db6<br>mov ebp eax<br>test ebp ebp<br>je 0x406c1e<br>lea ecx [esi+edi]<br>lea eax [ecx+ebx]<br>cmp ecx ebp<br>jbe 0x406c15<br>sub eax ecx<br>mov dl byte[ecx]<br>mov byte[eax+ecx] dl<br>dec ecx<br>cmp ecx ebp<br>ja 0x406c0b<br>sub ebp esi<br>lea eax [ebp+1]<br>xor ebp ebp<br>jmp 0x406c22<br>xor ebp ebp<br>mov eax edi<br>push ebx<br>push 0x45c518<br>add eax esi<br>push eax<br>call fcn.00405e0c<br>push ebp<br>push ebp<br>push ebp<br>push dword[esp+0x28]<br>call dword[sym.imp.KERNEL32.dll_SetFilePointer]<br>push ebp<br>lea eax [esp+0x14]<br>push eax<br>add edi ebx<br>push edi<br>push esi<br>push dword[esp+0x2c]<br>call dword[sym.imp.KERNEL32.dll_WriteFile]<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GlobalFree]<br>push dword[esp+0x1c]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>pop edi<br>pop esi<br>pop ebp<br>pop ebx<br>pop ecx<br>ret<br>', 'null'],
+[51.03712463378906, -56.5220832824707, '<b><a href="/report/fcn.0040390a@4c2db4ba96e80258daff665d7d7a016a">fcn.0040390a</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x14<br>push ebx<br>xor ebx ebx<br>cmp byte[0x418a7a] bl<br>jne 0x4039b3<br>lea eax [ebp-4]<br>push eax<br>push 0x20<br>mov byte[0x418a7a] 1<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]<br>test eax eax<br>je 0x4039b3<br>push esi<br>mov esi dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]<br>push edi<br>lea eax [ebp-0x10]<br>push eax<br>push str.SeSecurityPrivilege<br>push ebx<br>mov dword[ebp-0x14] 1<br>mov dword[ebp-8] 2<br>call esi<br>mov edi dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]<br>test eax eax<br>je 0x40398b<br>push ebx<br>push ebx<br>push ebx<br>lea eax [ebp-0x14]<br>push eax<br>push ebx<br>push dword[ebp-4]<br>call edi<br>test eax eax<br>je 0x40398b<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>test eax eax<br>jne 0x40398b<br>mov byte[0x418a79] 1<br>lea eax [ebp-0x10]<br>push eax<br>push str.SeRestorePrivilege<br>push ebx<br>call esi<br>test eax eax<br>je 0x4039a8<br>push ebx<br>push ebx<br>push ebx<br>lea eax [ebp-0x14]<br>push eax<br>push ebx<br>push dword[ebp-4]<br>call edi<br>push dword[ebp-4]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>pop edi<br>pop esi<br>pop ebx<br>leave<br>ret<br>', 'null'],
+[23.71935272216797, 240.873046875, '<b><a href="/report/fcn.0044cde0@9c2b894b84f59672d8be2e984066f76f">fcn.0044cde0</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br><br>push ebp<br>mov ebp esp<br>push esi<br>mov esi ecx<br>cmp dword[esi+0x1c] 0<br>je 0x44cdf4<br>xor eax eax<br>inc eax<br>jmp 0x44cec6<br>push ebx<br>xor ebx ebx<br>inc ebx<br>cmp dword[esi+0x20] 0<br>jne 0x44ce0d<br>push 0<br>call dword[sym.imp.ole32.dll_CoInitialize]<br>test eax eax<br>js 0x44ce1f<br>mov dword[esi+0x20] ebx<br>push str.D2D1.dll<br>call fcn.004151b4<br>mov dword[esi+4] eax<br>pop ecx<br>test eax eax<br>jne 0x44ce26<br>xor eax eax<br>jmp 0x44cec5<br>push edi<br>push str.D2D1CreateFactory<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov edi eax<br>test edi edi<br>je 0x44ce5e<br>lea ebx [esi+0xc]<br>mov ecx edi<br>push ebx<br>push 0<br>push 0x58d318<br>push dword[ebp+8]<br>call fcn.00553897<br>call edi<br>test eax eax<br>jns 0x44ce5b<br>and dword[ebx] 0<br>xor eax eax<br>jmp 0x44cec4<br>xor ebx ebx<br>inc ebx<br>push str.D2D1MakeRotateMatrix<br>push dword[esi+4]<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>push str.DWrite.dll<br>mov dword[esi+0x18] eax<br>call fcn.004151b4<br>mov dword[esi+8] eax<br>pop ecx<br>test eax eax<br>je 0x44cea8<br>push str.DWriteCreateFactory<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov edi eax<br>test edi edi<br>je 0x44cea8<br>lea eax [esi+0x10]<br>mov ecx edi<br>push eax<br>push 0x58d328<br>push dword[ebp+0xc]<br>call fcn.00553897<br>call edi<br>lea ecx [esi+0x14]<br>push ecx<br>push 0x5b2764<br>push ebx<br>push 0<br>push 0x58d290<br>call dword[sym.imp.ole32.dll_CoCreateInstance]<br>mov dword[esi+0x1c] ebx<br>mov eax ebx<br>pop edi<br>pop ebx<br>pop esi<br>pop ebp<br>ret 8<br>', 'null'],
+[21.692760467529297, 38.08102035522461, '<b><a href="/report/fcn.00420e5a@59aef7c08025d70f84c85db2092fc99e">fcn.00420e5a</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x14<br>mov eax dword[0x433138]<br>push esi<br>mov esi ecx<br>cmp dword[esi+0x50] 0<br>mov dword[ebp-4] eax<br>je 0x420ea7<br>push dword[ebp+8]<br>call fcn.00422f49<br>mov esi eax<br>test esi esi<br>je 0x420ecf<br>push edi<br>push 4<br>lea eax [ebp+0x10]<br>push eax<br>push 4<br>push 0<br>push dword[ebp+0xc]<br>push esi<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]<br>push esi<br>mov edi eax<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>xor eax eax<br>test edi edi<br>sete al<br>pop edi<br>jmp 0x420ecf<br>push dword[ebp+0x10]<br>lea eax [ebp-0x14]<br>push 0x428e10<br>push eax<br>call dword[sym.imp.USER32.dll_wsprintfA]<br>add esp 0xc<br>push dword[esi+0x64]<br>lea eax [ebp-0x14]<br>push eax<br>push dword[ebp+0xc]<br>push dword[ebp+8]<br>call dword[sym.imp.KERNEL32.dll_WritePrivateProfileStringA]<br>mov ecx dword[ebp-4]<br>pop esi<br>call fcn.0040d1cb<br>leave<br>ret 0xc<br>', 'null'],
+[0.6766583919525146, 146.5189971923828, '<b><a href="/report/fcn.004ead72@9c2b894b84f59672d8be2e984066f76f">fcn.004ead72</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br><br>push ebp<br>mov ebp esp<br>push ecx<br>push ebx<br>push esi<br>push edi<br>push 0x4eaeae<br>mov ecx 0x5e21f8<br>call fcn.004322c5<br>mov esi eax<br>test esi esi<br>je 0x4eaea3<br>cmp word[esi+8] 0<br>mov ebx dword[ebp+8]<br>jne 0x4eae79<br>push str.comctl32.dll<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov dword[ebp-4] eax<br>test eax eax<br>je 0x4eae3a<br>call dword[sym.imp.KERNEL32.dll_GetUserDefaultUILanguage]<br>mov edi dword[ebp+0x10]<br>mov ecx 0x3ff<br>and ax cx<br>cmp ax 0x11<br>jne 0x4eadff<br>push 0x59e640<br>call fcn.004eaeee<br>pop ecx<br>test eax eax<br>je 0x4eadff<br>mov eax edi<br>neg eax<br>push 0xfc11<br>sbb eax eax<br>and eax 0xe<br>add eax 0x3ee<br>push eax<br>push 5<br>push dword[ebp-4]<br>call dword[sym.imp.KERNEL32.dll_FindResourceExW]<br>test eax eax<br>jne 0x4eae1c<br>neg edi<br>push 5<br>sbb edi edi<br>and edi 0xe<br>add edi 0x3ee<br>push edi<br>push dword[ebp-4]<br>call dword[sym.imp.KERNEL32.dll_FindResourceW]<br>test eax eax<br>je 0x4eae3a<br>push eax<br>push dword[ebp-4]<br>call dword[sym.imp.KERNEL32.dll_LoadResource]<br>mov edi dword[ebp+0xc]<br>test eax eax<br>je 0x4eae3d<br>push edi<br>push ebx<br>push eax<br>call fcn.00432871<br>add esp 0xc<br>jmp 0x4eae3d<br>mov edi dword[ebp+0xc]<br>mov eax dword[ebx]<br>push 2<br>mov eax dword[eax-0xc]<br>inc eax<br>push eax<br>call fcn.0040faeb<br>pop ecx<br>pop ecx<br>push eax<br>push 0x40<br>call dword[sym.imp.KERNEL32.dll_GlobalAlloc]<br>mov ecx eax<br>mov dword[esi+4] ecx<br>test ecx ecx<br>je 0x4eaea8<br>mov eax dword[ebx]<br>push eax<br>mov eax dword[eax-0xc]<br>inc eax<br>push eax<br>push ecx<br>call fcn.004318f0<br>mov ax word[edi]<br>add esp 0xc<br>mov word[esi+8] ax<br>jmp 0x4eae7c<br>mov edi dword[ebp+0xc]<br>push dword[esi+4]<br>mov ecx ebx<br>call fcn.00404480<br>movzx ecx word[esi+8]<br>mov edx 0xffff<br>mov word[edi] cx<br>xor eax eax<br>pop edi<br>cmp cx dx<br>pop esi<br>setne al<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret 0xc<br>call fcn.0040f785<br>call fcn.0040f79f<br>int3<br>', 'null'],
+[100.07080078125, 11.007026672363281, '<b><a href="/report/fcn.004046c0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004046c0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x30<br>push esi<br>push edi<br>xor edi edi<br>lea eax [ebp-0x30]<br>mov dword[ebp-4] 0<br>mov dword[ebp-8] 0<br>mov dword[ebp-0xc] 0<br>lea esi [edi+1]<br>test eax eax<br>je 0x404716<br>push 0x555c48<br>push 0x555eb8<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>test eax eax<br>je 0x40470c<br>lea ecx [ebp-0x30]<br>push ecx<br>call eax<br>jmp 0x404716<br>lea edx [ebp-0x30]<br>push edx<br>call dword[sym.imp.KERNEL32.dll_GetSystemInfo]<br>mov ax word[ebp-0x30]<br>cmp ax 9<br>je 0x404726<br>cmp ax 6<br>jne 0x40472b<br>mov esi 0x101<br>mov eax dword[0x564ffc]<br>test eax eax<br>je 0x40473b<br>push reloc.WS2_32.dll_bind<br>call eax<br>mov ecx dword[ebp+8]<br>lea eax [ebp-4]<br>push eax<br>push esi<br>push 0<br>push ecx<br>push reloc.WS2_32.dll_bind<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]<br>test eax eax<br>jne 0x4047c5<br>mov ecx dword[ebp-4]<br>mov edi dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]<br>lea edx [ebp-8]<br>push edx<br>push eax<br>lea eax [ebp-0xc]<br>push eax<br>push 0<br>push 0x555bec<br>push ecx<br>call edi<br>mov edx dword[ebp-8]<br>push edx<br>call fcn.004f3206<br>mov edx dword[ebp-4]<br>add esp 4<br>mov esi eax<br>lea eax [ebp-8]<br>push eax<br>push esi<br>lea ecx [ebp-0xc]<br>push ecx<br>push 0<br>push 0x555bec<br>push edx<br>call edi<br>mov edi eax<br>mov eax dword[ebp-4]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>test edi edi<br>jne 0x4047cd<br>mov ecx dword[ebp+0xc]<br>mov eax dword[0x564ff8]<br>mov dword[ecx] esi<br>lea esi [edi+1]<br>test eax eax<br>je 0x4047bd<br>push reloc.WS2_32.dll_bind<br>call eax<br>pop edi<br>mov eax esi<br>pop esi<br>mov esp ebp<br>pop ebp<br>ret<br>mov eax edi<br>pop edi<br>pop esi<br>mov esp ebp<br>pop ebp<br>ret<br>pop edi<br>xor eax eax<br>pop esi<br>mov esp ebp<br>pop ebp<br>ret<br>', 'null'],
+[-56.258995056152344, 133.8946990966797, '<b><a href="/report/fcn.0042941b@9c2b894b84f59672d8be2e984066f76f">fcn.0042941b</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x10<br>push ebx<br>push esi<br>mov esi dword[ebp+8]<br>lea eax [ebp-4]<br>push edi<br>push eax<br>mov edi 0x2001f<br>mov ebx ecx<br>xor ecx ecx<br>mov dword[ebp-0x10] ecx<br>mov dword[ebp-4] ecx<br>mov dword[ebp-8] ecx<br>push edi<br>push ecx<br>push str.software<br>push 0x80000001<br>test esi esi<br>je 0x429456<br>mov ecx esi<br>call fcn.0042994d<br>jmp 0x42945c<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]<br>test eax eax<br>jne 0x4294b4<br>lea eax [ebp-0xc]<br>push eax<br>lea eax [ebp-8]<br>push eax<br>xor eax eax<br>push eax<br>push edi<br>push eax<br>push eax<br>push eax<br>push dword[ebx+0x58]<br>push dword[ebp-4]<br>test esi esi<br>je 0x429482<br>mov ecx esi<br>call fcn.004298de<br>jmp 0x429488<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]<br>test eax eax<br>jne 0x4294b4<br>lea eax [ebp-0xc]<br>push eax<br>lea eax [ebp-0x10]<br>push eax<br>xor eax eax<br>push eax<br>push edi<br>push eax<br>push eax<br>push eax<br>push dword[ebx+0x6c]<br>push dword[ebp-8]<br>test esi esi<br>je 0x4294ae<br>mov ecx esi<br>call fcn.004298de<br>jmp 0x4294b4<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]<br>cmp dword[ebp-4] 0<br>pop edi<br>pop esi<br>pop ebx<br>je 0x4294c6<br>push dword[ebp-4]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>cmp dword[ebp-8] 0<br>je 0x4294d5<br>push dword[ebp-8]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>mov eax dword[ebp-0x10]<br>mov esp ebp<br>pop ebp<br>ret 4<br>', 'null'],
+[-17.099294662475586, 185.27316284179688, '<b><a href="/report/fcn.00471d09@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00471d09</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x24<br>push ebx<br>mov ebx dword[ebp+8]<br>push esi<br>push edi<br>mov edi ecx<br>cmp dword[ebx+0x74] 4<br>mov esi dword[edi+0x54]<br>mov dword[ebp-4] esi<br>jne 0x471d2c<br>or esi 0x800000<br>mov dword[ebp-4] esi<br>movzx eax word[ebx+0x78]<br>push 0<br>push 0<br>push dword[ebx+0x70]<br>push dword[ebx+0x30]<br>push dword[ebx+0x20]<br>push eax<br>push dword[ebx+0x10]<br>push dword[edi+4]<br>call dword[sym.imp.WININET.dll_InternetConnectW]<br>mov dword[edi] eax<br>test eax eax<br>jne 0x471d64<br>push eax<br>push 0xdeadbeef<br>push 0xb<br>mov ecx edi<br>call fcn.00472777<br>jmp 0x471e53<br>xor ecx ecx<br>push ecx<br>push esi<br>push ecx<br>push ecx<br>push ecx<br>push dword[ebx+0x60]<br>push ecx<br>push eax<br>call dword[sym.imp.WININET.dll_HttpOpenRequestW]<br>mov esi eax<br>test esi esi<br>jne 0x471d89<br>push eax<br>push 0xdeadbeef<br>push 0xc<br>jmp 0x471e3d<br>cmp byte[ebp+0xc] 0<br>je 0x471d98<br>push ebx<br>push esi<br>mov ecx edi<br>call fcn.004727ae<br>test dword[ebp-4] 0x1000<br>je 0x471dcd<br>push 4<br>pop ebx<br>lea eax [ebp+8]<br>mov dword[ebp+8] ebx<br>push eax<br>lea eax [ebp+0xc]<br>push eax<br>push 0x1f<br>push esi<br>call dword[sym.imp.WININET.dll_InternetQueryOptionW]<br>or dword[ebp+0xc] 0x100<br>lea eax [ebp+0xc]<br>push ebx<br>push eax<br>push 0x1f<br>push esi<br>call dword[sym.imp.WININET.dll_InternetSetOptionW]<br>xor ebx ebx<br>push ebx<br>push ebx<br>push ebx<br>push ebx<br>push esi<br>call dword[sym.imp.WININET.dll_HttpSendRequestW]<br>test eax eax<br>je 0x471e35<br>push esi<br>call fcn.00471cc8<br>cmp eax 0xc8<br>jne 0x471e35<br>lea eax [ebp+0xc]<br>mov dword[ebp+0xc] ebx<br>push eax<br>lea eax [ebp+8]<br>mov dword[ebp+8] 0x20<br>push eax<br>lea eax [ebp-0x24]<br>push eax<br>push 5<br>push esi<br>call dword[sym.imp.WININET.dll_HttpQueryInfoW]<br>xor eax eax<br>mov word[ebp-6] ax<br>lea eax [ebp-0x24]<br>push eax<br>call fcn.004237d3<br>pop ecx<br>mov ecx edi<br>mov dword[edi+0x10] eax<br>mov dword[edi+0x14] edx<br>cmp byte[ebp+0x10] bl<br>je 0x471e2f<br>push esi<br>call fcn.004725e2<br>jmp 0x471e44<br>push 1<br>push ebx<br>push ebx<br>jmp 0x471e3f<br>push ebx<br>push 0xdeadbeef<br>push 0xd<br>mov ecx edi<br>call fcn.00472777<br>mov bl al<br>test esi esi<br>je 0x471e51<br>push esi<br>call dword[sym.imp.WININET.dll_InternetCloseHandle]<br>mov al bl<br>pop edi<br>pop esi<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret 0xc<br>', 'null'],
+[29.351268768310547, 112.28718566894531, '<b><a href="/report/fcn.004033c5@57989f43bf24a9272122210a17558c3d">fcn.004033c5</a><br>@57989f43bf24a9272122210a17558c3d</b><br><br>push ebp<br>mov ebp esp<br>push ecx<br>push esi<br>mov esi edx<br>xor eax eax<br>push edi<br>mov edi ecx<br>cmp dword[esi] eax<br>je 0x403418<br>push 2<br>push eax<br>push eax<br>lea eax [ebp-4]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>push dword[esi]<br>push edi<br>call dword[sym.imp.KERNEL32.dll_DuplicateHandle]<br>test eax eax<br>jne 0x403413<br>push ecx<br>push 0x401220<br>call fcn.0040249a<br>push 0xa<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>push eax<br>mov ecx 0x406048<br>call fcn.00402433<br>xor al al<br>jmp 0x40341a<br>mov eax dword[ebp-4]<br>mov dword[esi] eax<br>mov al 1<br>pop edi<br>pop esi<br>leave<br>ret<br>', 'null'],
+[117.4593734741211, -53.888427734375, '<b><a href="/report/fcn.00464021@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00464021</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>mov eax dword[0x4c7428]<br>sub esp 0x1c<br>cmp byte[eax+0x25] 0<br>jne 0x464039<br>mov eax 0x80004005<br>jmp 0x4640ad<br>push ebx<br>push esi<br>xor esi esi<br>mov eax 0x80<br>push esi<br>push eax<br>push 3<br>push esi<br>push 3<br>push eax<br>push ecx<br>call dword[sym.imp.KERNEL32.dll_CreateFileW]<br>mov ebx eax<br>cmp ebx 0xffffffff<br>je 0x46409c<br>push edi<br>xor eax eax<br>mov dword[ebp-0x10] 7<br>lea edi [ebp-0x1c]<br>mov dword[ebp-0xc] esi<br>stosd dword<br>push esi<br>mov dword[ebp-8] esi<br>mov dword[ebp-4] esi<br>stosd dword<br>stosd dword<br>lea eax [ebp-4]<br>push eax<br>push 0xc<br>lea eax [ebp-0x1c]<br>push eax<br>push 0xc<br>lea eax [ebp-0x10]<br>push eax<br>push 0x2d1400<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_DeviceIoControl]<br>push ebx<br>mov esi eax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>pop edi<br>test esi esi<br>jne 0x4640a3<br>mov eax 0x80004005<br>jmp 0x4640ab<br>xor eax eax<br>cmp byte[ebp-0x14] al<br>setne al<br>pop esi<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret<br>', 'null'],
+[-73.23001861572266, -180.2757110595703, '<b><a href="/report/fcn.005021d1@e2ba7f10eb234338a49853c34d7d9c56">fcn.005021d1</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br><br>xor eax eax<br>push eax<br>push eax<br>push 3<br>push eax<br>push 3<br>push 0xc0000000<br>push str.CONIN_<br>call dword[sym.imp.KERNEL32.dll_CreateFileW]<br>mov dword[0x55ce20] eax<br>ret<br>', 'null'],
+[-56.659912109375, 211.60765075683594, '<b><a href="/report/fcn.0045874a@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0045874a</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br><br>push ebp<br>mov ebp esp<br>push ecx<br>push ebx<br>push esi<br>mov esi dword[ebp+0x10]<br>mov eax ecx<br>mov ecx dword[ebp+8]<br>xor ebx ebx<br>push edi<br>push esi<br>push ebx<br>push dword[ecx]<br>mov edi edx<br>mov dword[ebp-4] eax<br>push edi<br>push eax<br>call dword[sym.imp.USER32.dll_GetUserObjectSecurity]<br>test eax eax<br>jne 0x4587a7<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>cmp eax 0x7a<br>jne 0x4587aa<br>push dword[esi]<br>push 8<br>call dword[sym.imp.KERNEL32.dll_GetProcessHeap]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_HeapAlloc]<br>mov ecx dword[ebp+8]<br>mov dword[ecx] eax<br>test eax eax<br>je 0x4587aa<br>push esi<br>push dword[esi]<br>push eax<br>push edi<br>push dword[ebp-4]<br>call dword[sym.imp.USER32.dll_GetUserObjectSecurity]<br>test eax eax<br>je 0x4587aa<br>xor ebx ebx<br>inc ebx<br>pop edi<br>pop esi<br>mov al bl<br>pop ebx<br>mov esp ebp<br>pop ebp<br>ret<br>', 'null'],
+[70.72081756591797, -204.02511596679688, '<b><a href="/report/fcn.00405c3f@e7f0482c425f7bc9cd320f60c1cfa28c">fcn.00405c3f</a><br>@e7f0482c425f7bc9cd320f60c1cfa28c</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x10<br>lea eax [ebp-0x10]<br>push eax<br>push 0x457278<br>xor eax eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push dword[ebp+8]<br>mov dword[0x457278] 0x44<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CreateProcessW]<br>test eax eax<br>je 0x405c7a<br>push dword[ebp-0xc]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov eax dword[ebp-0x10]<br>leave<br>ret 4<br>', 'null'],
+[50.993431091308594, -175.0347442626953, '<b><a href="/report/fcn.00405dc9@6c8b5339bada4cbd03f0f446da640707">fcn.00405dc9</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x10<br>lea eax [ebp-0x10]<br>push eax<br>push 0x458288<br>xor eax eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push dword[ebp+8]<br>mov dword[0x458288] 0x44<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CreateProcessW]<br>test eax eax<br>je 0x405e04<br>push dword[ebp-0xc]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov eax dword[ebp-0x10]<br>leave<br>ret 4<br>', 'null'],
+[34.24627685546875, -207.00550842285156, '<b><a href="/report/fcn.00405c3f@59b1876779e3211327c1a96e7e2c12c4">fcn.00405c3f</a><br>@59b1876779e3211327c1a96e7e2c12c4</b><br><br>push ebp<br>mov ebp esp<br>sub esp 0x10<br>lea eax [ebp-0x10]<br>push eax<br>push 0x457278<br>xor eax eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push dword[ebp+8]<br>mov dword[0x457278] 0x44<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CreateProcessW]<br>test eax eax<br>je 0x405c7a<br>push dword[ebp-0xc]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov eax dword[ebp-0x10]<br>leave<br>ret 4<br>', 'null'],
+[-96.4482650756836, -63.5158805847168, '<b><a href="/report/fcn.0040ade1@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.0040ade1</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br><br>push ebp<br>mov ebp esp<br>push ebx<br>push edi<br>mov edi edx<br>mov ebx ecx<br>push edi<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_LoadResource]<br>test eax eax<br>je 0x40ae3a<br>push esi<br>push eax<br>call dword[sym.imp.KERNEL32.dll_LockResource]<br>mov esi eax<br>test esi esi<br>je 0x40ae2b<br>push edi<br>push ebx<br>call dword[sym.imp.KERNEL32.dll_SizeofResource]<br>mov edx dword[ebp+8]<br>lea ecx [esi+eax]<br>and edx 0xf<br>jbe 0x40ae27<br>cmp esi ecx<br>jae 0x40ae2b<br>movzx eax word[esi]<br>lea esi [esi+eax*2]<br>add esi 2<br>dec edx<br>jne 0x40ae17<br>cmp esi ecx<br>jb 0x40ae2f<br>xor eax eax<br>jmp 0x40ae39<br>xor eax eax<br>cmp word[esi] ax<br>cmove esi eax<br>mov eax esi<br>pop esi<br>pop edi<br>pop ebx<br>pop ebp<br>ret<br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
 
 # Disassembled Code
-
 {% highlight nasm %}
+
 push ebp
-mov ebp,esp
+mov ebp esp
 push ecx
 push ecx
 push ebx
 push esi
-mov esi,ecx
-mov word[ebp-4],0x500
-xor ecx,ecx
+mov esi ecx
+mov word[ebp-4] 0x500
+xor ecx ecx
 push edi
-mov eax,ecx
-mov dword[ebp-8],ecx
-lea ebx,[esi+0x20]
-mov dword[esi+0x50],eax
-mov ax,word[ebp-4]
-lea edi,[esi+0x1c]
+mov eax ecx
+mov dword[ebp-8] ecx
+lea ebx [esi+0x20]
+mov dword[esi+0x50] eax
+mov ax word[ebp-4]
+lea edi [esi+0x1c]
 push ebx
 push 1
 push 0xa
-mov dword[esi],ecx
-mov dword[esi+0x14],0x14
-mov dword[esi+0x18],ecx
-mov dword[edi],ecx
-mov dword[ebx],ecx
-mov dword[esi+0x24],ecx
-mov dword[esi+0x4c],ecx
-mov word[esi+0x54],ax
+mov dword[esi] ecx
+mov dword[esi+0x14] 0x14
+mov dword[esi+0x18] ecx
+mov dword[edi] ecx
+mov dword[ebx] ecx
+mov dword[esi+0x24] ecx
+mov dword[esi+0x4c] ecx
+mov word[esi+0x54] ax
 call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]
-test eax,eax
+test eax eax
 jne 0x474bdc
 call dword[sym.imp.KERNEL32.dll_GetLastError]
-cmp eax,0x3f0
+cmp eax 0x3f0
 jne 0x474cff
 push ebx
 push 0xa
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
-test eax,eax
+test eax eax
 je 0x474cff
-lea eax,[esi+0x24]
+lea eax [esi+0x24]
 push eax
 push 2
 push dword[ebx]
 call dword[sym.imp.ADVAPI32.dll_DuplicateToken]
-test eax,eax
+test eax eax
 je 0x474cff
 push edi
-xor eax,eax
+xor eax eax
 push eax
 push eax
 push eax
@@ -87,56 +152,56 @@ push eax
 push 0x220
 push 0x20
 push 2
-lea eax,[esi+0x50]
+lea eax [esi+0x50]
 push eax
 call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]
-test eax,eax
+test eax eax
 je 0x474cff
-mov ebx,dword[sym.imp.KERNEL32.dll_LocalAlloc]
+mov ebx dword[sym.imp.KERNEL32.dll_LocalAlloc]
 push 0x14
 push 0x40
 call ebx
-mov dword[esi+0x4c],eax
-test eax,eax
+mov dword[esi+0x4c] eax
+test eax eax
 je 0x474cff
 push 1
 push eax
 call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]
-test eax,eax
+test eax eax
 je 0x474cff
 push dword[edi]
 call dword[sym.imp.ADVAPI32.dll_GetLengthSid]
-add eax,0x10
+add eax 0x10
 push eax
 push 0x40
-mov dword[esi+0x10],eax
+mov dword[esi+0x10] eax
 call ebx
-mov dword[esi+0x18],eax
-test eax,eax
+mov dword[esi+0x18] eax
+test eax eax
 je 0x474cff
 push 2
 push dword[esi+0x10]
 push eax
 call dword[sym.imp.ADVAPI32.dll_InitializeAcl]
-test eax,eax
+test eax eax
 je 0x474cff
 push 3
 pop eax
 push dword[edi]
-mov dword[esi+8],eax
+mov dword[esi+8] eax
 push eax
 push 2
 push dword[esi+0x18]
 call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]
-test eax,eax
+test eax eax
 je 0x474cff
-xor ebx,ebx
+xor ebx ebx
 push ebx
 push dword[esi+0x18]
 push 1
 push dword[esi+0x4c]
 call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]
-test eax,eax
+test eax eax
 je 0x474cff
 push ebx
 push dword[edi]
@@ -148,44 +213,39 @@ push dword[esi+0x4c]
 call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]
 push dword[esi+0x4c]
 call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]
-test eax,eax
+test eax eax
 je 0x474cff
 push esi
-lea eax,[esi+4]
-mov dword[esi+0x40],2
+lea eax [esi+4]
+mov dword[esi+0x40] 2
 push eax
-lea eax,[esi+0x14]
-mov dword[esi+0x44],ebx
+lea eax [esi+0x14]
+mov dword[esi+0x44] ebx
 push eax
-lea eax,[esi+0x28]
-mov dword[esi+0x48],3
+lea eax [esi+0x28]
+mov dword[esi+0x48] 3
 push eax
-lea ecx,[esi+0x3c]
-xor edx,edx
+lea ecx [esi+0x3c]
+xor edx edx
 inc edx
 push ecx
 push edx
 push dword[esi+0x24]
-mov dword[esi+0xc],edx
+mov dword[esi+0xc] edx
 push dword[esi+0x4c]
-mov dword[ecx],edx
+mov dword[ecx] edx
 call dword[sym.imp.ADVAPI32.dll_AccessCheck]
-test eax,eax
+test eax eax
 jne 0x474cff
-mov dword[esi],ebx
+mov dword[esi] ebx
 pop edi
-mov eax,esi
+mov eax esi
 pop esi
 pop ebx
-mov esp,ebp
+mov esp ebp
 pop ebp
 ret
+
 {% endhighlight %}
 
-
-[similar_1_ref]: /report/fcn.004035b0@d96761eb00d2d97e2b6f5ffffed0b46a
-[similar_2_ref]: /report/fcn.00485144@279a61b1e76da49531f1f16fd1102a2d
-[similar_3_ref]: /report/fcn.00437b71@289859175c221b107317af7727d26c17
-[similar_4_ref]: /report/fcn.00467eae@be7fba7cc724acf4ae2900d99e0fc9c3
-[similar_5_ref]: /report/fcn.0040dce1@883dfc165005908f8666e487fe529d8c
 [virustotal_ref]: https://www.virustotal.com/gui/file/912f1d013a0d6151bc7a7cef6da1b2a0
