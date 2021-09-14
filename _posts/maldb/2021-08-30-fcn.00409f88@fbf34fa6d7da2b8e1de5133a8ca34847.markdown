@@ -1,0 +1,125 @@
+---
+layout: post
+title:  "fcn.00409f88 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409f88
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00409f88@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.00409f88</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push ebx<br>push esi<br>mov esi, dword[sym.imp.KERNEL32.dll_HeapAlloc]<br>push edi<br>push 0x34<br>push 0<br>push dword[0x416fec]<br>call esi<br>mov ebx, dword[esp+0x14]<br>mov edi, eax<br>test ebx, ebx<br>jne 0x409fbc<br>push 8<br>push ebx<br>push dword[0x416fec]<br>call esi<br>mov ebx, eax<br>mov byte[edi+0x32], 1<br>xor edx, edx<br>jmp 0x409fc1<br>xor edx, edx<br>mov byte[edi+0x32], dl<br>mov esi, dword[esp+0x10]<br>lea eax, [ebx+4]<br>mov ecx, dword[esp+0x18]<br>add esi, 8<br>mov dword[edi+0xc], eax<br>mov eax, dword[esp+0x1c]<br>push ecx<br>mov dword[edi+8], edx<br>mov dword[edi], edx<br>mov dword[edi+4], edx<br>mov dword[edi+0x28], esi<br>mov dword[edi+0x18], ecx<br>mov dword[edi+0x10], edx<br>mov byte[edi+0x30], 1<br>mov dword[edi+0x2c], eax<br>call fcn.004113e4<br>and dword[edi+0x20], 0<br>push 4<br>push 0x10000<br>push 0x10<br>mov byte[edi+0x31], al<br>mov dword[edi+0x24], ebx<br>push esi<br>mov dword[ebx], edi<br>call fcn.0040d459<br>mov dword[edi+0x1c], eax<br>mov eax, edi<br>pop edi<br>pop esi<br>pop ebx<br>ret 0x10<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebx
+push esi
+mov esi, dword[sym.imp.KERNEL32.dll_HeapAlloc]
+push edi
+push 0x34
+push 0
+push dword[0x416fec]
+call esi
+mov ebx, dword[esp+0x14]
+mov edi, eax
+test ebx, ebx
+jne 0x409fbc
+push 8
+push ebx
+push dword[0x416fec]
+call esi
+mov ebx, eax
+mov byte[edi+0x32], 1
+xor edx, edx
+jmp 0x409fc1
+xor edx, edx
+mov byte[edi+0x32], dl
+mov esi, dword[esp+0x10]
+lea eax, [ebx+4]
+mov ecx, dword[esp+0x18]
+add esi, 8
+mov dword[edi+0xc], eax
+mov eax, dword[esp+0x1c]
+push ecx
+mov dword[edi+8], edx
+mov dword[edi], edx
+mov dword[edi+4], edx
+mov dword[edi+0x28], esi
+mov dword[edi+0x18], ecx
+mov dword[edi+0x10], edx
+mov byte[edi+0x30], 1
+mov dword[edi+0x2c], eax
+call fcn.004113e4
+and dword[edi+0x20], 0
+push 4
+push 0x10000
+push 0x10
+mov byte[edi+0x31], al
+mov dword[edi+0x24], ebx
+push esi
+mov dword[ebx], edi
+call fcn.0040d459
+mov dword[edi+0x1c], eax
+mov eax, edi
+pop edi
+pop esi
+pop ebx
+ret 0x10
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

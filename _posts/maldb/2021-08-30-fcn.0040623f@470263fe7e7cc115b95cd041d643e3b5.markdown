@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.0040623f @ 470263fe7e7cc115b95cd041d643e3b5"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040623f
+- **Origin (md5):** 470263fe7e7cc115b95cd041d643e3b5
+- **VirusTotal:** [virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.011212485548733891</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.10474675912759973</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0040623f@470263fe7e7cc115b95cd041d643e3b5">fcn.0040623f</a><br>@470263fe7e7cc115b95cd041d643e3b5</b><br>push ebp<br>mov ebp, esp<br>mov eax, dword[ebp+8]<br>push esi<br>push edi<br>push 0x40<br>mov esi, ecx<br>xor edi, edi<br>push 0x3000<br>push eax<br>push edi<br>mov dword[esi+8], edi<br>mov dword[esi+0xc], edi<br>mov dword[esi], eax<br>call dword[sym.imp.KERNEL32.dll_VirtualAlloc]<br>mov dword[esi+4], edi<br>mov dword[esi+8], eax<br>mov dword[esi+0xc], eax<br>mov eax, esi<br>pop edi<br>pop esi<br>pop ebp<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+mov eax, dword[ebp+8]
+push esi
+push edi
+push 0x40
+mov esi, ecx
+xor edi, edi
+push 0x3000
+push eax
+push edi
+mov dword[esi+8], edi
+mov dword[esi+0xc], edi
+mov dword[esi], eax
+call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
+mov dword[esi+4], edi
+mov dword[esi+8], eax
+mov dword[esi+0xc], eax
+mov eax, esi
+pop edi
+pop esi
+pop ebp
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/470263fe7e7cc115b95cd041d643e3b5

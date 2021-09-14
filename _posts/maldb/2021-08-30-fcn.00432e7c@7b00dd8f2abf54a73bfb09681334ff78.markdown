@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.00432e7c @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00432e7c
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00432e7c@7b00dd8f2abf54a73bfb09681334ff78">fcn.00432e7c</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>push esi<br>push edi<br>push 1<br>mov esi, ecx<br>call fcn.00432af9<br>call dword[sym.imp.USER32.dll_ReleaseCapture]<br>call dword[sym.imp.USER32.dll_GetDesktopWindow]<br>push eax<br>call fcn.004159ba<br>push 0<br>mov edi, eax<br>call dword[sym.imp.USER32.dll_LockWindowUpdate]<br>add esi, 0x84<br>mov eax, dword[esi]<br>test eax, eax<br>je 0x432ebe<br>push dword[eax+4]<br>push dword[edi+0x20]<br>call dword[sym.imp.USER32.dll_ReleaseDC]<br>and dword[esi], 0<br>pop edi<br>pop esi<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push esi
+push edi
+push 1
+mov esi, ecx
+call fcn.00432af9
+call dword[sym.imp.USER32.dll_ReleaseCapture]
+call dword[sym.imp.USER32.dll_GetDesktopWindow]
+push eax
+call fcn.004159ba
+push 0
+mov edi, eax
+call dword[sym.imp.USER32.dll_LockWindowUpdate]
+add esi, 0x84
+mov eax, dword[esi]
+test eax, eax
+je 0x432ebe
+push dword[eax+4]
+push dword[edi+0x20]
+call dword[sym.imp.USER32.dll_ReleaseDC]
+and dword[esi], 0
+pop edi
+pop esi
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

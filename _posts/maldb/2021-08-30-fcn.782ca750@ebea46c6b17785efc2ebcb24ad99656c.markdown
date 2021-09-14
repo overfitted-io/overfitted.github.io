@@ -1,0 +1,162 @@
+---
+layout: post
+title:  "fcn.782ca750 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.782ca750
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.782ca750@ebea46c6b17785efc2ebcb24ad99656c">fcn.782ca750</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x130<br>mov eax, dword[0x783e90cc]<br>xor eax, ebp<br>mov dword[ebp-0x10], eax<br>cmp dword[ebp+0xc], 0x800<br>jne 0x782ca781<br>push 0x781e49bc<br>push 4<br>lea eax, [ebp-0xc]<br>push eax<br>call fcn.782321f0<br>add esp, 0xc<br>jmp 0x782ca7c3<br>push 4<br>lea ecx, [ebp-0xc]<br>push ecx<br>push 3<br>mov edx, dword[ebp+0xc]<br>push edx<br>call dword[sym.imp.KERNEL32.dll_GetLocaleInfoA]<br>mov dword[ebp-0x12c], eax<br>cmp dword[ebp-0x12c], 0<br>jne 0x782ca7a9<br>xor eax, eax<br>jmp 0x782ca86d<br>cmp dword[ebp-0x12c], 4<br>je 0x782ca7c3<br>push 0x3d<br>push 0x781e4974<br>call sym.MFC80D.DLL_Ordinal_1363<br>test eax, eax<br>je 0x782ca7c3<br>int3 <br>call dword[sym.imp.MSVCR80D.dll__errno]<br>mov ecx, dword[eax]<br>mov dword[ebp-0x130], ecx<br>call dword[sym.imp.MSVCR80D.dll__errno]<br>mov dword[eax], 0<br>lea edx, [ebp-0xc]<br>push edx<br>mov eax, dword[ebp+8]<br>push eax<br>push 0x111<br>push 0x112<br>lea ecx, [ebp-0x128]<br>push ecx<br>call dword[sym.imp.MSVCR80D.dll__snprintf_s]<br>add esp, 0x14<br>mov dword[ebp-4], eax<br>call dword[sym.imp.MSVCR80D.dll__errno]<br>cmp dword[eax], 0<br>je 0x782ca820<br>call dword[sym.imp.MSVCR80D.dll__errno]<br>mov edx, dword[eax]<br>push edx<br>call fcn.7821eb00<br>add esp, 4<br>jmp 0x782ca82e<br>call dword[sym.imp.MSVCR80D.dll__errno]<br>mov ecx, dword[ebp-0x130]<br>mov dword[eax], ecx<br>xor edx, edx<br>jne 0x782ca7c3<br>cmp dword[ebp-4], 0xffffffff<br>je 0x782ca841<br>cmp dword[ebp-4], 0x112<br>jb 0x782ca85a<br>xor eax, eax<br>jne 0x782ca856<br>push 0x44<br>push 0x781e4974<br>call sym.MFC80D.DLL_Ordinal_1363<br>test eax, eax<br>je 0x782ca856<br>int3 <br>xor eax, eax<br>jmp 0x782ca86d<br>lea edx, [ebp-0x128]<br>push edx<br>call dword[sym.imp.KERNEL32.dll_LoadLibraryA]<br>mov dword[ebp-8], eax<br>mov eax, dword[ebp-8]<br>mov ecx, dword[ebp-0x10]<br>xor ecx, ebp<br>call fcn.783a2cd0<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x130
+mov eax, dword[0x783e90cc]
+xor eax, ebp
+mov dword[ebp-0x10], eax
+cmp dword[ebp+0xc], 0x800
+jne 0x782ca781
+push 0x781e49bc
+push 4
+lea eax, [ebp-0xc]
+push eax
+call fcn.782321f0
+add esp, 0xc
+jmp 0x782ca7c3
+push 4
+lea ecx, [ebp-0xc]
+push ecx
+push 3
+mov edx, dword[ebp+0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_GetLocaleInfoA]
+mov dword[ebp-0x12c], eax
+cmp dword[ebp-0x12c], 0
+jne 0x782ca7a9
+xor eax, eax
+jmp 0x782ca86d
+cmp dword[ebp-0x12c], 4
+je 0x782ca7c3
+push 0x3d
+push 0x781e4974
+call sym.MFC80D.DLL_Ordinal_1363
+test eax, eax
+je 0x782ca7c3
+int3
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx, dword[eax]
+mov dword[ebp-0x130], ecx
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov dword[eax], 0
+lea edx, [ebp-0xc]
+push edx
+mov eax, dword[ebp+8]
+push eax
+push 0x111
+push 0x112
+lea ecx, [ebp-0x128]
+push ecx
+call dword[sym.imp.MSVCR80D.dll__snprintf_s]
+add esp, 0x14
+mov dword[ebp-4], eax
+call dword[sym.imp.MSVCR80D.dll__errno]
+cmp dword[eax], 0
+je 0x782ca820
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov edx, dword[eax]
+push edx
+call fcn.7821eb00
+add esp, 4
+jmp 0x782ca82e
+call dword[sym.imp.MSVCR80D.dll__errno]
+mov ecx, dword[ebp-0x130]
+mov dword[eax], ecx
+xor edx, edx
+jne 0x782ca7c3
+cmp dword[ebp-4], 0xffffffff
+je 0x782ca841
+cmp dword[ebp-4], 0x112
+jb 0x782ca85a
+xor eax, eax
+jne 0x782ca856
+push 0x44
+push 0x781e4974
+call sym.MFC80D.DLL_Ordinal_1363
+test eax, eax
+je 0x782ca856
+int3
+xor eax, eax
+jmp 0x782ca86d
+lea edx, [ebp-0x128]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
+mov dword[ebp-8], eax
+mov eax, dword[ebp-8]
+mov ecx, dword[ebp-0x10]
+xor ecx, ebp
+call fcn.783a2cd0
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

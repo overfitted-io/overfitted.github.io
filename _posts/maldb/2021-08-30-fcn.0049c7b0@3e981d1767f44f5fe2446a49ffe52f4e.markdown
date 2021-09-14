@@ -1,0 +1,159 @@
+---
+layout: post
+title:  "fcn.0049c7b0 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0049c7b0
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0049c7b0@3e981d1767f44f5fe2446a49ffe52f4e">fcn.0049c7b0</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>push esi<br>push edi<br>mov esi, ecx<br>call fcn.0049c730<br>mov al, byte[esp+0x10]<br>mov edi, dword[esp+0xc]<br>test al, al<br>mov dword[esi+0x14], edi<br>mov byte[esi+0x28], al<br>je 0x49c86e<br>mov eax, dword[esp+0x14]<br>lea edi, [esi+0x18]<br>push eax<br>push edi<br>call dword[sym.imp.USER32.dll_CopyRect]<br>mov ecx, dword[esi+0x14]<br>push ecx<br>call dword[sym.imp.GDI32.dll_CreateCompatibleDC]<br>mov dword[esi+0x2c], eax<br>mov edx, dword[edi+0xc]<br>mov ecx, dword[edi+4]<br>mov eax, dword[edi+8]<br>sub edx, ecx<br>mov ecx, dword[esi+0x14]<br>push edx<br>mov edx, dword[edi]<br>sub eax, edx<br>push eax<br>push ecx<br>call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]<br>mov edx, dword[esi+0x2c]<br>push eax<br>push edx<br>mov dword[esi+0x30], eax<br>call dword[sym.imp.GDI32.dll_SelectObject]<br>mov dword[esi+0x34], eax<br>mov eax, dword[esi+0x14]<br>mov ecx, dword[edi+0xc]<br>push 0xcc0020<br>push 0<br>mov edx, dword[edi+8]<br>push 0<br>push eax<br>mov eax, dword[edi+4]<br>sub ecx, eax<br>mov eax, dword[esi+0x1c]<br>push ecx<br>mov ecx, dword[edi]<br>sub edx, ecx<br>push edx<br>mov edx, dword[esi+0x2c]<br>push eax<br>push ecx<br>push edx<br>call dword[sym.imp.GDI32.dll_BitBlt]<br>mov eax, dword[esi+0x1c]<br>mov ecx, dword[edi]<br>mov edx, dword[esi+0x2c]<br>push 0<br>push eax<br>push ecx<br>push edx<br>call dword[sym.imp.GDI32.dll_SetWindowOrgEx]<br>mov eax, dword[esi+0x2c]<br>mov ecx, esi<br>push eax<br>call fcn.004b9de6<br>mov ecx, esi<br>call fcn.0049c910<br>pop edi<br>pop esi<br>ret 0xc<br>push 0<br>push 0<br>push 0<br>lea ecx, [esi+0x18]<br>push 0<br>push ecx<br>call dword[sym.imp.USER32.dll_SetRect]<br>push edi<br>mov ecx, esi<br>call fcn.004b9de6<br>mov ecx, esi<br>call fcn.0049c910<br>pop edi<br>pop esi<br>ret 0xc<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push esi
+push edi
+mov esi, ecx
+call fcn.0049c730
+mov al, byte[esp+0x10]
+mov edi, dword[esp+0xc]
+test al, al
+mov dword[esi+0x14], edi
+mov byte[esi+0x28], al
+je 0x49c86e
+mov eax, dword[esp+0x14]
+lea edi, [esi+0x18]
+push eax
+push edi
+call dword[sym.imp.USER32.dll_CopyRect]
+mov ecx, dword[esi+0x14]
+push ecx
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+mov dword[esi+0x2c], eax
+mov edx, dword[edi+0xc]
+mov ecx, dword[edi+4]
+mov eax, dword[edi+8]
+sub edx, ecx
+mov ecx, dword[esi+0x14]
+push edx
+mov edx, dword[edi]
+sub eax, edx
+push eax
+push ecx
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+mov edx, dword[esi+0x2c]
+push eax
+push edx
+mov dword[esi+0x30], eax
+call dword[sym.imp.GDI32.dll_SelectObject]
+mov dword[esi+0x34], eax
+mov eax, dword[esi+0x14]
+mov ecx, dword[edi+0xc]
+push 0xcc0020
+push 0
+mov edx, dword[edi+8]
+push 0
+push eax
+mov eax, dword[edi+4]
+sub ecx, eax
+mov eax, dword[esi+0x1c]
+push ecx
+mov ecx, dword[edi]
+sub edx, ecx
+push edx
+mov edx, dword[esi+0x2c]
+push eax
+push ecx
+push edx
+call dword[sym.imp.GDI32.dll_BitBlt]
+mov eax, dword[esi+0x1c]
+mov ecx, dword[edi]
+mov edx, dword[esi+0x2c]
+push 0
+push eax
+push ecx
+push edx
+call dword[sym.imp.GDI32.dll_SetWindowOrgEx]
+mov eax, dword[esi+0x2c]
+mov ecx, esi
+push eax
+call fcn.004b9de6
+mov ecx, esi
+call fcn.0049c910
+pop edi
+pop esi
+ret 0xc
+push 0
+push 0
+push 0
+lea ecx, [esi+0x18]
+push 0
+push ecx
+call dword[sym.imp.USER32.dll_SetRect]
+push edi
+mov ecx, esi
+call fcn.004b9de6
+mov ecx, esi
+call fcn.0049c910
+pop edi
+pop esi
+ret 0xc
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

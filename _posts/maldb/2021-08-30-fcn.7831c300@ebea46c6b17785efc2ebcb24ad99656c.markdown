@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "fcn.7831c300 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.7831c300
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.7831c300@ebea46c6b17785efc2ebcb24ad99656c">fcn.7831c300</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x10<br>mov dword[ebp-8], 0<br>mov eax, dword[ebp+0x10]<br>push eax<br>mov ecx, dword[ebp+0xc]<br>push ecx<br>call dword[sym.imp.ole32.dll_CoTreatAsClass]<br>mov dword[ebp-0xc], eax<br>cmp dword[ebp-0xc], 0<br>je 0x7831c3a3<br>cmp dword[ebp+8], 0<br>je 0x7831c3a3<br>lea edx, [ebp-4]<br>push edx<br>push 0x781d1de4<br>push 0x80000000<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]<br>mov dword[ebp-0x10], 0<br>lea eax, [ebp-0x10]<br>push eax<br>mov ecx, dword[ebp+0xc]<br>push ecx<br>call dword[sym.imp.ole32.dll_StringFromCLSID]<br>mov edx, dword[ebp-0x10]<br>push edx<br>call sym.MFC80D.DLL_Ordinal_1552<br>mov dword[ebp-8], eax<br>mov eax, dword[ebp+8]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_lstrlenA]<br>push eax<br>mov ecx, dword[ebp+8]<br>push ecx<br>push 1<br>mov edx, dword[ebp-8]<br>push edx<br>mov eax, dword[ebp-4]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueA]<br>mov ecx, dword[ebp-8]<br>push ecx<br>call dword[sym.imp.ole32.dll_CoTaskMemFree]<br>mov edx, dword[ebp+0x10]<br>push edx<br>mov eax, dword[ebp+0xc]<br>push eax<br>call dword[sym.imp.ole32.dll_CoTreatAsClass]<br>mov dword[ebp-0xc], eax<br>mov ecx, dword[ebp-4]<br>push ecx<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>mov eax, dword[ebp-0xc]<br>mov esp, ebp<br>pop ebp<br>ret 0xc<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x10
+mov dword[ebp-8], 0
+mov eax, dword[ebp+0x10]
+push eax
+mov ecx, dword[ebp+0xc]
+push ecx
+call dword[sym.imp.ole32.dll_CoTreatAsClass]
+mov dword[ebp-0xc], eax
+cmp dword[ebp-0xc], 0
+je 0x7831c3a3
+cmp dword[ebp+8], 0
+je 0x7831c3a3
+lea edx, [ebp-4]
+push edx
+push 0x781d1de4
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+mov dword[ebp-0x10], 0
+lea eax, [ebp-0x10]
+push eax
+mov ecx, dword[ebp+0xc]
+push ecx
+call dword[sym.imp.ole32.dll_StringFromCLSID]
+mov edx, dword[ebp-0x10]
+push edx
+call sym.MFC80D.DLL_Ordinal_1552
+mov dword[ebp-8], eax
+mov eax, dword[ebp+8]
+push eax
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+push eax
+mov ecx, dword[ebp+8]
+push ecx
+push 1
+mov edx, dword[ebp-8]
+push edx
+mov eax, dword[ebp-4]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegSetValueA]
+mov ecx, dword[ebp-8]
+push ecx
+call dword[sym.imp.ole32.dll_CoTaskMemFree]
+mov edx, dword[ebp+0x10]
+push edx
+mov eax, dword[ebp+0xc]
+push eax
+call dword[sym.imp.ole32.dll_CoTreatAsClass]
+mov dword[ebp-0xc], eax
+mov ecx, dword[ebp-4]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+mov eax, dword[ebp-0xc]
+mov esp, ebp
+pop ebp
+ret 0xc
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

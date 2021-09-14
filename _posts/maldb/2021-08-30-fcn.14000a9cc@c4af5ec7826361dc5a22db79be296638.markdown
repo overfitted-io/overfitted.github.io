@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "fcn.14000a9cc @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.14000a9cc
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-4300.35595703125, -2774.093994140625, '<b><a href="/report/fcn.14000a9cc@c4af5ec7826361dc5a22db79be296638">fcn.14000a9cc</a><br>@c4af5ec7826361dc5a22db79be296638</b><br>mov qword[rsp+0x10], rbx<br>push rdi<br>sub rsp, 0x20<br>call qword[sym.imp.USER32.DLL_GetForegroundWindow]<br>xor edi, edi<br>mov rbx, rax<br>test rax, rax<br>je 0x14000aa02<br>lea rdx, [rsp+0x30]<br>mov rcx, rax<br>call qword[sym.imp.USER32.DLL_GetWindowThreadProcessId]<br>call qword[sym.imp.KERNEL32.dll_GetCurrentProcessId]<br>cmp dword[rsp+0x30], eax<br>cmovne rbx, rdi<br>mov rax, rbx<br>mov rbx, qword[rsp+0x38]<br>add rsp, 0x20<br>pop rdi<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[4300.35595703125, 2774.093994140625, '<b><a href="/report/fcn.180002540@7dc44f7522d53d03c7b1f4335f6d2a15">fcn.180002540</a><br>@7dc44f7522d53d03c7b1f4335f6d2a15</b><br>mov qword[rsp+0x20], rbx<br>push rbp<br>mov rbp, rsp<br>sub rsp, 0x20<br>mov rax, qword[0x1800141b0]<br>and qword[rbp+0x18], 0<br>movabs rbx, 0x2b992ddfa232<br>cmp rax, rbx<br>jne 0x1800025d7<br>lea rcx, [rbp+0x18]<br>call qword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]<br>mov rax, qword[rbp+0x18]<br>mov qword[rbp+0x10], rax<br>call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]<br>mov eax, eax<br>xor qword[rbp+0x10], rax<br>call qword[sym.imp.KERNEL32.dll_GetCurrentProcessId]<br>lea rcx, [rbp+0x20]<br>mov eax, eax<br>xor qword[rbp+0x10], rax<br>call qword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]<br>mov eax, dword[rbp+0x20]<br>shl rax, 0x20<br>lea rcx, [rbp+0x10]<br>xor rax, qword[rbp+0x20]<br>xor rax, qword[rbp+0x10]<br>xor rax, rcx<br>movabs rcx, 0xffffffffffff<br>and rax, rcx<br>movabs rcx, 0x2b992ddfa233<br>cmp rax, rbx<br>cmove rax, rcx<br>mov qword[0x1800141b0], rax<br>mov rbx, qword[rsp+0x48]<br>not rax<br>mov qword[0x1800141b8], rax<br>add rsp, 0x20<br>pop rbp<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+mov qword[rsp+0x10], rbx
+push rdi
+sub rsp, 0x20
+call qword[sym.imp.USER32.DLL_GetForegroundWindow]
+xor edi, edi
+mov rbx, rax
+test rax, rax
+je 0x14000aa02
+lea rdx, [rsp+0x30]
+mov rcx, rax
+call qword[sym.imp.USER32.DLL_GetWindowThreadProcessId]
+call qword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+cmp dword[rsp+0x30], eax
+cmovne rbx, rdi
+mov rax, rbx
+mov rbx, qword[rsp+0x38]
+add rsp, 0x20
+pop rdi
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

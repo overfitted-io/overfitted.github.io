@@ -1,0 +1,228 @@
+---
+layout: post
+title:  "fcn.00474b5f @ fb9b7d22bc1c143ac66b0575cbdd088d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00474b5f
+- **Origin (md5):** fb9b7d22bc1c143ac66b0575cbdd088d
+- **VirusTotal:** [virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="PRIVILEGE">PRIVILEGE</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [179.23782348632812, 313.3721008300781, '<b><a href="/report/fcn.00474b5f@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.00474b5f</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push ecx<br>push ebx<br>push esi<br>mov esi, ecx<br>mov word[ebp-4], 0x500<br>xor ecx, ecx<br>push edi<br>mov eax, ecx<br>mov dword[ebp-8], ecx<br>lea ebx, [esi+0x20]<br>mov dword[esi+0x50], eax<br>mov ax, word[ebp-4]<br>lea edi, [esi+0x1c]<br>push ebx<br>push 1<br>push 0xa<br>mov dword[esi], ecx<br>mov dword[esi+0x14], 0x14<br>mov dword[esi+0x18], ecx<br>mov dword[edi], ecx<br>mov dword[ebx], ecx<br>mov dword[esi+0x24], ecx<br>mov dword[esi+0x4c], ecx<br>mov word[esi+0x54], ax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThread]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]<br>test eax, eax<br>jne 0x474bdc<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>cmp eax, 0x3f0<br>jne 0x474cff<br>push ebx<br>push 0xa<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]<br>test eax, eax<br>je 0x474cff<br>lea eax, [esi+0x24]<br>push eax<br>push 2<br>push dword[ebx]<br>call dword[sym.imp.ADVAPI32.dll_DuplicateToken]<br>test eax, eax<br>je 0x474cff<br>push edi<br>xor eax, eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push 0x220<br>push 0x20<br>push 2<br>lea eax, [esi+0x50]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]<br>test eax, eax<br>je 0x474cff<br>mov ebx, dword[sym.imp.KERNEL32.dll_LocalAlloc]<br>push 0x14<br>push 0x40<br>call ebx<br>mov dword[esi+0x4c], eax<br>test eax, eax<br>je 0x474cff<br>push 1<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push dword[edi]<br>call dword[sym.imp.ADVAPI32.dll_GetLengthSid]<br>add eax, 0x10<br>push eax<br>push 0x40<br>mov dword[esi+0x10], eax<br>call ebx<br>mov dword[esi+0x18], eax<br>test eax, eax<br>je 0x474cff<br>push 2<br>push dword[esi+0x10]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeAcl]<br>test eax, eax<br>je 0x474cff<br>push 3<br>pop eax<br>push dword[edi]<br>mov dword[esi+8], eax<br>push eax<br>push 2<br>push dword[esi+0x18]<br>call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]<br>test eax, eax<br>je 0x474cff<br>xor ebx, ebx<br>push ebx<br>push dword[esi+0x18]<br>push 1<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]<br>test eax, eax<br>je 0x474cff<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorGroup]<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push esi<br>lea eax, [esi+4]<br>mov dword[esi+0x40], 2<br>push eax<br>lea eax, [esi+0x14]<br>mov dword[esi+0x44], ebx<br>push eax<br>lea eax, [esi+0x28]<br>mov dword[esi+0x48], 3<br>push eax<br>lea ecx, [esi+0x3c]<br>xor edx, edx<br>inc edx<br>push ecx<br>push edx<br>push dword[esi+0x24]<br>mov dword[esi+0xc], edx<br>push dword[esi+0x4c]<br>mov dword[ecx], edx<br>call dword[sym.imp.ADVAPI32.dll_AccessCheck]<br>test eax, eax<br>jne 0x474cff<br>mov dword[esi], ebx<br>pop edi<br>mov eax, esi<br>pop esi<br>pop ebx<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-11.951125144958496, 723.1229248046875, '<b><a href="/report/fcn.00474b5f@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.00474b5f</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push ecx<br>push ebx<br>push esi<br>mov esi, ecx<br>mov word[ebp-4], 0x500<br>xor ecx, ecx<br>push edi<br>mov eax, ecx<br>mov dword[ebp-8], ecx<br>lea ebx, [esi+0x20]<br>mov dword[esi+0x50], eax<br>mov ax, word[ebp-4]<br>lea edi, [esi+0x1c]<br>push ebx<br>push 1<br>push 0xa<br>mov dword[esi], ecx<br>mov dword[esi+0x14], 0x14<br>mov dword[esi+0x18], ecx<br>mov dword[edi], ecx<br>mov dword[ebx], ecx<br>mov dword[esi+0x24], ecx<br>mov dword[esi+0x4c], ecx<br>mov word[esi+0x54], ax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThread]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]<br>test eax, eax<br>jne 0x474bdc<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>cmp eax, 0x3f0<br>jne 0x474cff<br>push ebx<br>push 0xa<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]<br>test eax, eax<br>je 0x474cff<br>lea eax, [esi+0x24]<br>push eax<br>push 2<br>push dword[ebx]<br>call dword[sym.imp.ADVAPI32.dll_DuplicateToken]<br>test eax, eax<br>je 0x474cff<br>push edi<br>xor eax, eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push 0x220<br>push 0x20<br>push 2<br>lea eax, [esi+0x50]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]<br>test eax, eax<br>je 0x474cff<br>mov ebx, dword[sym.imp.KERNEL32.dll_LocalAlloc]<br>push 0x14<br>push 0x40<br>call ebx<br>mov dword[esi+0x4c], eax<br>test eax, eax<br>je 0x474cff<br>push 1<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push dword[edi]<br>call dword[sym.imp.ADVAPI32.dll_GetLengthSid]<br>add eax, 0x10<br>push eax<br>push 0x40<br>mov dword[esi+0x10], eax<br>call ebx<br>mov dword[esi+0x18], eax<br>test eax, eax<br>je 0x474cff<br>push 2<br>push dword[esi+0x10]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeAcl]<br>test eax, eax<br>je 0x474cff<br>push 3<br>pop eax<br>push dword[edi]<br>mov dword[esi+8], eax<br>push eax<br>push 2<br>push dword[esi+0x18]<br>call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]<br>test eax, eax<br>je 0x474cff<br>xor ebx, ebx<br>push ebx<br>push dword[esi+0x18]<br>push 1<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]<br>test eax, eax<br>je 0x474cff<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorGroup]<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push esi<br>lea eax, [esi+4]<br>mov dword[esi+0x40], 2<br>push eax<br>lea eax, [esi+0x14]<br>mov dword[esi+0x44], ebx<br>push eax<br>lea eax, [esi+0x28]<br>mov dword[esi+0x48], 3<br>push eax<br>lea ecx, [esi+0x3c]<br>xor edx, edx<br>inc edx<br>push ecx<br>push edx<br>push dword[esi+0x24]<br>mov dword[esi+0xc], edx<br>push dword[esi+0x4c]<br>mov dword[ecx], edx<br>call dword[sym.imp.ADVAPI32.dll_AccessCheck]<br>test eax, eax<br>jne 0x474cff<br>mov dword[esi], ebx<br>pop edi<br>mov eax, esi<br>pop esi<br>pop ebx<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'null'],
+[-271.2120666503906, 352.6722106933594, '<b><a href="/report/fcn.00474b5f@152885a790b99953ce23874f0947b7bd">fcn.00474b5f</a><br>@152885a790b99953ce23874f0947b7bd</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push ecx<br>push ebx<br>push esi<br>mov esi, ecx<br>mov word[ebp-4], 0x500<br>xor ecx, ecx<br>push edi<br>mov eax, ecx<br>mov dword[ebp-8], ecx<br>lea ebx, [esi+0x20]<br>mov dword[esi+0x50], eax<br>mov ax, word[ebp-4]<br>lea edi, [esi+0x1c]<br>push ebx<br>push 1<br>push 0xa<br>mov dword[esi], ecx<br>mov dword[esi+0x14], 0x14<br>mov dword[esi+0x18], ecx<br>mov dword[edi], ecx<br>mov dword[ebx], ecx<br>mov dword[esi+0x24], ecx<br>mov dword[esi+0x4c], ecx<br>mov word[esi+0x54], ax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThread]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]<br>test eax, eax<br>jne 0x474bdc<br>call dword[sym.imp.KERNEL32.dll_GetLastError]<br>cmp eax, 0x3f0<br>jne 0x474cff<br>push ebx<br>push 0xa<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]<br>test eax, eax<br>je 0x474cff<br>lea eax, [esi+0x24]<br>push eax<br>push 2<br>push dword[ebx]<br>call dword[sym.imp.ADVAPI32.dll_DuplicateToken]<br>test eax, eax<br>je 0x474cff<br>push edi<br>xor eax, eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push eax<br>push 0x220<br>push 0x20<br>push 2<br>lea eax, [esi+0x50]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]<br>test eax, eax<br>je 0x474cff<br>mov ebx, dword[sym.imp.KERNEL32.dll_LocalAlloc]<br>push 0x14<br>push 0x40<br>call ebx<br>mov dword[esi+0x4c], eax<br>test eax, eax<br>je 0x474cff<br>push 1<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push dword[edi]<br>call dword[sym.imp.ADVAPI32.dll_GetLengthSid]<br>add eax, 0x10<br>push eax<br>push 0x40<br>mov dword[esi+0x10], eax<br>call ebx<br>mov dword[esi+0x18], eax<br>test eax, eax<br>je 0x474cff<br>push 2<br>push dword[esi+0x10]<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_InitializeAcl]<br>test eax, eax<br>je 0x474cff<br>push 3<br>pop eax<br>push dword[edi]<br>mov dword[esi+8], eax<br>push eax<br>push 2<br>push dword[esi+0x18]<br>call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]<br>test eax, eax<br>je 0x474cff<br>xor ebx, ebx<br>push ebx<br>push dword[esi+0x18]<br>push 1<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]<br>test eax, eax<br>je 0x474cff<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorGroup]<br>push ebx<br>push dword[edi]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]<br>push dword[esi+0x4c]<br>call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]<br>test eax, eax<br>je 0x474cff<br>push esi<br>lea eax, [esi+4]<br>mov dword[esi+0x40], 2<br>push eax<br>lea eax, [esi+0x14]<br>mov dword[esi+0x44], ebx<br>push eax<br>lea eax, [esi+0x28]<br>mov dword[esi+0x48], 3<br>push eax<br>lea ecx, [esi+0x3c]<br>xor edx, edx<br>inc edx<br>push ecx<br>push edx<br>push dword[esi+0x24]<br>mov dword[esi+0xc], edx<br>push dword[esi+0x4c]<br>mov dword[ecx], edx<br>call dword[sym.imp.ADVAPI32.dll_AccessCheck]<br>test eax, eax<br>jne 0x474cff<br>mov dword[esi], ebx<br>pop edi<br>mov eax, esi<br>pop esi<br>pop ebx<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+push ecx
+push ebx
+push esi
+mov esi, ecx
+mov word[ebp-4], 0x500
+xor ecx, ecx
+push edi
+mov eax, ecx
+mov dword[ebp-8], ecx
+lea ebx, [esi+0x20]
+mov dword[esi+0x50], eax
+mov ax, word[ebp-4]
+lea edi, [esi+0x1c]
+push ebx
+push 1
+push 0xa
+mov dword[esi], ecx
+mov dword[esi+0x14], 0x14
+mov dword[esi+0x18], ecx
+mov dword[edi], ecx
+mov dword[ebx], ecx
+mov dword[esi+0x24], ecx
+mov dword[esi+0x4c], ecx
+mov word[esi+0x54], ax
+call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenThreadToken]
+test eax, eax
+jne 0x474bdc
+call dword[sym.imp.KERNEL32.dll_GetLastError]
+cmp eax, 0x3f0
+jne 0x474cff
+push ebx
+push 0xa
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
+test eax, eax
+je 0x474cff
+lea eax, [esi+0x24]
+push eax
+push 2
+push dword[ebx]
+call dword[sym.imp.ADVAPI32.dll_DuplicateToken]
+test eax, eax
+je 0x474cff
+push edi
+xor eax, eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push eax
+push 0x220
+push 0x20
+push 2
+lea eax, [esi+0x50]
+push eax
+call dword[sym.imp.ADVAPI32.dll_AllocateAndInitializeSid]
+test eax, eax
+je 0x474cff
+mov ebx, dword[sym.imp.KERNEL32.dll_LocalAlloc]
+push 0x14
+push 0x40
+call ebx
+mov dword[esi+0x4c], eax
+test eax, eax
+je 0x474cff
+push 1
+push eax
+call dword[sym.imp.ADVAPI32.dll_InitializeSecurityDescriptor]
+test eax, eax
+je 0x474cff
+push dword[edi]
+call dword[sym.imp.ADVAPI32.dll_GetLengthSid]
+add eax, 0x10
+push eax
+push 0x40
+mov dword[esi+0x10], eax
+call ebx
+mov dword[esi+0x18], eax
+test eax, eax
+je 0x474cff
+push 2
+push dword[esi+0x10]
+push eax
+call dword[sym.imp.ADVAPI32.dll_InitializeAcl]
+test eax, eax
+je 0x474cff
+push 3
+pop eax
+push dword[edi]
+mov dword[esi+8], eax
+push eax
+push 2
+push dword[esi+0x18]
+call dword[sym.imp.ADVAPI32.dll_AddAccessAllowedAce]
+test eax, eax
+je 0x474cff
+xor ebx, ebx
+push ebx
+push dword[esi+0x18]
+push 1
+push dword[esi+0x4c]
+call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorDacl]
+test eax, eax
+je 0x474cff
+push ebx
+push dword[edi]
+push dword[esi+0x4c]
+call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorGroup]
+push ebx
+push dword[edi]
+push dword[esi+0x4c]
+call dword[sym.imp.ADVAPI32.dll_SetSecurityDescriptorOwner]
+push dword[esi+0x4c]
+call dword[sym.imp.ADVAPI32.dll_IsValidSecurityDescriptor]
+test eax, eax
+je 0x474cff
+push esi
+lea eax, [esi+4]
+mov dword[esi+0x40], 2
+push eax
+lea eax, [esi+0x14]
+mov dword[esi+0x44], ebx
+push eax
+lea eax, [esi+0x28]
+mov dword[esi+0x48], 3
+push eax
+lea ecx, [esi+0x3c]
+xor edx, edx
+inc edx
+push ecx
+push edx
+push dword[esi+0x24]
+mov dword[esi+0xc], edx
+push dword[esi+0x4c]
+mov dword[ecx], edx
+call dword[sym.imp.ADVAPI32.dll_AccessCheck]
+test eax, eax
+jne 0x474cff
+mov dword[esi], ebx
+pop edi
+mov eax, esi
+pop esi
+pop ebx
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d

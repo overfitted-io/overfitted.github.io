@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.0040114b @ d4e56c7d970c209a3a2b3c4b4cc5e586"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040114b
+- **Origin (md5):** d4e56c7d970c209a3a2b3c4b4cc5e586
+- **VirusTotal:** [virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0040114b@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.0040114b</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>jmp 0x401370<br>push esi<br>mov esi, dword[esp+8]<br>cmp esi, 0xffff<br>jbe 0x4013b6<br>mov eax, dword[0x933544]<br>test eax, eax<br>jne 0x40138b<br>call fcn.004012a0<br>cmp dword[0x93353c], esi<br>ja 0x40139b<br>cmp esi, dword[0x933538]<br>jbe 0x4013b6<br>push 8<br>push esi<br>call dword[sym.imp.KERNEL32.dll_IsBadReadPtr]<br>test eax, eax<br>jne 0x4013b6<br>push esi<br>push eax<br>mov eax, dword[0x933554]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_HeapFree]<br>pop esi<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+jmp 0x401370
+push esi
+mov esi, dword[esp+8]
+cmp esi, 0xffff
+jbe 0x4013b6
+mov eax, dword[0x933544]
+test eax, eax
+jne 0x40138b
+call fcn.004012a0
+cmp dword[0x93353c], esi
+ja 0x40139b
+cmp esi, dword[0x933538]
+jbe 0x4013b6
+push 8
+push esi
+call dword[sym.imp.KERNEL32.dll_IsBadReadPtr]
+test eax, eax
+jne 0x4013b6
+push esi
+push eax
+mov eax, dword[0x933554]
+push eax
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+pop esi
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/d4e56c7d970c209a3a2b3c4b4cc5e586

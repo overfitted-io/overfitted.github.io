@@ -1,0 +1,134 @@
+---
+layout: post
+title:  "fcn.004728e1 @ 27ac6b5c7fa1ad11790cdc733c25a701"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004728e1
+- **Origin (md5):** 27ac6b5c7fa1ad11790cdc733c25a701
+- **VirusTotal:** [virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.004728e1@27ac6b5c7fa1ad11790cdc733c25a701">fcn.004728e1</a><br>@27ac6b5c7fa1ad11790cdc733c25a701</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x124<br>mov eax, dword[0x4e11d0]<br>xor eax, ebp<br>mov dword[ebp-4], eax<br>lea eax, [ebp-0x118]<br>mov dword[ebp-0x118], 0x114<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetVersionExW]<br>test eax, eax<br>je 0x4729b4<br>mov eax, dword[ebp-0x114]<br>sub eax, 5<br>je 0x472963<br>sub eax, 1<br>jne 0x472957<br>mov eax, dword[ebp-0x110]<br>sub eax, 0<br>je 0x47293f<br>sub eax, 1<br>jne 0x472957<br>mov dword[0x4eba28], 4<br>jmp 0x472998<br>mov dword[0x4eba28], 3<br>mov ecx, dword[ebp-4]<br>xor ecx, ebp<br>call fcn.004825be<br>mov esp, ebp<br>pop ebp<br>ret <br>mov dword[0x4eba28], 6<br>jmp 0x472998<br>mov eax, dword[ebp-0x110]<br>sub eax, 0<br>je 0x4729ad<br>sub eax, 1<br>je 0x47298b<br>sub eax, 1<br>jne 0x472984<br>mov dword[0x4eba28], 2<br>jmp 0x472949<br>mov eax, dword[0x4eba28]<br>jmp 0x472993<br>xor eax, eax<br>inc eax<br>mov dword[0x4eba28], eax<br>cmp eax, 4<br>jl 0x472949<br>call fcn.0046e68e<br>cmp dword[0x4eba28], 6<br>jl 0x472949<br>call fcn.0047a72b<br>jmp 0x472949<br>and dword[0x4eba28], 0<br>lea ecx, [ebp-0x124]<br>call fcn.0046f0aa<br>push 0x4dd220<br>lea eax, [ebp-0x124]<br>push eax<br>call fcn.004841d0<br>int3 <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x124
+mov eax, dword[0x4e11d0]
+xor eax, ebp
+mov dword[ebp-4], eax
+lea eax, [ebp-0x118]
+mov dword[ebp-0x118], 0x114
+push eax
+call dword[sym.imp.KERNEL32.dll_GetVersionExW]
+test eax, eax
+je 0x4729b4
+mov eax, dword[ebp-0x114]
+sub eax, 5
+je 0x472963
+sub eax, 1
+jne 0x472957
+mov eax, dword[ebp-0x110]
+sub eax, 0
+je 0x47293f
+sub eax, 1
+jne 0x472957
+mov dword[0x4eba28], 4
+jmp 0x472998
+mov dword[0x4eba28], 3
+mov ecx, dword[ebp-4]
+xor ecx, ebp
+call fcn.004825be
+mov esp, ebp
+pop ebp
+ret
+mov dword[0x4eba28], 6
+jmp 0x472998
+mov eax, dword[ebp-0x110]
+sub eax, 0
+je 0x4729ad
+sub eax, 1
+je 0x47298b
+sub eax, 1
+jne 0x472984
+mov dword[0x4eba28], 2
+jmp 0x472949
+mov eax, dword[0x4eba28]
+jmp 0x472993
+xor eax, eax
+inc eax
+mov dword[0x4eba28], eax
+cmp eax, 4
+jl 0x472949
+call fcn.0046e68e
+cmp dword[0x4eba28], 6
+jl 0x472949
+call fcn.0047a72b
+jmp 0x472949
+and dword[0x4eba28], 0
+lea ecx, [ebp-0x124]
+call fcn.0046f0aa
+push 0x4dd220
+lea eax, [ebp-0x124]
+push eax
+call fcn.004841d0
+int3
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/27ac6b5c7fa1ad11790cdc733c25a701

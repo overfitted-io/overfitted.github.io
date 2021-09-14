@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.0040a3d2 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040a3d2
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.16309866334606607</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.0070287183809372746</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-355.64483642578125, -2640.612060546875, '<b><a href="/report/fcn.0040a3d2@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.0040a3d2</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push ebx<br>push ebp<br>push esi<br>push edi<br>push dword[esp+0x14]<br>mov esi, 0x104<br>push esi<br>call fcn.0040dea0<br>mov edi, eax<br>push edi<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GetTempPathW]<br>push str.Kernel32.DLL<br>mov ebx, eax<br>call dword[sym.imp.KERNEL32.dll_LoadLibraryW]<br>mov ebp, eax<br>test ebp, ebp<br>je 0x40a420<br>push str.GetLongPathNameW<br>push ebp<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>test eax, eax<br>je 0x40a419<br>push esi<br>push edi<br>push edi<br>call eax<br>mov ebx, eax<br>push ebp<br>call dword[sym.imp.KERNEL32.dll_FreeLibrary]<br>sub esi, ebx<br>push esi<br>call fcn.0040dff0<br>xor eax, eax<br>mov word[edi+ebx*2], ax<br>pop edi<br>pop esi<br>pop ebp<br>pop ebx<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+[355.64495849609375, 2640.612060546875, '<b><a href="/report/fcn.00431bd1@9c2b894b84f59672d8be2e984066f76f">fcn.00431bd1</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x20<br>mov eax, dword[0x5d9004]<br>xor eax, ebp<br>mov dword[ebp-4], eax<br>push ebx<br>push esi<br>push edi<br>push 6<br>pop ecx<br>mov ebx, dword[ebp+8]<br>lea edi, [ebp-0x20]<br>mov esi, str.mfcm140u.dll<br>lea eax, [ebp-0x20]<br>rep movsd<br>push eax<br>movsw word<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>test eax, eax<br>je 0x431c21<br>push str.AfxmReleaseManagedReferences<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov esi, eax<br>test esi, esi<br>je 0x431c21<br>push ebx<br>mov ecx, esi<br>call fcn.00553897<br>call esi<br>pop ecx<br>mov ecx, dword[ebp-4]<br>pop edi<br>pop esi<br>xor ecx, ebp<br>pop ebx<br>call fcn.00553199<br>mov esp, ebp<br>pop ebp<br>ret 4<br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebx
+push ebp
+push esi
+push edi
+push dword[esp+0x14]
+mov esi, 0x104
+push esi
+call fcn.0040dea0
+mov edi, eax
+push edi
+push esi
+call dword[sym.imp.KERNEL32.dll_GetTempPathW]
+push str.Kernel32.DLL
+mov ebx, eax
+call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
+mov ebp, eax
+test ebp, ebp
+je 0x40a420
+push str.GetLongPathNameW
+push ebp
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+test eax, eax
+je 0x40a419
+push esi
+push edi
+push edi
+call eax
+mov ebx, eax
+push ebp
+call dword[sym.imp.KERNEL32.dll_FreeLibrary]
+sub esi, ebx
+push esi
+call fcn.0040dff0
+xor eax, eax
+mov word[edi+ebx*2], ax
+pop edi
+pop esi
+pop ebp
+pop ebx
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

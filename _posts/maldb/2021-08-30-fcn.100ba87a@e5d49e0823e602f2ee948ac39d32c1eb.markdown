@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.100ba87a @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100ba87a
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+<span class="tag" id="HOOK">HOOK</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [498.9164733886719, 2587.252685546875, '<b><a href="/report/fcn.100ba87a@e5d49e0823e602f2ee948ac39d32c1eb">fcn.100ba87a</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>push ebp<br>mov ebp, esp<br>add ecx, 0xb0<br>pop ebp<br>jmp 0x1010a29a<br>push ebp<br>mov ebp, esp<br>mov eax, dword[ebp+8]<br>mov dword[0x101a1bd8], eax<br>push esi<br>mov esi, ecx<br>test eax, eax<br>je 0x1010a2d8<br>cmp dword[0x101a3ebc], 0<br>jne 0x1010a2d0<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]<br>push eax<br>push 0<br>push 0x10109cbe<br>push 7<br>call dword[sym.imp.USER32.dll_SetWindowsHookExW]<br>mov dword[0x101a3ebc], eax<br>mov dword[0x101a3ec0], esi<br>jmp 0x1010a2f6<br>mov eax, dword[0x101a3ebc]<br>test eax, eax<br>je 0x1010a2ef<br>push eax<br>call dword[sym.imp.USER32.dll_UnhookWindowsHookEx]<br>and dword[0x101a3ebc], 0<br>and dword[0x101a3ec0], 0<br>pop esi<br>pop ebp<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-498.9164123535156, -2587.252685546875, '<b><a href="/report/fcn.004cda47@9c2b894b84f59672d8be2e984066f76f">fcn.004cda47</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>push ebp<br>mov ebp, esp<br>mov eax, dword[ebp+8]<br>mov dword[0x5e0834], eax<br>push esi<br>mov esi, ecx<br>test eax, eax<br>je 0x413463<br>cmp dword[0x5ddf2c], 0<br>jne 0x41345b<br>call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]<br>push eax<br>push 0<br>push 0x412e27<br>push 7<br>call dword[sym.imp.USER32.dll_SetWindowsHookExW]<br>mov dword[0x5ddf2c], eax<br>mov dword[0x5ddf30], esi<br>jmp 0x413481<br>mov eax, dword[0x5ddf2c]<br>test eax, eax<br>je 0x41347a<br>push eax<br>call dword[sym.imp.USER32.dll_UnhookWindowsHookEx]<br>and dword[0x5ddf2c], 0<br>and dword[0x5ddf30], 0<br>pop esi<br>pop ebp<br>ret 4<br>push ebp<br>mov ebp, esp<br>add ecx, 0xc0<br>pop ebp<br>jmp 0x413425<br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+add ecx, 0xb0
+pop ebp
+jmp 0x1010a29a
+push ebp
+mov ebp, esp
+mov eax, dword[ebp+8]
+mov dword[0x101a1bd8], eax
+push esi
+mov esi, ecx
+test eax, eax
+je 0x1010a2d8
+cmp dword[0x101a3ebc], 0
+jne 0x1010a2d0
+call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
+push eax
+push 0
+push 0x10109cbe
+push 7
+call dword[sym.imp.USER32.dll_SetWindowsHookExW]
+mov dword[0x101a3ebc], eax
+mov dword[0x101a3ec0], esi
+jmp 0x1010a2f6
+mov eax, dword[0x101a3ebc]
+test eax, eax
+je 0x1010a2ef
+push eax
+call dword[sym.imp.USER32.dll_UnhookWindowsHookEx]
+and dword[0x101a3ebc], 0
+and dword[0x101a3ec0], 0
+pop esi
+pop ebp
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

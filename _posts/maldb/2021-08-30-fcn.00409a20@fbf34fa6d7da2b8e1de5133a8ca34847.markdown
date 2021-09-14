@@ -1,0 +1,145 @@
+---
+layout: post
+title:  "fcn.00409a20 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409a20
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00409a20@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.00409a20</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push ebx<br>push ebp<br>mov ebp, dword[esp+0x18]<br>push edi<br>push dword[ebp]<br>call fcn.00409b0f<br>mov ebx, dword[sym.imp.KERNEL32.dll_HeapAlloc]<br>push 0x3c<br>push 0<br>push dword[0x416fec]<br>call ebx<br>mov edi, eax<br>test edi, edi<br>je 0x409ae5<br>push esi<br>mov esi, dword[esp+0x24]<br>test esi, esi<br>jg 0x409a57<br>xor esi, esi<br>inc esi<br>mov eax, esi<br>shl eax, 2<br>push eax<br>push 8<br>push dword[0x416fec]<br>call ebx<br>mov dword[edi+4], eax<br>test eax, eax<br>je 0x409ad3<br>mov eax, dword[esp+0x18]<br>xor ecx, ecx<br>mov dword[edi+0x20], eax<br>mov eax, dword[esp+0x1c]<br>mov dword[edi+0x24], esi<br>mov esi, dword[esp+0x14]<br>push eax<br>mov dword[edi], ecx<br>mov dword[edi+0x1c], esi<br>mov dword[edi+0x10], eax<br>mov dword[edi+0x28], ecx<br>mov dword[edi+0x2c], ecx<br>mov dword[edi+0x30], ebp<br>mov dword[edi+0x34], ecx<br>call fcn.004113e4<br>test eax, eax<br>je 0x409aa4<br>or dword[edi+0x2c], 2<br>push 4<br>push 0x10000<br>push 0x10<br>add esi, 8<br>push esi<br>call fcn.0040d459<br>push esi<br>push 8<br>mov dword[edi+0x38], eax<br>push dword[0x416fec]<br>call ebx<br>mov dword[edi+0xc], eax<br>mov dword[eax+4], 0x412024<br>mov dword[ebp], edi<br>jmp 0x409ae4<br>push edi<br>push 0<br>push dword[0x416fec]<br>call dword[sym.imp.KERNEL32.dll_HeapFree]<br>xor edi, edi<br>pop esi<br>mov eax, edi<br>pop edi<br>pop ebp<br>pop ebx<br>ret 0x14<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebx
+push ebp
+mov ebp, dword[esp+0x18]
+push edi
+push dword[ebp]
+call fcn.00409b0f
+mov ebx, dword[sym.imp.KERNEL32.dll_HeapAlloc]
+push 0x3c
+push 0
+push dword[0x416fec]
+call ebx
+mov edi, eax
+test edi, edi
+je 0x409ae5
+push esi
+mov esi, dword[esp+0x24]
+test esi, esi
+jg 0x409a57
+xor esi, esi
+inc esi
+mov eax, esi
+shl eax, 2
+push eax
+push 8
+push dword[0x416fec]
+call ebx
+mov dword[edi+4], eax
+test eax, eax
+je 0x409ad3
+mov eax, dword[esp+0x18]
+xor ecx, ecx
+mov dword[edi+0x20], eax
+mov eax, dword[esp+0x1c]
+mov dword[edi+0x24], esi
+mov esi, dword[esp+0x14]
+push eax
+mov dword[edi], ecx
+mov dword[edi+0x1c], esi
+mov dword[edi+0x10], eax
+mov dword[edi+0x28], ecx
+mov dword[edi+0x2c], ecx
+mov dword[edi+0x30], ebp
+mov dword[edi+0x34], ecx
+call fcn.004113e4
+test eax, eax
+je 0x409aa4
+or dword[edi+0x2c], 2
+push 4
+push 0x10000
+push 0x10
+add esi, 8
+push esi
+call fcn.0040d459
+push esi
+push 8
+mov dword[edi+0x38], eax
+push dword[0x416fec]
+call ebx
+mov dword[edi+0xc], eax
+mov dword[eax+4], 0x412024
+mov dword[ebp], edi
+jmp 0x409ae4
+push edi
+push 0
+push dword[0x416fec]
+call dword[sym.imp.KERNEL32.dll_HeapFree]
+xor edi, edi
+pop esi
+mov eax, edi
+pop edi
+pop ebp
+pop ebx
+ret 0x14
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

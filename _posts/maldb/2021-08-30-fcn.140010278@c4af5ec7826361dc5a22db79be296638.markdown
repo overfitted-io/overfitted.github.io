@@ -1,0 +1,111 @@
+---
+layout: post
+title:  "fcn.140010278 @ c4af5ec7826361dc5a22db79be296638"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.140010278
+- **Origin (md5):** c4af5ec7826361dc5a22db79be296638
+- **VirusTotal:** [virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.140010278@c4af5ec7826361dc5a22db79be296638">fcn.140010278</a><br>@c4af5ec7826361dc5a22db79be296638</b><br>mov qword[rsp+8], rbx<br>push rdi<br>sub rsp, 0x20<br>cmp dword[rcx+0x30], 0<br>mov rdi, rcx<br>je 0x140010295<br>add rcx, 0x38<br>call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]<br>mov r8, qword[rdi+8]<br>test r8, r8<br>je 0x1400102b8<br>mov rcx, qword[0x14001e444]<br>mov rbx, qword[r8]<br>xor edx, edx<br>call qword[sym.imp.KERNEL32.dll_HeapFree]<br>mov r8, rbx<br>test rbx, rbx<br>jne 0x14001029e<br>mov r8, qword[rdi]<br>test r8, r8<br>je 0x1400102da<br>mov rcx, qword[0x14001e444]<br>mov rbx, qword[r8]<br>xor edx, edx<br>call qword[sym.imp.KERNEL32.dll_HeapFree]<br>mov r8, rbx<br>test rbx, rbx<br>jne 0x1400102c0<br>and qword[rdi], 0<br>and qword[rdi+8], 0<br>and qword[rdi+0x18], 0<br>cmp dword[rdi+0x30], 0<br>je 0x1400102f8<br>lea rcx, [rdi+0x38]<br>call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]<br>mov rbx, qword[rsp+0x30]<br>add rsp, 0x20<br>pop rdi<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+mov qword[rsp+8], rbx
+push rdi
+sub rsp, 0x20
+cmp dword[rcx+0x30], 0
+mov rdi, rcx
+je 0x140010295
+add rcx, 0x38
+call qword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov r8, qword[rdi+8]
+test r8, r8
+je 0x1400102b8
+mov rcx, qword[0x14001e444]
+mov rbx, qword[r8]
+xor edx, edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+mov r8, rbx
+test rbx, rbx
+jne 0x14001029e
+mov r8, qword[rdi]
+test r8, r8
+je 0x1400102da
+mov rcx, qword[0x14001e444]
+mov rbx, qword[r8]
+xor edx, edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+mov r8, rbx
+test rbx, rbx
+jne 0x1400102c0
+and qword[rdi], 0
+and qword[rdi+8], 0
+and qword[rdi+0x18], 0
+cmp dword[rdi+0x30], 0
+je 0x1400102f8
+lea rcx, [rdi+0x38]
+call qword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov rbx, qword[rsp+0x30]
+add rsp, 0x20
+pop rdi
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/c4af5ec7826361dc5a22db79be296638

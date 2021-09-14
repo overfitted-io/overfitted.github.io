@@ -1,0 +1,96 @@
+---
+layout: post
+title:  "fcn.180004168 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.180004168
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.180004168@7dc44f7522d53d03c7b1f4335f6d2a15">fcn.180004168</a><br>@7dc44f7522d53d03c7b1f4335f6d2a15</b><br>push rbx<br>sub rsp, 0x20<br>mov ebx, ecx<br>call qword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>mov edx, ebx<br>mov rcx, rax<br>add rsp, 0x20<br>pop rbx<br>jmp qword[sym.imp.KERNEL32.dll_TerminateProcess]<br>sub rsp, 0x28<br>mov ecx, 0x17<br>call sub.KERNEL32.dll_IsProcessorFeaturePresent<br>test eax, eax<br>je 0x180004181<br>mov ecx, 5<br>int 0x29<br>mov r8d, 1<br>mov edx, 0xc0000417<br>lea ecx, [r8+1]<br>call fcn.180003fe4<br>mov ecx, 0xc0000417<br>add rsp, 0x28<br>jmp 0x180002cb0<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push rbx
+sub rsp, 0x20
+mov ebx, ecx
+call qword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+mov edx, ebx
+mov rcx, rax
+add rsp, 0x20
+pop rbx
+jmp qword[sym.imp.KERNEL32.dll_TerminateProcess]
+sub rsp, 0x28
+mov ecx, 0x17
+call sub.KERNEL32.dll_IsProcessorFeaturePresent
+test eax, eax
+je 0x180004181
+mov ecx, 5
+int 0x29
+mov r8d, 1
+mov edx, 0xc0000417
+lea ecx, [r8+1]
+call fcn.180003fe4
+mov ecx, 0xc0000417
+add rsp, 0x28
+jmp 0x180002cb0
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

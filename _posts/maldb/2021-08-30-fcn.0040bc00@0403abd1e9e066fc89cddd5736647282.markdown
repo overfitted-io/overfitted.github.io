@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "fcn.0040bc00 @ 0403abd1e9e066fc89cddd5736647282"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040bc00
+- **Origin (md5):** 0403abd1e9e066fc89cddd5736647282
+- **VirusTotal:** [virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0040bc00@0403abd1e9e066fc89cddd5736647282">fcn.0040bc00</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>sub esp, 0x14<br>push esi<br>mov esi, ecx<br>mov eax, dword[esi+0xc]<br>lea ecx, [esi+0xc]<br>test eax, eax<br>je 0x40bcb4<br>mov eax, dword[esi+8]<br>test eax, eax<br>je 0x40bcb4<br>mov edx, dword[esp+0x24]<br>mov dword[esp+8], eax<br>lea eax, [esp+0x24]<br>mov dword[esp+0xc], ecx<br>push eax<br>lea ecx, [esp+8]<br>push 0<br>push ecx<br>push 0x40bb80<br>push 0<br>push 0<br>mov dword[esp+0x1c], edx<br>mov dword[esp+0x28], 0<br>mov dword[esp+0x2c], 0<br>call dword[sym.imp.KERNEL32.dll_CreateThread]<br>test eax, eax<br>jne 0x40bc68<br>or eax, 0xffffffff<br>pop esi<br>add esp, 0x14<br>ret 0xc<br>push ebx<br>push eax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov edx, dword[esp+0x24]<br>mov eax, dword[esp+0x20]<br>mov ecx, dword[esi+8]<br>push 0<br>push edx<br>push eax<br>push ecx<br>call dword[sym.imp.WSOCK32.dll_recv]<br>mov ebx, eax<br>mov eax, dword[esp+0x18]<br>test eax, eax<br>mov dword[esp+0x14], 1<br>jne 0x40bcaa<br>mov esi, dword[sym.imp.KERNEL32.dll_Sleep]<br>push 5<br>call esi<br>mov eax, dword[esp+0x18]<br>test eax, eax<br>je 0x40bc9e<br>mov eax, ebx<br>pop ebx<br>pop esi<br>add esp, 0x14<br>ret 0xc<br>or eax, 0xffffffff<br>mov dword[esi+4], eax<br>pop esi<br>add esp, 0x14<br>ret 0xc<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+sub esp, 0x14
+push esi
+mov esi, ecx
+mov eax, dword[esi+0xc]
+lea ecx, [esi+0xc]
+test eax, eax
+je 0x40bcb4
+mov eax, dword[esi+8]
+test eax, eax
+je 0x40bcb4
+mov edx, dword[esp+0x24]
+mov dword[esp+8], eax
+lea eax, [esp+0x24]
+mov dword[esp+0xc], ecx
+push eax
+lea ecx, [esp+8]
+push 0
+push ecx
+push 0x40bb80
+push 0
+push 0
+mov dword[esp+0x1c], edx
+mov dword[esp+0x28], 0
+mov dword[esp+0x2c], 0
+call dword[sym.imp.KERNEL32.dll_CreateThread]
+test eax, eax
+jne 0x40bc68
+or eax, 0xffffffff
+pop esi
+add esp, 0x14
+ret 0xc
+push ebx
+push eax
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov edx, dword[esp+0x24]
+mov eax, dword[esp+0x20]
+mov ecx, dword[esi+8]
+push 0
+push edx
+push eax
+push ecx
+call dword[sym.imp.WSOCK32.dll_recv]
+mov ebx, eax
+mov eax, dword[esp+0x18]
+test eax, eax
+mov dword[esp+0x14], 1
+jne 0x40bcaa
+mov esi, dword[sym.imp.KERNEL32.dll_Sleep]
+push 5
+call esi
+mov eax, dword[esp+0x18]
+test eax, eax
+je 0x40bc9e
+mov eax, ebx
+pop ebx
+pop esi
+add esp, 0x14
+ret 0xc
+or eax, 0xffffffff
+mov dword[esi+4], eax
+pop esi
+add esp, 0x14
+ret 0xc
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/0403abd1e9e066fc89cddd5736647282

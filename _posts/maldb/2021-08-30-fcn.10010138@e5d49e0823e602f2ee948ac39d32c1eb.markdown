@@ -1,0 +1,135 @@
+---
+layout: post
+title:  "fcn.10010138 @ e5d49e0823e602f2ee948ac39d32c1eb"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.10010138
+- **Origin (md5):** e5d49e0823e602f2ee948ac39d32c1eb
+- **VirusTotal:** [virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.05592814595400539</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.10010138@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10010138</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>push ebp<br>mov ebp, esp<br>mov eax, dword[0x101a0bf4]<br>push esi<br>mov esi, ecx<br>and dword[esi+0x38], 0<br>test al, 1<br>jne 0x1001016d<br>or eax, 1<br>push str.user32.dll<br>mov dword[0x101a0bf4], eax<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, eax<br>mov eax, dword[0x101a0bf4]<br>mov dword[0x101a0bf0], ecx<br>jmp 0x10010173<br>mov ecx, dword[0x101a0bf0]<br>test ecx, ecx<br>je 0x10010201<br>test al, 2<br>jne 0x100101a8<br>push str.RegisterTouchWindow<br>or eax, 2<br>push ecx<br>mov dword[0x101a0bf4], eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov ecx, dword[0x101a0bf0]<br>mov edx, eax<br>mov eax, dword[0x101a0bf4]<br>mov dword[0x101a0bf8], edx<br>jmp 0x100101ae<br>mov edx, dword[0x101a0bf8]<br>test al, 4<br>jne 0x100101d3<br>push str.UnregisterTouchWindow<br>or eax, 4<br>push ecx<br>mov dword[0x101a0bf4], eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov edx, dword[0x101a0bf8]<br>mov dword[0x101a0bfc], eax<br>jmp 0x100101d8<br>mov eax, dword[0x101a0bfc]<br>test edx, edx<br>je 0x100101fa<br>test eax, eax<br>je 0x100101fa<br>cmp dword[ebp+8], 0<br>jne 0x100101ed<br>push dword[esi+0x20]<br>call eax<br>jmp 0x100101fc<br>push dword[ebp+0xc]<br>push dword[esi+0x20]<br>call edx<br>mov dword[esi+0x38], eax<br>jmp 0x100101fc<br>xor eax, eax<br>pop esi<br>pop ebp<br>ret 8<br>call fcn.10009c74<br>int3 <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+mov eax, dword[0x101a0bf4]
+push esi
+mov esi, ecx
+and dword[esi+0x38], 0
+test al, 1
+jne 0x1001016d
+or eax, 1
+push str.user32.dll
+mov dword[0x101a0bf4], eax
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov ecx, eax
+mov eax, dword[0x101a0bf4]
+mov dword[0x101a0bf0], ecx
+jmp 0x10010173
+mov ecx, dword[0x101a0bf0]
+test ecx, ecx
+je 0x10010201
+test al, 2
+jne 0x100101a8
+push str.RegisterTouchWindow
+or eax, 2
+push ecx
+mov dword[0x101a0bf4], eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov ecx, dword[0x101a0bf0]
+mov edx, eax
+mov eax, dword[0x101a0bf4]
+mov dword[0x101a0bf8], edx
+jmp 0x100101ae
+mov edx, dword[0x101a0bf8]
+test al, 4
+jne 0x100101d3
+push str.UnregisterTouchWindow
+or eax, 4
+push ecx
+mov dword[0x101a0bf4], eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov edx, dword[0x101a0bf8]
+mov dword[0x101a0bfc], eax
+jmp 0x100101d8
+mov eax, dword[0x101a0bfc]
+test edx, edx
+je 0x100101fa
+test eax, eax
+je 0x100101fa
+cmp dword[ebp+8], 0
+jne 0x100101ed
+push dword[esi+0x20]
+call eax
+jmp 0x100101fc
+push dword[ebp+0xc]
+push dword[esi+0x20]
+call edx
+mov dword[esi+0x38], eax
+jmp 0x100101fc
+xor eax, eax
+pop esi
+pop ebp
+ret 8
+call fcn.10009c74
+int3
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/e5d49e0823e602f2ee948ac39d32c1eb

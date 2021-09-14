@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "fcn.004048f5 @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004048f5
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.12855748054971672</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.0648983359573502</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.061137431930193026</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.06039817442357184</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [7316.46923828125, -7642.32470703125, '<b><a href="/report/fcn.004048f5@73677cb40830e94fbfb5483ff33e40b9">fcn.004048f5</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x10<br>push esi<br>push 0<br>push 1<br>push 2<br>call dword[sym.imp.WS2_32.dll_socket]<br>mov esi, eax<br>cmp esi, 0xffffffff<br>jne 0x404926<br>lea eax, [ebp+0x10]<br>push eax<br>mov eax, dword[ebp+0xc]<br>push ebx<br>push dword[ebp+8]<br>mov cl, 1<br>call fcn.004048c3<br>add esp, 0xc<br>jmp 0x404975<br>push edi<br>xor eax, eax<br>lea edi, [ebp-0x10]<br>stosd dword<br>stosd dword<br>stosd dword<br>stosd dword<br>mov eax, dword[ebx]<br>mov dword[ebp-0xc], eax<br>mov ax, word[ebp+0x10]<br>mov word[ebp-0xe], ax<br>push 0x10<br>lea eax, [ebp-0x10]<br>push eax<br>push esi<br>mov word[ebp-0x10], 2<br>call dword[sym.imp.WS2_32.dll_connect]<br>cmp eax, 0xffffffff<br>pop edi<br>jne 0x404975<br>lea eax, [ebp+0x10]<br>push eax<br>mov eax, dword[ebp+0xc]<br>push ebx<br>push dword[ebp+8]<br>mov cl, 5<br>call fcn.004048c3<br>add esp, 0xc<br>push esi<br>call dword[sym.imp.WS2_32.dll_closesocket]<br>or esi, 0xffffffff<br>mov eax, esi<br>pop esi<br>leave <br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-7316.46923828125, 7642.32470703125, '<b><a href="/report/fcn.004016de@73677cb40830e94fbfb5483ff33e40b9">fcn.004016de</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x4c0<br>push esi<br>push edi<br>lea esi, [ebx+0x6a010]<br>push esi<br>call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]<br>push 0x6a000<br>xor edi, edi<br>push edi<br>push ebx<br>call fcn.0040394e<br>add esp, 0xc<br>push esi<br>mov dword[ebx+0x6a000], edi<br>call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]<br>push edi<br>push 2<br>call sub.KERNEL32.dll_CreateToolhelp32Snapshot<br>mov esi, eax<br>cmp esi, 0xffffffff<br>mov dword[ebp-0x1c], esi<br>je 0x40194b<br>lea eax, [ebp-0x4c0]<br>push eax<br>push esi<br>mov dword[ebp-0x4c0], 0x128<br>call sub.KERNEL32.dll_Process32First<br>test eax, eax<br>jne 0x40174b<br>push esi<br>jmp 0x401945<br>lea ecx, [ebp-0x398]<br>call fcn.004015a3<br>mov edx, dword[ebp-0x4b8]<br>test edx, edx<br>mov dword[ebp-0x398], edx<br>lea ecx, [ebp-0x49c]<br>jne 0x401771<br>mov ecx, str.System_Idle_Process<br>lea esi, [ebp-0x394]<br>mov al, byte[ecx]<br>inc ecx<br>mov byte[esi], al<br>inc esi<br>test al, al<br>jne 0x401777<br>test edx, edx<br>jne 0x401794<br>mov esi, str.SYSTEM<br>lea edi, [ebp-0x290]<br>movsd dword<br>movsw word<br>movsb byte<br>push edx<br>push 0<br>push 0x410<br>call dword[sym.imp.KERNEL32.dll_OpenProcess]<br>mov esi, eax<br>test esi, esi<br>je 0x401864<br>mov edi, 0x104<br>push edi<br>lea eax, [ebp-0x170]<br>push eax<br>push esi<br>call sub.PSAPI.DLL_GetProcessImageFileNameA<br>lea eax, [ebp-0x170]<br>push eax<br>call fcn.00401d52<br>push edi<br>lea eax, [ebp-0x170]<br>push eax<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetLongPathNameA]<br>push esi<br>call dword[sym.imp.KERNEL32.dll_GetPriorityClass]<br>mov dword[ebp-0x184], eax<br>mov ecx, eax<br>lea eax, [ebp-0x398]<br>call fcn.00401604<br>lea eax, [ebp-0x290]<br>push eax<br>push esi<br>call fcn.00401b74<br>push 0x28<br>lea eax, [ebp-0x44]<br>push eax<br>push esi<br>call sub.PSAPI.DLL_GetProcessMemoryInfo<br>test eax, eax<br>je 0x40181d<br>mov eax, dword[ebp-0x38]<br>shr eax, 0xa<br>mov dword[ebp-0x188], eax<br>lea eax, [ebp-8]<br>push eax<br>mov dword[ebp-0x50], esi<br>call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]<br>mov eax, dword[ebp-8]<br>mov dword[ebp-0x68], eax<br>mov eax, dword[ebp-4]<br>mov dword[ebp-0x64], eax<br>lea eax, [ebp-0x18]<br>push eax<br>lea eax, [ebp-0x10]<br>push eax<br>lea eax, [ebp-8]<br>push eax<br>push eax<br>push dword[ebp-0x50]<br>call dword[sym.imp.KERNEL32.dll_GetProcessTimes]<br>mov eax, dword[ebp-0x10]<br>mov dword[ebp-0x60], eax<br>mov eax, dword[ebp-0xc]<br>mov dword[ebp-0x5c], eax<br>mov eax, dword[ebp-0x18]<br>mov dword[ebp-0x58], eax<br>mov eax, dword[ebp-0x14]<br>mov dword[ebp-0x54], eax<br>lea eax, [ebx+0x6a010]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]<br>mov edi, dword[ebx+0x6a000]<br>imul edi, edi, 0x350<br>add edi, ebx<br>lea eax, [ebx+0x6a010]<br>mov ecx, 0xd4<br>lea esi, [ebp-0x398]<br>rep movsd<br>inc dword[ebx+0x6a000]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]<br>lea eax, [ebp-0x4c0]<br>push eax<br>push dword[ebp-0x1c]<br>call sub.KERNEL32.dll_Process32Next<br>test eax, eax<br>jne 0x40174b<br>push 0x5dc<br>call dword[sym.imp.KERNEL32.dll_Sleep]<br>lea eax, [ebx+0x6a010]<br>xor esi, esi<br>push eax<br>mov dword[ebp-0xc], 0x64<br>mov dword[ebp-4], esi<br>call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]<br>cmp dword[ebx+0x6a000], esi<br>mov dword[ebp-0x14], esi<br>jbe 0x401927<br>mov esi, ebx<br>lea edi, [esi+0x348]<br>cmp dword[edi], 0<br>je 0x40190b<br>push ebx<br>call fcn.00401c75<br>mov ax, word[edi-0x13c]<br>push dword[edi]<br>sub word[ebp-0xc], ax<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>cmp dword[esi], 0<br>jne 0x401913<br>mov dword[ebp-4], esi<br>inc dword[ebp-0x14]<br>mov eax, dword[ebp-0x14]<br>add esi, 0x350<br>cmp eax, dword[ebx+0x6a000]<br>jb 0x4018e7<br>mov ax, word[ebp-0xc]<br>mov ecx, dword[ebp-4]<br>mov word[ecx+0x20c], ax<br>lea eax, [ebx+0x6a010]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]<br>push dword[ebp-0x1c]<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov eax, dword[ebx+0x6a000]<br>pop edi<br>pop esi<br>leave <br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x10
+push esi
+push 0
+push 1
+push 2
+call dword[sym.imp.WS2_32.dll_socket]
+mov esi, eax
+cmp esi, 0xffffffff
+jne 0x404926
+lea eax, [ebp+0x10]
+push eax
+mov eax, dword[ebp+0xc]
+push ebx
+push dword[ebp+8]
+mov cl, 1
+call fcn.004048c3
+add esp, 0xc
+jmp 0x404975
+push edi
+xor eax, eax
+lea edi, [ebp-0x10]
+stosd dword
+stosd dword
+stosd dword
+stosd dword
+mov eax, dword[ebx]
+mov dword[ebp-0xc], eax
+mov ax, word[ebp+0x10]
+mov word[ebp-0xe], ax
+push 0x10
+lea eax, [ebp-0x10]
+push eax
+push esi
+mov word[ebp-0x10], 2
+call dword[sym.imp.WS2_32.dll_connect]
+cmp eax, 0xffffffff
+pop edi
+jne 0x404975
+lea eax, [ebp+0x10]
+push eax
+mov eax, dword[ebp+0xc]
+push ebx
+push dword[ebp+8]
+mov cl, 5
+call fcn.004048c3
+add esp, 0xc
+push esi
+call dword[sym.imp.WS2_32.dll_closesocket]
+or esi, 0xffffffff
+mov eax, esi
+pop esi
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

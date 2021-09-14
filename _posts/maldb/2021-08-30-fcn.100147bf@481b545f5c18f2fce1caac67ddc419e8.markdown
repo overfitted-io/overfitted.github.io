@@ -1,0 +1,139 @@
+---
+layout: post
+title:  "fcn.100147bf @ 481b545f5c18f2fce1caac67ddc419e8"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.100147bf
+- **Origin (md5):** 481b545f5c18f2fce1caac67ddc419e8
+- **VirusTotal:** [virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.034764588751252955</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.0038591082477806866</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.22331635010239004</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.100147bf@481b545f5c18f2fce1caac67ddc419e8">fcn.100147bf</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x214<br>mov eax, dword[0x10062200]<br>xor eax, ebp<br>mov dword[ebp-4], eax<br>mov eax, dword[ebp+8]<br>push edi<br>push eax<br>call fcn.100238c4<br>mov edi, eax<br>test edi, edi<br>pop ecx<br>je 0x10014860<br>push edi<br>call dword[sym.imp.KERNEL32.dll_lstrlenW]<br>lea eax, [edi+eax*2]<br>test eax, eax<br>je 0x10014856<br>push esi<br>mov esi, 0x80000000<br>push ebx<br>xor ebx, ebx<br>mov word[eax], bx<br>lea eax, [ebp-0x214]<br>push eax<br>push edi<br>push esi<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]<br>test eax, eax<br>jne 0x10014854<br>push 0x105<br>lea eax, [ebp-0x210]<br>push eax<br>push ebx<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegEnumKeyW]<br>test eax, eax<br>jne 0x1001482e<br>inc ebx<br>push dword[ebp-0x214]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>test ebx, ebx<br>jne 0x10014854<br>push edi<br>push esi<br>call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]<br>push 0x5c<br>push edi<br>call fcn.10027123<br>test eax, eax<br>pop ecx<br>pop ecx<br>jne 0x100147f8<br>pop ebx<br>pop esi<br>push edi<br>call fcn.100223a2<br>xor eax, eax<br>pop ecx<br>inc eax<br>mov ecx, dword[ebp-4]<br>xor ecx, ebp<br>pop edi<br>call fcn.1002288b<br>leave <br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x214
+mov eax, dword[0x10062200]
+xor eax, ebp
+mov dword[ebp-4], eax
+mov eax, dword[ebp+8]
+push edi
+push eax
+call fcn.100238c4
+mov edi, eax
+test edi, edi
+pop ecx
+je 0x10014860
+push edi
+call dword[sym.imp.KERNEL32.dll_lstrlenW]
+lea eax, [edi+eax*2]
+test eax, eax
+je 0x10014856
+push esi
+mov esi, 0x80000000
+push ebx
+xor ebx, ebx
+mov word[eax], bx
+lea eax, [ebp-0x214]
+push eax
+push edi
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
+test eax, eax
+jne 0x10014854
+push 0x105
+lea eax, [ebp-0x210]
+push eax
+push ebx
+push dword[ebp-0x214]
+call dword[sym.imp.ADVAPI32.dll_RegEnumKeyW]
+test eax, eax
+jne 0x1001482e
+inc ebx
+push dword[ebp-0x214]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test ebx, ebx
+jne 0x10014854
+push edi
+push esi
+call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
+push 0x5c
+push edi
+call fcn.10027123
+test eax, eax
+pop ecx
+pop ecx
+jne 0x100147f8
+pop ebx
+pop esi
+push edi
+call fcn.100223a2
+xor eax, eax
+pop ecx
+inc eax
+mov ecx, dword[ebp-4]
+xor ecx, ebp
+pop edi
+call fcn.1002288b
+leave
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/481b545f5c18f2fce1caac67ddc419e8

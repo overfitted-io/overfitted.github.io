@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.00411336 @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00411336
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="THREAD">THREAD</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00411336@7b00dd8f2abf54a73bfb09681334ff78">fcn.00411336</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>push 4<br>mov eax, 0x450606<br>call fcn.004377ae<br>push 0x44<br>call fcn.0040e657<br>pop ecx<br>mov ecx, eax<br>mov dword[ebp-0x10], ecx<br>xor esi, esi<br>cmp ecx, esi<br>mov dword[ebp-4], esi<br>je 0x411365<br>push dword[ebp+0xc]<br>push dword[ebp+8]<br>call fcn.00410d52<br>mov esi, eax<br>push dword[ebp+0x1c]<br>mov eax, dword[ebp+0x18]<br>push dword[ebp+0x14]<br>or dword[ebp-4], 0xffffffff<br>or eax, 4<br>push eax<br>mov ecx, esi<br>call fcn.00411249<br>test eax, eax<br>jne 0x41138c<br>mov eax, dword[esi]<br>mov ecx, esi<br>call dword[eax+0x78]<br>xor eax, eax<br>jmp 0x4113a9<br>push dword[ebp+0x10]<br>push dword[esi+0x2c]<br>call dword[sym.imp.KERNEL32.dll_SetThreadPriority]<br>test byte[ebp+0x18], 4<br>jne 0x4113a7<br>push dword[esi+0x2c]<br>call dword[sym.imp.KERNEL32.dll_ResumeThread]<br>mov eax, esi<br>call fcn.0043784d<br>ret 0x18<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push 4
+mov eax, 0x450606
+call fcn.004377ae
+push 0x44
+call fcn.0040e657
+pop ecx
+mov ecx, eax
+mov dword[ebp-0x10], ecx
+xor esi, esi
+cmp ecx, esi
+mov dword[ebp-4], esi
+je 0x411365
+push dword[ebp+0xc]
+push dword[ebp+8]
+call fcn.00410d52
+mov esi, eax
+push dword[ebp+0x1c]
+mov eax, dword[ebp+0x18]
+push dword[ebp+0x14]
+or dword[ebp-4], 0xffffffff
+or eax, 4
+push eax
+mov ecx, esi
+call fcn.00411249
+test eax, eax
+jne 0x41138c
+mov eax, dword[esi]
+mov ecx, esi
+call dword[eax+0x78]
+xor eax, eax
+jmp 0x4113a9
+push dword[ebp+0x10]
+push dword[esi+0x2c]
+call dword[sym.imp.KERNEL32.dll_SetThreadPriority]
+test byte[ebp+0x18], 4
+jne 0x4113a7
+push dword[esi+0x2c]
+call dword[sym.imp.KERNEL32.dll_ResumeThread]
+mov eax, esi
+call fcn.0043784d
+ret 0x18
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

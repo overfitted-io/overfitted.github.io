@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "fcn.00403ac0 @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403ac0
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00403ac0@1123b7aa5760238fe93045e585b8234c">fcn.00403ac0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push ecx<br>call fcn.00403961<br>lea eax, [ebp-8]<br>push eax<br>push str.SOFTWARE_risingRAV<br>push reloc.OLEAUT32.dll_SysReAllocString<br>mov dword[ebp-4], 1<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]<br>test eax, eax<br>jne 0x403b08<br>push 4<br>lea eax, [ebp-4]<br>push eax<br>push 4<br>push 0<br>push str.Is3MPackage<br>push dword[ebp-8]<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]<br>neg eax<br>sbb eax, eax<br>inc eax<br>leave <br>ret <br>xor eax, eax<br>leave <br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+push ecx
+call fcn.00403961
+lea eax, [ebp-8]
+push eax
+push str.SOFTWARE_risingRAV
+push reloc.OLEAUT32.dll_SysReAllocString
+mov dword[ebp-4], 1
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+test eax, eax
+jne 0x403b08
+push 4
+lea eax, [ebp-4]
+push eax
+push 4
+push 0
+push str.Is3MPackage
+push dword[ebp-8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+neg eax
+sbb eax, eax
+inc eax
+leave
+ret
+xor eax, eax
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

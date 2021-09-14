@@ -1,0 +1,113 @@
+---
+layout: post
+title:  "fcn.004e12a0 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004e12a0
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="CRYPTO">CRYPTO</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-982.007080078125, 3238.92236328125, '<b><a href="/report/fcn.004e12a0@279a61b1e76da49531f1f16fd1102a2d">fcn.004e12a0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>push ecx<br>push esi<br>mov esi, dword[esp+0x10]<br>mov ecx, dword[esi+4]<br>push edi<br>mov edi, dword[sym.imp.ADVAPI32.dll_CryptGetHashParam]<br>push 0<br>lea eax, [esp+0xc]<br>push eax<br>push 0<br>push 2<br>push ecx<br>mov dword[esp+0x1c], 0<br>call edi<br>cmp dword[esp+8], 0x10<br>jne 0x4e12e1<br>mov eax, dword[esp+0x10]<br>mov ecx, dword[esi+4]<br>push 0<br>lea edx, [esp+0xc]<br>push edx<br>push eax<br>push 2<br>push ecx<br>call edi<br>mov eax, dword[esi+4]<br>test eax, eax<br>je 0x4e12ef<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]<br>mov esi, dword[esi]<br>test esi, esi<br>je 0x4e12fe<br>push 0<br>push esi<br>call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]<br>pop edi<br>pop esi<br>pop ecx<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[982.0069580078125, -3238.92236328125, '<b><a href="/report/fcn.00472260@289859175c221b107317af7727d26c17">fcn.00472260</a><br>@289859175c221b107317af7727d26c17</b><br>push ecx<br>push esi<br>mov esi, dword[esp+0x10]<br>mov ecx, dword[esi+4]<br>push edi<br>mov edi, dword[sym.imp.ADVAPI32.dll_CryptGetHashParam]<br>push 0<br>lea eax, [esp+0xc]<br>push eax<br>push 0<br>push 2<br>push ecx<br>mov dword[esp+0x1c], 0<br>call edi<br>cmp dword[esp+8], 0x10<br>jne 0x4722a1<br>mov eax, dword[esp+0x10]<br>mov ecx, dword[esi+4]<br>push 0<br>lea edx, [esp+0xc]<br>push edx<br>push eax<br>push 2<br>push ecx<br>call edi<br>mov eax, dword[esi+4]<br>test eax, eax<br>je 0x4722af<br>push eax<br>call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]<br>mov esi, dword[esi]<br>test esi, esi<br>je 0x4722be<br>push 0<br>push esi<br>call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]<br>pop edi<br>pop esi<br>pop ecx<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ecx
+push esi
+mov esi, dword[esp+0x10]
+mov ecx, dword[esi+4]
+push edi
+mov edi, dword[sym.imp.ADVAPI32.dll_CryptGetHashParam]
+push 0
+lea eax, [esp+0xc]
+push eax
+push 0
+push 2
+push ecx
+mov dword[esp+0x1c], 0
+call edi
+cmp dword[esp+8], 0x10
+jne 0x4e12e1
+mov eax, dword[esp+0x10]
+mov ecx, dword[esi+4]
+push 0
+lea edx, [esp+0xc]
+push edx
+push eax
+push 2
+push ecx
+call edi
+mov eax, dword[esi+4]
+test eax, eax
+je 0x4e12ef
+push eax
+call dword[sym.imp.ADVAPI32.dll_CryptDestroyHash]
+mov esi, dword[esi]
+test esi, esi
+je 0x4e12fe
+push 0
+push esi
+call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
+pop edi
+pop esi
+pop ecx
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

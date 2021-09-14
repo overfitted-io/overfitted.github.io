@@ -1,0 +1,115 @@
+---
+layout: post
+title:  "fcn.00403c03 @ 5f763449465a14d1cdb5ea67e2f984d0"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403c03
+- **Origin (md5):** 5f763449465a14d1cdb5ea67e2f984d0
+- **VirusTotal:** [virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="FREES_DEFAULT_HEAP">FREES_DEFAULT_HEAP / 0.029443765426329108</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [11874.5966796875, 6663.71435546875, '<b><a href="/report/fcn.00403c03@5f763449465a14d1cdb5ea67e2f984d0">fcn.00403c03</a><br>@5f763449465a14d1cdb5ea67e2f984d0</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x800<br>push esi<br>push edi<br>push 0<br>mov esi, ecx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>push 5<br>mov edi, 0x425348<br>push edi<br>push eax<br>call dword[sym.imp.KERNEL32.dll_FindResourceW]<br>test eax, eax<br>je 0x403c31<br>mov byte[esi+0x10], 1<br>jmp 0x403c65<br>mov ecx, 0x425350<br>lea eax, [ebp-0x800]<br>push ecx<br>push 1<br>push 0x400<br>push eax<br>push ecx<br>mov ecx, esi<br>call fcn.004036ec<br>lea eax, [ebp-0x800]<br>push edi<br>push eax<br>call fcn.0041804b<br>neg eax<br>pop ecx<br>sbb al, al<br>inc al<br>pop ecx<br>mov byte[esi+0x10], al<br>pop edi<br>pop esi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-11874.5966796875, -6663.71435546875, '<b><a href="/report/fcn.00409844@4c2db4ba96e80258daff665d7d7a016a">fcn.00409844</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x800<br>push esi<br>push edi<br>push 0<br>mov edi, ecx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>push 5<br>mov esi, 0x4144c0<br>push esi<br>push eax<br>call dword[sym.imp.KERNEL32.dll_FindResourceW]<br>test eax, eax<br>je 0x409872<br>mov byte[edi+0x10], 1<br>jmp 0x4098a4<br>mov eax, 0x4144b8<br>push eax<br>push 1<br>push 0x400<br>lea ecx, [ebp-0x800]<br>push ecx<br>push eax<br>mov ecx, edi<br>call fcn.00409680<br>push esi<br>lea eax, [ebp-0x800]<br>push eax<br>call fcn.0040a93b<br>neg eax<br>sbb al, al<br>inc al<br>mov byte[edi+0x10], al<br>pop edi<br>pop esi<br>leave <br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x800
+push esi
+push edi
+push 0
+mov esi, ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push 5
+mov edi, 0x425348
+push edi
+push eax
+call dword[sym.imp.KERNEL32.dll_FindResourceW]
+test eax, eax
+je 0x403c31
+mov byte[esi+0x10], 1
+jmp 0x403c65
+mov ecx, 0x425350
+lea eax, [ebp-0x800]
+push ecx
+push 1
+push 0x400
+push eax
+push ecx
+mov ecx, esi
+call fcn.004036ec
+lea eax, [ebp-0x800]
+push edi
+push eax
+call fcn.0041804b
+neg eax
+pop ecx
+sbb al, al
+inc al
+pop ecx
+mov byte[esi+0x10], al
+pop edi
+pop esi
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/5f763449465a14d1cdb5ea67e2f984d0

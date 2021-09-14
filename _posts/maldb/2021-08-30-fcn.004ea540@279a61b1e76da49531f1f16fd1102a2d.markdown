@@ -1,0 +1,95 @@
+---
+layout: post
+title:  "fcn.004ea540 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004ea540
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [8151.98046875, 1161.349853515625, '<b><a href="/report/fcn.004ea540@279a61b1e76da49531f1f16fd1102a2d">fcn.004ea540</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>mov dword[ebp-4], 0<br>mov eax, dword[ebp+8]<br>push eax<br>push 0<br>push 1<br>call dword[sym.imp.KERNEL32.dll_OpenProcess]<br>mov dword[ebp-4], eax<br>cmp dword[ebp-4], 0<br>je 0x4ea578<br>push 0<br>mov ecx, dword[ebp-4]<br>push ecx<br>call dword[sym.imp.KERNEL32.dll_TerminateProcess]<br>mov edx, dword[ebp-4]<br>push edx<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-8151.98046875, -1161.349853515625, '<b><a href="/report/fcn.0042c4f0@279a61b1e76da49531f1f16fd1102a2d">fcn.0042c4f0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push 0<br>push 0<br>push 0<br>push 0x42c4b0<br>push 0<br>push 0<br>call dword[sym.imp.KERNEL32.dll_CreateThread]<br>mov dword[ebp-4], eax<br>mov eax, dword[ebp+8]<br>push eax<br>mov ecx, dword[ebp-4]<br>push ecx<br>call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]<br>mov edx, dword[ebp-4]<br>push edx<br>call dword[sym.imp.KERNEL32.dll_CloseHandle]<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+mov dword[ebp-4], 0
+mov eax, dword[ebp+8]
+push eax
+push 0
+push 1
+call dword[sym.imp.KERNEL32.dll_OpenProcess]
+mov dword[ebp-4], eax
+cmp dword[ebp-4], 0
+je 0x4ea578
+push 0
+mov ecx, dword[ebp-4]
+push ecx
+call dword[sym.imp.KERNEL32.dll_TerminateProcess]
+mov edx, dword[ebp-4]
+push edx
+call dword[sym.imp.KERNEL32.dll_CloseHandle]
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

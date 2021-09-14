@@ -1,0 +1,133 @@
+---
+layout: post
+title:  "fcn.180002110 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.180002110
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="FILE">FILE</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.180002110@7dc44f7522d53d03c7b1f4335f6d2a15">fcn.180002110</a><br>@7dc44f7522d53d03c7b1f4335f6d2a15</b><br>mov qword[rsp+0x18], rbx<br>mov qword[rsp+0x20], rsi<br>push rdi<br>sub rsp, 0x30<br>cmp dword[0x1800169a8], 0<br>jne 0x18000212d<br>call fcn.180003670<br>lea rdi, [0x180014860]<br>mov r8d, 0x104<br>xor ecx, ecx<br>mov rdx, rdi<br>mov byte[0x180014964], 0<br>call qword[sym.imp.KERNEL32.dll_GetModuleFileNameA]<br>mov rbx, qword[0x1800169b0]<br>mov qword[0x180014620], rdi<br>test rbx, rbx<br>je 0x180002164<br>cmp byte[rbx], 0<br>jne 0x180002167<br>mov rbx, rdi<br>lea rax, [rsp+0x48]<br>lea r9, [rsp+0x40]<br>xor r8d, r8d<br>xor edx, edx<br>mov rcx, rbx<br>mov qword[rsp+0x20], rax<br>call fcn.180002204<br>movsxd rsi, dword[rsp+0x40]<br>movabs rcx, 0x1fffffffffffffff<br>cmp rsi, rcx<br>jae 0x1800021f0<br>movsxd rcx, dword[rsp+0x48]<br>cmp rcx, 0xffffffffffffffff<br>jae 0x1800021f0<br>lea rdx, [rcx+rsi*8]<br>cmp rdx, rcx<br>jb 0x1800021f0<br>mov rcx, rdx<br>call fcn.180002d70<br>mov rdi, rax<br>test rax, rax<br>je 0x1800021f0<br>lea r8, [rax+rsi*8]<br>lea rax, [rsp+0x48]<br>lea r9, [rsp+0x40]<br>mov rdx, rdi<br>mov rcx, rbx<br>mov qword[rsp+0x20], rax<br>call fcn.180002204<br>mov eax, dword[rsp+0x40]<br>mov qword[0x180014600], rdi<br>dec eax<br>mov dword[0x1800145fc], eax<br>xor eax, eax<br>jmp 0x1800021f3<br>or eax, 0xffffffff<br>mov rbx, qword[rsp+0x50]<br>mov rsi, qword[rsp+0x58]<br>add rsp, 0x30<br>pop rdi<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+mov qword[rsp+0x18], rbx
+mov qword[rsp+0x20], rsi
+push rdi
+sub rsp, 0x30
+cmp dword[0x1800169a8], 0
+jne 0x18000212d
+call fcn.180003670
+lea rdi, [0x180014860]
+mov r8d, 0x104
+xor ecx, ecx
+mov rdx, rdi
+mov byte[0x180014964], 0
+call qword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
+mov rbx, qword[0x1800169b0]
+mov qword[0x180014620], rdi
+test rbx, rbx
+je 0x180002164
+cmp byte[rbx], 0
+jne 0x180002167
+mov rbx, rdi
+lea rax, [rsp+0x48]
+lea r9, [rsp+0x40]
+xor r8d, r8d
+xor edx, edx
+mov rcx, rbx
+mov qword[rsp+0x20], rax
+call fcn.180002204
+movsxd rsi, dword[rsp+0x40]
+movabs rcx, 0x1fffffffffffffff
+cmp rsi, rcx
+jae 0x1800021f0
+movsxd rcx, dword[rsp+0x48]
+cmp rcx, 0xffffffffffffffff
+jae 0x1800021f0
+lea rdx, [rcx+rsi*8]
+cmp rdx, rcx
+jb 0x1800021f0
+mov rcx, rdx
+call fcn.180002d70
+mov rdi, rax
+test rax, rax
+je 0x1800021f0
+lea r8, [rax+rsi*8]
+lea rax, [rsp+0x48]
+lea r9, [rsp+0x40]
+mov rdx, rdi
+mov rcx, rbx
+mov qword[rsp+0x20], rax
+call fcn.180002204
+mov eax, dword[rsp+0x40]
+mov qword[0x180014600], rdi
+dec eax
+mov dword[0x1800145fc], eax
+xor eax, eax
+jmp 0x1800021f3
+or eax, 0xffffffff
+mov rbx, qword[rsp+0x50]
+mov rsi, qword[rsp+0x58]
+add rsp, 0x30
+pop rdi
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

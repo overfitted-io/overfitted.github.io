@@ -1,0 +1,97 @@
+---
+layout: post
+title:  "fcn.00409111 @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00409111
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.009825923013784271</span><span class="bhv-tag" id="FREES_DEFAULT_HEAP">FREES_DEFAULT_HEAP / 0.22471758265028852</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 4.681670761896852e-05</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00409111@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.00409111</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push esi<br>call dword[sym.imp.USER32.DLL_GetForegroundWindow]<br>mov esi, eax<br>test esi, esi<br>je 0x409140<br>lea eax, [ebp-4]<br>push eax<br>push esi<br>call dword[sym.imp.USER32.DLL_GetWindowThreadProcessId]<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]<br>mov ecx, dword[ebp-4]<br>sub ecx, eax<br>neg ecx<br>sbb ecx, ecx<br>not ecx<br>and esi, ecx<br>mov eax, esi<br>pop esi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+push esi
+call dword[sym.imp.USER32.DLL_GetForegroundWindow]
+mov esi, eax
+test esi, esi
+je 0x409140
+lea eax, [ebp-4]
+push eax
+push esi
+call dword[sym.imp.USER32.DLL_GetWindowThreadProcessId]
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
+mov ecx, dword[ebp-4]
+sub ecx, eax
+neg ecx
+sbb ecx, ecx
+not ecx
+and esi, ecx
+mov eax, esi
+pop esi
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

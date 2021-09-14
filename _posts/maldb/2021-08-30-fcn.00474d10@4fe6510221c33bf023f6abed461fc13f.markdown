@@ -1,0 +1,114 @@
+---
+layout: post
+title:  "fcn.00474d10 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00474d10
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-3675.805908203125, 2834.2734375, '<b><a href="/report/fcn.00474d10@4fe6510221c33bf023f6abed461fc13f">fcn.00474d10</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>mov eax, dword[0x4c28ec]<br>mov cl, byte[esp+4]<br>sub esp, 0x10<br>push esi<br>movzx esi, word[eax+0xec]<br>shr esi, cl<br>push edi<br>and esi, 3<br>cmp esi, 2<br>je 0x474d85<br>call dword[sym.imp.USER32.dll_GetForegroundWindow]<br>mov edi, eax<br>test edi, edi<br>je 0x474d85<br>push edi<br>call dword[sym.imp.USER32.dll_IsIconic]<br>test eax, eax<br>jne 0x474d85<br>test esi, esi<br>jne 0x474d58<br>lea ecx, [esp+8]<br>push ecx<br>push edi<br>call dword[sym.imp.USER32.dll_GetWindowRect]<br>jmp 0x474d74<br>lea ecx, [esp+8]<br>push ecx<br>push edi<br>mov dword[esp+0x10], 0<br>mov dword[esp+0x14], 0<br>call dword[sym.imp.USER32.dll_ClientToScreen]<br>test eax, eax<br>je 0x474d85<br>mov edx, dword[esp+8]<br>mov eax, dword[esp+0xc]<br>add dword[ebx], edx<br>add dword[ebx+4], eax<br>pop edi<br>pop esi<br>add esp, 0x10<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[3675.805908203125, -2834.2734375, '<b><a href="/report/fcn.00474cb0@4fe6510221c33bf023f6abed461fc13f">fcn.00474cb0</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>sub esp, 0x14<br>push esi<br>call dword[sym.imp.USER32.dll_GetForegroundWindow]<br>mov esi, eax<br>test esi, esi<br>je 0x474d0b<br>push esi<br>call dword[sym.imp.USER32.dll_IsIconic]<br>test eax, eax<br>jne 0x474d0b<br>cmp dword[esp+0x1c], eax<br>jne 0x474cdf<br>lea eax, [esp+8]<br>push eax<br>push esi<br>call dword[sym.imp.USER32.dll_GetWindowRect]<br>jmp 0x474cfb<br>lea eax, [esp+8]<br>push eax<br>push esi<br>mov dword[esp+0x10], 0<br>mov dword[esp+0x14], 0<br>call dword[sym.imp.USER32.dll_ClientToScreen]<br>test eax, eax<br>je 0x474d0b<br>mov ecx, dword[esp+8]<br>mov edx, dword[esp+0xc]<br>add dword[ebx], ecx<br>add dword[edi], edx<br>pop esi<br>add esp, 0x14<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+mov eax, dword[0x4c28ec]
+mov cl, byte[esp+4]
+sub esp, 0x10
+push esi
+movzx esi, word[eax+0xec]
+shr esi, cl
+push edi
+and esi, 3
+cmp esi, 2
+je 0x474d85
+call dword[sym.imp.USER32.dll_GetForegroundWindow]
+mov edi, eax
+test edi, edi
+je 0x474d85
+push edi
+call dword[sym.imp.USER32.dll_IsIconic]
+test eax, eax
+jne 0x474d85
+test esi, esi
+jne 0x474d58
+lea ecx, [esp+8]
+push ecx
+push edi
+call dword[sym.imp.USER32.dll_GetWindowRect]
+jmp 0x474d74
+lea ecx, [esp+8]
+push ecx
+push edi
+mov dword[esp+0x10], 0
+mov dword[esp+0x14], 0
+call dword[sym.imp.USER32.dll_ClientToScreen]
+test eax, eax
+je 0x474d85
+mov edx, dword[esp+8]
+mov eax, dword[esp+0xc]
+add dword[ebx], edx
+add dword[ebx+4], eax
+pop edi
+pop esi
+add esp, 0x10
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

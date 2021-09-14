@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "fcn.180002500 @ 7dc44f7522d53d03c7b1f4335f6d2a15"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.180002500
+- **Origin (md5):** 7dc44f7522d53d03c7b1f4335f6d2a15
+- **VirusTotal:** [virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.180002500@7dc44f7522d53d03c7b1f4335f6d2a15">fcn.180002500</a><br>@7dc44f7522d53d03c7b1f4335f6d2a15</b><br>test rcx, rcx<br>je 0x18000253c<br>push rbx<br>sub rsp, 0x20<br>mov r8, rcx<br>mov rcx, qword[0x180014650]<br>xor edx, edx<br>call qword[sym.imp.KERNEL32.dll_HeapFree]<br>test eax, eax<br>jne 0x180002537<br>call fcn.1800044f8<br>mov rbx, rax<br>call qword[sym.imp.KERNEL32.dll_GetLastError]<br>mov ecx, eax<br>call fcn.180004518<br>mov dword[rbx], eax<br>add rsp, 0x20<br>pop rbx<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+test rcx, rcx
+je 0x18000253c
+push rbx
+sub rsp, 0x20
+mov r8, rcx
+mov rcx, qword[0x180014650]
+xor edx, edx
+call qword[sym.imp.KERNEL32.dll_HeapFree]
+test eax, eax
+jne 0x180002537
+call fcn.1800044f8
+mov rbx, rax
+call qword[sym.imp.KERNEL32.dll_GetLastError]
+mov ecx, eax
+call fcn.180004518
+mov dword[rbx], eax
+add rsp, 0x20
+pop rbx
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7dc44f7522d53d03c7b1f4335f6d2a15

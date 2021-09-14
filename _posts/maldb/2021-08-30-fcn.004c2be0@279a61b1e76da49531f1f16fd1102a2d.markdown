@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "fcn.004c2be0 @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004c2be0
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [152.46701049804688, 337.780029296875, '<b><a href="/report/fcn.004c2be0@279a61b1e76da49531f1f16fd1102a2d">fcn.004c2be0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>push ecx<br>push esi<br>mov esi, dword[edi]<br>mov eax, dword[esi+0x364]<br>push 4<br>lea ecx, [esp+8]<br>push ecx<br>push 1<br>push 6<br>push edx<br>mov dword[esp+0x18], eax<br>call dword[sym.imp.WS2_32.dll_setsockopt]<br>test eax, eax<br>jge 0x4c2c23<br>call dword[sym.imp.WS2_32.dll_WSAGetLastError]<br>push eax<br>push edi<br>call fcn.004b5640<br>push eax<br>push str.Could_not_set_TCP_NODELAY:__s_n<br>push esi<br>call fcn.004c03c0<br>add esp, 0x14<br>pop esi<br>pop ecx<br>ret <br>push str.TCP_NODELAY_set_n<br>push esi<br>call fcn.004c03c0<br>add esp, 8<br>pop esi<br>pop ecx<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-152.46713256835938, -337.780029296875, '<b><a href="/report/fcn.004530f0@289859175c221b107317af7727d26c17">fcn.004530f0</a><br>@289859175c221b107317af7727d26c17</b><br>push ecx<br>push esi<br>mov esi, dword[edi]<br>mov eax, dword[esi+0x364]<br>push 4<br>lea ecx, [esp+8]<br>push ecx<br>push 1<br>push 6<br>push edx<br>mov dword[esp+0x18], eax<br>call dword[sym.imp.WS2_32.dll_setsockopt]<br>test eax, eax<br>jge 0x453133<br>call dword[sym.imp.WS2_32.dll_WSAGetLastError]<br>push eax<br>push edi<br>call fcn.00455e90<br>push eax<br>push str.Could_not_set_TCP_NODELAY:__s_n<br>push esi<br>call fcn.004507f0<br>add esp, 0x14<br>pop esi<br>pop ecx<br>ret <br>push str.TCP_NODELAY_set_n<br>push esi<br>call fcn.004507f0<br>add esp, 8<br>pop esi<br>pop ecx<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ecx
+push esi
+mov esi, dword[edi]
+mov eax, dword[esi+0x364]
+push 4
+lea ecx, [esp+8]
+push ecx
+push 1
+push 6
+push edx
+mov dword[esp+0x18], eax
+call dword[sym.imp.WS2_32.dll_setsockopt]
+test eax, eax
+jge 0x4c2c23
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+push eax
+push edi
+call fcn.004b5640
+push eax
+push str.Could_not_set_TCP_NODELAY:__s_n
+push esi
+call fcn.004c03c0
+add esp, 0x14
+pop esi
+pop ecx
+ret
+push str.TCP_NODELAY_set_n
+push esi
+call fcn.004c03c0
+add esp, 8
+pop esi
+pop ecx
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

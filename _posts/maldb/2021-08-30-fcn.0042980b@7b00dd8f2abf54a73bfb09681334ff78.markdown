@@ -1,0 +1,120 @@
+---
+layout: post
+title:  "fcn.0042980b @ 7b00dd8f2abf54a73bfb09681334ff78"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0042980b
+- **Origin (md5):** 7b00dd8f2abf54a73bfb09681334ff78
+- **VirusTotal:** [virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [1357.655029296875, 1439.9764404296875, '<b><a href="/report/fcn.0042980b@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042980b</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>push ebp<br>mov ebp, esp<br>cmp dword[ebp+0x10], 0<br>jne 0x429838<br>push dword[ebp+0xc]<br>call dword[sym.imp.KERNEL32.dll_lstrlenA]<br>push eax<br>push dword[ebp+0xc]<br>push 1<br>push dword[ebp+8]<br>push 0x80000000<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueA]<br>neg eax<br>sbb eax, eax<br>inc eax<br>jmp 0x429886<br>push esi<br>lea eax, [ebp+8]<br>push eax<br>push dword[ebp+8]<br>push 0x80000000<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]<br>test eax, eax<br>jne 0x429883<br>push dword[ebp+0xc]<br>call dword[sym.imp.KERNEL32.dll_lstrlenA]<br>inc eax<br>push eax<br>push dword[ebp+0xc]<br>push 1<br>push 0<br>push dword[ebp+0x10]<br>push dword[ebp+8]<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]<br>push dword[ebp+8]<br>mov esi, eax<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>test eax, eax<br>jne 0x429883<br>test esi, esi<br>jne 0x429883<br>inc eax<br>jmp 0x429885<br>xor eax, eax<br>pop esi<br>pop ebp<br>ret 0xc<br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-1357.6552734375, -1439.9764404296875, '<b><a href="/report/fcn.10014610@481b545f5c18f2fce1caac67ddc419e8">fcn.10014610</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>push ebp<br>mov ebp, esp<br>cmp dword[ebp+0x10], 0<br>jne 0x1001463f<br>push dword[ebp+0xc]<br>call dword[sym.imp.KERNEL32.dll_lstrlenW]<br>add eax, eax<br>push eax<br>push dword[ebp+0xc]<br>push 1<br>push dword[ebp+8]<br>push 0x80000000<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueW]<br>neg eax<br>sbb eax, eax<br>inc eax<br>jmp 0x10014690<br>push esi<br>lea eax, [ebp+8]<br>push eax<br>push dword[ebp+8]<br>push 0x80000000<br>call dword[sym.imp.ADVAPI32.dll_RegCreateKeyW]<br>test eax, eax<br>jne 0x1001468d<br>push dword[ebp+0xc]<br>call dword[sym.imp.KERNEL32.dll_lstrlenW]<br>lea eax, [eax+eax+2]<br>push eax<br>push dword[ebp+0xc]<br>push 1<br>push 0<br>push dword[ebp+0x10]<br>push dword[ebp+8]<br>call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]<br>push dword[ebp+8]<br>mov esi, eax<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>test eax, eax<br>jne 0x1001468d<br>test esi, esi<br>jne 0x1001468d<br>inc eax<br>jmp 0x1001468f<br>xor eax, eax<br>pop esi<br>pop ebp<br>ret 0xc<br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+cmp dword[ebp+0x10], 0
+jne 0x429838
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+push eax
+push dword[ebp+0xc]
+push 1
+push dword[ebp+8]
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegSetValueA]
+neg eax
+sbb eax, eax
+inc eax
+jmp 0x429886
+push esi
+lea eax, [ebp+8]
+push eax
+push dword[ebp+8]
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
+test eax, eax
+jne 0x429883
+push dword[ebp+0xc]
+call dword[sym.imp.KERNEL32.dll_lstrlenA]
+inc eax
+push eax
+push dword[ebp+0xc]
+push 1
+push 0
+push dword[ebp+0x10]
+push dword[ebp+8]
+call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
+push dword[ebp+8]
+mov esi, eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+test eax, eax
+jne 0x429883
+test esi, esi
+jne 0x429883
+inc eax
+jmp 0x429885
+xor eax, eax
+pop esi
+pop ebp
+ret 0xc
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/7b00dd8f2abf54a73bfb09681334ff78

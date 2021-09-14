@@ -1,0 +1,145 @@
+---
+layout: post
+title:  "loc.004076e4 @ de21a548b66aa6c0b17491b6a31e14fa"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** loc.004076e4
+- **Origin (md5):** de21a548b66aa6c0b17491b6a31e14fa
+- **VirusTotal:** [virustotal.com/gui/file/de21a548b66aa6c0b17491b6a31e14fa][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="HTTP">HTTP</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.09783280493710361</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/loc.004076e4@de21a548b66aa6c0b17491b6a31e14fa">loc.004076e4</a><br>@de21a548b66aa6c0b17491b6a31e14fa</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x30<br>mov eax, dword[ebp+0x24]<br>push ebx<br>xor ebx, ebx<br>push esi<br>mov esi, dword[ebp+8]<br>push edi<br>push ebx<br>push ebx<br>mov edi, eax<br>mov dword[ebp-0x10], eax<br>push ebx<br>lea eax, [ebp-0x2c]<br>push eax<br>push esi<br>mov dword[ebp-0x2c], 0x28<br>mov dword[ebp-0x28], ebx<br>mov dword[ebp-0x24], ebx<br>mov dword[ebp-0x20], ebx<br>mov dword[ebp-0x1c], ebx<br>mov dword[ebp-0x18], ebx<br>mov dword[ebp-0x14], ebx<br>mov dword[ebp-0xc], ebx<br>mov dword[ebp-8], ebx<br>call dword[sym.imp.WININET.dll_HttpSendRequestExW]<br>test eax, eax<br>jne 0x407748<br>push str._Statistics__UseHttpSendReqEx__HttpSendRequestEx_Failed_n<br>call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]<br>push ebx<br>push 1<br>lea ecx, [ebp+0x10]<br>call fcn.00401451<br>xor al, al<br>pop edi<br>pop esi<br>pop ebx<br>leave <br>ret <br>cmp dword[ebp+0x28], 0x10<br>mov eax, dword[ebp+0x14]<br>jae 0x407754<br>lea eax, [ebp+0x14]<br>lea ecx, [ebp-0x30]<br>push ecx<br>push edi<br>push eax<br>push esi<br>call dword[sym.imp.WININET.dll_InternetWriteFile]<br>test eax, eax<br>jne 0x40776c<br>push str._Statistics__UseHttpSendReqEx__InternetWriteFile_Failed_n<br>jmp 0x407730<br>push ebx<br>push ebx<br>push ebx<br>push esi<br>call dword[sym.imp.WININET.dll_HttpEndRequestW]<br>test eax, eax<br>jne 0x407798<br>push str._Statistics__UseHttpSendReqEx__HttpEndRequest_Failed_n<br>call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]<br>mov byte[ebp-1], bl<br>push ebx<br>push 1<br>lea ecx, [ebp+0x10]<br>call fcn.00401451<br>mov al, byte[ebp-1]<br>jmp 0x407743<br>mov byte[ebp-1], 1<br>jmp 0x407788<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x30
+mov eax, dword[ebp+0x24]
+push ebx
+xor ebx, ebx
+push esi
+mov esi, dword[ebp+8]
+push edi
+push ebx
+push ebx
+mov edi, eax
+mov dword[ebp-0x10], eax
+push ebx
+lea eax, [ebp-0x2c]
+push eax
+push esi
+mov dword[ebp-0x2c], 0x28
+mov dword[ebp-0x28], ebx
+mov dword[ebp-0x24], ebx
+mov dword[ebp-0x20], ebx
+mov dword[ebp-0x1c], ebx
+mov dword[ebp-0x18], ebx
+mov dword[ebp-0x14], ebx
+mov dword[ebp-0xc], ebx
+mov dword[ebp-8], ebx
+call dword[sym.imp.WININET.dll_HttpSendRequestExW]
+test eax, eax
+jne 0x407748
+push str._Statistics__UseHttpSendReqEx__HttpSendRequestEx_Failed_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+push ebx
+push 1
+lea ecx, [ebp+0x10]
+call fcn.00401451
+xor al, al
+pop edi
+pop esi
+pop ebx
+leave
+ret
+cmp dword[ebp+0x28], 0x10
+mov eax, dword[ebp+0x14]
+jae 0x407754
+lea eax, [ebp+0x14]
+lea ecx, [ebp-0x30]
+push ecx
+push edi
+push eax
+push esi
+call dword[sym.imp.WININET.dll_InternetWriteFile]
+test eax, eax
+jne 0x40776c
+push str._Statistics__UseHttpSendReqEx__InternetWriteFile_Failed_n
+jmp 0x407730
+push ebx
+push ebx
+push ebx
+push esi
+call dword[sym.imp.WININET.dll_HttpEndRequestW]
+test eax, eax
+jne 0x407798
+push str._Statistics__UseHttpSendReqEx__HttpEndRequest_Failed_n
+call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
+mov byte[ebp-1], bl
+push ebx
+push 1
+lea ecx, [ebp+0x10]
+call fcn.00401451
+mov al, byte[ebp-1]
+jmp 0x407743
+mov byte[ebp-1], 1
+jmp 0x407788
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/de21a548b66aa6c0b17491b6a31e14fa

@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "fcn.004049ce @ 73677cb40830e94fbfb5483ff33e40b9"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004049ce
+- **Origin (md5):** 73677cb40830e94fbfb5483ff33e40b9
+- **VirusTotal:** [virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.004049ce@73677cb40830e94fbfb5483ff33e40b9">fcn.004049ce</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>push ebx<br>push esi<br>mov esi, dword[esp+0xc]<br>push edi<br>lea ebx, [esi+0xc]<br>push 0<br>push 0x400<br>push ebx<br>push dword[esi+4]<br>call dword[sym.imp.WS2_32.dll_recv]<br>mov edi, eax<br>test edi, edi<br>je 0x404a2e<br>cmp edi, 0xffffffff<br>je 0x404a2e<br>mov eax, dword[esi+0x40c]<br>test byte[eax], 1<br>jne 0x404a39<br>mov eax, dword[esi]<br>movzx eax, byte[eax+0x821]<br>push eax<br>push edi<br>mov eax, ebx<br>call fcn.0040503d<br>push ebx<br>push dword[esi+8]<br>mov eax, edi<br>call fcn.00404751<br>add esp, 0x10<br>test al, al<br>je 0x404a40<br>mov eax, dword[esi+0x40c]<br>test byte[eax], 1<br>je 0x4049d8<br>mov eax, dword[esi+0x40c]<br>test byte[eax], 1<br>je 0x404a48<br>mov esi, eax<br>or byte[esi], 2<br>jmp 0x404a8c<br>mov esi, dword[esi+0x40c]<br>jmp 0x404a3b<br>or byte[eax], 1<br>mov edi, dword[sym.imp.WS2_32.dll_shutdown]<br>push 2<br>push dword[esi+4]<br>call edi<br>push 2<br>push dword[esi+8]<br>call edi<br>push dword[esi+4]<br>mov edi, dword[sym.imp.WS2_32.dll_closesocket]<br>call edi<br>push dword[esi+8]<br>call edi<br>jmp 0x404a79<br>push 0x64<br>call dword[sym.imp.KERNEL32.dll_Sleep]<br>mov eax, dword[esi+0x40c]<br>test byte[eax], 2<br>je 0x404a71<br>push dword[esi]<br>call fcn.00403774<br>pop ecx<br>pop edi<br>pop esi<br>xor eax, eax<br>pop ebx<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebx
+push esi
+mov esi, dword[esp+0xc]
+push edi
+lea ebx, [esi+0xc]
+push 0
+push 0x400
+push ebx
+push dword[esi+4]
+call dword[sym.imp.WS2_32.dll_recv]
+mov edi, eax
+test edi, edi
+je 0x404a2e
+cmp edi, 0xffffffff
+je 0x404a2e
+mov eax, dword[esi+0x40c]
+test byte[eax], 1
+jne 0x404a39
+mov eax, dword[esi]
+movzx eax, byte[eax+0x821]
+push eax
+push edi
+mov eax, ebx
+call fcn.0040503d
+push ebx
+push dword[esi+8]
+mov eax, edi
+call fcn.00404751
+add esp, 0x10
+test al, al
+je 0x404a40
+mov eax, dword[esi+0x40c]
+test byte[eax], 1
+je 0x4049d8
+mov eax, dword[esi+0x40c]
+test byte[eax], 1
+je 0x404a48
+mov esi, eax
+or byte[esi], 2
+jmp 0x404a8c
+mov esi, dword[esi+0x40c]
+jmp 0x404a3b
+or byte[eax], 1
+mov edi, dword[sym.imp.WS2_32.dll_shutdown]
+push 2
+push dword[esi+4]
+call edi
+push 2
+push dword[esi+8]
+call edi
+push dword[esi+4]
+mov edi, dword[sym.imp.WS2_32.dll_closesocket]
+call edi
+push dword[esi+8]
+call edi
+jmp 0x404a79
+push 0x64
+call dword[sym.imp.KERNEL32.dll_Sleep]
+mov eax, dword[esi+0x40c]
+test byte[eax], 2
+je 0x404a71
+push dword[esi]
+call fcn.00403774
+pop ecx
+pop edi
+pop esi
+xor eax, eax
+pop ebx
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/73677cb40830e94fbfb5483ff33e40b9

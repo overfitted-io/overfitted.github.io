@@ -1,0 +1,116 @@
+---
+layout: post
+title:  "fcn.0040a01a @ fbf34fa6d7da2b8e1de5133a8ca34847"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0040a01a
+- **Origin (md5):** fbf34fa6d7da2b8e1de5133a8ca34847
+- **VirusTotal:** [virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="MEMORY">MEMORY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-1366.135986328125, 3481.954833984375, '<b><a href="/report/fcn.0040a01a@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.0040a01a</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push edi<br>mov edi, dword[esp+8]<br>test edi, edi<br>je 0x40a07f<br>push ebx<br>push ebp<br>push edi<br>call fcn.0040a0d6<br>push dword[edi+0x1c]<br>call fcn.0040d586<br>mov eax, dword[edi+0x24]<br>xor ebp, ebp<br>mov ebx, dword[sym.imp.KERNEL32.dll_HeapFree]<br>mov dword[eax], ebp<br>mov eax, dword[edi+0x24]<br>mov dword[eax+4], ebp<br>mov eax, dword[edi+0x20]<br>test eax, eax<br>je 0x40a061<br>push esi<br>mov esi, dword[eax]<br>push eax<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>mov eax, esi<br>test esi, esi<br>jne 0x40a04e<br>pop esi<br>cmp byte[edi+0x32], 0<br>je 0x40a073<br>push dword[edi+0x24]<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>push edi<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>pop ebp<br>pop ebx<br>pop edi<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+[1366.13623046875, -3481.954833984375, '<b><a href="/report/fcn.00409b0f@fbf34fa6d7da2b8e1de5133a8ca34847">fcn.00409b0f</a><br>@fbf34fa6d7da2b8e1de5133a8ca34847</b><br>push edi<br>mov edi, dword[esp+8]<br>test edi, edi<br>je 0x409b74<br>push ebx<br>push ebp<br>push edi<br>call fcn.00409d5a<br>push dword[edi+0x38]<br>call fcn.0040d586<br>push dword[edi+4]<br>mov ebx, dword[sym.imp.KERNEL32.dll_HeapFree]<br>xor ebp, ebp<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>push dword[edi+0xc]<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>mov eax, dword[edi+0x34]<br>test eax, eax<br>je 0x409b63<br>push esi<br>mov esi, dword[eax]<br>push eax<br>push ebp<br>push dword[0x416fec]<br>call ebx<br>mov eax, esi<br>test esi, esi<br>jne 0x409b50<br>pop esi<br>mov eax, dword[edi+0x30]<br>push edi<br>push ebp<br>mov dword[eax], ebp<br>push dword[0x416fec]<br>call ebx<br>pop ebp<br>pop ebx<br>pop edi<br>ret 4<br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push edi
+mov edi, dword[esp+8]
+test edi, edi
+je 0x40a07f
+push ebx
+push ebp
+push edi
+call fcn.0040a0d6
+push dword[edi+0x1c]
+call fcn.0040d586
+mov eax, dword[edi+0x24]
+xor ebp, ebp
+mov ebx, dword[sym.imp.KERNEL32.dll_HeapFree]
+mov dword[eax], ebp
+mov eax, dword[edi+0x24]
+mov dword[eax+4], ebp
+mov eax, dword[edi+0x20]
+test eax, eax
+je 0x40a061
+push esi
+mov esi, dword[eax]
+push eax
+push ebp
+push dword[0x416fec]
+call ebx
+mov eax, esi
+test esi, esi
+jne 0x40a04e
+pop esi
+cmp byte[edi+0x32], 0
+je 0x40a073
+push dword[edi+0x24]
+push ebp
+push dword[0x416fec]
+call ebx
+push edi
+push ebp
+push dword[0x416fec]
+call ebx
+pop ebp
+pop ebx
+pop edi
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fbf34fa6d7da2b8e1de5133a8ca34847

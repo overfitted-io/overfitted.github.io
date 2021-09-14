@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "fcn.00403b0c @ 1123b7aa5760238fe93045e585b8234c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00403b0c
+- **Origin (md5):** 1123b7aa5760238fe93045e585b8234c
+- **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.21385335948531659</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.07028905597917388</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00403b0c@1123b7aa5760238fe93045e585b8234c">fcn.00403b0c</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>push ebp<br>mov ebp, esp<br>sub esp, 0x110<br>push esi<br>push edi<br>call fcn.00403961<br>push 0x40<br>pop ecx<br>xor eax, eax<br>mov byte[ebp-0x110], 0<br>lea edi, [ebp-0x10f]<br>rep stosd<br>stosw word<br>stosb byte<br>lea eax, [ebp-4]<br>push eax<br>push str.SOFTWARE_risingRAV<br>push reloc.OLEAUT32.dll_SysReAllocString<br>call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]<br>test eax, eax<br>jne 0x403ba6<br>call fcn.004038a5<br>and dword[ebp-8], 0<br>lea eax, [ebp-0xc]<br>push eax<br>lea eax, [ebp-0x110]<br>push eax<br>lea eax, [ebp-8]<br>push eax<br>push 0<br>push str.installpath<br>push dword[ebp-4]<br>call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]<br>test eax, eax<br>jne 0x403ba6<br>call fcn.00403961<br>lea eax, [ebp-0x110]<br>push str._rsmain.exe<br>push eax<br>call fcn.00416eb0<br>pop ecx<br>pop ecx<br>lea eax, [ebp-0x110]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]<br>cmp eax, 0xffffffff<br>je 0x403ba6<br>xor esi, esi<br>inc esi<br>jmp 0x403bad<br>call fcn.004038a5<br>xor esi, esi<br>push dword[ebp-4]<br>call dword[sym.imp.ADVAPI32.dll_RegCloseKey]<br>pop edi<br>mov eax, esi<br>pop esi<br>leave <br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x110
+push esi
+push edi
+call fcn.00403961
+push 0x40
+pop ecx
+xor eax, eax
+mov byte[ebp-0x110], 0
+lea edi, [ebp-0x10f]
+rep stosd
+stosw word
+stosb byte
+lea eax, [ebp-4]
+push eax
+push str.SOFTWARE_risingRAV
+push reloc.OLEAUT32.dll_SysReAllocString
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax, eax
+jne 0x403ba6
+call fcn.004038a5
+and dword[ebp-8], 0
+lea eax, [ebp-0xc]
+push eax
+lea eax, [ebp-0x110]
+push eax
+lea eax, [ebp-8]
+push eax
+push 0
+push str.installpath
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
+test eax, eax
+jne 0x403ba6
+call fcn.00403961
+lea eax, [ebp-0x110]
+push str._rsmain.exe
+push eax
+call fcn.00416eb0
+pop ecx
+pop ecx
+lea eax, [ebp-0x110]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
+cmp eax, 0xffffffff
+je 0x403ba6
+xor esi, esi
+inc esi
+jmp 0x403bad
+call fcn.004038a5
+xor esi, esi
+push dword[ebp-4]
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+pop edi
+mov eax, esi
+pop esi
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c

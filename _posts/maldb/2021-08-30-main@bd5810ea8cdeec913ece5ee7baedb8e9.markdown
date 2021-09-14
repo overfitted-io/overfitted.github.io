@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "main @ bd5810ea8cdeec913ece5ee7baedb8e9"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** main
+- **Origin (md5):** bd5810ea8cdeec913ece5ee7baedb8e9
+- **VirusTotal:** [virustotal.com/gui/file/bd5810ea8cdeec913ece5ee7baedb8e9][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-200.10516357421875, 210.17347717285156, '<b><a href="/report/main@bd5810ea8cdeec913ece5ee7baedb8e9">main</a><br>@bd5810ea8cdeec913ece5ee7baedb8e9</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'point { fill-color: #e0440e; }'],
+[5.813746929168701, -118.86817169189453, '<b><a href="/report/main@0606e50385fe518042f9ea006b816a98">main</a><br>@0606e50385fe518042f9ea006b816a98</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[-28.996906280517578, -319.5651550292969, '<b><a href="/report/main@e9c6b3bcaa2edc455cb26f1e0f4a513a">main</a><br>@e9c6b3bcaa2edc455cb26f1e0f4a513a</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[341.7861633300781, -98.14102172851562, '<b><a href="/report/main@773e84b03dfb92871dd754ab3c01c180">main</a><br>@773e84b03dfb92871dd754ab3c01c180</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[179.91648864746094, -241.1397247314453, '<b><a href="/report/main@6312517583453b51c66fd5c06a181092">main</a><br>@6312517583453b51c66fd5c06a181092</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[189.48773193359375, 291.8818359375, '<b><a href="/report/main@8db9fe0b752fe464ff1c81507df8551a">main</a><br>@8db9fe0b752fe464ff1c81507df8551a</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[-199.32203674316406, -175.36325073242188, '<b><a href="/report/main@8fe319558c6f221efde51f3acc33b19c">main</a><br>@8fe319558c6f221efde51f3acc33b19c</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[310.4286193847656, 121.73292541503906, '<b><a href="/report/main@b9e7701b101639a92238161f00b7471e">main</a><br>@b9e7701b101639a92238161f00b7471e</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[50.55796813964844, 140.3933563232422, '<b><a href="/report/main@1bf3bcaca0e582026c935549bb7d8a33">main</a><br>@1bf3bcaca0e582026c935549bb7d8a33</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[-99.00918579101562, 31.885732650756836, '<b><a href="/report/main@31d828bf241be93b3ffe89cf3c313d44">main</a><br>@31d828bf241be93b3ffe89cf3c313d44</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[154.99212646484375, -11.926850318908691, '<b><a href="/report/main@9060907d555cecab3519fcbc82318d7e">main</a><br>@9060907d555cecab3519fcbc82318d7e</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[-29.001075744628906, 329.86212158203125, '<b><a href="/report/main@2befdc6dad4b6936d78e65ffd5537599">main</a><br>@2befdc6dad4b6936d78e65ffd5537599</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+[-304.2951354980469, 13.730460166931152, '<b><a href="/report/main@41d541db4a17e11df1b616218be77825">main</a><br>@41d541db4a17e11df1b616218be77825</b><br>push ebp<br>mov ebp, esp<br>mov dword[0x42fcdc], 0x35074<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>mov ecx, dword[0x42fcdc]<br>add ecx, eax<br>mov dword[0x42fcdc], ecx<br>push 0<br>call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]<br>push eax<br>call dword[sym.imp.USER32.dll_ShowWindow]<br>test eax, eax<br>je 0x40152a<br>push 0x180<br>mov edx, dword[0x42fcdc]<br>push edx<br>call fcn.00401290<br>add esp, 8<br>push edx<br>push eax<br>push ecx<br>mov ecx, dword[0x42fcdc]<br>push ecx<br>push edx<br>push eax<br>push ecx<br>jmp dword[esp+0xc]<br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+mov dword[0x42fcdc], 0x35074
+push 0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov ecx, dword[0x42fcdc]
+add ecx, eax
+mov dword[0x42fcdc], ecx
+push 0
+call dword[sym.imp.KERNEL32.dll_GetConsoleWindow]
+push eax
+call dword[sym.imp.USER32.dll_ShowWindow]
+test eax, eax
+je 0x40152a
+push 0x180
+mov edx, dword[0x42fcdc]
+push edx
+call fcn.00401290
+add esp, 8
+push edx
+push eax
+push ecx
+mov ecx, dword[0x42fcdc]
+push ecx
+push edx
+push eax
+push ecx
+jmp dword[esp+0xc]
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/bd5810ea8cdeec913ece5ee7baedb8e9

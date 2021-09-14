@@ -1,0 +1,171 @@
+---
+layout: post
+title:  "fcn.00468d30 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00468d30
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="na">N/A</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00468d30@4fe6510221c33bf023f6abed461fc13f">fcn.00468d30</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>sub esp, 0x10<br>movzx eax, byte[esi+4]<br>push ebp<br>mov ebp, dword[esp+0x18]<br>add eax, 0xfffffff7<br>push edi<br>mov dword[esp+8], 0x80000000<br>cmp eax, 8<br>ja case.0x468d51.12<br>jmp dword[eax*4+0x468e50]<br>mov eax, dword[esi]<br>mov edi, dword[sym.imp.USER32.dll_SendMessageW]<br>push 0<br>push 0<br>push 0x19f<br>push eax<br>call edi<br>cmp eax, 0xffffffff<br>je 0x468dfe<br>mov edx, dword[esi]<br>lea ecx, [esp+8]<br>push ecx<br>push eax<br>push 0x198<br>push edx<br>call edi<br>jmp 0x468dfe<br>mov eax, dword[esi]<br>mov edi, dword[sym.imp.USER32.dll_SendMessageW]<br>push 1<br>push 0xffffffffffffffff<br>push 0x100c<br>push eax<br>call edi<br>cmp eax, 0xffffffff<br>je 0x468dfe<br>mov edx, dword[esi]<br>lea ecx, [esp+8]<br>push ecx<br>push eax<br>push 0x100e<br>push edx<br>mov dword[esp+0x18], 2<br>call edi<br>jmp 0x468dfe<br>mov eax, dword[esi]<br>mov edi, dword[sym.imp.USER32.dll_SendMessageW]<br>push 0<br>push 9<br>push 0x110a<br>push eax<br>call edi<br>test eax, eax<br>je 0x468dfe<br>mov edx, dword[esi]<br>lea ecx, [esp+8]<br>push ecx<br>push 1<br>push 0x1104<br>push edx<br>mov dword[esp+0x18], eax<br>call edi<br>jmp 0x468dfe<br>mov ecx, dword[esi]<br>lea eax, [esp+8]<br>push eax<br>push 0<br>push 0x419<br>push ecx<br>call dword[sym.imp.USER32.dll_SendMessageW]<br>cmp dword[esp+8], 0x80000000<br>jne 0x468e18<br>mov eax, dword[esi]<br>lea edx, [esp+8]<br>push edx<br>push eax<br>call dword[sym.imp.USER32.dll_GetWindowRect]<br>jmp 0x468e2a<br>mov edx, dword[esi]<br>push 2<br>lea ecx, [esp+0xc]<br>push ecx<br>push 0<br>push edx<br>call dword[sym.imp.USER32.dll_MapWindowPoints]<br>mov eax, dword[esp+8]<br>mov ecx, dword[esp+0xc]<br>mov dword[ebp], eax<br>mov eax, dword[esp+0x14]<br>sub eax, ecx<br>cdq <br>sub eax, edx<br>sar eax, 1<br>lea ecx, [eax+ecx+2]<br>pop edi<br>mov dword[ebp+4], ecx<br>pop ebp<br>add esp, 0x10<br>ret 4<br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+sub esp, 0x10
+movzx eax, byte[esi+4]
+push ebp
+mov ebp, dword[esp+0x18]
+add eax, 0xfffffff7
+push edi
+mov dword[esp+8], 0x80000000
+cmp eax, 8
+ja case.0x468d51.12
+jmp dword[eax*4+0x468e50]
+mov eax, dword[esi]
+mov edi, dword[sym.imp.USER32.dll_SendMessageW]
+push 0
+push 0
+push 0x19f
+push eax
+call edi
+cmp eax, 0xffffffff
+je 0x468dfe
+mov edx, dword[esi]
+lea ecx, [esp+8]
+push ecx
+push eax
+push 0x198
+push edx
+call edi
+jmp 0x468dfe
+mov eax, dword[esi]
+mov edi, dword[sym.imp.USER32.dll_SendMessageW]
+push 1
+push 0xffffffffffffffff
+push 0x100c
+push eax
+call edi
+cmp eax, 0xffffffff
+je 0x468dfe
+mov edx, dword[esi]
+lea ecx, [esp+8]
+push ecx
+push eax
+push 0x100e
+push edx
+mov dword[esp+0x18], 2
+call edi
+jmp 0x468dfe
+mov eax, dword[esi]
+mov edi, dword[sym.imp.USER32.dll_SendMessageW]
+push 0
+push 9
+push 0x110a
+push eax
+call edi
+test eax, eax
+je 0x468dfe
+mov edx, dword[esi]
+lea ecx, [esp+8]
+push ecx
+push 1
+push 0x1104
+push edx
+mov dword[esp+0x18], eax
+call edi
+jmp 0x468dfe
+mov ecx, dword[esi]
+lea eax, [esp+8]
+push eax
+push 0
+push 0x419
+push ecx
+call dword[sym.imp.USER32.dll_SendMessageW]
+cmp dword[esp+8], 0x80000000
+jne 0x468e18
+mov eax, dword[esi]
+lea edx, [esp+8]
+push edx
+push eax
+call dword[sym.imp.USER32.dll_GetWindowRect]
+jmp 0x468e2a
+mov edx, dword[esi]
+push 2
+lea ecx, [esp+0xc]
+push ecx
+push 0
+push edx
+call dword[sym.imp.USER32.dll_MapWindowPoints]
+mov eax, dword[esp+8]
+mov ecx, dword[esp+0xc]
+mov dword[ebp], eax
+mov eax, dword[esp+0x14]
+sub eax, ecx
+cdq
+sub eax, edx
+sar eax, 1
+lea ecx, [eax+ecx+2]
+pop edi
+mov dword[ebp+4], ecx
+pop ebp
+add esp, 0x10
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

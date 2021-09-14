@@ -1,0 +1,108 @@
+---
+layout: post
+title:  "fcn.004761d7 @ fb9b7d22bc1c143ac66b0575cbdd088d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004761d7
+- **Origin (md5):** fb9b7d22bc1c143ac66b0575cbdd088d
+- **VirusTotal:** [virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.07587444813346587</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [77.13452911376953, -57.40275192260742, '<b><a href="/report/fcn.004761d7@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.004761d7</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>and dword[ebp-4], 0<br>push esi<br>push edi<br>push str.IsWow64Process<br>push str.kernel32<br>mov edi, ecx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov esi, eax<br>test esi, esi<br>jne 0x476204<br>xor al, al<br>jmp 0x476220<br>lea eax, [ebp-4]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call esi<br>test eax, eax<br>je 0x476200<br>cmp dword[ebp-4], 0<br>setne al<br>mov byte[edi], al<br>mov al, 1<br>pop edi<br>pop esi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+[-194.63223266601562, -95.66421508789062, '<b><a href="/report/fcn.004761d7@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.004761d7</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>and dword[ebp-4], 0<br>push esi<br>push edi<br>push str.IsWow64Process<br>push str.kernel32<br>mov edi, ecx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov esi, eax<br>test esi, esi<br>jne 0x476204<br>xor al, al<br>jmp 0x476220<br>lea eax, [ebp-4]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call esi<br>test eax, eax<br>je 0x476200<br>cmp dword[ebp-4], 0<br>setne al<br>mov byte[edi], al<br>mov al, 1<br>pop edi<br>pop esi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'null'],
+[-25.610897064208984, -311.89117431640625, '<b><a href="/report/fcn.004761d7@152885a790b99953ce23874f0947b7bd">fcn.004761d7</a><br>@152885a790b99953ce23874f0947b7bd</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>and dword[ebp-4], 0<br>push esi<br>push edi<br>push str.IsWow64Process<br>push str.kernel32<br>mov edi, ecx<br>call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetProcAddress]<br>mov esi, eax<br>test esi, esi<br>jne 0x476204<br>xor al, al<br>jmp 0x476220<br>lea eax, [ebp-4]<br>push eax<br>call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]<br>push eax<br>call esi<br>test eax, eax<br>je 0x476200<br>cmp dword[ebp-4], 0<br>setne al<br>mov byte[edi], al<br>mov al, 1<br>pop edi<br>pop esi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+and dword[ebp-4], 0
+push esi
+push edi
+push str.IsWow64Process
+push str.kernel32
+mov edi, ecx
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov esi, eax
+test esi, esi
+jne 0x476204
+xor al, al
+jmp 0x476220
+lea eax, [ebp-4]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
+push eax
+call esi
+test eax, eax
+je 0x476200
+cmp dword[ebp-4], 0
+setne al
+mov byte[edi], al
+mov al, 1
+pop edi
+pop esi
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/fb9b7d22bc1c143ac66b0575cbdd088d

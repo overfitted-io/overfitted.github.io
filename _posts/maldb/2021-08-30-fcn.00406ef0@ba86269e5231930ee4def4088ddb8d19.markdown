@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "fcn.00406ef0 @ ba86269e5231930ee4def4088ddb8d19"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00406ef0
+- **Origin (md5):** ba86269e5231930ee4def4088ddb8d19
+- **VirusTotal:** [virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Behaviour Tags
+<span class="bhv-tag" id="FREES_DEFAULT_HEAP">FREES_DEFAULT_HEAP / 0.010307487243413354</span>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00406ef0@ba86269e5231930ee4def4088ddb8d19">fcn.00406ef0</a><br>@ba86269e5231930ee4def4088ddb8d19</b><br>push ebp<br>mov ebp, esp<br>push ecx<br>push edi<br>mov edi, ecx<br>mov dword[ebp-4], 0<br>mov eax, dword[edi+0x74]<br>test eax, eax<br>je 0x406f51<br>push dword[edi+0x78]<br>push eax<br>call dword[sym.imp.OPENGL32.dll_wglMakeCurrent]<br>lea ecx, [edi+8]<br>call fcn.00408e80<br>push 0<br>push 0<br>call dword[sym.imp.OPENGL32.dll_wglMakeCurrent]<br>push dword[edi+0x70]<br>call dword[sym.imp.USER32.dll_IsWindow]<br>test eax, eax<br>je 0x406f43<br>push dword[edi+0x78]<br>call dword[sym.imp.OPENGL32.dll_wglDeleteContext]<br>push dword[edi+0x74]<br>push dword[edi+0x70]<br>call dword[sym.imp.USER32.dll_ReleaseDC]<br>mov dword[edi+0x74], 0<br>mov dword[edi+0x78], 0<br>pop edi<br>mov esp, ebp<br>pop ebp<br>ret <br><eoc> ', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push ecx
+push edi
+mov edi, ecx
+mov dword[ebp-4], 0
+mov eax, dword[edi+0x74]
+test eax, eax
+je 0x406f51
+push dword[edi+0x78]
+push eax
+call dword[sym.imp.OPENGL32.dll_wglMakeCurrent]
+lea ecx, [edi+8]
+call fcn.00408e80
+push 0
+push 0
+call dword[sym.imp.OPENGL32.dll_wglMakeCurrent]
+push dword[edi+0x70]
+call dword[sym.imp.USER32.dll_IsWindow]
+test eax, eax
+je 0x406f43
+push dword[edi+0x78]
+call dword[sym.imp.OPENGL32.dll_wglDeleteContext]
+push dword[edi+0x74]
+push dword[edi+0x70]
+call dword[sym.imp.USER32.dll_ReleaseDC]
+mov dword[edi+0x74], 0
+mov dword[edi+0x78], 0
+pop edi
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/ba86269e5231930ee4def4088ddb8d19
