@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="SCREENSHOTS_FOREGROUND_WINDOW">SCREENSHOTS_FOREGROUND_WINDOW / 0.48844886680161925</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.08010837147374443</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-80.63739776611328, -48.71953582763672, '<b><a href="/report/fcn.00438640@4fe6510221c33bf023f6abed461fc13f">fcn.00438640</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
-[201.48690795898438, -48.931617736816406, '<b><a href="/report/fcn.004305f0@4fe6510221c33bf023f6abed461fc13f">fcn.004305f0</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[212.6043243408203, 159.9549102783203, '<b><a href="/report/fcn.00438d70@4fe6510221c33bf023f6abed461fc13f">fcn.00438d70</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[65.7603759765625, -208.0852813720703, '<b><a href="/report/fcn.00431850@4fe6510221c33bf023f6abed461fc13f">fcn.00431850</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-3.272312641143799, 144.97105407714844, '<b><a href="/report/fcn.00464650@4fe6510221c33bf023f6abed461fc13f">fcn.00464650</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00438640@4fe6510221c33bf023f6abed461fc13f">fcn.00438640</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -81,12 +77,12 @@ push edi
 xor edi, edi
 cmp byte[ebp+0x24], 0
 mov esi, ecx
-jne 0x43866f
+jne off.b47
 mov eax, str.Fast
 call fcn.00473c80
 mov byte[esp+0x16], 0
 test eax, eax
-je 0x438674
+je off.b52
 mov byte[esp+0x16], 1
 mov eax, 0x4a9ba8
 mov ecx, esi
@@ -95,7 +91,7 @@ test eax, eax
 setne al
 mov byte[esp+0x1b], al
 test al, al
-je 0x4386b4
+je off.b116
 mov eax, dword[ebp+0x1c]
 mov ecx, eax
 shr ecx, 8
@@ -109,7 +105,7 @@ movzx eax, al
 shl edx, 8
 or edx, eax
 mov dword[ebp+0x1c], edx
-jmp 0x4386d6
+jmp off.b150
 mov ecx, dword[ebp+0x1c]
 mov edx, ecx
 shr edx, 8
@@ -125,9 +121,9 @@ mov dword[esp+0x1c], eax
 cmp byte[ebp+0x24], 0
 mov ecx, dword[0x4c6400]
 mov dword[esp+0x3c], ecx
-je 0x4386ea
+je off.b170
 xor esi, esi
-jmp 0x4386fa
+jmp off.b186
 mov eax, dword[ebp+8]
 mov dl, 1
 cmp dl, byte[eax+1]
@@ -135,10 +131,10 @@ sbb esi, esi
 and esi, dword[0x4c6404]
 mov dword[esp+0x38], esi
 cmp ecx, edi
-je 0x438707
+je off.b199
 call fcn.00413110
 cmp esi, edi
-je 0x438712
+je off.b210
 mov ecx, esi
 call fcn.00413110
 mov ecx, dword[0x4c28ec]
@@ -147,22 +143,22 @@ and esi, 3
 mov dword[esp+0x24], edi
 mov dword[esp+0x28], edi
 cmp esi, 2
-je 0x438782
+je off.b322
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov edi, eax
 test edi, edi
-je 0x438782
+je off.b322
 push edi
 call dword[sym.imp.USER32.dll_IsIconic]
 test eax, eax
-jne 0x438782
+jne off.b322
 test esi, esi
-jne 0x438758
+jne off.b280
 lea edx, [esp+0x44]
 push edx
 push edi
 call dword[sym.imp.USER32.dll_GetWindowRect]
-jmp 0x43876e
+jmp off.b302
 lea edx, [esp+0x44]
 xor eax, eax
 push edx
@@ -171,7 +167,7 @@ mov dword[esp+0x4c], eax
 mov dword[esp+0x50], eax
 call dword[sym.imp.USER32.dll_ClientToScreen]
 test eax, eax
-je 0x438782
+je off.b322
 mov eax, dword[esp+0x44]
 mov ecx, dword[esp+0x48]
 add dword[esp+0x24], eax
@@ -185,17 +181,17 @@ add dword[ebp+0x18], ecx
 add esi, eax
 mov dword[ebp+0xc], esi
 test ebx, ebx
-jns 0x4387a6
+jns off.b358
 xor ebx, ebx
 mov dword[ebp+0x20], ebx
-jmp 0x4387d3
+jmp off.b403
 cmp ebx, 0xff
-jle 0x4387b8
+jle off.b376
 mov ebx, 0xff
 mov dword[ebp+0x20], ebx
-jmp 0x4387bc
+jmp off.b380
 test ebx, ebx
-jle 0x4387d3
+jle off.b403
 mov eax, dword[ebp+0x1c]
 mov edx, eax
 shr edx, 8
@@ -207,10 +203,10 @@ push 0
 call dword[sym.imp.USER32.dll_GetDC]
 mov dword[esp+0x2c], eax
 test eax, eax
-je 0x438b35
+je off.b1269
 cmp byte[esp+0x16], 0
 mov byte[esp+0x17], 0
-je 0x438b6d
+je off.b1325
 mov esi, dword[ebp+0x14]
 mov edi, dword[ebp+0x18]
 sub esi, dword[ebp+0xc]
@@ -226,7 +222,7 @@ inc edi
 call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
 mov dword[esp+0x30], eax
 test eax, eax
-je 0x438a5e
+je off.b1054
 mov ecx, dword[esp+0x2c]
 push edi
 push esi
@@ -234,7 +230,7 @@ push ecx
 call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
 mov dword[esp+0x34], eax
 test eax, eax
-je 0x438a5e
+je off.b1054
 mov edx, eax
 mov eax, dword[esp+0x30]
 push edx
@@ -242,7 +238,7 @@ push eax
 call dword[sym.imp.GDI32.dll_SelectObject]
 mov dword[esp+0x54], eax
 test eax, eax
-je 0x438a5e
+je off.b1054
 mov ecx, dword[ebp+0x10]
 mov edx, dword[ebp+0xc]
 mov eax, dword[esp+0x2c]
@@ -258,7 +254,7 @@ push 0
 push ecx
 call dword[sym.imp.GDI32.dll_BitBlt]
 test eax, eax
-je 0x438a5e
+je off.b1054
 push 8
 lea edx, [esp+0x1e]
 push edx
@@ -273,30 +269,30 @@ call fcn.00438430
 add esp, 0x14
 mov dword[esp+0x20], eax
 test eax, eax
-je 0x438a5e
+je off.b1054
 mov edi, dword[esp+0x40]
 mov al, byte[esp+0x1a]
 imul edi, dword[esp+0x44]
 mov ecx, dword[esp+0x20]
 test al, al
-je 0x4388df
+je off.b671
 xor esi, esi
 test edi, edi
-jle 0x4388e3
+jle off.b675
 and dword[ecx+esi*4], 0xf8f8f8f8
 inc esi
 cmp esi, edi
-jl 0x4388d1
-jmp 0x4388e3
+jl off.b657
+jmp off.b675
 mov esi, dword[esp+0x44]
 cmp byte[ebp+0x24], 0
-je 0x438933
+je off.b755
 mov ecx, dword[ecx]
 and ecx, 0xffffff
 cmp byte[esp+0x1b], 0
-je 0x4388fc
+je off.b700
 mov eax, ecx
-jmp 0x438901
+jmp off.b705
 call fcn.0042f740
 push eax
 lea eax, [esp+0x5c]
@@ -313,27 +309,27 @@ push ecx
 push edx
 call fcn.00476680
 mov byte[esp+0x17], 1
-jmp 0x438a62
+jmp off.b1058
 cmp ebx, 1
-jge 0x43896a
+jge off.b810
 test al, al
 mov eax, dword[esp+0x1c]
-je 0x438945
+je off.b773
 and eax, 0xf8f8f8f8
 xor esi, esi
 test edi, edi
-jle 0x438a62
+jle off.b1058
 mov ecx, dword[esp+0x20]
 mov edx, dword[ecx+esi*4]
 and edx, 0xffffff
 cmp edx, eax
-je 0x438929
+je off.b745
 inc esi
 cmp esi, edi
-jl 0x438953
-jmp 0x438a62
+jl off.b787
+jmp off.b1058
 test al, al
-je 0x43897c
+je off.b828
 mov al, 0xf8
 and byte[esp+0x14], al
 and byte[esp+0x13], al
@@ -341,25 +337,25 @@ and byte[esp+0x15], al
 movzx edx, byte[esp+0x14]
 mov dword[esp+0x1c], edx
 cmp ebx, edx
-jle 0x438990
+jle off.b848
 mov byte[esp+0x18], 0
-jmp 0x438998
+jmp off.b856
 mov al, dl
 sub al, bl
 mov byte[esp+0x18], al
 movzx ecx, byte[esp+0x13]
 cmp ebx, ecx
-jle 0x4389a8
+jle off.b872
 mov byte[esp+0x16], 0
-jmp 0x4389b0
+jmp off.b880
 mov al, cl
 sub al, bl
 mov byte[esp+0x16], al
 movzx eax, byte[esp+0x15]
 cmp ebx, eax
-jle 0x4389c0
+jle off.b896
 mov byte[esp+0x13], 0
-jmp 0x4389cc
+jmp off.b908
 mov dl, al
 sub dl, bl
 mov byte[esp+0x13], dl
@@ -367,31 +363,31 @@ mov edx, dword[esp+0x1c]
 mov esi, 0xff
 sub esi, edx
 cmp ebx, esi
-jle 0x4389de
+jle off.b926
 mov byte[esp+0x19], 0xff
-jmp 0x4389e8
+jmp off.b936
 mov dl, byte[esp+0x1c]
 add dl, bl
 mov byte[esp+0x19], dl
 mov edx, 0xff
 sub edx, ecx
 cmp ebx, edx
-jle 0x4389fa
+jle off.b954
 mov byte[esp+0x15], 0xff
-jmp 0x438a00
+jmp off.b960
 add cl, bl
 mov byte[esp+0x15], cl
 mov ecx, 0xff
 sub ecx, eax
 cmp ebx, ecx
-jle 0x438a12
+jle off.b978
 mov byte[esp+0x14], 0xff
-jmp 0x438a18
+jmp off.b984
 add al, bl
 mov byte[esp+0x14], al
 xor esi, esi
 test edi, edi
-jle 0x438a62
+jle off.b1058
 mov edx, dword[esp+0x20]
 mov eax, dword[edx+esi*4]
 mov ecx, eax
@@ -399,21 +395,21 @@ mov edx, eax
 shr ecx, 0x10
 shr edx, 8
 cmp cl, byte[esp+0x18]
-jb 0x438a57
+jb off.b1047
 cmp cl, byte[esp+0x19]
-ja 0x438a57
+ja off.b1047
 cmp dl, byte[esp+0x16]
-jb 0x438a57
+jb off.b1047
 cmp dl, byte[esp+0x15]
-ja 0x438a57
+ja off.b1047
 cmp al, byte[esp+0x13]
-jb 0x438a57
+jb off.b1047
 cmp al, byte[esp+0x14]
-jbe 0x438929
+jbe off.b745
 inc esi
 cmp esi, edi
-jl 0x438a1e
-jmp 0x438a62
+jl off.b990
+jmp off.b1058
 mov esi, dword[esp+0x44]
 mov eax, dword[esp+0x2c]
 push eax
@@ -421,10 +417,10 @@ push 0
 call dword[sym.imp.USER32.dll_ReleaseDC]
 mov edi, dword[esp+0x30]
 test edi, edi
-je 0x438a8e
+je off.b1102
 mov eax, dword[esp+0x54]
 test eax, eax
-je 0x438a87
+je off.b1095
 push eax
 push edi
 call dword[sym.imp.GDI32.dll_SelectObject]
@@ -432,22 +428,22 @@ push edi
 call dword[sym.imp.GDI32.dll_DeleteDC]
 mov eax, dword[esp+0x34]
 test eax, eax
-je 0x438a9d
+je off.b1117
 push eax
 call dword[sym.imp.GDI32.dll_DeleteObject]
 cmp dword[esp+0x20], 0
-je 0x438b35
+je off.b1269
 mov ecx, dword[esp+0x20]
 push ecx
 call fcn.0048e3af
 add esp, 4
 cmp byte[ebp+0x24], 0
-jne 0x438b08
+jne off.b1224
 cmp byte[esp+0x17], 0
-je 0x438b14
+je off.b1236
 mov ecx, dword[esp+0x3c]
 test ecx, ecx
-je 0x438ae6
+je off.b1190
 mov eax, esi
 cdq
 idiv dword[esp+0x40]
@@ -462,7 +458,7 @@ mov eax, ecx
 call fcn.004010e0
 mov ecx, dword[esp+0x38]
 test ecx, ecx
-je 0x438b08
+je off.b1224
 mov eax, esi
 cdq
 idiv dword[esp+0x40]
@@ -476,7 +472,7 @@ mov eax, ecx
 call fcn.004010e0
 cmp byte[esp+0x17], 0
 mov eax, 0x4a0900
-jne 0x438b19
+jne off.b1241
 mov eax, 0x4a331c
 mov edx, dword[0x4c6cb4]
 push 1
@@ -493,11 +489,11 @@ pop ebp
 ret 0x20
 cmp byte[ebp+0x24], 0
 mov eax, 0x4a331c
-jne 0x438b45
+jne off.b1285
 mov eax, 0x4a358c
 mov ecx, dword[0x4c28ec]
 cmp byte[ecx+0x104], 0
-je 0x438b19
+je off.b1241
 mov ecx, dword[ebp+8]
 push 0x4ab02c
 push 0
@@ -515,29 +511,29 @@ setg byte[esp+0x1a]
 cmp dword[ebp+0x10], eax
 setg byte[esp+0x1b]
 test ebx, ebx
-jle 0x438c24
+jle off.b1508
 movzx edx, byte[esp+0x14]
 mov dword[esp+0x1c], edx
 cmp ebx, edx
-jle 0x438b9c
+jle off.b1372
 mov byte[esp+0x18], 0
-jmp 0x438ba4
+jmp off.b1380
 mov al, dl
 sub al, bl
 mov byte[esp+0x18], al
 movzx ecx, byte[esp+0x13]
 cmp ebx, ecx
-jle 0x438bb4
+jle off.b1396
 mov byte[esp+0x16], 0
-jmp 0x438bbc
+jmp off.b1404
 mov al, cl
 sub al, bl
 mov byte[esp+0x16], al
 movzx eax, byte[esp+0x15]
 cmp ebx, eax
-jle 0x438bcc
+jle off.b1420
 mov byte[esp+0x13], 0
-jmp 0x438bd8
+jmp off.b1432
 mov dl, al
 sub dl, bl
 mov byte[esp+0x13], dl
@@ -545,26 +541,26 @@ mov edx, dword[esp+0x1c]
 mov edi, 0xff
 sub edi, edx
 cmp ebx, edi
-jle 0x438bea
+jle off.b1450
 mov byte[esp+0x19], 0xff
-jmp 0x438bf4
+jmp off.b1460
 mov dl, byte[esp+0x1c]
 add dl, bl
 mov byte[esp+0x19], dl
 mov edx, 0xff
 sub edx, ecx
 cmp ebx, edx
-jle 0x438c06
+jle off.b1478
 mov byte[esp+0x15], 0xff
-jmp 0x438c0c
+jmp off.b1484
 add cl, bl
 mov byte[esp+0x15], cl
 mov ecx, 0xff
 sub ecx, eax
 cmp ebx, ecx
-jle 0x438c1e
+jle off.b1502
 mov byte[esp+0x14], 0xff
-jmp 0x438c24
+jmp off.b1508
 add al, bl
 mov byte[esp+0x14], al
 mov ecx, dword[ebp+0x18]
@@ -573,44 +569,44 @@ mov edi, esi
 mov esi, dword[esp+0x44]
 mov eax, dword[ebp+0x14]
 test dl, dl
-je 0x438c41
+je off.b1537
 xor edx, edx
 cmp edi, eax
 setge dl
-jmp 0x438c48
+jmp off.b1544
 xor edx, edx
 cmp edi, eax
 setle dl
 mov eax, edx
 test eax, eax
-je 0x438c89
+je off.b1609
 mov esi, dword[ebp+0x10]
 xor eax, eax
 cmp byte[esp+0x1b], al
-je 0x438c60
+je off.b1568
 cmp esi, ecx
 setge al
-jmp 0x438c65
+jmp off.b1573
 cmp esi, ecx
 setle al
 test eax, eax
-je 0x438d03
+je off.b1731
 mov eax, dword[esp+0x2c]
 push esi
 push edi
 push eax
 call dword[sym.imp.GDI32.dll_GetPixel]
 cmp ebx, 1
-jge 0x438cbd
+jge off.b1661
 cmp eax, dword[ebp+0x1c]
-jne 0x438cee
+jne off.b1710
 mov byte[esp+0x17], 1
 mov ecx, dword[esp+0x2c]
 push ecx
 push 0
 call dword[sym.imp.USER32.dll_ReleaseDC]
 cmp byte[esp+0x17], 0
-jne 0x438d17
+jne off.b1751
 mov edx, dword[0x4c6cb4]
 push 1
 push 0
@@ -629,33 +625,33 @@ mov edx, eax
 shr ecx, 8
 shr edx, 0x10
 cmp al, byte[esp+0x18]
-jb 0x438ceb
+jb off.b1707
 cmp al, byte[esp+0x19]
-ja 0x438ceb
+ja off.b1707
 cmp cl, byte[esp+0x16]
-jb 0x438ceb
+jb off.b1707
 cmp cl, byte[esp+0x15]
-ja 0x438ceb
+ja off.b1707
 cmp dl, byte[esp+0x13]
-jb 0x438ceb
+jb off.b1707
 cmp dl, byte[esp+0x14]
-jbe 0x438c84
+jbe off.b1604
 mov ebx, dword[ebp+0x20]
 mov ecx, dword[ebp+0x18]
 xor eax, eax
 cmp byte[esp+0x1b], al
 sete al
 lea esi, [esi+eax*2-1]
-jmp 0x438c51
+jmp off.b1553
 mov dl, byte[esp+0x1a]
 xor eax, eax
 test dl, dl
 sete al
 lea edi, [edi+eax*2-1]
-jmp 0x438c31
+jmp off.b1521
 mov ecx, dword[esp+0x3c]
 test ecx, ecx
-je 0x438d31
+je off.b1777
 mov eax, edi
 sub eax, dword[esp+0x24]
 push 0x18
@@ -666,7 +662,7 @@ mov eax, ecx
 call fcn.004010e0
 mov ecx, dword[esp+0x38]
 test ecx, ecx
-je 0x438d4b
+je off.b1803
 mov eax, esi
 sub eax, dword[esp+0x28]
 push 0x18

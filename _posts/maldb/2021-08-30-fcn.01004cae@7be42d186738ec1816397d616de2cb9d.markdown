@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.04264590729857328</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.02227194403423006</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,7 +80,7 @@ xor esi, esi
 xor eax, eax
 cmp ebx, esi
 mov dword[ebp-0x208], 1
-je 0x1004dd2
+je off.b292
 push edi
 lea edi, [ebp-0x21c]
 stosd dword
@@ -100,7 +100,7 @@ push ebx
 push esi
 call dword[sym.imp.KERNEL32.dll_CreateProcessA]
 test eax, eax
-je 0x1004d84
+je off.b214
 push 0xffffffffffffffff
 push dword[ebp-0x21c]
 call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
@@ -110,16 +110,16 @@ push dword[ebp-0x21c]
 call dword[sym.imp.KERNEL32.dll_GetExitCodeProcess]
 cmp dword[0x100c888], esi
 mov ecx, dword[ebp-0x20c]
-jne 0x1004d55
+jne off.b167
 mov al, byte[0x100c48c]
 test al, 1
-je 0x1004d55
+je off.b167
 test al, 2
-jne 0x1004d55
+jne off.b167
 mov eax, ecx
 and eax, 0xff000000
 cmp eax, 0xaa000000
-jne 0x1004d55
+jne off.b167
 mov dword[0x100c48c], ecx
 push ecx
 call fcn.01002d03
@@ -129,10 +129,10 @@ call edi
 push dword[ebp-0x21c]
 call edi
 test byte[0x100c495], 4
-je 0x1004dcb
+je off.b285
 cmp dword[ebp-0x20c], esi
-jge 0x1004dcb
-jmp 0x1004dc5
+jge off.b285
+jmp off.b279
 call fcn.01003aa1
 push esi
 mov dword[0x100ba5c], eax

@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.1588282579160342</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.008125909352493802</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.33609858638526685</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.10152313102499427</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,17 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-100.54932403564453, -142.10008239746094, '<b><a href="/report/fcn.00407935@6c8b5339bada4cbd03f0f446da640707">fcn.00407935</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
-[-406.95574951171875, 288.7833251953125, '<b><a href="/report/fcn.0041221e@7b00dd8f2abf54a73bfb09681334ff78">fcn.0041221e</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[415.7540588378906, -427.1110534667969, '<b><a href="/report/fcn.0040ba7c@59aef7c08025d70f84c85db2092fc99e">fcn.0040ba7c</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[-487.5757141113281, 576.2759399414062, '<b><a href="/report/fcn.004bec4e@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004bec4e</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[548.8721923828125, -197.61105346679688, '<b><a href="/report/fcn.00417ba7@1123b7aa5760238fe93045e585b8234c">fcn.00417ba7</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[167.1429443359375, 167.8605499267578, '<b><a href="/report/fcn.0040514a@73677cb40830e94fbfb5483ff33e40b9">fcn.0040514a</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>', 'null'],
-[-653.3298950195312, 122.29971313476562, '<b><a href="/report/fcn.0040d42e@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.0040d42e</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>', 'null'],
-[-738.1368408203125, 405.0346984863281, '<b><a href="/report/fcn.00422eb8@59aef7c08025d70f84c85db2092fc99e">fcn.00422eb8</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[226.25277709960938, -126.19825744628906, '<b><a href="/report/fcn.00437c8a@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00437c8a</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
-[-4.540591239929199, -470.88079833984375, '<b><a href="/report/fcn.004245c7@7b00dd8f2abf54a73bfb09681334ff78">fcn.004245c7</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[-264.74163818359375, -398.9565734863281, '<b><a href="/report/fcn.0042fc9f@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042fc9f</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00407935@6c8b5339bada4cbd03f0f446da640707">fcn.00407935</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -106,13 +96,13 @@ call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
 mov eax, dword[ebp-0x28]
 cmp eax, ebx
 mov dword[ebp-0x10], eax
-jle 0x407a47
+jle off.b274
 lea eax, [ebp-0x7c]
 push eax
 mov dword[ebp-0x7c], 0x40
 call dword[sym.imp.KERNEL32.dll_GlobalMemoryStatusEx]
 test eax, eax
-je 0x407a47
+je off.b274
 mov eax, dword[ebp-0x74]
 mov ecx, dword[ebp-0x70]
 shrd eax, ecx, 0x14
@@ -126,7 +116,7 @@ push 0x80000002
 shr ecx, 0x14
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
 test eax, eax
-jne 0x4079f0
+jne off.b187
 lea eax, [ebp+8]
 push eax
 lea eax, [ebp-4]
@@ -140,19 +130,19 @@ call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 push dword[ebp-8]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 cmp dword[ebp-4], ebx
-jg 0x407a15
+jg off.b224
 lea eax, [ebp-0x18]
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
 test eax, eax
-je 0x407a47
+je off.b274
 mov eax, dword[ebp-0x18]
 cdq
 mov ecx, 0xf4240
 idiv ecx
 cmp eax, ebx
 mov dword[ebp-4], eax
-jle 0x407a47
+jle off.b274
 push esi
 mov esi, dword[sym.imp.USER32.dll_GetSystemMetrics]
 push 1

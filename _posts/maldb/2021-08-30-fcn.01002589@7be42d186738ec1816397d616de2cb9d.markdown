@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -79,9 +79,9 @@ mov edi, dword[ebp+0xc]
 mov dword[ebp-4], eax
 mov dword[ebp-0x10c], edi
 mov byte[edi], 0
-je 0x10026ad
+je off.b292
 cmp byte[esi], 0
-je 0x10026ad
+je off.b292
 push 0x104
 lea eax, [ebp-0x108]
 push eax
@@ -90,7 +90,7 @@ call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
 xor eax, eax
 mov al, byte[esi]
 test al, al
-je 0x10026aa
+je off.b289
 push ebx
 mov ebx, dword[sym.imp.KERNEL32.dll_lstrlenA]
 push eax
@@ -98,11 +98,11 @@ call dword[sym.imp.KERNEL32.dll_IsDBCSLeadByte]
 test eax, eax
 mov al, byte[esi]
 mov byte[edi], al
-je 0x10025fe
+je off.b117
 mov al, byte[esi+1]
 mov byte[edi+1], al
 cmp byte[esi], 0x23
-jne 0x100268d
+jne off.b260
 push esi
 call dword[sym.imp.USER32.dll_CharNextA]
 mov esi, eax
@@ -110,7 +110,7 @@ movsx eax, byte[esi]
 push eax
 call dword[sym.imp.USER32.dll_CharUpperA]
 cmp al, 0x44
-jne 0x1002656
+jne off.b205
 lea eax, [ebp-0x108]
 push eax
 call fcn.01006666
@@ -123,16 +123,16 @@ lea eax, [ebp-0x108]
 push eax
 call dword[sym.imp.USER32.dll_CharPrevA]
 test eax, eax
-je 0x1002664
+je off.b219
 cmp byte[eax], 0x5c
-jne 0x1002664
+jne off.b219
 mov byte[eax], 0
-jmp 0x1002664
+jmp off.b219
 movsx eax, byte[esi]
 push eax
 call dword[sym.imp.USER32.dll_CharUpperA]
 cmp al, 0x45
-jne 0x1002688
+jne off.b255
 lea eax, [ebp-0x108]
 push eax
 mov eax, dword[ebp-0x10c]
@@ -145,9 +145,9 @@ call fcn.010021c4
 push edi
 call ebx
 add edi, eax
-jmp 0x1002696
+jmp off.b269
 cmp byte[esi], 0x23
-jne 0x1002696
+jne off.b269
 push edi
 call dword[sym.imp.USER32.dll_CharNextA]
 mov edi, eax
@@ -156,7 +156,7 @@ call dword[sym.imp.USER32.dll_CharNextA]
 mov esi, eax
 mov al, byte[esi]
 test al, al
-jne 0x10025e9
+jne off.b96
 pop ebx
 mov byte[edi], 0
 mov ecx, dword[ebp-4]

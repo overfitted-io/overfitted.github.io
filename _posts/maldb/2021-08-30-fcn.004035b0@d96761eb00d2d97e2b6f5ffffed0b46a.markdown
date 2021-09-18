@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -73,10 +73,10 @@ push ecx
 cmp dword[ebp+8], 0
 push ebx
 push esi
-je 0x40362f
+je off.b127
 mov esi, dword[ebp+0x10]
 test esi, esi
-je 0x40362f
+je off.b127
 xor eax, eax
 xor ebx, ebx
 mov word[esi], ax
@@ -88,7 +88,7 @@ push edx
 push ecx
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
 test eax, eax
-jne 0x40362f
+jne off.b127
 mov eax, dword[ebp+0xc]
 push edi
 lea edi, [eax+eax]
@@ -102,12 +102,12 @@ push dword[ebp+8]
 push dword[ebp-8]
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-jne 0x403614
+jne off.b100
 mov eax, dword[ebp-4]
 shr eax, 1
 mov dword[ebp-4], eax
 cmp eax, dword[ebp+0xc]
-jae 0x403626
+jae off.b118
 xor ecx, ecx
 mov word[esi+eax*2], cx
 mov bl, 1
@@ -122,9 +122,9 @@ pop ebp
 ret
 xor eax, eax
 mov word[edi+esi-2], ax
-jmp 0x403612
+jmp off.b98
 xor al, al
-jmp 0x403620
+jmp off.b112
 
 {% endhighlight %}
 

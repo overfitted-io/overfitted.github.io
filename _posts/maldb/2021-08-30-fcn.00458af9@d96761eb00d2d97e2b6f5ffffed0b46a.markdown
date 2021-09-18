@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,15 +76,15 @@ mov eax, ebx
 push edi
 mov dword[ebp-4], eax
 mov edi, ebx
-je 0x458b11
+je off.b24
 inc edi
-jmp 0x458b1a
+jmp off.b33
 test byte[ebp+0x14], 2
-je 0x458b1a
+je off.b33
 push 2
 pop edi
 test byte[ebp+0x14], 4
-je 0x458b59
+je off.b96
 push esi
 lea eax, [ebp+0x14]
 mov dword[ebp+0x14], ebx
@@ -103,7 +103,7 @@ mov esi, eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 test esi, esi
 pop esi
-je 0x458b85
+je off.b140
 mov eax, dword[ebp-4]
 push dword[ebp+0x2c]
 push dword[ebp+0x28]
@@ -122,7 +122,7 @@ call dword[sym.imp.ADVAPI32.dll_CreateProcessWithLogonW]
 test eax, eax
 setne bl
 cmp dword[ebp-4], 0
-je 0x458b94
+je off.b155
 push dword[ebp-4]
 call dword[sym.imp.USERENV.dll_DestroyEnvironmentBlock]
 pop edi

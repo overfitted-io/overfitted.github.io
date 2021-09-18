@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [239.34002685546875, -21.393850326538086, '<b><a href="/report/fcn.00424a90@1123b7aa5760238fe93045e585b8234c">fcn.00424a90</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[147.166748046875, -35.67519760131836, '<b><a href="/report/fcn.004203e0@3dfcfb1d918b690c00de324bcfcdc082">fcn.004203e0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[54.99354934692383, -49.956668853759766, '<b><a href="/report/fcn.0043d1c0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0043d1c0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[161.4482421875, -127.84848022460938, '<b><a href="/report/fcn.0043d0a0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0043d0a0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[132.88536071777344, 56.49808120727539, '<b><a href="/report/fcn.004030b0@a2475448bf4050c1583e1970984a4d00">fcn.004030b0</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00424a90@1123b7aa5760238fe93045e585b8234c">fcn.00424a90</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -117,7 +113,7 @@ shr ecx, 0x10
 push ecx
 push edx
 push eax
-push str.{_08X-_04X-_04X-_02X_02X-_02X_02X_02X_02X_02X_02X}
+push str.{_08X-_04X-_04X-_02X_02X-_02X_02X_02X_02X_02X_02X}_
 lea ecx, [esp+0x40]
 push 0x104
 push ecx
@@ -125,18 +121,18 @@ call fcn.0042a725
 add esp, 0x38
 lea edx, [esp+0xc]
 push edx
-push str.CLSID_{CAA2D3B1-4BB5-4a45-A17A-122773379D99}
+push str.CLSID__{CAA2D3B1-4BB5-4a45-A17A-122773379D99}_
 push 0x80000000
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
 test eax, eax
-je 0x424b69
+je off.b217
 lea eax, [esp+0xc]
 push eax
-push str.CLSID_{CAA2D3B1-4BB5-4a45-A17A-122773379D99}
+push str.CLSID__{CAA2D3B1-4BB5-4a45-A17A-122773379D99}_
 push 0x80000000
 call dword[sym.imp.ADVAPI32.dll_RegCreateKeyA]
 test eax, eax
-je 0x424b69
+je off.b217
 xor eax, eax
 mov ecx, dword[esp+0x11c]
 call fcn.0041e6b7
@@ -151,7 +147,7 @@ lea edx, [eax+1]
 mov cl, byte[eax]
 inc eax
 test cl, cl
-jne 0x424b75
+jne off.b229
 sub eax, edx
 mov edx, dword[esi+0x10]
 inc eax
@@ -165,7 +161,7 @@ push edx
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegSetValueExA]
 test eax, eax
-je 0x424b9e
+je off.b270
 xor edi, edi
 mov ecx, dword[esp+0xc]
 push ecx

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -98,10 +98,10 @@ mov dword[ebp-0x14], eax
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 cmp eax, 0xffffffff
 mov dword[ebp-0x10], eax
-jne 0x4027e3
+jne off.b113
 push 3
 pop eax
-jmp 0x402af7
+jmp off.b901
 push esi
 push eax
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
@@ -111,7 +111,7 @@ call fcn.00407b08
 mov esi, eax
 test esi, esi
 pop ecx
-je 0x4027db
+je off.b105
 push ebx
 push 0
 push esi
@@ -133,7 +133,7 @@ call fcn.00409050
 test eax, eax
 pop ecx
 pop ecx
-jne 0x402ae0
+jne off.b878
 lea eax, [esi+0xa]
 push str.__Dict__
 push eax
@@ -141,7 +141,7 @@ call fcn.00409050
 test eax, eax
 pop ecx
 pop ecx
-jne 0x402ae0
+jne off.b878
 mov eax, dword[esi+0x34]
 mov ecx, dword[eax+esi+0x3a]
 add eax, 6
@@ -230,7 +230,7 @@ lea eax, [ebp+0xc08]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
 test eax, eax
-jne 0x4029a0
+jne off.b558
 push eax
 lea eax, [ebp+0xc08]
 push eax
@@ -246,14 +246,14 @@ push eax
 call fcn.00408482
 add esp, 0x14
 cmp dword[edi], 0
-je 0x402a51
+je off.b735
 cmp dword[edi+4], 0
-jne 0x402a25
+jne off.b691
 lea eax, [ebp+0xe10]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
 test eax, eax
-je 0x402a25
+je off.b691
 lea ecx, [ebp-0x20]
 call fcn.004049ed
 mov ecx, dword[0x438dd4]
@@ -277,15 +277,15 @@ lea eax, [ebp+0xe10]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
 test eax, eax
-je 0x402a51
+je off.b735
 cmp dword[edi+0xc], 0
-jne 0x402a51
+jne off.b735
 push esi
 mov dword[edi+8], 1
 call fcn.004085ea
 pop ecx
 push 4
-jmp 0x4027dd
+jmp off.b107
 and word[ebp+0x5f0], 0
 push ebx
 lea eax, [ebp+0x5f2]
@@ -325,7 +325,7 @@ add esp, 0x3c
 push dword[ebp-0x14]
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 xor eax, eax
-jmp 0x402af7
+jmp off.b901
 push esi
 call fcn.004085ea
 mov eax, dword[ebp+0x1028]

@@ -13,11 +13,12 @@ index: false
 
 # Code Tags
 <span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -77,23 +78,23 @@ push edi
 xor edi, edi
 mov dword[esp+0x10], edi
 cmp esi, edi
-je 0x475667
+je off.b39
 push 2
 push edi
 push esi
 call dword[sym.imp.KERNEL32.dll_LoadLibraryExW]
 mov ebx, eax
-jmp 0x47566d
+jmp off.b45
 mov ebx, dword[0x4c64b0]
 cmp ebx, edi
-je 0x4757ae
+je off.b366
 mov eax, ebp
 cmp ebp, edi
-jge 0x475682
+jge off.b66
 neg eax
 movzx eax, ax
-jmp 0x4756ac
-jne 0x475689
+jmp off.b108
+jne off.b73
 mov eax, 1
 lea ecx, [esp+0x14]
 push ecx
@@ -110,52 +111,52 @@ push eax
 push ebx
 call dword[sym.imp.KERNEL32.dll_FindResourceW]
 cmp eax, edi
-je 0x475799
+je off.b345
 push eax
 push ebx
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 cmp eax, edi
-je 0x475799
+je off.b345
 push eax
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov edi, eax
 test edi, edi
-je 0x475799
+je off.b345
 cmp dword[esp+0x2c], 0xffffffff
-jne 0x4756ee
+jne off.b174
 mov edx, dword[esp+0x30]
 mov dword[esp+0x2c], edx
 cmp dword[esp+0x2c], 0
-jne 0x475701
+jne off.b193
 push 0xb
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
 mov dword[esp+0x2c], eax
 movzx eax, word[edi+4]
 lea esi, [edi+6]
 cmp eax, 1
-jle 0x475747
+jle off.b263
 lea edx, [esi+0xe]
 lea edi, [eax-1]
 mov al, byte[edx]
 mov cl, byte[esi]
 cmp al, cl
-jbe 0x475729
+jbe off.b233
 movzx eax, cl
 xor ecx, ecx
 cmp eax, dword[esp+0x2c]
 setl cl
-jmp 0x475735
+jmp off.b245
 movzx eax, al
 xor ecx, ecx
 cmp eax, dword[esp+0x2c]
 setge cl
 mov eax, ecx
 test eax, eax
-je 0x47573d
+je off.b253
 mov esi, edx
 add edx, 0xe
 dec edi
-jne 0x475713
+jne off.b211
 mov ebp, dword[esp+0x28]
 movzx edx, word[esi+0xc]
 push 3
@@ -164,17 +165,17 @@ push ebx
 call dword[sym.imp.KERNEL32.dll_FindResourceW]
 mov esi, eax
 test esi, esi
-je 0x475795
+je off.b341
 push esi
 push ebx
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 test eax, eax
-je 0x475795
+je off.b341
 push eax
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov edi, eax
 test edi, edi
-je 0x475795
+je off.b341
 push 0
 push 0
 push 0
@@ -190,14 +191,14 @@ mov dword[esp+0x10], eax
 mov esi, dword[esp+0x24]
 xor edi, edi
 cmp esi, edi
-je 0x4757a6
+je off.b358
 push ebx
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 mov eax, dword[esp+0x10]
 cmp eax, edi
-jne 0x4757da
+jne off.b410
 cmp ebp, edi
-jle 0x4757c6
+jle off.b390
 lea eax, [ebp-1]
 push eax
 push esi

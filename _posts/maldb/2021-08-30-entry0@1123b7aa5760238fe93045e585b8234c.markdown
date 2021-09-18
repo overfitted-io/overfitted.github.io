@@ -12,12 +12,13 @@ index: false
 - **VirusTotal:** [virustotal.com/gui/file/1123b7aa5760238fe93045e585b8234c][virustotal_ref]
 
 # Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
 <span class="tag" id="LINKING">LINKING</span>
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +35,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-853.1673583984375, 337.5543212890625, '<b><a href="/report/entry0@1123b7aa5760238fe93045e585b8234c">entry0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[853.1671142578125, -337.5545654296875, '<b><a href="/report/entry0@59aef7c08025d70f84c85db2092fc99e">entry0</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
+    [813.9993286132812, -108.93547058105469, '<b><a href="/report/entry0@1123b7aa5760238fe93045e585b8234c">entry0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
+[-813.9993286132812, 108.93562316894531, '<b><a href="/report/entry0@59aef7c08025d70f84c85db2092fc99e">entry0</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
 
         ]);
 
@@ -89,7 +90,7 @@ mov esi, dword[esi+0xc]
 and esi, 0x7fff
 mov dword[0x538fa0], esi
 cmp ecx, 2
-je 0x41889e
+je off.b96
 or esi, 0x8000
 mov dword[0x538fa0], esi
 shl eax, 8
@@ -100,25 +101,25 @@ push esi
 mov edi, dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 call edi
 cmp word[eax], 0x5a4d
-jne 0x4188d9
+jne off.b155
 mov ecx, dword[eax+0x3c]
 add ecx, eax
 cmp dword[ecx], 0x4550
-jne 0x4188d9
+jne off.b155
 movzx eax, word[ecx+0x18]
 cmp eax, 0x10b
-je 0x4188f1
+je off.b179
 cmp eax, 0x20b
-je 0x4188de
+je off.b160
 mov dword[ebp-0x1c], esi
-jmp 0x418905
+jmp off.b199
 cmp dword[ecx+0x84], 0xe
-jbe 0x4188d9
+jbe off.b155
 xor eax, eax
 cmp dword[ecx+0xf8], esi
-jmp 0x4188ff
+jmp off.b193
 cmp dword[ecx+0x74], 0xe
-jbe 0x4188d9
+jbe off.b155
 xor eax, eax
 cmp dword[ecx+0xe8], esi
 setne al
@@ -127,13 +128,13 @@ push 1
 call fcn.0041aa53
 pop ecx
 test eax, eax
-jne 0x418919
+jne off.b219
 push 0x1c
 call fcn.0041881a
 pop ecx
 call fcn.004191be
 test eax, eax
-jne 0x41892a
+jne off.b236
 push 0x10
 call fcn.0041881a
 pop ecx
@@ -141,7 +142,7 @@ call fcn.0041e444
 mov dword[ebp-4], esi
 call fcn.0041e246
 test eax, eax
-jge 0x418943
+jge off.b261
 push 0x1b
 call fcn.004187f5
 pop ecx
@@ -151,13 +152,13 @@ call fcn.0041e124
 mov dword[0x538e18], eax
 call fcn.0041e082
 test eax, eax
-jge 0x418969
+jge off.b299
 push 8
 call fcn.004187f5
 pop ecx
 call fcn.0041de4f
 test eax, eax
-jge 0x41897a
+jge off.b316
 push 9
 call fcn.004187f5
 pop ecx
@@ -166,7 +167,7 @@ call fcn.0041b63c
 pop ecx
 mov dword[ebp-0x28], eax
 cmp eax, esi
-je 0x418990
+je off.b338
 push eax
 call fcn.004187f5
 pop ecx
@@ -177,9 +178,9 @@ call dword[sym.imp.KERNEL32.dll_GetStartupInfoA]
 call fcn.0041ddf2
 mov dword[ebp-0x20], eax
 test byte[ebp-0x44], 1
-je 0x4189b1
+je off.b371
 movzx eax, word[ebp-0x40]
-jmp 0x4189b4
+jmp off.b374
 push 0xa
 pop eax
 push eax
@@ -192,11 +193,11 @@ call fcn.00404a68
 mov edi, eax
 mov dword[ebp-0x2c], edi
 cmp dword[ebp-0x1c], esi
-jne 0x4189d2
+jne off.b404
 push edi
 call fcn.0041b769
 call fcn.0041b78b
-jmp 0x418a04
+jmp off.b454
 or dword[ebp-4], 0xffffffff
 mov eax, edi
 lea esp, [ebp-0x7c]

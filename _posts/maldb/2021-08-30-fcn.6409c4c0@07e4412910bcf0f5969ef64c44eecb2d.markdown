@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -68,15 +68,15 @@ index: false
 
 sub esp, 0x1c
 cmp dword[0x641bbe34], 0xfffffffe
-jg 0x6409c4d0
+jg off.b16
 xor eax, eax
-jmp 0x6409c4d5
+jmp off.b21
 call fcn.6409d1c0
 push eax
 lea ecx, [esp+8]
 call dword[sym.imp.Qt5Core.dll_public:_void___thiscall_QMutexLocker::constructor_class_QBasicMutex__]
 cmp byte[0x641bbe22], 0
-jne 0x6409c5f3
+jne off.b307
 push edi
 mov byte[0x641bbe22], 1
 call fcn.6409d500
@@ -85,7 +85,7 @@ push str.Crypt32
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 mov edi, eax
 test edi, edi
-je 0x6409c572
+je off.b178
 push esi
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
 push str.CertOpenSystemStoreW
@@ -102,24 +102,24 @@ call esi
 cmp dword[0x641bbe24], 0
 mov dword[0x641bbe2c], eax
 pop esi
-je 0x6409c555
+je off.b149
 cmp dword[0x641bbe28], 0
-je 0x6409c555
+je off.b149
 test eax, eax
-jne 0x6409c5aa
+jne off.b234
 call fcn.6408cf70
 mov ecx, eax
 call dword[sym.imp.Qt5Core.dll_public:_bool___thiscall_QLoggingCategory::isWarningEnabled_void_const]
 test al, al
-je 0x6409c5aa
+je off.b234
 call fcn.6408cf70
 push str.could_not_resolve_symbols_in_crypt32_library
-jmp 0x6409c58d
+jmp off.b205
 call fcn.6408cf70
 mov ecx, eax
 call dword[sym.imp.Qt5Core.dll_public:_bool___thiscall_QLoggingCategory::isWarningEnabled_void_const]
 test al, al
-je 0x6409c5aa
+je off.b234
 call fcn.6408cf70
 push str.could_not_load_crypt32_library
 push dword[eax+4]
@@ -133,7 +133,7 @@ call dword[sym.imp.Qt5Core.dll_public:_void___cdecl_QMessageLogger::warning_char
 add esp, 8
 cmp byte[0x641bbe20], 0
 pop edi
-jne 0x6409c5ce
+jne off.b270
 lea eax, [esp]
 push eax
 call fcn.6409e940

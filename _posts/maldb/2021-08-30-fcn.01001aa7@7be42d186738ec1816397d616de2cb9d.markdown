@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.01760332512924929</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.262005526984735</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -106,7 +106,7 @@ push 0x80000002
 mov dword[ebp-0x218], edi
 call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExA]
 test eax, eax
-jne 0x1001ce4
+jne off.b573
 push ebx
 push esi
 mov dword[ebp-0x210], edi
@@ -126,16 +126,16 @@ push esi
 push dword[ebp-0x214]
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 test eax, eax
-jne 0x1001b70
+jne off.b201
 inc dword[ebp-0x210]
 cmp dword[ebp-0x210], ebx
-jl 0x1001b32
+jl off.b139
 cmp dword[ebp-0x210], ebx
-jne 0x1001b90
+jne off.b233
 push dword[ebp-0x214]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 mov byte[0x100b2e0], 0
-jmp 0x1001ce2
+jmp off.b571
 mov ebx, dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
 mov esi, 0x104
 push esi
@@ -152,7 +152,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 cmp eax, edi
 mov dword[ebp-0x210], eax
-je 0x1001c1a
+je off.b371
 push 0x1001288
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
@@ -164,26 +164,26 @@ neg edi
 mov dword[ebp-0x218], edi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 test edi, edi
-je 0x1001c1a
+je off.b371
 push esi
 lea eax, [ebp-0x108]
 push eax
 call ebx
 test eax, eax
-je 0x1001c32
+je off.b395
 push 0x1001271
 push esi
 lea eax, [ebp-0x108]
 push eax
 call fcn.010066cf
-jmp 0x1001c32
+jmp off.b395
 push esi
 lea eax, [ebp-0x108]
 push eax
 push dword[0x100c4a4]
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
 test eax, eax
-je 0x1001c70
+je off.b457
 mov esi, dword[sym.imp.KERNEL32.dll_lstrlenA]
 mov edi, 0x100bc44
 push edi
@@ -199,7 +199,7 @@ call dword[sym.imp.KERNEL32.dll_LocalAlloc]
 mov ebx, eax
 xor eax, eax
 cmp ebx, eax
-jne 0x1001c7e
+jne off.b471
 push eax
 push 0x10
 push eax
@@ -209,14 +209,14 @@ push eax
 call fcn.01003ebe
 push dword[ebp-0x214]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
-jmp 0x1001ce2
+jmp off.b571
 xor ecx, ecx
 cmp dword[ebp-0x218], eax
 sete cl
 cmp dword[ebp-0x218], eax
 mov eax, str.rundll32.exe__sadvpack.dll_DelNodeRunDLL32___s_
 mov dword[0x100b330], ecx
-jne 0x1001ca1
+jne off.b506
 mov eax, str._s__D:_s
 push edi
 lea ecx, [ebp-0x108]

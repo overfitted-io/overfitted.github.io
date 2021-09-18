@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.2603599771676472</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.10161740743423331</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.14588716790177184</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,17 +34,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [190.85726928710938, -82.88799285888672, '<b><a href="/report/fcn.00417ba7@1123b7aa5760238fe93045e585b8234c">fcn.00417ba7</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[227.27752685546875, 184.75404357910156, '<b><a href="/report/fcn.00480148@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.00480148</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>', 'null'],
-[143.19459533691406, -204.5064239501953, '<b><a href="/report/fcn.0040ba7c@59aef7c08025d70f84c85db2092fc99e">fcn.0040ba7c</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[-80.83684539794922, -93.62721252441406, '<b><a href="/report/fcn.004100b8@7b00dd8f2abf54a73bfb09681334ff78">fcn.004100b8</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[10.473316192626953, 350.15875244140625, '<b><a href="/report/fcn.00480148@152885a790b99953ce23874f0947b7bd">fcn.00480148</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[65.19218444824219, 167.426513671875, '<b><a href="/report/fcn.10126ec7@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10126ec7</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
-[-281.7159423828125, -109.77178192138672, '<b><a href="/report/fcn.00426618@e16f74a2849182d98050864255e902f8">fcn.00426618</a><br>@e16f74a2849182d98050864255e902f8</b><br>', 'null'],
-[-112.70288848876953, -224.7406463623047, '<b><a href="/report/fcn.1000250f@481b545f5c18f2fce1caac67ddc419e8">fcn.1000250f</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-92.71636199951172, 215.2015838623047, '<b><a href="/report/fcn.00480148@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.00480148</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'null'],
-[177.91415405273438, 349.6282958984375, '<b><a href="/report/fcn.0065d482@52d540e8e13e0f0bbb8946b2363a382d">fcn.0065d482</a><br>@52d540e8e13e0f0bbb8946b2363a382d</b><br>', 'null'],
-[47.60305404663086, -414.62615966796875, '<b><a href="/report/fcn.00407935@6c8b5339bada4cbd03f0f446da640707">fcn.00407935</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
+    [2047.523193359375, -5360.2099609375, '<b><a href="/report/fcn.00417ba7@1123b7aa5760238fe93045e585b8234c">fcn.00417ba7</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
+[-2047.523193359375, 5360.2099609375, '<b><a href="/report/fcn.0040ba7c@59aef7c08025d70f84c85db2092fc99e">fcn.0040ba7c</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
 
         ]);
 
@@ -93,7 +84,7 @@ push eax
 push esi
 call dword[sym.imp.KERNEL32.dll_VirtualQuery]
 test eax, eax
-je 0x417c42
+je off.b155
 mov ebx, dword[ebp-0x24]
 lea eax, [ebp-0x4c]
 push eax
@@ -114,9 +105,9 @@ imul esi, ecx
 add esi, ebx
 cmp edi, esi
 mov dword[ebp-8], ecx
-jb 0x417c42
+jb off.b155
 cmp eax, 1
-je 0x417c63
+je off.b188
 mov dword[ebp-4], ebx
 mov ebx, 0x1000
 push 0x1c
@@ -125,24 +116,24 @@ push eax
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_VirtualQuery]
 test eax, eax
-je 0x417c42
+je off.b155
 mov eax, dword[ebp-0x1c]
 add dword[ebp-4], eax
 test dword[ebp-0x18], ebx
-je 0x417c0f
+je off.b104
 test byte[ebp-0x13], 1
 mov eax, dword[ebp-0x28]
 mov dword[ebp-4], eax
-je 0x417c3e
+je off.b151
 xor eax, eax
 inc eax
-jmp 0x417c82
+jmp off.b219
 cmp edi, eax
-jae 0x417c46
+jae off.b159
 xor eax, eax
-jmp 0x417c82
+jmp off.b219
 cmp eax, esi
-jae 0x417c4d
+jae off.b166
 mov dword[ebp-4], esi
 push 4
 push ebx
@@ -150,7 +141,7 @@ push dword[ebp-8]
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_VirtualAlloc]
 mov eax, dword[0x538f9c]
-jmp 0x417c66
+jmp off.b191
 mov dword[ebp-4], edi
 dec eax
 neg eax

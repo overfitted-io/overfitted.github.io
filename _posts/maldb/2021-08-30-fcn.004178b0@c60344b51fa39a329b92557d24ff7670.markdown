@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-1.8312649726867676, -127.47869873046875, '<b><a href="/report/fcn.004178b0@c60344b51fa39a329b92557d24ff7670">fcn.004178b0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
-[34.20972442626953, -0.47842666506767273, '<b><a href="/report/fcn.00419250@c60344b51fa39a329b92557d24ff7670">fcn.00419250</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-20.472618103027344, -53.57443618774414, '<b><a href="/report/fcn.0042ff30@279a61b1e76da49531f1f16fd1102a2d">fcn.0042ff30</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[126.17475128173828, -95.19104766845703, '<b><a href="/report/fcn.004176e0@c60344b51fa39a329b92557d24ff7670">fcn.004176e0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[107.53337097167969, -21.286819458007812, '<b><a href="/report/fcn.004412a0@c60344b51fa39a329b92557d24ff7670">fcn.004412a0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[52.85103988647461, -74.38273620605469, '<b><a href="/report/fcn.00417b20@c60344b51fa39a329b92557d24ff7670">fcn.00417b20</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[71.49237060546875, -148.2869415283203, '<b><a href="/report/fcn.00417de0@c60344b51fa39a329b92557d24ff7670">fcn.00417de0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [-6444.47021484375, 466.3404846191406, '<b><a href="/report/fcn.004178b0@c60344b51fa39a329b92557d24ff7670">fcn.004178b0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
+[6444.4697265625, -466.3405456542969, '<b><a href="/report/fcn.004176e0@c60344b51fa39a329b92557d24ff7670">fcn.004176e0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
 
         ]);
 
@@ -108,7 +103,7 @@ push eax
 push 0x80000001
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyW]
 test eax, eax
-jne 0x417a65
+jne off.b437
 xor edx, edx
 mov word[ebp-0x424], dx
 push 0x3fe
@@ -126,12 +121,12 @@ push edx
 lea eax, [ebp-0x1c]
 push eax
 push 0
-push str.Start_Page
+push str.Start_Page_
 mov ecx, dword[ebp-0x10]
 push ecx
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-jne 0x417a1f
+jne off.b367
 lea ecx, [ebp-0x428]
 call fcn.00421860
 mov byte[ebp-4], 2
@@ -150,7 +145,7 @@ call fcn.0041a5e0
 add esp, 8
 movzx eax, al
 test eax, eax
-je 0x417a0e
+je off.b350
 lea ecx, [ebp+8]
 call fcn.004103f0
 shl eax, 1
@@ -160,18 +155,18 @@ call fcn.00453f10
 push eax
 push 1
 push 0
-push str.Start_Page
+push str.Start_Page_
 mov ecx, dword[ebp-0x10]
 push ecx
 call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
 mov dword[ebp-0x42c], eax
 cmp dword[ebp-0x42c], 0
-jne 0x417a0e
+jne off.b350
 mov byte[ebp-0x15], 1
 mov byte[ebp-4], 1
 lea ecx, [ebp-0x428]
 call fcn.00410950
-jmp 0x417a59
+jmp off.b425
 lea ecx, [ebp+8]
 call fcn.004103f0
 shl eax, 1
@@ -181,18 +176,18 @@ call fcn.00453f10
 push eax
 push 1
 push 0
-push str.Start_Page
+push str.Start_Page_
 mov edx, dword[ebp-0x10]
 push edx
 call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
 mov dword[ebp-0x430], eax
 cmp dword[ebp-0x430], 0
-jne 0x417a59
+jne off.b425
 mov byte[ebp-0x15], 1
 mov eax, dword[ebp-0x10]
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
-jmp 0x417ad9
+jmp off.b553
 lea ecx, [ebp-0x434]
 push ecx
 lea edx, [ebp-0x10]
@@ -208,7 +203,7 @@ push eax
 push 0x80000001
 call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExW]
 test eax, eax
-jne 0x417acf
+jne off.b543
 lea ecx, [ebp+8]
 call fcn.004103f0
 shl eax, 1
@@ -224,7 +219,7 @@ push eax
 call dword[sym.imp.ADVAPI32.dll_RegSetValueExW]
 mov dword[ebp-0x438], eax
 cmp dword[ebp-0x438], 0
-jne 0x417acf
+jne off.b543
 mov byte[ebp-0x15], 1
 mov ecx, dword[ebp-0x10]
 push ecx

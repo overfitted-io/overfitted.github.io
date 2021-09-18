@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="HTTP">HTTP</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.14149283272812266</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.008855786105943514</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.2731065023769867</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [68.84339904785156, -61.494895935058594, '<b><a href="/report/fcn.004073d9@6c8b5339bada4cbd03f0f446da640707">fcn.004073d9</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
-[-32.36195373535156, -32.13420104980469, '<b><a href="/report/fcn.00401d63@4c8869bb42f854640703b6ddda29ee38">fcn.00401d63</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
-[-11.04798412322998, -121.77873229980469, '<b><a href="/report/fcn.00402d24@1123b7aa5760238fe93045e585b8234c">fcn.00402d24</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[151.1795196533203, -87.97976684570312, '<b><a href="/report/fcn.0042fc9f@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042fc9f</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[76.769775390625, 84.5674057006836, '<b><a href="/report/fcn.00404cd3@1123b7aa5760238fe93045e585b8234c">fcn.00404cd3</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[169.88258361816406, 33.13667678833008, '<b><a href="/report/fcn.00403389@73677cb40830e94fbfb5483ff33e40b9">fcn.00403389</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>', 'null'],
-[-44.51957321166992, 99.09040069580078, '<b><a href="/report/fcn.004100b8@7b00dd8f2abf54a73bfb09681334ff78">fcn.004100b8</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[102.7264633178711, -20.830734252929688, '<b><a href="/report/fcn.004073d9@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.004073d9</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
-[-81.98883819580078, 56.84286117553711, '<b><a href="/report/fcn.1000250f@481b545f5c18f2fce1caac67ddc419e8">fcn.1000250f</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[39.78620147705078, 44.337989807128906, '<b><a href="/report/fcn.00401e85@1123b7aa5760238fe93045e585b8234c">fcn.00401e85</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-70.1279296875, -75.71452331542969, '<b><a href="/report/fcn.004064c1@6c5b0418e4a4c57d99cda47d2717045d">fcn.004064c1</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004073d9@6c8b5339bada4cbd03f0f446da640707">fcn.004073d9</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -106,7 +96,7 @@ call dword[sym.imp.WININET.dll_InternetConnectA]
 cmp eax, ebx
 mov edi, dword[ebp+0x74]
 mov dword[ebp+0x48], eax
-je 0x40756b
+je off.b402
 push ebx
 push 0x84080100
 push ebx
@@ -118,7 +108,7 @@ push eax
 call dword[sym.imp.WININET.dll_HttpOpenRequestA]
 cmp eax, ebx
 mov dword[ebp+0x50], eax
-je 0x40755d
+je off.b388
 push esi
 mov esi, dword[sym.imp.WININET.dll_InternetSetOptionA]
 push 4
@@ -152,7 +142,7 @@ push ebx
 push dword[ebp+0x50]
 call dword[sym.imp.WININET.dll_HttpSendRequestA]
 test eax, eax
-je 0x407553
+je off.b378
 lea eax, [ebp+0x7c]
 push eax
 lea eax, [ebp+0x54]
@@ -166,27 +156,27 @@ mov dword[ebp+0x54], esi
 mov dword[ebp+0x7c], ebx
 call dword[sym.imp.WININET.dll_HttpQueryInfoA]
 test eax, eax
-je 0x407553
+je off.b378
 cmp byte[ebp-0x3c], 0x32
-jne 0x407553
+jne off.b378
 cmp byte[ebp-0x3b], 0x30
-jne 0x407553
+jne off.b378
 cmp byte[ebp-0x3a], 0x30
-jne 0x407553
+jne off.b378
 mov eax, dword[ebp+0x70]
 mov dword[eax], ebx
 mov dword[edi], ebx
 mov dword[ebp+0x54], esi
-jmp 0x407536
+jmp off.b349
 mov ecx, dword[ebp+0x54]
 cmp ecx, ebx
-jbe 0x40754c
+jbe off.b371
 mov eax, dword[edi]
 cmp eax, ebx
-jne 0x407504
+jne off.b299
 push ecx
 call fcn.0040735e
-jmp 0x407512
+jmp off.b313
 add eax, ecx
 push eax
 mov eax, dword[ebp+0x70]
@@ -199,7 +189,7 @@ mov dword[ecx], eax
 mov eax, ecx
 mov eax, dword[eax]
 cmp eax, ebx
-je 0x407553
+je off.b378
 push dword[ebp+0x54]
 lea ecx, [ebp-0x3c]
 push ecx
@@ -217,7 +207,7 @@ push eax
 push dword[ebp+0x50]
 call dword[sym.imp.WININET.dll_InternetReadFile]
 test eax, eax
-jne 0x4074ef
+jne off.b278
 mov dword[ebp+0x4c], 1
 push dword[ebp+0x50]
 call dword[sym.imp.WININET.dll_InternetCloseHandle]
@@ -225,7 +215,7 @@ pop esi
 push dword[ebp+0x48]
 call dword[sym.imp.WININET.dll_InternetCloseHandle]
 cmp dword[ebp+0x4c], ebx
-jne 0x407572
+jne off.b409
 mov eax, dword[ebp+0x70]
 mov dword[eax], ebx
 mov dword[edi], ebx

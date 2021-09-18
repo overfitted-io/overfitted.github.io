@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.09738982352997672</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.025939448262121703</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.022806334472878786</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.046025609719557735</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-183.75656127929688, 51.791168212890625, '<b><a href="/report/fcn.783a4006@ebea46c6b17785efc2ebcb24ad99656c">fcn.783a4006</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>', 'point { fill-color: #e0440e; }'],
-[-75.08787536621094, 89.12327575683594, '<b><a href="/report/fcn.00403908@4c8869bb42f854640703b6ddda29ee38">fcn.00403908</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
-[34.7703742980957, 55.45280075073242, '<b><a href="/report/fcn.005a2f99@c60344b51fa39a329b92557d24ff7670">fcn.005a2f99</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-9.117609024047852, 183.19979858398438, '<b><a href="/report/fcn.1004cc81@481b545f5c18f2fce1caac67ddc419e8">fcn.1004cc81</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-144.17398071289062, 180.93621826171875, '<b><a href="/report/fcn.0044f1bb@7b00dd8f2abf54a73bfb09681334ff78">fcn.0044f1bb</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[-73.16329193115234, -25.76238250732422, '<b><a href="/report/fcn.00417e63@59aef7c08025d70f84c85db2092fc99e">fcn.00417e63</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
+    [1272.927490234375, 2332.36328125, '<b><a href="/report/fcn.783a4006@ebea46c6b17785efc2ebcb24ad99656c">fcn.783a4006</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>', 'point { fill-color: #e0440e; }'],
+[-1272.927490234375, -2332.36328125, '<b><a href="/report/fcn.00417e63@59aef7c08025d70f84c85db2092fc99e">fcn.00417e63</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
 
         ]);
 
@@ -107,7 +103,7 @@ stosd dword
 mov dword[ebp-0x2c], ecx
 mov dword[ebp-0x28], ecx
 mov dword[ebp-0x24], ecx
-jne 0x783a408a
+jne off.b132
 lea eax, [ebp-0x44]
 mov dword[ebp+0xc], eax
 lea eax, [ebp+0xc]
@@ -131,49 +127,49 @@ not eax
 and eax, 1
 mov dword[ebp-0x34], eax
 lea eax, [edx+0x781d0002]
-jne 0x783a40b9
+jne off.b179
 movzx eax, dx
 mov dword[ebp-0x30], eax
 mov eax, dword[0x783ebd44]
 xor ebx, ebx
 cmp eax, ecx
-je 0x783a40d8
+je off.b210
 lea edx, [ebp-0x44]
 push edx
 push ecx
 call eax
 mov ebx, eax
 test ebx, ebx
-jne 0x783a421d
+jne off.b535
 test edi, edi
-jne 0x783a4182
+jne off.b380
 mov eax, dword[0x783ebd44]
 test eax, eax
-je 0x783a40f7
+je off.b241
 lea ecx, [ebp-0x44]
 push ecx
 push 1
 call eax
 mov edi, eax
 test edi, edi
-jne 0x783a4147
+jne off.b321
 push dword[ebp-0x38]
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov edi, eax
 test edi, edi
-jne 0x783a4147
+jne off.b321
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[ebp-0x24], eax
 mov eax, dword[0x783e90a8]
 test eax, eax
-je 0x783a4126
+je off.b288
 lea ecx, [ebp-0x44]
 push ecx
 push 3
 call eax
 mov edi, eax
 test edi, edi
-jne 0x783a4147
+jne off.b321
 lea eax, [ebp-0x44]
 mov dword[ebp+0xc], eax
 lea eax, [ebp+0xc]
@@ -186,68 +182,68 @@ push edi
 push dword[ebp-0x18]
 call dword[sym.imp.KERNEL32.dll_InterlockedExchange]
 cmp eax, edi
-je 0x783a417b
+je off.b373
 cmp dword[esi+0x18], 0
-je 0x783a4182
+je off.b380
 push 8
 push 0x40
 call dword[sym.imp.KERNEL32.dll_LocalAlloc]
 test eax, eax
-je 0x783a4182
+je off.b380
 mov dword[eax+4], esi
 mov ecx, dword[0x783ebd40]
 mov dword[eax], ecx
 mov dword[0x783ebd40], eax
-jmp 0x783a4182
+jmp off.b380
 push edi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 mov eax, dword[0x783ebd44]
 test eax, eax
 mov dword[ebp-0x2c], edi
-je 0x783a4198
+je off.b402
 lea ecx, [ebp-0x44]
 push ecx
 push 2
 call eax
 mov ebx, eax
 test ebx, ebx
-jne 0x783a4218
+jne off.b530
 cmp dword[esi+0x14], ebx
-je 0x783a41cd
+je off.b455
 cmp dword[esi+0x1c], ebx
-je 0x783a41cd
+je off.b455
 mov eax, dword[edi+0x3c]
 add eax, edi
 cmp dword[eax], 0x4550
-jne 0x783a41cd
+jne off.b455
 mov ecx, dword[ebp-4]
 cmp dword[eax+8], ecx
-jne 0x783a41cd
+jne off.b455
 cmp edi, dword[eax+0x34]
-jne 0x783a41cd
+jne off.b455
 mov eax, dword[ebp-0xc]
 mov ecx, dword[ebp+8]
 mov ebx, dword[ecx+eax]
 test ebx, ebx
-jne 0x783a4218
+jne off.b530
 push dword[ebp-0x30]
 push edi
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov ebx, eax
 test ebx, ebx
-jne 0x783a4218
+jne off.b530
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[ebp-0x24], eax
 mov eax, dword[0x783e90a8]
 test eax, eax
-je 0x783a41f9
+je off.b499
 lea ecx, [ebp-0x44]
 push ecx
 push 4
 call eax
 mov ebx, eax
 test ebx, ebx
-jne 0x783a4218
+jne off.b530
 lea eax, [ebp-0x44]
 mov dword[ebp+8], eax
 lea eax, [ebp+8]
@@ -260,7 +256,7 @@ mov eax, dword[ebp+0xc]
 mov dword[eax], ebx
 mov eax, dword[0x783ebd44]
 test eax, eax
-je 0x783a4238
+je off.b562
 and dword[ebp-0x24], 0
 lea ecx, [ebp-0x44]
 push ecx

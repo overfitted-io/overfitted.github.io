@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.14357451486188008</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.05740742317300737</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -92,21 +92,21 @@ lea ecx, [eax+2]
 mov dx, word[eax]
 add eax, 2
 test dx, dx
-jne 0x437ae5
+jne off.b82
 sub eax, ecx
 sar eax, 1
 test eax, eax
-jle 0x437b19
+jle off.b134
 push 0x5c
 add eax, eax
 pop ecx
 cmp cx, word[ebp+eax-0x20e]
-je 0x437b19
+je off.b134
 mov word[ebp+eax-0x20c], cx
 xor ecx, ecx
 mov word[ebp+eax-0x20a], cx
 push esi
-push str.iphlpapi.dll
+push str.iphlpapi.dll_
 lea eax, [ebp-0x20c]
 push esi
 push eax
@@ -117,15 +117,15 @@ push eax
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 mov dword[ebp-0x2aa0], eax
 test eax, eax
-jne 0x437b4d
+jne off.b186
 xor al, al
-jmp 0x437c79
+jmp off.b486
 push edi
-push str.GetAdaptersInfo
+push str.GetAdaptersInfo_
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x437c38
+je off.b421
 lea ecx, [ebp-0x2aa4]
 push ecx
 lea ecx, [ebp-0x2a8c]
@@ -133,7 +133,7 @@ push ecx
 mov dword[ebp-0x2aa4], 0x2880
 call eax
 test eax, eax
-jne 0x437c38
+jne off.b421
 mov dword[ebp-0x2a98], ebx
 lea eax, [ebp-0x2a94]
 sub dword[ebp-0x2a98], eax
@@ -153,18 +153,18 @@ mov edx, dword[ebp-0x2a98]
 lea eax, [ebp+edi-0x2a94]
 mov dl, byte[edx+eax]
 cmp dl, byte[eax]
-jne 0x437bdb
+jne off.b328
 inc edi
 cmp edi, 6
-jb 0x437bbf
-jmp 0x437bf3
+jb off.b300
+jmp off.b352
 mov eax, dword[esi+0x1a0]
 cmp eax, 6
-je 0x437beb
+je off.b344
 cmp eax, 0x17
-jne 0x437c2e
+jne off.b411
 cmp dword[ebp-0x2a9c], ecx
-jle 0x437c2e
+jle off.b411
 mov al, byte[esi+0x194]
 mov byte[ebx], al
 mov al, byte[esi+0x195]
@@ -180,7 +180,7 @@ mov byte[ebx+5], al
 mov dword[ebp-0x2a9c], ecx
 mov esi, dword[esi]
 test esi, esi
-jne 0x437ba6
+jne off.b275
 push dword[ebp-0x2aa0]
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 xor eax, eax
@@ -195,10 +195,10 @@ pop edi
 lea eax, [ebp+ecx-0x2a94]
 mov dl, byte[esi+eax]
 cmp dl, byte[eax]
-jne 0x437c86
+jne off.b499
 inc ecx
 cmp ecx, 6
-jb 0x437c5c
+jb off.b457
 mov al, 1
 xor ecx, ecx
 test al, al
@@ -210,7 +210,7 @@ call fcn.0043e257
 leave
 ret
 xor al, al
-jmp 0x437c72
+jmp off.b479
 
 {% endhighlight %}
 

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,7 +80,7 @@ mov eax, dword[esp+0x264]
 call fcn.00443160
 mov esi, eax
 test esi, esi
-je 0x435326
+je off.b166
 lea ecx, [esp+0x18]
 push ecx
 push 0
@@ -90,7 +90,7 @@ call dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
 push eax
 call dword[sym.imp.USER32.dll_GetGUIThreadInfo]
 test eax, eax
-je 0x435326
+je off.b166
 mov eax, dword[esp+0x24]
 lea edx, [esp+0x48]
 push 0xfc
@@ -101,19 +101,19 @@ mov dword[esp+0x20], eax
 mov dword[esp+0x14], edx
 call dword[sym.imp.USER32.dll_GetClassNameW]
 test eax, eax
-je 0x435326
+je off.b166
 lea edx, [esp+8]
 push edx
-push 0x4353d0
+push off.b336
 push esi
 mov dword[esp+0x1c], 0
 mov byte[esp+0x18], 0
 call dword[sym.imp.USER32.dll_EnumChildWindows]
 cmp byte[esp+0xc], 0
-jne 0x435379
+jne off.b249
 mov eax, dword[0x4c28ec]
 cmp byte[eax+0x104], 0
-jne 0x435356
+jne off.b214
 mov ecx, dword[0x4c6cb4]
 push 1
 push 0

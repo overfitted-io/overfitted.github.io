@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,9 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [166.23687744140625, -286.6170959472656, '<b><a href="/report/fcn.00451630@279a61b1e76da49531f1f16fd1102a2d">fcn.00451630</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[379.1112976074219, 120.1119613647461, '<b><a href="/report/fcn.00451340@c60344b51fa39a329b92557d24ff7670">fcn.00451340</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-79.55924987792969, 101.1003189086914, '<b><a href="/report/fcn.0041c7e0@c60344b51fa39a329b92557d24ff7670">fcn.0041c7e0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00451630@279a61b1e76da49531f1f16fd1102a2d">fcn.00451630</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -107,11 +105,11 @@ call fcn.004e6520
 push eax
 push 0xf003f
 push 0
-push str.Software_KuaiZip_Install
+push str.Software__KuaiZip__Install_
 push reloc.WS2_32.dll_accept
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-je 0x45195e
+je off.b814
 lea ecx, [ebp-0x98]
 call fcn.004e6550
 mov byte[ebp-4], 4
@@ -124,11 +122,11 @@ push 0xf003f
 push 0
 push 0
 push 0
-push str.Software_KuaiZip_Install
+push str.Software__KuaiZip__Install_
 push reloc.WS2_32.dll_accept
 call dword[sym.imp.ADVAPI32.dll_RegCreateKeyExA]
 test eax, eax
-jne 0x45194a
+jne off.b794
 push 0x542e48
 push 0x4fd6e0
 lea ecx, [ebp-0x98]
@@ -137,7 +135,7 @@ push eax
 call fcn.00451140
 add esp, 0xc
 push 0x542d8c
-push str.Version
+push str.Version_
 lea ecx, [ebp-0x98]
 call fcn.004e6510
 push eax
@@ -145,7 +143,7 @@ call fcn.00451140
 add esp, 0xc
 lea edx, [ebp-0x2c]
 push edx
-push str.Path
+push str.Path_
 lea ecx, [ebp-0x98]
 call fcn.004e6510
 push eax
@@ -163,7 +161,7 @@ mov dword[ebp-0x230], edx
 mov byte[ebp-4], 5
 mov eax, dword[ebp-0x230]
 push eax
-push str.InstallCount
+push str.InstallCount_
 lea ecx, [ebp-0x98]
 call fcn.004e6510
 push eax
@@ -174,7 +172,7 @@ lea ecx, [ebp-0x164]
 call fcn.00403090
 lea ecx, [ebp-0x94]
 push ecx
-push str.InstallDate
+push str.InstallDate_
 lea ecx, [ebp-0x98]
 call fcn.004e6510
 push eax
@@ -189,16 +187,16 @@ push eax
 call fcn.00451140
 add esp, 0xc
 cmp dword[0x542d30], 0
-je 0x45182e
-push str.FirstInstallTime
-push str.Software_KuaiZip_Install
+je off.b510
+push str.FirstInstallTime_
+push str.Software__KuaiZip__Install_
 push reloc.WS2_32.dll_accept
 call fcn.004ea470
 add esp, 0xc
 movzx eax, al
 test eax, eax
-jne 0x45194a
-push str.Software_KuaiZip_Install
+jne off.b794
+push str.Software__KuaiZip__Install_
 lea ecx, [ebp-0x180]
 call fcn.004038e0
 mov byte[ebp-4], 6
@@ -223,12 +221,12 @@ mov byte[ebp-4], 9
 lea edx, [ebp-0xec]
 mov dword[ebp-0x9c], edx
 mov dword[ebp-0xf0], 0
-jmp 0x4518b8
+jmp off.b648
 mov eax, dword[ebp-0xf0]
 add eax, 1
 mov dword[ebp-0xf0], eax
 cmp dword[ebp-0xf0], 8
-jae 0x4518f0
+jae off.b704
 mov ecx, dword[ebp-0x9c]
 mov dword[ebp-0x234], ecx
 mov edx, dword[ebp-0x234]
@@ -238,8 +236,8 @@ call fcn.00414910
 mov eax, dword[ebp-0x9c]
 add eax, 1
 mov dword[ebp-0x9c], eax
-jmp 0x4518a9
-push str.FirstInstallTime
+jmp off.b633
+push str.FirstInstallTime_
 lea ecx, [ebp-0x19c]
 call fcn.004038e0
 mov byte[ebp-4], 0xa
@@ -261,7 +259,7 @@ call fcn.004e6e60
 mov byte[ebp-4], 3
 lea ecx, [ebp-0x98]
 call fcn.004e6530
-jmp 0x451b84
+jmp off.b1364
 push 0x542e48
 push 0x4fd774
 lea ecx, [ebp-0x30]
@@ -270,7 +268,7 @@ push eax
 call fcn.00451140
 add esp, 0xc
 push 0x542d8c
-push str.Version
+push str.Version_
 lea ecx, [ebp-0x30]
 call fcn.004e6510
 push eax
@@ -278,7 +276,7 @@ call fcn.00451140
 add esp, 0xc
 lea eax, [ebp-0x2c]
 push eax
-push str.Path
+push str.Path_
 lea ecx, [ebp-0x30]
 call fcn.004e6510
 push eax
@@ -307,7 +305,7 @@ lea ecx, [ebp-0x1b8]
 call fcn.00403090
 lea edx, [ebp-0x94]
 push edx
-push str.InstallDate
+push str.InstallDate_
 lea ecx, [ebp-0x30]
 call fcn.004e6510
 push eax
@@ -322,16 +320,16 @@ push eax
 call fcn.00451140
 add esp, 0xc
 cmp dword[0x542d30], 0
-je 0x451a68
-push str.FirstInstallTime
-push str.Software_KuaiZip_Install
+je off.b1080
+push str.FirstInstallTime_
+push str.Software__KuaiZip__Install_
 push reloc.WS2_32.dll_accept
 call fcn.004ea470
 add esp, 0xc
 movzx ecx, al
 test ecx, ecx
-jne 0x451b84
-push str.Software_KuaiZip_Install
+jne off.b1364
+push str.Software__KuaiZip__Install_
 lea ecx, [ebp-0x1d4]
 call fcn.004038e0
 mov byte[ebp-4], 0xc
@@ -356,12 +354,12 @@ mov byte[ebp-4], 0xf
 lea eax, [ebp-0x144]
 mov dword[ebp-0xf4], eax
 mov dword[ebp-0x148], 0
-jmp 0x451af2
+jmp off.b1218
 mov ecx, dword[ebp-0x148]
 add ecx, 1
 mov dword[ebp-0x148], ecx
 cmp dword[ebp-0x148], 8
-jae 0x451b2a
+jae off.b1274
 mov edx, dword[ebp-0xf4]
 mov dword[ebp-0x240], edx
 mov eax, dword[ebp-0x240]
@@ -371,7 +369,7 @@ call fcn.00414910
 mov ecx, dword[ebp-0xf4]
 add ecx, 1
 mov dword[ebp-0xf4], ecx
-jmp 0x451ae3
+jmp off.b1203
 push str.FirstInstallTime
 lea ecx, [ebp-0x1f0]
 call fcn.004038e0
@@ -391,7 +389,7 @@ call fcn.0040a020
 mov byte[ebp-4], 3
 lea ecx, [ebp-0x138]
 call fcn.004e6e60
-push str.Software_KuaiZipSFX_
+push str.Software__KuaiZipSFX___
 lea ecx, [ebp-0x20c]
 call fcn.004038e0
 mov byte[ebp-4], 0x11
@@ -405,7 +403,7 @@ call fcn.004e6e80
 mov byte[ebp-4], 0x13
 lea ecx, [ebp-0x20c]
 call fcn.00403090
-push str.channelid
+push str.channelid_
 lea ecx, [ebp-0x228]
 call fcn.004038e0
 mov byte[ebp-4], 0x14

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -86,7 +86,7 @@ push dword[ebp+8]
 call fcn.005fc9d6
 mov esi, eax
 test esi, esi
-js 0x5fd15f
+js off.b204
 lea ecx, [ebp-0x10]
 call fcn.00550ed0
 lea edx, [ebp+8]
@@ -96,26 +96,26 @@ mov ecx, dword[eax]
 call dword[ecx+0x1c]
 mov esi, eax
 test esi, esi
-js 0x5fd15f
+js off.b204
 lea eax, [ebp+0xf]
 mov byte[ebp+0xf], 0
 push eax
 call fcn.005fc988
 mov esi, eax
 test esi, esi
-js 0x5fd15f
+js off.b204
 cmp byte[ebp+0xf], 1
-jne 0x5fd130
+jne off.b157
 push str.OLEAUT32.DLL
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 test eax, eax
-je 0x5fd130
+je off.b157
 push str.UnRegisterTypeLibForUser
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov edx, eax
 test edx, edx
-jne 0x5fd136
+jne off.b163
 mov edx, dword[sym.imp.OLEAUT32.dll_VarDecFix]
 mov ecx, dword[ebp+8]
 push dword[ecx+0x14]

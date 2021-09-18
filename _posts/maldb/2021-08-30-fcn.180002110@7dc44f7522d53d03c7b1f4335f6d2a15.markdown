@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,7 +71,7 @@ mov qword[rsp+0x20], rsi
 push rdi
 sub rsp, 0x30
 cmp dword[0x1800169a8], 0
-jne 0x18000212d
+jne off.b29
 call fcn.180003670
 lea rdi, [0x180014860]
 mov r8d, 0x104
@@ -82,9 +82,9 @@ call qword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
 mov rbx, qword[0x1800169b0]
 mov qword[0x180014620], rdi
 test rbx, rbx
-je 0x180002164
+je off.b84
 cmp byte[rbx], 0
-jne 0x180002167
+jne off.b87
 mov rbx, rdi
 lea rax, [rsp+0x48]
 lea r9, [rsp+0x40]
@@ -96,18 +96,18 @@ call fcn.180002204
 movsxd rsi, dword[rsp+0x40]
 movabs rcx, 0x1fffffffffffffff
 cmp rsi, rcx
-jae 0x1800021f0
+jae off.b224
 movsxd rcx, dword[rsp+0x48]
 cmp rcx, 0xffffffffffffffff
-jae 0x1800021f0
+jae off.b224
 lea rdx, [rcx+rsi*8]
 cmp rdx, rcx
-jb 0x1800021f0
+jb off.b224
 mov rcx, rdx
 call fcn.180002d70
 mov rdi, rax
 test rax, rax
-je 0x1800021f0
+je off.b224
 lea r8, [rax+rsi*8]
 lea rax, [rsp+0x48]
 lea r9, [rsp+0x40]
@@ -120,7 +120,7 @@ mov qword[0x180014600], rdi
 dec eax
 mov dword[0x1800145fc], eax
 xor eax, eax
-jmp 0x1800021f3
+jmp off.b227
 or eax, 0xffffffff
 mov rbx, qword[rsp+0x50]
 mov rsi, qword[rsp+0x58]

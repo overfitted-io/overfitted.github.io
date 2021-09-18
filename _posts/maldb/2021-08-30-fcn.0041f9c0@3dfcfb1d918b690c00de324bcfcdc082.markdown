@@ -1,0 +1,151 @@
+---
+layout: post
+title:  "fcn.0041f9c0 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041f9c0
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [150.31517028808594, 462.67120361328125, '<b><a href="/report/fcn.0041f9c0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0041f9c0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'point { fill-color: #e0440e; }'],
+[-281.0455322265625, -740.6227416992188, '<b><a href="/report/fcn.0041e9d0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0041e9d0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
+[-666.7753295898438, 76.61936950683594, '<b><a href="/report/fcn.0041eb60@3dfcfb1d918b690c00de324bcfcdc082">fcn.0041eb60</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
+[536.0442504882812, -354.5721435546875, '<b><a href="/report/fcn.0041faf0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0041faf0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+and esp, 0xfffffff8
+push 0xffffffffffffffff
+push 0x453bcb
+mov eax, dword
+push eax
+push ecx
+mov eax, 0x3494
+call fcn.00450750
+mov eax, dword[0x48800c]
+xor eax, esp
+mov dword[esp+0x3490], eax
+push esi
+mov eax, dword[0x48800c]
+xor eax, esp
+push eax
+lea eax, [esp+0x34a0]
+mov dword
+mov esi, ecx
+mov ecx, dword[0x48a01c]
+push 0xffffffffffffffff
+mov eax, dword[ecx]
+call dword[eax+0x278]
+test eax, eax
+jns off.b178
+mov ecx, dword[0x48a01c]
+push 1
+call dword[sym.imp.FFUILib.dll_public:_bool___thiscall_CPFPicListView::IsHoverItemFile_bool_]
+test al, al
+jne off.b178
+lea eax, [esp+0xc]
+mov dword[esp+0xc], 0
+push eax
+mov dword[esp+0x14], 0
+call dword[sym.imp.USER32.dll_GetCursorPos]
+mov ecx, dword[sym.imp.FTMod.dll_class_CMultiLanguage__gpMultiLanguage]
+lea eax, [esp+0xc]
+push eax
+push dword[0x48c044]
+mov ecx, dword[ecx]
+push 2
+push str.Please_select_a_picture_file
+call dword[sym.imp.FTMod.dll_public:_wchar_t_const____thiscall_CMultiLanguage::TranslateString_wchar_t_const__]
+push eax
+call dword[sym.imp.FFUILib.dll_void___cdecl_PopupNotifyWnd_wchar_t_const___int__struct_HICON_____class_CPoint__]
+add esp, 0x10
+jmp off.b257
+push ecx
+lea ecx, [esp+0x18]
+call fcn.00409470
+lea ecx, [esp+0x14]
+mov dword[esp+0x34a8], 0
+call dword[sym.imp.BCGCBPRO2500u120.dll_public_virtual:_int___thiscall_CBCGPDialog::DoModal_void_]
+cmp eax, 1
+jne off.b237
+call fcn.0041e160
+test al, al
+je off.b237
+push 0
+push 0x4376a0
+mov ecx, esi
+call fcn.0041e560
+lea ecx, [esp+0x14]
+mov dword[esp+0x34a8], 0xffffffff
+call fcn.00409610
+mov ecx, dword[esp+0x34a0]
+mov dword
+pop ecx
+pop esi
+mov ecx, dword[esp+0x3490]
+xor ecx, esp
+call fcn.0044e61f
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

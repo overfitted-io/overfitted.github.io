@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [156.60421752929688, -202.92454528808594, '<b><a href="/report/fcn.0040d6e0@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.0040d6e0</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'point { fill-color: #e0440e; }'],
-[-55.703025817871094, -217.38967895507812, '<b><a href="/report/fcn.0040d6e0@152885a790b99953ce23874f0947b7bd">fcn.0040d6e0</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[37.922935485839844, -26.295150756835938, '<b><a href="/report/fcn.0040d6e0@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.0040d6e0</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0040d6e0@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.0040d6e0</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -108,16 +106,16 @@ call fcn.00404b49
 push eax
 call dword[sym.imp.WS2_32.dll_getaddrinfo]
 test eax, eax
-jne 0x40db71
+jne off.b1169
 cmp dword[ebp-0x438], eax
-je 0x40db71
+je off.b1169
 push eax
 push ebx
 push 2
 call dword[sym.imp.WS2_32.dll_socket]
 mov dword[ebp-0x444], eax
 cmp eax, 0xffffffff
-je 0x40db71
+je off.b1169
 mov esi, dword[ebp-0x438]
 lea edi, [ebp-0x424]
 lea ecx, [ebp-0x440]
@@ -133,7 +131,7 @@ call fcn.0040e3d4
 mov esi, dword[ebp-0x430]
 mov byte[ebp-4], 2
 test esi, esi
-je 0x40d859
+je off.b377
 push esi
 call dword[sym.imp.KERNEL32.dll_lstrlenA]
 push eax
@@ -160,15 +158,15 @@ mov ecx, eax
 mov dword[ebp-0x428], ebx
 call fcn.00404b49
 mov dword[ebp-0x430], eax
-jmp 0x40d863
+jmp off.b387
 mov dword[ebp-0x430], 0x4a3288
 test esi, esi
-je 0x40d8c9
+je off.b489
 mov edi, dword[ebp-0x458]
 mov ecx, edi
 call fcn.0040e35e
 test al, al
-jne 0x40d8c9
+jne off.b489
 push edi
 mov edx, str.Content_Type:_
 lea ecx, [ebp-0x478]
@@ -187,7 +185,7 @@ mov ecx, eax
 mov dword[ebp-0x428], ebx
 call fcn.00404b49
 mov edi, eax
-jmp 0x40d8ce
+jmp off.b494
 mov edi, 0x4a3288
 push dword[ebp-0x434]
 mov eax, str.POST_http:__
@@ -253,32 +251,32 @@ call fcn.0040e39e
 lea ecx, [ebp-0x4ac]
 call fcn.0040e39e
 test bl, 0x10
-je 0x40da0e
+je off.b814
 and ebx, 0xffffffef
 lea ecx, [ebp-0x470]
 mov dword[ebp-0x428], ebx
 call fcn.0040e39e
 test bl, 8
-je 0x40da27
+je off.b839
 and ebx, 0xfffffff7
 lea ecx, [ebp-0x478]
 mov dword[ebp-0x428], ebx
 call fcn.0040e39e
 test bl, 4
-je 0x40da40
+je off.b864
 and ebx, 0xfffffffb
 lea ecx, [ebp-0x488]
 mov dword[ebp-0x428], ebx
 call fcn.0040e39e
 mov dword[ebp-4], 2
 test bl, 2
-je 0x40da60
+je off.b896
 and ebx, 0xfffffffd
 lea ecx, [ebp-0x454]
 mov dword[ebp-0x428], ebx
 call fcn.0040e39e
 test esi, esi
-je 0x40da70
+je off.b912
 push esi
 lea ecx, [ebp-0x440]
 call fcn.0040de59
@@ -289,7 +287,7 @@ push eax
 push ebx
 call dword[sym.imp.WS2_32.dll_connect]
 test eax, eax
-jne 0x40db4c
+jne off.b1132
 push eax
 lea ecx, [ebp-0x440]
 call fcn.004058f1
@@ -300,7 +298,7 @@ push eax
 push ebx
 call dword[sym.imp.WS2_32.dll_send]
 test eax, eax
-jle 0x40db4c
+jle off.b1132
 mov edi, dword[sym.imp.WS2_32.dll_recv]
 lea eax, [ebp-0x414]
 push 0
@@ -310,9 +308,9 @@ push ebx
 call edi
 mov esi, dword[ebp-0x42c]
 cmp eax, 0xffffffff
-je 0x40db1d
+je off.b1085
 test eax, eax
-je 0x40db52
+je off.b1138
 push eax
 lea eax, [ebp-0x414]
 push eax
@@ -331,7 +329,7 @@ lea eax, [ebp-0x414]
 push eax
 push ebx
 call edi
-jmp 0x40dad3
+jmp off.b1011
 push 0x4a3288
 lea ecx, [ebp-0x448]
 call fcn.0040de39
@@ -342,7 +340,7 @@ mov ecx, esi
 call fcn.0040e369
 lea ecx, [ebp-0x448]
 call fcn.0040e39e
-jmp 0x40db52
+jmp off.b1138
 mov esi, dword[ebp-0x42c]
 push ebx
 call dword[sym.imp.WS2_32.dll_closesocket]
@@ -350,7 +348,7 @@ lea ecx, [ebp-0x460]
 call fcn.0040e39e
 lea ecx, [ebp-0x440]
 call fcn.0040e39e
-jmp 0x40db77
+jmp off.b1175
 mov esi, dword[ebp-0x42c]
 mov eax, esi
 call fcn.00481de7

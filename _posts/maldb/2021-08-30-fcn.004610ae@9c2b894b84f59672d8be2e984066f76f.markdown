@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-915.3431396484375, -238.46568298339844, '<b><a href="/report/fcn.004610ae@9c2b894b84f59672d8be2e984066f76f">fcn.004610ae</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
-[915.3431396484375, 238.46580505371094, '<b><a href="/report/fcn.10038142@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10038142</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004610ae@9c2b894b84f59672d8be2e984066f76f">fcn.004610ae</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -74,11 +73,11 @@ mov ebx, ecx
 mov esi, dword[ebp+8]
 xor edi, edi
 cmp dword[ebx+0x28], edi
-je 0x4610d0
+je off.b34
 xor eax, eax
-jmp 0x461324
+jmp off.b630
 test esi, esi
-jne 0x4610d9
+jne off.b43
 call fcn.0040f785
 lea eax, [ebx+0x8c]
 push eax
@@ -92,26 +91,26 @@ lea ecx, [ebp-0xa2c]
 mov dword[ebp-4], edi
 call fcn.0041c795
 cmp eax, 0xffffffff
-jne 0x4611de
+jne off.b304
 push edi
 push 0x58e4cc
 lea ecx, [ebp-0xa2c]
 call fcn.0041c795
 cmp eax, 0xffffffff
-jne 0x4611de
+jne off.b304
 push edi
 push 0x586c6c
 lea ecx, [ebp-0xa2c]
 call fcn.0041c795
 cmp eax, 0xffffffff
-jne 0x4611de
+jne off.b304
 push 0x104
 lea eax, [ebp-0x820]
 push eax
 push edi
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 test eax, eax
-je 0x4611de
+je off.b304
 push edi
 push edi
 push edi
@@ -158,7 +157,7 @@ lea ecx, [ebp-0xa2c]
 push eax
 call fcn.00404480
 cmp dword[ebp+0xc], 0
-jbe 0x461228
+jbe off.b378
 push edi
 push edi
 push 3
@@ -169,7 +168,7 @@ push esi
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov edi, eax
 cmp edi, 0xffffffff
-je 0x461228
+je off.b378
 push 0
 push edi
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
@@ -177,11 +176,11 @@ push edi
 mov esi, eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 cmp esi, dword[ebp+0xc]
-jbe 0x461228
+jbe off.b378
 mov ecx, dword[ebp-0xa2c]
 lea ecx, [ecx-0x10]
 call fcn.00404980
-jmp 0x4610c9
+jmp off.b27
 mov edi, dword[ebx+0x34]
 mov esi, dword[ebp-0xa2c]
 neg edi
@@ -201,18 +200,18 @@ call dword[sym.imp.USER32.dll_LoadImageW]
 lea esi, [ebx+0x8c]
 mov dword[esi], eax
 test eax, eax
-je 0x461215
+je off.b359
 lea ecx, [ebp-0xa44]
 push ecx
 push 0x18
 push eax
 call dword[sym.imp.GDI32.dll_GetObjectW]
 test eax, eax
-jne 0x461283
+jne off.b469
 push dword[esi]
 call dword[sym.imp.GDI32.dll_DeleteObject]
 mov dword[esi], edi
-jmp 0x461215
+jmp off.b359
 lea eax, [ebp-0xa2c]
 mov dword[ebx+0x18], 1
 push eax
@@ -221,7 +220,7 @@ call fcn.004093c0
 push dword[ebp-0xa2c]
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
 test al, 1
-je 0x4612b3
+je off.b517
 mov dword[ebx+0x24], 1
 mov ax, word[ebp-0xa32]
 movzx ecx, ax
@@ -229,9 +228,9 @@ mov dword[ebx+8], ecx
 push 0x20
 pop edx
 cmp ecx, 8
-jle 0x4612e1
+jle off.b563
 cmp ecx, edx
-jge 0x4612e1
+jge off.b563
 push 0xffffffffffffffff
 push 0xffffffffffffffff
 push edi
@@ -241,7 +240,7 @@ mov ax, word[ebp-0xa32]
 push 0x20
 pop edx
 cmp ax, dx
-jb 0x4612f0
+jb off.b578
 push dword[ebx+0x3c]
 push dword[esi]
 call fcn.0046222e

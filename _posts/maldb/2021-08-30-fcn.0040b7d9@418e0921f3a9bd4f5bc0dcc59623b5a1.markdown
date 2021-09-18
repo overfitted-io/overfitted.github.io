@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.18898940852142285</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.037379385765282123</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,21 +72,21 @@ mov ebp, esp
 push ecx
 and dword[ebp-4], 0
 push esi
-push str.IsWow64Process
-push str.kernel32
+push str.IsWow64Process_
+push str.kernel32_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov esi, eax
 test esi, esi
-je 0x40b813
+je off.b58
 lea eax, [ebp-4]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call esi
 test eax, eax
-jne 0x40b813
+jne off.b58
 and dword[ebp-4], eax
 mov eax, dword[ebp-4]
 pop esi

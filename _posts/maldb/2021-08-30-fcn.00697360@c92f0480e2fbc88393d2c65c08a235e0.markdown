@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -77,19 +77,18 @@ mov ebx, eax
 sub esp, 0x1c
 mov ecx, dword[eax+0x34]
 test ecx, ecx
-je 0x697440
+je off.b224
 mov eax, dword[ebx+0x10]
 mov dword[ebx+0xa4], 9
 mov byte[ebx+0x9d], 1
 mov dword[esp+0xc], ebp
 mov dword[esp+8], esi
-mov dword[esp+4], str.Error_processing_request_(HTTP_response_code_is__u_(`_s'))._Closing_connection.
-
+mov dword[esp+4], str.Error_processing_request_(HTTP_response_code_is__u_(`_s_))._Closing_connection._n_
 mov dword[esp], eax
 call fcn.0069df20
 mov eax, dword[ebx+0x1c]
 test eax, eax
-je 0x6973ba
+je off.b90
 mov dword[esp], eax
 call sym.xmrig.exe_MHD_destroy_response
 mov dword[ebx+0x1c], 0
@@ -100,7 +99,7 @@ lea eax, [edi-0x1010101]
 not edi
 and eax, edi
 and eax, 0x80808080
-je 0x6973bc
+je off.b92
 mov ecx, eax
 mov dword[esp+8], 0
 mov dword[esp+4], ebp
@@ -117,17 +116,17 @@ mov dword[esp], edx
 call sym.xmrig.exe_MHD_create_response_from_buffer
 test eax, eax
 mov edi, eax
-je 0x697413
+je off.b179
 mov edx, dword[ebx+0x1c]
 test edx, edx
-je 0x6974e0
+je off.b384
 mov dword[esp], edi
 call sym.xmrig.exe_MHD_destroy_response
 mov dword[ebx+0x38], 0xffffffff
 mov eax, ebx
 call fcn.00692af0
 test eax, eax
-je 0x697450
+je off.b240
 mov dword[ebx+0xa4], 0xa
 add esp, 0x1c
 pop ebx
@@ -136,10 +135,9 @@ pop edi
 pop ebp
 ret
 mov dword[eax+0x34], str.HTTP_1.0
-jmp 0x697378
+jmp off.b24
 mov eax, dword[ebx+0x10]
-mov dword[esp+4], str.Closing_connection_(failed_to_create_response_header)
-
+mov dword[esp+4], str.Closing_connection_(failed_to_create_response_header)_n_
 mov dword[esp], eax
 call fcn.0069df20
 mov esi, dword[ebx+0x10]
@@ -147,17 +145,17 @@ mov dword[ebx+0xa4], 0x13
 mov dword[ebx+0xa8], 3
 mov edi, dword[ebx+0x1c]
 test byte[esi+0xdd], 0x10
-je 0x697540
+je off.b480
 test edi, edi
-je 0x69749d
+je off.b317
 mov dword[ebx+0x1c], 0
 mov dword[esp], edi
 call sym.xmrig.exe_MHD_destroy_response
 mov eax, dword[esi+0x38]
 test eax, eax
-je 0x6974c8
+je off.b360
 cmp byte[ebx+0x94], 0
-je 0x6974c8
+je off.b360
 lea edx, [ebx+0x24]
 mov dword[esp+0xc], 1
 mov dword[esp+4], ebx
@@ -174,84 +172,84 @@ pop ebp
 ret
 mov eax, dword[ebx+0xa4]
 cmp eax, 4
-je 0x6974f4
+je off.b404
 cmp eax, 9
-jne 0x697413
+jne off.b179
 mov ebp, dword[ebx+0x10]
 movzx eax, byte[ebp+0xc4]
 test al, al
-jne 0x697413
+jne off.b179
 cmp byte[ebx+0xd4], 0
-jne 0x697560
+jne off.b512
 test byte[ebp+0xdc], 8
-je 0x697560
+je off.b512
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 cmp eax, dword[ebx+0x54]
-je 0x697560
+je off.b512
 mov dword[esp+4], str.Attempted_to_queue_response_on_wrong_thread__n
 mov dword[esp], ebp
 call fcn.0069df20
-jmp 0x697413
+jmp off.b179
 mov eax, dword[ebx+0x98]
 mov dword[esp+4], 1
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_shutdown]
 sub esp, 8
-jmp 0x69748a
+jmp off.b298
 mov eax, dword[edi+0x14]
 test eax, eax
-je 0x697585
+je off.b549
 test byte[ebp+0xdd], 0x80
-je 0x6975e0
+je off.b640
 mov dword[esp+4], str.Application_used_invalid_status_code_for_upgrade_response__n
 mov dword[esp], ebp
 call fcn.0069df20
-jmp 0x697413
+jmp off.b179
 mov dword[esp], edi
 call fcn.006a0a60
 mov eax, dword[ebx+0x2c]
 mov dword[ebx+0x1c], edi
 mov dword[ebx+0xac], esi
 test eax, eax
-je 0x6975c6
+je off.b614
 mov dword[esp+4], str.HEAD
 mov dword[esp], eax
 call fcn.0069e770
 test eax, eax
-je 0x6975bd
+je off.b605
 mov eax, dword[edi+0x38]
 mov edx, dword[edi+0x3c]
 mov dword[ebx+0x78], eax
 mov dword[ebx+0x7c], edx
 cmp dword[ebx+0xa4], 4
-je 0x6975f5
+je off.b661
 cmp byte[ebx+0x9f], 0
-jne 0x697413
+jne off.b179
 mov dword[esp], ebx
 call fcn.00694d80
-jmp 0x697413
+jmp off.b179
 mov dword[esp+4], str.Attempted_upgrade_connection_on_daemon_without_MHD_ALLOW_UPGRADE_option__n
 mov dword[esp], ebp
 call fcn.0069df20
-jmp 0x697413
+jmp off.b179
 mov eax, dword[ebx+0x2c]
 test eax, eax
-je 0x6975c6
+je off.b614
 mov dword[esp+4], str.POST
 mov dword[esp], eax
 call fcn.0069e770
 test eax, eax
-je 0x697623
+je off.b707
 mov byte[ebx+0x9d], 1
 mov dword[ebx+0xa4], 9
-jmp 0x6975c6
+jmp off.b614
 mov eax, dword[ebx+0x2c]
 mov dword[esp+4], 0x7b8c6c
 mov dword[esp], eax
 call fcn.0069e770
 test eax, eax
-jne 0x697610
-jmp 0x6975c6
+jne off.b688
+jmp off.b614
 
 {% endhighlight %}
 

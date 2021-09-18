@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,8 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [3002.467529296875, 2121.3740234375, '<b><a href="/report/entry0@6c8b5339bada4cbd03f0f446da640707">entry0</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
-[-3002.467529296875, -2121.3740234375, '<b><a href="/report/entry0@e7582fc3dadb394a1457ab7e7fbbe9a7">entry0</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/entry0@6c8b5339bada4cbd03f0f446da640707">entry0</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -78,7 +77,7 @@ push 0x20
 xor ebx, ebx
 pop esi
 mov dword[esp+0x18], ebx
-mov dword[esp+0x10], str.Error_writing_temporary_file._Make_sure_your_temp_folder_is_valid.
+mov dword[esp+0x10], str.Error_writing_temporary_file._Make_sure_your_temp_folder_is_valid._
 mov dword[esp+0x14], ebx
 call dword[sym.imp.KERNEL32.dll_GetTickCount]
 mov dword[esp+0x1c], eax
@@ -111,7 +110,7 @@ call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 cmp word[0x4c40a0], 0x22
 mov dword[0x473dd8], eax
 mov eax, edi
-jne 0x403ab4
+jne off.b170
 push 0x22
 pop esi
 mov eax, 0x4c40a2
@@ -122,32 +121,32 @@ push eax
 call dword[sym.imp.USER32.dll_CharNextW]
 mov esi, eax
 mov dword[esp+0x20], esi
-jmp 0x403b59
+jmp off.b335
 push 0x20
 pop ebp
 cmp ax, bp
-jne 0x403adc
+jne off.b210
 inc esi
 inc esi
 cmp word[esi], bp
-je 0x403ad5
+je off.b203
 cmp word[esi], 0x22
-jne 0x403ae7
+jne off.b221
 inc esi
 push 0x22
 inc esi
 pop ebp
 cmp word[esi], 0x2f
-jne 0x403b48
+jne off.b318
 inc esi
 inc esi
 cmp word[esi], 0x53
-jne 0x403b09
+jne off.b255
 movzx eax, word[esi+2]
 cmp ax, 0x20
-je 0x403b04
+je off.b250
 cmp ax, bx
-jne 0x403b09
+jne off.b255
 or dword[esp+0x14], 2
 push 4
 push str.NCRC
@@ -155,12 +154,12 @@ push esi
 call fcn.00403971
 add esp, 0xc
 test eax, eax
-jne 0x403b31
+jne off.b295
 movzx eax, word[esi+8]
 cmp ax, 0x20
-je 0x403b2c
+je off.b290
 cmp ax, bx
-jne 0x403b31
+jne off.b295
 or dword[esp+0x14], 4
 push 4
 lea eax, [esi-4]
@@ -169,19 +168,19 @@ push eax
 call fcn.00403971
 add esp, 0xc
 test eax, eax
-je 0x403b67
+je off.b349
 push ebp
 push esi
 call fcn.00405e8e
 mov esi, eax
 cmp word[esi], 0x22
-jne 0x403b59
+jne off.b335
 inc esi
 inc esi
 movzx eax, word[esi]
 cmp ax, bx
-jne 0x403acd
-jmp 0x403b84
+jne off.b195
+jmp off.b378
 push 8
 lea eax, [esi-4]
 push ebx
@@ -198,7 +197,7 @@ push 0x2004
 call dword[sym.imp.KERNEL32.dll_GetTempPathW]
 call fcn.0040393d
 test eax, eax
-jne 0x403bc2
+jne off.b440
 push 0x1fff
 push ebp
 call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryW]
@@ -207,41 +206,41 @@ push ebp
 call sub.KERNEL32.dll_lstrcatW
 call fcn.0040393d
 test eax, eax
-je 0x403c76
+je off.b620
 push 0x4d40c0
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 push dword[esp+0x14]
 call fcn.004036a2
 cmp eax, ebx
 mov dword[esp+0x10], eax
-jne 0x403c76
+jne off.b620
 cmp dword[0x473e24], ebx
-je 0x403c49
+je off.b575
 push ebx
 push edi
 call fcn.00405e8e
 mov esi, eax
-jmp 0x403c0b
+jmp off.b513
 push 4
-push str.__?=
+push str.__?=_
 push esi
 call fcn.00403971
 add esp, 0xc
 test eax, eax
-je 0x403c0f
+je off.b517
 dec esi
 dec esi
 cmp esi, edi
-jae 0x403bf5
+jae off.b491
 cmp esi, edi
-mov dword[esp+0x10], str.Error_launching_installer
-jb 0x403ca1
+mov dword[esp+0x10], str.Error_launching_installer_
+jb off.b663
 mov word[esi], bx
 add esi, 8
 push esi
 call fcn.004068fa
 test eax, eax
-je 0x403c76
+je off.b620
 push esi
 push 0x4c80a8
 call fcn.0040618f
@@ -264,7 +263,7 @@ call fcn.0040626d
 call fcn.004039c8
 call dword[sym.imp.ole32.dll_OleUninitialize]
 cmp dword[esp+0x10], ebx
-je 0x403d78
+je off.b878
 push 0x200010
 push dword[esp+0x14]
 call fcn.00405e2a
@@ -278,14 +277,14 @@ push esi
 push ebp
 call dword[sym.imp.KERNEL32.dll_lstrcmpiW]
 test eax, eax
-je 0x403c76
+je off.b620
 push ebx
 push ebp
 call dword[sym.imp.KERNEL32.dll_CreateDirectoryW]
 push ebp
 call dword[sym.imp.KERNEL32.dll_SetCurrentDirectoryW]
 cmp word[0x4c80a8], bx
-jne 0x403ce0
+jne off.b726
 push esi
 push 0x4c80a8
 call fcn.0040618f
@@ -305,13 +304,13 @@ call fcn.00406982
 push esi
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 cmp dword[esp+0x10], ebx
-je 0x403d62
+je off.b856
 push 1
 push esi
 push 0x4e00d8
 call dword[sym.imp.KERNEL32.dll_CopyFileW]
 test eax, eax
-je 0x403d62
+je off.b856
 push ebx
 push esi
 call fcn.00406dde
@@ -322,19 +321,19 @@ call fcn.00406982
 push esi
 call fcn.00405dc9
 cmp eax, ebx
-je 0x403d62
+je off.b856
 push eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov dword[esp+0x10], ebx
 inc word[0x478008]
 dec edi
-jne 0x403d05
+jne off.b763
 push ebx
 push ebp
 call fcn.00406dde
-jmp 0x403c76
+jmp off.b620
 cmp dword[0x473e94], ebx
-je 0x403dfb
+je off.b1009
 push 3
 call fcn.00406482
 push 4
@@ -345,11 +344,11 @@ mov esi, eax
 call fcn.00406482
 cmp ebp, ebx
 mov edi, eax
-je 0x403de7
+je off.b989
 cmp esi, ebx
-je 0x403de7
+je off.b989
 cmp edi, ebx
-je 0x403de7
+je off.b989
 lea eax, [esp+0x1c]
 push eax
 push 0x28
@@ -357,7 +356,7 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call ebp
 test eax, eax
-je 0x403de7
+je off.b989
 lea eax, [esp+0x28]
 push eax
 push str.SeShutdownPrivilege
@@ -377,15 +376,15 @@ push ebx
 push 2
 call dword[sym.imp.USER32.dll_ExitWindowsEx]
 test eax, eax
-jne 0x403dfb
+jne off.b1009
 push 9
 call fcn.00401414
 mov eax, dword[0x473eac]
 cmp eax, 0xffffffff
-je 0x403e09
+je off.b1023
 mov dword[esp+0x18], eax
 push dword[esp+0x18]
-jmp 0x403c9b
+jmp off.b657
 
 {% endhighlight %}
 

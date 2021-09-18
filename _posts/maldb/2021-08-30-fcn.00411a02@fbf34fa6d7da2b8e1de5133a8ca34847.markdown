@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,7 +71,7 @@ cmp dword[0x417658], 0
 push ebx
 push esi
 mov esi, 0x417660
-jne 0x411a2e
+jne off.b44
 call dword[sym.imp.KERNEL32.dll_TlsAlloc]
 push esi
 mov dword[0x417678], eax
@@ -81,19 +81,19 @@ push dword[0x417678]
 call dword[sym.imp.KERNEL32.dll_TlsGetValue]
 mov ebx, eax
 test ebx, ebx
-jne 0x411acb
+jne off.b201
 push 0x14
 push 8
 push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapAlloc]
 mov ebx, eax
 test ebx, ebx
-je 0x411af5
+je off.b243
 push esi
 call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
 mov eax, dword[0x41765c]
 test eax, eax
-je 0x411a70
+je off.b110
 mov dword[eax], ebx
 push edi
 push esi
@@ -116,7 +116,7 @@ call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
 push 8
 push 0xffffffffffffffff
 push ebx
-push 0x411afa
+push off.b248
 push dword[edi]
 lea eax, [ebx+0xc]
 push eax
@@ -130,7 +130,7 @@ push 0
 push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapAlloc]
 test eax, eax
-je 0x411af5
+je off.b243
 mov ecx, dword[esp+0xc]
 mov dword[eax+4], ecx
 mov ecx, dword[esp+0x10]

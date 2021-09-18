@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,16 +76,16 @@ push edi
 mov edi, dword[ebp+8]
 mov ebx, ecx
 test edi, edi
-jne 0x4616f7
+jne off.b25
 cmp byte[ebx+9], 0
-je 0x4617cf
+je off.b241
 and dword[ebp+8], 0
 and dword[ebp-4], 0
 push esi
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 cmp byte[ebp+0xc], 0
 mov esi, eax
-je 0x461799
+je off.b187
 push 0
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 push eax
@@ -97,7 +97,7 @@ mov dword[0x4c7f04], eax
 call dword[sym.imp.USER32.dll_AttachThreadInput]
 mov dword[ebp+0xc], eax
 test edi, edi
-je 0x46176f
+je off.b145
 lea eax, [ebp-4]
 push eax
 push edi
@@ -105,7 +105,7 @@ call dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
 mov ecx, dword[0x4c7f04]
 mov dword[0x4c7f08], eax
 cmp ecx, eax
-je 0x461763
+je off.b133
 push 1
 push eax
 push ecx
@@ -116,24 +116,24 @@ push 1
 push eax
 push esi
 call dword[sym.imp.USER32.dll_AttachThreadInput]
-jmp 0x461772
+jmp off.b148
 mov eax, dword[ebp-4]
 cmp dword[ebp+0xc], 0
-jne 0x4617ce
+jne off.b240
 cmp dword[ebp+8], 0
-jne 0x4617ce
+jne off.b240
 test eax, eax
-jne 0x4617ce
+jne off.b240
 mov eax, dword[0x4c7f04]
 cmp esi, eax
-jne 0x4617ce
+jne off.b240
 cmp eax, dword[0x4c7f08]
-jne 0x4617ce
+jne off.b240
 and dword[ebx+0x20], 0
-jmp 0x4617ce
+jmp off.b240
 test edi, edi
 mov edi, dword[sym.imp.USER32.dll_AttachThreadInput]
-je 0x4617c3
+je off.b229
 push 0
 push dword[0x4c7f08]
 push esi
@@ -141,7 +141,7 @@ call edi
 mov eax, dword[0x4c7f04]
 mov ecx, dword[0x4c7f08]
 cmp eax, ecx
-je 0x4617c8
+je off.b234
 push 0
 push ecx
 push eax

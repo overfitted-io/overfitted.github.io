@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -81,7 +81,7 @@ mov dword[ebp-0x18], eax
 call fcn.004bd917
 cmp dword[esi+0x40], 0
 mov ebx, dword[eax+0xc]
-je 0x4b4c49
+je off.b77
 call fcn.004bd917
 mov ebx, dword[eax+0xc]
 push 5
@@ -93,14 +93,14 @@ push ebx
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 mov edi, eax
 test edi, edi
-je 0x4b4c57
+je off.b91
 push edi
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov dword[ebp-0x18], eax
 cmp dword[ebp-0x18], 0
-jne 0x4b4c65
+jne off.b105
 or eax, 0xffffffff
-jmp 0x4b4d4d
+jmp off.b337
 mov ecx, esi
 call fcn.004b4b80
 mov dword[ebp-0x14], eax
@@ -108,11 +108,11 @@ call fcn.004b5a3b
 xor edi, edi
 cmp dword[ebp-0x14], edi
 mov dword[ebp-0x20], edi
-je 0x4b4c9c
+je off.b160
 push dword[ebp-0x14]
 call dword[sym.imp.USER32.dll_IsWindowEnabled]
 test eax, eax
-je 0x4b4c9c
+je off.b160
 push edi
 push dword[ebp-0x14]
 call dword[sym.imp.USER32.dll_EnableWindow]
@@ -128,22 +128,22 @@ push dword[ebp-0x18]
 mov ecx, esi
 call fcn.004b4918
 cmp eax, edi
-je 0x4b4d0f
+je off.b275
 test byte[esi+0x24], 0x10
-je 0x4b4cdd
+je off.b225
 push 4
 mov ecx, esi
 pop ebx
 call fcn.004b7e97
 test ah, 1
-je 0x4b4cd5
+je off.b217
 push 5
 pop ebx
 push ebx
 mov ecx, esi
 call fcn.004b783c
 cmp dword[esi+0x1c], edi
-je 0x4b4d0f
+je off.b275
 push 0x97
 push edi
 push edi
@@ -152,18 +152,18 @@ push edi
 push edi
 mov ecx, esi
 call fcn.004b7fb0
-jmp 0x4b4d0f
+jmp off.b275
 or dword[ebp-4], 0xffffffff
 cmp dword[ebp-0x20], edi
-je 0x4b4d23
+je off.b295
 push 1
 push dword[ebp-0x14]
 call dword[sym.imp.USER32.dll_EnableWindow]
 cmp dword[ebp-0x14], edi
-je 0x4b4d3c
+je off.b320
 call dword[sym.imp.USER32.dll_GetActiveWindow]
 cmp eax, dword[esi+0x1c]
-jne 0x4b4d3c
+jne off.b320
 push dword[ebp-0x14]
 call dword[sym.imp.USER32.dll_SetActiveWindow]
 mov eax, dword[esi]

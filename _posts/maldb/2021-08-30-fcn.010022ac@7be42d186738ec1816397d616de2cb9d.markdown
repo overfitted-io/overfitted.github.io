@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.12929129882777868</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,7 +80,7 @@ mov edi, dword[ebp+0x10]
 mov byte[esi], 0
 cmp byte[edi], 0x23
 mov dword[ebp-4], eax
-jne 0x10023dc
+jne off.b304
 inc edi
 movsx eax, byte[edi]
 push eax
@@ -93,9 +93,9 @@ push eax
 call edi
 cmp bl, 0x53
 mov edi, eax
-je 0x10023dc
+je off.b304
 cmp bl, 0x57
-je 0x10023d0
+je off.b292
 push 0x10012b4
 lea eax, [ebp-0x108]
 mov ebx, 0x104
@@ -116,7 +116,7 @@ push eax
 push 0x80000002
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x10023ef
+jne off.b323
 lea eax, [ebp-0x118]
 push eax
 push esi
@@ -127,37 +127,37 @@ push 0x1001271
 push dword[ebp-0x110]
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 test eax, eax
-jne 0x10023c2
+jne off.b278
 cmp dword[ebp-0x114], 2
-jne 0x10023af
+jne off.b259
 push ebx
 lea eax, [ebp-0x108]
 push eax
 push esi
 call dword[sym.imp.KERNEL32.dll_ExpandEnvironmentStringsA]
 test eax, eax
-je 0x10023af
+je off.b259
 lea eax, [ebp-0x108]
 push eax
 push dword[ebp+0xc]
 push esi
 call fcn.010021c4
-jmp 0x10023b8
+jmp off.b268
 cmp dword[ebp-0x114], 1
-jne 0x10023c2
+jne off.b278
 mov dword[ebp-0x10c], 1
 push dword[ebp-0x110]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
-jmp 0x10023e6
+jmp off.b314
 push dword[ebp+0xc]
 push esi
 call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
-jmp 0x10023ef
+jmp off.b323
 push dword[ebp+0xc]
 push esi
 call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
 cmp dword[ebp-0x10c], 0
-jne 0x10023f9
+jne off.b333
 push edi
 push dword[ebp+0xc]
 push esi

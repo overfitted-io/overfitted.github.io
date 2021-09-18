@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="LINKING">LINKING</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.04197236447998772</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +34,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-39.739959716796875, 181.71665954589844, '<b><a href="/report/fcn.00403602@a2475448bf4050c1583e1970984a4d00">fcn.00403602</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
-[-51.32894515991211, -78.52387237548828, '<b><a href="/report/fcn.004130c2@7b00dd8f2abf54a73bfb09681334ff78">fcn.004130c2</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[70.04969787597656, 111.63809967041016, '<b><a href="/report/fcn.0055c1e4@c60344b51fa39a329b92557d24ff7670">fcn.0055c1e4</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-45.53519821166992, 51.59542465209961, '<b><a href="/report/fcn.1000d0a7@481b545f5c18f2fce1caac67ddc419e8">fcn.1000d0a7</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-161.121337890625, -8.447710037231445, '<b><a href="/report/fcn.00401930@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.00401930</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>', 'null'],
-[-155.32455444335938, 121.67400360107422, '<b><a href="/report/fcn.00403033@59aef7c08025d70f84c85db2092fc99e">fcn.00403033</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[64.2567138671875, -18.482276916503906, '<b><a href="/report/fcn.004a1fcc@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004a1fcc</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
+    [-18.621044158935547, 28.83177947998047, '<b><a href="/report/fcn.00403602@a2475448bf4050c1583e1970984a4d00">fcn.00403602</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
+[18.621044158935547, -28.83177947998047, '<b><a href="/report/fcn.004a1fcc@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004a1fcc</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
 
         ]);
 
@@ -77,57 +73,57 @@ xor ebx, ebx
 cmp dword[0x418348], ebx
 push esi
 push edi
-je 0x40361f
+je off.b29
 xor eax, eax
 cmp dword[0x418340], ebx
 setne al
-jmp 0x4036d6
+jmp off.b212
 push str.USER32
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 mov edi, eax
 cmp edi, ebx
-je 0x4036a6
+je off.b164
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
-push str.GetSystemMetrics
+push str.GetSystemMetrics_
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x418330], eax
-je 0x4036a6
+je off.b164
 push str.MonitorFromWindow
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x418334], eax
-je 0x4036a6
+je off.b164
 push str.MonitorFromRect
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x418338], eax
-je 0x4036a6
+je off.b164
 push str.MonitorFromPoint
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x41833c], eax
-je 0x4036a6
+je off.b164
 push str.EnumDisplayMonitors
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x418344], eax
-je 0x4036a6
+je off.b164
 push str.GetMonitorInfoA
 push edi
 call esi
 cmp eax, ebx
 mov dword[0x418340], eax
-je 0x4036a6
+je off.b164
 push 1
 pop eax
 mov dword[0x418348], eax
-jmp 0x4036d6
+jmp off.b212
 mov dword[0x418330], ebx
 mov dword[0x418334], ebx
 mov dword[0x418338], ebx

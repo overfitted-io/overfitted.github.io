@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -122,7 +122,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_FindFirstFileW]
 mov dword[ebp-0x270], eax
 cmp dword[ebp-0x270], 0xffffffff
-je 0x42e5e3
+je off.b595
 lea ecx, [ebp-0x26c]
 push ecx
 mov edx, dword[ebp-0x270]
@@ -130,26 +130,26 @@ push edx
 call dword[sym.imp.KERNEL32.dll_FindNextFileW]
 mov dword[ebp-0x18], eax
 cmp dword[ebp-0x18], 0
-jne 0x42e49c
-jmp 0x42e5e3
+jne off.b268
+jmp off.b595
 movzx eax, word[ebp-0x240]
 cmp eax, 0x2e
-jne 0x42e4aa
-jmp 0x42e46d
+jne off.b282
+jmp off.b221
 movzx ecx, word[ebp-0x23e]
 test ecx, ecx
-jne 0x42e4b7
-jmp 0x42e46d
+jne off.b295
+jmp off.b221
 movzx edx, word[ebp-0x23e]
 cmp edx, 0x2e
-jne 0x42e4d0
+jne off.b320
 movzx eax, word[ebp-0x23c]
 test eax, eax
-jne 0x42e4d0
-jmp 0x42e46d
+jne off.b320
+jmp off.b221
 mov ecx, dword[ebp-0x26c]
 and ecx, 0x10
-je 0x42e586
+je off.b502
 push 0x4f9880
 lea ecx, [ebp-0x284]
 call fcn.00430aa0
@@ -188,7 +188,7 @@ call fcn.0042e390
 mov byte[ebp-4], 1
 lea ecx, [ebp-0x274]
 call fcn.00427550
-jmp 0x42e5de
+jmp off.b590
 lea eax, [ebp-0x240]
 push eax
 lea ecx, [ebp-0x14]
@@ -203,7 +203,7 @@ call fcn.00427a50
 push eax
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 test eax, eax
-jne 0x42e5cf
+jne off.b575
 lea eax, [ebp-0x278]
 push eax
 mov ecx, dword[ebp-0x28c]
@@ -212,7 +212,7 @@ call fcn.00430d80
 mov byte[ebp-4], 1
 lea ecx, [ebp-0x278]
 call fcn.00427550
-jmp 0x42e46d
+jmp off.b221
 mov ecx, dword[ebp-0x270]
 push ecx
 call dword[sym.imp.KERNEL32.dll_FindClose]
@@ -221,14 +221,14 @@ call fcn.00427a50
 push eax
 call dword[sym.imp.KERNEL32.dll_RemoveDirectoryW]
 test eax, eax
-je 0x42e622
+je off.b658
 mov byte[ebp-4], 0
 lea ecx, [ebp-0x14]
 call fcn.00427550
 mov dword[ebp-4], 0xffffffff
 lea ecx, [ebp-0x10]
 call fcn.00427550
-jmp 0x42e650
+jmp off.b704
 push 4
 push 0
 lea ecx, [ebp-0x14]

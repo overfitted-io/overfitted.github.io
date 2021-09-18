@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -91,7 +91,7 @@ push esi
 push str.close_all
 call dword[sym.imp.WINMM.dll_mciSendStringW]
 cmp dword[edi-0x2c4], esi
-ja 0x40fde5
+ja off.b552
 xor esi, esi
 cmp dword[edi-0x2f4], esi
 ja 0x444a0b
@@ -113,7 +113,7 @@ mov eax, dword[ebx]
 mov eax, dword[eax+4]
 add eax, edi
 cmp dword[eax-0x488], ecx
-je 0x40fca5
+je off.b232
 mov dword[ebp-4], ecx
 push ecx
 lea ecx, [ebp-4]
@@ -129,7 +129,7 @@ mov eax, dword[ebx]
 mov eax, dword[eax+4]
 add eax, edi
 cmp dword[eax-0x488], 0
-jne 0x40fc73
+jne off.b182
 call dword[sym.imp.ole32.dll_OleUninitialize]
 mov ecx, dword[edi-0x24]
 test ecx, ecx
@@ -141,7 +141,7 @@ xor ebx, ebx
 mov dword[edi-0x28], ebx
 mov ecx, dword[edi-0x40]
 test ecx, ecx
-jne 0x40fe26
+jne off.b617
 lea ecx, [edi-0x60]
 mov dword[edi-0x38], ebx
 call fcn.00405a64
@@ -204,7 +204,7 @@ mov eax, dword[edi-0x2c8]
 mov eax, dword[eax+esi*4]
 mov eax, dword[eax]
 test eax, eax
-je 0x40fe17
+je off.b602
 push dword[eax]
 push dword[0x4c62ac]
 call dword[sym.imp.USER32.dll_UnregisterHotKey]
@@ -212,23 +212,23 @@ mov eax, dword[edi-0x2c8]
 mov eax, dword[eax+esi*4]
 mov ecx, dword[eax]
 test ecx, ecx
-je 0x40fe17
+je off.b602
 push ecx
 call fcn.00420de1
 inc esi
 cmp esi, dword[edi-0x2c4]
-jae 0x40fc18
-jmp 0x40fde5
+jae off.b91
+jmp off.b552
 mov esi, dword[ecx+4]
 push ecx
 call fcn.00420acc
 mov ecx, esi
 test esi, esi
-je 0x40fcd1
-jmp 0x40fe26
+je off.b276
+jmp off.b617
 push eax
 call dword[sym.imp.USER32.dll_DestroyWindow]
-jmp 0x40fbfc
+jmp off.b63
 mov eax, dword[edi-0x2f8]
 mov eax, dword[eax+esi*4]
 mov eax, dword[eax]
@@ -251,7 +251,7 @@ call fcn.00469e34
 inc esi
 cmp esi, dword[edi-0x2f4]
 jb 0x444a0b
-jmp 0x40fc26
+jmp off.b105
 mov eax, dword[edi-0x2e8]
 mov eax, dword[eax+esi*4]
 cmp dword[eax], 0
@@ -261,7 +261,7 @@ call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 inc esi
 cmp esi, dword[edi-0x2e4]
 jb 0x444a55
-jmp 0x40fc3b
+jmp off.b126
 mov eax, dword[edi-0x2d8]
 mov eax, dword[eax+esi*4]
 mov eax, dword[eax]
@@ -281,55 +281,55 @@ call fcn.00469e8e
 inc esi
 cmp esi, dword[edi-0x2d4]
 jb 0x444a79
-jmp 0x40fc49
+jmp off.b140
 dec dword[ecx+4]
-jne 0x40fcb6
+jne off.b249
 mov eax, dword[ecx]
 push 1
 call dword[eax]
-jmp 0x40fcb6
+jmp off.b249
 mov esi, dword[ecx+4]
 push ecx
 call fcn.00469e68
 mov ecx, esi
 test esi, esi
 jne 0x444acf
-jmp 0x40fcc1
+jmp off.b260
 mov esi, dword[ecx+0x10]
 push ecx
 call fcn.0045cf23
 mov ecx, esi
 test esi, esi
 jne 0x444ae3
-jmp 0x40fd4d
+jmp off.b400
 mov esi, dword[ecx+0x10]
 push ecx
 call fcn.0041fbe6
 mov ecx, esi
 test esi, esi
 jne 0x444af7
-jmp 0x40fd66
+jmp off.b425
 mov esi, dword[ecx+0x30]
 push ecx
 call fcn.00456b8e
 mov ecx, esi
 test esi, esi
 jne 0x444b0b
-jmp 0x40fd74
+jmp off.b439
 mov esi, dword[ecx+4]
 push ecx
 call fcn.00469e4c
 mov ecx, esi
 test esi, esi
 jne 0x444b1f
-jmp 0x40fd98
+jmp off.b475
 mov esi, dword[ecx+4]
 push ecx
 call fcn.00469e4c
 mov ecx, esi
 test esi, esi
 jne 0x444b33
-jmp 0x40fdac
+jmp off.b495
 
 {% endhighlight %}
 

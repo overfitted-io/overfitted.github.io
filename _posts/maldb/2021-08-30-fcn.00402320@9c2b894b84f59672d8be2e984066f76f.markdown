@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="HTTP">HTTP</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.003398774485685598</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [347.99468994140625, -634.536376953125, '<b><a href="/report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f">fcn.00402320</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
-[247.04551696777344, -584.3543090820312, '<b><a href="/report/main@27ac6b5c7fa1ad11790cdc733c25a701">main</a><br>@27ac6b5c7fa1ad11790cdc733c25a701</b><br>', 'null'],
-[340.9790954589844, -522.0209350585938, '<b><a href="/report/fcn.00438430@4fe6510221c33bf023f6abed461fc13f">fcn.00438430</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402320@9c2b894b84f59672d8be2e984066f76f">fcn.00402320</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -87,10 +85,10 @@ mov dword
 mov edi, ecx
 cmp dword[edi+0x4c], 0
 mov esi, dword[ebp+8]
-je 0x4024e0
+je off.b448
 mov ecx, dword[edi+0x48]
 test ecx, ecx
-je 0x4024e0
+je off.b448
 cmp dword[edi+0x2c], 8
 movups xmm0, xmmword[str.Content_Type:_application_x_www_form_urlencoded]
 mov eax, dword[0x5b8220]
@@ -112,7 +110,7 @@ movups xmm0, xmmword[0x5b8200]
 movups xmmword[ebp-0x38], xmm0
 movups xmm0, xmmword[0x5b8210]
 movups xmmword[ebp-0x28], xmm0
-jb 0x4023d2
+jb off.b178
 mov eax, dword[eax]
 push 0
 push dword[edi+0x34]
@@ -127,7 +125,7 @@ call dword[sym.imp.WININET.dll_HttpOpenRequestW]
 mov edx, eax
 mov dword[edi+0x44], edx
 test edx, edx
-je 0x4024e0
+je off.b448
 xorps xmm0, xmm0
 xor ebx, ebx
 movq qword[ebp-0x88], xmm0
@@ -135,13 +133,13 @@ mov dword[ebp-0x88], ebx
 mov dword[ebp-0x84], ebx
 mov dword[ebp-4], ebx
 cmp dword[esi+0x10], ebx
-jne 0x402467
+jne off.b327
 lea ecx, [ebp-0x78]
 lea esi, [ecx+2]
 mov ax, word[ecx]
 add ecx, 2
 test ax, ax
-jne 0x402420
+jne off.b256
 push 0
 sub ecx, esi
 lea eax, [ebp-0x78]
@@ -152,18 +150,18 @@ push eax
 push edx
 call dword[sym.imp.WININET.dll_HttpSendRequestW]
 test eax, eax
-je 0x4024d4
+je off.b436
 mov byte[edi+0x3c], 1
 mov byte[ebp-0x89], 1
 test ebx, ebx
-je 0x40245f
+je off.b319
 push ebx
 call fcn.0040e422
 add esp, 4
 mov al, byte[ebp-0x89]
-jmp 0x4024e2
+jmp off.b450
 cmp dword[esi+0x14], 8
-jb 0x40246f
+jb off.b335
 mov esi, dword[esi]
 push esi
 lea ecx, [ebp-0x94]
@@ -180,7 +178,7 @@ lea edx, [ecx+2]
 mov ax, word[ecx]
 add ecx, 2
 test ax, ax
-jne 0x4024a2
+jne off.b386
 push dword[ebp-0x84]
 mov ebx, dword[ebp-0x88]
 lea eax, [ebp-0x78]
@@ -192,9 +190,9 @@ push eax
 push dword[edi+0x44]
 call dword[sym.imp.WININET.dll_HttpSendRequestW]
 test eax, eax
-jne 0x402447
+jne off.b295
 mov byte[ebp-0x89], 0
-jmp 0x402452
+jmp off.b306
 xor al, al
 mov ecx, dword[ebp-0xc]
 mov dword

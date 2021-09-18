@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.04990929611495695</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -84,30 +84,30 @@ push 0x4388b8
 push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_ReadFile]
 test eax, eax
-je 0x4020fa
+je off.b76
 cmp word[0x4388b8], 0x5a4d
-jne 0x4020fa
+jne off.b76
 mov ecx, dword[0x4388f4]
 cmp dword[ecx+0x4388b8], 0x4550
-je 0x4020ff
+je off.b81
 or eax, 0xffffffff
-jmp 0x40212a
+jmp off.b124
 push esi
 movzx esi, word[ecx+0x4388be]
 xor eax, eax
 cmp esi, edi
-jle 0x402129
+jle off.b123
 lea edx, [ecx+0x4389c0]
 mov ecx, dword[edx+4]
 add ecx, dword[edx]
 cmp ecx, eax
-jbe 0x40211e
+jbe off.b112
 mov eax, ecx
 add edx, 0x28
 inc edi
 movsx ecx, di
 cmp ecx, esi
-jl 0x402113
+jl off.b101
 pop esi
 pop edi
 leave

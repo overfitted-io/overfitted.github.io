@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.030924690788321232</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.13165741935620984</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [194.34506225585938, -86.60881042480469, '<b><a href="/report/fcn.004098a8@4c2db4ba96e80258daff665d7d7a016a">fcn.004098a8</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
-[57.83713912963867, -137.8131866455078, '<b><a href="/report/fcn.00430ebd@7b00dd8f2abf54a73bfb09681334ff78">fcn.00430ebd</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[105.65991973876953, 149.82904052734375, '<b><a href="/report/fcn.0042fc9f@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042fc9f</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[-30.849720001220703, 98.628662109375, '<b><a href="/report/fcn.00407acf@4c8869bb42f854640703b6ddda29ee38">fcn.00407acf</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
-[-54.75846862792969, -45.19319152832031, '<b><a href="/report/fcn.00412f38@4c2db4ba96e80258daff665d7d7a016a">fcn.00412f38</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'null'],
-[218.25929260253906, 57.21214294433594, '<b><a href="/report/fcn.1000dee5@481b545f5c18f2fce1caac67ddc419e8">fcn.1000dee5</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[81.74897766113281, 6.009189128875732, '<b><a href="/report/fcn.00413c0f@7b00dd8f2abf54a73bfb09681334ff78">fcn.00413c0f</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004098a8@4c2db4ba96e80258daff665d7d7a016a">fcn.004098a8</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -107,9 +102,9 @@ sub edi, dword[ebp-0x44]
 sub ebx, eax
 cmp byte[ebp-1], 0
 mov dword[ebp-8], ebx
-je 0x4099a4
+je off.b252
 cmp byte[ebp+0x10], 0
-jne 0x4099e8
+jne off.b320
 imul eax, dword[ebp-0x10]
 cdq
 push 0x64
@@ -138,17 +133,17 @@ mov esi, eax
 sar esi, 1
 add esi, dword[ebp-0x2c]
 test ebx, ebx
-jge 0x409958
+jge off.b176
 xor ebx, ebx
 test esi, esi
-jge 0x40995e
+jge off.b182
 xor esi, esi
 push 0xfffffffffffffff0
 push dword[ebp+8]
 mov dword[ebp-0x1c], 0x204
 call dword[sym.imp.USER32.dll_GetWindowLongW]
 test eax, 0x800
-jne 0x40997e
+jne off.b214
 mov dword[ebp-0x1c], 0x206
 push dword[ebp-0x1c]
 push dword[ebp-0x18]
@@ -165,7 +160,7 @@ call dword[sym.imp.USER32.dll_GetWindowRect]
 mov ebx, dword[ebp-8]
 cmp byte[ebp+0x10], 0
 mov esi, 0x400
-jne 0x4099ed
+jne off.b325
 push esi
 lea eax, [ebp-0x850]
 push eax
@@ -183,7 +178,7 @@ lea eax, [ebp-0x850]
 push eax
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_SetWindowTextW]
-jmp 0x4099ed
+jmp off.b325
 mov esi, 0x400
 push 8
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
@@ -194,16 +189,16 @@ call dword[sym.imp.USER32.dll_GetWindow]
 and dword[ebp+8], 0
 mov dword[ebp+0x10], eax
 mov dword[ebp-8], eax
-jmp 0x409ae5
+jmp off.b573
 cmp dword[ebp+8], 0x200
-jge 0x409aed
+jge off.b581
 push esi
 lea eax, [ebp-0x850]
 push eax
 push dword[ebp+0x10]
 call dword[sym.imp.USER32.dll_GetWindowTextW]
 cmp word[ebp-0x850], 0
-je 0x409a5f
+je off.b439
 push dword[ebp+0xc]
 mov ecx, dword[ebp-0x20]
 push 1
@@ -217,7 +212,7 @@ push eax
 push dword[ebp+0x10]
 call dword[sym.imp.USER32.dll_SetWindowTextW]
 cmp byte[ebp-1], 0
-je 0x409acf
+je off.b551
 lea eax, [ebp-0x40]
 push eax
 push dword[ebp+0x10]
@@ -268,10 +263,10 @@ push dword[ebp+0x10]
 call dword[sym.imp.USER32.dll_GetWindow]
 mov dword[ebp+0x10], eax
 cmp eax, dword[ebp-8]
-je 0x409aed
+je off.b581
 inc dword[ebp+8]
 test eax, eax
-jne 0x409a11
+jne off.b361
 pop edi
 pop esi
 pop ebx

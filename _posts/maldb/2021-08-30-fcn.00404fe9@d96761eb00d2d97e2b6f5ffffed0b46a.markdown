@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,7 +78,7 @@ push 1
 push 0
 call dword[sym.imp.ole32.dll_CreateStreamOnHGlobal]
 test eax, eax
-js 0x405021
+js off.b56
 push edi
 push 0
 push 0x48faf0
@@ -99,17 +99,17 @@ push dword[esi+0xc]
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 mov dword[ebp-4], eax
 test eax, eax
-je 0x405020
+je off.b55
 push edi
 push dword[esi+0xc]
 call dword[sym.imp.KERNEL32.dll_SizeofResource]
 mov edi, eax
 test edi, edi
-je 0x405020
+je off.b55
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_LockResource]
 test eax, eax
-je 0x405020
+je off.b55
 mov ecx, dword[ebx]
 push 0
 push edi
@@ -127,7 +127,7 @@ push edx
 push eax
 call dword[ecx+0x14]
 mov byte[esi+0x14], 1
-jmp 0x405020
+jmp off.b55
 
 {% endhighlight %}
 

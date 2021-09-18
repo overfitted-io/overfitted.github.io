@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,11 +80,11 @@ call sub.msvcrt.dll__umask
 mov eax, ebx
 and eax, 3
 cmp eax, 1
-je 0x670270
+je off.b432
 cmp eax, 2
-je 0x670260
+je off.b416
 test eax, eax
-je 0x670120
+je off.b96
 mov dword[esi+0x48], 0xfffff019
 mov dword[esi+0xf0], 0x57
 add esp, 0x20
@@ -101,26 +101,26 @@ cmovne edx, eax
 mov eax, ebx
 and eax, 0x700
 cmp eax, 0x300
-je 0x670300
-jg 0x670170
+je off.b576
+jg off.b176
 cmp eax, 0x100
-je 0x670280
+je off.b448
 cmp eax, 0x200
-je 0x670310
+je off.b592
 test eax, eax
-jne 0x670101
-jmp 0x67029b
+jne off.b65
+jmp off.b475
 cmp eax, 0x500
-je 0x670193
-jle 0x670290
+je off.b211
+jle off.b464
 cmp eax, 0x600
-je 0x670310
+je off.b592
 cmp eax, 0x700
-jne 0x670101
+jne off.b65
 mov ecx, 1
 test bh, 1
 mov eax, 0x80
-je 0x6701ba
+je off.b250
 mov eax, dword[esi+0xf8]
 not edi
 and eax, 0x80
@@ -129,7 +129,7 @@ sete al
 movzx eax, al
 sub eax, 0xffffff80
 test bl, 0x40
-je 0x6701ca
+je off.b266
 or eax, 0x4000100
 or edx, 0x10000
 mov edi, eax
@@ -139,11 +139,11 @@ cmovne eax, edi
 mov edi, ebx
 and edi, 0x30
 cmp edi, 0x10
-je 0x6702b0
+je off.b496
 cmp edi, 0x20
-je 0x6702a5
+je off.b485
 test edi, edi
-jne 0x670101
+jne off.b65
 or eax, 0x2000000
 mov dword[esp+0x18], 0
 mov dword[esp+0x10], ecx
@@ -157,12 +157,12 @@ call dword[sym.imp.KERNEL32.dll_CreateFileW]
 sub esp, 0x1c
 cmp eax, 0xffffffff
 mov edi, eax
-je 0x6702c0
+je off.b512
 mov dword[esp+4], ebx
 mov dword[esp], eax
 call dword[sym.imp.msvcrt.dll__open_osfhandle]
 test eax, eax
-js 0x670320
+js off.b608
 mov dword[esi+0x48], eax
 add esp, 0x20
 pop ebx
@@ -170,26 +170,26 @@ pop esi
 pop edi
 ret
 mov edx, 0x12019f
-jmp 0x670125
+jmp off.b101
 mov edx, 0x120116
-jmp 0x670125
+jmp off.b101
 mov ecx, 4
-jmp 0x670198
+jmp off.b216
 cmp eax, 0x400
-jne 0x670101
+jne off.b65
 mov ecx, 3
-jmp 0x670198
+jmp off.b216
 or eax, 0x8000000
-jmp 0x6701f7
+jmp off.b311
 or eax, 0x10000000
-jmp 0x6701f7
+jmp off.b311
 mov edi, dword[sym.imp.KERNEL32.dll_GetLastError]
 call edi
 cmp eax, 0x50
-jne 0x6702df
+jne off.b543
 and ebx, 0x500
 cmp ebx, 0x100
-je 0x670371
+je off.b689
 call edi
 mov dword[esi+0xf0], eax
 mov dword[esp], eax
@@ -201,36 +201,36 @@ pop esi
 pop edi
 ret
 mov ecx, 2
-jmp 0x670198
+jmp off.b216
 mov ecx, 5
-jmp 0x670198
+jmp off.b216
 call dword[sym.imp.msvcrt.dll__errno]
 cmp dword[eax], 0x18
-jne 0x670350
+jne off.b656
 mov dword[esi+0x48], 0xfffff01e
 mov dword[esi+0xf0], 4
 mov dword[esp], edi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 sub esp, 4
-jmp 0x670112
+jmp off.b82
 mov ebx, dword[sym.imp.KERNEL32.dll_GetLastError]
 call ebx
 test eax, eax
-je 0x670390
+je off.b720
 call ebx
 mov dword[esi+0xf0], eax
 mov dword[esp], eax
 call fcn.0066e3a0
 mov dword[esi+0x48], eax
-jmp 0x67033c
+jmp off.b636
 mov dword[esi+0x48], 0xfffff01c
 mov dword[esi+0xf0], 0x50
-jmp 0x670112
+jmp off.b82
 mov dword[esi+0xf0], 0xfffff002
 mov dword[esp], 0xfffff002
 call fcn.0066e3a0
 mov dword[esi+0x48], eax
-jmp 0x67033c
+jmp off.b636
 
 {% endhighlight %}
 

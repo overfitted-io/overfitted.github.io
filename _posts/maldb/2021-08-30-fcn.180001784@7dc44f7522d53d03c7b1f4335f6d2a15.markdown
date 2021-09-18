@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,23 +71,23 @@ sub rsp, 0x20
 call fcn.180001aa8
 call fcn.180003250
 test eax, eax
-je 0x1800017f6
+je off.b114
 lea rcx, [fcn.1800014a8]
 call fcn.1800027c4
 mov dword[section..data], eax
 cmp eax, 0xffffffff
-je 0x1800017f6
+je off.b114
 mov edx, 0x478
 mov ecx, 1
 call fcn.180002cf0
 mov rbx, rax
 test rax, rax
-je 0x1800017f6
+je off.b114
 mov ecx, dword[section..data]
 mov rdx, rax
 call fcn.180002818
 test eax, eax
-je 0x1800017f6
+je off.b114
 xor edx, edx
 mov rcx, rbx
 call fcn.1800016c0
@@ -95,7 +95,7 @@ call qword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 or qword[rbx+8], 0xffffffffffffffff
 mov dword[rbx], eax
 mov eax, 1
-jmp 0x1800017fd
+jmp off.b121
 call fcn.180001804
 xor eax, eax
 add rsp, 0x20

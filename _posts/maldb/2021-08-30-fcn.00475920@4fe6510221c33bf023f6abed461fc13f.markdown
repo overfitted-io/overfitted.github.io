@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-301.99371337890625, -166.46499633789062, '<b><a href="/report/fcn.00475920@4fe6510221c33bf023f6abed461fc13f">fcn.00475920</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
-[301.99371337890625, 166.46475219726562, '<b><a href="/report/fcn.00438430@4fe6510221c33bf023f6abed461fc13f">fcn.00438430</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00475920@4fe6510221c33bf023f6abed461fc13f">fcn.00475920</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -79,7 +78,7 @@ push eax
 push ecx
 call dword[sym.imp.USER32.dll_GetIconInfo]
 test eax, eax
-jne 0x475945
+jne off.b37
 lea esp, [ebp-0x78]
 pop edi
 pop esi
@@ -95,7 +94,7 @@ push eax
 mov dword[ebp-8], 0
 call dword[sym.imp.GDI32.dll_GetObjectW]
 test eax, eax
-je 0x475abc
+je off.b412
 mov esi, dword[ebp-0x38]
 mov edi, dword[ebp-0x34]
 push 0
@@ -103,7 +102,7 @@ call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
 mov ebx, eax
 mov dword[ebp-4], ebx
 test ebx, ebx
-je 0x475abc
+je off.b412
 xor eax, eax
 push eax
 push eax
@@ -130,13 +129,13 @@ mov dword[ebp-0x5c], 0x200001
 call dword[sym.imp.GDI32.dll_CreateDIBSection]
 mov dword[ebp-8], eax
 test eax, eax
-je 0x475aaf
+je off.b399
 push eax
 push ebx
 call dword[sym.imp.GDI32.dll_SelectObject]
 mov dword[ebp-0x10], eax
 test eax, eax
-je 0x475a9e
+je off.b382
 mov edx, dword[ebp+8]
 push 3
 push 0
@@ -156,12 +155,12 @@ add eax, eax
 add eax, eax
 lea esi, [eax+ecx]
 cmp ecx, esi
-jae 0x475a25
+jae off.b261
 test dword[ecx], 0xff000000
-jne 0x475a91
+jne off.b369
 add ecx, 4
 cmp ecx, esi
-jb 0x475a16
+jb off.b246
 call fcn.00494320
 mov ecx, dword[ebp-0x18]
 mov edx, dword[ebp-4]
@@ -177,37 +176,37 @@ push edx
 call dword[sym.imp.GDI32.dll_GetDIBits]
 test eax, eax
 mov eax, dword[ebp-0xc]
-je 0x475a7d
+je off.b349
 cmp eax, esi
-jae 0x475a8e
+jae off.b366
 nop
 cmp dword[ebx], 0
-je 0x475a5d
+je off.b317
 mov dword[eax], 0
-jmp 0x475a63
+jmp off.b323
 or dword[eax], 0xff000000
 add eax, 4
 add ebx, 4
 cmp eax, esi
-jb 0x475a50
+jb off.b304
 mov eax, dword[ebp-0x10]
 mov ebx, dword[ebp-4]
 push eax
 push ebx
 call dword[sym.imp.GDI32.dll_SelectObject]
-jmp 0x475aaf
+jmp off.b399
 cmp eax, esi
-jae 0x475a8e
+jae off.b366
 or dword[eax], 0xff000000
 add eax, 4
 cmp eax, esi
-jb 0x475a81
+jb off.b353
 mov ebx, dword[ebp-4]
 mov eax, dword[ebp-0x10]
 push eax
 push ebx
 call dword[sym.imp.GDI32.dll_SelectObject]
-jmp 0x475aaf
+jmp off.b399
 mov ecx, dword[ebp-8]
 push ecx
 call dword[sym.imp.GDI32.dll_DeleteObject]
@@ -223,7 +222,7 @@ mov eax, dword[ebp-0x18]
 push eax
 call esi
 cmp byte[ebp+0xc], 0
-je 0x475ade
+je off.b446
 mov ecx, dword[ebp+8]
 push ecx
 call dword[sym.imp.USER32.dll_DestroyIcon]

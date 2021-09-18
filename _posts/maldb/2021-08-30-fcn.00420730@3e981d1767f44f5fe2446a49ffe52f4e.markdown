@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.1999609760543823</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,9 +81,9 @@ push edi
 xor ebx, ebx
 lea edi, [esi+0xa0]
 cmp edi, ebx
-je 0x420766
+je off.b54
 cmp dword[edi+4], ebx
-je 0x420766
+je off.b54
 mov ecx, edi
 call fcn.004ba97d
 push ebx
@@ -92,24 +93,24 @@ call fcn.004ba67e
 mov eax, dword[esi+0x60]
 mov dword[esp+0x4c], ebx
 cmp eax, 0x3c
-jne 0x4207a7
+jne off.b119
 test eax, eax
-jne 0x420786
+jne off.b86
 xor eax, eax
-jmp 0x420789
+jmp off.b89
 mov eax, dword[esi+0x58]
 push eax
 push edi
 call fcn.0041fb70
 add esp, 8
 test eax, eax
-je 0x4207a7
+je off.b119
 mov ebp, edi
 lea ecx, [esp+0x30]
 push ebp
 call fcn.004b9f7a
 mov ebx, eax
-jmp 0x4207b2
+jmp off.b130
 push 0x11
 lea ecx, [esp+0x34]
 call fcn.004b9f3e
@@ -133,7 +134,7 @@ mov dword[esp+0x1c], edx
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
 test ebx, ebx
 lea edi, [edi+eax*2]
-je 0x4207fc
+je off.b204
 push ebx
 lea ecx, [esp+0x34]
 call fcn.004b9f7a
@@ -144,12 +145,12 @@ push ecx
 call dword[sym.imp.USER32.dll_GetWindowRect]
 mov eax, dword[esi+0x6c]
 test eax, eax
-jne 0x42083e
+jne off.b270
 mov edx, dword[esp+0x2c]
 mov ecx, dword[esp+0x24]
 sub edx, ecx
 cmp edx, edi
-jge 0x42083e
+jge off.b270
 mov eax, dword[esp+0x28]
 mov ebx, dword[esp+0x20]
 push 0x216
@@ -162,14 +163,14 @@ push 0
 mov ecx, esi
 call fcn.004b7fb0
 test ebp, ebp
-je 0x420850
+je off.b288
 mov ecx, dword[ebp+4]
 mov edx, dword[esi+0x1c]
 push 1
 push ecx
 push 0x30
 push edx
-jmp 0x420861
+jmp off.b305
 push 0x11
 call dword[sym.imp.GDI32.dll_GetStockObject]
 push 1
@@ -180,7 +181,7 @@ push eax
 call dword[sym.imp.USER32.dll_SendMessageA]
 mov eax, dword[esi+0x6c]
 test eax, eax
-jne 0x420884
+jne off.b340
 push 0x237
 push 0
 push 0

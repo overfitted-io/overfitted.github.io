@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -102,33 +102,33 @@ mov ecx, dword[0x44305c]
 setne al
 mov dword[ebp-0x30], eax
 cmp ecx, 0xffffffff
-jne 0x4289c6
+jne off.b118
 mov dword[ebp-0x2c], eax
-jmp 0x428a16
+jmp off.b198
 mov edi, dword[sym.imp.KERNEL32.dll_TlsGetValue]
 push ecx
 call edi
 mov esi, dword[ebp-0x30]
 mov dword[ebp-0x2c], esi
 test eax, eax
-je 0x428a16
+je off.b198
 mov eax, dword[0x44305c]
 cmp eax, 0xffffffff
-jne 0x4289e7
+jne off.b151
 xor ecx, ecx
-jmp 0x4289f1
+jmp off.b161
 push eax
 call edi
 mov ecx, eax
 mov eax, dword[0x44305c]
 cmp byte[ecx+0x38], 0
 mov dword[ebp-0x2c], esi
-je 0x428a16
+je off.b198
 mov dword[ebp-0x48], esi
 cmp eax, 0xffffffff
-jne 0x428a06
+jne off.b182
 xor eax, eax
-jmp 0x428a09
+jmp off.b185
 push eax
 call edi
 mov eax, dword[eax+0x34]
@@ -140,9 +140,9 @@ mov dword[ebp-0x54], esi
 mov ecx, dword[ebp+0xc]
 mov dword[ebp-4], esi
 cmp dword[ecx], 0xffffffff
-jne 0x428a33
+jne off.b227
 cmp dword[ecx+4], 0x7fffffff
-je 0x428b46
+je off.b502
 lea eax, [ebp-0x40]
 push eax
 call fcn.004294b0
@@ -152,13 +152,13 @@ mov ecx, dword[edx]
 sub ecx, dword[eax]
 mov edx, dword[edx+4]
 sbb edx, dword[eax+4]
-js 0x428a5f
-jg 0x428a54
+js off.b271
+jg off.b260
 test ecx, ecx
-jb 0x428a5f
+jb off.b271
 add ecx, 0xf423f
 adc edx, 0
-jmp 0x428a68
+jmp off.b280
 sub ecx, 0xf423f
 sbb edx, 0
 push 0
@@ -175,14 +175,14 @@ call dword[sym.imp.KERNEL32.dll_CreateWaitableTimerA]
 mov esi, eax
 mov dword[ebp-0x54], esi
 test esi, esi
-je 0x428b43
+je off.b499
 mov eax, dword[ebp-0x24]
 mov dword[ebp-0x30], 0x20
 test eax, eax
-jl 0x428abd
-jg 0x428aac
+jl off.b365
+jg off.b348
 cmp edi, 0x294
-jb 0x428abd
+jb off.b365
 push 0
 push 0x14
 push eax
@@ -193,10 +193,10 @@ mov eax, dword[ebp-0x24]
 mov dword[ebp-0x28], 0
 mov dword[ebp-0x24], 0
 test eax, eax
-jl 0x428ae9
-jg 0x428ad5
+jl off.b409
+jg off.b389
 test edi, edi
-je 0x428ae9
+je off.b409
 push 0xffffffffffffffff
 push 0xffffd8f0
 push eax
@@ -206,7 +206,7 @@ mov dword[ebp-0x28], eax
 mov dword[ebp-0x24], edx
 mov ecx, dword[0x56af00]
 test ecx, ecx
-jne 0x428b1a
+jne off.b458
 push str.SetWaitableTimerEx
 push str.KERNEL32.DLL
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
@@ -227,23 +227,23 @@ push esi
 call ecx
 mov ecx, dword[ebp+0xc]
 test eax, eax
-je 0x428b46
+je off.b502
 mov eax, dword[ebp-0x2c]
 mov dword[ebp-0x38], eax
 mov dword[ebp+eax*4-0x20], esi
 inc eax
 mov dword[ebp-0x2c], eax
-jmp 0x428b46
+jmp off.b502
 mov ecx, dword[ebp+0xc]
 or edi, 0xffffffff
 xor eax, eax
 mov dword[ebp-0x24], eax
 cmp dword[ebp-0x38], edi
-jne 0x428bde
+jne off.b654
 cmp dword[ecx], edi
-jne 0x428b64
+jne off.b532
 cmp dword[ecx+4], 0x7fffffff
-je 0x428bde
+je off.b654
 lea eax, [ebp-0x40]
 push eax
 call fcn.004294b0
@@ -253,10 +253,10 @@ mov ecx, dword[edx]
 sub ecx, dword[eax]
 mov edx, dword[edx+4]
 sbb edx, dword[eax+4]
-js 0x428ba5
-jg 0x428b85
+js off.b597
+jg off.b565
 test ecx, ecx
-jb 0x428ba5
+jb off.b597
 add ecx, 0xf423f
 push 0
 push 0xf4240
@@ -267,7 +267,7 @@ call fcn.00435040
 mov edi, eax
 mov eax, edx
 mov dword[ebp-0x24], eax
-jmp 0x428bc3
+jmp off.b627
 sub ecx, 0xf423f
 push 0
 push 0xf4240
@@ -279,10 +279,10 @@ mov edi, eax
 mov dword[ebp-0x24], edx
 mov eax, edx
 test eax, eax
-jg 0x428bde
-jl 0x428bcd
+jg off.b654
+jl off.b637
 test edi, edi
-jae 0x428bde
+jae off.b654
 xorps xmm0, xmm0
 movlpd qword[ebp-0x40], xmm0
 mov eax, dword[ebp-0x3c]
@@ -291,7 +291,7 @@ mov dword[ebp-0x24], eax
 mov ecx, dword[sym.imp.KERNEL32.dll_Sleep]
 mov eax, dword[ebp-0x2c]
 test eax, eax
-je 0x428c23
+je off.b723
 push 0
 push edi
 push 0
@@ -300,59 +300,59 @@ push ecx
 push eax
 call dword[sym.imp.KERNEL32.dll_WaitForMultipleObjectsEx]
 cmp eax, dword[ebp-0x2c]
-jae 0x428c2d
+jae off.b733
 cmp eax, dword[ebp-0x58]
-je 0x428d79
+je off.b1065
 cmp eax, dword[ebp-0x48]
-je 0x428d94
+je off.b1092
 cmp eax, dword[ebp-0x38]
-jne 0x428c2d
+jne off.b733
 mov dword[ebp-4], 2
-jmp 0x428d4c
+jmp off.b1020
 test edi, edi
-jne 0x428c2a
+jne off.b730
 push edi
-jmp 0x428c2b
+jmp off.b731
 push edi
 call ecx
 cmp dword[ebp-0x38], 0xffffffff
-jne 0x428d1d
+jne off.b973
 mov eax, dword[ebp+0xc]
 cmp dword[eax], 0xffffffff
-jne 0x428c4c
+jne off.b764
 cmp dword[eax+4], 0x7fffffff
-je 0x428d1d
+je off.b973
 lea eax, [ebp-0x50]
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
 test eax, eax
-jne 0x428c64
+jne off.b788
 xorps xmm0, xmm0
 movlpd qword[ebp-0x34], xmm0
-jmp 0x428cde
+jmp off.b910
 cmp dword[ebp-0x4c], 0
-jg 0x428c7c
-jl 0x428c5a
+jg off.b812
+jl off.b778
 cmp dword[ebp-0x50], 0
-ja 0x428c7c
+ja off.b812
 xorps xmm0, xmm0
 movlpd qword[ebp-0x34], xmm0
-jmp 0x428cde
+jmp off.b910
 lea eax, [ebp-0x40]
 xor edi, edi
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
 test eax, eax
-jne 0x428ca4
+jne off.b852
 nop dword[eax]
 inc edi
 cmp edi, 3
-ja 0x428c5a
+ja off.b778
 lea eax, [ebp-0x40]
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
 test eax, eax
-je 0x428c90
+je off.b832
 mov edx, dword[ebp-0x3c]
 mov ecx, dword[ebp-0x40]
 call fcn.00435480
@@ -372,10 +372,10 @@ mov eax, dword[ecx]
 sub eax, dword[ebp-0x34]
 mov ecx, dword[ecx+4]
 sbb ecx, dword[ebp-0x30]
-js 0x428d13
-jg 0x428cf4
+js off.b963
+jg off.b932
 test eax, eax
-jb 0x428d13
+jb off.b963
 add eax, 0xf423f
 adc ecx, 0
 push 0
@@ -386,26 +386,26 @@ call fcn.00435040
 mov edi, eax
 mov eax, edx
 mov dword[ebp-0x24], eax
-jmp 0x428d20
+jmp off.b976
 sub eax, 0xf423f
 sbb ecx, 0
-jmp 0x428cfc
+jmp off.b940
 mov eax, dword[ebp-0x24]
 cmp edi, 0xffffffff
-jne 0x428d33
+jne off.b995
 mov ecx, dword[sym.imp.KERNEL32.dll_Sleep]
 test eax, eax
-je 0x428be4
+je off.b660
 test eax, eax
-jl 0x428d45
-jg 0x428bde
+jl off.b1013
+jg off.b654
 test edi, edi
-jne 0x428bde
+jne off.b654
 mov dword[ebp-4], 3
 test esi, esi
-je 0x428d5c
+je off.b1036
 cmp esi, 0xffffffff
-je 0x428d5c
+je off.b1036
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 xor al, al
@@ -422,13 +422,13 @@ pop ebp
 ret
 mov dword[ebp-4], 1
 test esi, esi
-je 0x428d90
+je off.b1088
 cmp esi, 0xffffffff
-je 0x428d90
+je off.b1088
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov al, 1
-jmp 0x428d5e
+jmp off.b1038
 call fcn.004287b0
 lea ecx, [eax+0x34]
 call fcn.00427f40

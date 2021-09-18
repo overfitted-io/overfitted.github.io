@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-6876.52001953125, -539.2266235351562, '<b><a href="/report/fcn.10004b60@4c3818fdf32d89a09257dbc9d3e142ea">fcn.10004b60</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'point { fill-color: #e0440e; }'],
-[6876.52001953125, 539.2266235351562, '<b><a href="/report/fcn.004244b0@1123b7aa5760238fe93045e585b8234c">fcn.004244b0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.10004b60@4c3818fdf32d89a09257dbc9d3e142ea">fcn.10004b60</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -79,7 +78,7 @@ push 0x80000002
 mov dword[esp+0x1c], 0
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
 test eax, eax
-jne 0x10004be7
+jne off.b135
 mov esi, dword[esp+8]
 lea ecx, [esp+0x10]
 push ecx
@@ -95,12 +94,12 @@ push esi
 mov dword[esp+0x28], edi
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-jne 0x10004bdc
+jne off.b124
 cmp dword[esp+0x14], edi
-jne 0x10004bdc
+jne off.b124
 test esi, esi
 mov edi, dword[esp+0xc]
-je 0x10004bd4
+je off.b116
 push esi
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 mov eax, edi
@@ -109,7 +108,7 @@ pop esi
 add esp, 0x10
 ret
 test esi, esi
-je 0x10004be7
+je off.b135
 push esi
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 pop edi

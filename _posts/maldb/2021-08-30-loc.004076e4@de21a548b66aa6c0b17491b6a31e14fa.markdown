@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="HTTP">HTTP</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.09783280493710361</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -94,7 +94,7 @@ mov dword[ebp-0xc], ebx
 mov dword[ebp-8], ebx
 call dword[sym.imp.WININET.dll_HttpSendRequestExW]
 test eax, eax
-jne 0x407748
+jne off.b100
 push str._Statistics__UseHttpSendReqEx__HttpSendRequestEx_Failed_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 push ebx
@@ -109,7 +109,7 @@ leave
 ret
 cmp dword[ebp+0x28], 0x10
 mov eax, dword[ebp+0x14]
-jae 0x407754
+jae off.b112
 lea eax, [ebp+0x14]
 lea ecx, [ebp-0x30]
 push ecx
@@ -118,16 +118,16 @@ push eax
 push esi
 call dword[sym.imp.WININET.dll_InternetWriteFile]
 test eax, eax
-jne 0x40776c
+jne off.b136
 push str._Statistics__UseHttpSendReqEx__InternetWriteFile_Failed_n
-jmp 0x407730
+jmp off.b76
 push ebx
 push ebx
 push ebx
 push esi
 call dword[sym.imp.WININET.dll_HttpEndRequestW]
 test eax, eax
-jne 0x407798
+jne off.b180
 push str._Statistics__UseHttpSendReqEx__HttpEndRequest_Failed_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 mov byte[ebp-1], bl
@@ -136,9 +136,9 @@ push 1
 lea ecx, [ebp+0x10]
 call fcn.00401451
 mov al, byte[ebp-1]
-jmp 0x407743
+jmp off.b95
 mov byte[ebp-1], 1
-jmp 0x407788
+jmp off.b164
 
 {% endhighlight %}
 

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.013434568529147047</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,11 +69,11 @@ index: false
 mov eax, 0x19c08
 call fcn.0040c380
 push ebp
-push str.RASAPI32
+push str.RASAPI32_
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov ebp, eax
 test ebp, ebp
-je 0x407d17
+je off.b135
 lea eax, [esp+4]
 push esi
 lea ecx, [esp+0xc]
@@ -85,11 +85,11 @@ mov dword[esp+0x1c], 0x19c
 mov dword[esp+0x18], 0x19c00
 call sub.RASAPI32.dll_RasEnumConnectionsA
 test eax, eax
-jne 0x407d0f
+jne off.b127
 mov eax, dword[esp+8]
 xor esi, esi
 test eax, eax
-jbe 0x407d0f
+jbe off.b127
 push ebx
 mov ebx, dword[sym.imp.KERNEL32.dll_Sleep]
 push edi
@@ -98,14 +98,14 @@ mov eax, dword[edi]
 push eax
 call sub.RASAPI32.dll_RasHangUpA
 test eax, eax
-jne 0x407cfe
+jne off.b110
 push 0x1f4
 call ebx
 mov eax, dword[esp+0x10]
 inc esi
 add edi, 0x19c
 cmp esi, eax
-jb 0x407ceb
+jb off.b91
 pop edi
 pop ebx
 push ebp

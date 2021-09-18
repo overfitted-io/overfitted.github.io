@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.28489758990739456</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [3156.943359375, -9361.1103515625, '<b><a href="/report/fcn.00402928@1123b7aa5760238fe93045e585b8234c">fcn.00402928</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-3156.943603515625, 9361.111328125, '<b><a href="/report/fcn.004054cd@6c5b0418e4a4c57d99cda47d2717045d">fcn.004054cd</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402928@1123b7aa5760238fe93045e585b8234c">fcn.00402928</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,9 +72,9 @@ sub esp, 0x110
 push ebx
 xor ebx, ebx
 cmp dword[ebp+8], ebx
-je 0x4029fb
+je off.b211
 cmp dword[ebp+0xc], ebx
-je 0x4029fb
+je off.b211
 push edi
 push 0x40
 pop ecx
@@ -85,7 +84,7 @@ mov byte[ebp-0x110], bl
 lea edi, [ebp-0x10f]
 rep stosd
 stosw word
-push str.SOFTWARE_Rising__s
+push str.SOFTWARE__Rising___s_
 stosb byte
 lea eax, [ebp-0x110]
 push 0x104
@@ -105,14 +104,14 @@ push reloc.OLEAUT32.dll_SysReAllocString
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
 pop edi
-jne 0x4029f0
+jne off.b200
 lea eax, [ebp-8]
 push eax
 push dword[ebp+0xc]
 lea eax, [ebp-0xc]
 push eax
 push ebx
-push str.datapath
+push str.datapath_
 push dword[ebp-4]
 mov dword[ebp-8], esi
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
@@ -120,9 +119,9 @@ push dword[ebp+0xc]
 call fcn.00416720
 test eax, eax
 pop ecx
-je 0x4029e7
+je off.b191
 cmp esi, 0x7fffffff
-ja 0x4029e7
+ja off.b191
 push 0x42e6dc
 push esi
 push dword[ebp+0xc]
@@ -132,7 +131,7 @@ call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 push dword[ebp+0xc]
 call fcn.00416720
 pop ecx
-jmp 0x4029fd
+jmp off.b213
 xor eax, eax
 pop ebx
 leave

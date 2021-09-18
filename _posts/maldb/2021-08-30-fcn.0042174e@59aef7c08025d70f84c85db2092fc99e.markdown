@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.1361797567540763</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.08822167599575469</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.12367321157785027</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.09662565556462503</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,17 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-76.92841339111328, -66.0597915649414, '<b><a href="/report/fcn.0042174e@59aef7c08025d70f84c85db2092fc99e">fcn.0042174e</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
-[-173.23020935058594, -202.6619110107422, '<b><a href="/report/fcn.00403908@4c8869bb42f854640703b6ddda29ee38">fcn.00403908</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
-[159.6398162841797, 150.3054962158203, '<b><a href="/report/fcn.0040ba7c@59aef7c08025d70f84c85db2092fc99e">fcn.0040ba7c</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[98.3236312866211, 233.01333618164062, '<b><a href="/report/fcn.00417ba7@1123b7aa5760238fe93045e585b8234c">fcn.00417ba7</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-34.24213409423828, -265.7997131347656, '<b><a href="/report/fcn.004245c7@7b00dd8f2abf54a73bfb09681334ff78">fcn.004245c7</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[47.91572570800781, -171.92245483398438, '<b><a href="/report/fcn.01003ac7@7be42d186738ec1816397d616de2cb9d">fcn.01003ac7</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'null'],
-[93.9900131225586, -17.818870544433594, '<b><a href="/report/fcn.004073d9@6c8b5339bada4cbd03f0f446da640707">fcn.004073d9</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
-[-110.95584106445312, 76.5945816040039, '<b><a href="/report/fcn.004100b8@7b00dd8f2abf54a73bfb09681334ff78">fcn.004100b8</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[186.55545043945312, -51.16990280151367, '<b><a href="/report/fcn.004073d9@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.004073d9</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
-[-17.714738845825195, 125.4566650390625, '<b><a href="/report/fcn.1000250f@481b545f5c18f2fce1caac67ddc419e8">fcn.1000250f</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-117.7361068725586, 220.5970916748047, '<b><a href="/report/fcn.00553644@c60344b51fa39a329b92557d24ff7670">fcn.00553644</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0042174e@59aef7c08025d70f84c85db2092fc99e">fcn.0042174e</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -97,7 +87,7 @@ push eax
 mov dword[ebp-0x20], eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 cmp eax, ebx
-je 0x4217f0
+je off.b162
 call eax
 mov esi, dword[sym.imp.KERNEL32.dll_ConvertDefaultLocale]
 mov ebx, 0x3ff
@@ -135,10 +125,10 @@ call esi
 mov dword[ebp-0x30], eax
 push 4
 xor ebx, ebx
-jmp 0x4218f2
+jmp off.b420
 call dword[sym.imp.KERNEL32.dll_GetVersion]
 test eax, eax
-jns 0x4218a0
+jns off.b338
 lea eax, [ebp-0x1c]
 push eax
 push 0x20019
@@ -148,7 +138,7 @@ push 0x80000001
 mov dword[ebp-0x1c], ebx
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x4218f3
+jne off.b421
 lea eax, [ebp-0x20]
 push eax
 lea eax, [ebp-0x14]
@@ -161,9 +151,9 @@ push dword[ebp-0x1c]
 mov dword[ebp-0x20], 0x10
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 test eax, eax
-jne 0x421895
+jne off.b327
 cmp dword[ebp-0x24], 1
-jne 0x421895
+jne off.b327
 lea eax, [ebp-0x28]
 push eax
 lea eax, [ebp-0x14]
@@ -172,7 +162,7 @@ push eax
 call fcn.0040d1d9
 add esp, 0xc
 cmp eax, 1
-jne 0x421895
+jne off.b327
 mov eax, dword[ebp-0x28]
 mov esi, dword[sym.imp.KERNEL32.dll_ConvertDefaultLocale]
 mov dword[ebp-0x18], eax
@@ -192,11 +182,11 @@ mov dword[ebp-0x38], eax
 pop esi
 push dword[ebp-0x1c]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
-jmp 0x4218f3
+jmp off.b421
 push str.ntdll.dll
 call edi
 cmp eax, ebx
-je 0x4218f3
+je off.b421
 lea ecx, [ebp-0x18]
 push ecx
 push 0x421738
@@ -206,7 +196,7 @@ push eax
 mov dword[ebp-0x18], ebx
 call dword[sym.imp.KERNEL32.dll_EnumResourceLanguagesA]
 cmp word[ebp-0x18], bx
-je 0x4218f3
+je off.b421
 movzx eax, word[ebp-0x18]
 mov esi, dword[sym.imp.KERNEL32.dll_ConvertDefaultLocale]
 mov ecx, eax
@@ -226,17 +216,17 @@ mov dword[ebp+esi*4-0x3c], 0x800
 inc esi
 xor edi, edi
 cmp esi, ebx
-jle 0x421919
+jle off.b459
 push dword[ebp+edi*4-0x3c]
 push dword[ebp+8]
 call fcn.004216b9
 cmp eax, ebx
 pop ecx
 pop ecx
-jne 0x42191b
+jne off.b461
 inc edi
 cmp edi, esi
-jl 0x421902
+jl off.b436
 xor eax, eax
 mov ecx, dword[ebp-4]
 pop edi

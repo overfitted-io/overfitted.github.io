@@ -1,0 +1,225 @@
+---
+layout: post
+title:  "fcn.00497ffd @ 9c2b894b84f59672d8be2e984066f76f"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00497ffd
+- **Origin (md5):** 9c2b894b84f59672d8be2e984066f76f
+- **VirusTotal:** [virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00497ffd@9c2b894b84f59672d8be2e984066f76f">fcn.00497ffd</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x3c
+mov eax, dword[0x5d9004]
+xor eax, ebp
+mov dword[ebp-4], eax
+push ebx
+mov ebx, ecx
+push esi
+mov dword[ebp-0x34], ebx
+mov eax, dword[ebx+0xfc]
+test eax, eax
+je off.b145
+push dword[eax+0x20]
+call dword[sym.imp.USER32.dll_IsWindowVisible]
+test eax, eax
+je off.b145
+mov eax, dword[ebx+0xfc]
+xor esi, esi
+cmp dword[eax+0x328], esi
+je off.b145
+cmp dword[eax+0x308], esi
+je off.b145
+call fcn.00410017
+mov ecx, eax
+call fcn.0042aa67
+test eax, eax
+je off.b145
+mov eax, dword[ebx+0xb0]
+mov edx, esi
+mov dword[ebp-0x28], esi
+test eax, eax
+je off.b104
+mov edx, dword[eax+0x20]
+movzx ecx, word[ebp+0xc]
+lea eax, [ebp-0x28]
+push eax
+movzx eax, word[ebp+8]
+shl ecx, 0x10
+or ecx, eax
+push ecx
+push esi
+push 0x84
+push edx
+call fcn.0044e000
+mov eax, dword[ebp-0x28]
+add esp, 0x14
+jmp off.b429
+mov ecx, ebx
+call fcn.0049724d
+test eax, eax
+je off.b429
+lea eax, [ebp+8]
+push eax
+mov eax, dword[ebx+0xb0]
+push dword[eax+0x20]
+call dword[sym.imp.USER32.dll_ScreenToClient]
+push dword[ebx+0xb0]
+lea eax, [ebp-0x3c]
+mov ecx, 0x5d85c0
+push eax
+call fcn.0045d432
+mov eax, dword[ebx+0xb0]
+mov esi, dword[ebp-0x38]
+push dword[eax+0x20]
+call dword[sym.imp.USER32.dll_IsIconic]
+test eax, eax
+jne off.b231
+push 4
+call dword[sym.imp.USER32.dll_GetSystemMetrics]
+add esi, eax
+mov eax, dword[ebp-0x3c]
+add dword[ebp+8], eax
+mov eax, dword[ebx+0x90]
+add dword[ebp+0xc], esi
+mov dword[ebp-0x28], eax
+push edi
+test eax, eax
+je off.b330
+lea eax, [ebx+0x8c]
+mov dword[ebp-0x30], eax
+lea ecx, [ebp-0x28]
+push ecx
+mov ecx, eax
+call fcn.004d99b1
+mov ebx, dword[ebp+8]
+lea ecx, [ebp-0x14]
+mov edi, dword[ebp+0xc]
+push ecx
+mov eax, dword[eax]
+mov dword[ebp-0x2c], eax
+mov eax, dword[eax]
+mov esi, dword[eax+0xc]
+mov ecx, esi
+call fcn.00553897
+mov ecx, dword[ebp-0x2c]
+call esi
+push edi
+push ebx
+push eax
+call dword[sym.imp.USER32.dll_PtInRect]
+test eax, eax
+jne off.b418
+cmp dword[ebp-0x28], eax
+mov eax, dword[ebp-0x30]
+jne off.b263
+mov ebx, dword[ebp-0x34]
+lea eax, [ebp-0x24]
+mov ecx, ebx
+push eax
+call fcn.00496ea7
+push dword[ebp+0xc]
+lea eax, [ebp-0x24]
+push dword[ebp+8]
+push eax
+call dword[sym.imp.USER32.dll_PtInRect]
+test eax, eax
+je off.b426
+lea esi, [ebp-0x24]
+lea edi, [ebp-0x14]
+movsd dword
+push 4
+movsd dword
+movsd dword
+movsd dword
+call dword[sym.imp.USER32.dll_GetSystemMetrics]
+add eax, dword[ebp-0x14]
+mov ecx, dword[ebp-0x3c]
+push dword[ebp+0xc]
+push dword[ebp+8]
+lea eax, [eax+ecx*2]
+mov dword[ebp-0xc], eax
+lea eax, [ebp-0x14]
+push eax
+call dword[sym.imp.USER32.dll_PtInRect]
+neg eax
+sbb eax, eax
+neg eax
+add eax, 2
+jmp off.b428
+mov eax, dword[ebp-0x2c]
+mov eax, dword[eax+0x1c]
+jmp off.b428
+xor eax, eax
+pop edi
+mov ecx, dword[ebp-4]
+pop esi
+xor ecx, ebp
+pop ebx
+call fcn.00553199
+mov esp, ebp
+pop ebp
+ret 8
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/9c2b894b84f59672d8be2e984066f76f

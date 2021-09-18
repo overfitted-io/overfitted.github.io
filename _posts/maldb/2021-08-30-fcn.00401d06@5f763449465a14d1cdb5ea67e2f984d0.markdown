@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.06659049347541582</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,10 +76,10 @@ push edi
 mov edi, ecx
 mov dword[edi+0x1020], edx
 cmp byte[edi+0x1c], dl
-jne 0x401d30
+jne off.b42
 mov cl, dl
 test bl, 4
-je 0x401d32
+je off.b44
 mov cl, 1
 mov eax, ebx
 shr eax, 1
@@ -91,13 +91,13 @@ sbb esi, esi
 and esi, 0xc0000000
 add esi, 0x80000000
 test bl, 1
-je 0x401d57
+je off.b81
 or esi, 0x40000000
 shr ebx, 3
 not ebx
 and ebx, 1
 test cl, cl
-je 0x401d66
+je off.b96
 or ebx, 2
 xor eax, eax
 cmp byte[edi+0x15], al
@@ -115,7 +115,7 @@ mov dword[esp+0x30], eax
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov ebp, eax
 cmp ebp, 0xffffffff
-jne 0x401df5
+jne off.b239
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[esp+0x10], eax
 lea eax, [esp+0x18]
@@ -124,7 +124,7 @@ push eax
 push dword[esp+0x1024]
 call fcn.004031e0
 test al, al
-je 0x401de4
+je off.b222
 push 0
 push dword[esp+0x18]
 lea eax, [esp+0x20]
@@ -137,12 +137,12 @@ call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov ebp, eax
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 2
-jne 0x401ddf
+jne off.b217
 mov dword[esp+0x10], eax
 cmp ebp, 0xffffffff
-jne 0x401df5
+jne off.b239
 cmp dword[esp+0x10], 2
-jne 0x401df5
+jne off.b239
 mov dword[edi+0x1020], 1
 xor eax, eax
 cmp ebp, 0xffffffff
@@ -152,7 +152,7 @@ mov dword[edi+0xc], eax
 mov byte[edi+0x10], al
 pop esi
 cmp ebp, 0xffffffff
-je 0x401e24
+je off.b286
 push 0x800
 push dword[esp+0x101c]
 lea ecx, [edi+0x1e]

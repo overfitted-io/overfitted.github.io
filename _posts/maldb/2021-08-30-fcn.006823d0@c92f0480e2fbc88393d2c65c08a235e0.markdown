@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.093373717447004</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [81.98023986816406, -25.391254425048828, '<b><a href="/report/fcn.006823d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006823d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[23.393085479736328, 22.36680793762207, '<b><a href="/report/fcn.0068ae70@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068ae70</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[52.32964324951172, 79.13300323486328, '<b><a href="/report/fcn.00681ac0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00681ac0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[5.297891616821289, 127.99632263183594, '<b><a href="/report/fcn.0068b9d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068b9d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-68.55004119873047, 84.57587432861328, '<b><a href="/report/fcn.00670420@c92f0480e2fbc88393d2c65c08a235e0">fcn.00670420</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-72.1757583618164, 13.408552169799805, '<b><a href="/report/fcn.006833e0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006833e0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-15.777363777160645, -28.136110305786133, '<b><a href="/report/fcn.0067c360@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067c360</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[171.39083862304688, 15.159379005432129, '<b><a href="/report/fcn.00405ecd@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00405ecd</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[-64.79210662841797, -93.18338775634766, '<b><a href="/report/fcn.00678460@c92f0480e2fbc88393d2c65c08a235e0">fcn.00678460</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-7.04270076751709, -112.69845581054688, '<b><a href="/report/fcn.00682940@c92f0480e2fbc88393d2c65c08a235e0">fcn.00682940</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[102.58687591552734, 35.93783950805664, '<b><a href="/report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bda0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.006823d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006823d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -87,16 +77,16 @@ sub esp, 0x4c
 mov eax, dword[eax+0x90]
 movzx edx, word[edx]
 cmp eax, 0xffffffff
-je 0x682425
+je off.b85
 cmp dx, 0x17
-je 0x6824a0
+je off.b208
 mov dword[esp+8], edi
 mov dword[esp+4], esi
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_bind]
 sub esp, 0xc
 cmp eax, 0xffffffff
-je 0x6824f0
+je off.b288
 or dword[ebx+0x2c], 0x200
 xor ecx, ecx
 add esp, 0x4c
@@ -107,10 +97,10 @@ pop edi
 pop ebp
 ret
 test byte[esp+0x60], 1
-je 0x682437
+je off.b103
 cmp dx, 0x17
 mov ecx, 0x57
-jne 0x68241b
+jne off.b75
 mov dword[esp+8], 0
 mov dword[esp+4], 1
 mov dword[esp], edx
@@ -118,7 +108,7 @@ call dword[sym.imp.WS2_32.dll_socket]
 sub esp, 0xc
 cmp eax, 0xffffffff
 mov ebp, eax
-je 0x6824e2
+je off.b274
 movzx eax, word[esi]
 lea ecx, [ebx+0x90]
 lea edx, [ebx+0x2c]
@@ -128,11 +118,11 @@ mov dword[esp+4], eax
 mov eax, dword[ebx+4]
 call fcn.006821a0
 test eax, eax
-jne 0x682512
+jne off.b322
 movzx edx, word[esi]
 mov eax, dword[ebx+0x90]
 cmp dx, 0x17
-jne 0x6823f5
+jne off.b37
 lea esi, [esi]
 mov edx, dword[esp+0x60]
 mov dword[esp+0x10], 4
@@ -146,22 +136,22 @@ mov dword[esp+0xc], edx
 call dword[sym.imp.WS2_32.dll_setsockopt]
 mov eax, dword[ebx+0x90]
 sub esp, 0x14
-jmp 0x6823f5
+jmp off.b37
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 mov ecx, eax
-jmp 0x68241b
+jmp off.b75
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 cmp eax, 0x2740
 mov ecx, eax
-jne 0x68241b
+jne off.b75
 mov dword[ebx+0x94], 0x2740
-jmp 0x682412
+jmp off.b66
 mov dword[esp+0x2c], eax
 mov dword[esp], ebp
 call dword[sym.imp.WS2_32.dll_closesocket]
 sub esp, 4
 mov ecx, dword[esp+0x2c]
-jmp 0x68241b
+jmp off.b75
 
 {% endhighlight %}
 

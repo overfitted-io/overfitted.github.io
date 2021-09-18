@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.17801891130198597</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-463.64337158203125, -330.6761474609375, '<b><a href="/report/fcn.00404580@d59f9c4f445b9f980173dec064f55091">fcn.00404580</a><br>@d59f9c4f445b9f980173dec064f55091</b><br>', 'point { fill-color: #e0440e; }'],
-[463.64337158203125, 330.6761474609375, '<b><a href="/report/fcn.10005f30@4c3818fdf32d89a09257dbc9d3e142ea">fcn.10005f30</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00404580@d59f9c4f445b9f980173dec064f55091">fcn.00404580</a><br>@d59f9c4f445b9f980173dec064f55091</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -102,14 +101,14 @@ push 0
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 test eax, eax
-jne 0x404848
+jne off.b712
 push 0x5c
 lea edx, [ebp+0x3294]
 push edx
 call fcn.0040ab78
 add esp, 8
 test eax, eax
-jne 0x404623
+jne off.b163
 lea eax, [ebp+0x3294]
 mov ebx, eax
 lea ecx, [ebp+0x3294]
@@ -119,7 +118,7 @@ add ebx, 1
 mov dword[ebp-0x20], ebx
 lea edx, [ebx+0x2a]
 cmp edx, 0x1000
-jae 0x404848
+jae off.b712
 push str.________________________________
 mov ecx, 0x1000
 sub ecx, ebx
@@ -135,19 +134,19 @@ push eax
 call dword[sym.imp.KERNEL32.dll_FindFirstFileW]
 mov dword[ebp-0x24], eax
 cmp eax, 0xffffffff
-je 0x404848
+je off.b712
 test byte[ebp+0x3044], 0x10
-je 0x404828
+je off.b680
 lea eax, [ebp+0x3070]
 lea edx, [eax+2]
 mov cx, word[eax]
 add eax, 2
 test cx, cx
-jne 0x404693
+jne off.b275
 sub eax, edx
 sar eax, 1
 cmp eax, 0x20
-jne 0x404828
+jne off.b680
 push 0x40
 push 0
 lea ecx, [ebp]
@@ -179,24 +178,24 @@ push edi
 call fcn.00408100
 add esp, 0xc
 cmp eax, 1
-jne 0x40474a
+jne off.b458
 cmp dword[ebp-0x1c], 0
-jne 0x404736
+jne off.b438
 push 0x42b774
 push edi
 call fcn.0040ac19
 add esp, 8
 cmp edi, eax
-jne 0x40474a
+jne off.b458
 mov al, byte[ebp-0x1c]
 mov byte[ebp+esi+0x20], al
 add esi, 1
 add edi, 4
 cmp esi, 0x10
-jne 0x404700
-jmp 0x404753
+jne off.b384
+jmp off.b467
 cmp esi, 0x10
-jne 0x404825
+jne off.b677
 lea ecx, [ebp+0x3070]
 push ecx
 mov edx, 0x1000
@@ -235,7 +234,7 @@ call fcn.00414bc0
 add esp, 0x3c
 mov eax, dword[ebp-0x18]
 test eax, eax
-je 0x404825
+je off.b677
 lea ecx, [ebp]
 push ecx
 push eax
@@ -243,14 +242,14 @@ mov esi, dword[ebp-0x14]
 mov ecx, esi
 call fcn.00403f20
 test al, al
-je 0x404819
+je off.b665
 mov byte[ebp-4], 1
 lea edx, [ebp]
 push edx
 mov ecx, esi
 call fcn.00403ff0
 mov dword[ebp-4], 0
-jmp 0x404819
+jmp off.b665
 mov eax, dword[ebp-0x18]
 push eax
 call fcn.00414a7f
@@ -262,7 +261,7 @@ mov edi, dword[ebp-0x24]
 push edi
 call dword[sym.imp.KERNEL32.dll_FindNextFileW]
 test eax, eax
-jne 0x40467d
+jne off.b253
 push edi
 call dword[sym.imp.KERNEL32.dll_FindClose]
 mov dword[ebp-4], 0xffffffff

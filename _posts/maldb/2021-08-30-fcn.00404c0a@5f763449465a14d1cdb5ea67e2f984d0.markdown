@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,7 +70,7 @@ push ebp
 mov ebp, esp
 mov eax, dword[0x436ca8]
 test eax, eax
-jne 0x404c25
+jne off.b27
 mov ecx, 0x436ca0
 call fcn.00404b8b
 mov eax, dword[0x436ca8]
@@ -82,15 +82,15 @@ and ecx, 0xfffffff0
 cmp byte[ebp+0x14], dl
 setne dl
 cmp byte[ebp+0x10], 0
-je 0x404c6f
+je off.b101
 test eax, eax
-je 0x404c8a
+je off.b128
 push edx
 push ecx
 push dword[ebp+8]
 call eax
 test eax, eax
-jne 0x404caf
+jne off.b165
 push str.CryptProtectMemory_failed
 mov esi, 0x44a83c
 push esi
@@ -102,24 +102,24 @@ call fcn.004128e4
 push 2
 mov ecx, esi
 call fcn.00401774
-jmp 0x404caf
+jmp off.b165
 mov eax, dword[0x436cac]
 test eax, eax
-je 0x404c8a
+je off.b128
 push edx
 push ecx
 push dword[ebp+8]
 call eax
 test eax, eax
-jne 0x404caf
+jne off.b165
 push str.CryptUnprotectMemory_failed
-jmp 0x404c50
+jmp off.b70
 push ebx
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcessId]
 xor edx, edx
 mov ebx, eax
 test esi, esi
-je 0x404cae
+je off.b164
 push edi
 mov edi, dword[ebp+8]
 add bl, 0x4b
@@ -128,7 +128,7 @@ lea eax, [edx+ebx]
 xor byte[ecx], al
 inc edx
 cmp edx, esi
-jb 0x404ca0
+jb off.b150
 pop edi
 pop ebx
 pop esi

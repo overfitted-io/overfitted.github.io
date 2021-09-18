@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.1971101412970731</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -100,7 +100,7 @@ push eax
 push ebp
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 test eax, eax
-je 0x458c91a8
+je off.b568
 push 0x1fe
 lea ecx, [esp+0x426]
 push ebx
@@ -122,28 +122,28 @@ push edx
 call dword[sym.imp.MSVCR80.dll__wsplitpath]
 add esp, 0x20
 xor eax, eax
-jmp 0x458c9050
+jmp off.b224
 movzx ecx, word[esp+eax+8]
 mov word[esp+eax+0x620], cx
 add eax, 2
 cmp cx, bx
-jne 0x458c9050
+jne off.b224
 lea eax, [esp+0x420]
 mov edx, eax
 mov edi, edi
 mov cx, word[eax]
 add eax, 2
 cmp cx, bx
-jne 0x458c9070
+jne off.b256
 push edi
 lea edi, [esp+0x624]
 sub eax, edx
 add edi, 0xfffffffe
-jmp 0x458c9090
+jmp off.b288
 mov cx, word[edi+2]
 add edi, 2
 cmp cx, bx
-jne 0x458c9090
+jne off.b288
 push esi
 mov ecx, eax
 shr ecx, 2
@@ -159,27 +159,27 @@ push ebp
 rep movsb
 call dword[sym.imp.USER32.dll_LoadStringW]
 test eax, eax
-jne 0x458c90e8
+jne off.b376
 lea ebx, [ebx]
 movzx ecx, word[esp+eax+0x220]
 mov word[esp+eax+0xa38], cx
 add eax, 2
 cmp cx, bx
-jne 0x458c90d0
+jne off.b352
 lea eax, [esp+0xa38]
 mov edx, eax
 mov cx, word[eax]
 add eax, 2
 cmp cx, bx
-jne 0x458c90f1
+jne off.b385
 lea edi, [esp+0x628]
 sub eax, edx
 add edi, 0xfffffffe
-jmp 0x458c9110
+jmp off.b416
 mov cx, word[edi+2]
 add edi, 2
 cmp cx, bx
-jne 0x458c9110
+jne off.b416
 mov ecx, eax
 shr ecx, 2
 mov esi, edx
@@ -192,7 +192,7 @@ add eax, 0xfffffffe
 mov cx, word[eax+2]
 add eax, 2
 cmp cx, bx
-jne 0x458c9136
+jne off.b454
 mov ecx, dword[str._RES]
 mov edx, dword[0x459f301c]
 mov dword[eax], ecx
@@ -206,21 +206,21 @@ push eax
 call fcn.458c88d0
 mov esi, eax
 cmp esi, ebx
-je 0x458c91a4
+je off.b564
 push str.GetResDllVersion
 push esi
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov edi, eax
 cmp edi, ebx
-je 0x458c919d
+je off.b557
 push ebp
 call fcn.458c8020
 mov ebx, eax
 call edi
 cmp eax, ebx
-jne 0x458c919d
+jne off.b557
 mov eax, esi
-jmp 0x458c91a6
+jmp off.b566
 push esi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 xor eax, eax

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.046402190359740046</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-30.71397590637207, -5.937060356140137, '<b><a href="/report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c">fcn.00426c00</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-165.50534057617188, 87.79637145996094, '<b><a href="/report/fcn.00426aa0@1123b7aa5760238fe93045e585b8234c">fcn.00426aa0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-82.88178253173828, 62.82776641845703, '<b><a href="/report/fcn.100bb2a0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100bb2a0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[-1.3618108034133911, 91.19282531738281, '<b><a href="/report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f">fcn.00454a20</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-84.66740417480469, 149.1231689453125, '<b><a href="/report/fcn.00426d40@1123b7aa5760238fe93045e585b8234c">fcn.00426d40</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-132.16036987304688, -8.03622055053711, '<b><a href="/report/fcn.6408be10@07e4412910bcf0f5969ef64c44eecb2d">fcn.6408be10</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c">fcn.00426c00</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -87,7 +82,7 @@ mov dword[esp+0x10], edi
 lea esp, [esp]
 push edi
 lea eax, [esp+0x254]
-push str.__._Scsi_d:
+push str.____.__Scsi_d:_
 push eax
 call fcn.00416f98
 add esp, 0xc
@@ -102,7 +97,7 @@ push ecx
 call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov esi, eax
 cmp esi, 0xffffffff
-je 0x426d17
+je off.b279
 xor ebx, ebx
 xor eax, eax
 mov ecx, 0x8b
@@ -111,7 +106,7 @@ rep stosd
 push 8
 stosb byte
 lea edx, [esp+0x28]
-push str.SCSIDISK
+push str.SCSIDISK_
 push edx
 mov dword[esp+0x2c], 0x1c
 mov dword[esp+0x38], 0x2710
@@ -134,10 +129,10 @@ mov byte[esp+0x66], 0xec
 mov byte[esp+0x68], bl
 call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
 test eax, eax
-je 0x426d02
+je off.b258
 mov al, byte[esp+0x82]
 test al, al
-je 0x426d02
+je off.b258
 mov ecx, dword[esp+0x18]
 lea eax, [esp+0x4c]
 push eax
@@ -145,14 +140,14 @@ call fcn.004269e0
 mov dword[esp+0x14], 1
 inc ebx
 cmp ebx, 2
-jl 0x426c70
+jl off.b112
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov edi, dword[esp+0x10]
 inc edi
 cmp edi, 0x10
 mov dword[esp+0x10], edi
-jl 0x426c30
+jl off.b48
 mov ecx, dword[esp+0x354]
 mov eax, dword[esp+0x14]
 call fcn.0041e6b7

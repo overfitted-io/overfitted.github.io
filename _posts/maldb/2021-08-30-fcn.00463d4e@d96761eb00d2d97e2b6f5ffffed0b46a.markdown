@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -87,7 +87,7 @@ call fcn.004048ae
 mov ecx, dword[esp+0x10]
 call fcn.00464cd3
 test al, al
-je 0x463da5
+je off.b87
 push str..
 lea ecx, [esp+0x14]
 call fcn.00407e0b
@@ -107,11 +107,11 @@ mov esi, eax
 mov al, 1
 mov byte[esp+0xe], al
 cmp esi, 0xffffffff
-je 0x463e45
+je off.b247
 cmp al, 1
-jne 0x463e45
+jne off.b247
 test byte[esp+0x40], 0x10
-jne 0x463e20
+jne off.b210
 mov byte[esp+0xf], al
 lea ecx, [esp+0x10]
 lea eax, [esp+0x20]
@@ -128,20 +128,20 @@ call fcn.00407e0b
 push dword[esp+0x10]
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 cmp eax, 1
-jne 0x463e3c
+jne off.b238
 lea eax, [esp+0x40]
 push eax
 push esi
 call dword[sym.imp.KERNEL32.dll_FindNextFileW]
 test eax, eax
 mov al, byte[esp+0xe]
-jne 0x463dd8
+jne off.b138
 mov al, bl
 mov byte[esp+0xe], al
-jmp 0x463dd8
+jmp off.b138
 push esi
 call dword[sym.imp.KERNEL32.dll_FindClose]
-jmp 0x463e50
+jmp off.b258
 push esi
 call dword[sym.imp.KERNEL32.dll_FindClose]
 mov bl, byte[esp+0xf]

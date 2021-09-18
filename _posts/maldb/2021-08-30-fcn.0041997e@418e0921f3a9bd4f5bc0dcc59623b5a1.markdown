@@ -18,8 +18,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.2037113396871627</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.04779290678216116</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.05866128998770623</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.05738822342838404</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.08721680576462419</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -36,9 +36,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [138.8867950439453, 203.23739624023438, '<b><a href="/report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0041997e</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
-[292.0361328125, 166.35443115234375, '<b><a href="/report/fcn.10001250@b74a1e462e0b6bacec09e2503391e156">fcn.10001250</a><br>@b74a1e462e0b6bacec09e2503391e156</b><br>', 'null'],
-[183.5212860107422, 52.1635627746582, '<b><a href="/report/fcn.0040c178@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0040c178</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0041997e</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -99,22 +97,22 @@ push eax
 mov dword[ebp-0x624], esi
 call fcn.0043fe30
 add esp, 0x18
-push str.IsWow64Process
-push str.kernel32
+push str.IsWow64Process_
+push str.kernel32_
 mov dword[ebp-0x620], edi
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov esi, eax
 cmp esi, edi
-je 0x419a18
+je off.b154
 lea eax, [ebp-0x620]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call esi
 test eax, eax
-je 0x419a1e
+je off.b160
 mov eax, dword[ebp-0x620]
 neg eax
 sbb eax, eax
@@ -124,22 +122,22 @@ and eax, 0x200
 inc eax
 push eax
 push edi
-push str.SOFTWARE_baidu_
+push str.SOFTWARE__baidu___
 push reloc.WS2_32.dll_bind
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x419aae
+jne off.b304
 lea eax, [ebp-0x624]
 push eax
 lea eax, [ebp-0x614]
 push eax
 push edi
 push edi
-push str.CustomID
+push str.CustomID_
 push dword[ebp-0x618]
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 test eax, eax
-jne 0x419aa2
+jne off.b292
 push 0x104
 lea eax, [ebp-0x614]
 push eax

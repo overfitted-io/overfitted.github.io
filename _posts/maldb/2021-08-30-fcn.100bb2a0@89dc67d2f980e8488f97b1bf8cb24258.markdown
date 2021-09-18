@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.04541959107805251</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [338.6175231933594, -107.24964141845703, '<b><a href="/report/fcn.100bb2a0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100bb2a0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'point { fill-color: #e0440e; }'],
-[-24.796459197998047, -55.920509338378906, '<b><a href="/report/fcn.100bb0a0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100bb0a0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[-76.28903198242188, -419.2862854003906, '<b><a href="/report/fcn.00426c00@1123b7aa5760238fe93045e585b8234c">fcn.00426c00</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-388.16717529296875, -4.272995948791504, '<b><a href="/report/fcn.00426aa0@1123b7aa5760238fe93045e585b8234c">fcn.00426aa0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[26.69133186340332, 307.498779296875, '<b><a href="/report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f">fcn.00454a20</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.100bb2a0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100bb2a0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -109,7 +105,7 @@ push edx
 call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov ebp, eax
 cmp ebp, 0xffffffff
-je 0x100bb4e1
+je off.b577
 xor eax, eax
 push eax
 lea ecx, [esp+0x24]
@@ -132,10 +128,10 @@ mov byte[esp+0x5b], al
 mov dword[esp+0x40], eax
 call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
 test eax, eax
-je 0x100bb4d6
+je off.b566
 mov bl, byte[esp+0x27]
 test bl, bl
-je 0x100bb4d6
+je off.b566
 xor eax, eax
 push 0x20f
 push eax
@@ -186,11 +182,11 @@ mov byte[esp+0x66], bl
 mov dword[esp+0x5c], 0x200
 call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
 test eax, eax
-je 0x100bb4d6
+je off.b566
 mov eax, dword[edi]
 lea edx, [eax+0x14]
 cmp edx, 0x400
-ja 0x100bb4f1
+ja off.b593
 mov ecx, dword[esp+0x84]
 mov dword[eax+esi], ecx
 mov edx, dword[esp+0x88]
@@ -205,9 +201,9 @@ mov eax, 0x14
 mov edx, dword[edi]
 add edx, esi
 cmp byte[edx+eax-1], 0x20
-jne 0x100bb492
+jne off.b498
 sub eax, 1
-jne 0x100bb482
+jne off.b482
 add dword[edi], eax
 mov eax, dword[edi]
 lea edi, [eax+esi]
@@ -220,9 +216,9 @@ mov ecx, dword[esp+0x1c]
 mov edx, dword[ecx]
 add edx, dword[esp+0x18]
 cmp byte[edx+eax-1], 0x20
-jne 0x100bb4c6
+jne off.b550
 sub eax, 1
-jne 0x100bb4b0
+jne off.b528
 add dword[ecx], eax
 mov esi, dword[esp+0x18]
 mov dword[esp+0x14], 1
@@ -233,8 +229,8 @@ mov ebx, dword[esp+0x10]
 inc ebx
 mov dword[esp+0x10], ebx
 cmp ebx, 4
-jb 0x100bb2ce
-jmp 0x100bb4f8
+jb off.b46
+jmp off.b600
 push ebp
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov ecx, dword[esp+0x374]

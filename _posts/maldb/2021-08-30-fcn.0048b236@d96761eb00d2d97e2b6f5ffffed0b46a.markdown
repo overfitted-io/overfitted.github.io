@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,37 +69,37 @@ index: false
 push ebp
 mov ebp, esp
 cmp dword[ebp+0x10], 0
-je 0x48b256
+je off.b32
 push dword[ebp+0x10]
 mov ecx, 0x4c67b0
 call fcn.00402612
 mov ecx, eax
 mov dword[0x4c681c], ecx
-jmp 0x48b25c
+jmp off.b38
 mov ecx, dword[0x4c681c]
 cmp ecx, 0xffffffff
-je 0x48b2b8
+je off.b130
 mov eax, dword[0x4c6810]
 push esi
 mov eax, dword[eax+ecx*4]
 mov esi, dword[eax]
 cmp dword[esi+0x18], 0
-je 0x48b28e
+je off.b88
 cmp dword[0x4c67d8], ecx
-jne 0x48b281
+jne off.b75
 or dword[0x4c67d8], 0xffffffff
 push dword[esi+0x18]
 call dword[sym.imp.USER32.dll_DestroyAcceleratorTable]
 and dword[esi+0x18], 0
 cmp dword[ebp+8], 0
-je 0x48b2b7
+je off.b129
 push dword[ebp+0xc]
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_CreateAcceleratorTableW]
 mov dword[esi+0x18], eax
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 cmp dword[esi], eax
-jne 0x48b2b7
+jne off.b129
 mov eax, dword[0x4c681c]
 mov dword[0x4c67d8], eax
 pop esi

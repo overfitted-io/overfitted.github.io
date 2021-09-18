@@ -1,0 +1,389 @@
+---
+layout: post
+title:  "[...]Gradient_struct_HDC_____struct_tagRECT_const___unsigned_long_int__unsigned_long_int__bool__int_ @ 279a61b1e76da49531f1f16fd1102a2d"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** [...]Gradient\_struct\_HDC\_\_\_\_\_struct\_tagRECT\_const\_\_\_unsigned\_long\_int\_\_unsigned\_long\_int\_\_bool\_\_int\_
+- **Origin (md5):** 279a61b1e76da49531f1f16fd1102a2d
+- **VirusTotal:** [virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [-1396.071044921875, 2831.193603515625, '<b><a href="/report/sym.Install.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawGradient_struct_HDC_____struct_tagRECT_const___unsigned_long_int__unsigned_long_int__bool__int_@279a61b1e76da49531f1f16fd1102a2d">sym.Install.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawGradient_struct_HDC_____struct_tagRECT_const___unsigned_long_int__unsigned_long_int__bool__int_</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
+[1396.0711669921875, -2831.193603515625, '<b><a href="/report/sym.tpop2.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawGradient_struct_HDC_____struct_tagRECT_const___unsigned_long_int__unsigned_long_int__bool__int_@289859175c221b107317af7727d26c17">sym.tpop2.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawGradient_struct_HDC_____struct_tagRECT_const___unsigned_long_int__unsigned_long_int__bool__int_</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x7c
+test byte[0x54363c], 1
+push ebx
+push esi
+mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
+push edi
+mov edi, dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+mov ebx, 0x503130
+jne off.b58
+or dword[0x54363c], 1
+push 0x503230
+push ebx
+call edi
+push eax
+call esi
+mov dword[0x543638], eax
+cmp dword[0x543638], 0
+jne off.b77
+mov dword[0x543638], 0x467b9a
+test byte[0x54363c], 2
+jne off.b109
+or dword[0x54363c], 2
+push str.GradientFill
+push ebx
+call edi
+push eax
+call esi
+mov dword[0x543634], eax
+mov edx, dword[ebp+0x10]
+mov ecx, dword[ebp+0x14]
+mov eax, edx
+shr eax, 0x18
+shr ecx, 0x18
+add eax, ecx
+shr eax, 1
+mov byte[ebp-1], al
+test al, al
+je off.b943
+mov ebx, dword[ebp+0xc]
+mov esi, dword[ebx+0xc]
+sub esi, dword[ebx+4]
+mov ecx, dword[ebx+8]
+sub ecx, dword[ebx]
+mov dword[ebp-0x18], esi
+mov esi, ebx
+lea edi, [ebp-0x5c]
+movsd dword
+movsd dword
+movsd dword
+movsd dword
+mov esi, dword[ebp+8]
+xor edi, edi
+mov dword[ebp-0x34], ecx
+mov dword[ebp-0xc], esi
+mov dword[ebp-0x3c], edi
+mov dword[ebp-0x38], edi
+cmp al, 0xff
+jae off.b245
+mov eax, dword[ebp-0x18]
+push esi
+mov dword[ebp-0x58], edi
+mov dword[ebp-0x5c], edi
+mov dword[ebp-0x54], ecx
+mov dword[ebp-0x50], eax
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+push dword[ebp-0x18]
+mov dword[ebp-0xc], eax
+push dword[ebp-0x34]
+push esi
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+push eax
+push dword[ebp-0xc]
+mov dword[ebp-0x3c], eax
+call dword[sym.imp.GDI32.dll_SelectObject]
+mov edx, dword[ebp+0x10]
+mov dword[ebp-0x38], eax
+mov al, byte[ebp-1]
+mov esi, dword[0x543634]
+cmp esi, edi
+je off.b432
+mov eax, dword[ebp-0x5c]
+mov dword[ebp-0x7c], eax
+mov eax, dword[ebp-0x58]
+mov dword[ebp-0x78], eax
+mov eax, edx
+shr eax, 0x10
+movzx ax, al
+shl ax, 8
+mov word[ebp-0x74], ax
+mov eax, edx
+shr eax, 8
+movzx ax, al
+shl ax, 8
+mov word[ebp-0x72], ax
+movzx ax, dl
+shl ax, 8
+mov word[ebp-0x70], ax
+mov eax, 0xff00
+mov ecx, eax
+mov word[ebp-0x6e], cx
+mov ecx, dword[ebp-0x54]
+mov dword[ebp-0x6c], ecx
+mov ecx, dword[ebp-0x50]
+mov dword[ebp-0x68], ecx
+mov ecx, dword[ebp+0x14]
+shr ecx, 0x10
+movzx cx, cl
+shl cx, 8
+mov word[ebp-0x64], cx
+mov ecx, dword[ebp+0x14]
+shr ecx, 8
+movzx cx, cl
+shl cx, 8
+mov word[ebp-0x62], cx
+movzx cx, byte[ebp+0x14]
+shl cx, 8
+mov word[ebp-0x5e], ax
+xor eax, eax
+inc eax
+mov word[ebp-0x60], cx
+xor ecx, ecx
+cmp byte[ebp+0x18], cl
+mov dword[ebp-0x48], eax
+setne cl
+mov dword[ebp-0x4c], edi
+push ecx
+push eax
+lea eax, [ebp-0x4c]
+push eax
+push 2
+lea eax, [ebp-0x7c]
+push eax
+push dword[ebp-0xc]
+call esi
+jmp off.b857
+mov ecx, dword[ebp+0x1c]
+xor esi, esi
+inc esi
+cmp ecx, 0x40
+mov dword[ebp-8], esi
+jl off.b455
+mov dword[ebp-8], 6
+jmp off.b509
+cmp ecx, 0x20
+jl off.b469
+mov dword[ebp-8], 5
+jmp off.b509
+cmp ecx, 0x10
+jl off.b483
+mov dword[ebp-8], 4
+jmp off.b509
+cmp ecx, 8
+jl off.b497
+mov dword[ebp-8], 3
+jmp off.b509
+cmp ecx, 4
+jl off.b509
+mov dword[ebp-8], 2
+mov ecx, dword[ebp-8]
+shl esi, cl
+mov dword[ebp-0x10], edi
+cmp esi, edi
+mov dword[ebp-0x48], esi
+jle off.b860
+mov ecx, dword[ebp+0x14]
+movzx eax, cl
+mov dword[ebp-0x1c], ecx
+shr dword[ebp-0x1c], 0x10
+mov dword[ebp-0x2c], eax
+neg dword[ebp-0x2c]
+mov word[ebp+0x16], cx
+shr word[ebp+0x16], 8
+mov word[ebp+0x12], dx
+shr word[ebp+0x12], 8
+mov dword[ebp-0x20], edx
+shr dword[ebp-0x20], 0x10
+imul eax, esi
+movzx ecx, dl
+mov dword[ebp-0x28], edi
+mov dword[ebp-0x44], ecx
+mov dword[ebp-0x14], esi
+mov dword[ebp-0x30], eax
+movzx eax, byte[ebp+0x16]
+imul eax, dword[ebp-0x14]
+movzx ecx, byte[ebp+0x12]
+imul ecx, dword[ebp-0x10]
+mov esi, dword[ebp-0x28]
+mov edx, dword[ebp-0x30]
+add edx, esi
+movzx esi, byte[ebp-0x20]
+imul esi, dword[ebp-0x10]
+add eax, ecx
+mov ecx, dword[ebp-8]
+sar edx, cl
+sar eax, cl
+movzx edx, dl
+movzx eax, al
+shl edx, 8
+or eax, edx
+movzx edx, byte[ebp-0x1c]
+imul edx, dword[ebp-0x14]
+add edx, esi
+sar edx, cl
+shl eax, 8
+movzx ecx, dl
+or eax, ecx
+push eax
+call dword[sym.imp.GDI32.dll_CreateSolidBrush]
+cmp byte[ebp+0x18], 0
+lea esi, [ebp-0x5c]
+lea edi, [ebp-0x6c]
+movsd dword
+movsd dword
+movsd dword
+movsd dword
+mov edi, dword[ebp-0x10]
+mov dword[ebp-0x24], eax
+je off.b754
+mov edx, dword[ebx+0xc]
+mov ecx, dword[ebp-8]
+mov esi, edx
+sub esi, dword[ebx+4]
+mov eax, esi
+imul eax, edi
+sar eax, cl
+mov ecx, eax
+mov eax, edx
+sub eax, ecx
+inc edi
+mov ecx, edi
+imul ecx, esi
+mov esi, ecx
+mov ecx, dword[ebp-8]
+sar esi, cl
+mov dword[ebp-0x60], eax
+sub edx, esi
+sub eax, edx
+mov dword[ebp-0x68], edx
+test eax, eax
+jle off.b819
+push dword[ebp-0x24]
+lea eax, [ebp-0x6c]
+push eax
+push dword[ebp+8]
+jmp off.b813
+mov edx, dword[ebx+8]
+mov eax, edx
+sub eax, dword[ebx]
+inc edi
+mov ecx, eax
+imul eax, dword[ebp-0x10]
+imul ecx, edi
+mov esi, ecx
+mov ecx, dword[ebp-8]
+sar esi, cl
+mov ecx, esi
+mov esi, edx
+sub esi, ecx
+mov ecx, dword[ebp-8]
+sar eax, cl
+mov dword[ebp-0x6c], esi
+sub edx, eax
+mov dword[ebp-0x64], edx
+sub edx, esi
+test edx, edx
+jle off.b819
+push dword[ebp-0x24]
+lea eax, [ebp-0x6c]
+push eax
+push dword[ebp-0xc]
+call dword[sym.imp.USER32.dll_FillRect]
+push dword[ebp-0x24]
+call dword[sym.imp.GDI32.dll_DeleteObject]
+mov eax, dword[ebp-0x44]
+add dword[ebp-0x28], eax
+mov eax, dword[ebp-0x2c]
+add dword[ebp-0x30], eax
+dec dword[ebp-0x14]
+cmp edi, dword[ebp-0x48]
+mov dword[ebp-0x10], edi
+jl off.b590
+xor edi, edi
+mov al, byte[ebp-1]
+cmp al, 0xff
+jae off.b943
+mov byte[ebp+0x16], al
+mov byte[ebp+0x14], 0
+mov byte[ebp+0x15], 0
+mov byte[ebp+0x17], 1
+push dword[ebp+0x14]
+push dword[ebp-0x18]
+push dword[ebp-0x34]
+push edi
+push edi
+push dword[ebp-0xc]
+push dword[ebp-0x18]
+push dword[ebp-0x34]
+push dword[ebx+4]
+push dword[ebx]
+push dword[ebp+8]
+call dword[0x543638]
+push dword[ebp-0x38]
+push dword[ebp-0xc]
+call dword[sym.imp.GDI32.dll_SelectObject]
+push dword[ebp-0x3c]
+call dword[sym.imp.GDI32.dll_DeleteObject]
+push dword[ebp-0xc]
+call dword[sym.imp.GDI32.dll_DeleteDC]
+pop edi
+pop esi
+pop ebx
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/279a61b1e76da49531f1f16fd1102a2d

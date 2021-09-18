@@ -1,0 +1,177 @@
+---
+layout: post
+title:  "[...]gine꞉꞉GenerateBitmap_class_DuiLib꞉꞉CPaintManagerUI___class_DuiLib꞉꞉CControlUI___struct_tagRECT_ @ 289859175c221b107317af7727d26c17"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** [...]gine꞉꞉GenerateBitmap\_class\_DuiLib꞉꞉CPaintManagerUI\_\_\_class\_DuiLib꞉꞉CControlUI\_\_\_struct\_tagRECT\_
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [2280.383056640625, 679.8212890625, '<b><a href="/report/sym.tpop2.exe_public:_static_struct_HBITMAP______cdecl_DuiLib::CRenderEngine::GenerateBitmap_class_DuiLib::CPaintManagerUI___class_DuiLib::CControlUI___struct_tagRECT_@289859175c221b107317af7727d26c17">sym.tpop2.exe_public:_static_struct_HBITMAP______cdecl_DuiLib::CRenderEngine::GenerateBitmap_class_DuiLib::CPaintManagerUI___class_DuiLib::CControlUI___struct_tagRECT_</a><br>@289859175c221b107317af7727d26c17</b><br>', 'point { fill-color: #e0440e; }'],
+[-2280.383056640625, -679.8212890625, '<b><a href="/report/sym.Install.exe_public:_static_struct_HBITMAP______cdecl_DuiLib::CRenderEngine::GenerateBitmap_class_DuiLib::CPaintManagerUI___class_DuiLib::CControlUI___struct_tagRECT_@279a61b1e76da49531f1f16fd1102a2d">sym.Install.exe_public:_static_struct_HBITMAP______cdecl_DuiLib::CRenderEngine::GenerateBitmap_class_DuiLib::CPaintManagerUI___class_DuiLib::CControlUI___struct_tagRECT_</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x44
+mov ecx, dword[ebp+8]
+push ebx
+mov ebx, dword[ebp+0x1c]
+sub ebx, dword[ebp+0x14]
+push esi
+mov esi, dword[ebp+0x18]
+sub esi, dword[ebp+0x10]
+push edi
+call method
+push eax
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+push dword[ebp+0x1c]
+mov ecx, dword[ebp+8]
+push dword[ebp+0x18]
+mov dword[ebp-4], eax
+call method
+push eax
+call dword[sym.imp.GDI32.dll_CreateCompatibleBitmap]
+push eax
+push dword[ebp-4]
+mov dword[ebp-0x14], eax
+call dword[sym.imp.GDI32.dll_SelectObject]
+mov ecx, dword[ebp+0xc]
+lea edx, [ebp+0x10]
+push edx
+push dword[ebp-4]
+mov dword[ebp-0x10], eax
+mov eax, dword[ecx]
+call dword[eax+0x118]
+xor eax, eax
+push 0xa
+pop ecx
+lea edi, [ebp-0x40]
+rep stosd
+mov ecx, dword[ebp+8]
+inc eax
+mov word[ebp-0x38], ax
+push 0x20
+pop eax
+mov word[ebp-0x36], ax
+mov eax, ebx
+imul eax, esi
+xor edi, edi
+shl eax, 2
+mov dword[ebp-0x44], 0x28
+mov dword[ebp-0x40], esi
+mov dword[ebp-0x3c], ebx
+mov dword[ebp-0x34], edi
+mov dword[ebp-0x30], eax
+mov dword[ebp-8], edi
+call method
+push eax
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+mov ecx, dword[ebp+8]
+push edi
+mov dword[ebp+0xc], eax
+push edi
+lea eax, [ebp-8]
+push eax
+push edi
+lea eax, [ebp-0x44]
+push eax
+call method
+push eax
+call dword[sym.imp.GDI32.dll_CreateDIBSection]
+mov dword[ebp-0x18], eax
+cmp eax, edi
+je off.b266
+push eax
+push dword[ebp+0xc]
+call dword[sym.imp.GDI32.dll_SelectObject]
+push 0xcc0020
+push dword[ebp+0x14]
+mov dword[ebp-0xc], eax
+push dword[ebp+0x10]
+push dword[ebp-4]
+push ebx
+push esi
+push edi
+push edi
+push dword[ebp+0xc]
+call dword[sym.imp.GDI32.dll_BitBlt]
+push dword[ebp-0xc]
+push dword[ebp+0xc]
+call dword[sym.imp.GDI32.dll_SelectObject]
+push dword[ebp+0xc]
+call dword[sym.imp.GDI32.dll_DeleteDC]
+call dword[sym.imp.GDI32.dll_GdiFlush]
+push dword[ebp-0x10]
+push dword[ebp-4]
+call dword[sym.imp.GDI32.dll_SelectObject]
+push dword[ebp-0x14]
+call dword[sym.imp.GDI32.dll_DeleteObject]
+push dword[ebp-4]
+call dword[sym.imp.GDI32.dll_DeleteDC]
+mov eax, dword[ebp-0x18]
+pop edi
+pop esi
+pop ebx
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

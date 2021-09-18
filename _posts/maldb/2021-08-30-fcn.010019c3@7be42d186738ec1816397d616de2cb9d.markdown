@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -79,13 +79,13 @@ push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 xor esi, esi
 test eax, eax
-jne 0x10019f1
+jne off.b46
 push esi
 push 0x10
 push esi
 push esi
 push 0x4f5
-jmp 0x1001a46
+jmp off.b131
 lea eax, [ebp-0x10]
 push eax
 push 0x1001274
@@ -103,16 +103,16 @@ mov dword[ebp-8], 2
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 test eax, eax
 push esi
-jne 0x1001a30
+jne off.b109
 push 0x10
 push esi
 push esi
 push 0x4f6
-jmp 0x1001a46
+jmp off.b131
 push 2
 call dword[sym.imp.USER32.dll_ExitWindowsEx]
 test eax, eax
-jne 0x1001a50
+jne off.b141
 push esi
 push 0x10
 push esi
@@ -121,7 +121,7 @@ push 0x4f7
 push esi
 call fcn.01003ebe
 xor eax, eax
-jmp 0x1001a53
+jmp off.b144
 xor eax, eax
 inc eax
 pop esi

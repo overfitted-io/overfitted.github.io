@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="MEMORY">MEMORY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,41 +72,41 @@ sub rsp, 0x20
 mov rdi, r8
 mov rbx, rdx
 test rcx, rcx
-je 0x180005096
+je off.b50
 xor edx, edx
 lea rax, [rdx-0x20]
 div rcx
 cmp rax, rbx
-jae 0x180005096
+jae off.b50
 call fcn.1800044f8
 mov dword[rax], 0xc
 xor eax, eax
-jmp 0x1800050f3
+jmp off.b143
 imul rbx, rcx
 mov eax, 1
 test rbx, rbx
 cmove rbx, rax
 xor eax, eax
 cmp rbx, 0xffffffffffffffe0
-ja 0x1800050c6
+ja off.b98
 mov rcx, qword[0x180014650]
 lea edx, [rax+8]
 mov r8, rbx
 call qword[sym.imp.KERNEL32.dll_HeapAlloc]
 test rax, rax
-jne 0x1800050f3
+jne off.b143
 cmp dword[0x1800152a0], 0
-je 0x1800050e8
+je off.b132
 mov rcx, rbx
 call fcn.180004824
 test eax, eax
-jne 0x1800050a6
+jne off.b66
 test rdi, rdi
-je 0x180005092
+je off.b46
 mov dword[rdi], 0xc
-jmp 0x180005092
+jmp off.b46
 test rdi, rdi
-je 0x1800050f3
+je off.b143
 mov dword[rdi], 0xc
 mov rbx, qword[rsp+0x30]
 add rsp, 0x20

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -79,20 +79,20 @@ mov byte[ebp-0x34c], 0
 rep stosd
 mov edi, dword[ebp+8]
 test edi, edi
-je 0x40261e
+je off.b327
 mov esi, dword[sym.imp.KERNEL32.dll_lstrlenA]
 push edi
 call esi
 test eax, eax
-jle 0x40261e
+jle off.b327
 push edi
 call esi
 mov esi, 0x209
 cmp eax, esi
-jbe 0x402529
+jbe off.b82
 push 0x6f
 pop eax
-jmp 0x402621
+jmp off.b330
 push edi
 push str._s.
 lea eax, [ebp-0x34c]
@@ -108,7 +108,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_FindFirstFileA]
 mov ebx, eax
 cmp ebx, 0xffffffff
-je 0x40261a
+je off.b323
 lea eax, [ebp-0x114]
 push 0x42e68c
 push eax
@@ -116,7 +116,7 @@ call fcn.00417f80
 test eax, eax
 pop ecx
 pop ecx
-je 0x4025de
+je off.b263
 lea eax, [ebp-0x114]
 push 0x42e688
 push eax
@@ -124,11 +124,11 @@ call fcn.00417f80
 test eax, eax
 pop ecx
 pop ecx
-je 0x4025de
+je off.b263
 lea eax, [ebp-0x114]
 push eax
 push edi
-push str._s__s
+push str._s___s_
 lea eax, [ebp-0x34c]
 push esi
 push eax
@@ -136,11 +136,11 @@ call fcn.00402423
 add esp, 0x14
 cmp dword[ebp-0x140], 0x10
 lea eax, [ebp-0x34c]
-jne 0x4025c5
+jne off.b238
 push eax
 call fcn.004024d7
 pop ecx
-jmp 0x4025de
+jmp off.b263
 push 0x80
 push eax
 call dword[sym.imp.KERNEL32.dll_SetFileAttributesA]
@@ -152,19 +152,19 @@ push eax
 push ebx
 call dword[sym.imp.KERNEL32.dll_FindNextFileA]
 test eax, eax
-jne 0x402602
+jne off.b299
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x12
-jne 0x402602
+jne off.b299
 mov dword[ebp+8], 1
 cmp dword[ebp+8], 0
-je 0x402562
+je off.b139
 push ebx
 call dword[sym.imp.KERNEL32.dll_FindClose]
 push edi
 call dword[sym.imp.KERNEL32.dll_RemoveDirectoryA]
 xor eax, eax
-jmp 0x402621
+jmp off.b330
 or eax, 0xffffffff
 pop edi
 pop esi

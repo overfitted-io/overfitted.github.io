@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [2678.42626953125, -3686.898681640625, '<b><a href="/report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00683fd0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-2678.426513671875, 3686.898681640625, '<b><a href="/report/fcn.006838c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006838c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00683fd0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,17 +72,17 @@ sub esp, 0x24
 mov ebx, dword[esp+0x34]
 mov esi, dword[esp+0x38]
 cmp dword[ebx+8], 0xc
-je 0x683fff
+je off.b47
 mov dword[esp+8], 0x45d
-mov dword[esp+4], str.src_win_tcp.c
+mov dword[esp+4], str.src_win_tcp.c_
 mov dword[esp], str.handle__type__UV_TCP
 call fcn.006b2490
 mov eax, dword[esi+0x3c]
 cmp eax, 0xffffffff
-je 0x684090
+je off.b192
 mov edx, dword[esi+0x20]
 test edx, edx
-js 0x68404b
+js off.b123
 lea edx, [ebx+0x90]
 mov dword[esp+0x10], 4
 mov dword[esp+8], 0x700b
@@ -93,52 +92,52 @@ mov dword[esp+0xc], edx
 call dword[sym.imp.WS2_32.dll_setsockopt]
 sub esp, 0x14
 test eax, eax
-je 0x684150
+je off.b384
 mov eax, dword[esi+0x3c]
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_closesocket]
 sub esp, 4
 test byte[ebx+0x2d], 8
 mov dword[esi+0x3c], 0xffffffff
-jne 0x684182
+jne off.b434
 mov eax, dword[ebx+0x3c]
 test eax, eax
-je 0x684101
+je off.b305
 sub eax, 1
 mov edx, dword[ebx+0x2c]
 test eax, eax
 mov dword[ebx+0x3c], eax
-jne 0x684089
+jne off.b185
 test dl, 1
-jne 0x684125
+jne off.b341
 add esp, 0x24
 pop ebx
 pop esi
 ret
 mov eax, dword[ebx+0x2c]
 test ah, 8
-je 0x684068
+je off.b152
 mov edx, eax
 and dh, 0xf7
 sub dword[ebx+0x40], 1
 mov dword[ebx+0x2c], edx
-jne 0x684190
+jne off.b448
 test al, 1
-jne 0x6840d0
+jne off.b256
 test al, 0x40
-je 0x6840d0
+je off.b256
 mov edx, eax
 and edx, 0xfffff7bf
 test al, 0x20
 mov dword[ebx+0x2c], edx
-je 0x6840d0
+je off.b256
 mov eax, dword[ebx+4]
 sub dword[eax+4], 1
 nop
 lea esi, [esi]
 mov ecx, dword[ebx+0x88]
 test ecx, ecx
-je 0x684068
+je off.b152
 mov eax, dword[esi+0x20]
 mov dword[esp], eax
 call fcn.0068fff0
@@ -148,15 +147,15 @@ call fcn.0066e3a0
 mov dword[esp], ebx
 mov dword[esp+4], eax
 call esi
-jmp 0x684068
+jmp off.b152
 mov dword[esp+8], 0x485
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.handle-_reqs_pending___0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.handle-_reqs_pending___0_
 call fcn.006b2490
 mov eax, dword[ebx+0x3c]
-jmp 0x684073
+jmp off.b163
 test dl, 8
-jne 0x684089
+jne off.b185
 mov eax, dword[esp+0x30]
 or edx, 8
 mov dword[ebx+0x2c], edx
@@ -173,21 +172,21 @@ mov dword[esi+0x168], eax
 mov eax, dword[ebx+0x88]
 mov dword[ebx+0xa0], esi
 test eax, eax
-je 0x684068
+je off.b152
 mov dword[esp+4], 0
 mov dword[esp], ebx
 call eax
-jmp 0x684068
+jmp off.b152
 mov edx, esi
 mov eax, ebx
 call fcn.00681ac0
-jmp 0x684068
-jns 0x6840d0
+jmp off.b152
+jns off.b256
 mov dword[esp+8], 0x466
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.(handle)-_activecnt__=_0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.(handle)-_activecnt__=_0_
 call fcn.006b2490
-jmp 0x6840d0
+jmp off.b256
 
 {% endhighlight %}
 

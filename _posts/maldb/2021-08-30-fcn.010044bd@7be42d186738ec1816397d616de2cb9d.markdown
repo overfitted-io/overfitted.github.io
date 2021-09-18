@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -82,7 +82,7 @@ call dword[sym.imp.KERNEL32.dll_LocalAlloc]
 mov edi, eax
 xor ebx, ebx
 cmp edi, ebx
-jne 0x1004507
+jne off.b74
 push ebx
 push 0x10
 push ebx
@@ -117,19 +117,19 @@ push edi
 mov esi, eax
 call dword[sym.imp.KERNEL32.dll_LocalFree]
 cmp esi, 0xffffffff
-je 0x10044f4
+je off.b55
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
 cmp eax, 0xffffffff
-je 0x10044f4
+je off.b55
 test al, 0x10
-je 0x10044f4
+je off.b55
 xor eax, eax
 mov dword[0x100ba5c], ebx
 inc eax
-jmp 0x1004500
+jmp off.b67
 
 {% endhighlight %}
 

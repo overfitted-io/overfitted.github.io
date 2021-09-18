@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -83,7 +83,7 @@ pop ecx
 call dword[sym.imp.KERNEL32.dll_GetTickCount]
 mov ecx, 0x493e0
 cmp eax, ecx
-jae 0x40418f
+jae off.b80
 mov esi, ecx
 sub esi, eax
 push esi
@@ -100,7 +100,7 @@ cmp esi, ebx
 mov dword[ebp-0x2c], ebx
 mov dword[ebp-0x18], ebx
 mov dword[ebp-0x40], ebx
-je 0x4041f0
+je off.b177
 mov edi, dword[sym.imp.USER32.dll_GetDlgItem]
 push 0x3ea
 push esi
@@ -133,16 +133,16 @@ push ebx
 call fcn.00402626
 test eax, eax
 pop ecx
-jne 0x404226
+jne off.b231
 cmp esi, ebx
 mov dword[0x538ae8], 0x2714
-je 0x4047a4
+je off.b1637
 push ebx
 push 1
 push 0x111
 push esi
 call dword[sym.imp.USER32.dll_SendMessageA]
-jmp 0x4047a4
+jmp off.b1637
 lea eax, [ebp-0x1dc]
 push eax
 mov dword[ebp-0x20], ebx
@@ -151,20 +151,20 @@ mov dword[ebp-0x1dc], 0x94
 call dword[sym.imp.KERNEL32.dll_GetVersionExA]
 test eax, eax
 mov esi, dword[sym.imp.KERNEL32.dll_lstrcpyA]
-je 0x40436b
-push str.Kernel32.dll
+je off.b556
+push str.Kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 cmp eax, ebx
-je 0x40436b
+je off.b556
 cmp dword[ebp-0x1d8], 4
-jne 0x4042e9
+jne off.b426
 cmp dword[ebp-0x1d4], ebx
-jne 0x4042e9
-push str.GetDiskFreeSpaceA
+jne off.b426
+push str.GetDiskFreeSpaceA_
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 cmp eax, ebx
-je 0x40436b
+je off.b556
 push 0x5388c0
 lea eax, [ebp-0x148]
 push eax
@@ -196,13 +196,13 @@ imul eax, dword[ebp-0x38]
 imul eax, dword[ebp-0x24]
 mov dword[ebp-0x20], eax
 mov dword[ebp-0x1c], ebx
-jmp 0x40436b
-push str.GetDiskFreeSpaceExA
+jmp off.b556
+push str.GetDiskFreeSpaceExA_
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 cmp eax, ebx
 mov dword[ebp-0x14], eax
-je 0x40436b
+je off.b556
 push 0x40
 pop ecx
 xor eax, eax
@@ -238,7 +238,7 @@ lea eax, [ebp-0x148]
 push eax
 call dword[ebp-0x14]
 cmp eax, ebx
-je 0x40436b
+je off.b556
 mov eax, dword[ebp-0x28]
 mov dword[ebp-0x20], eax
 mov eax, dword[ebp-0x24]
@@ -282,9 +282,9 @@ call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov esi, eax
 call fcn.004038a5
 cmp esi, 0xffffffff
-jne 0x404430
+jne off.b753
 cmp dword[ebp+8], ebx
-je 0x40441a
+je off.b731
 push 0x10
 push 9
 push ebx
@@ -299,7 +299,7 @@ push edi
 call fcn.004024d7
 pop ecx
 mov dword[0x538ae8], 0x2715
-jmp 0x4047a4
+jmp off.b1637
 lea eax, [ebp-0x44]
 push eax
 push esi
@@ -312,17 +312,17 @@ push 2
 pop ecx
 mul ecx
 cmp dword[ebp-0x1c], edx
-ja 0x404499
-jb 0x40445a
+ja off.b858
+jb off.b795
 cmp dword[ebp-0x20], eax
-jae 0x404499
+jae off.b858
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push edi
 call fcn.004024d7
 cmp dword[ebp+8], ebx
 pop ecx
-je 0x40448a
+je off.b843
 push ebx
 push 0xa
 push ebx
@@ -334,7 +334,7 @@ push 0x111
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_SendMessageA]
 mov dword[0x538ae8], 0x2716
-jmp 0x4047a4
+jmp off.b1637
 call fcn.004038a5
 push esi
 call fcn.004020ae
@@ -348,7 +348,7 @@ push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 call fcn.00403961
 cmp dword[ebp+8], ebx
-je 0x4044de
+je off.b927
 push ebx
 push dword[ebp-0x40]
 push dword[ebp-0x18]
@@ -365,7 +365,7 @@ call fcn.004040ef
 call fcn.004030f3
 cmp eax, ebx
 pop ecx
-je 0x4047a4
+je off.b1637
 mov dword[ebp-0x10], ebx
 push str.CMy7z_Open_File_Start_...
 mov dword[ebp-4], ebx
@@ -376,19 +376,19 @@ push eax
 lea ecx, [ebp-0x10]
 call fcn.00405c52
 test eax, eax
-jne 0x40453e
+jne off.b1023
 push 0x10
 push 8
 push ebx
 call fcn.0040219a
 add esp, 0xc
 mov dword[0x538ae8], 0x2717
-jmp 0x404793
+jmp off.b1620
 push str.CMy7z_Open_File_End_...
 call fcn.00403708
 cmp dword[0x538adc], ebx
 pop ecx
-je 0x404556
+je off.b1047
 mov edi, 0x5389c8
 push dword[ebp-0x1c]
 lea ecx, [ebp-0x10]
@@ -399,7 +399,7 @@ push edi
 call fcn.00405eb5
 mov edi, eax
 cmp edi, ebx
-je 0x404643
+je off.b1284
 lea ecx, [ebp-0x18]
 call fcn.00402baa
 push edi
@@ -420,18 +420,18 @@ push str.res_watch_install
 call fcn.004243f0
 add esp, 0x28
 cmp dword[0x538ad4], ebx
-je 0x4045d8
+je off.b1177
 mov dword[0x538ae8], 0x2712
 lea ecx, [esi-0x10]
 call fcn.00401bad
-jmp 0x404793
+jmp off.b1620
 cmp edi, 0x81000001
-jne 0x404619
+jne off.b1242
 push 0x5388c0
 call fcn.004024d7
 cmp dword[ebp+8], ebx
 pop ecx
-je 0x40460d
+je off.b1230
 push ebx
 push 0xa
 push ebx
@@ -443,7 +443,7 @@ push 0x111
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_SendMessageA]
 mov dword[0x538ae8], 0x2716
-jmp 0x4045cb
+jmp off.b1164
 push 0x10
 push 8
 push ebx
@@ -455,7 +455,7 @@ push 0x111
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_SendMessageA]
 mov dword[0x538ae8], 0x2717
-jmp 0x4045cb
+jmp off.b1164
 mov esi, 0x42e710
 push esi
 push esi
@@ -468,18 +468,18 @@ call fcn.004243f0
 add esp, 0x1c
 call fcn.00403961
 cmp dword[0x538adc], ebx
-je 0x40469e
+je off.b1375
 push 0x5388c0
 call fcn.00403a28
 cmp dword[ebp+8], ebx
 pop ecx
-je 0x404793
+je off.b1620
 push ebx
 push 1
 push 0x111
 push dword[ebp+8]
 call dword[sym.imp.USER32.dll_SendMessageA]
-jmp 0x404793
+jmp off.b1620
 call fcn.00403961
 push 0x41
 pop ecx
@@ -511,15 +511,15 @@ push eax
 push 0x104
 lea eax, [ebp-0x800]
 push eax
-push str.Setup.exe
+push str.Setup.exe_
 push 0x42e928
-mov edi, str.SYSTEM
+mov edi, str.SYSTEM_
 push edi
 call dword[sym.imp.KERNEL32.dll_GetPrivateProfileStringA]
 lea eax, [ebp-0x3e8]
 push eax
 push 1
-push str.Delete
+push str.Delete_
 push edi
 call dword[sym.imp.KERNEL32.dll_GetPrivateProfileIntA]
 mov dword[0x538ae0], eax
@@ -538,7 +538,7 @@ call dword[sym.imp.KERNEL32.dll_DeleteFileA]
 call fcn.004038a5
 call fcn.00403eb9
 test eax, eax
-je 0x4047ab
+je off.b1644
 push esi
 push esi
 push str.isForbidInstall
@@ -551,12 +551,12 @@ add esp, 0x1c
 mov eax, dword[ebp-0x10]
 or dword[ebp-4], 0xffffffff
 cmp eax, ebx
-je 0x4047a4
+je off.b1637
 mov ecx, dword[eax]
 push eax
 call dword[ecx+8]
 xor eax, eax
-jmp 0x40483e
+jmp off.b1791
 lea eax, [ebp-0x2e0]
 push 0x42e908
 push eax
@@ -564,34 +564,34 @@ call fcn.004176cb
 test eax, eax
 pop ecx
 pop ecx
-jne 0x4047eb
+jne off.b1708
 lea eax, [ebp-0x2e0]
-push str._SILENCE
+push str._SILENCE_
 push eax
 call fcn.004176cb
 test eax, eax
 pop ecx
 pop ecx
-jne 0x4047eb
+jne off.b1708
 push 0x42e8f8
 lea eax, [ebp-0x2e0]
 push eax
 call dword[sym.imp.KERNEL32.dll_lstrcatA]
 mov esi, dword[ebp+8]
 cmp esi, ebx
-je 0x4047fa
+je off.b1723
 push ebx
 push esi
 call dword[sym.imp.USER32.dll_ShowWindow]
 call fcn.00403bbc
 cmp dword[0x538ae0], ebx
 mov dword[0x538ae8], eax
-je 0x404817
+je off.b1752
 push 0x5388c0
 call fcn.00403a28
 pop ecx
 cmp esi, ebx
-je 0x40482a
+je off.b1771
 push ebx
 push 1
 push 0x111
@@ -600,7 +600,7 @@ call dword[sym.imp.USER32.dll_SendMessageA]
 mov eax, dword[ebp-0x10]
 or dword[ebp-4], 0xffffffff
 cmp eax, ebx
-je 0x40483b
+je off.b1788
 mov ecx, dword[eax]
 push eax
 call dword[ecx+8]

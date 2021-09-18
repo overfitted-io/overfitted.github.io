@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,24 +76,24 @@ and dword[ebp-0xa8], 0
 cmp dword[0x100b2dc], 0xfffffffe
 mov dword[ebp-4], eax
 mov dword[ebp-0xb0], 0xc
-jne 0x10069d6
+jne off.b291
 and dword[0x100b2dc], 0
 lea eax, [ebp-0xa4]
 push eax
 mov dword[ebp-0xa4], 0x94
 call dword[sym.imp.KERNEL32.dll_GetVersionExA]
 test eax, eax
-je 0x10069d6
+je off.b291
 cmp dword[ebp-0x94], 1
-jne 0x10069d6
+jne off.b291
 cmp dword[ebp-0xa0], 4
-jne 0x10069d6
+jne off.b291
 cmp dword[ebp-0x9c], 0xa
-jae 0x10069d6
+jae off.b291
 push 0x4a
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
 test eax, eax
-je 0x10069d6
+je off.b291
 lea eax, [ebp-0xac]
 push eax
 push 0x20019
@@ -102,7 +102,7 @@ push 0x10014b8
 push 0x80000001
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x10069d6
+jne off.b291
 push edi
 lea eax, [ebp-0xb0]
 push eax
@@ -119,19 +119,19 @@ mov edi, eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 test edi, edi
 pop edi
-jne 0x10069d6
+jne off.b291
 lea eax, [ebp-0xa8]
 push eax
 lea eax, [ebp-0x10]
 push eax
 call fcn.0100678f
 test eax, eax
-je 0x10069d6
+je off.b291
 and dword[ebp-0xa8], 0x3ff
 cmp dword[ebp-0xa8], 1
-je 0x10069cc
+je off.b281
 cmp dword[ebp-0xa8], 0xd
-jne 0x10069d6
+jne off.b291
 mov dword[0x100b2dc], 1
 mov ecx, dword[ebp-4]
 mov eax, dword[0x100b2dc]

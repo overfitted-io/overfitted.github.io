@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,11 +72,11 @@ mov ebp, esp
 push ecx
 or dword[ebp-4], 0xffffffff
 cmp dword[0x60f80c], 0
-jne 0x57b4cf
+jne off.b68
 push str.kernel32.dll
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 test eax, eax
-je 0x57b4c5
+je off.b58
 push str.HeapQueryInformation
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
@@ -88,7 +88,7 @@ mov dword[0x60f80c], 1
 call fcn.0057c4c2
 mov ecx, dword[0x60f810]
 cmp ecx, eax
-je 0x57b506
+je off.b123
 push 0
 push 4
 lea eax, [ebp-4]
@@ -100,9 +100,9 @@ call fcn.0057c4cb
 pop ecx
 call eax
 test eax, eax
-je 0x57b506
+je off.b123
 cmp dword[ebp-4], 2
-jne 0x57b506
+jne off.b123
 xor eax, eax
 inc eax
 leave

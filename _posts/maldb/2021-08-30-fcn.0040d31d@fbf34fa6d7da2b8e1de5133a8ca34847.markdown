@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="MEMORY">MEMORY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,13 +72,13 @@ push edi
 mov edi, dword[esp+0x10]
 xor ebp, ebp
 cmp dword[edi+0x1c], ebp
-je 0x40d335
+je off.b24
 lea eax, [edi+0x20]
 push eax
 call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
 mov eax, dword[edi+4]
 test eax, eax
-je 0x40d352
+je off.b53
 mov esi, dword[eax]
 push eax
 push ebp
@@ -86,10 +86,10 @@ push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapFree]
 mov eax, esi
 test esi, esi
-jne 0x40d33c
+jne off.b31
 mov eax, dword[edi]
 test eax, eax
-je 0x40d36e
+je off.b81
 mov esi, dword[eax]
 push eax
 push ebp
@@ -97,12 +97,12 @@ push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapFree]
 mov eax, esi
 test esi, esi
-jne 0x40d358
+jne off.b59
 mov dword[edi], ebp
 mov dword[edi+4], ebp
 mov dword[edi+0xc], ebp
 cmp dword[edi+0x1c], ebp
-je 0x40d385
+je off.b104
 lea eax, [edi+0x20]
 push eax
 call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]

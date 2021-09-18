@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-329.78265380859375, -137.70022583007812, '<b><a href="/report/fcn.006838c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006838c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-292.8351745605469, -394.1130065917969, '<b><a href="/report/fcn.0067b010@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067b010</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-36.42280578613281, -357.16290283203125, '<b><a href="/report/fcn.0068d450@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068d450</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-73.37032318115234, -100.75020599365234, '<b><a href="/report/fcn.00683fd0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00683fd0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.006838c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006838c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -76,9 +73,9 @@ sub esp, 0x40
 mov ebx, dword[esp+0x54]
 mov esi, dword[esp+0x58]
 cmp dword[ebx+8], 0xc
-je 0x6838f0
+je off.b48
 mov dword[esp+8], 0x3b5
-mov dword[esp+4], str.src_win_tcp.c
+mov dword[esp+4], str.src_win_tcp.c_
 mov dword[esp], str.handle__type__UV_TCP
 call fcn.006b2490
 mov edx, dword[ebx+0x2c]
@@ -87,12 +84,12 @@ mov eax, edx
 and eax, 0xfffdffff
 test ecx, ecx
 mov dword[ebx+0x2c], eax
-js 0x683a85
+js off.b453
 test edx, 0x80000
-je 0x683a12
+je off.b338
 lea esi, [esp+0x38]
 lea edi, [esp+0x34]
-jmp 0x6839d9
+jmp off.b281
 mov dword[esp+4], 0
 mov dword[esp], 0
 call fcn.0066b590
@@ -104,10 +101,10 @@ mov dword[esp], ebx
 call dword[ebx+0x34]
 mov edx, dword[esp+0x3c]
 test edx, edx
-je 0x683b92
+je off.b722
 mov eax, dword[esp+0x38]
 test eax, eax
-je 0x683b92
+je off.b722
 lea eax, [esp+0x30]
 mov dword[esp+0x18], 0
 mov dword[esp+0x14], 0
@@ -121,10 +118,10 @@ mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_WSARecv]
 sub esp, 0x1c
 cmp eax, 0xffffffff
-je 0x683bd1
+je off.b785
 mov eax, dword[esp+0x30]
 test eax, eax
-je 0x683c00
+je off.b832
 mov dword[esp+4], eax
 mov dword[esp+8], esi
 mov dword[esp], ebx
@@ -132,22 +129,22 @@ call dword[ebx+0x38]
 mov eax, dword[esp+0x30]
 cmp dword[esp+0x38], eax
 mov eax, dword[ebx+0x2c]
-ja 0x6839e2
+ja off.b290
 test ah, 1
-jne 0x683921
+jne off.b97
 and eax, 0x20100
 cmp eax, 0x100
-je 0x683a4f
+je off.b399
 mov eax, dword[ebx+0x3c]
 test eax, eax
-je 0x683a61
+je off.b417
 sub eax, 1
 mov edx, dword[ebx+0x2c]
 test eax, eax
 mov dword[ebx+0x3c], eax
-jne 0x683a0b
+jne off.b331
 test dl, 1
-jne 0x683b30
+jne off.b624
 add esp, 0x40
 pop ebx
 pop esi
@@ -156,7 +153,7 @@ ret
 mov ecx, dword[esi+0x24]
 lea edi, [ebx+0x98]
 test ecx, ecx
-je 0x683c70
+je off.b944
 mov dword[esp+8], edi
 mov dword[esp+4], ecx
 mov dword[esp], ebx
@@ -164,39 +161,39 @@ call dword[ebx+0x38]
 mov eax, dword[ebx+0x98]
 cmp dword[esi+0x24], eax
 mov eax, dword[ebx+0x2c]
-jae 0x683914
+jae off.b84
 and eax, 0x20100
 cmp eax, 0x100
-jne 0x6839ee
+jne off.b302
 mov eax, dword[esp+0x50]
 mov edx, ebx
 call fcn.00681e40
 mov eax, dword[ebx+0x3c]
 test eax, eax
-jne 0x6839f5
+jne off.b309
 mov dword[esp+8], 0x42b
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.handle-_reqs_pending___0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.handle-_reqs_pending___0_
 call fcn.006b2490
 mov eax, dword[ebx+0x3c]
-jmp 0x6839f5
+jmp off.b309
 mov eax, edx
 and eax, 0x80100
 cmp eax, 0x80000
-je 0x6839ee
+je off.b302
 mov ecx, edx
 and ecx, 0xfffdfeff
 sub dword[ebx+0x40], 1
 mov dword[ebx+0x2c], ecx
-je 0x683b60
-jns 0x683acd
+je off.b672
+jns off.b525
 mov dword[esp+8], 0x3be
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.(handle)-_activecnt__=_0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.(handle)-_activecnt__=_0_
 call fcn.006b2490
 mov ecx, dword[ebx+0x2c]
 and ecx, 0x80000
-jne 0x683bb0
+jne off.b752
 mov eax, dword[ebx+0x98]
 mov edx, dword[ebx+0x9c]
 mov dword[esp+0x38], eax
@@ -215,9 +212,9 @@ mov dword[esp+4], eax
 mov dword[esp], ebx
 mov dword[esp+8], edx
 call esi
-jmp 0x6839ee
+jmp off.b302
 test dl, 8
-jne 0x683a0b
+jne off.b331
 mov eax, dword[esp+0x50]
 or edx, 8
 mov dword[ebx+0x2c], edx
@@ -231,83 +228,83 @@ pop esi
 pop edi
 ret
 test dl, 1
-jne 0x683acd
+jne off.b525
 test dl, 0x40
-je 0x683acd
+je off.b525
 mov ecx, edx
 and ecx, 0xfffdfebf
 and edx, 0x20
 mov dword[ebx+0x2c], ecx
-je 0x683acd
+je off.b525
 mov eax, dword[ebx+4]
 sub dword[eax+4], 1
-jmp 0x683acd
+jmp off.b525
 mov dword[esp+8], esi
 mov dword[esp+4], 0xfffff024
 mov dword[esp], ebx
 call dword[ebx+0x38]
 mov eax, dword[ebx+0x2c]
-jmp 0x6839e2
+jmp off.b290
 mov dword[esp+4], 0
 mov dword[esp], 0
 call fcn.0066b590
 mov dword[esp+0x38], eax
 mov dword[esp+0x3c], edx
-jmp 0x683aed
+jmp off.b557
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 cmp eax, 0x2733
-jne 0x683ce0
+jne off.b1056
 mov dword[esp+8], esi
 mov dword[esp+4], 0
 mov dword[esp], ebx
 call dword[ebx+0x38]
 mov eax, dword[ebx+0x2c]
-jmp 0x6839e2
+jmp off.b290
 mov edx, dword[ebx+0x2c]
 mov eax, edx
 and ah, 0x7e
 sub dword[ebx+0x40], 1
 mov dword[ebx+0x2c], eax
-jne 0x683c33
+jne off.b883
 test dl, 1
-jne 0x683c51
+jne off.b913
 test dl, 0x40
-je 0x683c51
+je off.b913
 mov eax, edx
 and eax, 0xffff7ebf
 and edx, 0x20
 mov dword[ebx+0x2c], eax
-je 0x683c51
+je off.b913
 mov eax, dword[ebx+4]
 sub dword[eax+4], 1
-jmp 0x683c51
-jns 0x683c51
+jmp off.b913
+jns off.b913
 mov dword[esp+8], 0x406
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.(handle)-_activecnt__=_0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.(handle)-_activecnt__=_0_
 call fcn.006b2490
 mov dword[esp+8], esi
 mov dword[esp+4], 0xfffff001
 mov dword[esp], ebx
 call dword[ebx+0x38]
 mov eax, dword[ebx+0x2c]
-jmp 0x6839e2
+jmp off.b290
 test dh, 1
-je 0x683cb0
+je off.b1008
 mov eax, edx
 and eax, 0xfffdfeff
 sub dword[ebx+0x40], 1
 mov dword[ebx+0x2c], eax
-jne 0x683d3f
+jne off.b1151
 test dl, 1
-jne 0x683cb0
+jne off.b1008
 test dl, 0x40
-je 0x683cb0
+je off.b1008
 mov eax, edx
 and eax, 0xfffdfebf
 and edx, 0x20
 mov dword[ebx+0x2c], eax
-je 0x683cb0
+je off.b1008
 mov edx, dword[ebx+4]
 sub dword[edx+4], 1
 lea esi, [esi]
@@ -320,22 +317,22 @@ mov dword[esp+4], 0xfffff001
 mov dword[esp], ebx
 call dword[ebx+0x38]
 mov eax, dword[ebx+0x2c]
-jmp 0x6839e2
+jmp off.b290
 mov ecx, dword[ebx+0x2c]
 mov edx, ecx
 and dh, 0xfe
 sub dword[ebx+0x40], 1
 mov dword[ebx+0x2c], edx
-jne 0x683d69
+jne off.b1193
 test cl, 1
-jne 0x683d12
+jne off.b1106
 test cl, 0x40
-je 0x683d12
+je off.b1106
 mov edx, ecx
 and edx, 0xfffffebf
 and ecx, 0x20
 mov dword[ebx+0x2c], edx
-je 0x683d12
+je off.b1106
 mov edx, dword[ebx+4]
 sub dword[edx+4], 1
 cmp eax, 0x2745
@@ -349,22 +346,22 @@ mov dword[esp+4], eax
 mov dword[esp], ebx
 call edi
 mov eax, dword[ebx+0x2c]
-jmp 0x6839e2
-jns 0x683cb0
+jmp off.b290
+jns off.b1008
 mov dword[esp+8], 0x3df
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.(handle)-_activecnt__=_0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.(handle)-_activecnt__=_0_
 call fcn.006b2490
 mov eax, dword[ebx+0x2c]
-jmp 0x683cb0
-jns 0x683d12
+jmp off.b1008
+jns off.b1106
 mov dword[esp+8], 0x413
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.(handle)-_activecnt__=_0
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.(handle)-_activecnt__=_0_
 mov dword[esp+0x2c], eax
 call fcn.006b2490
 mov eax, dword[esp+0x2c]
-jmp 0x683d12
+jmp off.b1106
 
 {% endhighlight %}
 

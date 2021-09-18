@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.059101543036441134</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,14 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-3.7306323051452637, -27.062877655029297, '<b><a href="/report/fcn.00470010@4fe6510221c33bf023f6abed461fc13f">fcn.00470010</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
-[-58.32133865356445, 140.84222412109375, '<b><a href="/report/fcn.00428c40@1123b7aa5760238fe93045e585b8234c">fcn.00428c40</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[171.2132110595703, -11.309856414794922, '<b><a href="/report/fcn.00450290@4fe6510221c33bf023f6abed461fc13f">fcn.00450290</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-27.305343627929688, -201.19073486328125, '<b><a href="/report/fcn.00466040@4fe6510221c33bf023f6abed461fc13f">fcn.00466040</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-155.2908935546875, -117.45185089111328, '<b><a href="/report/fcn.00454a20@4fe6510221c33bf023f6abed461fc13f">fcn.00454a20</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[119.01853942871094, -155.35227966308594, '<b><a href="/report/fcn.00401470@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.00401470</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>', 'null'],
-[93.32032012939453, 120.50679779052734, '<b><a href="/report/fcn.00438430@4fe6510221c33bf023f6abed461fc13f">fcn.00438430</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-168.75074768066406, 34.92805862426758, '<b><a href="/report/fcn.6408be10@07e4412910bcf0f5969ef64c44eecb2d">fcn.6408be10</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00470010@4fe6510221c33bf023f6abed461fc13f">fcn.00470010</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -82,9 +75,9 @@ mov ebp, 1
 push edi
 mov dword[esp+0x10], ebp
 test esi, esi
-je 0x47008c
+je off.b124
 cmp word[esi], 0
-je 0x47008c
+je off.b124
 push 4
 push str._
 push esi
@@ -92,18 +85,18 @@ call fcn.0048e8e4
 add esp, 0xc
 test eax, eax
 mov eax, esi
-jne 0x470048
+jne off.b56
 lea eax, [esi+8]
 mov ebx, 0x4aa5e8
 call fcn.004095d0
 test eax, eax
-je 0x47007b
+je off.b107
 lea eax, [esp+0x18]
 push eax
 push esi
 call dword[sym.imp.KERNEL32.dll_FindFirstFileW]
 cmp eax, 0xffffffff
-je 0x47008c
+je off.b124
 push eax
 call dword[sym.imp.KERNEL32.dll_FindClose]
 mov eax, ebp
@@ -118,7 +111,7 @@ call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
 cmp eax, 0xffffffff
 setne al
 test al, al
-jne 0x47006e
+jne off.b94
 push 0
 push 0
 push 1
@@ -129,14 +122,14 @@ push esi
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov edi, eax
 cmp edi, 0xffffffff
-je 0x47006e
+je off.b94
 mov edx, dword[esp+0x26c]
 mov eax, edx
 lea esi, [eax+2]
 mov cx, word[eax]
 add eax, 2
 test cx, cx
-jne 0x4700b5
+jne off.b165
 mov ebp, dword[sym.imp.KERNEL32.dll_WriteFile]
 sub eax, esi
 sar eax, 1
@@ -152,9 +145,9 @@ push edi
 lea ebx, [esi+esi+2]
 call ebp
 test eax, eax
-je 0x470112
+je off.b258
 cmp dword[esp+0x14], 4
-jne 0x470112
+jne off.b258
 mov ecx, dword[esp+0x26c]
 push 0
 lea eax, [esp+0x18]
@@ -164,14 +157,14 @@ push ecx
 push edi
 call ebp
 test eax, eax
-je 0x470112
+je off.b258
 cmp dword[esp+0x14], ebx
-je 0x47011a
+je off.b266
 mov dword[esp+0x10], 0
 push edi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 test eax, eax
-jne 0x470129
+jne off.b281
 mov dword[esp+0x10], eax
 mov eax, dword[esp+0x26c]
 pop edi

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="MEMORY">MEMORY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,7 +71,7 @@ mov esi, dword[esp+8]
 push edi
 xor edi, edi
 cmp dword[esi+0x1c], edi
-je 0x40d3a2
+je off.b23
 lea eax, [esi+0x20]
 push eax
 call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
@@ -84,28 +84,28 @@ inc dword[edx+0x14]
 mov eax, dword[edx+0x10]
 mov dword[edx+8], ecx
 cmp dword[edx+0x14], eax
-jne 0x40d40b
+jne off.b128
 cmp dword[edx+0xc], 1
 mov ecx, dword[edx]
-jne 0x40d3da
+jne off.b79
 test ecx, ecx
-je 0x40d3d0
+je off.b69
 mov eax, dword[edx+4]
 mov dword[ecx+4], eax
 mov eax, dword[edx]
 cmp edx, dword[esi]
-jne 0x40d3f0
+jne off.b101
 mov dword[esi], eax
-jmp 0x40d3f5
+jmp off.b106
 test ecx, ecx
-je 0x40d3e4
+je off.b89
 mov eax, dword[edx+4]
 mov dword[ecx+4], eax
 mov eax, dword[edx]
 cmp edx, dword[esi+4]
-jne 0x40d3f0
+jne off.b101
 mov dword[esi+4], eax
-jmp 0x40d3f5
+jmp off.b106
 mov ecx, dword[edx+4]
 mov dword[ecx], eax
 mov eax, dword[edx+0xc]
@@ -114,21 +114,21 @@ push edx
 push edi
 push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapFree]
-jmp 0x40d445
+jmp off.b186
 cmp dword[edx+0x14], 1
-jne 0x40d445
+jne off.b186
 cmp eax, dword[edx+0xc]
-jl 0x40d445
+jl off.b186
 mov ecx, dword[edx]
 test ecx, ecx
-je 0x40d422
+je off.b151
 mov eax, dword[edx+4]
 mov dword[ecx+4], eax
 mov eax, dword[edx]
 cmp edx, dword[esi]
-jne 0x40d42c
+jne off.b161
 mov dword[esi], eax
-jmp 0x40d431
+jmp off.b166
 mov ecx, dword[edx+4]
 mov dword[ecx], eax
 mov eax, dword[esi+4]
@@ -137,10 +137,10 @@ mov dword[edx+4], edi
 mov dword[esi+4], edx
 mov eax, dword[edx]
 test eax, eax
-je 0x40d445
+je off.b186
 mov dword[eax+4], edx
 cmp dword[esi+0x1c], edi
-je 0x40d454
+je off.b201
 lea eax, [esi+0x20]
 push eax
 call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]

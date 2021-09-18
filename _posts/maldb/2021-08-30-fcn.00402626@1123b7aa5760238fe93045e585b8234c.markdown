@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,7 +76,7 @@ mov edi, 0x104
 push edi
 call dword[sym.imp.KERNEL32.dll_GetTempPathA]
 test eax, eax
-jne 0x40264d
+jne off.b39
 push edi
 push str.C:Temp
 push esi
@@ -86,7 +86,7 @@ call fcn.00401fea
 mov ebp, dword[sym.imp.KERNEL32.dll_CreateDirectoryA]
 xor ebx, ebx
 test eax, eax
-jne 0x40266e
+jne off.b72
 push esi
 call fcn.00401e1c
 pop ecx
@@ -94,16 +94,16 @@ push ebx
 push esi
 call ebp
 test eax, eax
-je 0x4026cd
+je off.b167
 push 0x5c
 push esi
 call fcn.00416e2d
 cmp eax, ebx
 pop ecx
 pop ecx
-je 0x402683
+je off.b93
 cmp byte[eax+1], bl
-jne 0x402683
+jne off.b93
 mov byte[eax], bl
 push edi
 push str.RsdSfxTmp
@@ -113,7 +113,7 @@ add esp, 0xc
 push esi
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
 cmp eax, 0xffffffff
-je 0x4026b8
+je off.b146
 push esi
 call fcn.004024d7
 pop ecx
@@ -131,16 +131,16 @@ call ebp
 push esi
 call fcn.00401fea
 test eax, eax
-jne 0x4026e4
+jne off.b190
 cmp dword[esp+0x14], ebx
-jne 0x4026e0
+jne off.b186
 push 0x10
 push 9
 push ebx
 call fcn.0040219a
 add esp, 0xc
 xor eax, eax
-jmp 0x4026e7
+jmp off.b193
 xor eax, eax
 inc eax
 pop edi

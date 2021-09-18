@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [178.30368041992188, -156.05596923828125, '<b><a href="/report/fcn.0042eb45@20a93604f17ee6f3c2aa7b1f7a497fcf">fcn.0042eb45</a><br>@20a93604f17ee6f3c2aa7b1f7a497fcf</b><br>', 'point { fill-color: #e0440e; }'],
-[-35.46431350708008, -304.14630126953125, '<b><a href="/report/fcn.0042d4bf@96a869ae624ddb4834a1d5a829f85469">fcn.0042d4bf</a><br>@96a869ae624ddb4834a1d5a829f85469</b><br>', 'null'],
-[30.21402359008789, 57.71249771118164, '<b><a href="/report/fcn.0042d4bf@505be53c36227b94e2fcc406f247f6e5">fcn.0042d4bf</a><br>@505be53c36227b94e2fcc406f247f6e5</b><br>', 'null'],
-[-183.553955078125, -90.37784576416016, '<b><a href="/report/fcn.0042d4bf@c077742bdc6d4f2c0ca7d0e2a6a94acf">fcn.0042d4bf</a><br>@c077742bdc6d4f2c0ca7d0e2a6a94acf</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0042eb45@20a93604f17ee6f3c2aa7b1f7a497fcf">fcn.0042eb45</a><br>@20a93604f17ee6f3c2aa7b1f7a497fcf</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -109,7 +106,7 @@ fld qword[ebp-0xc]
 fucompp
 fnstsw ax
 test ah, 0x44
-jp 0x42ebfe
+jp off.b185
 fld qword[ebp-0xc]
 fmul qword[ebp-0xc]
 fmul qword[0x47c9e8]
@@ -123,7 +120,7 @@ fadd qword[0x47c9f0]
 fadd qword[ebp-0x1c]
 fstp qword[ebp-0x2c]
 cmp esi, ebx
-je 0x42ec05
+je off.b192
 lea ebx, [esi+0x64]
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 push eax
@@ -132,24 +129,24 @@ mov edi, eax
 mov eax, dword[edi+8]
 xor ecx, ecx
 test eax, eax
-jle 0x42ec2b
+jle off.b230
 mov edx, dword[edi+4]
 cmp dword[edx], ebx
-je 0x42ec2e
+je off.b233
 inc ecx
 add edx, 4
 cmp ecx, eax
-jl 0x42ec1f
+jl off.b218
 or ecx, 0xffffffff
 cmp ecx, 0xffffffff
-je 0x42ec62
+je off.b285
 test ecx, ecx
-js 0x42ec62
+js off.b285
 cmp ecx, eax
-jge 0x42ec62
+jge off.b285
 lea edx, [eax-1]
 cmp ecx, edx
-je 0x42ec5f
+je off.b282
 mov edx, dword[edi+4]
 sub eax, ecx
 shl eax, 2
@@ -164,7 +161,7 @@ call fcn.0040471f
 add esp, 0x10
 dec dword[edi+8]
 cmp dword[esi+0x74], 0
-je 0x42ec99
+je off.b340
 push 0xfffffffffffffffc
 push dword[esi+0x74]
 call dword[sym.imp.USER32.dll_GetWindowLongW]
@@ -175,7 +172,7 @@ push 0xfffffffffffffffc
 push ecx
 call dword[sym.imp.USER32.dll_SetWindowLongW]
 test eax, eax
-je 0x42ec99
+je off.b340
 mov eax, dword[sym.imp.USER32.dll_DefWindowProcW]
 and dword[esi+0x74], 0
 mov dword[esi+0x8c], eax

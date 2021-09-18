@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.17164487167215117</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.009143457859012166</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-116.32109069824219, -23.87721824645996, '<b><a href="/report/fcn.00402280@e2ba7f10eb234338a49853c34d7d9c56">fcn.00402280</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[-196.66680908203125, -14.396722793579102, '<b><a href="/report/fcn.004914ee@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.004914ee</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>', 'null'],
-[-150.1658935546875, -97.36083984375, '<b><a href="/report/fcn.004914ee@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.004914ee</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'null'],
-[-45.74753952026367, 15.678848266601562, '<b><a href="/report/fcn.004914ee@152885a790b99953ce23874f0947b7bd">fcn.004914ee</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[-56.892677307128906, -78.77322387695312, '<b><a href="/report/fcn.00437f4d@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00437f4d</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[-132.13282775878906, 55.4656982421875, '<b><a href="/report/fcn.00417460@c60344b51fa39a329b92557d24ff7670">fcn.00417460</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402280@e2ba7f10eb234338a49853c34d7d9c56">fcn.00402280</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -75,7 +70,7 @@ push ebp
 mov ebp, esp
 sub esp, 0x24
 xor eax, eax
-push str.GetNativeSystemInfo
+push str.GetNativeSystemInfo_
 push str.Kernel32.dll
 mov dword[ebp-0x24], 0
 mov dword[ebp-0x20], eax
@@ -90,15 +85,15 @@ call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x4022e0
+je off.b96
 lea ecx, [ebp-0x24]
 push ecx
 call eax
 mov eax, dword[ebp-0x24]
 cmp ax, 9
-je 0x4022d7
+je off.b87
 cmp ax, 6
-jne 0x4022e0
+jne off.b96
 mov eax, 1
 mov esp, ebp
 pop ebp

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -97,9 +97,9 @@ push edi
 push dword[ebx+0x2c]
 call dword[sym.imp.KERNEL32.dll_ReadFile]
 test eax, eax
-je 0x467472
+je off.b266
 cmp dword[ebp-4], 0
-jbe 0x46746f
+jbe off.b263
 lea esi, [ebx+0x14]
 push esi
 call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
@@ -107,13 +107,13 @@ mov eax, dword[ebx+0xc]
 mov ecx, dword[ebp-4]
 add eax, ecx
 cmp dword[ebx+0x10], eax
-jae 0x467434
+jae off.b204
 mov eax, dword[ebx+0xc]
 add eax, dword[ebp-4]
 mov edi, dword[ebx+8]
 mov dword[ebp-0x10], eax
 fild dword[ebp-0x10]
-jns 0x4673fc
+jns off.b148
 fadd qword[0x4bbac8]
 fstp qword[ebp-0x14]
 fld qword[ebp-0x14]
@@ -151,7 +151,7 @@ push edi
 push dword[ebx+0x2c]
 call dword[sym.imp.KERNEL32.dll_ReadFile]
 test eax, eax
-jne 0x4673c4
+jne off.b92
 mov esi, dword[ebp-0xc]
 push edi
 call fcn.0042106c

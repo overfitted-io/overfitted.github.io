@@ -1,0 +1,226 @@
+---
+layout: post
+title:  "fcn.0041f440 @ 3dfcfb1d918b690c00de324bcfcdc082"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0041f440
+- **Origin (md5):** 3dfcfb1d918b690c00de324bcfcdc082
+- **VirusTotal:** [virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0041f440@3dfcfb1d918b690c00de324bcfcdc082">fcn.0041f440</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+and esp, 0xfffffff8
+push 0xffffffffffffffff
+push 0x453b19
+mov eax, dword
+push eax
+push ecx
+mov eax, 0x3310
+call fcn.00450750
+mov eax, dword[0x48800c]
+xor eax, esp
+mov dword[esp+0x330c], eax
+push esi
+push edi
+mov eax, dword[0x48800c]
+xor eax, esp
+push eax
+lea eax, [esp+0x3320]
+mov dword
+mov edi, ecx
+mov ecx, dword[0x48a01c]
+push 0xffffffffffffffff
+mov eax, dword[ecx]
+call dword[eax+0x278]
+test eax, eax
+jns off.b182
+mov ecx, dword[0x48a01c]
+push 1
+call dword[sym.imp.FFUILib.dll_public:_bool___thiscall_CPFPicListView::IsHoverItemFile_bool_]
+test al, al
+jne off.b182
+lea eax, [esp+0x1c]
+mov dword[esp+0x1c], 0
+push eax
+mov dword[esp+0x24], 0
+call dword[sym.imp.USER32.dll_GetCursorPos]
+mov ecx, dword[sym.imp.FTMod.dll_class_CMultiLanguage__gpMultiLanguage]
+lea eax, [esp+0x1c]
+push eax
+push dword[0x48c044]
+mov ecx, dword[ecx]
+push 2
+push str.Please_select_a_picture_file
+call dword[sym.imp.FTMod.dll_public:_wchar_t_const____thiscall_CMultiLanguage::TranslateString_wchar_t_const__]
+push eax
+call dword[sym.imp.FFUILib.dll_void___cdecl_PopupNotifyWnd_wchar_t_const___int__struct_HICON_____class_CPoint__]
+add esp, 0x10
+jmp off.b597
+mov ecx, dword[0x48a01c]
+mov eax, dword[ecx+0x15d4]
+mov edx, dword[ecx]
+dec eax
+push eax
+call dword[edx+0x278]
+test eax, eax
+jns off.b230
+mov ecx, dword[0x48a01c]
+push 0
+push 0
+push 1
+mov eax, dword[ecx]
+push 0
+call dword[eax+0x19c]
+push ecx
+lea ecx, [esp+0x28]
+call fcn.00401fe0
+lea ecx, [esp+0x24]
+mov dword[esp+0x3328], 0
+call dword[sym.imp.BCGCBPRO2500u120.dll_public_virtual:_int___thiscall_CBCGPDialog::DoModal_void_]
+cmp eax, 1
+jne off.b504
+call fcn.0041e2a0
+test al, al
+je off.b504
+mov ecx, dword[esp+0x1ecc]
+mov esi, ecx
+mov eax, ecx
+shr esi, 0x10
+or eax, 0xffffff00
+mov dword[esp+0xc], 0x45928c
+and esi, 0xff
+shl eax, 0x10
+or esi, eax
+mov dword[esp+0x10], 0
+and ecx, 0xff00
+mov dword[esp+0x14], 0
+or esi, ecx
+mov dword[esp+0x18], 0
+mov byte[esp+0x3328], 1
+cmp dword[esp+0x330c], 0
+je off.b431
+mov ecx, dword[esp+0x2dd4]
+mov edx, ecx
+mov eax, ecx
+shr edx, 0x10
+or eax, 0xffffff00
+and edx, 0xff
+shl eax, 0x10
+and ecx, 0xff00
+or edx, eax
+lea eax, [esp+0xc]
+or edx, ecx
+push edx
+push esi
+push str._08X__08X
+push eax
+call fcn.00402890
+add esp, 0x10
+jmp off.b450
+push esi
+lea eax, [esp+0x10]
+push str._08X
+push eax
+call fcn.00402890
+add esp, 0xc
+xor eax, eax
+mov ecx, 0x489f40
+mov word[0x489f40], ax
+mov eax, dword[esp+0x10]
+test eax, eax
+cmovne ecx, eax
+push ecx
+mov ecx, dword[edi+0x1f00]
+push str.AutoPhotoBG
+add ecx, 0x16930
+call fcn.00435be0
+lea ecx, [esp+0xc]
+call fcn.00401da0
+mov dword[esp+0x24], vtable.CDlgAutoBGReplace.0
+mov dword[esp+0x3328], 4
+lea ecx, [esp+0x2404]
+mov esi, dword[sym.imp.BCGCBPRO2500u120.dll_public_virtual:_void___thiscall_CBCGPColorButton::destructor_void_]
+call esi
+lea ecx, [esp+0x14fc]
+mov byte[esp+0x3328], 3
+call esi
+lea ecx, [esp+0xe74]
+mov byte[esp+0x3328], 2
+call dword[sym.imp.FFUILib.dll_public_virtual:_void___thiscall_CFFImageStatic::destructor_void_]
+lea ecx, [esp+0x24]
+mov dword[esp+0x3328], 0xffffffff
+call dword[sym.imp.FTMod.dll_public_virtual:_void___thiscall_CPFDialog::destructor_void_]
+mov ecx, dword[esp+0x3320]
+mov dword
+pop ecx
+pop edi
+pop esi
+mov ecx, dword[esp+0x330c]
+xor ecx, esp
+call fcn.0044e61f
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/3dfcfb1d918b690c00de324bcfcdc082

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.11988184336095975</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.030027223234216374</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.02074835736986248</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-10.361949920654297, -82.17411041259766, '<b><a href="/report/fcn.00428827@e16f74a2849182d98050864255e902f8">fcn.00428827</a><br>@e16f74a2849182d98050864255e902f8</b><br>', 'point { fill-color: #e0440e; }'],
-[126.36284637451172, 39.777923583984375, '<b><a href="/report/main@e16f74a2849182d98050864255e902f8">main</a><br>@e16f74a2849182d98050864255e902f8</b><br>', 'null'],
-[-248.91107177734375, 36.417205810546875, '<b><a href="/report/fcn.00403172@03566ca6c146fb1f8bfbce50f19cbb41">fcn.00403172</a><br>@03566ca6c146fb1f8bfbce50f19cbb41</b><br>', 'null'],
-[-160.3448486328125, 59.97303009033203, '<b><a href="/report/fcn.00402d22@1c48774da6a3dd4bf3ea41716a332c61">fcn.00402d22</a><br>@1c48774da6a3dd4bf3ea41716a332c61</b><br>', 'null'],
-[-245.6435546875, -43.71649169921875, '<b><a href="/report/fcn.00412c8d@6c5b0418e4a4c57d99cda47d2717045d">fcn.00412c8d</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[-166.872314453125, -20.019485473632812, '<b><a href="/report/fcn.00623e42@7614e1bbe9b9fd3db78e405e68b1fab4">fcn.00623e42</a><br>@7614e1bbe9b9fd3db78e405e68b1fab4</b><br>', 'null'],
-[44.32101058959961, 78.28470611572266, '<b><a href="/report/fcn.00442172@3d7f25d788af3e7f7707a736ac852465">fcn.00442172</a><br>@3d7f25d788af3e7f7707a736ac852465</b><br>', 'null'],
-[57.34915542602539, -6.821422576904297, '<b><a href="/report/fcn.00442172@6e426bd8e348fab7a17ba317fb0f2d87">fcn.00442172</a><br>@6e426bd8e348fab7a17ba317fb0f2d87</b><br>', 'null'],
-[45.6400146484375, -134.32737731933594, '<b><a href="/report/fcn.0042f095@505be53c36227b94e2fcc406f247f6e5">fcn.0042f095</a><br>@505be53c36227b94e2fcc406f247f6e5</b><br>', 'null'],
-[-13.471429824829102, 26.893890380859375, '<b><a href="/report/fcn.00442172@a314f14b11fc4f772a3e30c11b5cb1d4">fcn.00442172</a><br>@a314f14b11fc4f772a3e30c11b5cb1d4</b><br>', 'null'],
-[-224.2832794189453, 117.87164306640625, '<b><a href="/report/fcn.00407061@a2475448bf4050c1583e1970984a4d00">fcn.00407061</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00428827@e16f74a2849182d98050864255e902f8">fcn.00428827</a><br>@e16f74a2849182d98050864255e902f8</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -84,10 +74,10 @@ push esi
 push edi
 mov edi, eax
 cmp dword[edi+0x24], 0xffffffff
-jne 0x428840
+jne off.b25
 push 9
 pop eax
-jmp 0x428adf
+jmp off.b696
 mov dword[ebp-4], 0x4e
 push 0xd
 pop ebx
@@ -157,22 +147,22 @@ add eax, dword[ebp-8]
 mov dword[ebp-8], eax
 mov eax, dword[ebp+0xc]
 test byte[eax+4], 0x10
-je 0x428920
+je off.b249
 inc esi
 push esi
 call fcn.00424271
 pop ecx
 test eax, eax
-jne 0x428919
+jne off.b242
 mov dword[edi+0x10], esi
-jmp 0x428ad7
+jmp off.b688
 xor eax, eax
-jmp 0x428adf
+jmp off.b696
 push esi
 call fcn.00424271
 pop ecx
 test eax, eax
-jne 0x42896c
+jne off.b325
 mov dword[edi+0x10], 1
 call fcn.00424e4a
 fld qword[0x4708c8]
@@ -186,7 +176,7 @@ fstp qword[ebp-0x10]
 fld qword[ebp-0x10]
 fsub qword[0x470920]
 fstp qword[ebp-0x10]
-jmp 0x428adc
+jmp off.b693
 fld qword[0x4708c8]
 mov eax, dword[ebp+0xc]
 fstp qword[ebp-0x10]
@@ -210,9 +200,9 @@ push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov dword[ebp-0xc], eax
 cmp eax, 0xffffffff
-jne 0x4289ca
+jne off.b419
 mov dword[edi+0x10], 1
-jmp 0x428ad7
+jmp off.b688
 mov eax, edi
 call fcn.00426e1d
 mov dword[ebp-4], 0x4e
@@ -262,24 +252,24 @@ mov eax, dword[ebp-8]
 imul eax, eax, 0x52
 mov dword[ebp-8], eax
 cmp dword[edi+0x10], esi
-jne 0x428acf
+jne off.b680
 mov ebx, 0x4000
 cmp dword[edi+0x30], esi
-jne 0x428aae
+jne off.b647
 push ebx
 call fcn.0043c519
 mov dword[edi+0x30], eax
 cmp eax, esi
-jne 0x428aae
+jne off.b647
 mov dword[edi+0x10], 2
-jmp 0x428aae
+jmp off.b647
 push dword[edi+0x30]
 mov ecx, ebx
 call fcn.00427edd
 pop ecx
 mov dword[ebp-8], eax
 cmp eax, esi
-je 0x428ab3
+je off.b652
 lea ecx, [ebp-0x14]
 push ecx
 push eax
@@ -287,15 +277,15 @@ push dword[edi+0x30]
 push dword[ebp-0xc]
 call fcn.0043cc52
 test eax, eax
-je 0x428aa7
+je off.b640
 mov eax, dword[ebp-8]
 cmp dword[ebp-0x14], eax
-je 0x428aae
+je off.b647
 mov dword[edi+0x10], 3
 cmp dword[edi+0x10], esi
-je 0x428a79
+je off.b594
 cmp dword[edi+0x10], esi
-jne 0x428acf
+jne off.b680
 mov eax, dword[ebp+0xc]
 lea ecx, [eax+0x18]
 push ecx

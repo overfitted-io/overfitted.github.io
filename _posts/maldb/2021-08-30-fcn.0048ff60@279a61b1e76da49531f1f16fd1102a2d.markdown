@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,14 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-17.862041473388672, -4.6564555168151855, '<b><a href="/report/fcn.0048ff60@279a61b1e76da49531f1f16fd1102a2d">fcn.0048ff60</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[-119.41490173339844, -50.045047760009766, '<b><a href="/report/fcn.0042c080@279a61b1e76da49531f1f16fd1102a2d">fcn.0042c080</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-45.46543502807617, -111.73954010009766, '<b><a href="/report/fcn.004ea5a0@279a61b1e76da49531f1f16fd1102a2d">fcn.004ea5a0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[53.72684097290039, 80.47282409667969, '<b><a href="/report/fcn.004326f0@279a61b1e76da49531f1f16fd1102a2d">fcn.004326f0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[92.90392303466797, -7.724550247192383, '<b><a href="/report/fcn.004039b0@38d41d729f8f30faf0dd96f0c7acba4b">fcn.004039b0</a><br>@38d41d729f8f30faf0dd96f0c7acba4b</b><br>', 'null'],
-[-39.585174560546875, 104.54193115234375, '<b><a href="/report/fcn.004174a0@279a61b1e76da49531f1f16fd1102a2d">fcn.004174a0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[49.2572135925293, -93.70142364501953, '<b><a href="/report/fcn.00433720@279a61b1e76da49531f1f16fd1102a2d">fcn.00433720</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-116.38908386230469, 46.347801208496094, '<b><a href="/report/fcn.00417160@279a61b1e76da49531f1f16fd1102a2d">fcn.00417160</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0048ff60@279a61b1e76da49531f1f16fd1102a2d">fcn.0048ff60</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -106,7 +99,7 @@ push ecx
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov dword[ebp-4], eax
 cmp dword[ebp-4], 0xffffffff
-je 0x49015a
+je off.b506
 mov dword[ebp-0x214], 0
 push 0
 lea edx, [ebp-0x214]
@@ -121,10 +114,10 @@ mov ecx, dword[ebp-4]
 push ecx
 call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
 test eax, eax
-je 0x49015a
+je off.b506
 movzx edx, byte[ebp-0x229]
 test edx, edx
-jle 0x49015a
+jle off.b506
 mov dword[ebp-0x230], 0
 mov dword[ebp-0x468], 0
 xor eax, eax
@@ -161,7 +154,7 @@ push eax
 call fcn.00490170
 mov dword[ebp-8], eax
 cmp dword[ebp-8], 0
-je 0x490150
+je off.b496
 mov dword[ebp-0x868], 0
 push 0x3fc
 push 0
@@ -172,18 +165,18 @@ add esp, 0xc
 lea edx, [ebp-0x430]
 mov dword[ebp-0x86c], edx
 mov dword[ebp-0x870], 0
-jmp 0x490111
+jmp off.b433
 mov eax, dword[ebp-0x870]
 add eax, 1
 mov dword[ebp-0x870], eax
 cmp dword[ebp-0x870], 0x100
-jge 0x49013c
+jge off.b476
 mov ecx, dword[ebp-0x870]
 mov edx, dword[ebp-0x86c]
 movzx eax, word[edx+ecx*2]
 mov ecx, dword[ebp-0x870]
 mov dword[ebp+ecx*4-0x868], eax
-jmp 0x490102
+jmp off.b418
 push 0x13
 push 0xa
 lea edx, [ebp-0x868]

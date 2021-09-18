@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [236.6051483154297, 236.833740234375, '<b><a href="/report/fcn.0041142b@9c2b894b84f59672d8be2e984066f76f">fcn.0041142b</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
-[-236.6051483154297, -236.833740234375, '<b><a href="/report/fcn.1000aa57@e5d49e0823e602f2ee948ac39d32c1eb">fcn.1000aa57</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0041142b@9c2b894b84f59672d8be2e984066f76f">fcn.0041142b</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -74,9 +73,9 @@ call fcn.00553b80
 xor esi, esi
 mov dword[ebp-0x230], esi
 cmp dword[0x5ddcb4], esi
-jne 0x4115d2
+jne off.b423
 cmp dword[0x5d8368], 0xffffffff
-jne 0x4115d2
+jne off.b423
 push esi
 push 8
 lea eax, [ebp-0x238]
@@ -88,17 +87,17 @@ push ebx
 push reloc.OLEAUT32.dll_SafeArrayGetDim
 call fcn.004113da
 test eax, eax
-je 0x4115d5
+je off.b426
 mov eax, dword[ebp-0x238]
 test eax, eax
-jne 0x411582
-push str.GetModuleHandleExW
+jne off.b343
+push str.GetModuleHandleExW_
 push 0x5ddcd4
 push 0x58527c
 call fcn.00411389
 mov edi, eax
 test edi, edi
-je 0x4115d5
+je off.b426
 lea eax, [ebp-0x22c]
 push eax
 push ebx
@@ -107,7 +106,7 @@ mov ecx, edi
 call fcn.00553897
 call edi
 test eax, eax
-je 0x4115d5
+je off.b426
 mov edi, 0x105
 push edi
 lea eax, [ebp-0x228]
@@ -115,12 +114,12 @@ push eax
 push dword[ebp-0x22c]
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 test eax, eax
-je 0x4115d5
+je off.b426
 cmp eax, edi
-jb 0x4114f9
+jb off.b206
 push 0x6f
 call dword[sym.imp.KERNEL32.dll_SetLastError]
-jmp 0x4115d5
+jmp off.b426
 mov dword[ebp-0x258], 0x20
 mov dword[ebp-0x254], 0x88
 lea eax, [ebp-0x228]
@@ -135,20 +134,20 @@ push eax
 call fcn.004111b1
 mov dword[ebp-0x238], eax
 cmp eax, 0xffffffff
-jne 0x411578
+jne off.b333
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x714
-je 0x411570
+je off.b325
 cmp eax, 0x715
-je 0x411570
+je off.b325
 cmp eax, 0x717
-je 0x411570
+je off.b325
 cmp eax, 0x716
-je 0x411570
+je off.b325
 cmp eax, 2
-je 0x411570
+je off.b325
 cmp eax, edi
-jne 0x4115d5
+jne off.b426
 mov eax, esi
 mov dword[ebp-0x238], eax
 mov dword[0x5ddcb8], 1
@@ -158,19 +157,19 @@ push ecx
 push eax
 call fcn.0041116f
 test eax, eax
-je 0x4115d2
+je off.b423
 mov dword[ebp-4], esi
 mov dword[ebp-0x278], 0x40
 lea eax, [ebp-0x278]
 push eax
-mov edi, str.Comctl32.dll
+mov edi, str.Comctl32.dll_
 push edi
 push 2
 push esi
 push esi
 call fcn.004112ce
 test eax, eax
-je 0x4115c6
+je off.b411
 push edi
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 mov dword[ebp-4], 0xfffffffe

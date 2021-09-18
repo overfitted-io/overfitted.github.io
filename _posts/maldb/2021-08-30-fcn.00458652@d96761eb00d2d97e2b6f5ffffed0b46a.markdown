@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="MEMORY">MEMORY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.12277374210345893</span><span class="bhv-tag" id="FREES_DEFAULT_HEAP">FREES_DEFAULT_HEAP / 0.012379868328459005</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-157.1009063720703, 58.57631301879883, '<b><a href="/report/fcn.00458652@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00458652</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
-[-120.23535919189453, 119.09654998779297, '<b><a href="/report/fcn.004587e7@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004587e7</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[-180.7552947998047, 155.9624786376953, '<b><a href="/report/fcn.004585f1@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004585f1</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[-217.62147521972656, 95.44218444824219, '<b><a href="/report/fcn.0045874a@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0045874a</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
+    [-14100.5615234375, -11549.82421875, '<b><a href="/report/fcn.00458652@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00458652</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
+[14100.5615234375, 11549.82421875, '<b><a href="/report/fcn.004585f1@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004585f1</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
 
         ]);
 
@@ -85,10 +83,10 @@ push 3
 push edi
 call dword[sym.imp.ADVAPI32.dll_GetTokenInformation]
 test eax, eax
-jne 0x4586a9
+jne off.b87
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x7a
-jne 0x4586ac
+jne off.b90
 push dword[esi]
 push 8
 call dword[sym.imp.KERNEL32.dll_GetProcessHeap]
@@ -97,7 +95,7 @@ call dword[sym.imp.KERNEL32.dll_HeapAlloc]
 mov ecx, dword[ebp+8]
 mov dword[ecx], eax
 test eax, eax
-je 0x4586ac
+je off.b90
 push esi
 push dword[esi]
 push eax
@@ -105,7 +103,7 @@ push 3
 push edi
 call dword[sym.imp.ADVAPI32.dll_GetTokenInformation]
 test eax, eax
-je 0x4586ac
+je off.b90
 xor ebx, ebx
 inc ebx
 pop edi

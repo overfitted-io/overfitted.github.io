@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -81,7 +81,7 @@ xor eax, eax
 cmp dword[ebp+8], ebx
 setne al
 cmp eax, ebx
-jne 0x1010783d
+jne off.b80
 call fcn.10105d26
 mov dword[eax], 0x16
 push ebx
@@ -92,41 +92,41 @@ push ebx
 call fcn.100ff7a5
 add esp, 0x14
 xor eax, eax
-jmp 0x10107cef
+jmp off.b1282
 xor ecx, ecx
 mov eax, dword[ebp+0xc]
 cmp eax, ebx
 setne cl
 cmp ecx, ebx
-je 0x1010781e
+je off.b49
 mov dl, 0x20
-jmp 0x10107850
+jmp off.b99
 inc eax
 cmp byte[eax], dl
-je 0x1010784f
+je off.b98
 mov cl, byte[eax]
 cmp cl, 0x77
-je 0x10107860
+je off.b115
 cmp cl, 0x72
-jne 0x1010781e
+jne off.b49
 mov byte[ebp-0x20], cl
 inc eax
 cmp byte[eax], dl
-je 0x10107863
+je off.b118
 mov al, byte[eax]
 cmp al, bl
-je 0x10107876
+je off.b137
 cmp al, 0x74
-je 0x10107876
+je off.b137
 cmp al, 0x62
-jne 0x1010781e
+jne off.b49
 mov byte[ebp-0x1f], al
 cmp al, 0x74
-jne 0x10107884
+jne off.b151
 mov esi, 0x4000
-jmp 0x1010788d
+jmp off.b160
 cmp al, 0x62
-jne 0x1010788d
+jne off.b160
 mov esi, 0x8000
 or esi, 0x80
 push esi
@@ -136,15 +136,15 @@ push eax
 call fcn.1011c966
 add esp, 0xc
 cmp eax, 0xffffffff
-je 0x10107cec
+je off.b1279
 xor esi, esi
 inc esi
 cmp byte[ebp-0x20], 0x77
-jne 0x101078c2
+jne off.b213
 mov dword[ebp-0x1c], ebx
 mov dword[ebp-0x38], ebx
 mov dword[ebp-0x34], esi
-jmp 0x101078cb
+jmp off.b222
 mov dword[ebp-0x1c], esi
 mov dword[ebp-0x38], esi
 mov dword[ebp-0x34], ebx
@@ -152,14 +152,14 @@ push 9
 call fcn.1010f451
 pop ecx
 test eax, eax
-jne 0x101078ee
+jne off.b257
 push dword[ebp-0x4c]
 call fcn.10111183
 push dword[ebp-0x48]
 call fcn.10111183
 pop ecx
 pop ecx
-jmp 0x10107836
+jmp off.b73
 push 9
 call fcn.1010f514
 pop ecx
@@ -185,7 +185,7 @@ push dword[edx+ecx]
 push eax
 call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
 test eax, eax
-je 0x10107cb4
+je off.b1223
 push dword[edi]
 call fcn.10111183
 mov eax, dword[ebp-0x38]
@@ -198,12 +198,12 @@ call fcn.1011c7e0
 add esp, 0xc
 mov dword[ebp-0x30], eax
 cmp eax, ebx
-je 0x10107cb4
+je off.b1223
 xor edi, edi
 call fcn.1010778f
 mov dword[ebp-0x5c], eax
 cmp eax, ebx
-je 0x10107ca1
+je off.b1204
 push str.COMSPEC
 push ebx
 lea eax, [ebp-0x2c]
@@ -212,9 +212,9 @@ call fcn.101094f6
 add esp, 0xc
 mov esi, eax
 cmp esi, ebx
-je 0x101079a7
+je off.b442
 cmp esi, 0x16
-jne 0x101079a3
+jne off.b438
 push ebx
 push ebx
 push ebx
@@ -223,11 +223,11 @@ push ebx
 call fcn.100ff67d
 add esp, 0x14
 cmp esi, ebx
-jne 0x101079b1
+jne off.b452
 mov eax, dword[ebp-0x2c]
 cmp eax, ebx
 mov dword[ebp-0x24], eax
-jne 0x101079b8
+jne off.b459
 mov dword[ebp-0x24], str.cmd.exe
 push 0x44
 pop esi
@@ -242,12 +242,12 @@ mov dword[ebp-0x88], 0x100
 mov eax, dword[0x102273a0]
 cmp dword[ebp-0x1c], ebx
 mov ecx, dword[ebp-0x40]
-je 0x101079eb
+je off.b510
 mov ecx, dword[eax]
 mov dword[ebp-0x7c], ecx
 cmp dword[ebp-0x1c], 1
 mov ecx, dword[ebp-0x40]
-je 0x101079fa
+je off.b525
 mov ecx, dword[eax+0x40]
 mov dword[ebp-0x78], ecx
 mov eax, dword[eax+0x80]
@@ -268,14 +268,14 @@ call fcn.1010b826
 add esp, 0x14
 mov dword[ebp-0x1c], eax
 cmp eax, ebx
-je 0x10107ca1
+je off.b1204
 push dword[ebp-0x24]
 push edi
 push eax
 call fcn.100ffe8e
 add esp, 0xc
 cmp eax, ebx
-je 0x10107a5e
+je off.b625
 push ebx
 push ebx
 push ebx
@@ -289,7 +289,7 @@ push dword[ebp-0x1c]
 call fcn.101009d6
 add esp, 0xc
 cmp eax, ebx
-je 0x10107a7c
+je off.b655
 push ebx
 push ebx
 push ebx
@@ -303,7 +303,7 @@ push dword[ebp-0x1c]
 call fcn.101009d6
 add esp, 0xc
 cmp eax, ebx
-je 0x10107a9c
+je off.b687
 push ebx
 push ebx
 push ebx
@@ -320,7 +320,7 @@ call fcn.1010153d
 pop ecx
 pop ecx
 test eax, eax
-jne 0x10107adb
+jne off.b750
 lea eax, [ebp-0x70]
 push eax
 lea eax, [ebp-0xb4]
@@ -335,7 +335,7 @@ push dword[ebp-0x1c]
 push dword[ebp-0x24]
 call dword[sym.imp.KERNEL32.dll_CreateProcessA]
 mov dword[ebp-0x44], eax
-jmp 0x10107c56
+jmp off.b1129
 mov dword[ebp+8], ebx
 push 1
 mov edi, 0x104
@@ -346,7 +346,7 @@ pop ecx
 mov esi, eax
 mov dword[ebp-0x50], esi
 cmp esi, ebx
-jne 0x10107b1e
+jne off.b817
 push ebx
 call fcn.101006d7
 push dword[ebp-0x1c]
@@ -357,7 +357,7 @@ add esp, 0xc
 call fcn.10105d26
 mov ecx, dword[ebp-0x3c]
 mov dword[eax], ecx
-jmp 0x10107ca1
+jmp off.b1204
 push str.PATH
 push ebx
 lea eax, [ebp+8]
@@ -366,9 +366,9 @@ call fcn.101094f6
 add esp, 0xc
 mov dword[ebp-0x28], eax
 cmp eax, ebx
-je 0x10107b49
+je off.b860
 cmp eax, 0x16
-jne 0x10107b49
+jne off.b860
 push ebx
 push ebx
 push ebx
@@ -377,7 +377,7 @@ push ebx
 call fcn.100ff67d
 add esp, 0x14
 cmp dword[ebp-0x28], ebx
-je 0x10107b71
+je off.b900
 push dword[ebp+8]
 call fcn.101006d7
 push esi
@@ -387,7 +387,7 @@ call fcn.101006d7
 push dword[ebp-0x2c]
 call fcn.101006d7
 add esp, 0x10
-jmp 0x10107b0f
+jmp off.b802
 mov eax, dword[ebp+8]
 push 0x103
 push esi
@@ -396,9 +396,9 @@ call fcn.1011c74b
 add esp, 0xc
 mov dword[ebp-0x60], eax
 cmp eax, ebx
-je 0x10107c46
+je off.b1113
 cmp byte[esi], bl
-je 0x10107c46
+je off.b1113
 push esi
 call fcn.1010a1c0
 pop ecx
@@ -406,23 +406,23 @@ lea eax, [eax+esi-1]
 mov dword[ebp-0x28], eax
 mov al, byte[eax]
 cmp al, 0x5c
-jne 0x10107bb9
+jne off.b972
 push 0x5c
 push esi
 call fcn.10101526
 pop ecx
 pop ecx
 cmp dword[ebp-0x28], eax
-jmp 0x10107bbb
+jmp off.b974
 cmp al, 0x2f
-je 0x10107bdd
+je off.b1008
 push 0x1015f738
 push edi
 push esi
 call fcn.101009d6
 add esp, 0xc
 cmp eax, ebx
-je 0x10107bdd
+je off.b1008
 push ebx
 push ebx
 push ebx
@@ -441,14 +441,14 @@ mov ecx, dword[ebp-0x28]
 add ecx, eax
 mov esi, dword[ebp-0x50]
 cmp ecx, edi
-jae 0x10107c46
+jae off.b1113
 push dword[ebp-0x24]
 push edi
 push esi
 call fcn.101009d6
 add esp, 0xc
 cmp eax, ebx
-je 0x10107c1a
+je off.b1069
 push ebx
 push ebx
 push ebx
@@ -462,7 +462,7 @@ call fcn.1010153d
 pop ecx
 pop ecx
 test eax, eax
-jne 0x10107c97
+jne off.b1194
 lea eax, [ebp-0x70]
 push eax
 lea eax, [ebp-0xb4]
@@ -499,14 +499,14 @@ mov ecx, dword[ebp-0x3c]
 mov dword[eax], ecx
 mov eax, dword[ebp-0x5c]
 cmp dword[ebp-0x44], ebx
-je 0x10107c9f
+je off.b1202
 mov ecx, dword[ebp-0x70]
 mov dword[eax+4], ecx
 mov ecx, dword[ebp-0x30]
 mov dword[eax], ecx
-jmp 0x10107ce0
+jmp off.b1267
 mov eax, dword[ebp-0x60]
-jmp 0x10107b74
+jmp off.b903
 mov dword[eax], ebx
 push dword[ebp-0x30]
 call fcn.10101a40
@@ -517,14 +517,14 @@ mov dword[ebp-0x30], ebx
 mov eax, dword[ebp-0x38]
 shl eax, 2
 cmp dword[ebp+eax-0x58], ebx
-je 0x10107cca
+je off.b1245
 push dword[ebp+eax-0x4c]
 call fcn.10111183
 pop ecx
 mov eax, dword[ebp-0x34]
 shl eax, 2
 cmp dword[ebp+eax-0x58], ebx
-je 0x10107ce0
+je off.b1267
 push dword[ebp+eax-0x4c]
 call fcn.10111183
 pop ecx

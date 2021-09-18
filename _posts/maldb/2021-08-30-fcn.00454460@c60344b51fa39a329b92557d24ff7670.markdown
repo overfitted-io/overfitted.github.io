@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -79,14 +79,14 @@ push eax
 push 2
 call dword[sym.imp.WS2_32.dll_WSAStartup]
 test eax, eax
-je 0x454491
-jmp 0x4548f9
+je off.b49
+jmp off.b1177
 push str.inetmib1.dll
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 mov dword[ebp-0x1e4], eax
 cmp dword[ebp-0x1e4], 0x20
-jae 0x4544b0
-jmp 0x4548f9
+jae off.b80
+jmp off.b1177
 push str.SnmpExtensionInit
 mov ecx, dword[ebp-0x1e4]
 push ecx
@@ -189,13 +189,13 @@ lea edx, [ebp-0x1c8]
 push edx
 call sub.snmpapi.dll_SnmpUtilOidCpy
 mov dword[ebp-0x28c], 0
-jmp 0x454751
+jmp off.b753
 mov eax, dword[ebp-0x28c]
 add eax, 1
 mov dword[ebp-0x28c], eax
 mov ecx, dword[ebp-0x28c]
 cmp ecx, dword[ebp-0x1d4]
-jge 0x4548e1
+jge off.b1153
 lea edx, [ebp-0x1ac]
 push edx
 lea eax, [ebp-0x208]
@@ -205,8 +205,8 @@ push ecx
 push 0xa1
 call dword[ebp-0xc]
 test eax, eax
-jne 0x454786
-jmp 0x454742
+jne off.b806
+jmp off.b738
 mov edx, dword[ebp-0x210]
 push edx
 lea eax, [ebp-0x210]
@@ -215,11 +215,11 @@ lea ecx, [ebp-0x1e0]
 push ecx
 call sub.snmpapi.dll_SnmpUtilOidNCmp
 test eax, eax
-je 0x4547a6
-jmp 0x454742
+je off.b838
+jmp off.b738
 cmp dword[ebp-0x1d4], 6
-je 0x4547b1
-jmp 0x454742
+je off.b849
+jmp off.b738
 mov edx, dword[ebp-0x240]
 push edx
 lea eax, [ebp-0x240]
@@ -228,57 +228,57 @@ lea ecx, [ebp-0x1c8]
 push ecx
 call sub.snmpapi.dll_SnmpUtilOidNCmp
 test eax, eax
-je 0x4547d4
-jmp 0x454742
+je off.b884
+jmp off.b738
 cmp dword[ebp-0x1bc], 0
-jne 0x4547e2
-jmp 0x454742
+jne off.b898
+jmp off.b738
 mov edx, dword[ebp-0x1bc]
 movzx eax, byte[edx]
 cmp eax, 0x44
-jne 0x454830
+jne off.b976
 mov ecx, dword[ebp-0x1bc]
 movzx edx, byte[ecx+1]
 cmp edx, 0x45
-jne 0x454830
+jne off.b976
 mov eax, dword[ebp-0x1bc]
 movzx ecx, byte[eax+2]
 cmp ecx, 0x53
-jne 0x454830
+jne off.b976
 mov edx, dword[ebp-0x1bc]
 movzx eax, byte[edx+3]
 cmp eax, 0x54
-jne 0x454830
+jne off.b976
 mov ecx, dword[ebp-0x1bc]
 movzx edx, byte[ecx+4]
 test edx, edx
-jne 0x454830
-jmp 0x454742
+jne off.b976
+jmp off.b738
 mov eax, dword[ebp-0x1bc]
 movzx ecx, byte[eax]
 test ecx, ecx
-jne 0x454888
+jne off.b1064
 mov edx, dword[ebp-0x1bc]
 movzx eax, byte[edx+1]
 test eax, eax
-jne 0x454888
+jne off.b1064
 mov ecx, dword[ebp-0x1bc]
 movzx edx, byte[ecx+2]
 test edx, edx
-jne 0x454888
+jne off.b1064
 mov eax, dword[ebp-0x1bc]
 movzx ecx, byte[eax+3]
 test ecx, ecx
-jne 0x454888
+jne off.b1064
 mov edx, dword[ebp-0x1bc]
 movzx eax, byte[edx+4]
 test eax, eax
-jne 0x454888
+jne off.b1064
 mov ecx, dword[ebp-0x1bc]
 movzx edx, byte[ecx+5]
 test edx, edx
-jne 0x454888
-jmp 0x454742
+jne off.b1064
+jmp off.b738
 mov eax, dword[ebp-0x1bc]
 movzx ecx, byte[eax+5]
 push ecx
@@ -302,7 +302,7 @@ mov eax, dword[ebp+8]
 push eax
 call fcn.00415100
 add esp, 0x20
-jmp 0x4548e1
+jmp off.b1153
 lea ecx, [ebp-0x1e0]
 push ecx
 call sub.snmpapi.dll_SnmpUtilVarBindFree

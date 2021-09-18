@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.009752745329696949</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,15 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-101.64901733398438, 41.640968322753906, '<b><a href="/report/main@912f1d013a0d6151bc7a7cef6da1b2a0">main</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'point { fill-color: #e0440e; }'],
-[143.09970092773438, 179.980224609375, '<b><a href="/report/fcn.6408aaf0@07e4412910bcf0f5969ef64c44eecb2d">fcn.6408aaf0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-212.1285858154297, 162.75515747070312, '<b><a href="/report/fcn.00428940@1123b7aa5760238fe93045e585b8234c">fcn.00428940</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[66.8273696899414, -153.90357971191406, '<b><a href="/report/fcn.64089910@07e4412910bcf0f5969ef64c44eecb2d">fcn.64089910</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[208.23570251464844, 51.04191207885742, '<b><a href="/report/fcn.64036ab0@07e4412910bcf0f5969ef64c44eecb2d">fcn.64036ab0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-32.82621765136719, 156.4783935546875, '<b><a href="/report/main@152885a790b99953ce23874f0947b7bd">main</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[-90.52397155761719, -124.37942504882812, '<b><a href="/report/fcn.64088f50@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088f50</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-237.7707977294922, -57.48712921142578, '<b><a href="/report/fcn.64088d10@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088d10</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[26.64830780029297, 25.01580047607422, '<b><a href="/report/main@fb9b7d22bc1c143ac66b0575cbdd088d">main</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/main@912f1d013a0d6151bc7a7cef6da1b2a0">main</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -93,7 +85,7 @@ test eax, eax
 setne al
 mov byte[0x4be240], al
 test al, al
-jne 0x474df9
+jne off.b163
 push 0x104
 lea eax, [esp+0x74]
 push eax
@@ -103,7 +95,7 @@ lea eax, [esp+0x70]
 mov dword[esp+0x18], 0x3c
 mov dword[esp+0x1c], 0x100
 mov dword[esp+0x20], ebx
-mov dword[esp+0x24], str.runas
+mov dword[esp+0x24], str.runas_
 mov dword[esp+0x28], eax
 call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
 mov dword[esp+0x2c], eax
@@ -120,13 +112,13 @@ call dword[sym.imp.SHELL32.dll_ShellExecuteExW]
 neg eax
 sbb al, al
 inc al
-je 0x474e5e
+je off.b264
 lea eax, [esp+0x70]
 push eax
 push 2
 call dword[sym.imp.WS2_32.dll_WSAStartup]
 test eax, eax
-jne 0x474e5e
+jne off.b264
 lea eax, [esp+0x10]
 mov dword[esp+0x10], 8
 push eax
@@ -134,8 +126,8 @@ mov dword[esp+0x18], 0x8ff
 call dword[sym.imp.COMCTL32.dll_InitCommonControlsEx]
 call fcn.004740d7
 test eax, eax
-je 0x474e58
-jmp 0x474e46
+je off.b258
+jmp off.b240
 lea eax, [esp+0x54]
 push eax
 call dword[sym.imp.USER32.dll_TranslateMessage]
@@ -149,7 +141,7 @@ lea eax, [esp+0x60]
 push eax
 call dword[sym.imp.USER32.dll_GetMessageA]
 test eax, eax
-jne 0x474e30
+jne off.b218
 call dword[sym.imp.WS2_32.dll_WSACleanup]
 call dword[sym.imp.ole32.dll_CoUninitialize]
 mov ecx, dword[esp+0x27c]

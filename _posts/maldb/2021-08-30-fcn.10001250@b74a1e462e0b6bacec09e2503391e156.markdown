@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0094302488974421</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,8 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [242.01878356933594, -807.4724731445312, '<b><a href="/report/fcn.10001250@b74a1e462e0b6bacec09e2503391e156">fcn.10001250</a><br>@b74a1e462e0b6bacec09e2503391e156</b><br>', 'point { fill-color: #e0440e; }'],
-[-242.01890563964844, 807.4724731445312, '<b><a href="/report/fcn.0041997e@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0041997e</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.10001250@b74a1e462e0b6bacec09e2503391e156">fcn.10001250</a><br>@b74a1e462e0b6bacec09e2503391e156</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -90,7 +89,7 @@ call dword[sym.imp.KERNEL32.dll_GetDiskFreeSpaceA]
 lea eax, [ebp-0x1d8]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
-push str.GetDiskFreeSpaceA
+push str.GetDiskFreeSpaceA_
 push str.kernel32.dll
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 push eax
@@ -158,10 +157,10 @@ call fcn.100053b0
 add esp, 0xc
 xor eax, eax
 cmp dword[ebp+eax*4-0x194], edi
-je 0x100014f8
+je off.b680
 inc eax
 cmp eax, 0x64
-jl 0x10001440
+jl off.b496
 push edi
 push str.0x_X_n
 push 0x1001f27c
@@ -175,14 +174,14 @@ call dword[sym.imp.USER32.dll_MessageBoxA]
 push 0
 call dword[sym.imp.USER32.dll_OpenClipboard]
 test eax, eax
-je 0x1000150a
+je off.b698
 call dword[sym.imp.USER32.dll_EmptyClipboard]
 mov ecx, 0x1001f27c
 lea edx, [ecx+1]
 mov al, byte[ecx]
 inc ecx
 test al, al
-jne 0x10001498
+jne off.b584
 sub ecx, edx
 lea eax, [ecx+1]
 push eax
@@ -190,7 +189,7 @@ push 2
 call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
 mov dword[0x1001f244], eax
 test eax, eax
-je 0x10001528
+je off.b728
 push eax
 call dword[sym.imp.KERNEL32.dll_GlobalLock]
 push 0x1001f27c
@@ -215,14 +214,14 @@ call fcn.100036c6
 mov esp, ebp
 pop ebp
 ret
-push str.OpenClipboard
+push str.OpenClipboard_
 call fcn.10006e66
 push str.pause
 call fcn.1000863d
 add esp, 8
 push 1
 call fcn.10006e2c
-push str.GlobalAlloc
+push str.GlobalAlloc_
 call fcn.10006e66
 add esp, 4
 call dword[sym.imp.USER32.dll_CloseClipboard]

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,17 +71,17 @@ lea eax, [esp]
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
 test eax, eax
-jne 0x4294d6
+jne off.b38
 mov eax, dword[esp+0x14]
 mov dword[eax], 0
 mov dword[eax+4], 0
 add esp, 0x10
 ret
 cmp dword[esp+4], 0
-jg 0x4294e5
-jl 0x4294c1
+jg off.b53
+jl off.b17
 cmp dword[esp], 0
-jbe 0x4294c1
+jbe off.b17
 push esi
 push edi
 mov edi, dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
@@ -90,16 +90,16 @@ push eax
 xor esi, esi
 call edi
 test eax, eax
-jne 0x429511
+jne off.b97
 nop word[eax+eax]
 inc esi
 cmp esi, 3
-ja 0x42955c
+ja off.b172
 lea eax, [esp+0x10]
 push eax
 call edi
 test eax, eax
-je 0x429500
+je off.b80
 mov edx, dword[esp+0x14]
 mov ecx, dword[esp+0x10]
 call fcn.00435480

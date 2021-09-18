@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="HOOK">HOOK</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,19 +70,19 @@ index: false
 sub esp, 8
 cmp dword[0x4c7f18], 1
 push ebx
-jne 0x410db7
+jne off.b199
 xor bl, bl
 cmp dword[0x4c65e8], 0
 mov byte[esp+8], bl
-je 0x410d16
+je off.b38
 mov bl, 1
 mov byte[esp+8], bl
 cmp dword[0x4c65ec], 0
-je 0x410d26
+je off.b54
 or bl, 2
 mov byte[esp+8], bl
 test bl, bl
-je 0x410d41
+je off.b81
 mov al, byte[0x4c53d6]
 not al
 and al, bl
@@ -98,11 +98,11 @@ push edx
 push eax
 call dword[0x4c92dc]
 test bl, bl
-je 0x410e35
+je off.b325
 mov cl, byte[0x4c53d6]
 and cl, bl
 test cl, 1
-je 0x410d9e
+je off.b174
 push 1
 call fcn.00411940
 mov dl, byte[esp+0x18]
@@ -133,7 +133,7 @@ mov dword[0x4c53e0], 0
 call dword[sym.imp.USER32.dll_SetWindowsHookExW]
 mov dword[0x4c65f0], eax
 test eax, eax
-je 0x410e35
+je off.b325
 mov byte[0x4c65d8], 1
 push 1
 push 0x8000012f
@@ -142,12 +142,12 @@ call fcn.00401340
 add esp, 8
 cmp dword[0x4c65f0], 0
 mov dword[0x4c28b4], 1
-jne 0x410de6
+jne off.b246
 mov eax, dword[0x4c53ec]
 mov ecx, dword[0x4c53e8]
 cmp dword[eax+ecx*8-8], 0
 mov byte[0x4c65d8], 0
-jne 0x410e35
+jne off.b325
 mov ecx, dword[eax+ecx*8-4]
 mov edx, dword[esp+0x10]
 mov dword[edx], ecx

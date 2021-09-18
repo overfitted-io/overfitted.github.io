@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-1489.29345703125, 199.43826293945312, '<b><a href="/report/fcn.0067ed20@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067ed20</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[418.07025146484375, -962.0345458984375, '<b><a href="/report/fcn.0068fd90@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068fd90</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[470.11968994140625, 1270.521728515625, '<b><a href="/report/fcn.0068bbc0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bbc0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0067ed20@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067ed20</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,10 +71,10 @@ push ebx
 mov ebx, eax
 sub esp, 0x34
 cmp edx, 2
-je 0x67ed85
-jg 0x67ed70
+je off.b101
+jg off.b80
 test edx, edx
-jne 0x67ed7a
+jne off.b90
 lea eax, [esp+0x2c]
 mov dword[esp+0x1c], edx
 mov dword[esp], ebx
@@ -85,7 +83,7 @@ call dword[sym.imp.KERNEL32.dll_GetExitCodeProcess]
 sub esp, 8
 test eax, eax
 mov edx, dword[esp+0x1c]
-je 0x67edc0
+je off.b160
 cmp dword[esp+0x2c], 0x103
 mov eax, 0xfffff038
 cmove eax, edx
@@ -94,9 +92,9 @@ pop ebx
 pop esi
 ret
 cmp edx, 9
-je 0x67ed85
+je off.b101
 cmp edx, 0xf
-je 0x67ed85
+je off.b101
 add esp, 0x34
 mov eax, 0xfffff02a
 pop ebx
@@ -109,11 +107,11 @@ mov edx, eax
 sub esp, 8
 xor eax, eax
 test edx, edx
-jne 0x67ed62
+jne off.b66
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 5
 mov esi, eax
-je 0x67edd4
+je off.b180
 mov dword[esp], esi
 call fcn.0066e3a0
 add esp, 0x34
@@ -133,11 +131,11 @@ mov dword[esp+4], eax
 call dword[sym.imp.KERNEL32.dll_GetExitCodeProcess]
 sub esp, 8
 test eax, eax
-je 0x67edae
+je off.b142
 cmp dword[esp+0x2c], 0x103
 mov eax, 0xfffff038
-jne 0x67ed62
-jmp 0x67edae
+jne off.b66
+jmp off.b142
 
 {% endhighlight %}
 

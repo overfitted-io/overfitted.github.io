@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,25 +74,25 @@ mov esi, ecx
 cmp dword[esi+0x10], 0xff000000
 push edi
 mov edi, eax
-jne 0x468448
+jne off.b40
 mov eax, dword[edi+0x60]
 cmp eax, 0xff000000
-je 0x468441
+je off.b33
 cmp eax, 0xffffffff
-jne 0x468448
+jne off.b40
 test byte[esp+0x1c], 1
-je 0x46847f
+je off.b95
 mov ebp, dword[esi]
 push str.uxtheme
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 mov ebx, eax
 test ebx, ebx
-je 0x46847f
+je off.b95
 push str.SetWindowTheme
 push ebx
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x468478
+je off.b88
 push 0x4ab02c
 push 0x4ab02c
 push ebp
@@ -102,18 +102,18 @@ call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 mov eax, dword[edi+0x38]
 mov ebx, dword[sym.imp.USER32.dll_SendMessageW]
 test eax, eax
-jne 0x468492
+jne off.b114
 cmp dword[edi+0x3c], 0
-je 0x4684d3
+je off.b179
 cmp eax, 0xffffffff
-jle 0x4684c4
+jle off.b164
 cmp eax, 0x10000
-jge 0x4684c4
+jge off.b164
 mov ecx, dword[edi+0x3c]
 cmp ecx, 0xffffffff
-jle 0x4684c4
+jle off.b164
 cmp ecx, 0x10000
-jge 0x4684c4
+jge off.b164
 movzx eax, cx
 movzx ecx, word[edi+0x38]
 shl eax, 0x10
@@ -121,7 +121,7 @@ or eax, ecx
 push eax
 push 0
 push 0x401
-jmp 0x4684ce
+jmp off.b174
 mov ecx, dword[edi+0x3c]
 push ecx
 push eax
@@ -130,7 +130,7 @@ mov edx, dword[esi]
 push edx
 call ebx
 cmp byte[edi+0x18f], 0
-je 0x4684ec
+je off.b204
 mov eax, dword[esi+0x10]
 mov ecx, dword[esi]
 push eax
@@ -140,9 +140,9 @@ push ecx
 call ebx
 mov edi, dword[edi+0x60]
 cmp edi, 0xff000000
-je 0x468511
+je off.b241
 cmp edi, 0xffffffff
-je 0x46853a
+je off.b282
 mov edx, dword[esi]
 push edi
 push 0
@@ -159,10 +159,10 @@ mov edi, dword[esp+0x18]
 mov ecx, edi
 call fcn.00468550
 test al, al
-je 0x46852a
+je off.b266
 push 0xf
 call dword[sym.imp.USER32.dll_GetSysColor]
-jmp 0x46852d
+jmp off.b269
 mov eax, dword[edi+0x58]
 push eax
 mov eax, dword[esi]

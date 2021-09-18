@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -95,11 +95,11 @@ push eax
 call fcn.00407d2c
 xor eax, eax
 cmp dword[edi+4], eax
-ja 0x404c69
+ja off.b363
 or eax, 0xffffffff
 mov ecx, edi
 cmp eax, 0xffffffff
-jne 0x404c70
+jne off.b370
 push eax
 push 0
 call fcn.00407e8c
@@ -145,7 +145,7 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.KERNEL32.dll_IsWow64Process]
 cmp dword[ebp-4], ebx
-jne 0x404c0d
+jne off.b271
 mov byte[esi+0x34], bl
 and dword[ebp-0x38], 0
 lea edi, [ebp-0x34]
@@ -154,23 +154,23 @@ xor eax, eax
 pop ecx
 rep stosd
 cmp byte[esi+0x34], al
-je 0x404c89
+je off.b395
 and dword[ebp-0x10], eax
 lea ecx, [ebp-0x10]
 and dword[ebp-8], eax
 call fcn.00404c95
 test al, al
-je 0x404c7d
+je off.b383
 lea ecx, [ebp-0x10]
 call fcn.00404c95
 test al, al
 mov eax, dword[ebp-8]
-je 0x404c76
+je off.b376
 lea ecx, [ebp-0x38]
 push ecx
 call eax
 cmp dword[ebp-0x10], 0
-je 0x404c56
+je off.b344
 push dword[ebp-0x10]
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 mov ax, word[ebp-0x38]
@@ -185,17 +185,17 @@ ret 4
 mov ecx, dword[edi]
 jmp 0x43db90
 push eax
-jmp 0x404b73
+jmp off.b117
 mov eax, 0x43b752
-jmp 0x404c41
+jmp off.b323
 lea eax, [ebp-0x38]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
-jmp 0x404c47
+jmp off.b329
 lea eax, [ebp-0x38]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
-jmp 0x404c56
+jmp off.b344
 movzx edx, word[ecx]
 xor edi, edi
 push 0x20
@@ -211,14 +211,14 @@ test dx, dx
 jne 0x43db9d
 lea edi, [esi+0xc]
 test ebx, ebx
-je 0x404b67
+je off.b105
 inc eax
 add ecx, 2
 cmp eax, dword[edi+4]
 jb 0x43db90
-jmp 0x404b64
+jmp off.b102
 sub eax, 4
-jne 0x404bf1
+jne off.b243
 mov byte[esi+0x1d], bl
 mov byte[esi+0x1f], bl
 mov byte[esi+0x2b], bl
@@ -229,38 +229,38 @@ mov byte[esi+0x21], bl
 mov byte[esi+0x2d], bl
 mov byte[esi+0x2f], bl
 cmp dword[esi+4], ecx
-jne 0x404bf1
+jne off.b243
 mov byte[esi+0x31], bl
 cmp byte[ebp-0x3a], bl
 jne 0x43dc08
 mov byte[esi+0x30], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x33], bl
 mov byte[esi+0x32], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x21], bl
 cmp byte[ebp-0x3a], bl
 jne 0x43dc23
 mov byte[esi+0x20], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x23], bl
 mov byte[esi+0x22], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x21], bl
 mov byte[esi+0x23], bl
 mov byte[esi+0x25], bl
 cmp byte[ebp-0x3a], bl
 jne 0x43dc44
 mov byte[esi+0x24], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x27], bl
 mov byte[esi+0x26], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x2b], bl
 mov byte[esi+0x2a], bl
-jmp 0x404bf1
+jmp off.b243
 cmp eax, 3
-jne 0x404bf1
+jne off.b243
 mov byte[esi+0x2b], bl
 mov byte[esi+0x29], bl
 mov byte[esi+0x27], bl
@@ -270,10 +270,10 @@ mov byte[esi+0x2d], bl
 cmp byte[ebp-0x3a], bl
 jne 0x43dc82
 mov byte[esi+0x2c], bl
-jmp 0x404bf1
+jmp off.b243
 mov byte[esi+0x2f], bl
 mov byte[esi+0x2e], bl
-jmp 0x404bf1
+jmp off.b243
 cmp dword[esi+4], ebx
 jne 0x43dca9
 mov byte[esi+0x1d], bl
@@ -282,7 +282,7 @@ movzx eax, byte[ebp-0x3c]
 shr eax, 6
 and eax, ebx
 mov byte[esi+0x38], al
-jmp 0x404bf1
+jmp off.b243
 cmp dword[esi+4], 2
 jne 0x43dc98
 mov byte[esi+0x1d], bl

@@ -1,0 +1,1463 @@
+---
+layout: post
+title:  "[...]CT_const___struct_tagRECT_const___struct_tagRECT_const___bool__unsigned_char__bool__bool__bool_ @ 289859175c221b107317af7727d26c17"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** [...]CT\_const\_\_\_struct\_tagRECT\_const\_\_\_struct\_tagRECT\_const\_\_\_bool\_\_unsigned\_char\_\_bool\_\_bool\_\_bool\_
+- **Origin (md5):** 289859175c221b107317af7727d26c17
+- **VirusTotal:** [virustotal.com/gui/file/289859175c221b107317af7727d26c17][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="LINKING">LINKING</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [4592.21337890625, 7954.662109375, '<b><a href="/report/sym.tpop2.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawImage_struct_HDC_____struct_HBITMAP_____struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___bool__unsigned_char__bool__bool__bool_@289859175c221b107317af7727d26c17">sym.tpop2.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawImage_struct_HDC_____struct_HBITMAP_____struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___bool__unsigned_char__bool__bool__bool_</a><br>@289859175c221b107317af7727d26c17</b><br>', 'point { fill-color: #e0440e; }'],
+[-4592.2138671875, -7954.662109375, '<b><a href="/report/sym.Install.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawImage_struct_HDC_____struct_HBITMAP_____struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___bool__unsigned_char__bool__bool__bool_@279a61b1e76da49531f1f16fd1102a2d">sym.Install.exe_public:_static_void___cdecl_DuiLib::CRenderEngine::DrawImage_struct_HDC_____struct_HBITMAP_____struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___struct_tagRECT_const___bool__unsigned_char__bool__bool__bool_</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x50
+test byte[0x4d1df8], 1
+jne off.b50
+or dword[0x4d1df8], 1
+push 0x4a4808
+push 0x4a08a0
+call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
+push eax
+call dword[sym.imp.KERNEL32.dll_GetProcAddress]
+mov dword[0x4d1df4], eax
+push esi
+xor esi, esi
+cmp dword[0x4d1df4], esi
+jne off.b71
+mov dword[0x4d1df4], 0x43ad1f
+cmp dword[ebp+0xc], esi
+je off.b3889
+push ebx
+push edi
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_CreateCompatibleDC]
+push dword[ebp+0xc]
+mov dword[ebp-4], eax
+push eax
+call dword[sym.imp.GDI32.dll_SelectObject]
+push 4
+push dword[ebp+8]
+mov dword[ebp-0x30], eax
+call dword[sym.imp.GDI32.dll_SetStretchBltMode]
+xor eax, eax
+mov dword[ebp-0x50], esi
+lea edi, [ebp-0x4c]
+stosd dword
+stosd dword
+stosd dword
+xor eax, eax
+mov dword[ebp-0x40], esi
+lea edi, [ebp-0x3c]
+stosd dword
+stosd dword
+stosd dword
+cmp dword[0x4d1df4], esi
+je off.b1968
+cmp byte[ebp+0x20], 0
+mov al, byte[ebp+0x24]
+jne off.b169
+cmp al, 0xff
+jae off.b1968
+cmp byte[ebp+0x28], 0
+mov edi, dword[ebp+0x18]
+mov esi, dword[ebp+0x1c]
+mov ebx, dword[ebp+0x10]
+mov byte[ebp+0xc], 0
+mov byte[ebp+0xd], 0
+mov byte[ebp+0xe], al
+mov byte[ebp+0xf], 1
+jne off.b922
+mov ecx, dword[esi]
+mov eax, dword[ebx]
+mov edx, dword[esi+4]
+add eax, ecx
+mov dword[ebp-0x40], eax
+mov eax, dword[ebx+4]
+add edx, eax
+mov eax, dword[ebx+8]
+sub eax, dword[ebx]
+mov dword[ebp-0x3c], edx
+sub eax, ecx
+sub eax, dword[esi+8]
+mov ecx, dword[ebx+0xc]
+add eax, dword[ebp-0x40]
+sub ecx, dword[esi+4]
+mov dword[ebp-0x38], eax
+sub ecx, dword[ebx+4]
+lea eax, [ebp-0x40]
+sub ecx, dword[esi+0xc]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+add ecx, edx
+push eax
+mov dword[ebp-0x34], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b922
+cmp byte[ebp+0x2c], 0
+jne off.b382
+cmp byte[ebp+0x30], 0
+jne off.b781
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+mov ecx, dword[esi+4]
+mov eax, dword[edi+4]
+mov edx, dword[edi+0xc]
+sub edx, ecx
+mov ecx, dword[esi]
+sub edx, eax
+sub edx, dword[esi+0xc]
+push edx
+mov edx, dword[edi+8]
+sub edx, dword[edi]
+sub edx, ecx
+sub edx, dword[esi+8]
+push edx
+mov edx, dword[esi+4]
+add edx, eax
+mov eax, dword[edi]
+push edx
+add eax, ecx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+jmp off.b922
+mov ecx, dword[edi+8]
+sub ecx, dword[edi]
+mov edx, dword[ebp-0x38]
+sub ecx, dword[esi]
+sub ecx, dword[esi+8]
+cmp byte[ebp+0x30], 0
+je off.b640
+mov eax, dword[edi+0xc]
+sub eax, dword[edi+4]
+mov dword[ebp-0xc], ecx
+sub eax, dword[esi+4]
+sub eax, dword[esi+0xc]
+mov dword[ebp-8], eax
+mov eax, ecx
+sub eax, dword[ebp-0x40]
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+mov ecx, dword[ebp-0x34]
+mov dword[ebp-0x14], eax
+mov eax, dword[ebp-8]
+sub eax, dword[ebp-0x3c]
+lea eax, [eax+ecx-1]
+cdq
+idiv dword[ebp-8]
+test eax, eax
+jle off.b922
+and dword[ebp-0x10], 0
+mov dword[ebp-0x20], eax
+mov ecx, dword[ebp-0x10]
+mov edx, dword[ebp-0x3c]
+lea eax, [ecx+edx]
+mov dword[ebp-0x1c], eax
+mov eax, dword[ebp-8]
+add ecx, eax
+mov dword[ebp-0x2c], ecx
+add ecx, edx
+cmp ecx, dword[ebp-0x34]
+mov dword[ebp-0x18], eax
+jle off.b511
+sub eax, ecx
+add eax, dword[ebp-0x34]
+mov ecx, dword[ebp-0x34]
+mov dword[ebp-0x18], eax
+cmp dword[ebp-0x14], 0
+jle off.b620
+sub ecx, dword[ebp-0x1c]
+xor eax, eax
+mov dword[ebp-0x24], ecx
+mov ecx, dword[ebp-0x14]
+mov dword[ebp-0x1c], ecx
+mov ecx, dword[ebp-0x40]
+lea edx, [eax+ecx]
+mov ecx, dword[ebp-0xc]
+add eax, ecx
+mov ecx, dword[ebp-0x40]
+mov dword[ebp-0x28], eax
+add eax, ecx
+cmp eax, dword[ebp-0x38]
+mov ecx, dword[ebp-0xc]
+jle off.b565
+sub ecx, eax
+mov eax, dword[ebp-0x38]
+add ecx, eax
+push dword[ebp+0xc]
+sub eax, edx
+push dword[ebp-0x18]
+push ecx
+mov ecx, dword[edi+4]
+add ecx, dword[esi+4]
+push ecx
+mov ecx, dword[edi]
+add ecx, dword[esi]
+push ecx
+push dword[ebp-4]
+mov ecx, dword[ebp-0x3c]
+push dword[ebp-0x24]
+push eax
+mov eax, dword[ebp-0x10]
+add eax, ecx
+push eax
+push edx
+push dword[ebp+8]
+call dword[0x4d1df4]
+dec dword[ebp-0x1c]
+mov eax, dword[ebp-0x28]
+jne off.b531
+dec dword[ebp-0x20]
+mov eax, dword[ebp-0x2c]
+mov dword[ebp-0x10], eax
+jne off.b470
+jmp off.b922
+mov eax, ecx
+sub eax, dword[ebp-0x40]
+mov dword[ebp-0x2c], ecx
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+test eax, eax
+jle off.b922
+xor ecx, ecx
+mov dword[ebp-0x18], eax
+mov eax, dword[ebp-0x40]
+mov edx, dword[ebp-0x2c]
+add eax, ecx
+mov dword[ebp-0x1c], eax
+lea eax, [ecx+edx]
+mov ecx, dword[ebp-0x40]
+mov dword[ebp-0x28], eax
+add eax, ecx
+cmp eax, dword[ebp-0x38]
+mov dword[ebp-0x20], edx
+jle off.b709
+sub edx, eax
+add edx, dword[ebp-0x38]
+mov eax, dword[ebp-0x38]
+mov dword[ebp-0x20], edx
+push dword[ebp+0xc]
+mov ecx, dword[esi+4]
+mov edx, dword[edi+0xc]
+sub eax, dword[ebp-0x1c]
+sub edx, ecx
+mov ecx, dword[edi+4]
+sub edx, ecx
+sub edx, dword[esi+0xc]
+push edx
+push dword[ebp-0x20]
+mov edx, dword[esi+4]
+add edx, ecx
+mov ecx, dword[edi]
+add ecx, dword[esi]
+push edx
+push ecx
+push dword[ebp-4]
+push dword[ebp-0x34]
+push eax
+push dword[ebp-0x3c]
+push dword[ebp-0x1c]
+push dword[ebp+8]
+call dword[0x4d1df4]
+dec dword[ebp-0x18]
+mov ecx, dword[ebp-0x28]
+jne off.b668
+jmp off.b922
+mov ecx, dword[edi+0xc]
+sub ecx, dword[edi+4]
+mov edx, dword[ebp-0x34]
+sub ecx, dword[esi+4]
+sub ecx, dword[esi+0xc]
+mov eax, ecx
+sub eax, dword[ebp-0x3c]
+mov dword[ebp-0x2c], ecx
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+test eax, eax
+jle off.b922
+xor ecx, ecx
+mov dword[ebp-0x1c], eax
+mov eax, dword[ebp-0x3c]
+mov edx, dword[ebp-0x2c]
+add eax, ecx
+mov dword[ebp-0x20], eax
+lea eax, [ecx+edx]
+mov ecx, dword[ebp-0x3c]
+mov dword[ebp-0x24], eax
+add eax, ecx
+cmp eax, dword[ebp-0x34]
+mov ecx, edx
+jle off.b856
+sub ecx, eax
+mov eax, dword[ebp-0x34]
+add ecx, eax
+push dword[ebp+0xc]
+mov edx, dword[edi]
+push ecx
+mov ecx, dword[edi+8]
+sub ecx, edx
+sub eax, dword[ebp-0x20]
+mov edx, ecx
+mov ecx, dword[esi]
+sub edx, ecx
+sub edx, dword[esi+8]
+push edx
+mov edx, dword[edi+4]
+add edx, dword[esi+4]
+push edx
+mov edx, dword[edi]
+add edx, ecx
+push edx
+push dword[ebp-4]
+push eax
+push dword[ebp-0x38]
+push dword[ebp-0x20]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+dec dword[ebp-0x1c]
+mov ecx, dword[ebp-0x24]
+jne off.b820
+mov edx, dword[esi]
+test edx, edx
+jle off.b1030
+cmp dword[esi+4], 0
+jle off.b1161
+mov eax, dword[ebx]
+mov ecx, dword[ebx+4]
+mov dword[ebp-0x38], edx
+add dword[ebp-0x38], eax
+mov edx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], edx
+add dword[ebp-0x34], ecx
+push eax
+mov dword[ebp-0x3c], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1030
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x3c]
+push dword[esi+4]
+mov ecx, dword[ebp-0x40]
+push dword[esi]
+sub dword[ebp-0x34], eax
+push dword[edi+4]
+sub dword[ebp-0x38], ecx
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push eax
+push ecx
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi+4], 0
+jle off.b1161
+mov ecx, dword[esi]
+mov edx, dword[ebx]
+lea eax, [edx+ecx]
+mov dword[ebp-0x40], eax
+mov eax, dword[ebx+4]
+mov dword[ebp-0x3c], eax
+mov eax, dword[ebx+8]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+8]
+mov ecx, dword[esi+4]
+add eax, dword[ebp-0x40]
+add ecx, dword[ebp-0x3c]
+mov dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x34], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1161
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+push dword[esi+4]
+mov eax, dword[edi]
+mov edx, dword[edi+8]
+mov ecx, dword[esi]
+sub edx, eax
+sub edx, ecx
+sub edx, dword[esi+8]
+add eax, ecx
+push edx
+push dword[edi+4]
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi+8], 0
+jle off.b1279
+cmp dword[esi+4], 0
+jle off.b1279
+mov ecx, dword[esi+8]
+mov eax, dword[ebx+8]
+mov edx, dword[ebx+4]
+sub eax, ecx
+mov dword[ebp-0x38], ecx
+add dword[ebp-0x38], eax
+mov ecx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], ecx
+add dword[ebp-0x34], edx
+push eax
+mov dword[ebp-0x3c], edx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1279
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x40]
+push dword[esi+4]
+sub dword[ebp-0x38], eax
+mov eax, dword[esi+8]
+mov edx, dword[edi+8]
+mov ecx, dword[ebp-0x3c]
+sub dword[ebp-0x34], ecx
+push eax
+push dword[edi+4]
+sub edx, eax
+push edx
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi], 0
+jle off.b1416
+mov eax, dword[ebx]
+mov ecx, dword[ebx+4]
+mov edx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [edx+ecx]
+mov dword[ebp-0x3c], eax
+mov eax, dword[esi]
+mov dword[ebp-0x38], eax
+mov eax, dword[ebx+0xc]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+0xc]
+mov ecx, dword[ebp-0x40]
+add eax, dword[ebp-0x3c]
+add dword[ebp-0x38], ecx
+mov dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1416
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x3c]
+mov ecx, dword[esi+4]
+sub dword[ebp-0x34], eax
+mov edx, dword[edi+0xc]
+mov eax, dword[edi+4]
+sub edx, ecx
+sub edx, eax
+sub edx, dword[esi+0xc]
+add ecx, eax
+push edx
+push dword[esi]
+push ecx
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi+8], 0
+jle off.b1567
+mov ecx, dword[esi+8]
+mov eax, dword[ebx+8]
+mov edx, dword[esi+4]
+sub eax, ecx
+mov ecx, dword[ebx+4]
+mov dword[ebp-0x40], eax
+lea eax, [edx+ecx]
+mov dword[ebp-0x3c], eax
+mov eax, dword[esi+8]
+mov dword[ebp-0x38], eax
+mov eax, dword[ebx+0xc]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+0xc]
+mov ecx, dword[ebp-0x40]
+add eax, dword[ebp-0x3c]
+add dword[ebp-0x38], ecx
+mov dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1567
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+mov ecx, dword[esi+4]
+mov eax, dword[edi+4]
+mov edx, dword[edi+0xc]
+sub edx, ecx
+sub edx, eax
+sub edx, dword[esi+0xc]
+add ecx, eax
+mov eax, dword[edi+8]
+push edx
+mov edx, dword[esi+8]
+push edx
+push ecx
+sub eax, edx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+mov edx, dword[esi]
+test edx, edx
+jle off.b1683
+cmp dword[esi+0xc], 0
+jle off.b1829
+mov eax, dword[ebx]
+mov ecx, dword[esi+0xc]
+mov dword[ebp-0x40], eax
+mov eax, dword[ebx+0xc]
+add edx, dword[ebp-0x40]
+sub eax, ecx
+mov dword[ebp-0x3c], eax
+mov dword[ebp-0x34], ecx
+add dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x38], edx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1683
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[esi+0xc]
+mov edx, dword[edi+0xc]
+mov ecx, dword[ebp-0x3c]
+sub dword[ebp-0x34], ecx
+push eax
+push dword[esi]
+sub edx, eax
+push edx
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi+0xc], 0
+jle off.b1829
+mov edx, dword[ebx]
+mov eax, dword[esi]
+mov ecx, dword[ebx+0xc]
+add eax, edx
+mov dword[ebp-0x40], eax
+mov eax, dword[esi+0xc]
+sub ecx, eax
+mov eax, dword[ebx+8]
+sub eax, edx
+sub eax, dword[esi]
+mov edx, dword[esi+0xc]
+sub eax, dword[esi+8]
+mov dword[ebp-0x34], edx
+add eax, dword[ebp-0x40]
+add dword[ebp-0x34], ecx
+mov dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x3c], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b1829
+push dword[ebp+0xc]
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+mov ecx, dword[esi+0xc]
+sub dword[ebp-0x34], eax
+mov eax, dword[edi]
+mov edx, dword[esi]
+push ecx
+mov ecx, dword[edi+8]
+sub ecx, eax
+sub ecx, edx
+sub ecx, dword[esi+8]
+push ecx
+mov ecx, dword[edi+0xc]
+sub ecx, dword[esi+0xc]
+push ecx
+mov ecx, edx
+add eax, ecx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[0x4d1df4]
+cmp dword[esi+8], 0
+jle off.b3866
+cmp dword[esi+0xc], 0
+jle off.b3866
+mov eax, dword[ebx+8]
+mov ecx, dword[esi+8]
+mov edx, dword[esi+0xc]
+mov ebx, dword[ebx+0xc]
+sub eax, ecx
+mov dword[ebp-0x40], eax
+mov dword[ebp-0x38], ecx
+add dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+sub ebx, edx
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], edx
+add dword[ebp-0x34], ebx
+push eax
+mov dword[ebp-0x3c], ebx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3866
+push dword[ebp+0xc]
+mov eax, dword[esi+0xc]
+mov esi, dword[esi+8]
+mov ebx, dword[edi+0xc]
+mov ecx, dword[ebp-0x3c]
+mov edx, dword[ebp-0x40]
+sub dword[ebp-0x34], ecx
+sub dword[ebp-0x38], edx
+push eax
+push esi
+sub ebx, eax
+mov eax, dword[edi+8]
+push ebx
+sub eax, esi
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push edx
+push dword[ebp+8]
+call dword[0x4d1df4]
+jmp off.b3866
+mov ebx, dword[ebp+0x10]
+mov eax, dword[ebx+8]
+mov ecx, dword[ebx]
+mov edi, dword[ebp+0x18]
+mov esi, dword[ebp+0x1c]
+mov edx, eax
+sub edx, ecx
+mov ecx, dword[edi+8]
+sub ecx, dword[edi]
+cmp edx, ecx
+jne off.b2114
+mov ecx, dword[edi+0xc]
+mov edx, dword[ebx+0xc]
+sub ecx, dword[edi+4]
+sub edx, dword[ebx+4]
+cmp edx, ecx
+jne off.b2114
+xor ecx, ecx
+cmp dword[esi], ecx
+jne off.b2114
+cmp dword[esi+8], ecx
+jne off.b2114
+cmp dword[esi+4], ecx
+jne off.b2114
+cmp dword[esi+0xc], ecx
+jne off.b2114
+push ebx
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3866
+mov eax, dword[edi+4]
+sub eax, dword[ebx+4]
+push 0xcc0020
+add eax, dword[ebp-0x4c]
+push eax
+mov eax, dword[edi]
+sub eax, dword[ebx]
+add eax, dword[ebp-0x50]
+push eax
+push dword[ebp-4]
+mov eax, dword[ebp-0x44]
+sub eax, dword[ebp-0x4c]
+push eax
+mov eax, dword[ebp-0x48]
+sub eax, dword[ebp-0x50]
+push eax
+push dword[ebp-0x4c]
+push dword[ebp-0x50]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_BitBlt]
+jmp off.b3866
+cmp byte[ebp+0x28], 0
+jne off.b2821
+sub eax, dword[ebx]
+mov ecx, dword[esi]
+mov edx, dword[ebx]
+sub eax, dword[esi]
+add edx, ecx
+mov ecx, dword[esi+4]
+sub eax, dword[esi+8]
+mov dword[ebp-0x40], edx
+mov edx, dword[ebx+4]
+add eax, dword[ebp-0x40]
+add ecx, edx
+mov dword[ebp-0x3c], ecx
+mov ecx, dword[ebx+0xc]
+sub ecx, dword[esi+4]
+mov dword[ebp-0x38], eax
+sub ecx, edx
+sub ecx, dword[esi+0xc]
+lea eax, [ebp-0x40]
+add ecx, dword[ebp-0x3c]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x34], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b2821
+cmp byte[ebp+0x2c], 0
+jne off.b2302
+cmp byte[ebp+0x30], 0
+jne off.b2678
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+mov ecx, dword[esi+4]
+mov eax, dword[edi+4]
+mov edx, dword[edi+0xc]
+sub edx, ecx
+mov ecx, dword[esi]
+sub edx, eax
+sub edx, dword[esi+0xc]
+push 0xcc0020
+push edx
+mov edx, dword[edi+8]
+sub edx, dword[edi]
+sub edx, ecx
+sub edx, dword[esi+8]
+push edx
+mov edx, dword[esi+4]
+add edx, eax
+mov eax, dword[edi]
+push edx
+add eax, ecx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+jmp off.b2821
+mov ecx, dword[edi+8]
+sub ecx, dword[edi]
+mov edx, dword[ebp-0x38]
+sub ecx, dword[esi]
+sub ecx, dword[esi+8]
+cmp byte[ebp+0x30], 0
+mov dword[ebp-0x2c], ecx
+je off.b2538
+mov eax, dword[edi+0xc]
+sub eax, dword[edi+4]
+sub eax, dword[esi+4]
+sub eax, dword[esi+0xc]
+mov dword[ebp+0xc], eax
+mov eax, ecx
+sub eax, dword[ebp-0x40]
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+mov ecx, dword[ebp-0x34]
+mov dword[ebp-0x20], eax
+mov eax, dword[ebp+0xc]
+sub eax, dword[ebp-0x3c]
+lea eax, [eax+ecx-1]
+cdq
+idiv dword[ebp+0xc]
+test eax, eax
+jle off.b2821
+and dword[ebp-0xc], 0
+mov dword[ebp-0x18], eax
+mov eax, dword[ebp-0xc]
+mov ecx, dword[ebp-0x3c]
+mov edx, dword[ebp+0xc]
+add ecx, eax
+add eax, edx
+mov edx, dword[ebp-0x3c]
+mov dword[ebp-0x24], eax
+add eax, edx
+cmp eax, dword[ebp-0x34]
+jle off.b2419
+mov eax, dword[ebp-0x34]
+cmp dword[ebp-0x20], 0
+jle off.b2518
+mov dword[ebp-0x10], eax
+sub dword[ebp-0x10], ecx
+mov ecx, dword[ebp-0x20]
+xor eax, eax
+mov dword[ebp-0x1c], ecx
+mov ecx, dword[ebp-0x40]
+mov edx, dword[ebp-0x2c]
+add ecx, eax
+add eax, edx
+mov edx, dword[ebp-0x40]
+mov dword[ebp-0x28], eax
+add eax, edx
+cmp eax, dword[ebp-0x38]
+jle off.b2465
+mov eax, dword[ebp-0x38]
+mov edx, dword[edi+4]
+add edx, dword[esi+4]
+push 0xcc0020
+push edx
+mov edx, dword[edi]
+add edx, dword[esi]
+sub eax, ecx
+push edx
+push dword[ebp-4]
+mov edx, dword[ebp-0x3c]
+push dword[ebp-0x10]
+push eax
+mov eax, dword[ebp-0xc]
+add eax, edx
+push eax
+push ecx
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_BitBlt]
+dec dword[ebp-0x1c]
+mov eax, dword[ebp-0x28]
+jne off.b2439
+dec dword[ebp-0x18]
+mov eax, dword[ebp-0x24]
+mov dword[ebp-0xc], eax
+jne off.b2390
+jmp off.b2821
+mov eax, ecx
+sub eax, dword[ebp-0x40]
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+test eax, eax
+jle off.b2821
+xor ecx, ecx
+mov dword[ebp-0x1c], eax
+mov eax, dword[ebp-0x40]
+mov edx, dword[ebp-0x2c]
+add eax, ecx
+mov dword[ebp-0x20], eax
+lea eax, [ecx+edx]
+mov ecx, dword[ebp-0x40]
+mov dword[ebp-0x28], eax
+add eax, ecx
+cmp eax, dword[ebp-0x38]
+mov dword[ebp+0xc], edx
+jle off.b2604
+sub edx, eax
+add edx, dword[ebp-0x38]
+mov eax, dword[ebp-0x38]
+mov dword[ebp+0xc], edx
+mov ecx, dword[esi+4]
+mov edx, dword[edi+0xc]
+sub eax, dword[ebp-0x20]
+sub edx, ecx
+mov ecx, dword[edi+4]
+push 0xcc0020
+sub edx, ecx
+sub edx, dword[esi+0xc]
+push edx
+push dword[ebp+0xc]
+mov edx, dword[esi+4]
+add edx, ecx
+mov ecx, dword[edi]
+add ecx, dword[esi]
+push edx
+push ecx
+push dword[ebp-4]
+push dword[ebp-0x34]
+push eax
+push dword[ebp-0x3c]
+push dword[ebp-0x20]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+dec dword[ebp-0x1c]
+mov ecx, dword[ebp-0x28]
+jne off.b2563
+jmp off.b2821
+mov ecx, dword[edi+0xc]
+sub ecx, dword[edi+4]
+mov edx, dword[ebp-0x34]
+sub ecx, dword[esi+4]
+sub ecx, dword[esi+0xc]
+mov eax, ecx
+sub eax, dword[ebp-0x3c]
+mov dword[ebp-0x2c], ecx
+lea eax, [eax+edx-1]
+cdq
+idiv ecx
+test eax, eax
+jle off.b2821
+xor ecx, ecx
+mov dword[ebp-0x20], eax
+mov eax, dword[ebp-0x3c]
+mov edx, dword[ebp-0x2c]
+add eax, ecx
+mov dword[ebp+0xc], eax
+lea eax, [ecx+edx]
+mov ecx, dword[ebp-0x3c]
+mov dword[ebp-0x24], eax
+add eax, ecx
+cmp eax, dword[ebp-0x34]
+mov ecx, edx
+jle off.b2753
+sub ecx, eax
+mov eax, dword[ebp-0x34]
+add ecx, eax
+mov edx, dword[edi]
+push 0xcc0020
+push ecx
+mov ecx, dword[edi+8]
+sub ecx, edx
+sub eax, dword[ebp+0xc]
+mov edx, ecx
+mov ecx, dword[esi]
+sub edx, ecx
+sub edx, dword[esi+8]
+push edx
+mov edx, dword[edi+4]
+add edx, dword[esi+4]
+push edx
+mov edx, dword[edi]
+add edx, ecx
+push edx
+push dword[ebp-4]
+push eax
+push dword[ebp-0x38]
+push dword[ebp+0xc]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+dec dword[ebp-0x20]
+mov ecx, dword[ebp-0x24]
+jne off.b2717
+mov edx, dword[esi]
+test edx, edx
+jle off.b2931
+cmp dword[esi+4], 0
+jle off.b3064
+mov eax, dword[ebx]
+mov ecx, dword[ebx+4]
+mov dword[ebp-0x38], edx
+add dword[ebp-0x38], eax
+mov edx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], edx
+add dword[ebp-0x34], ecx
+push eax
+mov dword[ebp-0x3c], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b2931
+mov eax, dword[ebp-0x3c]
+mov ecx, dword[ebp-0x40]
+sub dword[ebp-0x34], eax
+sub dword[ebp-0x38], ecx
+push 0xcc0020
+push dword[esi+4]
+push dword[esi]
+push dword[edi+4]
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push eax
+push ecx
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi+4], 0
+jle off.b3064
+mov ecx, dword[esi]
+mov edx, dword[ebx]
+lea eax, [edx+ecx]
+mov dword[ebp-0x40], eax
+mov eax, dword[ebx+4]
+mov dword[ebp-0x3c], eax
+mov eax, dword[ebx+8]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+8]
+mov ecx, dword[esi+4]
+add eax, dword[ebp-0x40]
+add ecx, dword[ebp-0x3c]
+mov dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x34], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3064
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+mov eax, dword[edi]
+mov edx, dword[edi+8]
+mov ecx, dword[esi]
+push 0xcc0020
+push dword[esi+4]
+sub edx, eax
+sub edx, ecx
+sub edx, dword[esi+8]
+add eax, ecx
+push edx
+push dword[edi+4]
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi+8], 0
+jle off.b3184
+cmp dword[esi+4], 0
+jle off.b3184
+mov ecx, dword[esi+8]
+mov eax, dword[ebx+8]
+mov edx, dword[ebx+4]
+sub eax, ecx
+mov dword[ebp-0x38], ecx
+add dword[ebp-0x38], eax
+mov ecx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], ecx
+add dword[ebp-0x34], edx
+push eax
+mov dword[ebp-0x3c], edx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3184
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[esi+8]
+mov edx, dword[edi+8]
+mov ecx, dword[ebp-0x3c]
+sub dword[ebp-0x34], ecx
+push 0xcc0020
+push dword[esi+4]
+sub edx, eax
+push eax
+push dword[edi+4]
+push edx
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi], 0
+jle off.b3323
+mov eax, dword[ebx]
+mov ecx, dword[ebx+4]
+mov edx, dword[esi+4]
+mov dword[ebp-0x40], eax
+lea eax, [edx+ecx]
+mov dword[ebp-0x3c], eax
+mov eax, dword[esi]
+mov dword[ebp-0x38], eax
+mov eax, dword[ebx+0xc]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+0xc]
+mov ecx, dword[ebp-0x40]
+add eax, dword[ebp-0x3c]
+add dword[ebp-0x38], ecx
+mov dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3323
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+mov ecx, dword[esi+4]
+sub dword[ebp-0x34], eax
+mov edx, dword[edi+0xc]
+mov eax, dword[edi+4]
+push 0xcc0020
+sub edx, ecx
+sub edx, eax
+sub edx, dword[esi+0xc]
+add ecx, eax
+push edx
+push dword[esi]
+push ecx
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi+8], 0
+jle off.b3476
+mov ecx, dword[esi+8]
+mov eax, dword[ebx+8]
+mov edx, dword[esi+4]
+sub eax, ecx
+mov ecx, dword[ebx+4]
+mov dword[ebp-0x40], eax
+lea eax, [edx+ecx]
+mov dword[ebp-0x3c], eax
+mov eax, dword[esi+8]
+mov dword[ebp-0x38], eax
+mov eax, dword[ebx+0xc]
+sub eax, edx
+sub eax, ecx
+sub eax, dword[esi+0xc]
+mov ecx, dword[ebp-0x40]
+add eax, dword[ebp-0x3c]
+add dword[ebp-0x38], ecx
+mov dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3476
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+sub dword[ebp-0x34], eax
+mov ecx, dword[esi+4]
+mov eax, dword[edi+4]
+mov edx, dword[edi+0xc]
+push 0xcc0020
+sub edx, ecx
+sub edx, eax
+sub edx, dword[esi+0xc]
+add ecx, eax
+mov eax, dword[edi+8]
+push edx
+mov edx, dword[esi+8]
+push edx
+push ecx
+sub eax, edx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+mov edx, dword[esi]
+test edx, edx
+jle off.b3594
+cmp dword[esi+0xc], 0
+jle off.b3742
+mov eax, dword[ebx]
+mov ecx, dword[esi+0xc]
+mov dword[ebp-0x40], eax
+mov eax, dword[ebx+0xc]
+add edx, dword[ebp-0x40]
+sub eax, ecx
+mov dword[ebp-0x3c], eax
+mov dword[ebp-0x34], ecx
+add dword[ebp-0x34], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x38], edx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3594
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[esi+0xc]
+mov edx, dword[edi+0xc]
+mov ecx, dword[ebp-0x3c]
+sub dword[ebp-0x34], ecx
+push 0xcc0020
+push eax
+push dword[esi]
+sub edx, eax
+push edx
+push dword[edi]
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi+0xc], 0
+jle off.b3742
+mov edx, dword[ebx]
+mov eax, dword[esi]
+mov ecx, dword[ebx+0xc]
+add eax, edx
+mov dword[ebp-0x40], eax
+mov eax, dword[esi+0xc]
+sub ecx, eax
+mov eax, dword[ebx+8]
+sub eax, edx
+sub eax, dword[esi]
+mov edx, dword[esi+0xc]
+sub eax, dword[esi+8]
+mov dword[ebp-0x34], edx
+add eax, dword[ebp-0x40]
+add dword[ebp-0x34], ecx
+mov dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+lea eax, [ebp-0x50]
+push eax
+mov dword[ebp-0x3c], ecx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3742
+mov eax, dword[ebp-0x40]
+sub dword[ebp-0x38], eax
+mov eax, dword[ebp-0x3c]
+mov ecx, dword[esi+0xc]
+sub dword[ebp-0x34], eax
+mov eax, dword[edi]
+mov edx, dword[esi]
+push 0xcc0020
+push ecx
+mov ecx, dword[edi+8]
+sub ecx, eax
+sub ecx, edx
+sub ecx, dword[esi+8]
+push ecx
+mov ecx, dword[edi+0xc]
+sub ecx, dword[esi+0xc]
+push ecx
+mov ecx, edx
+add eax, ecx
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push dword[ebp-0x3c]
+push dword[ebp-0x40]
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+cmp dword[esi+8], 0
+jle off.b3866
+cmp dword[esi+0xc], 0
+jle off.b3866
+mov eax, dword[ebx+8]
+mov ecx, dword[esi+8]
+mov edx, dword[esi+0xc]
+mov ebx, dword[ebx+0xc]
+sub eax, ecx
+mov dword[ebp-0x40], eax
+mov dword[ebp-0x38], ecx
+add dword[ebp-0x38], eax
+lea eax, [ebp-0x40]
+push eax
+push dword[ebp+0x14]
+sub ebx, edx
+lea eax, [ebp-0x50]
+mov dword[ebp-0x34], edx
+add dword[ebp-0x34], ebx
+push eax
+mov dword[ebp-0x3c], ebx
+call dword[sym.imp.USER32.dll_IntersectRect]
+test eax, eax
+je off.b3866
+mov eax, dword[esi+0xc]
+mov esi, dword[esi+8]
+mov ebx, dword[edi+0xc]
+mov ecx, dword[ebp-0x3c]
+mov edx, dword[ebp-0x40]
+sub dword[ebp-0x34], ecx
+sub dword[ebp-0x38], edx
+push 0xcc0020
+push eax
+push esi
+sub ebx, eax
+mov eax, dword[edi+8]
+push ebx
+sub eax, esi
+push eax
+push dword[ebp-4]
+push dword[ebp-0x34]
+push dword[ebp-0x38]
+push ecx
+push edx
+push dword[ebp+8]
+call dword[sym.imp.GDI32.dll_StretchBlt]
+push dword[ebp-0x30]
+push dword[ebp-4]
+call dword[sym.imp.GDI32.dll_SelectObject]
+push dword[ebp-4]
+call dword[sym.imp.GDI32.dll_DeleteDC]
+pop edi
+pop ebx
+pop esi
+leave
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/289859175c221b107317af7727d26c17

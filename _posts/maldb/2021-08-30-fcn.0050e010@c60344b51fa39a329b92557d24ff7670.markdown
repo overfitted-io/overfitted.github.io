@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-1052.4166259765625, 703.4052734375, '<b><a href="/report/fcn.0050e010@c60344b51fa39a329b92557d24ff7670">fcn.0050e010</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
-[1316.81884765625, 312.2022399902344, '<b><a href="/report/fcn.0042afe0@279a61b1e76da49531f1f16fd1102a2d">fcn.0042afe0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-206.60870361328125, -1544.0709228515625, '<b><a href="/report/fcn.00452520@279a61b1e76da49531f1f16fd1102a2d">fcn.00452520</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0050e010@c60344b51fa39a329b92557d24ff7670">fcn.0050e010</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -98,8 +96,8 @@ push edx
 call dword[sym.imp.KERNEL32.dll_CreatePipe]
 mov dword[ebp-0x40], eax
 cmp dword[ebp-0x40], 0
-jne 0x50e08c
-jmp 0x50e16f
+jne off.b124
+jmp off.b351
 lea eax, [ebp-0x8c]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetStartupInfoW]
@@ -128,11 +126,11 @@ push 0
 call dword[sym.imp.KERNEL32.dll_CreateProcessW]
 mov dword[ebp-0x40], eax
 cmp dword[ebp-0x40], 0
-jne 0x50e0e9
-jmp 0x50e16f
+jne off.b217
+jmp off.b351
 cmp dword[ebp+0xc], 0
-je 0x50e0f1
-jmp 0x50e16f
+je off.b225
+jmp off.b351
 mov edx, dword[ebp+8]
 push edx
 lea ecx, [ebp-0x90]
@@ -143,17 +141,17 @@ push eax
 call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
 mov dword[ebp-0x20], eax
 cmp dword[ebp-0x20], 0
-je 0x50e137
+je off.b295
 lea ecx, [ebp-0x1c]
 push ecx
 mov edx, dword[ebp-0x30]
 push edx
 call dword[sym.imp.KERNEL32.dll_GetExitCodeProcess]
 test eax, eax
-jne 0x50e137
+jne off.b295
 lea ecx, [ebp-0x90]
 call fcn.00410950
-jmp 0x50e16f
+jmp off.b351
 mov eax, dword[ebp-0x30]
 push eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
@@ -167,15 +165,15 @@ mov dword[ebp-0x10], 0
 lea ecx, [ebp-0x90]
 call fcn.00410950
 xor eax, eax
-jne 0x50e055
+jne off.b69
 cmp dword[ebp-0x14], 0
-je 0x50e186
+je off.b374
 mov ecx, dword[ebp-0x14]
 push ecx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov dword[ebp-0x14], 0
 cmp dword[ebp-0x10], 0
-je 0x50e19d
+je off.b397
 mov edx, dword[ebp-0x10]
 push edx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]

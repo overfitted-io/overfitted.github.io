@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [70.13723754882812, 228.89834594726562, '<b><a href="/report/fcn.0041fff1@59aef7c08025d70f84c85db2092fc99e">fcn.0041fff1</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
-[-97.03907012939453, -260.0998229980469, '<b><a href="/report/fcn.00563f05@c60344b51fa39a329b92557d24ff7670">fcn.00563f05</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-13.446673393249512, -15.596503257751465, '<b><a href="/report/fcn.0040d6bc@a2475448bf4050c1583e1970984a4d00">fcn.0040d6bc</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
-[156.4942169189453, -210.22691345214844, '<b><a href="/report/fcn.1000aee9@481b545f5c18f2fce1caac67ddc419e8">fcn.1000aee9</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[240.08534240722656, 34.26872253417969, '<b><a href="/report/fcn.0040ba90@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.0040ba90</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>', 'null'],
-[-183.39060974121094, 179.05636596679688, '<b><a href="/report/fcn.004bb2ab@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004bb2ab</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[-266.96514892578125, -65.44340515136719, '<b><a href="/report/fcn.0042b23d@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042b23d</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0041fff1@59aef7c08025d70f84c85db2092fc99e">fcn.0041fff1</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -84,16 +78,16 @@ call dword[sym.imp.USER32.dll_ClientToScreen]
 mov edi, dword[sym.imp.USER32.dll_GetWindow]
 push 5
 push dword[ebp+8]
-jmp 0x420051
+jmp off.b96
 push esi
 call dword[sym.imp.USER32.dll_GetDlgCtrlID]
 test ax, ax
-je 0x42004e
+je off.b93
 push 0xfffffffffffffff0
 push esi
 call dword[sym.imp.USER32.dll_GetWindowLongA]
 test eax, 0x10000000
-je 0x42004e
+je off.b93
 lea eax, [ebp-0x10]
 push eax
 push esi
@@ -104,19 +98,19 @@ push dword[ebp+0xc]
 push eax
 call dword[sym.imp.USER32.dll_PtInRect]
 test eax, eax
-jne 0x42005f
+jne off.b110
 push 2
 push esi
 call edi
 mov esi, eax
 test esi, esi
-jne 0x420013
+jne off.b34
 pop edi
 pop esi
 leave
 ret 0xc
 mov eax, esi
-jmp 0x420059
+jmp off.b104
 
 {% endhighlight %}
 

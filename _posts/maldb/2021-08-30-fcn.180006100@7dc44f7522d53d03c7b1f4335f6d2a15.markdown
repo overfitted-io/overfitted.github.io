@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0952685840743137</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.04508928514239676</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.06487185619152155</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -88,29 +88,29 @@ mov rsi, rax
 call fcn.180002860
 cmp qword[0x180015270], rdi
 mov r14d, eax
-jne 0x180006241
+jne off.b321
 lea rcx, str.USER32.DLL
 xor edx, edx
 mov r8d, 0x800
 call qword[sym.imp.KERNEL32.dll_LoadLibraryExW]
 mov rbx, rax
 test rax, rax
-jne 0x180006193
+jne off.b147
 call qword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x57
-jne 0x180006355
+jne off.b597
 lea rcx, str.USER32.DLL
 xor r8d, r8d
 xor edx, edx
 call qword[sym.imp.KERNEL32.dll_LoadLibraryExW]
 mov rbx, rax
 test rax, rax
-je 0x180006355
+je off.b597
 lea rdx, str.MessageBoxW
 mov rcx, rbx
 call qword[sym.imp.KERNEL32.dll_GetProcAddress]
 test rax, rax
-je 0x180006355
+je off.b597
 mov rcx, rax
 call qword[sym.imp.KERNEL32.dll_EncodePointer]
 lea rdx, str.GetActiveWindow
@@ -133,7 +133,7 @@ mov rcx, rax
 call qword[sym.imp.KERNEL32.dll_EncodePointer]
 mov qword[0x180015290], rax
 test rax, rax
-je 0x180006241
+je off.b321
 lea rdx, str.GetProcessWindowStation
 mov rcx, rbx
 call qword[sym.imp.KERNEL32.dll_GetProcAddress]
@@ -142,38 +142,38 @@ call qword[sym.imp.KERNEL32.dll_EncodePointer]
 mov qword[0x180015288], rax
 call qword[sym.imp.KERNEL32.dll_IsDebuggerPresent]
 test eax, eax
-je 0x180006268
+je off.b360
 test r15, r15
-je 0x180006259
+je off.b345
 mov rcx, r15
 call qword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 test r14d, r14d
-je 0x180006284
+je off.b388
 mov eax, 4
-jmp 0x180006357
+jmp off.b599
 test r14d, r14d
-je 0x180006284
+je off.b388
 mov rcx, qword[0x180015270]
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 mov eax, 3
-jmp 0x180006357
+jmp off.b599
 mov rcx, qword[0x180015288]
 cmp rcx, rsi
-je 0x1800062f3
+je off.b499
 cmp qword[0x180015290], rsi
-je 0x1800062f3
+je off.b499
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 mov rcx, qword[0x180015290]
 mov rbx, rax
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 mov r14, rax
 test rbx, rbx
-je 0x1800062f3
+je off.b499
 test rax, rax
-je 0x1800062f3
+je off.b499
 call rbx
 test rax, rax
-je 0x1800062ed
+je off.b493
 lea rcx, [rsp+0x30]
 mov r9d, 0xc
 lea r8, [rsp+0x38]
@@ -182,40 +182,40 @@ lea edx, [r9-0xb]
 mov rcx, rax
 call r14
 test eax, eax
-je 0x1800062ed
+je off.b493
 test byte[rsp+0x40], 1
-jne 0x1800062f3
+jne off.b499
 bts ebp, 0x15
-jmp 0x180006333
+jmp off.b563
 mov rcx, qword[0x180015278]
 cmp rcx, rsi
-je 0x180006333
+je off.b563
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 test rax, rax
-je 0x180006333
+je off.b563
 call rax
 mov rdi, rax
 test rax, rax
-je 0x180006333
+je off.b563
 mov rcx, qword[0x180015280]
 cmp rcx, rsi
-je 0x180006333
+je off.b563
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 test rax, rax
-je 0x180006333
+je off.b563
 mov rcx, rdi
 call rax
 mov rdi, rax
 mov rcx, qword[0x180015270]
 call qword[sym.imp.KERNEL32.dll_DecodePointer]
 test rax, rax
-je 0x180006355
+je off.b597
 mov r9d, ebp
 mov r8, r12
 mov rdx, r15
 mov rcx, rdi
 call rax
-jmp 0x180006357
+jmp off.b599
 xor eax, eax
 mov rcx, qword[rsp+0x48]
 xor rcx, rsp

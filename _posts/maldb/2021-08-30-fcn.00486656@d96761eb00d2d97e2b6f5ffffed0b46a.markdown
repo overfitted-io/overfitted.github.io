@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,32 +70,32 @@ push ebp
 mov ebp, esp
 mov eax, dword[ebp+0x28]
 cmp eax, 0xffffffff
-jne 0x486664
+jne off.b14
 push 2
 pop eax
 cmp eax, 0x10
-jge 0x48666c
+jge off.b22
 or eax, 2
 mov ecx, dword[ebp+0x20]
 push esi
 mov esi, 0x96
 cmp ecx, 0xffffffff
-jne 0x48667c
+jne off.b38
 mov ecx, esi
 mov edx, dword[ebp+0x24]
 cmp edx, 0xffffffff
-jne 0x486686
+jne off.b48
 mov edx, esi
 cmp dword[ebp+0x30], 0
-jge 0x486690
+jge off.b58
 xor al, al
-jmp 0x4866fe
+jmp off.b168
 push ebx
 push edi
 mov edi, dword[ebp+0x14]
 xor ebx, ebx
 cmp word[edi], bx
-je 0x4866fa
+je off.b164
 push ebx
 push ecx
 push dword[ebp+0x10]
@@ -112,7 +112,7 @@ call fcn.00401d35
 mov esi, dword[ebp+0xc]
 mov dword[esi], eax
 test eax, eax
-je 0x4866fa
+je off.b164
 push edi
 push ebx
 mov ebx, dword[sym.imp.USER32.dll_SendMessageW]
@@ -120,18 +120,18 @@ push 0x467
 push eax
 call ebx
 test eax, eax
-jne 0x486703
+jne off.b173
 push edi
 call dword[sym.imp.KERNEL32.dll_LoadLibraryW]
 test eax, eax
-je 0x486703
+je off.b173
 push dword[ebp+0x30]
 push eax
 push 0x467
 push dword[esi]
 call ebx
 test eax, eax
-jne 0x486703
+jne off.b173
 push dword[esi]
 call dword[sym.imp.USER32.dll_DestroyWindow]
 xor al, al
@@ -141,11 +141,11 @@ pop esi
 pop ebp
 ret 0x2c
 cmp dword[0x4c67b8], 0
-jne 0x486718
+jne off.b194
 mov eax, 0x300
 mov word[esi+0x86], ax
 mov al, 1
-jmp 0x4866fc
+jmp off.b166
 
 {% endhighlight %}
 

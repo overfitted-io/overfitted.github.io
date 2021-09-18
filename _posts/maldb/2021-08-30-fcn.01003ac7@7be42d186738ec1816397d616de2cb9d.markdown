@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.26441938945030175</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.258718038168053</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.19453697583269047</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [106.70819854736328, 99.26325225830078, '<b><a href="/report/fcn.01003ac7@7be42d186738ec1816397d616de2cb9d">fcn.01003ac7</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'point { fill-color: #e0440e; }'],
-[265.34564208984375, 137.57220458984375, '<b><a href="/report/fcn.004245c7@7b00dd8f2abf54a73bfb09681334ff78">fcn.004245c7</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
-[192.1648406982422, -39.771644592285156, '<b><a href="/report/fcn.005626f8@c60344b51fa39a329b92557d24ff7670">fcn.005626f8</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[119.29496002197266, 261.9744567871094, '<b><a href="/report/fcn.00407935@6c8b5339bada4cbd03f0f446da640707">fcn.00407935</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
-[0.8867510557174683, -24.97609519958496, '<b><a href="/report/fcn.0042174e@59aef7c08025d70f84c85db2092fc99e">fcn.0042174e</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[-44.150413513183594, 161.5129852294922, '<b><a href="/report/fcn.00407935@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.00407935</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.01003ac7@7be42d186738ec1816397d616de2cb9d">fcn.01003ac7</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -97,9 +92,9 @@ push eax
 push edi
 call dword[sym.imp.KERNEL32.dll_FindResourceA]
 cmp eax, edi
-je 0x1003ba0
+je off.b217
 push esi
-jmp 0x1003b1a
+jmp off.b83
 xor edi, edi
 push eax
 push edi
@@ -108,7 +103,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov esi, eax
 cmp esi, edi
-je 0x1003b86
+je off.b191
 mov eax, dword[esi]
 mov dword[ebp-0x2c], eax
 mov eax, dword[esi+4]
@@ -124,7 +119,7 @@ push dword[ebp-0x2c]
 call dword[ebp-0x28]
 test eax, eax
 push esi
-je 0x1003b95
+je off.b206
 call dword[sym.imp.KERNEL32.dll_FreeResource]
 inc dword[ebp-0x20]
 push dword[ebp-0x20]
@@ -139,11 +134,11 @@ push eax
 push 0
 call dword[sym.imp.KERNEL32.dll_FindResourceA]
 test eax, eax
-jne 0x1003b18
-jmp 0x1003b9f
+jne off.b81
+jmp off.b216
 mov dword[0x100ba5c], 0x80070714
 mov dword[ebp-0x1c], edi
-jmp 0x1003b9f
+jmp off.b216
 and dword[ebp-0x1c], 0
 call dword[sym.imp.KERNEL32.dll_FreeResource]
 pop esi

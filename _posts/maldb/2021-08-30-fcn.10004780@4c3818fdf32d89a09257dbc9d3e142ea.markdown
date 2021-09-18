@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -84,23 +84,23 @@ push eax
 push edx
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-jne 0x100047ee
+jne off.b110
 mov eax, dword[esp+0xc]
 cmp eax, 1
-je 0x100047bf
+je off.b63
 cmp eax, 2
-jne 0x100047da
+jne off.b90
 test esi, esi
 mov eax, dword[esp]
-je 0x100047e8
+je off.b104
 test eax, eax
-je 0x100047e3
+je off.b99
 test al, 1
-jne 0x100047da
+jne off.b90
 mov ecx, eax
 shr ecx, 1
 cmp word[esi+ecx*2-2], 0
-je 0x100047e8
+je off.b104
 mov eax, 0xd
 pop ecx
 ret 8

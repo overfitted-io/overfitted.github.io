@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.04565316805834054</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.012895490419548301</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,10 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-71.30978393554688, 89.23035430908203, '<b><a href="/report/fcn.004023e0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004023e0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[-144.69398498535156, 70.64659118652344, '<b><a href="/report/fcn.10012a80@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10012a80</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
-[-52.726783752441406, 15.845632553100586, '<b><a href="/report/fcn.0040bcdc@470263fe7e7cc115b95cd041d643e3b5">fcn.0040bcdc</a><br>@470263fe7e7cc115b95cd041d643e3b5</b><br>', 'null'],
-[-126.11089324951172, -2.737473487854004, '<b><a href="/report/fcn.004784b0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004784b0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004023e0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004023e0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -90,7 +87,7 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 test eax, eax
-jne 0x402444
+jne off.b100
 push str.AdjustProcessTokenPrivilege_OpenProcessToken_Failed____n
 call fcn.004f204a
 add esp, 4
@@ -109,17 +106,17 @@ pop ebp
 ret
 lea edx, [ebp-0x30]
 push edx
-push str.SeDebugPrivilege
+push str.SeDebugPrivilege_
 push 0
 call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueA]
 test eax, eax
-jne 0x40246c
+jne off.b140
 push str.AdjustProcessTokenPrivilege_LookupPrivilegeValue_Failed____n
 call fcn.004f204a
 mov eax, dword[ebp-0x20]
 add esp, 4
 push eax
-jmp 0x4024b1
+jmp off.b209
 mov ecx, dword[ebp-0x30]
 mov edx, dword[ebp-0x2c]
 push 0
@@ -136,7 +133,7 @@ mov dword[ebp-0x10], edx
 mov dword[ebp-0xc], 2
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 test eax, eax
-jne 0x4024d7
+jne off.b247
 push str.AdjustProcessTokenPrivilege_AdjustTokenPrivileges_Failed____n
 call fcn.004f204a
 mov edx, dword[ebp-0x20]
@@ -162,7 +159,7 @@ push 0
 call dword[sym.imp.KERNEL32.dll_FindResourceA]
 mov esi, eax
 test esi, esi
-je 0x40256a
+je off.b394
 push esi
 push 0
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
@@ -174,12 +171,12 @@ mov ebx, eax
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 mov edi, eax
 test edi, edi
-je 0x40256a
+je off.b394
 push edi
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov esi, eax
 test esi, esi
-je 0x40256a
+je off.b394
 mov eax, dword[ebp-0x28]
 push 0x555d6c
 push eax
@@ -188,10 +185,10 @@ push ecx
 call fcn.004f21da
 add esp, 0xc
 test eax, eax
-jne 0x402563
+jne off.b387
 mov eax, dword[ebp-0x1c]
 test eax, eax
-je 0x402563
+je off.b387
 push eax
 push ebx
 push 1

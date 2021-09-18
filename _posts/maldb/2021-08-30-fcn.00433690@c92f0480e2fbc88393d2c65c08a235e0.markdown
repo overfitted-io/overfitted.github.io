@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [60.61145782470703, -37.39053726196289, '<b><a href="/report/fcn.00433690@c92f0480e2fbc88393d2c65c08a235e0">fcn.00433690</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[78.92961120605469, 160.1434783935547, '<b><a href="/report/fcn.0068ae70@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068ae70</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[103.44621276855469, -132.4509735107422, '<b><a href="/report/fcn.00402b01@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00402b01</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[137.52117919921875, 88.60923767089844, '<b><a href="/report/fcn.0068b9d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068b9d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-7.697035789489746, 78.76812744140625, '<b><a href="/report/fcn.00670420@c92f0480e2fbc88393d2c65c08a235e0">fcn.00670420</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[27.69818878173828, -86.19695281982422, '<b><a href="/report/fcn.0069f770@c92f0480e2fbc88393d2c65c08a235e0">fcn.0069f770</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[149.39230346679688, 4.179264545440674, '<b><a href="/report/fcn.0066fc20@c92f0480e2fbc88393d2c65c08a235e0">fcn.0066fc20</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[75.52249145507812, 86.71453094482422, '<b><a href="/report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bda0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[9.893635749816895, 211.08387756347656, '<b><a href="/report/fcn.006ba260@c92f0480e2fbc88393d2c65c08a235e0">fcn.006ba260</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[4.754488468170166, 142.93740844726562, '<b><a href="/report/fcn.006713a0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006713a0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[136.5322723388672, -61.52550506591797, '<b><a href="/report/fcn.0067aed0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067aed0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00433690@c92f0480e2fbc88393d2c65c08a235e0">fcn.00433690</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -84,7 +74,7 @@ sub esp, 0x6c
 mov eax, dword[esp+0x80]
 test al, al
 mov byte[0x745010], al
-jne 0x4336b0
+jne off.b32
 add esp, 0x6c
 pop ebx
 pop esi
@@ -101,7 +91,7 @@ mov ebx, dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 call ebx
 sub esp, 0xc
 cmp eax, 1
-je 0x433790
+je off.b256
 call esi
 lea edx, [esp+0x38]
 mov dword[esp+4], 8
@@ -110,7 +100,7 @@ mov dword[esp+8], edx
 call ebx
 sub esp, 0xc
 cmp eax, 1
-jne 0x4336a7
+jne off.b23
 mov eax, dword[esp+0x38]
 lea ebp, [esp+0x48]
 mov dword[esp+0x48], 0
@@ -125,7 +115,7 @@ call eax
 sub esp, 0x14
 mov eax, dword[esp+0x48]
 test eax, eax
-jne 0x433840
+jne off.b432
 mov eax, dword[esp+0x38]
 mov dword[esp+0x10], ebp
 mov dword[esp+0xc], 0
@@ -138,17 +128,17 @@ mov eax, dword[esp+0x38]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 sub esp, 4
-jmp 0x4336a7
+jmp off.b23
 lea eax, [esp+0x4c]
 mov dword[esp+0x48], 1
 mov dword[esp+0x54], 2
-mov dword[esp+4], str.SeLockMemoryPrivilege
+mov dword[esp+4], str.SeLockMemoryPrivilege_
 mov dword[esp], 0
 mov dword[esp+8], eax
 call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
 sub esp, 0xc
 cmp eax, 1
-jne 0x4336df
+jne off.b79
 lea eax, [esp+0x48]
 mov dword[esp+0x14], 0
 mov dword[esp+0x10], 0
@@ -160,10 +150,10 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 sub esp, 0x18
 cmp eax, 1
-jne 0x4336df
+jne off.b79
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 test eax, eax
-jne 0x4336df
+jne off.b79
 mov eax, dword[esp+0x40]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
@@ -198,13 +188,13 @@ call edx
 sub esp, 4
 mov edx, dword[esp+0x28]
 test edx, edx
-je 0x4336a7
+je off.b23
 xor edx, edx
 xor eax, eax
 mov dword[ebp+eax], edx
 add eax, 4
 cmp eax, 0x18
-jb 0x4338a6
+jb off.b534
 lea eax, [esp+0x3c]
 mov dword[esp+8], 0xf0fff
 mov dword[esp+4], ebp
@@ -213,19 +203,19 @@ mov dword[esp+0xc], eax
 call sub.ADVAPI32.dll_LsaOpenPolicy
 sub esp, 0x10
 test eax, eax
-je 0x4338ee
+je off.b606
 mov eax, dword[esp+0x28]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_LocalFree]
 sub esp, 4
-jmp 0x4336a7
+jmp off.b23
 mov dword[esp], str.SeLockMemoryPrivilege
 call sub.msvcrt.dll_wcslen
 lea edx, [eax+eax]
 lea eax, [eax+eax+2]
 mov dword[esp+0xc], 1
 mov dword[esp+8], edi
-mov dword[esp+0x44], str.SeLockMemoryPrivilege
+mov dword[esp+0x44], str.SeLockMemoryPrivilege_
 mov word[esp+0x42], ax
 mov eax, dword[esp+0x28]
 mov word[esp+0x40], dx
@@ -236,12 +226,12 @@ mov dword[esp], eax
 call sub.ADVAPI32.dll_LsaAddAccountRights
 sub esp, 0x10
 test eax, eax
-jne 0x433a40
+jne off.b944
 mov eax, dword[0x838044]
 test eax, eax
-je 0x433a54
+je off.b964
 mov dword[esp], eax
-mov dword[esp+8], str.Huge_pages_support_was_successfully_enabled, _but_reboot_required_to_use_it
+mov dword[esp+8], str.Huge_pages_support_was_successfully_enabled, _but_reboot_required_to_use_it_
 mov dword[esp+4], 2
 call fcn.0040b600
 mov eax, dword[esp+0x3c]
@@ -259,17 +249,17 @@ mov dword[esp], eax
 call ebx
 sub esp, 0xc
 cmp eax, 1
-jne 0x4336a7
+jne off.b23
 lea eax, [esp+0x4c]
 mov dword[esp+0x48], 1
 mov dword[esp+0x54], 2
-mov dword[esp+4], str.SeLockMemoryPrivilege
+mov dword[esp+4], str.SeLockMemoryPrivilege_
 mov dword[esp], 0
 mov dword[esp+8], eax
 call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
 sub esp, 0xc
 cmp eax, 1
-jne 0x4336a7
+jne off.b23
 mov eax, dword[esp+0x40]
 mov dword[esp+0x14], 0
 mov dword[esp+0x10], 0
@@ -280,23 +270,23 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 sub esp, 0x18
 cmp eax, 1
-jne 0x4336a7
+jne off.b23
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 test eax, eax
-jne 0x4336a7
+jne off.b23
 mov eax, dword[esp+0x40]
 mov dword[esp], eax
 call dword[esp+0x2c]
 push eax
-jmp 0x433828
+jmp off.b408
 mov eax, dword[esp+0x3c]
 mov dword[esp], eax
 call sub.ADVAPI32.dll_LsaClose
 sub esp, 4
-jmp 0x4338d9
+jmp off.b585
 call fcn.0040b750
 mov eax, dword[0x838044]
-jmp 0x43394d
+jmp off.b701
 
 {% endhighlight %}
 

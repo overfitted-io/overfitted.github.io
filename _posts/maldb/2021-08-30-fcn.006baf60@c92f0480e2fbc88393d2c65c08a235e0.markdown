@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,17 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-6.580325603485107, -5.918971061706543, '<b><a href="/report/fcn.006baf60@c92f0480e2fbc88393d2c65c08a235e0">fcn.006baf60</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[136.93914794921875, 8.427791595458984, '<b><a href="/report/fcn.006843d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006843d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-137.57867431640625, -22.85211753845215, '<b><a href="/report/fcn.0048f780@3e981d1767f44f5fe2446a49ffe52f4e">fcn.0048f780</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[92.43667602539062, -18.932571411132812, '<b><a href="/report/fcn.00402b01@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00402b01</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[-11.545226097106934, -75.14774322509766, '<b><a href="/report/fcn.00433690@c92f0480e2fbc88393d2c65c08a235e0">fcn.00433690</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-58.656246185302734, 5.4364848136901855, '<b><a href="/report/fcn.100c9e60@89dc67d2f980e8488f97b1bf8cb24258">fcn.100c9e60</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[34.54352569580078, 50.59758758544922, '<b><a href="/report/fcn.00401f70@c299206e1e94de2392d4dd9464d03d54">fcn.00401f70</a><br>@c299206e1e94de2392d4dd9464d03d54</b><br>', 'null'],
-[136.67105102539062, -67.03548431396484, '<b><a href="/report/fcn.006ac160@c92f0480e2fbc88393d2c65c08a235e0">fcn.006ac160</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[37.665958404541016, -61.12651824951172, '<b><a href="/report/fcn.0069f770@c92f0480e2fbc88393d2c65c08a235e0">fcn.0069f770</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-26.412073135375977, 52.338134765625, '<b><a href="/report/fcn.0066fc20@c92f0480e2fbc88393d2c65c08a235e0">fcn.0066fc20</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-129.69517517089844, 34.161888122558594, '<b><a href="/report/fcn.006ba260@c92f0480e2fbc88393d2c65c08a235e0">fcn.006ba260</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.006baf60@c92f0480e2fbc88393d2c65c08a235e0">fcn.006baf60</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -85,12 +75,12 @@ sub esp, 0x5c
 mov eax, dword[esp+0x70]
 mov ebx, dword[esp+0x74]
 cmp eax, 1
-je 0x6bb0b0
-jle 0x6bb080
+je off.b336
+jle off.b288
 cmp eax, 2
-je 0x6bb024
+je off.b196
 cmp eax, 3
-jne 0x6bb05e
+jne off.b254
 call dword[sym.imp.KERNEL32.dll_GetCurrentThread]
 lea edx, [esp+0x48]
 mov dword[esp], eax
@@ -104,7 +94,7 @@ mov dword[esp+4], edx
 call dword[sym.imp.KERNEL32.dll_GetThreadTimes]
 sub esp, 0x14
 test eax, eax
-je 0x6bb05e
+je off.b254
 mov esi, dword[esp+0x48]
 add esi, dword[esp+0x40]
 mov edi, dword[esp+0x4c]
@@ -142,7 +132,7 @@ mov dword[esp+4], edx
 call dword[sym.imp.KERNEL32.dll_GetProcessTimes]
 sub esp, 0x14
 test eax, eax
-jne 0x6bafca
+jne off.b106
 call dword[sym.imp.msvcrt.dll__errno]
 mov dword[eax], 0x16
 add esp, 0x5c
@@ -153,7 +143,7 @@ pop edi
 pop ebp
 ret
 test eax, eax
-jne 0x6bb05e
+jne off.b254
 lea eax, [esp+0x30]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_GetSystemTimeAsFileTime]
@@ -162,19 +152,19 @@ mov esi, dword[esp+0x30]
 mov edi, dword[esp+0x34]
 add esi, 0x2ac18000
 adc edi, 0xfe624e21
-jmp 0x6bafda
+jmp off.b122
 lea eax, [esp+0x40]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceFrequency]
 sub esp, 4
 test eax, eax
-je 0x6bb05e
+je off.b254
 lea eax, [esp+0x48]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
 sub esp, 4
 test eax, eax
-je 0x6bb05e
+je off.b254
 lea eax, [esp+0x28]
 mov edi, dword[esp+0x44]
 mov esi, dword[esp+0x40]
@@ -209,12 +199,12 @@ mov edx, eax
 mov dword[ebx+4], eax
 xor eax, eax
 cmp edx, 0x3b9ac9ff
-jle 0x6bb01c
+jle off.b188
 add ebp, 1
 sub edx, 0x3b9aca00
 mov dword[ebx], ebp
 mov dword[ebx+4], edx
-jmp 0x6bb01c
+jmp off.b188
 
 {% endhighlight %}
 

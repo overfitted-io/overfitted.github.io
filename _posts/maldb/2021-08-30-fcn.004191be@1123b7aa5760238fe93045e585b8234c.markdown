@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +34,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [7063.40185546875, -6750.13525390625, '<b><a href="/report/fcn.004191be@1123b7aa5760238fe93045e585b8234c">fcn.004191be</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-7063.40185546875, 6750.134765625, '<b><a href="/report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e">fcn.00410917</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
+    [-647.2108154296875, -1415.127685546875, '<b><a href="/report/fcn.004191be@1123b7aa5760238fe93045e585b8234c">fcn.004191be</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
+[647.2108154296875, 1415.127685546875, '<b><a href="/report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e">fcn.00410917</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
 
         ]);
 
@@ -70,36 +70,36 @@ index: false
 
 call fcn.0041a8b5
 test eax, eax
-jne 0x4191cf
+jne off.b17
 call fcn.00418fa7
 xor eax, eax
 ret
 push esi
 push edi
-push str.kernel32.dll
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 mov edi, eax
 test edi, edi
-je 0x41924d
+je off.b143
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
-push str.FlsAlloc
+push str.FlsAlloc_
 push edi
 call esi
-push str.FlsGetValue
+push str.FlsGetValue_
 push edi
 mov dword[0x538e28], eax
 call esi
-push str.FlsSetValue
+push str.FlsSetValue_
 push edi
 mov dword[0x538e2c], eax
 call esi
-push str.FlsFree
+push str.FlsFree_
 push edi
 mov dword[0x538e30], eax
 call esi
 cmp dword[0x538e2c], 0
 mov dword[0x538e34], eax
-jne 0x41924d
+jne off.b143
 mov eax, dword[sym.imp.KERNEL32.dll_TlsGetValue]
 mov dword[0x538e2c], eax
 mov eax, dword[sym.imp.KERNEL32.dll_TlsSetValue]
@@ -111,7 +111,7 @@ push fcn.00419048
 call dword[0x538e28]
 cmp eax, 0xffffffff
 mov dword[0x437378], eax
-je 0x4192a3
+je off.b229
 xor edi, edi
 push 0x8c
 inc edi
@@ -121,19 +121,19 @@ mov esi, eax
 test esi, esi
 pop ecx
 pop ecx
-je 0x4192a3
+je off.b229
 push esi
 push dword[0x437378]
 call dword[0x538e30]
 test eax, eax
-je 0x4192a3
+je off.b229
 mov dword[esi+0x54], 0x437920
 mov dword[esi+0x14], edi
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 or dword[esi+4], 0xffffffff
 mov dword[esi], eax
 mov eax, edi
-jmp 0x4192aa
+jmp off.b236
 call fcn.00418fa7
 xor eax, eax
 pop edi

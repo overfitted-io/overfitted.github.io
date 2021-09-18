@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -88,7 +88,7 @@ call dword[sym.imp.KERNEL32.dll_LocalAlloc]
 mov ebx, eax
 xor eax, eax
 cmp ebx, eax
-jne 0x1005f7d
+jne off.b92
 push eax
 push 0x10
 push eax
@@ -99,13 +99,13 @@ call fcn.01003ebe
 call fcn.01003aa1
 mov dword[0x100ba5c], eax
 xor eax, eax
-jmp 0x10061f3
+jmp off.b722
 push edi
 push ebx
 push esi
 call fcn.01002e55
 test eax, eax
-jne 0x1005fac
+jne off.b139
 push eax
 push 0x10
 push eax
@@ -116,27 +116,27 @@ call fcn.01003ebe
 push ebx
 call dword[sym.imp.KERNEL32.dll_LocalFree]
 mov dword[0x100ba5c], 0x80070714
-jmp 0x1005f76
+jmp off.b85
 push 0x10013d4
 push ebx
 call dword[sym.imp.KERNEL32.dll_lstrcmpA]
 xor edi, edi
 inc edi
 test eax, eax
-jne 0x1005fc5
+jne off.b164
 mov dword[0x100c490], edi
 push ebx
 call dword[sym.imp.KERNEL32.dll_LocalFree]
 mov al, byte[0x100c99e]
 test al, al
-je 0x1006010
+je off.b239
 cmp al, 0x5c
-jne 0x1005fe7
+jne off.b198
 cmp byte[0x100c99f], al
-jne 0x1005fe7
+jne off.b198
 xor esi, esi
 xor eax, eax
-jmp 0x1005feb
+jmp off.b202
 mov eax, edi
 xor esi, esi
 push eax
@@ -144,7 +144,7 @@ push esi
 push 0x100c99e
 call fcn.010052d4
 test eax, eax
-jne 0x1006062
+jne off.b321
 push esi
 push 0x10
 push esi
@@ -152,69 +152,69 @@ push esi
 push 0x4be
 push esi
 call fcn.01003ebe
-jmp 0x1005f76
+jmp off.b85
 xor eax, eax
 cmp dword[0x100c884], eax
-jne 0x10061d5
+jne off.b692
 cmp dword[0x100c490], eax
-jne 0x10061d5
+jne off.b692
 mov esi, 0x100bc44
 push esi
 push 0x104
 call dword[sym.imp.KERNEL32.dll_GetTempPathA]
 test eax, eax
-je 0x1006069
+je off.b328
 push 3
 push edi
 push esi
 call fcn.010052d4
 test eax, eax
-jne 0x1006062
+jne off.b321
 push esi
 call fcn.01002025
 test eax, eax
-jne 0x1006069
+jne off.b328
 push edi
 push edi
 push esi
 call fcn.010052d4
 test eax, eax
-je 0x1006069
+je off.b328
 mov eax, edi
-jmp 0x10061f3
+jmp off.b722
 mov edi, dword[sym.imp.KERNEL32.dll_lstrcpyA]
 push 0x10014a4
 lea eax, [ebp-0x108]
 push eax
 call edi
-jmp 0x1006194
+jmp off.b627
 push eax
 call dword[sym.imp.KERNEL32.dll_GetDriveTypeA]
 mov ebx, eax
 cmp ebx, 6
-je 0x1006095
+je off.b372
 cmp ebx, 3
-jne 0x10060a7
+jne off.b390
 lea eax, [ebp-0x108]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
 cmp eax, 0xffffffff
-jne 0x10060e0
+jne off.b447
 cmp ebx, 2
-jne 0x10060d5
+jne off.b436
 cmp byte[ebp-0x108], 0x41
-je 0x10060d5
+je off.b436
 cmp byte[ebp-0x108], 0x42
-je 0x10060d5
+je off.b436
 lea eax, [ebp-0x108]
 push eax
 call fcn.010069ea
 test eax, eax
-je 0x10060d5
+je off.b436
 cmp eax, 0x19000
-jae 0x10060e0
+jae off.b447
 inc byte[ebp-0x108]
-jmp 0x1006194
+jmp off.b627
 xor ebx, ebx
 push ebx
 push 3
@@ -222,24 +222,24 @@ lea eax, [ebp-0x108]
 push eax
 call fcn.0100456a
 test eax, eax
-jne 0x1006118
+jne off.b503
 lea eax, [ebp-0x108]
 push eax
 call fcn.01002025
 test eax, eax
-jne 0x10060d5
+jne off.b436
 push ebx
 push 1
 lea eax, [ebp-0x108]
 push eax
 call fcn.0100456a
 test eax, eax
-je 0x10060d5
+je off.b436
 lea eax, [ebp-0x108]
 push eax
 call fcn.01002025
 test eax, eax
-je 0x100613a
+je off.b537
 push 0x104
 lea eax, [ebp-0x108]
 push eax
@@ -253,10 +253,10 @@ lea eax, [ebp-0x108]
 push eax
 call fcn.01001ff9
 test eax, eax
-jne 0x100616e
+jne off.b589
 inc byte[ebp-0x108]
 mov byte[ebp-0x105], al
-jmp 0x1006194
+jmp off.b627
 push 2
 lea eax, [ebp-0x108]
 push eax
@@ -270,10 +270,10 @@ push 1
 push esi
 call fcn.010052d4
 test eax, eax
-jne 0x10061d0
+jne off.b687
 cmp byte[ebp-0x108], 0x5a
 lea eax, [ebp-0x108]
-jle 0x1006082
+jle off.b353
 push 0x104
 push eax
 call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
@@ -283,11 +283,11 @@ lea eax, [ebp-0x108]
 push eax
 call fcn.0100456a
 test eax, eax
-jne 0x100606f
-jmp 0x1005f76
+jne off.b334
+jmp off.b85
 xor eax, eax
 inc eax
-jmp 0x10061f3
+jmp off.b722
 push eax
 push eax
 push 0x1005670

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,15 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-122.98995971679688, -117.95613098144531, '<b><a href="/report/fcn.0068bbc0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bbc0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[68.06290435791016, -191.6177520751953, '<b><a href="/report/fcn.0068c9c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068c9c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[180.34226989746094, 106.91851043701172, '<b><a href="/report/fcn.006827a0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006827a0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[11.967873573303223, 204.9384002685547, '<b><a href="/report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bfa0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-139.32864379882812, -309.3682556152344, '<b><a href="/report/fcn.006b89b0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006b89b0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-250.48464965820312, 60.413761138916016, '<b><a href="/report/fcn.0067ed20@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067ed20</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[10.651509284973145, 8.935853004455566, '<b><a href="/report/fcn.0067dd90@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067dd90</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-310.8212890625, -137.2121124267578, '<b><a href="/report/fcn.006708f0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006708f0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[174.8550567626953, 342.9688415527344, '<b><a href="/report/fcn.00682110@c92f0480e2fbc88393d2c65c08a235e0">fcn.00682110</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0068bbc0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bbc0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -87,7 +79,7 @@ mov dword[esp], ecx
 call dword[sym.imp.KERNEL32.dll_SetHandleInformation]
 sub esp, 0xc
 test eax, eax
-je 0x68bcc1
+je off.b257
 mov dword[esp+0xc], 0
 mov dword[esp+8], ebx
 mov eax, dword[edi+0x1c]
@@ -96,10 +88,10 @@ mov dword[esp+4], eax
 call dword[sym.imp.KERNEL32.dll_CreateIoCompletionPort]
 sub esp, 0x10
 test eax, eax
-je 0x68bcc1
+je off.b257
 mov eax, dword[0x83c110]
 test eax, eax
-je 0x68bce0
+je off.b288
 lea eax, [esp+0x38]
 mov dword[esp+0x38], 0x274
 mov dword[esp+8], 0x2005
@@ -111,15 +103,15 @@ mov dword[esp+0xc], eax
 call dword[sym.imp.WS2_32.dll_getsockopt]
 sub esp, 0x14
 cmp eax, 0xffffffff
-je 0x68bcc1
+je off.b257
 cmp dword[esp+0x64], 1
-jne 0x68bce0
+jne off.b288
 mov dword[esp+4], 3
 mov dword[esp], ebx
 call dword[0x83c110]
 sub esp, 8
 test eax, eax
-je 0x68bcd1
+je off.b273
 mov edx, dword[esi+0x2c]
 mov dword[esi+0x114], 0x690390
 mov dword[esi+0x118], 0x6905a0
@@ -127,7 +119,7 @@ mov dword[esi+0x38], ebx
 or edx, 0x40000
 cmp dword[esp+0x2c0], 0x17
 mov dword[esi+0x2c], edx
-jne 0x68bcf0
+jne off.b304
 or edx, 0x1000000
 xor eax, eax
 mov dword[esi+0x2c], edx
@@ -145,24 +137,24 @@ ret
 mov edi, dword[sym.imp.KERNEL32.dll_GetLastError]
 call edi
 cmp eax, 1
-jne 0x68bd20
+jne off.b352
 nop
 cmp dword[esp+0x2c0], 0x17
 mov edx, dword[esi+0x2c]
 mov dword[esi+0x38], ebx
-je 0x68bcac
+je off.b236
 xor eax, eax
 and edx, 0x1000000
-je 0x68bcc7
+je off.b263
 mov dword[esp+8], 0x77
-mov dword[esp+4], str.src_win_udp.c
+mov dword[esp+4], str.src_win_udp.c_
 mov dword[esp], str.__handle__flags__UV_HANDLE_IPV6_
 mov dword[esp+0x2c], eax
 call fcn.006b2490
 mov eax, dword[esp+0x2c]
-jmp 0x68bcc7
+jmp off.b263
 call edi
-jmp 0x68bcc7
+jmp off.b263
 
 {% endhighlight %}
 

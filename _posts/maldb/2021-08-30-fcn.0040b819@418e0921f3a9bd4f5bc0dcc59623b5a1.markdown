@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.06604072204218772</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.07184516609401591</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -103,15 +103,15 @@ mov dword[ebp-0x13c0], edi
 mov dword[ebp-0x13c8], edi
 call dword[sym.imp.PSAPI.DLL_EnumProcesses]
 test eax, eax
-je 0x40b986
+je off.b365
 mov eax, dword[ebp-0x13c4]
 cmp eax, edi
-je 0x40b986
+je off.b365
 shr eax, 2
 mov dword[ebp-0x13cc], eax
 mov dword[ebp-0x13bc], edi
 cmp eax, edi
-jbe 0x40b986
+jbe off.b365
 mov esi, 0x208
 mov eax, dword[ebp-0x13bc]
 push dword[ebp+eax*4-0x13b8]
@@ -120,7 +120,7 @@ push 0x410
 call dword[sym.imp.KERNEL32.dll_OpenProcess]
 mov ebx, eax
 cmp ebx, edi
-je 0x40b96e
+je off.b341
 push esi
 lea eax, [ebp-0x418]
 push edi
@@ -136,7 +136,7 @@ push eax
 push ebx
 call dword[sym.imp.PSAPI.DLL_EnumProcessModules]
 test eax, eax
-je 0x40b967
+je off.b334
 push 0x104
 lea eax, [ebp-0x418]
 push eax
@@ -144,22 +144,22 @@ push dword[ebp-0x13c0]
 push ebx
 call dword[sym.imp.PSAPI.DLL_GetModuleBaseNameW]
 test eax, eax
-je 0x40b967
-push str.Baidu.exe
+je off.b334
+push str.Baidu.exe_
 lea eax, [ebp-0x418]
 push eax
 call dword[sym.imp.KERNEL32.dll_lstrcmpiW]
 test eax, eax
-jne 0x40b95f
+jne off.b326
 mov dword[ebp-0x13c8], 1
 cmp dword[ebp-0x13c8], edi
-jne 0x40b997
+jne off.b382
 push ebx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 inc dword[ebp-0x13bc]
 mov eax, dword[ebp-0x13bc]
 cmp eax, dword[ebp-0x13cc]
-jb 0x40b8d1
+jb off.b184
 xor eax, eax
 mov ecx, dword[ebp-4]
 pop edi
@@ -194,7 +194,7 @@ push eax
 call fcn.00402e16
 xor eax, eax
 inc eax
-jmp 0x40b988
+jmp off.b367
 
 {% endhighlight %}
 

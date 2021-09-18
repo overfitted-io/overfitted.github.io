@@ -1,0 +1,287 @@
+---
+layout: post
+title:  "fcn.004045df @ d96761eb00d2d97e2b6f5ffffed0b46a"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004045df
+- **Origin (md5):** d96761eb00d2d97e2b6f5ffffed0b46a
+- **VirusTotal:** [virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.004045df@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004045df</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x3c
+push ebx
+push esi
+push edi
+push 0x2c
+lea eax, [ebp-0x38]
+mov dword[ebp-0x3c], 0x30
+push 0
+push eax
+mov edi, ecx
+call fcn.00423020
+mov eax, dword[ebp+0x14]
+add esp, 0xc
+mov ecx, dword[edi+0x9d0]
+xor esi, esi
+mov dword[ebp-4], ecx
+push 8
+pop ebx
+push 1
+pop edx
+sub eax, 0x200
+jne 0x43d6e7
+push 0x40
+pop esi
+push 0xfffffffffffffff5
+mov ecx, edi
+call fcn.0040406f
+test dword[edi+0xc], esi
+jne 0x43d7a4
+pop edi
+pop esi
+pop ebx
+mov esp, ebp
+pop ebp
+ret 0x10
+dec eax
+je 0x43d79b
+dec eax
+je 0x43d791
+dec eax
+je 0x43d722
+dec eax
+je 0x43d719
+dec eax
+je 0x43d70f
+dec eax
+jne off.b77
+push 0x20
+pop esi
+push 0xfffffffffffffff2
+jmp off.b70
+push 0x10
+pop esi
+push 0xfffffffffffffff6
+jmp off.b70
+mov esi, ebx
+push 0xfffffffffffffff7
+jmp off.b70
+cmp byte[edi+0xa], 0
+push 4
+pop esi
+je 0x43d78a
+push 7
+mov dword[ebp-0x30], ebx
+pop ebx
+mov dword[ebp-0x38], edx
+cmp ecx, ebx
+jl 0x43d78a
+lea eax, [edi+0x1d0]
+mov dword[ebp+0x14], eax
+mov ecx, dword[eax]
+test ecx, ecx
+je 0x43d771
+lea eax, [ebp-0x3c]
+push eax
+push 0
+push ebx
+push dword[ecx]
+call dword[sym.imp.USER32.dll_GetMenuItemInfoW]
+test eax, eax
+mov eax, dword[ebp+0x14]
+je 0x43d771
+test dword[ebp-0x30], 0x1000
+je 0x43d771
+mov eax, dword[eax]
+mov eax, dword[eax]
+cmp eax, dword[edi]
+je 0x43d782
+mov eax, dword[ebp+0x14]
+inc ebx
+add eax, 4
+mov dword[ebp+0x14], eax
+cmp ebx, dword[edi+0x9d0]
+jle 0x43d741
+jmp 0x43d78a
+push ebx
+mov ecx, edi
+call fcn.004626a3
+push 0xfffffffffffffff3
+jmp off.b70
+push 2
+pop esi
+push 0xfffffffffffffff8
+jmp off.b70
+mov esi, edx
+push 0xfffffffffffffff9
+jmp off.b70
+cmp byte[0x4c6286], 0
+je off.b86
+cmp byte[edi+4], 0
+mov ebx, dword[sym.imp.USER32.dll_GetMenuItemCount]
+je 0x43d851
+cmp byte[edi+8], 0
+jne 0x43d87b
+push dword[edi]
+call ebx
+or esi, 0xffffffff
+test eax, eax
+jle 0x43d7f2
+push 0
+push esi
+push esi
+push 0x48f910
+push 0
+mov ecx, edi
+mov dword[edi+0x9d0], 4
+call fcn.004626f9
+push 0
+push esi
+push esi
+push dword[edi+0x7c]
+mov ecx, edi
+mov dword[edi+0x9d0], 3
+push 0
+call fcn.004626f9
+push 0
+push esi
+push esi
+push 0x48f910
+push 0
+mov ecx, edi
+mov dword[edi+0x9d0], 5
+call fcn.004626f9
+push 0
+push esi
+push esi
+push dword[edi+0x6c]
+mov ecx, edi
+mov dword[edi+0x9d0], 2
+push 0
+call fcn.004626f9
+mov eax, dword[ebp-4]
+mov dword[edi+0x9d0], eax
+mov byte[edi+8], 1
+jmp 0x43d87b
+mov esi, dword[sym.imp.USER32.dll_DeleteMenu]
+push 0
+push 5
+push dword[edi]
+call esi
+push 0
+push 4
+push dword[edi]
+call esi
+push 0
+push 6
+push dword[edi]
+call esi
+push 0
+push 3
+push dword[edi]
+call esi
+mov byte[edi+8], 0
+push dword[edi]
+call ebx
+test eax, eax
+jle off.b86
+xor ebx, ebx
+cmp byte[edi+4], bl
+jne 0x43d893
+mov byte[edi+6], bl
+jmp 0x43d8bd
+cmp byte[edi+6], 0
+je 0x43d8bd
+lea eax, [ebp-0x3c]
+mov byte[0x4c6287], 1
+push eax
+push ebx
+push 4
+push dword[edi]
+mov dword[ebp-0x38], 1
+mov dword[ebp-0x30], 8
+call dword[sym.imp.USER32.dll_SetMenuItemInfoW]
+lea eax, [ebp-0xc]
+push eax
+call dword[sym.imp.USER32.dll_GetCursorPos]
+push dword[ebp+8]
+call dword[sym.imp.USER32.dll_SetForegroundWindow]
+push ebx
+push dword[ebp+8]
+push dword[ebp-8]
+push dword[ebp-0xc]
+push ebx
+push dword[edi]
+call dword[sym.imp.USER32.dll_TrackPopupMenuEx]
+push ebx
+push ebx
+push ebx
+push dword[ebp+8]
+call dword[sym.imp.USER32.dll_PostMessageW]
+mov ecx, edi
+call fcn.0040410d
+jmp off.b86
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/d96761eb00d2d97e2b6f5ffffed0b46a

@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="HOOK">HOOK</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-42.175437927246094, -459.154296875, '<b><a href="/report/fcn.0043d86a@9c2b894b84f59672d8be2e984066f76f">fcn.0043d86a</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
-[42.175315856933594, 459.15478515625, '<b><a href="/report/fcn.10062725@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10062725</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0043d86a@9c2b894b84f59672d8be2e984066f76f">fcn.0043d86a</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -71,9 +70,9 @@ index: false
 push ebp
 mov ebp, esp
 cmp dword[ebp+8], 0
-je 0x43d899
+je off.b47
 cmp dword[0x5dfe20], 0
-jne 0x43d8e5
+jne off.b123
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 push eax
 push 0
@@ -81,10 +80,10 @@ push 0x43ec47
 push 7
 call dword[sym.imp.USER32.dll_SetWindowsHookExW]
 mov dword[0x5dfe20], eax
-jmp 0x43d8e5
+jmp off.b123
 mov eax, dword[0x5dfe20]
 test eax, eax
-je 0x43d8e5
+je off.b123
 push esi
 push eax
 call dword[sym.imp.USER32.dll_UnhookWindowsHookEx]
@@ -92,20 +91,20 @@ and dword[0x5dfe20], 0
 and dword[0x5dfe24], 0
 mov esi, dword[0x5dfe8c]
 test esi, esi
-je 0x43d8e4
+je off.b122
 push edi
 mov edi, dword[esi+8]
 test edi, edi
-je 0x43d8e9
+je off.b127
 push dword[edi+0x20]
 call fcn.00415cde
 test eax, eax
-je 0x43d8dd
+je off.b115
 mov ecx, edi
 call fcn.004387c6
 mov esi, dword[esi]
 test esi, esi
-jne 0x43d8c3
+jne off.b89
 pop edi
 pop esi
 pop ebp

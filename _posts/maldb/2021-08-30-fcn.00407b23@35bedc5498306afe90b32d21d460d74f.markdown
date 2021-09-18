@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,7 +74,7 @@ push ebx
 sub esp, 0x5c
 mov edi, dword[ebp+0xc]
 test edi, edi
-jns 0x407b3d
+jns off.b26
 mov eax, dword[0x4283cc]
 not edi
 mov edi, dword[eax+edi*4]
@@ -83,12 +83,12 @@ mov ebx, 0x4283d0
 add edi, dword[0x427b64]
 sub eax, 0x4283d0
 cmp eax, 0x7ff
-ja 0x407dc1
+ja off.b670
 mov ebx, dword[ebp+8]
 mov dword[ebp+8], 0
-jmp 0x407dc1
+jmp off.b670
 cmp al, 0xfc
-jbe 0x407dab
+jbe off.b648
 movsx edx, byte[edi+1]
 movsx ecx, byte[edi+2]
 add edi, 3
@@ -101,7 +101,7 @@ cmp al, 0xfe
 mov dword[ebp-0x28], edx
 mov dword[ebp-0x24], esi
 mov dword[ebp-0x20], ecx
-jne 0x407d35
+jne off.b530
 mov dword[ebp-0x44], edx
 mov dword[ebp-0x40], ecx
 call dword[sym.imp.KERNEL32.dll_GetVersion]
@@ -109,9 +109,9 @@ mov edx, dword[ebp-0x44]
 mov dword[ebp-0x3c], 1
 mov ecx, dword[ebp-0x40]
 test eax, eax
-jns 0x407bdb
+jns off.b184
 cmp ax, 0x5a04
-je 0x407bdb
+je off.b184
 cmp ecx, 0x2e
 sete byte[ebp-0x3c]
 cmp ecx, 0x23
@@ -124,7 +124,7 @@ sbb esi, esi
 and esi, 0xfffffffe
 add esi, 4
 test dl, 0x80
-je 0x407c44
+je off.b289
 mov eax, edx
 and edx, 0x3f
 add edx, dword[0x427b64]
@@ -134,40 +134,40 @@ xor esi, esi
 mov dword[esp+0x10], eax
 mov dword[esp+0xc], ebx
 mov dword[esp+8], edx
-mov dword[esp+4], str.Software_Microsoft_Windows_CurrentVersion
+mov dword[esp+4], str.Software__Microsoft__Windows__CurrentVersion_
 mov dword[esp], 0x80000002
 call fcn.004078a4
 mov ecx, dword[ebp-0x40]
 sub esp, 0x14
 cmp byte[ebx], 0
-jne 0x407d0d
+jne off.b490
 mov dword[esp+4], ecx
 mov dword[esp], ebx
 call fcn.00407b23
 push eax
 push eax
-jmp 0x407d0d
+jmp off.b490
 cmp edx, 0x25
-jne 0x407c5c
+jne off.b313
 mov dword[esp], ebx
 mov dword[esp+4], 0x400
 call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
-jmp 0x407c76
+jmp off.b339
 cmp edx, 0x24
-jne 0x407d0d
+jne off.b490
 mov dword[esp+4], 0x400
 mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
 push esi
 push esi
 xor esi, esi
-jmp 0x407d0d
+jmp off.b490
 dec esi
 mov eax, dword[0x427b9c]
 cmp dword[ebp-0x3c], 0
-je 0x407cbd
+je off.b410
 test eax, eax
-je 0x407cbd
+je off.b410
 mov edx, dword[ebp+esi*4-0x2c]
 mov dword[esp+0x10], ebx
 mov dword[esp+0xc], 0
@@ -178,7 +178,7 @@ mov dword[esp], edx
 call eax
 sub esp, 0x14
 test eax, eax
-je 0x407d15
+je off.b498
 lea eax, [ebp-0x1c]
 mov dword[esp+8], eax
 mov eax, dword[ebp+esi*4-0x2c]
@@ -188,7 +188,7 @@ mov dword[esp], eax
 call dword[sym.imp.SHELL32.DLL_SHGetSpecialFolderLocation]
 sub esp, 0xc
 test eax, eax
-jne 0x407d0a
+jne off.b487
 mov eax, dword[ebp-0x1c]
 mov dword[esp+4], ebx
 mov dword[esp], eax
@@ -202,34 +202,34 @@ call dword[sym.imp.ole32.dll_CoTaskMemFree]
 mov eax, dword[ebp-0x40]
 test eax, eax
 push ecx
-jne 0x407d15
+jne off.b498
 mov byte[ebx], 0
 test esi, esi
-jne 0x407c7f
+jne off.b348
 cmp byte[ebx], 0
-je 0x407d7e
+je off.b603
 cmp dword[ebp-0x20], 0x1a
-jne 0x407d7e
+jne off.b603
 mov dword[esp+4], str.MicrosoftInternet_ExplorerQuick_Launch
 mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_lstrcatA]
 push eax
 push eax
-jmp 0x407d7e
+jmp off.b603
 mov esi, ecx
 and edx, 0x7f
 and esi, 0x7f
 shl esi, 7
 or esi, edx
 cmp al, 0xfd
-jne 0x407d89
+jne off.b614
 cmp esi, 0x1d
-jne 0x407d5e
+jne off.b571
 mov eax, dword[0x427ba0]
 mov dword[esp], ebx
 mov dword[esp+4], eax
 call fcn.0040794d
-jmp 0x407d74
+jmp off.b593
 mov eax, esi
 shl eax, 0xa
 add eax, section..ndata
@@ -240,13 +240,13 @@ sub esi, 0x15
 cmp esi, 6
 push eax
 push eax
-ja 0x407d9d
+ja off.b634
 mov dword[esp], ebx
 call fcn.00407a4f
 push eax
-jmp 0x407d9d
+jmp off.b634
 inc al
-jne 0x407d9d
+jne off.b634
 not esi
 mov dword[esp+4], esi
 mov dword[esp], ebx
@@ -257,28 +257,28 @@ mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_lstrlenA]
 add ebx, eax
 push esi
-jmp 0x407dc1
+jmp off.b670
 lea edx, [ebx+1]
-jne 0x407dbc
+jne off.b665
 mov al, byte[edi+1]
 add edi, 2
 mov byte[ebx], al
 mov ebx, edx
-jmp 0x407dc1
+jmp off.b670
 mov byte[ebx], al
 inc edi
 mov ebx, edx
 mov al, byte[edi]
 test al, al
-je 0x407ddb
+je off.b696
 mov edx, ebx
 sub edx, 0x4283d0
 cmp edx, 0x3ff
-jle 0x407b6a
+jle off.b71
 cmp dword[ebp+8], 0
 mov eax, 0x4283d0
 mov byte[ebx], 0
-je 0x407dfa
+je off.b727
 mov dword[esp+4], eax
 mov eax, dword[ebp+8]
 mov dword[esp], eax

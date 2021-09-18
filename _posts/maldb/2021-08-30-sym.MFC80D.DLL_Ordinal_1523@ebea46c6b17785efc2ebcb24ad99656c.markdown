@@ -1,0 +1,347 @@
+---
+layout: post
+title:  "sym.MFC80D.DLL_Ordinal_1523 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** sym.MFC80D.DLL\_Ordinal\_1523
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="REGISTRY">REGISTRY</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/sym.MFC80D.DLL_Ordinal_1523@ebea46c6b17785efc2ebcb24ad99656c">sym.MFC80D.DLL_Ordinal_1523</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+push 0xffffffffffffffff
+push 0x783be2fb
+mov eax, dword
+push eax
+sub esp, 0x3b4
+mov eax, dword[0x783e90cc]
+xor eax, ebp
+mov dword[ebp-0x10], eax
+push eax
+lea eax, [ebp-0xc]
+mov dword
+mov dword[ebp-0x120], 0
+movzx eax, word[ebp+0xc]
+test eax, eax
+je off.b106
+lea ecx, [ebp-0x120]
+push ecx
+mov edx, dword[ebp+0x14]
+push edx
+mov ax, word[ebp+0x10]
+push eax
+mov cx, word[ebp+0xc]
+push ecx
+mov edx, dword[ebp+8]
+push edx
+call dword[sym.imp.OLEAUT32.dll_RegisterTypeLib]
+test eax, eax
+jge off.b106
+mov dword[ebp-0x120], 0
+push 0x27
+lea eax, [ebp-0x184]
+push eax
+mov ecx, dword[ebp+8]
+push ecx
+call dword[sym.imp.ole32.dll_StringFromGUID2]
+mov dword[ebp-0x188], eax
+cmp dword[ebp-0x188], 0x27
+je off.b160
+push 0xa0
+push 0x781f7d14
+call sym.MFC80D.DLL_Ordinal_1363
+test eax, eax
+je off.b160
+int3
+cmp dword[ebp-0x188], 0x27
+je off.b176
+xor eax, eax
+jmp off.b1103
+mov dword[ebp-0x130], 0
+mov dword[ebp-0x124], 0
+lea eax, [ebp-0x184]
+push eax
+lea ecx, [ebp-0x12c]
+call sym.MFC80D.DLL_Ordinal_9174
+mov dword[ebp-4], 0
+lea ecx, [ebp-0x12c]
+call sym.MFC80D.DLL_Ordinal_1093
+push eax
+push 0x781f7d6c
+push 0x104
+lea ecx, [ebp-0x11c]
+push ecx
+call dword[sym.imp.MSVCR80D.dll_sprintf_s]
+add esp, 0x10
+cmp eax, 0xffffffff
+jne off.b303
+mov dword[ebp-0x3bc], 0
+mov dword[ebp-4], 0xffffffff
+lea ecx, [ebp-0x12c]
+call sym.MFC80D.DLL_Ordinal_673
+mov eax, dword[ebp-0x3bc]
+jmp off.b1103
+lea edx, [ebp-0x128]
+push edx
+lea eax, [ebp-0x11c]
+push eax
+push 0x80000000
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax, eax
+jne off.b896
+mov dword[ebp-0x298], 0
+push 0x104
+lea ecx, [ebp-0x294]
+push ecx
+mov edx, dword[ebp-0x298]
+push edx
+mov eax, dword[ebp-0x128]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegEnumKeyA]
+test eax, eax
+jne off.b883
+mov dword[ebp-0x29c], 0
+mov dword[ebp-0x3a8], 0
+lea ecx, [ebp-0x29c]
+push ecx
+lea edx, [ebp-0x294]
+push edx
+mov eax, dword[ebp-0x128]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax, eax
+je off.b454
+mov ecx, dword[ebp-0x298]
+add ecx, 1
+mov dword[ebp-0x298], ecx
+jmp off.b346
+mov dword[ebp-0x3ac], 0
+push 0x104
+lea edx, [ebp-0x3a4]
+push edx
+mov eax, dword[ebp-0x3ac]
+push eax
+mov ecx, dword[ebp-0x29c]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegEnumKeyA]
+test eax, eax
+jne off.b791
+push 0x781f7d64
+lea edx, [ebp-0x3a4]
+push edx
+call fcn.782545e0
+add esp, 8
+test eax, eax
+je off.b552
+push 0x781f7d5c
+lea eax, [ebp-0x3a4]
+push eax
+call fcn.782545e0
+add esp, 8
+test eax, eax
+jne off.b569
+mov ecx, dword[ebp-0x3ac]
+add ecx, 1
+mov dword[ebp-0x3ac], ecx
+jmp off.b464
+mov dword[ebp-0x3b0], 0
+lea edx, [ebp-0x3b0]
+push edx
+lea eax, [ebp-0x3a4]
+push eax
+mov ecx, dword[ebp-0x29c]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax, eax
+je off.b630
+mov edx, dword[ebp-0x3ac]
+add edx, 1
+mov dword[ebp-0x3ac], edx
+jmp off.b464
+lea eax, [ebp-0x3b4]
+push eax
+push 0x781f7d54
+mov ecx, dword[ebp-0x3b0]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
+test eax, eax
+jne off.b720
+mov edx, dword[ebp-0x3b4]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+push 0x781f7d4c
+mov eax, dword[ebp-0x3b0]
+push eax
+call fcn.78378b40
+mov dword[ebp-0x124], eax
+mov dword[ebp-0x3a8], 1
+mov ecx, dword[ebp-0x3b0]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+jmp off.b771
+mov edx, dword[ebp-0x3b0]
+push edx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+lea eax, [ebp-0x3a4]
+push eax
+mov ecx, dword[ebp-0x29c]
+push ecx
+call fcn.78378b40
+test eax, eax
+jne off.b771
+mov dword[ebp-0x3ac], 0
+jmp off.b464
+mov edx, dword[ebp-0x3ac]
+add edx, 1
+mov dword[ebp-0x3ac], edx
+jmp off.b464
+mov eax, dword[ebp-0x29c]
+push eax
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+cmp dword[ebp-0x3a8], 0
+je off.b825
+mov dword[ebp-0x130], 1
+jmp off.b863
+lea ecx, [ebp-0x294]
+push ecx
+mov edx, dword[ebp-0x128]
+push edx
+call fcn.78378b40
+test eax, eax
+jne off.b863
+mov dword[ebp-0x298], 0
+jmp off.b346
+mov eax, dword[ebp-0x298]
+add eax, 1
+mov dword[ebp-0x298], eax
+jmp off.b346
+mov ecx, dword[ebp-0x128]
+push ecx
+call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
+cmp dword[ebp-0x130], 0
+jne off.b928
+lea edx, [ebp-0x11c]
+push edx
+push 0x80000000
+call fcn.78378b40
+mov dword[ebp-0x124], eax
+mov eax, dword[ebp-0x124]
+push eax
+call fcn.7837a100
+add esp, 4
+test eax, eax
+je off.b1058
+cmp dword[ebp-0x120], 0
+je off.b1058
+mov dword[ebp-0x3b8], 0
+lea ecx, [ebp-0x3b8]
+push ecx
+mov edx, dword[ebp+0x14]
+push edx
+mov ax, word[ebp+0x10]
+push eax
+mov cx, word[ebp+0xc]
+push ecx
+mov edx, dword[ebp+8]
+push edx
+call dword[sym.imp.OLEAUT32.dll_RegisterTypeLib]
+test eax, eax
+jge off.b1018
+mov eax, dword[ebp-0x120]
+push eax
+call fcn.78378bb0
+add esp, 4
+jmp off.b1038
+mov ecx, dword[ebp-0x3b8]
+mov edx, dword[ecx]
+mov eax, dword[ebp-0x3b8]
+push eax
+mov ecx, dword[edx+8]
+call ecx
+mov edx, dword[ebp-0x120]
+mov eax, dword[edx]
+mov ecx, dword[ebp-0x120]
+push ecx
+mov edx, dword[eax+8]
+call edx
+mov eax, dword[ebp-0x124]
+push eax
+call fcn.7837a100
+add esp, 4
+mov dword[ebp-0x3c0], eax
+mov dword[ebp-4], 0xffffffff
+lea ecx, [ebp-0x12c]
+call sym.MFC80D.DLL_Ordinal_673
+mov eax, dword[ebp-0x3c0]
+mov ecx, dword[ebp-0xc]
+mov dword
+pop ecx
+mov ecx, dword[ebp-0x10]
+xor ecx, ebp
+call fcn.783a2cd0
+mov esp, ebp
+pop ebp
+ret 0x10
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

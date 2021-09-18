@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [736.4507446289062, 379.37255859375, '<b><a href="/report/fcn.00519850@c60344b51fa39a329b92557d24ff7670">fcn.00519850</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
-[1089.25048828125, -822.228759765625, '<b><a href="/report/fcn.0051a5f0@c60344b51fa39a329b92557d24ff7670">fcn.0051a5f0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-127.6888198852539, -526.9425048828125, '<b><a href="/report/fcn.00515e70@c60344b51fa39a329b92557d24ff7670">fcn.00515e70</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00519850@c60344b51fa39a329b92557d24ff7670">fcn.00519850</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -114,14 +112,14 @@ call fcn.00403010
 mov ecx, esi
 call fcn.004020e0
 test al, al
-je 0x51998e
+je off.b318
 push ebx
 push 0x5dea00
 mov ecx, ebp
 call fcn.00422030
 mov esi, eax
 cmp esi, 0xffffffff
-je 0x51998e
+je off.b318
 lea ebx, [esi+1]
 mov eax, ebp
 lea ecx, [esp+0x1e4]
@@ -152,10 +150,10 @@ push 0
 push eax
 call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
 test eax, eax
-jne 0x5199af
+jne off.b351
 mov edi, dword[esp+0x14]
 mov dword[esp+0x1c], 1
-jmp 0x51a499
+jmp off.b3145
 lea ecx, [esp+0x1ac]
 call fcn.00402030
 lea ecx, [esp+0x1c8]
@@ -174,13 +172,13 @@ mov byte[esp+0x14dc], 6
 call fcn.00519750
 cmp byte[0x610e06], 0
 mov dword[esp+0x2c8], 0xffffffff
-jne 0x519a32
+jne off.b482
 lea eax, [esp+0x2cc]
 push eax
 push 0x202
 call sub.WS2_32.dll_WSAStartup
 test eax, eax
-jne 0x519a32
+jne off.b482
 mov byte[0x610e06], 1
 mov edi, dword[esp+0x14]
 mov byte[esp+0x14d4], 7
@@ -190,7 +188,7 @@ push 0
 push ecx
 call esi
 test eax, eax
-jne 0x519a89
+jne off.b569
 lea ecx, [esp+0x200]
 mov dword[esp+0x1c], 1
 call fcn.004020a0
@@ -199,7 +197,7 @@ call fcn.004020a0
 lea ecx, [esp+0x1ac]
 mov byte[esp+0x14d4], 1
 call fcn.004020a0
-jmp 0x51a499
+jmp off.b3145
 push 6
 push 1
 push 2
@@ -207,7 +205,7 @@ call sub.WS2_32.dll_socket
 mov ebx, eax
 mov dword[esp+0x34], ebx
 cmp ebx, 0xffffffff
-jne 0x519ae3
+jne off.b659
 call sub.WS2_32.dll_WSAGetLastError
 push eax
 push str._connectAndSendData_:_socket_error__d.__r_n
@@ -220,15 +218,15 @@ call fcn.004020a0
 lea ecx, [esp+0x1ac]
 mov byte[esp+0x14d4], 1
 call fcn.004020a0
-jmp 0x51a476
+jmp off.b3110
 mov edx, dword[edi+0xc]
 push 0
 push edx
 call esi
 test eax, eax
-jne 0x519af9
+jne off.b681
 mov dword[esp+0x1c], 1
-jmp 0x519ab2
+jmp off.b610
 mov ecx, ebp
 lea esi, [esp+0x264]
 call fcn.00518e20
@@ -247,7 +245,7 @@ push eax
 call sub.WS2_32.dll_gethostbyname
 mov esi, eax
 test esi, esi
-jne 0x519b95
+jne off.b837
 call sub.WS2_32.dll_WSAGetLastError
 push eax
 push str._gethostbyname_:_socket_error__d.__r_n
@@ -259,16 +257,16 @@ lea ecx, [esp+0x238]
 call fcn.00401ff0
 lea ecx, [esp+0x264]
 call fcn.00401ff0
-jmp 0x519ab2
+jmp off.b610
 mov eax, dword[edi+0xc]
 xor ebp, ebp
 push ebp
 push eax
 call dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
 test eax, eax
-jne 0x519bb0
+jne off.b864
 mov dword[esp+0x1c], 1
-jmp 0x519b6c
+jmp off.b796
 mov ecx, 2
 mov word[esp+0x254], cx
 mov edx, dword[esi+0xc]
@@ -288,7 +286,7 @@ push ebx
 mov word[esp+0x262], ax
 call sub.WS2_32.dll_connect
 cmp eax, 0xffffffff
-jne 0x519c2b
+jne off.b987
 call sub.WS2_32.dll_WSAGetLastError
 push eax
 movzx eax, si
@@ -299,16 +297,16 @@ push eax
 push str._connectAndSendData_:_connect__s:_d_error__d.__r_n
 call fcn.00574594
 add esp, 0x10
-jmp 0x519b6c
+jmp off.b796
 mov ecx, dword[edi+0xc]
 mov esi, dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
 push ebp
 push ecx
 call esi
 test eax, eax
-jne 0x519c49
+jne off.b1017
 mov dword[esp+0x1c], 1
-jmp 0x519b6c
+jmp off.b796
 lea ecx, [esp+0x190]
 call fcn.004104e0
 lea ecx, [esp+0x21c]
@@ -316,9 +314,9 @@ mov byte[esp+0x14d4], 0xb
 call fcn.004020e0
 lea ecx, [esp+0x190]
 test al, al
-je 0x519c7b
+je off.b1067
 push str.GET_
-jmp 0x519c80
+jmp off.b1072
 push str.POST_
 call fcn.0044d310
 lea edx, [esp+0x264]
@@ -347,14 +345,13 @@ call fcn.0044d310
 push str.Connection:_Keep_Alive_r_n
 lea ecx, [esp+0x194]
 call fcn.0044d310
-push str.Content-Type:_application_x-www-form-urlencoded
-
+push str.Content-Type:_application_x-www-form-urlencoded_r_n_
 lea ecx, [esp+0x194]
 call fcn.0044d310
 lea ecx, [esp+0x21c]
 call fcn.004020e0
 test al, al
-jne 0x519d6a
+jne off.b1306
 lea ecx, [esp+0x21c]
 call fcn.00410560
 push eax
@@ -384,7 +381,7 @@ push eax
 push ebx
 call sub.WS2_32.dll_send
 cmp eax, 0xffffffff
-jne 0x519dd9
+jne off.b1417
 call sub.WS2_32.dll_WSAGetLastError
 push eax
 push str._connectAndSendData_:_send_error__d.__r_n
@@ -392,17 +389,17 @@ call fcn.00574594
 add esp, 8
 lea ecx, [esp+0x190]
 call fcn.00401ff0
-jmp 0x519b6c
+jmp off.b796
 mov ecx, dword[edi+0xc]
 push ebp
 push ecx
 call esi
 test eax, eax
-jne 0x519dfd
+jne off.b1453
 lea ecx, [esp+0x190]
 mov dword[esp+0x1c], 1
 call fcn.00401ff0
-jmp 0x519b6c
+jmp off.b796
 lea ecx, [esp+0x280]
 call fcn.004104e0
 lea ecx, [edi+0x64]
@@ -437,7 +434,7 @@ mov dword[esp+0x84], ebx
 mov dword[esp+0x80], edi
 call sub.WS2_32.dll_select
 test eax, eax
-jle 0x51a40a
+jle off.b3002
 mov ebp, dword[esp+0x14]
 mov edx, dword[ebp+0xc]
 mov esi, dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
@@ -445,19 +442,19 @@ push 0
 push edx
 call esi
 test eax, eax
-je 0x51a526
+je off.b3286
 lea eax, [esp+0x6c]
 push eax
 push ebx
 call sub.WS2_32.dll___WSAFDIsSet
 test eax, eax
-je 0x51a40a
+je off.b3002
 mov ecx, dword[ebp+0xc]
 push 0
 push ecx
 call esi
 test eax, eax
-je 0x51a526
+je off.b3286
 push 0x1000
 lea edx, [esp+0x4c8]
 push 0
@@ -472,13 +469,13 @@ push ebx
 call sub.WS2_32.dll_recv
 mov edi, eax
 test edi, edi
-jle 0x51a40a
+jle off.b3002
 mov ecx, dword[ebp+0xc]
 push 0
 push ecx
 call esi
 test eax, eax
-je 0x51a52f
+je off.b3295
 mov edx, dword[esp+0x28]
 lea esi, [edi+edx]
 lea ebx, [ebp+0x64]
@@ -497,7 +494,7 @@ mov ecx, dword[ebp+0x10]
 add esp, 0xc
 mov dword[esp+0x28], esi
 test ecx, ecx
-je 0x519f65
+je off.b1813
 fldz
 mov edx, dword[ecx]
 mov eax, dword[edx+4]
@@ -519,31 +516,31 @@ call fcn.00575a10
 mov ebx, eax
 add esp, 8
 test ebx, ebx
-je 0x51a3a1
+je off.b2897
 cmp ebx, edi
-jae 0x51a3a1
+jae off.b2897
 add ebx, 4
 cmp dword[esi+0x7c], 0xffffffff
 mov dword[esp+0x24], ebx
-jne 0x51a040
+jne off.b2032
 push str.HTTP_1.1_
 push ebp
 call fcn.00575a10
 mov esi, eax
 add esp, 8
 test esi, esi
-je 0x51a040
+je off.b2032
 cmp esi, edi
-jae 0x51a040
+jae off.b2032
 add esi, 9
 push 0x5debe0
 push esi
 call fcn.00575a10
 add esp, 8
 test eax, eax
-je 0x51a040
+je off.b2032
 cmp eax, edi
-jae 0x51a040
+jae off.b2032
 push ecx
 sub eax, esi
 mov ecx, esp
@@ -572,31 +569,31 @@ mov edi, dword[esp+0x20]
 mov eax, dword[esp+0x14]
 mov eax, dword[eax+0x7c]
 cmp eax, 0x12e
-je 0x51a059
+je off.b2057
 cmp eax, 0x12d
-jne 0x51a110
+jne off.b2240
 lea ecx, [esp+0x280]
 call fcn.004020e0
 test al, al
-je 0x51a110
+je off.b2240
 push str.Location:_
 push ebp
 call fcn.00575a10
 mov esi, eax
 add esp, 8
 test esi, esi
-je 0x51a110
+je off.b2240
 cmp esi, edi
-jae 0x51a110
+jae off.b2240
 add esi, 0xa
 push 0x5deab0
 push esi
 call fcn.00575a10
 add esp, 8
 test eax, eax
-je 0x51a110
+je off.b2240
 cmp eax, edi
-jae 0x51a110
+jae off.b2240
 push ecx
 sub eax, esi
 mov ecx, esp
@@ -624,28 +621,28 @@ mov edi, dword[esp+0x20]
 lea ecx, [esp+0x280]
 call fcn.004020e0
 test al, al
-je 0x51a53c
+je off.b3308
 mov ecx, dword[esp+0x18]
 cmp ecx, 0xffffffff
-jne 0x51a3a5
+jne off.b2901
 push str.Content_Length:_
 push ebp
 call fcn.00575a10
 mov esi, eax
 add esp, 8
 test esi, esi
-je 0x51a1bd
+je off.b2413
 cmp esi, edi
-jae 0x51a1bd
+jae off.b2413
 add esi, 0x10
 push 0x5deab0
 push esi
 call fcn.00575a10
 add esp, 8
 test eax, eax
-je 0x51a1bd
+je off.b2413
 cmp eax, edi
-jae 0x51a1bd
+jae off.b2413
 push ecx
 sub eax, esi
 mov ecx, esp
@@ -671,16 +668,16 @@ mov dword[esp+0x18], eax
 call fcn.00401ff0
 mov ecx, dword[esp+0x18]
 cmp ecx, 0xffffffff
-jne 0x51a3a5
+jne off.b2901
 push 0x5deab0
 push ebx
 call fcn.00575a10
 mov edi, eax
 add esp, 8
 test edi, edi
-je 0x51a256
+je off.b2566
 cmp edi, dword[esp+0x20]
-jae 0x51a256
+jae off.b2566
 push ecx
 mov esi, edi
 mov ecx, esp
@@ -705,7 +702,7 @@ push eax
 call fcn.005759e5
 add esp, 0xc
 cmp eax, 1
-jne 0x51a24a
+jne off.b2554
 add dword[esp+0x18], 7
 add edi, 2
 mov dword[esp+0x24], edi
@@ -713,25 +710,25 @@ lea ecx, [esp+0x174]
 call fcn.00401ff0
 mov ecx, dword[esp+0x18]
 cmp ecx, 0xffffffff
-jne 0x51a3a5
+jne off.b2901
 push str.Connection:_
 push ebp
 call fcn.00575a10
 mov esi, eax
 add esp, 8
 test esi, esi
-je 0x51a3a1
+je off.b2897
 cmp esi, dword[esp+0x20]
-jae 0x51a3a1
+jae off.b2897
 add esi, 0xc
 push 0x5deab0
 push esi
 call fcn.00575a10
 add esp, 8
 test eax, eax
-je 0x51a3a1
+je off.b2897
 cmp eax, dword[esp+0x20]
-jae 0x51a3a1
+jae off.b2897
 push ecx
 sub eax, esi
 mov ecx, esp
@@ -766,7 +763,7 @@ call fcn.00410560
 mov dword[esp+0x40], eax
 cmp eax, esi
 lea eax, [esp+0x3c]
-jb 0x51a341
+jb off.b2801
 lea eax, [esp+0x40]
 mov eax, dword[eax]
 push eax
@@ -784,7 +781,7 @@ lea ecx, [esp+0x50]
 sete bl
 call fcn.004020a0
 test bl, bl
-je 0x51a381
+je off.b2865
 mov dword[esp+0x18], 0
 lea ecx, [esp+0x1e4]
 call fcn.004020a0
@@ -793,9 +790,9 @@ mov byte[esp+0x14d4], 0xc
 call fcn.00401ff0
 mov ecx, dword[esp+0x18]
 cmp dword[esp+0x24], 0
-je 0x519e50
+je off.b1536
 test ecx, ecx
-jle 0x519e50
+jle off.b1536
 mov edi, dword[esp+0x24]
 mov edx, dword[esp+0x20]
 mov eax, edi
@@ -803,10 +800,10 @@ sub eax, ebp
 sub edx, ebp
 add eax, ecx
 cmp edx, eax
-jl 0x519e50
+jl off.b1536
 mov eax, dword[esp+0x14]
 cmp dword[eax+0x7c], 0xc8
-jne 0x51a3e5
+jne off.b2965
 mov dword[esp+0x2c], 1
 lea esi, [eax+0x54]
 push ecx
@@ -840,11 +837,11 @@ mov byte[esp+0x14d4], 1
 call fcn.004020a0
 mov edi, dword[esp+0x14]
 cmp ebx, 0xffffffff
-je 0x51a499
+je off.b3145
 push ebx
 call sub.WS2_32.dll_closesocket
 cmp eax, 0xffffffff
-jne 0x51a499
+jne off.b3145
 call sub.WS2_32.dll_WSAGetLastError
 push eax
 push str._connectAndSendData_:_closesocket_error__d.__r_n
@@ -853,11 +850,11 @@ add esp, 8
 mov ecx, dword[edi+0x10]
 xor ebx, ebx
 cmp ecx, ebx
-je 0x51a598
+je off.b3400
 cmp dword[esp+0x1c], ebx
-jne 0x51a598
+jne off.b3400
 cmp dword[esp+0x30], ebx
-jne 0x5198c0
+jne off.b112
 mov esi, dword[esp+0x14]
 cmp dword[esp+0x2c], ebx
 mov edx, dword[ecx]
@@ -881,14 +878,14 @@ call fcn.004020a0
 lea ecx, [esp+0x29c]
 call fcn.004020e0
 test al, al
-jne 0x51a5a2
+jne off.b3410
 lea ecx, [esi+0x30]
 call fcn.004569e0
-jmp 0x5198c0
+jmp off.b112
 mov dword[esp+0x1c], edi
-jmp 0x51a40a
+jmp off.b3002
 mov dword[esp+0x1c], 1
-jmp 0x51a40a
+jmp off.b3002
 lea ecx, [esp+0x280]
 call fcn.00402010
 mov ecx, eax
@@ -905,9 +902,9 @@ mov ecx, dword[esp+0x14]
 add ecx, 0x30
 call fcn.004569e0
 mov dword[esp+0x30], 1
-jmp 0x51a406
+jmp off.b2998
 cmp dword[esp+0x30], ebx
-jne 0x5198c0
+jne off.b112
 lea ecx, [esp+0x29c]
 call fcn.004020a0
 lea ecx, [esp+0x14e4]

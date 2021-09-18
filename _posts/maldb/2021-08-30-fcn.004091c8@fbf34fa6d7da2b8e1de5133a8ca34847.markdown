@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,20 +70,20 @@ cmp dword[esp+4], 0
 push ebx
 push esi
 push edi
-je 0x40921d
+je off.b85
 push dword[esp+0x10]
 push 0x409147
 call dword[sym.imp.USER32.DLL_EnumWindows]
 mov esi, dword[0x4170c4]
 test esi, esi
-je 0x409276
+je off.b174
 xor edi, edi
 mov ebx, dword[esi]
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 cmp dword[esi+8], eax
-jne 0x409215
+jne off.b77
 cmp byte[esi+0x10], 0
-je 0x409215
+je off.b77
 push 3
 push edi
 push edi
@@ -94,25 +94,25 @@ push dword[esi+0xc]
 call dword[sym.imp.USER32.DLL_SetWindowPos]
 mov esi, ebx
 test ebx, ebx
-jne 0x4091f1
-jmp 0x409276
+jne off.b41
+jmp off.b174
 mov esi, dword[0x4170c4]
 test esi, esi
-je 0x409276
+je off.b174
 xor edi, edi
 push ebp
 mov ebx, dword[esi]
 lea ebp, [esi+8]
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 cmp dword[ebp], eax
-jne 0x40926f
+jne off.b167
 cmp byte[esi+0x11], 0
-je 0x40924b
+je off.b131
 push 1
 push dword[esi+0xc]
 call dword[sym.imp.USER32.DLL_EnableWindow]
 cmp byte[esi+0x10], 0
-je 0x409262
+je off.b154
 push 3
 push edi
 push edi
@@ -128,7 +128,7 @@ pop ecx
 pop ecx
 mov esi, ebx
 test ebx, ebx
-jne 0x40922a
+jne off.b98
 pop ebp
 pop edi
 pop esi

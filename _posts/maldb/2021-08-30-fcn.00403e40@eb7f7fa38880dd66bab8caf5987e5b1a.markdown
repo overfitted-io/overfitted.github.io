@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,12 +34,10 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [162.0320587158203, -79.15474700927734, '<b><a href="/report/fcn.00403e40@eb7f7fa38880dd66bab8caf5987e5b1a">fcn.00403e40</a><br>@eb7f7fa38880dd66bab8caf5987e5b1a</b><br>', 'point { fill-color: #e0440e; }'],
-[-1.7667275667190552, -54.66261672973633, '<b><a href="/report/fcn.0042ef89@9964b63070116cfb2469e51850178af1">fcn.0042ef89</a><br>@9964b63070116cfb2469e51850178af1</b><br>', 'null'],
-[235.940185546875, 69.05935668945312, '<b><a href="/report/fcn.0057c90b@c60344b51fa39a329b92557d24ff7670">fcn.0057c90b</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-29.089004516601562, 108.68647003173828, '<b><a href="/report/fcn.0048042a@289859175c221b107317af7727d26c17">fcn.0048042a</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
-[96.98771667480469, 45.814029693603516, '<b><a href="/report/fcn.10002023@dc3e2cdf680078d293de3e2d92ba613c">fcn.10002023</a><br>@dc3e2cdf680078d293de3e2d92ba613c</b><br>', 'null'],
-[117.8202896118164, 185.1490478515625, '<b><a href="/report/fcn.0049c0c0@279a61b1e76da49531f1f16fd1102a2d">fcn.0049c0c0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [-145.59649658203125, 130.44638061523438, '<b><a href="/report/fcn.00403e40@eb7f7fa38880dd66bab8caf5987e5b1a">fcn.00403e40</a><br>@eb7f7fa38880dd66bab8caf5987e5b1a</b><br>', 'point { fill-color: #e0440e; }'],
+[-147.3900146484375, 7.877603530883789, '<b><a href="/report/fcn.0049c0c0@279a61b1e76da49531f1f16fd1102a2d">fcn.0049c0c0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+[-269.9587097167969, 9.67567253112793, '<b><a href="/report/fcn.0048042a@289859175c221b107317af7727d26c17">fcn.0048042a</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
+[-268.1651916503906, 132.2444305419922, '<b><a href="/report/fcn.0057c90b@c60344b51fa39a329b92557d24ff7670">fcn.0057c90b</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
 
         ]);
 
@@ -79,13 +77,13 @@ mov esi, str.KERNEL32.DLL
 push esi
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 test eax, eax
-jne 0x403e5b
+jne off.b27
 push esi
 call fcn.00402d93
 pop ecx
 mov edi, eax
 test edi, edi
-je 0x403fc3
+je off.b387
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
 push str.FlsAlloc
 push edi
@@ -105,13 +103,13 @@ call esi
 cmp dword[0x4238cc], 0
 mov esi, dword[sym.imp.KERNEL32.dll_TlsSetValue]
 mov dword[0x4238d8], eax
-je 0x403ec4
+je off.b132
 cmp dword[0x4238d0], 0
-je 0x403ec4
+je off.b132
 cmp dword[0x4238d4], 0
-je 0x403ec4
+je off.b132
 test eax, eax
-jne 0x403ee8
+jne off.b168
 mov eax, dword[sym.imp.KERNEL32.dll_TlsGetValue]
 mov dword[0x4238d0], eax
 mov eax, dword[sym.imp.KERNEL32.dll_TlsFree]
@@ -121,12 +119,12 @@ mov dword[0x4238d8], eax
 call dword[sym.imp.KERNEL32.dll_TlsAlloc]
 mov dword[0x42255c], eax
 cmp eax, 0xffffffff
-je 0x403fc8
+je off.b392
 push dword[0x4238d0]
 push eax
 call esi
 test eax, eax
-je 0x403fc8
+je off.b392
 call fcn.0040307d
 push dword[0x4238cc]
 call fcn.00403a30
@@ -143,7 +141,7 @@ add esp, 0x10
 mov dword[0x4238d8], eax
 call fcn.0040480e
 test eax, eax
-je 0x403fc3
+je off.b387
 push 0x403d11
 push dword[0x4238cc]
 call fcn.00403aab
@@ -151,7 +149,7 @@ pop ecx
 call eax
 mov dword[0x422558], eax
 cmp eax, 0xffffffff
-je 0x403fc3
+je off.b387
 push 0x214
 push 1
 call fcn.004044b4
@@ -159,7 +157,7 @@ mov esi, eax
 pop ecx
 pop ecx
 test esi, esi
-je 0x403fc3
+je off.b387
 push esi
 push dword[0x422558]
 push dword[0x4238d4]
@@ -167,7 +165,7 @@ call fcn.00403aab
 pop ecx
 call eax
 test eax, eax
-je 0x403fc3
+je off.b387
 push 0
 push esi
 call fcn.00403b97
@@ -178,7 +176,7 @@ or dword[esi+4], 0xffffffff
 mov dword[esi], eax
 xor eax, eax
 inc eax
-jmp 0x403fca
+jmp off.b394
 call fcn.00403b5a
 xor eax, eax
 pop edi

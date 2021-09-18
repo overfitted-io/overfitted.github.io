@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.028442669343752017</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,9 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-408.7287292480469, -121.5503158569336, '<b><a href="/report/fcn.004029a0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004029a0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[1002.7930297851562, -99.25879669189453, '<b><a href="/report/fcn.00429360@e2ba7f10eb234338a49853c34d7d9c56">fcn.00429360</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'null'],
-[277.7563171386719, 1112.01220703125, '<b><a href="/report/fcn.00438430@4fe6510221c33bf023f6abed461fc13f">fcn.00438430</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004029a0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004029a0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -108,7 +106,7 @@ push eax
 mov byte[ebp-0x28], bl
 call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
 test eax, eax
-jne 0x402a47
+jne off.b167
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 push eax
 push str.GetTempPath_failed__Last_error_is__d_r_n
@@ -136,7 +134,7 @@ mov word[ebp-0xb], ax
 mov byte[ebp-9], al
 call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextA]
 test eax, eax
-je 0x402a91
+je off.b241
 mov eax, dword[ebp-0x240]
 lea edx, [ebp-0x10]
 push edx
@@ -149,24 +147,24 @@ push ecx
 call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
 lea edi, [ebp-0x28]
 xor esi, esi
-jmp 0x402aa0
+jmp off.b256
 movzx edx, byte[ebp+esi-0x10]
 push edx
-push str._02x
+push str._02x_
 push edi
 call fcn.004f1fc6
 inc esi
 add esp, 0xc
 add edi, 2
 cmp esi, 7
-jl 0x402aa0
+jl off.b256
 xor eax, eax
 nop
 mov cl, byte[ebp+eax-0x23c]
 mov byte[ebp+eax-0x134], cl
 inc eax
 cmp cl, bl
-jne 0x402ac0
+jne off.b288
 lea ecx, [ebp-0x134]
 call fcn.00402580
 lea edi, [ebp-0x134]
@@ -174,23 +172,23 @@ dec edi
 mov al, byte[edi+1]
 inc edi
 cmp al, bl
-jne 0x402ae5
+jne off.b325
 mov ax, word[0x555d90]
 mov word[edi], ax
 lea eax, [ebp-0x28]
 mov edx, eax
-jmp 0x402b00
+jmp off.b352
 mov cl, byte[eax]
 inc eax
 cmp cl, bl
-jne 0x402b00
+jne off.b352
 lea edi, [ebp-0x134]
 sub eax, edx
 dec edi
 mov cl, byte[edi+1]
 inc edi
 cmp cl, bl
-jne 0x402b10
+jne off.b368
 mov ecx, eax
 shr ecx, 2
 mov esi, edx
@@ -204,7 +202,7 @@ nop
 mov cl, byte[eax+1]
 inc eax
 cmp cl, bl
-jne 0x402b30
+jne off.b400
 mov ecx, dword[str..exe]
 mov dl, byte[0x555dc0]
 mov dword[eax], ecx
@@ -214,7 +212,7 @@ push eax
 call fcn.004023e0
 add esp, 4
 test eax, eax
-jne 0x402b7a
+jne off.b474
 push str.release_exe_failed._r_n
 call fcn.004f204a
 add esp, 4
@@ -232,16 +230,16 @@ dec edi
 mov al, byte[edi+1]
 inc edi
 cmp al, bl
-jne 0x402b81
+jne off.b481
 mov cx, word[0x555ddc]
 mov eax, dword[ebp-0x244]
 mov word[edi], cx
 mov ecx, eax
-jmp 0x402ba0
+jmp off.b512
 mov dl, byte[eax]
 inc eax
 cmp dl, bl
-jne 0x402ba0
+jne off.b512
 lea edi, [ebp-0x134]
 sub eax, ecx
 mov esi, ecx
@@ -249,7 +247,7 @@ dec edi
 mov cl, byte[edi+1]
 inc edi
 cmp cl, bl
-jne 0x402bb2
+jne off.b530
 mov ecx, eax
 shr ecx, 2
 rep movsd
@@ -283,7 +281,7 @@ push ebx
 mov dword[ebp-0x28c], 0x44
 call dword[sym.imp.KERNEL32.dll_CreateProcessA]
 test eax, eax
-jne 0x402c3a
+jne off.b666
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 push eax
 push str.CreateProcess_failed___d__n

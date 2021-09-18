@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,7 +72,7 @@ mov ebp, esp
 push edi
 xor edi, edi
 cmp dword[0x4b5f0c], edi
-je 0x4335f2
+je off.b33
 xor eax, eax
 inc eax
 mov ecx, dword[ebp+8]
@@ -82,27 +82,27 @@ pop edi
 pop ebp
 ret 4
 push esi
-push str.IsWow64Process
-push str.kernel32.dll
+push str.IsWow64Process_
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov esi, eax
 test esi, esi
-jne 0x433618
+jne off.b71
 and dword[0x4b5f10], edi
-jmp 0x43362c
+jmp off.b91
 push 0x4b5f10
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call esi
 mov edi, eax
 test edi, edi
-je 0x433636
+je off.b101
 mov dword[0x4b5f0c], 1
 mov eax, edi
 pop esi
-jmp 0x4335e2
+jmp off.b17
 
 {% endhighlight %}
 

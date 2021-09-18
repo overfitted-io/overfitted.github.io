@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,17 +78,17 @@ mov dword[esp], 1
 call fcn.00407ef3
 test eax, eax
 push edx
-je 0x407f82
+je off.b60
 mov dword[esp+8], 5
 mov dword[esp+4], ebx
 mov dword[esp], esi
 call eax
 sub esp, 0xc
 test eax, eax
-jne 0x4081d7
+jne off.b657
 test ebx, ebx
 mov dword[0x426990], 0x4c554e
-je 0x407fe4
+je off.b158
 mov dword[esp+8], 1
 mov dword[esp+4], 0
 mov dword[esp], ebx
@@ -103,22 +103,21 @@ mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_GetShortPathNameA]
 sub esp, 0xc
 cmp eax, 0x400
-jg 0x4081dd
+jg off.b663
 test eax, eax
-je 0x4081dd
+je off.b663
 mov dword[esp+8], 0x400
 mov dword[esp+4], 0x426d90
 mov dword[esp], esi
 call dword[sym.imp.KERNEL32.dll_GetShortPathNameA]
 sub esp, 0xc
 cmp eax, 0x400
-jg 0x4081dd
+jg off.b663
 test eax, eax
-je 0x4081dd
+je off.b663
 mov dword[esp+0xc], 0x426d90
 mov dword[esp+8], 0x426990
-mov dword[esp+4], str._s=_s
-
+mov dword[esp+4], str._s=_s_r_n_
 mov dword[esp], 0x427190
 call dword[sym.imp.USER32.dll_wsprintfA]
 mov dword[ebp-0x2c], eax
@@ -136,7 +135,7 @@ call fcn.004077d6
 sub esp, 0xc
 cmp eax, 0xffffffff
 mov edi, eax
-je 0x4081d7
+je off.b657
 mov dword[esp+4], 0
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
@@ -152,7 +151,7 @@ test eax, eax
 push esi
 push esi
 mov esi, eax
-je 0x4081cd
+je off.b647
 lea eax, [ebp-0x1c]
 mov dword[esp+0x10], 0
 mov dword[esp+0xc], eax
@@ -162,26 +161,25 @@ mov dword[esp], edi
 call dword[sym.imp.KERNEL32.dll_ReadFile]
 sub esp, 0x14
 test eax, eax
-je 0x4081cd
+je off.b647
 cmp ebx, dword[ebp-0x1c]
-jne 0x4081cd
+jne off.b647
 mov dword[esp+4], str._Rename__r_n
 mov dword[esp], esi
 call fcn.0040770e
 test eax, eax
 push edx
 push edx
-jne 0x408121
+jne off.b475
 lea eax, [esi+ebx]
 add ebx, 0xa
-mov dword[esp+4], str.[Rename]
-
+mov dword[esp+4], str.[Rename]_r_n_
 mov dword[esp], eax
 call fcn.00407a11
 push ecx
 push ecx
 mov ecx, ebx
-jmp 0x40815d
+jmp off.b535
 add eax, 0xa
 mov dword[esp+4], 0x40b3ef
 mov dword[esp], eax
@@ -190,18 +188,18 @@ mov ecx, ebx
 push edx
 test eax, eax
 push edx
-je 0x40815d
+je off.b535
 lea ecx, [eax+1]
 lea edx, [esi+ebx]
 mov dword[ebp-0x30], ecx
 mov dword[ebp-0x34], edx
-jmp 0x408152
+jmp off.b524
 mov cl, byte[eax]
 mov edx, dword[ebp-0x2c]
 mov byte[eax+edx], cl
 inc eax
 cmp eax, dword[ebp-0x34]
-jb 0x40814a
+jb off.b516
 mov ecx, dword[ebp-0x30]
 sub ecx, esi
 mov eax, dword[ebp-0x2c]

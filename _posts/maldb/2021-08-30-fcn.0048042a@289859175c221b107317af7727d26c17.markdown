@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,14 +34,10 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-146.54185485839844, -24.374900817871094, '<b><a href="/report/fcn.0048042a@289859175c221b107317af7727d26c17">fcn.0048042a</a><br>@289859175c221b107317af7727d26c17</b><br>', 'point { fill-color: #e0440e; }'],
-[503.073486328125, -109.45816040039062, '<b><a href="/report/fcn.0042ef89@9964b63070116cfb2469e51850178af1">fcn.0042ef89</a><br>@9964b63070116cfb2469e51850178af1</b><br>', 'null'],
-[203.4559783935547, -601.8798217773438, '<b><a href="/report/fcn.00403588@e38ba004520fa1a86a35b63e8d5843ef">fcn.00403588</a><br>@e38ba004520fa1a86a35b63e8d5843ef</b><br>', 'null'],
-[-702.3109130859375, 337.4577331542969, '<b><a href="/report/fcn.00403e40@eb7f7fa38880dd66bab8caf5987e5b1a">fcn.00403e40</a><br>@eb7f7fa38880dd66bab8caf5987e5b1a</b><br>', 'null'],
-[-372.64111328125, -639.7171020507812, '<b><a href="/report/fcn.0057c90b@c60344b51fa39a329b92557d24ff7670">fcn.0057c90b</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[336.4051818847656, 441.8174743652344, '<b><a href="/report/fcn.0040f568@6c5b0418e4a4c57d99cda47d2717045d">fcn.0040f568</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[-781.1270751953125, -233.81752014160156, '<b><a href="/report/fcn.10002023@dc3e2cdf680078d293de3e2d92ba613c">fcn.10002023</a><br>@dc3e2cdf680078d293de3e2d92ba613c</b><br>', 'null'],
-[-208.34385681152344, 633.1122436523438, '<b><a href="/report/fcn.0049c0c0@279a61b1e76da49531f1f16fd1102a2d">fcn.0049c0c0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [-0.35834452509880066, -334.3150329589844, '<b><a href="/report/fcn.0048042a@289859175c221b107317af7727d26c17">fcn.0048042a</a><br>@289859175c221b107317af7727d26c17</b><br>', 'point { fill-color: #e0440e; }'],
+[107.51763153076172, -93.26569366455078, '<b><a href="/report/fcn.0049c0c0@279a61b1e76da49531f1f16fd1102a2d">fcn.0049c0c0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+[-66.95196533203125, -159.84925842285156, '<b><a href="/report/fcn.00403e40@eb7f7fa38880dd66bab8caf5987e5b1a">fcn.00403e40</a><br>@eb7f7fa38880dd66bab8caf5987e5b1a</b><br>', 'null'],
+[174.11134338378906, -267.7315673828125, '<b><a href="/report/fcn.0057c90b@c60344b51fa39a329b92557d24ff7670">fcn.0057c90b</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
 
         ]);
 
@@ -81,13 +77,13 @@ mov esi, str.KERNEL32.DLL
 push esi
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 test eax, eax
-jne 0x480445
+jne off.b27
 push esi
 call fcn.00477549
 pop ecx
 mov edi, eax
 test edi, edi
-je 0x4805ad
+je off.b387
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
 push str.FlsAlloc
 push edi
@@ -107,13 +103,13 @@ call esi
 cmp dword[0x4d2000], 0
 mov esi, dword[sym.imp.KERNEL32.dll_TlsSetValue]
 mov dword[0x4d200c], eax
-je 0x4804ae
+je off.b132
 cmp dword[0x4d2004], 0
-je 0x4804ae
+je off.b132
 cmp dword[0x4d2008], 0
-je 0x4804ae
+je off.b132
 test eax, eax
-jne 0x4804d2
+jne off.b168
 mov eax, dword[sym.imp.KERNEL32.dll_TlsGetValue]
 mov dword[0x4d2004], eax
 mov eax, dword[sym.imp.KERNEL32.dll_TlsFree]
@@ -123,12 +119,12 @@ mov dword[0x4d200c], eax
 call dword[sym.imp.KERNEL32.dll_TlsAlloc]
 mov dword[0x4d03dc], eax
 cmp eax, 0xffffffff
-je 0x4805b2
+je off.b392
 push dword[0x4d2004]
 push eax
 call esi
 test eax, eax
-je 0x4805b2
+je off.b392
 call fcn.00477833
 push dword[0x4d2000]
 call fcn.0047ff6f
@@ -145,7 +141,7 @@ add esp, 0x10
 mov dword[0x4d200c], eax
 call fcn.004836a9
 test eax, eax
-je 0x4805ad
+je off.b387
 push fcn.0048028d
 push dword[0x4d2000]
 call fcn.0047ffea
@@ -153,7 +149,7 @@ pop ecx
 call eax
 mov dword[0x4d03d8], eax
 cmp eax, 0xffffffff
-je 0x4805ad
+je off.b387
 push 0x214
 push 1
 call fcn.004807e7
@@ -161,7 +157,7 @@ mov esi, eax
 pop ecx
 pop ecx
 test esi, esi
-je 0x4805ad
+je off.b387
 push esi
 push dword[0x4d03d8]
 push dword[0x4d2008]
@@ -169,7 +165,7 @@ call fcn.0047ffea
 pop ecx
 call eax
 test eax, eax
-je 0x4805ad
+je off.b387
 push 0
 push esi
 call fcn.00480113
@@ -180,7 +176,7 @@ or dword[esi+4], 0xffffffff
 mov dword[esi], eax
 xor eax, eax
 inc eax
-jmp 0x4805b4
+jmp off.b394
 call fcn.004800d6
 xor eax, eax
 pop edi

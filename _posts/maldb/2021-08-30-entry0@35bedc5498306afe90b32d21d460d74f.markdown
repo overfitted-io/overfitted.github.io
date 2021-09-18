@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.025818121596803148</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -94,7 +94,7 @@ mov dword[esp+4], 0
 mov dword[esp], 0x40b301
 call dword[sym.imp.SHELL32.DLL_SHGetFileInfoA]
 sub esp, 0x14
-mov dword[esp+4], str.NSIS_Error
+mov dword[esp+4], str.NSIS_Error_
 mov dword[esp], 0x427ba8
 call fcn.00407a11
 push eax
@@ -126,20 +126,20 @@ call dword[sym.imp.USER32.dll_CharNextA]
 mov edi, eax
 push ebx
 xor ebx, ebx
-jmp 0x4044ab
+jmp off.b388
 inc eax
 mov dl, byte[eax]
 cmp dl, 0x20
-je 0x40441e
+je off.b247
 cmp dl, 0x22
 mov cl, 0x20
-jne 0x404430
+jne off.b265
 inc eax
 mov cl, 0x22
 cmp byte[eax], 0x2f
-jne 0x404490
+jne off.b361
 cmp byte[eax+1], 0x53
-jne 0x40444c
+jne off.b293
 mov dl, byte[eax+2]
 mov esi, ebx
 or esi, 2
@@ -147,7 +147,7 @@ or edx, 0x20
 cmp dl, 0x20
 cmove ebx, esi
 cmp dword[eax+1], 0x4352434e
-jne 0x404466
+jne off.b319
 mov dl, byte[eax+5]
 mov esi, ebx
 or esi, 4
@@ -155,9 +155,9 @@ or edx, 0x20
 cmp dl, 0x20
 cmove ebx, esi
 cmp dword[eax-1], 0x3d442f20
-je 0x404472
+je off.b331
 inc eax
-jmp 0x404490
+jmp off.b361
 mov dword[eax-1], 0
 add eax, 3
 mov dword[esp+4], eax
@@ -165,7 +165,7 @@ mov dword[esp], 0x430400
 call fcn.00407a11
 push ecx
 push ecx
-jmp 0x4044b4
+jmp off.b397
 movsx ecx, cl
 mov dword[esp+4], ecx
 mov dword[esp], eax
@@ -177,7 +177,7 @@ cmp byte[eax], 0x22
 sete dl
 add eax, edx
 cmp byte[eax], 0
-jne 0x40441f
+jne off.b248
 mov dword[esp+4], 0x431400
 mov dword[esp], 0x400
 call dword[sym.imp.KERNEL32.dll_GetTempPathA]
@@ -185,20 +185,20 @@ push eax
 push eax
 call fcn.00404264
 test eax, eax
-jne 0x40450e
+jne off.b487
 mov dword[esp+4], 0x3fb
 mov dword[esp], 0x431400
 call dword[sym.imp.KERNEL32.dll_GetWindowsDirectoryA]
 push esi
 push esi
-mov dword[esp+4], str._Temp
+mov dword[esp+4], str.__Temp_
 mov dword[esp], 0x431400
 call fcn.00407a44
 push eax
 push eax
 call fcn.00404264
 test eax, eax
-je 0x40471c
+je off.b1013
 mov dword[esp], 0x431000
 call dword[sym.imp.KERNEL32.dll_DeleteFileA]
 push ecx
@@ -208,21 +208,21 @@ push ebx
 xor ebx, ebx
 test eax, eax
 mov esi, eax
-jne 0x40472a
+jne off.b1027
 cmp dword[0x427b94], 0
-je 0x404709
+je off.b994
 mov dword[esp+4], 0
 mov dword[esp], 0x430000
 call fcn.004075f0
 push edx
 push edx
-jmp 0x404557
+jmp off.b560
 dec eax
 cmp eax, 0x430000
-jb 0x40456b
+jb off.b580
 cmp dword[eax], 0x3d3f5f20
-jne 0x404556
-jmp 0x404886
+jne off.b559
+jmp off.b1375
 mov dword[esp+4], str.nsu.tmp
 mov dword[esp], 0x431400
 call fcn.00407a44
@@ -234,8 +234,8 @@ call dword[sym.imp.KERNEL32.dll_lstrcmpiA]
 test eax, eax
 push ebx
 push ebx
-je 0x404723
-jmp 0x4045cb
+je off.b1020
+jmp off.b676
 mov dword[esp+4], ebx
 mov dword[esp], 0x430400
 call fcn.00407a11
@@ -246,7 +246,7 @@ mov dword[esp], 0x430800
 call fcn.00407a11
 push edx
 push edx
-jmp 0x404709
+jmp off.b994
 mov dword[esp+4], 0
 mov dword[esp], 0x431400
 call dword[sym.imp.KERNEL32.dll_CreateDirectoryA]
@@ -256,7 +256,7 @@ mov dword[esp], 0x431400
 call dword[sym.imp.KERNEL32.dll_SetCurrentDirectoryA]
 cmp byte[0x430400], 0
 push eax
-jne 0x40460f
+jne off.b744
 mov dword[esp+4], 0x430c00
 mov dword[esp], 0x430400
 call fcn.00407a11
@@ -284,14 +284,14 @@ mov dword[esp], 0x423ce8
 call dword[ebp-0x18c]
 test esi, esi
 push eax
-je 0x4046e4
+je off.b957
 mov dword[esp+8], 1
 mov dword[esp+4], 0x423ce8
 mov dword[esp], 0x431c00
 call edi
 sub esp, 0xc
 test eax, eax
-je 0x4046e4
+je off.b957
 mov dword[esp+4], 0
 mov dword[esp], 0x423ce8
 call fcn.00407f46
@@ -308,41 +308,41 @@ mov dword[esp], 0x423ce8
 call fcn.00407478
 test eax, eax
 push edx
-je 0x4046e4
+je off.b957
 mov dword[esp], eax
 xor esi, esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push eax
 inc byte[0x42b400]
 dec ebx
-jne 0x404645
+jne off.b798
 mov dword[esp+4], 0
 mov dword[esp], 0x431400
 call fcn.00407f46
 push edi
 push edi
-jmp 0x404728
+jmp off.b1025
 mov dword[0x427b34], 0xffffffff
 call fcn.00405e99
 mov ebx, eax
-jmp 0x40472a
+jmp off.b1027
 mov esi, str.Error_writing_temporary_file._Make_sure_your_temp_folder_is_valid.
-jmp 0x404728
+jmp off.b1025
 mov esi, str.Error_launching_installer
 xor ebx, ebx
 call fcn.004042c8
 call dword[sym.imp.ole32.dll_OleUninitialize]
 test esi, esi
-je 0x404757
+je off.b1072
 mov dword[esp+4], 0x200010
 mov dword[esp], esi
 call fcn.00407536
 push ebx
 push ebx
 mov dword[esp], 2
-jmp 0x404880
+jmp off.b1369
 cmp dword[0x427b1c], 0
-je 0x404872
+je off.b1355
 mov dword[esp], 3
 call fcn.00407ef3
 push edi
@@ -356,11 +356,11 @@ call fcn.00407ef3
 test edi, edi
 mov esi, eax
 push ecx
-je 0x40484a
+je off.b1315
 cmp dword[ebp-0x190], 0
-je 0x40484a
+je off.b1315
 test eax, eax
-je 0x40484a
+je off.b1315
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 lea edx, [ebp-0x1c]
 mov dword[esp+8], edx
@@ -369,12 +369,12 @@ mov dword[esp], eax
 call dword[ebp-0x190]
 sub esp, 0xc
 test eax, eax
-je 0x40484a
+je off.b1315
 lea edx, [ebp-0x17c]
 lea eax, [ebp-0x178]
 mov dword[ebp-0x194], edx
 mov dword[esp+8], eax
-mov dword[esp+4], str.SeShutdownPrivilege
+mov dword[esp+4], str.SeShutdownPrivilege_
 mov dword[esp], 0
 call edi
 mov edx, dword[ebp-0x194]
@@ -396,7 +396,7 @@ call dword[sym.imp.USER32.dll_ExitWindowsEx]
 test eax, eax
 push esi
 push esi
-jne 0x404872
+jne off.b1355
 mov dword[esp], 9
 call fcn.004038a0
 push ecx
@@ -411,8 +411,8 @@ mov dword[esp], ebx
 call fcn.00407e3c
 test eax, eax
 push edx
-je 0x404723
-jmp 0x4045a2
+je off.b1020
+jmp off.b635
 
 {% endhighlight %}
 

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.11429347150034996</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.007084413999983167</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [768.9549560546875, -73.72047424316406, '<b><a href="/report/fcn.0045c400@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0045c400</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
-[24.263444900512695, 727.5590209960938, '<b><a href="/report/fcn.0048ef80@279a61b1e76da49531f1f16fd1102a2d">fcn.0048ef80</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-297.3282470703125, -317.98028564453125, '<b><a href="/report/fcn.004784b0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004784b0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0045c400@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0045c400</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -94,24 +92,24 @@ mov dword[ebp-0x64], 0
 mov esi, dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
 mov dword[ebp-4], 0
 mov byte[ebp-0x5c], 0
-jmp 0x45c460
+jmp off.b96
 mov eax, dword[ebx]
 cmp eax, 0xc15730e2
-je 0x45c5f9
+je off.b505
 mov ecx, 0x7f0725e3
 mov edx, ebx
 xor eax, eax
 lock cmpxchg
 test eax, eax
-jne 0x45c5b2
+jne off.b434
 mov esi, dword[ebp-0x64]
 mov byte[ebp-4], 1
 test esi, esi
-jne 0x45c4df
+jne off.b223
 cmp byte[ebp-0x5c], 0
-jne 0x45c4c5
+jne off.b197
 mov ecx, 0xd
-mov esi, str.Local_{C15730E2-145C-4c5e-B005-3BC753F42475}-once-flag
+mov esi, str.Local__{C15730E2-145C-4c5e-B005-3BC753F42475}-once-flag_
 lea edi, [ebp-0x5c]
 rep movsd
 movsw word
@@ -135,12 +133,12 @@ call dword[sym.imp.KERNEL32.dll_OpenEventA]
 mov esi, eax
 mov dword[ebp-0x64], esi
 test esi, esi
-je 0x45c4e6
+je off.b230
 push esi
 call dword[sym.imp.KERNEL32.dll_ResetEvent]
 call dword[ebp-0x68]
 cmp byte[ebp-0x5d], 0
-jne 0x45c4fb
+jne off.b251
 lea eax, [ebx+4]
 mov ecx, 1
 lock xadd
@@ -148,14 +146,14 @@ mov edx, 0xc15730e2
 mov eax, ebx
 xchg dword[eax], edx
 test esi, esi
-jne 0x45c569
+jne off.b361
 mov eax, dword[ebx+4]
 cmp eax, 1
-jle 0x45c5f9
+jle off.b505
 cmp byte[ebp-0x5c], 0
-jne 0x45c54c
+jne off.b332
 mov ecx, 0xd
-mov esi, str.Local_{C15730E2-145C-4c5e-B005-3BC753F42475}-once-flag
+mov esi, str.Local__{C15730E2-145C-4c5e-B005-3BC753F42475}-once-flag_
 lea edi, [ebp-0x5c]
 rep movsd
 movsw word
@@ -180,39 +178,39 @@ call dword[sym.imp.KERNEL32.dll_CreateEventA]
 mov esi, eax
 mov dword[ebp-0x64], esi
 test esi, esi
-je 0x45c5fc
+je off.b508
 push esi
 call dword[sym.imp.KERNEL32.dll_SetEvent]
-jmp 0x45c5fc
+jmp off.b508
 cmp byte[ebp-0x5d], 0
-jne 0x45c5ec
+jne off.b492
 lea eax, [ebx+4]
 mov edx, 1
 lock xadd
 mov eax, dword[ebx]
 mov byte[ebp-0x5d], 1
 cmp eax, 0xc15730e2
-je 0x45c5f9
+je off.b505
 cmp dword[ebp-0x64], 0
-jne 0x45c5ec
+jne off.b492
 lea eax, [ebp-0x5c]
 push ebx
 push eax
 call fcn.0045c3a0
 add esp, 8
 mov dword[ebp-0x64], eax
-jmp 0x45c460
+jmp off.b96
 mov ecx, dword[ebp-0x64]
 push 0xffffffffffffffff
 push ecx
 call esi
-jmp 0x45c460
+jmp off.b96
 mov esi, dword[ebp-0x64]
 mov dword[ebp-4], 0xffffffff
 test esi, esi
-je 0x45c613
+je off.b531
 cmp esi, 0xffffffff
-je 0x45c613
+je off.b531
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov ecx, dword[ebp-0xc]

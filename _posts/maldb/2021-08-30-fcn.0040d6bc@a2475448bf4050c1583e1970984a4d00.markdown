@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0028592718343989367</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.04474113826440642</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [15.553253173828125, 37.88404083251953, '<b><a href="/report/fcn.0040d6bc@a2475448bf4050c1583e1970984a4d00">fcn.0040d6bc</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
-[-222.5188446044922, 191.48233032226562, '<b><a href="/report/fcn.00563f05@c60344b51fa39a329b92557d24ff7670">fcn.00563f05</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[1.5791395902633667, -245.0924530029297, '<b><a href="/report/fcn.0041fff1@59aef7c08025d70f84c85db2092fc99e">fcn.0041fff1</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'null'],
-[29.541358947753906, 320.8653869628906, '<b><a href="/report/fcn.1000aee9@481b545f5c18f2fce1caac67ddc419e8">fcn.1000aee9</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[267.6166076660156, 167.26881408691406, '<b><a href="/report/fcn.0040ba90@d4e56c7d970c209a3a2b3c4b4cc5e586">fcn.0040ba90</a><br>@d4e56c7d970c209a3a2b3c4b4cc5e586</b><br>', 'null'],
-[253.63687133789062, -115.70799255371094, '<b><a href="/report/fcn.004bb2ab@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004bb2ab</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[-236.50875854492188, -91.50251007080078, '<b><a href="/report/fcn.0042b23d@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042b23d</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
+    [-245.4813995361328, 9015.25, '<b><a href="/report/fcn.0040d6bc@a2475448bf4050c1583e1970984a4d00">fcn.0040d6bc</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
+[245.48146057128906, -9015.25, '<b><a href="/report/fcn.004bb2ab@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004bb2ab</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
 
         ]);
 
@@ -87,16 +82,16 @@ push dword[ebp+8]
 call edi
 mov esi, eax
 test esi, esi
-je 0x40d729
+je off.b109
 push esi
 call dword[sym.imp.USER32.dll_GetDlgCtrlID]
 cmp ax, 0xffff
-je 0x40d720
+je off.b100
 push 0xfffffffffffffff0
 push esi
 call dword[sym.imp.USER32.dll_GetWindowLongA]
 test eax, 0x10000000
-je 0x40d720
+je off.b100
 lea eax, [ebp-0x10]
 push eax
 push esi
@@ -107,12 +102,12 @@ push dword[ebp+0xc]
 push eax
 call dword[sym.imp.USER32.dll_PtInRect]
 test eax, eax
-jne 0x40d725
+jne off.b105
 push 2
 push esi
-jmp 0x40d6dc
+jmp off.b32
 mov eax, esi
-jmp 0x40d72b
+jmp off.b111
 xor eax, eax
 pop edi
 pop esi

@@ -1,0 +1,628 @@
+---
+layout: post
+title:  "sym.xmrig.exe_MHD_add_connection @ c92f0480e2fbc88393d2c65c08a235e0"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** sym.xmrig.exe\_MHD\_add\_connection
+- **Origin (md5):** c92f0480e2fbc88393d2c65c08a235e0
+- **VirusTotal:** [virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SOCKET">SOCKET</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [87.73890686035156, 1124.3936767578125, '<b><a href="/report/sym.xmrig.exe_MHD_add_connection@c92f0480e2fbc88393d2c65c08a235e0">sym.xmrig.exe_MHD_add_connection</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
+[-87.73899841308594, -1124.3936767578125, '<b><a href="/report/fcn.00698340@c92f0480e2fbc88393d2c65c08a235e0">fcn.00698340</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+push edi
+push esi
+push ebx
+sub esp, 0x3c
+mov eax, dword[esp+0x58]
+mov ebp, dword[esp+0x54]
+mov ebx, dword[esp+0x50]
+mov dword[esp+0x24], eax
+mov eax, dword[esp+0x5c]
+mov dword[esp], ebp
+mov dword[esp+0x20], eax
+call fcn.0069fb30
+test eax, eax
+mov dword[esp+0x1c], eax
+je off.b416
+mov dword[esp+0x1c], 1
+mov byte[esp+0x28], 1
+test byte[ebx+0xdd], 0x10
+jne off.b228
+mov esi, dword[ebx+0x64]
+test esi, esi
+je off.b272
+mov ebx, dword[ebx+0x78]
+test ebx, ebx
+je off.b184
+xor edx, edx
+mov eax, ebp
+div ebx
+imul eax, edx, 0x114
+add eax, esi
+mov edi, dword[eax+0xcc]
+cmp dword[eax+0xd0], edi
+ja off.b368
+lea ecx, [ebp+1]
+lea edi, [ebp+ebx]
+jmp off.b180
+mov eax, ecx
+xor edx, edx
+add ecx, 1
+div ebx
+imul edx, edx, 0x114
+lea eax, [esi+edx]
+mov edx, dword[eax+0xd0]
+cmp dword[eax+0xcc], edx
+jb off.b368
+cmp edi, ecx
+jne off.b144
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+jne off.b2265
+call dword[sym.imp.msvcrt.dll__errno]
+mov dword[eax], 0x17
+add esp, 0x3c
+mov eax, esi
+pop ebx
+pop esi
+pop edi
+pop ebp
+ret
+mov dword[esp], ebp
+call fcn.0069fb70
+test eax, eax
+jne off.b77
+mov dword[esp+4], str.Failed_to_set_noninheritable_mode_on_new_client_socket._n
+mov dword[esp], ebx
+call fcn.0069df20
+mov esi, dword[ebx+0x64]
+test esi, esi
+jne off.b88
+nop
+mov eax, dword[ebx+0xd0]
+cmp dword[ebx+0xcc], eax
+mov edi, ebx
+jne off.b466
+mov dword[esp+4], str.Server_reached_connection_limit._Closing_inbound_connection._n
+mov dword[esp], ebx
+call fcn.0069df20
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+je off.b206
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x8d3
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov esi, dword[esp+0x1c]
+mov dword[esp+0x54], 1
+mov edx, ebp
+mov ecx, dword[esp+0x24]
+mov dword[esp+0x58], esi
+mov esi, dword[esp+0x20]
+mov dword[esp+0x50], esi
+add esp, 0x3c
+pop ebx
+pop esi
+pop edi
+pop ebp
+jmp fcn.00698340
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+mov dword[esp], eax
+call fcn.0069ee40
+mov dword[esp+4], str.Failed_to_set_nonblocking_mode_on_new_client_socket:__s_n_
+mov dword[esp+8], eax
+mov dword[esp], ebx
+call fcn.0069df20
+mov byte[esp+0x28], 0
+jmp off.b64
+mov edi, eax
+mov eax, dword[edi+0x60]
+test eax, eax
+jne off.b464
+mov esi, dword[edi+0xd8]
+test esi, esi
+jne off.b947
+mov eax, dword[ebx+0x30]
+test eax, eax
+je off.b526
+mov esi, dword[esp+0x20]
+mov dword[esp+8], esi
+mov esi, dword[esp+0x24]
+mov dword[esp+4], esi
+mov edx, dword[ebx+0x34]
+mov dword[esp], edx
+call eax
+test eax, eax
+je off.b1108
+mov dword[esp+4], 0xe0
+mov dword[esp], 1
+call sub.msvcrt.dll_calloc
+test eax, eax
+mov edi, eax
+je off.b1012
+mov eax, dword[ebx+0x6c]
+mov dword[esp], eax
+call fcn.0069e360
+test eax, eax
+mov dword[edi+0x20], eax
+je off.b1150
+mov eax, dword[ebx+0xd4]
+mov dword[edi+0x8c], eax
+mov eax, dword[esp+0x20]
+mov dword[esp], eax
+call sub.msvcrt.dll_malloc
+test eax, eax
+mov dword[edi+0x4c], eax
+je off.b1386
+mov esi, dword[esp+0x20]
+mov ecx, dword[esp+0x24]
+mov dword[esp], eax
+mov dword[esp+8], esi
+mov dword[esp+4], ecx
+call sub.msvcrt.dll_memcpy
+movzx eax, byte[esp+0x28]
+mov dword[edi+0x84], esi
+mov esi, 0x16
+mov dword[edi+0x98], ebp
+mov dword[edi+0x10], ebx
+mov byte[edi+0x9c], al
+call fcn.0069e6e0
+test byte[ebx+0xdc], 2
+mov dword[edi+0x88], eax
+je off.b1545
+mov eax, dword[ebx+0x40]
+test eax, eax
+je off.b726
+lea edx, [edi+0x28]
+mov dword[esp+0xc], 1
+mov dword[esp+4], edi
+mov dword[esp+8], edx
+mov edx, dword[ebx+0x44]
+mov dword[esp], edx
+call eax
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+jne off.b2151
+mov ecx, dword[esp+0x20]
+mov edx, dword[esp+0x24]
+lea ebp, [ebx+0x9c]
+mov eax, ebx
+call fcn.006981f0
+mov dword[esp], ebp
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+sub esp, 4
+test byte[ebx+0xdc], 4
+jne off.b836
+mov edx, dword[edi+0xc]
+mov eax, dword[edi+8]
+test edx, edx
+je off.b1920
+mov dword[edx+8], eax
+mov eax, dword[edi+8]
+mov edx, dword[edi+0xc]
+test eax, eax
+je off.b1912
+mov dword[eax+0xc], edx
+mov dword[edi+8], 0
+mov dword[edi+0xc], 0
+mov edx, dword[edi+4]
+mov eax, dword[edi]
+test edx, edx
+je off.b1859
+mov dword[edx], eax
+mov eax, dword[edi]
+mov edx, dword[edi+4]
+test eax, eax
+je off.b1851
+mov dword[eax+4], edx
+mov dword[edi], 0
+mov dword[edi+4], 0
+mov dword[esp], ebp
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov eax, dword[edi+0x20]
+sub esp, 4
+mov dword[esp], eax
+call fcn.0069e400
+mov eax, dword[edi+0x4c]
+mov dword[esp], eax
+call sub.msvcrt.dll_free
+mov dword[esp], edi
+call sub.msvcrt.dll_free
+test esi, esi
+jne off.b1530
+call dword[sym.imp.msvcrt.dll__errno]
+mov dword[eax], 0x16
+jmp off.b218
+mov dword[esp+4], 1
+mov dword[esp], 0x18
+call sub.msvcrt.dll_calloc
+test eax, eax
+mov esi, eax
+je off.b292
+cmp dword[esp+0x20], 0x10
+je off.b1253
+cmp dword[esp+0x20], 0x1c
+je off.b1809
+mov dword[esp], eax
+call sub.msvcrt.dll_free
+jmp off.b487
+mov edi, dword[sym.imp.msvcrt.dll__errno]
+call edi
+mov eax, dword[eax]
+mov dword[esp+0x1c], eax
+call edi
+mov eax, dword[eax]
+mov dword[esp], eax
+call sub.msvcrt.dll_strerror
+mov dword[esp+4], str.Error_allocating_memory:__s_n_
+mov dword[esp+8], eax
+mov dword[esp], ebx
+call fcn.0069df20
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+jne off.b2303
+mov ecx, dword[esp+0x20]
+mov edx, dword[esp+0x24]
+mov eax, ebx
+call fcn.006981f0
+call edi
+mov edi, dword[esp+0x1c]
+mov dword[eax], edi
+jmp off.b218
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+jne off.b2189
+mov ecx, dword[esp+0x20]
+mov edx, dword[esp+0x24]
+mov eax, ebx
+call fcn.006981f0
+jmp off.b218
+mov eax, dword[sym.imp.msvcrt.dll__errno]
+mov dword[esp+0x1c], eax
+call eax
+mov eax, dword[eax]
+mov dword[esp], eax
+call sub.msvcrt.dll_strerror
+mov dword[esp+4], str.Error_allocating_memory:__s_n_
+mov dword[esp+8], eax
+mov dword[esp], ebx
+call fcn.0069df20
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+jne off.b2227
+mov ecx, dword[esp+0x20]
+mov edx, dword[esp+0x24]
+mov eax, ebx
+call fcn.006981f0
+mov dword[esp], edi
+call sub.msvcrt.dll_free
+mov eax, dword[esp+0x1c]
+call eax
+mov dword[eax], 0xc
+jmp off.b218
+mov dword[eax], 2
+mov eax, dword[esp+0x24]
+mov eax, dword[eax+4]
+mov dword[esi+4], eax
+lea eax, [edi+0x84]
+mov dword[esp+0x1c], eax
+mov dword[esp], eax
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+lea eax, [edi+0x68]
+sub esp, 4
+mov dword[esp+8], 0x697f10
+mov dword[esp], esi
+mov dword[esp+4], eax
+call fcn.006b22c0
+test eax, eax
+je off.b1867
+mov eax, dword[eax]
+cmp esi, eax
+je off.b1344
+mov dword[esp], esi
+mov dword[esp+0x2c], eax
+call sub.msvcrt.dll_free
+mov eax, dword[esp+0x2c]
+mov edx, dword[eax+0x14]
+cmp edx, dword[edi+0xd8]
+jae off.b1509
+add edx, 1
+mov dword[eax+0x14], edx
+mov eax, dword[esp+0x1c]
+mov dword[esp], eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp, 4
+jmp off.b487
+mov esi, dword[sym.imp.msvcrt.dll__errno]
+mov dword[esp+0x28], esi
+call esi
+mov eax, dword[eax]
+mov dword[esp+0x1c], eax
+call esi
+mov eax, dword[eax]
+mov dword[esp], eax
+call sub.msvcrt.dll_strerror
+mov dword[esp+4], str.Error_allocating_memory:__s_n_
+mov dword[esp+8], eax
+mov dword[esp], ebx
+call fcn.0069df20
+mov dword[esp], ebp
+call dword[sym.imp.WS2_32.dll_closesocket]
+sub esp, 4
+test eax, eax
+mov esi, eax
+jne off.b2113
+mov ecx, dword[esp+0x20]
+mov edx, dword[esp+0x24]
+mov eax, ebx
+call fcn.006981f0
+mov eax, dword[edi+0x20]
+mov dword[esp], eax
+call fcn.0069e400
+mov dword[esp], edi
+call sub.msvcrt.dll_free
+mov eax, dword[esp+0x28]
+call eax
+mov edi, dword[esp+0x1c]
+mov dword[eax], edi
+jmp off.b218
+mov eax, dword[esp+0x1c]
+mov dword[esp], eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp, 4
+jmp off.b292
+call dword[sym.imp.msvcrt.dll__errno]
+mov dword[eax], esi
+xor esi, esi
+jmp off.b218
+lea esi, [ebx+0x9c]
+mov dword[esp], edi
+call fcn.00694970
+mov dword[esp], esi
+call dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
+mov eax, dword[ebx+0xcc]
+sub esp, 4
+cmp eax, dword[ebx+0xd0]
+jae off.b1928
+add eax, 1
+test byte[ebx+0xdc], 4
+mov dword[ebx+0xcc], eax
+jne off.b1637
+mov ecx, dword[ebx+0x24]
+mov eax, dword[ebx+0x20]
+mov dword[edi+0xc], 0
+test ecx, ecx
+mov dword[edi+8], eax
+je off.b2026
+mov dword[eax+0xc], edi
+mov dword[ebx+0x20], edi
+mov edx, dword[ebx+0xc]
+mov eax, dword[ebx+8]
+mov dword[edi+4], 0
+test edx, edx
+mov dword[edi], eax
+je off.b1966
+mov dword[eax+4], edi
+mov dword[ebx+8], edi
+mov dword[esp], esi
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+mov eax, dword[ebx+0x40]
+sub esp, 4
+test eax, eax
+je off.b1712
+lea edx, [edi+0x28]
+mov dword[esp+0xc], 0
+mov dword[esp+4], edi
+mov dword[esp+8], edx
+mov edx, dword[ebx+0x44]
+mov dword[esp], edx
+call eax
+test byte[ebx+0xdc], 4
+jne off.b1974
+mov eax, dword[ebx+0x7c]
+mov edx, dword[ebx+0x80]
+mov dword[edi+0x50], eax
+mov dword[edi+0x54], edx
+cmp dword[ebx+0xbc], 0xffffffff
+je off.b1799
+mov dword[esp+0xc], 0
+mov dword[esp+8], 1
+mov dword[esp+4], 0x7b9c93
+mov eax, dword[ebx+0xc0]
+mov dword[esp], eax
+call dword[sym.imp.WS2_32.dll_send]
+sub esp, 0x10
+test eax, eax
+jle off.b2034
+mov esi, 1
+jmp off.b218
+mov ecx, dword[esp+0x24]
+mov dword[eax], 0x17
+lea eax, [ecx+8]
+mov ecx, dword[ecx+8]
+mov dword[esi+4], ecx
+mov ecx, dword[eax+4]
+mov dword[esi+8], ecx
+mov ecx, dword[eax+8]
+mov eax, dword[eax+0xc]
+mov dword[esi+0xc], ecx
+mov dword[esi+0x10], eax
+jmp off.b1269
+mov dword[ebx+0xc], edx
+jmp off.b867
+mov dword[ebx+8], eax
+jmp off.b856
+mov dword[esp], edi
+mov dword[esp+4], str.Failed_to_add_IP_connection_count_node_n_
+call fcn.0069df20
+mov eax, dword[esp+0x1c]
+mov dword[esp], eax
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp, 4
+mov dword[esp], esi
+call sub.msvcrt.dll_free
+jmp off.b292
+mov dword[ebx+0x24], edx
+jmp off.b822
+mov dword[ebx+0x20], eax
+jmp off.b811
+mov dword[esp], esi
+mov esi, 0x17
+call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
+sub esp, 4
+mov dword[esp+4], str.Server_reached_connection_limit._Closing_inbound_connection._n_
+mov dword[esp], ebx
+call fcn.0069df20
+jmp off.b692
+mov dword[ebx+0xc], edi
+jmp off.b1663
+mov dword[esp+0xc], edi
+mov dword[esp+8], 0x699730
+mov eax, dword[ebx+0x74]
+mov dword[esp+4], eax
+lea eax, [edi+0x50]
+mov dword[esp], eax
+call fcn.0069edf0
+test eax, eax
+je off.b2072
+test byte[ebx+0xdc], 4
+jne off.b1799
+jmp off.b1740
+mov dword[ebx+0x24], edi
+jmp off.b1634
+call dword[sym.imp.WS2_32.dll_WSAGetLastError]
+cmp eax, 0x2733
+je off.b1799
+mov dword[esp+4], str.Failed_to_signal_new_connection_via_inter_thread_communication_channel.
+mov dword[esp], ebx
+call fcn.0069df20
+jmp off.b1799
+call dword[sym.imp.msvcrt.dll__errno]
+mov esi, dword[eax]
+mov dword[esp], esi
+call sub.msvcrt.dll_strerror
+mov dword[esp+4], str.Failed_to_create_a_thread:__s_n_
+mov dword[esp+8], eax
+mov dword[esp], ebx
+call fcn.0069df20
+jmp off.b692
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x91b
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x9db
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x8e6
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x907
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x897
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+mov eax, dword[0x83a8a0]
+mov dword[esp+0xc], str.Close_socket_failed._n_
+mov dword[esp+8], 0x8f8
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
+mov dword[esp], eax
+call dword[0x83a8a4]
+lea esi, [esi]
+lea edi, [edi]
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/c92f0480e2fbc88393d2c65c08a235e0

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,7 +74,7 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 test eax, eax
-jne 0x454841
+jne off.b33
 xor al, al
 add esp, 0x18
 ret
@@ -96,7 +96,7 @@ mov dword[esp+0x2c], 2
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 test eax, eax
-jne 0x45483b
+jne off.b27
 mov ecx, dword[esp+0x1c]
 push eax
 push ecx

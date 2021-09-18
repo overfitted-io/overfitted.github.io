@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="MEMORY">MEMORY</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -86,7 +87,7 @@ call fcn.00408a98
 add esp, 0xc
 mov edi, eax
 cmp dword[0x4170a4], esi
-jne 0x408bfd
+jne off.b84
 push 0x11
 call dword[sym.imp.GDI32.DLL_GetStockObject]
 mov dword[0x4170a4], eax
@@ -120,16 +121,16 @@ mov dword[0x4170b8], eax
 call fcn.004091c8
 mov eax, dword[0x4170b8]
 test eax, eax
-je 0x408cab
+je off.b258
 push eax
 call dword[sym.imp.USER32.DLL_IsWindowEnabled]
 test eax, eax
-je 0x408cab
+je off.b258
 push esi
 push dword[0x4170b8]
 call dword[sym.imp.USER32.DLL_EnableWindow]
 mov dword[0x4170bc], 1
-jmp 0x408cb1
+jmp off.b264
 mov dword[0x4170bc], esi
 push esi
 push dword[0x416ff0]
@@ -161,7 +162,7 @@ push 0
 call esi
 mov ebx, eax
 test ebx, ebx
-je 0x408efa
+je off.b849
 lea eax, [esp+0x10]
 push eax
 push 0xffffffffffffffeb
@@ -189,7 +190,7 @@ push 0x30
 push eax
 call esi
 test byte[esp+0x80], 1
-je 0x408d68
+je off.b447
 push 0x20
 pop ebp
 push 0
@@ -216,7 +217,7 @@ call esi
 push dword[0x4170b0]
 call dword[sym.imp.USER32.DLL_SetFocus]
 test edi, edi
-je 0x408de5
+je off.b572
 push edi
 push 0
 push 0xc
@@ -274,7 +275,7 @@ mov esi, eax
 call dword[sym.imp.USER32.DLL_SetForegroundWindow]
 push ebx
 call dword[sym.imp.USER32.DLL_BringWindowToTop]
-jmp 0x408eaa
+jmp off.b769
 push 0
 push 0
 push 0
@@ -282,14 +283,14 @@ lea eax, [esp+0x30]
 push eax
 call dword[sym.imp.USER32.DLL_GetMessageW]
 test eax, eax
-je 0x408eb3
+je off.b778
 lea eax, [esp+0x24]
 push eax
 push esi
 push ebx
 call dword[sym.imp.USER32.DLL_TranslateAcceleratorW]
 test eax, eax
-jne 0x408eaa
+jne off.b769
 lea eax, [esp+0x24]
 push eax
 call dword[sym.imp.USER32.DLL_TranslateMessage]
@@ -297,13 +298,13 @@ lea eax, [esp+0x24]
 push eax
 call dword[sym.imp.USER32.DLL_DispatchMessageW]
 cmp dword[0x4170a8], 0
-je 0x408e6e
+je off.b709
 test esi, esi
-je 0x408ebe
+je off.b789
 push esi
 call dword[sym.imp.USER32.DLL_DestroyAcceleratorTable]
 cmp dword[esp+0x10], 0
-je 0x408f01
+je off.b856
 push dword[esp+0x10]
 call sub.MSVCRT.dll_wcslen
 pop ecx
@@ -320,7 +321,7 @@ push 0
 push dword[0x416fec]
 call dword[sym.imp.KERNEL32.dll_HeapFree]
 cmp dword[esp+0x10], 0
-jne 0x408f0d
+jne off.b868
 push dword[esp+0x84]
 call fcn.0040df40
 push dword[esp+0x14]

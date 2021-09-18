@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="DETECTS_SLEEP_PATCHING">DETECTS_SLEEP_PATCHING / 0.4060388530592931</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-508.3880920410156, 1389.3480224609375, '<b><a href="/report/fcn.00461652@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00461652</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
-[508.3880920410156, -1389.3477783203125, '<b><a href="/report/fcn.004654e6@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004654e6</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00461652@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00461652</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,21 +72,21 @@ sub esp, 0x28
 push esi
 mov esi, dword[ebp+8]
 test esi, esi
-js 0x4616d7
-jne 0x461666
+js off.b133
+jne off.b20
 push 0
-jmp 0x4616d1
+jmp off.b127
 cmp esi, 0xf
-jae 0x4616d0
+jae off.b126
 lea eax, [ebp-0x10]
 push eax
 call dword[sym.imp.KERNEL32.dll_QueryPerformanceCounter]
 test eax, eax
-je 0x4616d0
+je off.b126
 mov dword[ebp+8], esi
 fild dword[ebp+8]
 test esi, esi
-jns 0x461689
+jns off.b55
 fadd qword[0x4bbac8]
 fstp qword[ebp-0x18]
 fld qword[ebp-0x18]
@@ -110,8 +109,8 @@ fdivr qword[ebp-0x20]
 fcomp qword[ebp-0x28]
 fnstsw ax
 test ah, 5
-jnp 0x461692
-jmp 0x4616d7
+jnp off.b64
+jmp off.b133
 push esi
 call dword[sym.imp.KERNEL32.dll_Sleep]
 pop esi

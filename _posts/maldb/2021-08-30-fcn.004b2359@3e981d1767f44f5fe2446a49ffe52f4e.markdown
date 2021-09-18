@@ -1,0 +1,415 @@
+---
+layout: post
+title:  "fcn.004b2359 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.004b2359
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.004b2359@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004b2359</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+mov eax, 0x4c4f41
+call fcn.004a5564
+sub esp, 0x74
+push ebx
+mov ebx, dword[ebp+8]
+push esi
+push edi
+mov esi, dword[ebx+4]
+mov edi, ecx
+cmp esi, 0x200
+mov dword[ebp-0x10], edi
+mov dword[ebp-0x1c], esi
+je off.b74
+cmp esi, 0xa0
+je off.b74
+cmp esi, 0x202
+je off.b74
+cmp esi, 0x205
+je off.b74
+cmp esi, 0x208
+jne off.b909
+mov esi, dword[sym.imp.USER32.dll_GetKeyState]
+push 1
+call esi
+test ax, ax
+jl off.b906
+push 2
+call esi
+test ax, ax
+jl off.b906
+push 4
+call esi
+test ax, ax
+jl off.b906
+push dword[ebx]
+call fcn.004b5521
+test eax, eax
+je off.b150
+test word[eax+0x24], 0x401
+jne off.b150
+push dword[eax+0x1c]
+call dword[sym.imp.USER32.dll_GetParent]
+push eax
+jmp off.b121
+cmp eax, edi
+je off.b196
+test eax, eax
+jne off.b1115
+push 0x4bd225
+mov ecx, 0x523994
+call fcn.004bde9f
+and dword[eax+0xd0], 0
+or dword[eax+0xd4], 0xffffffff
+jmp off.b1115
+push 0x4bd225
+mov ecx, 0x523994
+call fcn.004bde9f
+mov esi, eax
+mov ecx, edi
+mov dword[ebp-0x18], esi
+mov ebx, dword[esi+0xcc]
+call fcn.004b6b6c
+test ebx, ebx
+mov dword[ebp-0x14], eax
+je off.b276
+mov ecx, ebx
+call fcn.004a21f8
+cmp eax, dword[ebp-0x14]
+je off.b272
+mov eax, dword[ebx]
+mov ecx, ebx
+call dword[eax+0x58]
+mov eax, dword[ebx]
+push 1
+mov ecx, ebx
+call dword[eax+4]
+xor ebx, ebx
+mov dword[esi+0xcc], ebx
+test ebx, ebx
+jne off.b374
+push 0x58
+call fcn.004b384d
+pop ecx
+mov dword[ebp-0x1c], eax
+xor ebx, ebx
+cmp eax, ebx
+mov dword[ebp-4], ebx
+je off.b305
+mov ecx, eax
+call fcn.004b1f55
+mov ebx, eax
+or dword[ebp-4], 0xffffffff
+push 1
+push dword[ebp-0x14]
+mov ecx, ebx
+call fcn.004b1faa
+test eax, eax
+jne off.b347
+test ebx, ebx
+je off.b1115
+mov eax, dword[ebx]
+push 1
+mov ecx, ebx
+call dword[eax+4]
+jmp off.b1115
+push 0
+push 0
+push 0x401
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+mov edi, dword[ebp-0x10]
+mov dword[esi+0xcc], ebx
+push 0x2c
+lea eax, [ebp-0x54]
+push 0
+push eax
+call fcn.004a56b0
+mov eax, dword[edi+0x1c]
+add esp, 0xc
+mov dword[ebp-0x4c], eax
+mov dword[ebp-0x48], eax
+lea eax, [ebp-0x54]
+mov dword[ebp-0x54], 0x28
+push eax
+push 0
+push 0x408
+mov dword[ebp-0x50], 1
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+test eax, eax
+jne off.b457
+lea eax, [ebp-0x54]
+push eax
+push 0
+push 0x404
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+mov eax, dword[ebp+8]
+mov ecx, dword[eax+0x14]
+mov eax, dword[eax+0x18]
+mov dword[ebp-0x24], eax
+lea eax, [ebp-0x28]
+push eax
+mov dword[ebp-0x28], ecx
+push dword[edi+0x1c]
+call dword[sym.imp.USER32.dll_ScreenToClient]
+push 0x2c
+lea eax, [ebp-0x80]
+push 0
+push eax
+call fcn.004a56b0
+add esp, 0xc
+mov eax, dword[edi]
+lea ecx, [ebp-0x80]
+mov dword[ebp-0x80], 0x28
+push ecx
+mov ecx, edi
+push dword[ebp-0x24]
+push dword[ebp-0x28]
+call dword[eax+0x64]
+mov ecx, eax
+mov dword[ebp-0x1c], eax
+inc ecx
+neg ecx
+sbb ecx, ecx
+and ecx, edi
+cmp dword[esi+0xd4], eax
+mov dword[ebp-0x14], ecx
+jne off.b630
+cmp dword[esi+0xd0], ecx
+jne off.b630
+test byte[edi+0x25], 4
+je off.b607
+lea eax, [ebp-0x20]
+push eax
+call dword[sym.imp.USER32.dll_GetCursorPos]
+movzx eax, word[ebp-0x1c]
+movzx ecx, word[ebp-0x20]
+shl eax, 0x10
+or eax, ecx
+push eax
+push 0
+push 0x412
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+jmp off.b852
+cmp eax, 0xffffffff
+je off.b852
+push dword[ebp+8]
+push ebx
+call fcn.004b22c7
+jmp off.b852
+cmp eax, 0xffffffff
+je off.b886
+mov eax, dword[ebp-0x7c]
+push 0xb
+pop ecx
+lea esi, [ebp-0x80]
+lea edi, [ebp-0x54]
+and eax, 0x3fffffff
+rep movsd
+mov ecx, dword[ebp-0x10]
+mov edi, 0x400
+mov dword[ebp-0x50], eax
+test dword[ecx+0x24], edi
+je off.b679
+or al, 0x20
+mov dword[ebp-0x50], eax
+lea eax, [ebp-0x54]
+xor esi, esi
+push eax
+push esi
+push 0x404
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+test byte[ebp-0x79], 0x40
+jne off.b718
+mov ecx, dword[ebp-0x10]
+call fcn.004b6bb0
+test eax, eax
+je off.b782
+push esi
+push 1
+push 0x401
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+mov eax, dword[ebp-0x10]
+test dword[eax+0x24], edi
+je off.b763
+lea eax, [ebp-0x54]
+push eax
+push 1
+push 0x411
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+push 0x213
+push esi
+push esi
+push esi
+push esi
+push esi
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SetWindowPos]
+mov esi, dword[ebp-0x18]
+push dword[ebp+8]
+push ebx
+call fcn.004b22c7
+cmp dword[esi+0xd8], 0x28
+lea edi, [esi+0xd8]
+jb off.b826
+push edi
+push 0
+push 0x405
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+mov eax, dword[ebp-0x14]
+push 0xb
+mov dword[esi+0xd0], eax
+mov eax, dword[ebp-0x1c]
+mov dword[esi+0xd4], eax
+pop ecx
+lea esi, [ebp-0x80]
+rep movsd
+cmp dword[ebp-0x5c], 0xffffffff
+je off.b1115
+cmp dword[ebp-0x60], 0
+jne off.b1115
+push dword[ebp-0x5c]
+call fcn.004a3c7e
+pop ecx
+jmp off.b1115
+push 0
+push 0
+push 0x401
+push dword[ebx+0x1c]
+call dword[sym.imp.USER32.dll_SendMessageA]
+jmp off.b785
+mov esi, dword[ebp-0x1c]
+test word[edi+0x24], 0x401
+je off.b1115
+push dword[ebx]
+call fcn.004b5521
+test eax, eax
+je off.b956
+cmp eax, edi
+je off.b964
+test word[eax+0x24], 0x401
+jne off.b956
+push dword[eax+0x1c]
+call dword[sym.imp.USER32.dll_GetParent]
+push eax
+jmp off.b923
+cmp eax, edi
+jne off.b1115
+cmp esi, 0x100
+jb off.b980
+cmp esi, 0x108
+jbe off.b996
+cmp esi, 0x104
+jb off.b1001
+cmp esi, 0x107
+ja off.b1001
+push 1
+pop eax
+jmp off.b1003
+xor eax, eax
+test byte[edi+0x25], 4
+jne off.b1115
+test eax, eax
+jne off.b1109
+cmp esi, 0x201
+je off.b1109
+cmp esi, 0x203
+je off.b1109
+cmp esi, 0x204
+je off.b1109
+cmp esi, 0x206
+je off.b1109
+cmp esi, 0x207
+je off.b1109
+cmp esi, 0x209
+je off.b1109
+cmp esi, 0xa1
+je off.b1109
+cmp esi, 0xa3
+je off.b1109
+cmp esi, 0xa4
+je off.b1109
+cmp esi, 0xa6
+je off.b1109
+cmp esi, 0xa7
+je off.b1109
+cmp esi, 0xa9
+jne off.b1115
+push eax
+call fcn.004b5e24
+mov ecx, dword[ebp-0xc]
+pop edi
+pop esi
+pop ebx
+mov dword
+leave
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

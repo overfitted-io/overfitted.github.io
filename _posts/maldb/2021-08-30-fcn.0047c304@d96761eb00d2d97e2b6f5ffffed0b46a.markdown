@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,12 +69,12 @@ index: false
 push esi
 mov esi, ecx
 cmp dword[esi+8], 0
-jne 0x47c32d
-push str.kernel32.dll
+jne off.b41
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov dword[esi], eax
 test eax, eax
-je 0x47c32d
+je off.b41
 push str.GetSystemWow64DirectoryW
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
@@ -82,7 +82,7 @@ mov dword[esi+8], eax
 mov eax, dword[esi+8]
 pop esi
 test eax, eax
-jne 0x47c33a
+jne off.b54
 mov eax, 0x43b79f
 ret
 

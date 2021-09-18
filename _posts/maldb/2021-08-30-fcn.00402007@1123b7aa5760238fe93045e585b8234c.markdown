@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.15339009322808275</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.17413043449987933</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.050478996283318006</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -83,14 +83,14 @@ call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov edi, dword[ebp+8]
 cmp edi, 0xffffffff
 mov dword[ebp-0xc], eax
-je 0x40203e
+je off.b55
 push esi
 push edi
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
 cmp dword[ebp+0x10], eax
-jbe 0x402043
+jbe off.b60
 or eax, 0xffffffff
-jmp 0x4020aa
+jmp off.b163
 push ebx
 push esi
 push esi
@@ -107,9 +107,9 @@ mov esi, 0x4388b8
 push esi
 push edi
 mov edi, dword[sym.imp.KERNEL32.dll_ReadFile]
-jmp 0x402097
+jmp off.b144
 cmp dword[ebp-4], 0
-jbe 0x40209d
+jbe off.b150
 push 0
 lea eax, [ebp-0x10]
 push eax
@@ -127,7 +127,7 @@ push esi
 push dword[ebp+8]
 call edi
 test eax, eax
-jne 0x40206d
+jne off.b102
 push dword[ebp-0xc]
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov eax, dword[ebp-8]

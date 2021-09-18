@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,19 +71,19 @@ push ebp
 mov ebp, esp
 sub esp, 0xc
 cmp dword[0x783e5e3c], 0xffffffff
-je 0x78263299
+je off.b25
 mov eax, dword[0x783e5e3c]
-jmp 0x7826338c
+jmp off.b268
 push 0
 call dword[sym.imp.USER32.dll_GetDC]
 mov dword[ebp-4], eax
 cmp dword[ebp-4], 0
-jne 0x782632be
+jne off.b62
 push 0xae
 push 0x781d8030
 call sym.MFC80D.DLL_Ordinal_1363
 test eax, eax
-je 0x782632be
+je off.b62
 int3
 mov dword[ebp-8], 0
 mov dword[ebp-0xc], 0
@@ -105,7 +106,7 @@ push eax
 call dword[sym.imp.GDI32.dll_CreateFontA]
 mov dword[ebp-8], eax
 cmp dword[ebp-8], 0
-je 0x78263315
+je off.b149
 mov ecx, dword[ebp-8]
 push ecx
 mov edx, dword[ebp-4]
@@ -119,15 +120,15 @@ mov eax, dword[ebp-4]
 push eax
 call dword[sym.imp.GDI32.dll_GetCharWidthA]
 test eax, eax
-jne 0x78263340
+jne off.b192
 push 0xb3
 push 0x781d8030
 call sym.MFC80D.DLL_Ordinal_1363
 test eax, eax
-je 0x78263340
+je off.b192
 int3
 cmp dword[ebp-8], 0
-je 0x7826335e
+je off.b222
 mov edx, dword[ebp-0xc]
 push edx
 mov eax, dword[ebp-4]
@@ -141,12 +142,12 @@ push edx
 push 0
 call dword[sym.imp.USER32.dll_ReleaseDC]
 cmp dword[0x783e5e3c], 0xffffffff
-jne 0x78263387
+jne off.b263
 push 0xba
 push 0x781d8030
 call sym.MFC80D.DLL_Ordinal_1363
 test eax, eax
-je 0x78263387
+je off.b263
 int3
 mov eax, dword[0x783e5e3c]
 mov esp, ebp

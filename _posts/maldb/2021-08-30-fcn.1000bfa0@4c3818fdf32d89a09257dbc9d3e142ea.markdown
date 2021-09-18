@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.20053234636240325</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [2663.156494140625, 827.7156982421875, '<b><a href="/report/fcn.1000bfa0@4c3818fdf32d89a09257dbc9d3e142ea">fcn.1000bfa0</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'point { fill-color: #e0440e; }'],
-[-1467.4981689453125, 1403.5228271484375, '<b><a href="/report/fcn.00441ab0@4fe6510221c33bf023f6abed461fc13f">fcn.00441ab0</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[110.87138366699219, -2440.0439453125, '<b><a href="/report/fcn.1000bb80@4c3818fdf32d89a09257dbc9d3e142ea">fcn.1000bb80</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.1000bfa0@4c3818fdf32d89a09257dbc9d3e142ea">fcn.1000bfa0</a><br>@4c3818fdf32d89a09257dbc9d3e142ea</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -85,14 +83,14 @@ push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 xor edi, edi
 test eax, eax
-je 0x1000c046
+je off.b166
 lea ecx, [esp+0x14]
 push ecx
 push str.SeDebugPrivilege
 push edi
 call dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
 test eax, eax
-je 0x1000c046
+je off.b166
 mov edx, dword[esp+0x14]
 mov eax, dword[esp+0x18]
 push edi
@@ -109,15 +107,15 @@ mov dword[esp+0x40], eax
 mov dword[esp+0x44], 2
 call dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 test eax, eax
-jne 0x1000c046
+jne off.b166
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x514
-jne 0x1000c046
+jne off.b166
 push str.The_token_does_not_have_the_specified_privilege.__n
 call fcn.10015379
 add esp, 4
 xor eax, eax
-jmp 0x1000c1c6
+jmp off.b550
 push 0x206
 lea eax, [esp+0x46e]
 push edi
@@ -155,7 +153,7 @@ mov edi, edi
 mov cx, word[eax]
 add eax, 2
 cmp cx, di
-jne 0x1000c0d0
+jne off.b304
 sub eax, edx
 sar eax, 1
 add eax, 0xfffffffe
@@ -171,18 +169,18 @@ push 2
 call sub.KERNEL32.dll_CreateToolhelp32Snapshot
 mov ebx, eax
 cmp ebx, 0xffffffff
-je 0x1000c03f
+je off.b159
 lea ecx, [esp+0x30]
 push ecx
 push ebx
 mov dword[esp+0x38], 0x22c
 call sub.KERNEL32.dll_Process32FirstW
 test eax, eax
-jne 0x1000c12f
+jne off.b399
 push ebx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 xor eax, eax
-jmp 0x1000c1c6
+jmp off.b550
 mov ebp, dword[sym.imp.KERNEL32.dll_OpenProcess]
 mov edx, dword[esp+0x38]
 push edx
@@ -190,7 +188,7 @@ push edi
 push 0x1f0fff
 call ebp
 cmp eax, edi
-je 0x1000c1a8
+je off.b520
 push 0x104
 lea ecx, [esp+0x46c]
 push ecx
@@ -198,7 +196,7 @@ push eax
 call sub.PSAPI.DLL_GetProcessImageFileNameW
 cmp dword[esp+0x884], edi
 mov esi, eax
-jne 0x1000c180
+jne off.b480
 lea edx, [esp+0x260]
 push edx
 call dword[sym.imp.SHLWAPI.dll_PathStripPathW]
@@ -206,7 +204,7 @@ lea eax, [esp+0x468]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathStripPathW]
 cmp esi, edi
-je 0x1000c1a8
+je off.b520
 lea ecx, [esp+0x260]
 push ecx
 lea edx, [esp+0x46c]
@@ -214,14 +212,14 @@ push edx
 call fcn.10013850
 add esp, 8
 test eax, eax
-jne 0x1000c1a8
+jne off.b520
 mov dword[esp+0x14], 1
 lea eax, [esp+0x30]
 push eax
 push ebx
 call sub.KERNEL32.dll_Process32NextW
 test eax, eax
-jne 0x1000c135
+jne off.b405
 push ebx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov eax, dword[esp+0x14]

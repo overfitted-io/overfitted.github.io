@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.057942138646689706</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,10 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [146.97561645507812, -128.08404541015625, '<b><a href="/report/fcn.0048122d@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0048122d</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
-[55.99125671386719, 32.19427490234375, '<b><a href="/report/fcn.0041cf20@152885a790b99953ce23874f0947b7bd">fcn.0041cf20</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[216.27694702148438, 123.165771484375, '<b><a href="/report/fcn.0041cf20@912f1d013a0d6151bc7a7cef6da1b2a0">fcn.0041cf20</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'null'],
-[307.26129150390625, -37.112552642822266, '<b><a href="/report/fcn.0041cf20@fb9b7d22bc1c143ac66b0575cbdd088d">fcn.0041cf20</a><br>@fb9b7d22bc1c143ac66b0575cbdd088d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0048122d@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.0048122d</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -93,7 +90,7 @@ push ecx
 push esi
 call dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
 cmp eax, 0x103
-je 0x48132c
+je off.b255
 mov eax, ebx
 or eax, 0x20019
 mov dword[ebp-0x1c], eax
@@ -106,7 +103,7 @@ push eax
 push esi
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
 test eax, eax
-jne 0x481343
+jne off.b278
 mov ecx, dword[ebp-8]
 mov edx, ebx
 call fcn.0048122d
@@ -114,7 +111,7 @@ push dword[ebp-8]
 mov bl, al
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 test bl, bl
-je 0x481343
+je off.b278
 xor ebx, ebx
 lea ecx, [ebp-0x18]
 mov dword[ebp-0x18], ebx
@@ -122,7 +119,7 @@ mov dword[ebp-0x10], ebx
 call fcn.00481072
 test al, al
 lea eax, [ebp-0x228]
-je 0x4812de
+je off.b177
 push ebx
 mov ebx, dword[ebp-0xc]
 lea ecx, [ebp-0x18]
@@ -131,15 +128,15 @@ push eax
 push esi
 call fcn.0047ff84
 call eax
-jmp 0x4812e9
+jmp off.b188
 push eax
 push esi
 call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
 mov ebx, dword[ebp-0xc]
 test eax, eax
-jne 0x481334
+jne off.b263
 cmp dword[ebp-0x18], eax
-je 0x4812fb
+je off.b206
 push dword[ebp-0x18]
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 xor ecx, ecx
@@ -158,7 +155,7 @@ push esi
 call dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
 cmp eax, 0x103
 mov eax, dword[ebp-0x1c]
-jne 0x481277
+jne off.b74
 mov al, 1
 pop esi
 pop ebx
@@ -166,11 +163,11 @@ mov esp, ebp
 pop ebp
 ret
 cmp dword[ebp-0x18], 0
-je 0x481343
+je off.b278
 push dword[ebp-0x18]
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 xor al, al
-jmp 0x48132e
+jmp off.b257
 
 {% endhighlight %}
 

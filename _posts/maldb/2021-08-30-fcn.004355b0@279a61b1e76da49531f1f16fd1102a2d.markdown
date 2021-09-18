@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -90,59 +90,59 @@ lea edx, [ebp-0x150]
 push edx
 call dword[sym.imp.KERNEL32.dll_GetVersionExW]
 test eax, eax
-jne 0x43560b
+jne off.b91
 xor eax, eax
-jmp 0x4356f0
-push str.GetNativeSystemInfo
-push str.kernel32.dll
+jmp off.b320
+push str.GetNativeSystemInfo_
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov dword[ebp-8], eax
 cmp dword[ebp-8], 0
-je 0x435634
+je off.b132
 lea eax, [ebp-0x2c]
 push eax
 call dword[ebp-8]
-jmp 0x43563e
+jmp off.b142
 lea ecx, [ebp-0x2c]
 push ecx
 call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
 mov dword[ebp-4], 0
 cmp dword[ebp-0x140], 2
-jne 0x4356ed
+jne off.b317
 cmp dword[ebp-0x14c], 4
-jbe 0x4356ed
+jbe off.b317
 cmp dword[ebp-0x14c], 6
-jne 0x43569e
+jne off.b238
 cmp dword[ebp-0x148], 0
-jne 0x43567a
+jne off.b202
 mov dword[ebp-4], 4
-jmp 0x43569c
+jmp off.b236
 cmp dword[ebp-0x148], 1
-jne 0x43568c
+jne off.b220
 mov dword[ebp-4], 5
-jmp 0x43569c
+jmp off.b236
 cmp dword[ebp-0x148], 2
-jne 0x43569c
+jne off.b236
 mov dword[ebp-4], 6
-jmp 0x4356ed
+jmp off.b317
 cmp dword[ebp-0x14c], 5
-jne 0x4356b9
+jne off.b265
 cmp dword[ebp-0x148], 2
-jne 0x4356b9
+jne off.b265
 mov dword[ebp-4], 3
-jmp 0x4356ed
+jmp off.b317
 cmp dword[ebp-0x14c], 5
-jne 0x4356d4
+jne off.b292
 cmp dword[ebp-0x148], 1
-jne 0x4356d4
+jne off.b292
 mov dword[ebp-4], 2
-jmp 0x4356ed
+jmp off.b317
 cmp dword[ebp-0x14c], 5
-jne 0x4356ed
+jne off.b317
 cmp dword[ebp-0x148], 0
-jne 0x4356ed
+jne off.b317
 mov dword[ebp-4], 1
 mov eax, dword[ebp-4]
 mov ecx, dword[ebp-0x30]

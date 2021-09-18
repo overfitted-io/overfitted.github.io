@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -98,7 +98,7 @@ push eax
 push 0
 call dword[sym.imp.USER32.dll_MapWindowPoints]
 cmp dword[ebx+4], 0
-je 0x40d3e2
+je off.b106
 push dword[ebx+4]
 call dword[sym.imp.USER32.dll_DestroyWindow]
 mov eax, dword[esp+0xc]
@@ -128,19 +128,19 @@ call dword[sym.imp.USER32.dll_CreateWindowExW]
 mov dword[ebx+4], eax
 pop edi
 cmp dword[ebx+0x10], esi
-jne 0x40d464
+jne off.b236
 test ebp, ebp
-je 0x40d47a
+je off.b258
 cmp dword[ebx+0x18], esi
-jne 0x40d47a
+jne off.b258
 cmp dword[ebx+0x14], esi
-je 0x40d47a
+je off.b258
 push dword[ebx+0x14]
 mov ecx, ebx
 call fcn.0040d19b
 mov esi, eax
 test esi, esi
-je 0x40d47a
+je off.b258
 push 5
 push ebp
 call dword[sym.imp.USER32.dll_ShowWindow]
@@ -150,9 +150,9 @@ call dword[sym.imp.USER32.dll_SetWindowTextW]
 push esi
 call fcn.00416d00
 pop ecx
-jmp 0x40d47a
+jmp off.b258
 test eax, eax
-je 0x40d47a
+je off.b258
 push 5
 push eax
 call dword[sym.imp.USER32.dll_ShowWindow]

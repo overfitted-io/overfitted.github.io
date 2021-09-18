@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,29 +71,29 @@ mov ebp, esp
 sub esp, 0x820
 call fcn.00406a2a
 test eax, eax
-je 0x4064e7
+je off.b311
 mov eax, dword[ebp+0x10]
 push ebx
 xor ebx, ebx
 cmp eax, ebx
-je 0x4063d8
+je off.b40
 mov byte[ebp-2], 1
 cmp dword[eax], ebx
-jne 0x4063db
+jne off.b43
 mov byte[ebp-2], bl
 mov eax, dword[ebp+0x14]
 cmp eax, ebx
-je 0x4063ea
+je off.b58
 mov byte[ebp-3], 1
 cmp dword[eax], ebx
-jne 0x4063ed
+jne off.b61
 mov byte[ebp-3], bl
 mov eax, dword[ebp+0x18]
 cmp eax, ebx
-je 0x4063fc
+je off.b76
 mov byte[ebp-1], 1
 cmp dword[eax], ebx
-jne 0x4063ff
+jne off.b79
 mov byte[ebp-1], bl
 push edi
 mov edi, dword[ebp+0xc]
@@ -102,9 +102,9 @@ push dword[ebp+8]
 call fcn.004060fd
 mov dword[ebp-8], eax
 cmp eax, 0xffffffff
-je 0x4064eb
+je off.b315
 test al, 1
-je 0x4064eb
+je off.b315
 push ebx
 push edi
 push dword[ebp+8]
@@ -128,21 +128,21 @@ push eax
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov esi, eax
 cmp esi, 0xffffffff
-je 0x4064e4
+je off.b308
 cmp byte[ebp-2], bl
-je 0x406479
+je off.b201
 mov ecx, dword[ebp+0x10]
 lea eax, [ebp-0x20]
 push eax
 call fcn.0040e9a0
 cmp byte[ebp-3], bl
-je 0x40648a
+je off.b218
 mov ecx, dword[ebp+0x14]
 lea eax, [ebp-0x18]
 push eax
 call fcn.0040e9a0
 cmp byte[ebp-1], bl
-je 0x40649b
+je off.b235
 mov ecx, dword[ebp+0x18]
 lea eax, [ebp-0x10]
 push eax
@@ -170,7 +170,7 @@ call dword[sym.imp.KERNEL32.dll_SetFileTime]
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 cmp byte[ebp+0xf], bl
-je 0x4064e4
+je off.b308
 push dword[ebp-8]
 push edi
 push dword[ebp+8]
@@ -181,7 +181,7 @@ pop ebx
 leave
 ret 0x14
 mov byte[ebp+0xf], bl
-jmp 0x40642e
+jmp off.b126
 
 {% endhighlight %}
 

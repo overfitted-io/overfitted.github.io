@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.02513740137685823</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.0033624160335379866</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.11949818734334766</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-84.25293731689453, -171.7977752685547, '<b><a href="/report/fcn.00402ff6@1123b7aa5760238fe93045e585b8234c">fcn.00402ff6</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-21.082624435424805, 416.3219299316406, '<b><a href="/report/fcn.0100342e@7be42d186738ec1816397d616de2cb9d">fcn.0100342e</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'null'],
-[-346.7576599121094, 153.8506622314453, '<b><a href="/report/fcn.00406dc4@6c5b0418e4a4c57d99cda47d2717045d">fcn.00406dc4</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[241.42213439941406, 90.67382049560547, '<b><a href="/report/fcn.00425dd7@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00425dd7</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402ff6@1123b7aa5760238fe93045e585b8234c">fcn.00402ff6</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -85,23 +82,23 @@ lea eax, [ebp-0x108]
 push eax
 push 0x42e788
 mov eax, 0x104
-mov edi, str.RAV.INI
+mov edi, str.RAV.INI_
 call fcn.00402a00
 test eax, eax
 mov edi, dword[ebp+8]
 pop ecx
 pop ecx
-je 0x40305b
+je off.b101
 lea eax, [ebp-0x108]
 push eax
 push dword[ebp+0xc]
 push edi
 push 0x42e710
-push str.LOGNAME
-push str.DEBUG
+push str.LOGNAME_
+push str.DEBUG_
 call dword[sym.imp.KERNEL32.dll_GetPrivateProfileStringA]
 cmp byte[edi], 0
-jne 0x4030f0
+jne off.b250
 push ebx
 push dword[ebp+0xc]
 push edi
@@ -115,7 +112,7 @@ mov ebx, eax
 test ebx, ebx
 pop ecx
 pop ecx
-je 0x4030df
+je off.b233
 mov eax, dword[ebp+8]
 push esi
 sub eax, ebx
@@ -136,12 +133,12 @@ mov byte[esi], 0
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
 cmp eax, 0xffffffff
 mov byte[esi], 0x5c
-je 0x4030ca
+je off.b212
 test al, 0x10
-je 0x4030ca
+je off.b212
 mov eax, dword[ebp+8]
 mov byte[eax+edi+9], 0
-jmp 0x4030de
+jmp off.b232
 push dword[ebp-4]
 push esi
 push ebx
@@ -150,7 +147,7 @@ mov eax, dword[ebp+8]
 add esp, 0xc
 mov byte[eax+edi], 0
 pop esi
-push str..log
+push str..log_
 push 0x104
 push edi
 call fcn.0040244a

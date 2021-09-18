@@ -1,0 +1,1103 @@
+---
+layout: post
+title:  "fcn.00469890 @ 4fe6510221c33bf023f6abed461fc13f"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.00469890
+- **Origin (md5):** 4fe6510221c33bf023f6abed461fc13f
+- **VirusTotal:** [virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.00469890@4fe6510221c33bf023f6abed461fc13f">fcn.00469890</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+sub esp, 0x228
+push ebx
+mov ebx, dword[esp+0x238]
+push ebp
+mov ebp, dword[esp+0x234]
+cmp byte[ebp+0x275], 0
+push esi
+push edi
+mov edi, eax
+je off.b57
+mov eax, dword[0x4c6cb4]
+push 1
+push 0
+push 0xffffffffffffffff
+push 0x4a0900
+push eax
+call fcn.00476680
+mov esi, edi
+call fcn.004695c0
+mov esi, eax
+mov dword[esp+0x20], esi
+test esi, esi
+jne off.b143
+cmp byte[ebp+0x275], al
+je off.b117
+mov ecx, dword[0x4c6cb4]
+push 1
+push eax
+push 0xffffffffffffffff
+push 0x4a331c
+push ecx
+call fcn.00476680
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push edi
+push str.Parameter_2_invalid.
+mov ecx, ebp
+call fcn.0042e1d0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov edi, dword[esp+0x240]
+push str.tray
+push edi
+call fcn.0048cd49
+add esp, 8
+test eax, eax
+sete al
+add esi, 0xfffffffe
+cmp esi, 0x16
+ja case.0x46994c.3
+movzx edx, byte[esi+0x46a5a4]
+jmp dword[edx*4+0x46a584]
+push 0
+mov esi, ebx
+call fcn.004144a0
+add esp, 4
+cmp eax, 2
+setne al
+mov byte[ebp+0x275], al
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+jne 0x46999b
+push edi
+push str.Supported_only_for_the_tray_menu
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp word[ebx], 0
+je 0x4699db
+cmp dword[ebp+0xb1c], 0
+jne 0x4699ba
+mov eax, 0x100
+call fcn.00470d00
+mov dword[ebp+0xb1c], eax
+mov esi, dword[ebp+0xb1c]
+test esi, esi
+je 0x4699ea
+push 0x7f
+push ebx
+push esi
+call fcn.0048fa44
+add esp, 0xc
+xor ecx, ecx
+mov word[esi+0xfe], cx
+jmp 0x4699ea
+mov eax, dword[ebp+0xb1c]
+test eax, eax
+je 0x4699ea
+xor edx, edx
+mov word[eax], dx
+cmp dword[ebp+0x27a], 0
+je 0x469a3c
+mov eax, dword[ebp+0xb1c]
+test eax, eax
+je 0x469a03
+cmp word[eax], 0
+jne 0x469a12
+mov eax, dword[ebp+0xabc]
+test eax, eax
+jne 0x469a12
+mov eax, 0x4a0904
+push 0x7f
+push eax
+lea esi, [ebp+0x28e]
+push esi
+call fcn.0048fa44
+add esp, 0xc
+add ebp, 0x276
+push ebp
+xor eax, eax
+push 1
+mov word[esi+0xfe], ax
+call dword[sym.imp.SHELL32.dll_Shell_NotifyIconW]
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+je case.0x46994c.3
+movzx eax, word[ebx]
+mov cl, byte[ebp+0xb18]
+mov byte[esp+0x13], cl
+test ax, ax
+jne 0x469ae4
+mov edx, dword[esp+0x24c]
+cmp word[edx], ax
+je 0x469a87
+mov esi, edx
+call fcn.0040d260
+cmp eax, 1
+sete al
+mov byte[ebp+0xb18], al
+cmp dword[ebp+0x27a], 0
+mov byte[0x4c6609], 0
+jne 0x469ab9
+mov esi, ebp
+call fcn.00415ca0
+push 1
+mov eax, ebp
+call fcn.00415d50
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp byte[ebp+0xb18], 0
+jne 0x469ad2
+cmp byte[esp+0x13], 0
+je 0x469ad2
+push 1
+mov eax, ebp
+call fcn.00415d50
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp eax, 0x2a
+jne 0x469b67
+cmp word[ebx+2], 0
+jne 0x469b67
+mov ecx, dword[esp+0x24c]
+cmp word[ecx], 0
+je 0x469b10
+mov esi, ecx
+call fcn.0040d260
+cmp eax, 1
+sete dl
+mov byte[ebp+0xb18], dl
+mov ecx, dword[ebp+0xb0c]
+test ecx, ecx
+je 0x469b55
+mov eax, dword[ebp+0xb10]
+push eax
+call fcn.0045dce0
+mov eax, dword[ebp+0xb14]
+xor ecx, ecx
+add esp, 4
+mov dword[ebp+0xb0c], ecx
+mov dword[ebp+0xb10], ecx
+cmp eax, ecx
+je 0x469b46
+xor edx, edx
+mov word[eax], dx
+push 1
+mov eax, ebp
+mov dword[ebp+0xb20], ecx
+call fcn.00415d50
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x248]
+push 0
+push 0
+push 1
+push 1
+call fcn.00473730
+add esp, 0x10
+test eax, eax
+je case.0x46994c.3
+mov eax, dword[esp+0x24c]
+cmp word[eax], 0
+je 0x469ba6
+mov esi, eax
+call fcn.0040d260
+cmp eax, 1
+sete cl
+mov byte[ebp+0xb18], cl
+mov edx, dword[esp+0x248]
+cmp word[edx], 0
+je 0x469bc0
+mov esi, edx
+call fcn.0040d260
+mov esi, eax
+test esi, esi
+jne 0x469bc5
+mov esi, 1
+mov edi, dword[sym.imp.USER32.dll_GetSystemMetrics]
+push 0
+push 0
+push esi
+lea eax, [esp+0x30]
+push eax
+push 0x32
+call edi
+push eax
+push 0x31
+call edi
+push eax
+push ebx
+call fcn.00474f00
+add esp, 0x1c
+mov dword[esp+0x28], eax
+test eax, eax
+je 0x469c1e
+push 0
+push 0
+push esi
+lea ecx, [esp+0x30]
+push ecx
+push 0xc
+call edi
+push eax
+push 0xb
+call edi
+push eax
+push ebx
+call fcn.00474f00
+mov edi, eax
+add esp, 0x1c
+test edi, edi
+jne 0x469c38
+mov edx, dword[esp+0x28]
+push edx
+call dword[sym.imp.USER32.dll_DestroyIcon]
+push ebx
+push str.Cant_load_icon.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[ebp+0xb10]
+mov ecx, dword[ebp+0xb0c]
+push eax
+call fcn.0045dce0
+mov ecx, dword[esp+0x2c]
+add esp, 4
+cmp dword[ebp+0xb14], 0
+mov dword[ebp+0xb0c], edi
+mov dword[ebp+0xb10], ecx
+mov dword[ebp+0xb20], esi
+jne 0x469c80
+mov eax, 0x208
+call fcn.00470d00
+mov dword[ebp+0xb14], eax
+test eax, eax
+je 0x469cd1
+lea edx, [esp+0x24]
+push edx
+lea eax, [esp+0x34]
+push eax
+push 0x103
+push ebx
+call dword[sym.imp.KERNEL32.dll_GetFullPathNameW]
+mov esi, dword[ebp+0xb14]
+push 0x103
+test eax, eax
+je 0x469cbe
+lea ecx, [esp+0x34]
+push ecx
+push esi
+call fcn.0048fa44
+add esp, 0xc
+xor edx, edx
+mov word[esi+0x206], dx
+jmp 0x469cd1
+push ebx
+push esi
+call fcn.0048fa44
+add esp, 0xc
+xor eax, eax
+mov word[esi+0x206], ax
+cmp byte[0x4c6609], 0
+jne 0x469ad2
+push 1
+mov eax, ebp
+call fcn.00415d50
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+je case.0x46994c.3
+cmp word[ebx], 0
+jne case.0x46994c.3
+cmp dword[ebp+0x27a], 0
+mov byte[0x4c6609], 1
+je 0x469d34
+lea ecx, [ebp+0x276]
+push ecx
+push 2
+call dword[sym.imp.SHELL32.dll_Shell_NotifyIconW]
+mov dword[ebp+0x27a], 0
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+je 0x469981
+mov esi, ebx
+call fcn.0040d260
+mov edx, dword[ebp+0xb24]
+mov dword[edx+0x14], eax
+mov ebp, dword[ebp+0xb24]
+mov eax, dword[ebp+0x14]
+cmp eax, 1
+jge 0x469d85
+mov dword[ebp+0x14], 1
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp eax, 2
+jle 0x469d91
+mov dword[ebp+0x14], 2
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+je 0x469981
+cmp byte[0x4c660a], 0
+jne 0x469de1
+mov eax, dword[0x4c64b8]
+push eax
+mov byte[0x4c660a], 1
+call dword[sym.imp.USER32.dll_GetMenu]
+xor esi, esi
+mov edi, eax
+call fcn.00415c70
+mov ecx, dword[ebp+0xb24]
+cmp byte[ecx+0x10], 0
+je 0x469de1
+call fcn.0046b740
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+test al, al
+je 0x469981
+cmp byte[0x4c660a], 0
+je 0x469de1
+mov ecx, dword[0x4c64b8]
+push ecx
+mov byte[0x4c660a], 0
+call dword[sym.imp.USER32.dll_GetMenu]
+mov esi, 3
+jmp 0x469dc9
+mov eax, ebp
+call fcn.0046a650
+cmp dword[esp+0x20], 5
+mov edi, eax
+mov dword[esp+0x14], edi
+mov byte[esp+0x1f], 0
+mov dword[esp+0x28], 0
+jne 0x469f24
+test edi, edi
+jne 0x469e8b
+cmp word[ebx], ax
+je 0x469eed
+mov eax, 0x4bc890
+mov cx, word[ebx]
+cmp cx, word[eax]
+jne 0x469e7c
+test cx, cx
+je 0x469e78
+mov cx, word[ebx+2]
+cmp cx, word[eax+2]
+jne 0x469e7c
+add ebx, 4
+add eax, 4
+test cx, cx
+jne 0x469e56
+xor eax, eax
+jmp 0x469e81
+sbb eax, eax
+sbb eax, 0xffffffff
+test eax, eax
+jne 0x469f3a
+jmp 0x469eed
+cmp word[ebx], 0
+je 0x469eed
+lea edx, [esp+0x13]
+push edx
+lea eax, [esp+0x28]
+push eax
+push ebx
+push edi
+call fcn.0046a8e0
+test eax, eax
+jne 0x469ed5
+cmp byte[esp+0x13], al
+je 0x469ebb
+mov esi, ebx
+call fcn.0040d260
+mov ecx, dword[edi+0x18]
+inc ecx
+cmp eax, ecx
+je 0x469ed5
+push ebx
+push str.Nonexistent_menu_item.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x24]
+test eax, eax
+je 0x469ee6
+add eax, 0x20
+mov dword[esp+0x28], eax
+jmp 0x469eed
+lea edx, [edi+4]
+mov dword[esp+0x28], edx
+mov ebx, dword[esp+0x248]
+mov eax, dword[esp+0x24c]
+mov ecx, dword[esp+0x250]
+mov dword[esp+0x20], 3
+mov byte[esp+0x1f], 1
+mov dword[esp+0x244], ebx
+mov dword[esp+0x248], eax
+mov dword[esp+0x24c], ecx
+test edi, edi
+jne 0x469fb8
+mov eax, dword[esp+0x20]
+cmp eax, 3
+je 0x469f5b
+cmp eax, 0xc
+je 0x469f5b
+mov edx, dword[esp+0x240]
+push edx
+push str.Menu_does_not_exist.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov esi, dword[esp+0x240]
+push ebp
+mov edi, esi
+call fcn.0046a690
+mov edi, eax
+mov dword[esp+0x14], edi
+test edi, edi
+jne 0x469fb8
+cmp byte[ebp+0x275], al
+je 0x469f9e
+push 1
+push eax
+mov eax, dword[0x4c6cb4]
+push 0xffffffffffffffff
+push 0x4a331c
+push eax
+call fcn.00476680
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push esi
+push str.Menu_name_too_long.
+mov ecx, ebp
+call fcn.0042e1d0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov esi, dword[esp+0x20]
+lea eax, [esi-1]
+cmp eax, 0x11
+ja case.0x469fcf.2
+movzx ecx, byte[eax+0x46a5e4]
+jmp dword[ecx*4+0x46a5bc]
+mov edx, dword[esp+0x248]
+cmp word[edx], 0
+je 0x469fee
+mov esi, edx
+call fcn.0040d260
+mov ebp, eax
+jmp 0x469ff3
+mov ebp, 0x80000000
+cmp word[ebx], 0
+je 0x46a014
+mov esi, ebx
+call fcn.0040d260
+push ebp
+push eax
+call fcn.0046b830
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, 0x80000000
+push ebp
+push eax
+call fcn.0046b830
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp word[ebx], 0
+jne case.0x469fcf.2
+mov eax, dword[esp+0x28]
+push eax
+push 0x4ab02c
+push 0
+push 0
+mov eax, ebp
+call fcn.0046a850
+mov ebx, dword[esp+0x24]
+push eax
+push 0x4ab02c
+call fcn.0046a9b0
+test eax, eax
+jne 0x46996b
+push 0x4ab02c
+push str.Out_of_memory.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp word[ebx], 0
+jne case.0x469fcf.2
+cmp edi, dword[ebp+0xb24]
+jne 0x46a0b1
+push 0x4ab02c
+push str.Tray_menu_must_not_be_deleted.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push edi
+push ebp
+call fcn.0046a780
+test eax, eax
+jne 0x46996b
+mov ecx, dword[edi]
+push ecx
+push str.Cant_delete_menu__in_use__.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov ebx, dword[esp+0x14]
+call fcn.0046ad50
+test eax, eax
+jne 0x46996b
+mov edx, dword[ebx]
+push edx
+push str.Cant_delete_items__in_use__.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp word[ebx], 0
+jne case.0x469fcf.2
+xor eax, eax
+mov esi, edi
+call fcn.0046b3a0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp byte[edi+0x10], 0
+jne 0x469de1
+xor eax, eax
+mov ecx, edi
+call fcn.0046b420
+test eax, eax
+je 0x469de1
+mov esi, edi
+call fcn.0046b690
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+cmp byte[edi+0x10], 0
+je 0x469de1
+mov byte[edi+0x10], 0
+mov ecx, edi
+jmp 0x469ddc
+mov eax, dword[esp+0x248]
+push str.Single
+push eax
+call fcn.0048cd49
+add esp, 8
+test eax, eax
+setne cl
+movzx edx, cl
+push edx
+push ebx
+mov eax, edi
+call fcn.0046b570
+mov eax, 1
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, 0x4ab02c
+mov dword[esp+0x2c], eax
+cmp esi, 4
+jne 0x46a1ca
+mov ecx, dword[esp+0x248]
+mov dword[esp+0x2c], ecx
+mov dword[esp+0x248], eax
+xor eax, eax
+cmp word[ebx], ax
+jne 0x46a21a
+cmp byte[ebp+0x275], al
+je 0x46a1fc
+mov edx, dword[0x4c6cb4]
+push 1
+push eax
+push 0xffffffffffffffff
+push 0x4a331c
+push edx
+call fcn.00476680
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push 0x4ab02c
+push str.Parameter_3_must_not_be_blank_in_this_case.
+mov ecx, ebp
+call fcn.0042e1d0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov dword[esp+0x18], eax
+mov dword[esp+0x24], eax
+mov byte[esp+0x13], al
+cmp byte[esp+0x1f], al
+jne 0x46a241
+lea eax, [esp+0x13]
+push eax
+lea ecx, [esp+0x28]
+push ecx
+push ebx
+push edi
+call fcn.0046a8e0
+mov dword[esp+0x18], eax
+cmp esi, 3
+jne 0x46a268
+test eax, eax
+je 0x46a268
+mov edx, dword[esp+0x248]
+cmp word[edx], 0
+jne 0x46a268
+mov eax, dword[esp+0x24c]
+cmp word[eax], 0
+je 0x46a268
+mov al, 1
+jmp 0x46a26a
+xor al, al
+xor ebx, ebx
+xor esi, esi
+cmp dword[esp+0x20], 3
+jne 0x46a349
+test al, al
+jne 0x46a349
+mov edi, dword[esp+0x248]
+cmp word[edi], bx
+jne 0x46a2a6
+mov eax, dword[esp+0x244]
+mov dword[esp+0x248], eax
+cmp word[eax], bx
+je 0x46a349
+mov edi, eax
+cmp word[edi], 0x3a
+jne 0x46a312
+add edi, 2
+mov eax, ebp
+mov dword[esp+0x248], edi
+call fcn.0046a650
+mov esi, eax
+test esi, esi
+jne 0x46a2dd
+push edi
+push str.Submenu_does_not_exist.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x14]
+cmp esi, eax
+je 0x46a2f8
+push eax
+mov ecx, esi
+call fcn.0046ba10
+test al, al
+je 0x46a349
+mov edi, dword[esp+0x248]
+push edi
+push str.Submenu_must_not_contain_its_parent_menu.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x254]
+mov edi, dword[esp+0x248]
+push 3
+mov ebx, ebp
+call fcn.0041a3d0
+mov ebx, eax
+test ebx, ebx
+jne 0x46a349
+push edi
+push 0x4a3320
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov ecx, dword[esp+0x18]
+test ecx, ecx
+jne 0x46a3f2
+cmp dword[esp+0x20], 3
+jne 0x46a3d1
+cmp byte[esp+0x13], cl
+jne 0x46a3d1
+mov eax, ebp
+call fcn.0046a850
+test eax, eax
+jne 0x46a38e
+mov ecx, dword[esp+0x244]
+push ecx
+push str.Too_many_menu_items.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov edx, dword[esp+0x28]
+mov ecx, dword[esp+0x24c]
+push edx
+push ecx
+push esi
+mov esi, dword[esp+0x250]
+push ebx
+mov ebx, dword[esp+0x24]
+push eax
+push esi
+call fcn.0046a9b0
+test eax, eax
+jne 0x46996b
+push esi
+push str.Menu_item_name_too_long.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov edx, dword[esp+0x244]
+push edx
+push str.Nonexistent_menu_item.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x20]
+add eax, 0xfffffffd
+cmp eax, 0x12
+ja case.0x46a402.5
+jmp dword[eax*4+0x46a5f8]
+mov eax, dword[esp+0x14]
+push eax
+mov eax, dword[esp+0x250]
+mov edi, esi
+mov esi, dword[esp+0x1c]
+call fcn.0046adf0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov edx, dword[esp+0x14]
+mov edi, dword[esp+0x2c]
+push edx
+mov eax, ecx
+call fcn.0046b090
+test eax, eax
+jne 0x46996b
+push edi
+push str.Rename_failed__name_too_long__.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push 8
+mov eax, 8
+mov esi, dword[esp+0x1c]
+mov edi, dword[esp+0x18]
+call fcn.0046b2f0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+push 0
+jmp 0x46a461
+mov esi, dword[esp+0x18]
+movzx eax, word[esi+0x1c]
+not eax
+and eax, 8
+push eax
+mov eax, 8
+jmp 0x46a46a
+push 0
+mov eax, 3
+jmp 0x46a466
+push 3
+mov eax, 3
+jmp 0x46a466
+mov esi, dword[esp+0x18]
+movzx ecx, word[esi+0x1c]
+not ecx
+and ecx, 3
+push ecx
+mov eax, 3
+jmp 0x46a46a
+mov eax, dword[esp+0x18]
+mov esi, dword[esp+0x14]
+call fcn.0046b3a0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov eax, dword[esp+0x24]
+mov edi, dword[esp+0x14]
+call fcn.0046ac70
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov edx, dword[esp+0x250]
+cmp word[edx], 0
+jne 0x46a50b
+push 0x31
+call dword[sym.imp.USER32.dll_GetSystemMetrics]
+jmp 0x46a512
+mov esi, edx
+call fcn.0040d260
+mov esi, dword[esp+0x24c]
+push eax
+call fcn.0040d260
+mov esi, dword[esp+0x24c]
+push eax
+mov eax, dword[esp+0x1c]
+push eax
+mov eax, dword[esp+0x24]
+mov ecx, esi
+call fcn.0046bb50
+test eax, eax
+jne 0x46996b
+push esi
+push str.Cant_load_icon.
+mov ecx, ebp
+call fcn.00469860
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+mov esi, dword[esp+0x18]
+mov eax, dword[esp+0x14]
+call fcn.0046bcb0
+pop edi
+pop esi
+pop ebp
+pop ebx
+add esp, 0x228
+ret 0x1c
+pop edi
+pop esi
+pop ebp
+xor eax, eax
+pop ebx
+add esp, 0x228
+ret 0x1c
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/4fe6510221c33bf023f6abed461fc13f

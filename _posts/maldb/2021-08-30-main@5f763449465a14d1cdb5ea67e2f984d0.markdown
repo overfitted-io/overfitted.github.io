@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -87,11 +87,11 @@ add esp, 0xc
 call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
 mov esi, eax
 test esi, esi
-je 0x410ee9
+je off.b195
 push esi
 call fcn.0040f61a
 cmp byte[0x448739], bl
-je 0x410ee3
+je off.b189
 push ebp
 push 0x42613c
 push ebx
@@ -100,7 +100,7 @@ push esi
 call dword[sym.imp.KERNEL32.dll_OpenFileMappingW]
 mov ebp, eax
 test ebp, ebp
-je 0x410ed9
+je off.b179
 push edi
 push ebx
 push ebx
@@ -109,7 +109,7 @@ push ebp
 call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
 mov ebx, eax
 test ebx, ebx
-je 0x410ed0
+je off.b170
 push edi
 push ebx
 push 0x454e18
@@ -130,7 +130,7 @@ xor ebx, ebx
 push ebp
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 pop ebp
-jmp 0x410ee9
+jmp off.b195
 push esi
 call fcn.00410b3c
 push 0x800
@@ -204,16 +204,16 @@ lea ecx, [esp+0x48]
 call fcn.0040c96f
 mov eax, dword[0x45cf38]
 test eax, eax
-je 0x410ff9
+je off.b467
 push eax
 call dword[sym.imp.KERNEL32.dll_Sleep]
 cmp byte[0x448730], 0
-je 0x411007
+je off.b481
 call fcn.0040df51
 mov ecx, 0x454d10
 call fcn.00404b3f
 cmp dword[0x4486f8], 0
-jbe 0x411026
+jbe off.b512
 push dword[0x4486f4]
 call fcn.00416d00
 pop ecx
@@ -222,37 +222,37 @@ mov esi, dword[sym.imp.GDI32.dll_DeleteObject]
 call esi
 mov eax, dword[0x45bf1c]
 test eax, eax
-je 0x411040
+je off.b538
 push eax
 call esi
 cmp dword[0x44a83c], 0
-jne 0x411061
+jne off.b571
 cmp byte[0x448717], 0
-je 0x411061
+je off.b571
 push 0xff
 mov ecx, 0x44a83c
 call fcn.0040186f
 mov eax, dword[0x45cf3c]
 mov byte[0x448717], 1
 test eax, eax
-je 0x411083
+je off.b605
 push eax
 call fcn.00410b9b
 push dword[0x45cf3c]
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 cmp byte[0x45cf32], 0
 mov esi, dword[0x44a83c]
-je 0x4110b4
+je off.b654
 cmp byte[0x45cf33], 0
 mov eax, dword[0x42f040]
-je 0x4110ae
+je off.b648
 mov esi, dword[0x45cf34]
 test eax, eax
-jle 0x4110b4
+jle off.b654
 add esi, eax
-jmp 0x4110b4
+jmp off.b654
 test eax, eax
-jns 0x4110b4
+jns off.b654
 sub esi, eax
 lea ecx, [esp+0x1c]
 call fcn.0040de7a

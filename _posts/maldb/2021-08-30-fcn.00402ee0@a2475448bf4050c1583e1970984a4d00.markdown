@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.01211540051201388</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.04818618775023766</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.18625822012716545</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,15 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [126.78152465820312, 7.314935207366943, '<b><a href="/report/fcn.00402ee0@a2475448bf4050c1583e1970984a4d00">fcn.00402ee0</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
-[-26.777685165405273, 109.39151763916016, '<b><a href="/report/fcn.00407b10@0403abd1e9e066fc89cddd5736647282">fcn.00407b10</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>', 'null'],
-[-39.91265869140625, -163.73056030273438, '<b><a href="/report/fcn.100c9e60@89dc67d2f980e8488f97b1bf8cb24258">fcn.100c9e60</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[140.7677001953125, -120.98846435546875, '<b><a href="/report/fcn.006ac160@c92f0480e2fbc88393d2c65c08a235e0">fcn.006ac160</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-122.29882049560547, -90.70574951171875, '<b><a href="/report/fcn.0042ca90@3dfcfb1d918b690c00de324bcfcdc082">fcn.0042ca90</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[216.26690673828125, -42.89435577392578, '<b><a href="/report/fcn.100d0da0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100d0da0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[-3.911957263946533, -70.6128921508789, '<b><a href="/report/fcn.0045e200@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0045e200</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
-[24.761531829833984, 13.975052833557129, '<b><a href="/report/fcn.00402250@a2475448bf4050c1583e1970984a4d00">fcn.00402250</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
-[-89.35066986083984, 15.719565391540527, '<b><a href="/report/fcn.004030b0@a2475448bf4050c1583e1970984a4d00">fcn.004030b0</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402ee0@a2475448bf4050c1583e1970984a4d00">fcn.00402ee0</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -79,11 +71,11 @@ mov eax, dword[0x4165d8]
 mov dword[esp], str.getaddrinfo
 test eax, eax
 mov dword[esp+4], 0x4025a0
-mov dword[esp+8], str.getnameinfo
+mov dword[esp+8], str.getnameinfo_
 mov dword[esp+0xc], 0x402ca0
-mov dword[esp+0x10], str.freeaddrinfo
+mov dword[esp+0x10], str.freeaddrinfo_
 mov dword[esp+0x14], 0x402550
-je 0x402f3b
+je off.b91
 mov eax, dword[esp+0x230]
 and eax, 0xffff
 mov eax, dword[eax*8+0x4143dc]
@@ -98,7 +90,7 @@ push 0x104
 push ecx
 call dword[sym.imp.KERNEL32.dll_GetSystemDirectoryA]
 test eax, eax
-je 0x403084
+je off.b420
 lea edi, [esp+0x134]
 or ecx, 0xffffffff
 xor eax, eax
@@ -140,12 +132,12 @@ call ebx
 mov ebp, dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov esi, eax
 test esi, esi
-je 0x402fdc
+je off.b252
 push str.getaddrinfo
 push esi
 call ebp
 test eax, eax
-jne 0x403054
+jne off.b372
 push esi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 lea edi, [esp+0x134]
@@ -187,15 +179,15 @@ rep movsb
 call ebx
 mov esi, eax
 test esi, esi
-je 0x403084
+je off.b420
 push str.getaddrinfo
 push esi
 call ebp
 test eax, eax
-jne 0x403054
+jne off.b372
 push esi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
-jmp 0x403084
+jmp off.b420
 xor ebx, ebx
 lea edi, [esp+0x14]
 mov ecx, dword[edi-4]
@@ -204,17 +196,17 @@ push esi
 call ebp
 test eax, eax
 mov dword[edi], eax
-je 0x40304b
+je off.b363
 inc ebx
 add edi, 8
 cmp ebx, 3
-jl 0x40305a
+jl off.b378
 xor eax, eax
 mov edx, dword[esp+eax+0x14]
 mov dword[eax+0x4143dc], edx
 add eax, 8
 cmp eax, 0x18
-jl 0x403072
+jl off.b402
 mov eax, dword[esp+0x240]
 pop edi
 and eax, 0xffff

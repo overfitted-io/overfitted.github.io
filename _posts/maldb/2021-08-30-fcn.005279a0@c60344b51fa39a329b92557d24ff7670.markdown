@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.4385533746143854</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [69.84813690185547, 43.613494873046875, '<b><a href="/report/fcn.005279a0@c60344b51fa39a329b92557d24ff7670">fcn.005279a0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
-[89.85444641113281, 18.95366859436035, '<b><a href="/report/fcn.0040c867@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0040c867</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
-[55.613067626953125, 32.05652618408203, '<b><a href="/report/fcn.00442d70@3e981d1767f44f5fe2446a49ffe52f4e">fcn.00442d70</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[86.97122955322266, 37.052528381347656, '<b><a href="/report/fcn.004039d0@0403abd1e9e066fc89cddd5736647282">fcn.004039d0</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>', 'null'],
-[75.62123107910156, 7.4001665115356445, '<b><a href="/report/fcn.458ceb70@284c9c9722cef7520dddfe58806fd72f">fcn.458ceb70</a><br>@284c9c9722cef7520dddfe58806fd72f</b><br>', 'null'],
-[72.7352066040039, 25.508480072021484, '<b><a href="/report/fcn.004976f0@3e981d1767f44f5fe2446a49ffe52f4e">fcn.004976f0</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'null'],
-[58.49702835083008, 13.95538330078125, '<b><a href="/report/fcn.00426467@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00426467</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.005279a0@c60344b51fa39a329b92557d24ff7670">fcn.005279a0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -105,7 +99,7 @@ push 0x202
 mov dword[esp+0x260], ebx
 call dword[sym.imp.WS2_32.dll_WSAStartup]
 test eax, eax
-je 0x527a33
+je off.b147
 lea ecx, [esp+0x24]
 push ecx
 mov ecx, edi
@@ -113,20 +107,20 @@ call fcn.00401fb0
 lea ecx, [esp+0x24]
 call fcn.00401ff0
 mov eax, edi
-jmp 0x527bbc
+jmp off.b540
 push esi
 call dword[sym.imp.WS2_32.dll_inet_addr]
 mov dword[esp+0x14], eax
 cmp eax, 0xffffffff
-jne 0x527a65
+jne off.b197
 push esi
 call sub.WS2_32.dll_gethostbyname
 cmp eax, ebx
-jne 0x527a5a
+jne off.b186
 call dword[sym.imp.WS2_32.dll_WSACleanup]
 lea edx, [esp+0x24]
 push edx
-jmp 0x527a1c
+jmp off.b124
 mov eax, dword[eax+0xc]
 mov ecx, dword[eax]
 mov edx, dword[ecx]
@@ -134,11 +128,11 @@ mov dword[esp+0x14], edx
 call sub.IPHLPAPI.DLL_IcmpCreateFile
 mov dword[esp+0x10], eax
 cmp eax, 0xffffffff
-jne 0x527a80
+jne off.b224
 call dword[sym.imp.WS2_32.dll_WSACleanup]
 lea eax, [esp+0x24]
 push eax
-jmp 0x527a1c
+jmp off.b124
 xor eax, eax
 push 0x3b
 lea ecx, [esp+0x211]
@@ -165,7 +159,7 @@ mov esi, 1
 mov edx, edi
 dec edi
 test edx, edx
-je 0x527b91
+je off.b497
 push 0xbb8
 push 0x3c
 lea eax, [esp+0x214]
@@ -181,9 +175,9 @@ push eax
 push ecx
 call sub.IPHLPAPI.DLL_IcmpSendEcho
 test eax, eax
-je 0x527b85
+je off.b485
 cmp edi, ebx
-jne 0x527b76
+jne off.b470
 mov edx, dword[esp+0x20c]
 push edx
 call dword[sym.imp.WS2_32.dll_inet_ntoa]
@@ -200,11 +194,11 @@ mov byte[esp+0x258], bl
 call fcn.00401ff0
 mov ecx, dword[esp+0x14]
 cmp dword[esp+0x20c], ecx
-jne 0x527b85
+jne off.b485
 xor esi, esi
 inc byte[esp+0x18]
 cmp esi, ebx
-jne 0x527af8
+jne off.b344
 mov edx, dword[esp+0x10]
 push edx
 call sub.IPHLPAPI.DLL_IcmpCloseHandle

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="CRYPTO">CRYPTO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,7 +76,7 @@ mov eax, dword[ebp+0xf4]
 mov dword[esp], eax
 call sub.msvcrt.dll_wcslen
 cmp eax, 5
-ja 0x670b80
+ja off.b64
 mov dword[ebp+0x48], 0xfffff019
 mov dword[ebp+0xf0], 0x57
 add esp, 0x4c
@@ -88,13 +88,13 @@ ret
 mov esi, dword[ebp+0xf4]
 lea ebx, [eax+eax]
 mov dword[esp+8], 6
-mov dword[esp+4], str.XXXXXX
+mov dword[esp+4], str.XXXXXX_
 lea eax, [esi+ebx-0xc]
 mov dword[esp], eax
 mov dword[esp+0x28], eax
 call sub.msvcrt.dll_wcsncmp
 test eax, eax
-jne 0x670b5e
+jne off.b30
 lea eax, [esp+0x34]
 mov dword[esp+0x10], 0xf0000000
 mov dword[esp+0xc], 1
@@ -104,7 +104,7 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextA]
 sub esp, 0x14
 test eax, eax
-je 0x670d21
+je off.b481
 lea eax, [esi+ebx]
 mov dword[esp+0x60], ebp
 mov dword[esp+0x2c], 0x7fff
@@ -119,7 +119,7 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptGenRandom]
 sub esp, 0xc
 test eax, eax
-je 0x670d3d
+je off.b509
 mov esi, dword[esp+0x38]
 mov edi, dword[esp+0x3c]
 mov ebx, dword[esp+0x28]
@@ -139,7 +139,7 @@ call fcn.006ad2e0
 cmp ebp, ebx
 mov esi, eax
 mov edi, edx
-jne 0x670c34
+jne off.b244
 mov dword[esp+0x38], eax
 mov eax, dword[esp+0x60]
 mov dword[esp+0x3c], edx
@@ -147,12 +147,12 @@ mov eax, dword[eax+0xf4]
 mov dword[esp], eax
 call dword[sym.imp.msvcrt.dll__wmkdir]
 test eax, eax
-je 0x670d99
+je off.b601
 call dword[sym.imp.msvcrt.dll__errno]
 cmp dword[eax], 0x11
-jne 0x670dcd
+jne off.b653
 sub dword[esp+0x2c], 1
-jne 0x670c00
+jne off.b192
 mov eax, dword[esp+0x34]
 mov ebp, dword[esp+0x60]
 mov dword[esp+4], 0
@@ -160,9 +160,9 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
 sub esp, 8
 test eax, eax
-jne 0x670cfc
+jne off.b444
 mov dword[esp+8], 0x355
-mov dword[esp+4], str.src_win_fs.c
+mov dword[esp+4], str.src_win_fs.c_
 mov dword[esp], str.released
 call fcn.006b2490
 mov dword[ebp+0x48], 0xffffffff
@@ -172,13 +172,13 @@ mov dword[ebp+0xf0], eax
 mov dword[esp], eax
 call fcn.0066e3a0
 mov dword[ebp+0x48], eax
-jmp 0x670b6f
+jmp off.b47
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[ebp+0xf0], eax
 mov dword[esp], eax
 call fcn.0066e3a0
 mov dword[ebp+0x48], eax
-jmp 0x670b6f
+jmp off.b47
 mov ebp, dword[esp+0x60]
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[ebp+0xf0], eax
@@ -191,12 +191,12 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
 sub esp, 8
 test eax, eax
-jne 0x670b6f
+jne off.b47
 mov dword[esp+8], 0x355
-mov dword[esp+4], str.src_win_fs.c
+mov dword[esp+4], str.src_win_fs.c_
 mov dword[esp], str.released
 call fcn.006b2490
-jmp 0x670b6f
+jmp off.b47
 mov ebp, dword[esp+0x60]
 mov ebx, dword[ebp+0x50]
 mov dword[esp], ebx
@@ -208,7 +208,7 @@ mov dword[esp], eax
 mov dword[esp+4], edx
 call sub.msvcrt.dll_wcstombs
 mov dword[ebp+0x48], 0
-jmp 0x670d58
+jmp off.b536
 mov ebp, dword[esp+0x60]
 mov dword[ebp+0x48], 0xffffffff
 call dword[sym.imp.msvcrt.dll___doserrno]
@@ -217,7 +217,7 @@ mov dword[ebp+0xf0], eax
 mov dword[esp], eax
 call fcn.0066e3a0
 mov dword[ebp+0x48], eax
-jmp 0x670d58
+jmp off.b536
 
 {% endhighlight %}
 

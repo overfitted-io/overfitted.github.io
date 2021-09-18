@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -79,7 +79,7 @@ call fcn.00407e3c
 test esi, 8
 mov dword[ebp-0x15c], eax
 push ecx
-je 0x408235
+je off.b78
 mov esi, dword[0x427b10]
 mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_DeleteFileA]
@@ -89,35 +89,35 @@ movzx eax, al
 add esi, eax
 push edx
 mov dword[0x427b10], esi
-jmp 0x40848a
+jmp off.b675
 mov eax, esi
 and eax, 1
 mov dword[ebp-0x160], eax
-je 0x40825b
+je off.b116
 cmp dword[ebp-0x15c], 0
-je 0x408470
+je off.b649
 test esi, 2
-je 0x40841a
+je off.b563
 mov dword[esp+4], ebx
 mov dword[esp], 0x426190
 call fcn.00407a11
 cmp dword[ebp-0x160], 0
 push eax
 push eax
-je 0x40828f
+je off.b168
 mov dword[esp+4], str..
 mov dword[esp], 0x426190
 call dword[sym.imp.KERNEL32.dll_lstrcatA]
 push eax
 push eax
-jmp 0x408298
+jmp off.b177
 mov dword[esp], ebx
 call fcn.00407620
 push eax
 cmp byte[ebx], 0
-jne 0x4082a6
+jne off.b191
 cmp byte[0x426190], 0x5c
-jne 0x4082b9
+jne off.b210
 mov dword[esp+4], 0x40b3dc
 mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_lstrcatA]
@@ -136,7 +136,7 @@ cmp eax, 0xffffffff
 push edi
 push edi
 mov edi, eax
-je 0x4083fa
+je off.b531
 lea eax, [ebp-0x12c]
 mov dword[esp+4], 0x3f
 mov dword[esp], eax
@@ -144,22 +144,22 @@ call fcn.004075f0
 push edx
 push edx
 cmp byte[eax], 0
-je 0x408316
+je off.b303
 mov dl, byte[ebp-0x28]
 lea eax, [ebp-0x28]
 test dl, dl
-jne 0x408322
+jne off.b315
 mov dl, byte[ebp-0x12c]
 lea eax, [ebp-0x12c]
 cmp dl, 0x2e
-jne 0x408341
+jne off.b346
 mov dl, byte[eax+1]
 test dl, dl
-je 0x4083d3
+je off.b492
 cmp dl, 0x2e
-jne 0x408341
+jne off.b346
 cmp byte[eax+2], 0
-je 0x4083d3
+je off.b492
 mov dword[esp+4], eax
 mov eax, dword[ebp-0x164]
 mov dword[esp], eax
@@ -167,15 +167,15 @@ call fcn.00407a11
 test byte[ebp-0x158], 0x10
 push ecx
 push ecx
-je 0x408376
+je off.b399
 mov eax, esi
 and eax, 3
 cmp eax, 3
-jne 0x4083d3
+jne off.b492
 mov dword[esp+4], esi
 mov dword[esp], ebx
 call fcn.004081e7
-jmp 0x4083d1
+jmp off.b490
 mov dword[esp], ebx
 call fcn.004077a4
 push eax
@@ -183,9 +183,9 @@ mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_DeleteFileA]
 test eax, eax
 push edx
-jne 0x4083c1
+jne off.b474
 test esi, 4
-je 0x4083b9
+je off.b466
 mov dword[esp+4], ebx
 mov dword[esp], 0xfffffff1
 call fcn.00406db2
@@ -194,9 +194,9 @@ push eax
 mov dword[esp], ebx
 mov dword[esp+4], 0
 call fcn.00407f46
-jmp 0x4083d1
+jmp off.b490
 inc dword[0x427b10]
-jmp 0x4083d3
+jmp off.b492
 mov dword[esp+4], ebx
 mov dword[esp], 0xfffffff2
 call fcn.00406db2
@@ -209,21 +209,21 @@ call dword[sym.imp.KERNEL32.dll_FindNextFileA]
 test eax, eax
 push edx
 push edx
-jne 0x4082ef
+jne off.b264
 mov dword[esp], edi
 call dword[sym.imp.KERNEL32.dll_FindClose]
 push edi
 cmp dword[ebp-0x160], 0
-je 0x40848a
+je off.b675
 mov eax, dword[ebp-0x164]
 cmp dword[ebp-0x15c], 0
 mov byte[eax-1], 0
-je 0x408470
+je off.b649
 mov dword[esp], ebx
 call fcn.00407e04
 test eax, eax
 push ecx
-je 0x40848a
+je off.b675
 mov dword[esp], ebx
 call fcn.004075aa
 push edi
@@ -234,9 +234,9 @@ mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_RemoveDirectoryA]
 test eax, eax
 push edx
-jne 0x408478
+jne off.b657
 and esi, 4
-je 0x408470
+je off.b649
 mov dword[esp+4], ebx
 mov dword[esp], 0xfffffff1
 call fcn.00406db2
@@ -245,9 +245,9 @@ push esi
 mov dword[esp], ebx
 mov dword[esp+4], 0
 call fcn.00407f46
-jmp 0x408488
+jmp off.b673
 inc dword[0x427b10]
-jmp 0x40848a
+jmp off.b675
 mov dword[esp+4], ebx
 mov dword[esp], 0xffffffe5
 call fcn.00406db2

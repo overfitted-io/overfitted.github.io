@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [39.258567810058594, 118.7469482421875, '<b><a href="/report/fcn.0056e9fc@c60344b51fa39a329b92557d24ff7670">fcn.0056e9fc</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
-[-46.85426330566406, 17.07476234436035, '<b><a href="/report/fcn.1000707a@481b545f5c18f2fce1caac67ddc419e8">fcn.1000707a</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-148.5240020751953, 103.19049835205078, '<b><a href="/report/fcn.0055341a@c60344b51fa39a329b92557d24ff7670">fcn.0055341a</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[-62.411163330078125, 204.86268615722656, '<b><a href="/report/fcn.0042e4bd@7b00dd8f2abf54a73bfb09681334ff78">fcn.0042e4bd</a><br>@7b00dd8f2abf54a73bfb09681334ff78</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0056e9fc@c60344b51fa39a329b92557d24ff7670">fcn.0056e9fc</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -93,16 +90,16 @@ push eax
 push dword[esi+0x44]
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 test eax, eax
-je 0x56ea47
+je off.b75
 cmp eax, edi
-jne 0x56ea4c
+jne off.b80
 call fcn.0055b6f3
 lea eax, [ebp-0x20c]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathFindExtensionW]
 mov dword[ebp-0x618], eax
 test eax, eax
-jne 0x56ea68
+jne off.b108
 call fcn.0055b6f3
 mov ecx, dword[ebp-0x618]
 xor eax, eax
@@ -114,40 +111,40 @@ lea eax, [ebp-0x20c]
 push eax
 call fcn.0056e9bc
 test eax, eax
-je 0x56ea90
+je off.b148
 call fcn.0055b6f3
 cmp dword[esi+0x60], 0
-jne 0x56eaaf
+jne off.b179
 lea eax, [ebp-0x414]
 push eax
 call fcn.0057a781
 pop ecx
 mov dword[esi+0x60], eax
 test eax, eax
-jne 0x56eaaf
+jne off.b179
 call fcn.005546b5
 mov eax, dword[esi+0x50]
 test eax, eax
-jne 0x56eae9
+jne off.b237
 push 0x100
 lea eax, [ebp-0x614]
 push eax
 push 0xe000
 call fcn.00552a13
 test eax, eax
-je 0x56ead9
+je off.b221
 lea eax, [ebp-0x614]
 push eax
-jmp 0x56eadc
+jmp off.b224
 push dword[esi+0x60]
 call fcn.0057a781
 mov dword[esi+0x50], eax
 pop ecx
 test eax, eax
-je 0x56eaaa
+je off.b174
 mov dword[ebx+0x10], eax
 cmp dword[esi+0x64], 0
-jne 0x56eb4a
+jne off.b334
 mov eax, dword[ebp-0x618]
 lea ecx, [ebp-0x20c]
 sub eax, ecx
@@ -155,9 +152,9 @@ sar eax, 1
 mov ecx, edi
 sub ecx, eax
 cmp dword[esi+0x6c], 1
-jne 0x56eb13
+jne off.b279
 push str..CHM
-jmp 0x56eb18
+jmp off.b284
 push str..HLP
 push ecx
 push dword[ebp-0x618]
@@ -169,12 +166,12 @@ call fcn.0057a781
 pop ecx
 mov dword[esi+0x64], eax
 test eax, eax
-je 0x56eaaa
+je off.b174
 mov ecx, dword[ebp-0x618]
 xor eax, eax
 mov word[ecx], ax
 cmp dword[esi+0x68], 0
-jne 0x56eb82
+jne off.b390
 push str..INI
 lea eax, [ebp-0x414]
 push edi
@@ -188,7 +185,7 @@ call fcn.0057a781
 add esp, 0x14
 mov dword[esi+0x68], eax
 test eax, eax
-je 0x56eaaa
+je off.b174
 mov ecx, dword[ebp-4]
 pop edi
 pop esi

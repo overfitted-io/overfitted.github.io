@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.05150992248104255</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-199.10719299316406, -92.48799896240234, '<b><a href="/report/fcn.00403eb9@1123b7aa5760238fe93045e585b8234c">fcn.00403eb9</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-94.37678527832031, 259.6518859863281, '<b><a href="/report/fcn.00406735@6c5b0418e4a4c57d99cda47d2717045d">fcn.00406735</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[57.57247543334961, -183.69825744628906, '<b><a href="/report/fcn.00405fe1@6c5b0418e4a4c57d99cda47d2717045d">fcn.00405fe1</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[-347.55340576171875, 135.8970947265625, '<b><a href="/report/fcn.0040695e@6c5b0418e4a4c57d99cda47d2717045d">fcn.0040695e</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
-[118.81272888183594, 91.36504364013672, '<b><a href="/report/fcn.004054cd@6c5b0418e4a4c57d99cda47d2717045d">fcn.004054cd</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00403eb9@1123b7aa5760238fe93045e585b8234c">fcn.00403eb9</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -104,7 +100,7 @@ push eax
 push 0x104
 lea eax, [ebp-0x194]
 push eax
-push str.Component
+push str.Component_
 call dword[sym.imp.KERNEL32.dll_GetPrivateProfileSectionA]
 lea eax, [ebp-0x194]
 push eax
@@ -119,7 +115,7 @@ mov dword[ebp-4], ebx
 mov byte[ebp-0x10], 0x3d
 call fcn.004027aa
 cmp eax, 0xffffffff
-je 0x4040bf
+je off.b518
 mov byte[ebp+eax-0x194], bl
 lea eax, [ebp-0x194]
 push eax
@@ -137,7 +133,7 @@ cmp dword[ebp-0x20], 0x10
 mov esi, dword[ebp-0x34]
 mov byte[ebp-4], 1
 mov edi, esi
-jae 0x403f9c
+jae off.b227
 lea edi, [ebp-0x34]
 mov esi, edi
 lea eax, [ebp-0x18]
@@ -164,12 +160,12 @@ lea eax, [ebp-0x14]
 push eax
 push 0x20019
 push ebx
-push str.CLSID_{CAA2D3B1-4BB5-4a45-A17A-122773379D99}
+push str.CLSID__{CAA2D3B1-4BB5-4a45-A17A-122773379D99}_
 push 0x80000000
 mov dword[ebp-0x1c], 0x400
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x4040b4
+jne off.b507
 lea eax, [ebp-0x1c]
 push eax
 lea eax, [ebp-0x39c]
@@ -182,7 +178,7 @@ push dword[ebp-0x14]
 mov dword[ebp-0x18], ebx
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 cmp eax, ebx
-jne 0x4040b4
+jne off.b507
 lea eax, [ebp-0x39c]
 push eax
 lea ecx, [ebp-0x90]
@@ -203,7 +199,7 @@ push eax
 lea ecx, [ebp-0x58]
 call fcn.00402bfe
 test eax, eax
-jl 0x40409b
+jl off.b482
 push dword[ebp-0x14]
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 xor esi, esi
@@ -220,7 +216,7 @@ push ebx
 push esi
 lea ecx, [ebp-0x38]
 call fcn.0040156b
-jmp 0x4040c1
+jmp off.b520
 push ebx
 push 1
 lea ecx, [ebp-0x58]

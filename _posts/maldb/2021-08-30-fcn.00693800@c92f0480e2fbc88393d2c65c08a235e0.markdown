@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [2270.513916015625, -4203.3701171875, '<b><a href="/report/fcn.00693800@c92f0480e2fbc88393d2c65c08a235e0">fcn.00693800</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-2270.513916015625, 4203.3701171875, '<b><a href="/report/fcn.00698340@c92f0480e2fbc88393d2c65c08a235e0">fcn.00698340</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00693800@c92f0480e2fbc88393d2c65c08a235e0">fcn.00693800</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -75,14 +74,14 @@ sub esp, 0x5c
 mov ebx, dword[eax+0x1c]
 mov ebp, dword[ebx+0xc]
 test ebp, ebp
-je 0x693950
+je off.b336
 mov edi, dword[ebx+0x3c]
 mov esi, dword[ebx+0x38]
 mov ecx, edi
 mov dword[esp+0x28], esi
 mov dword[esp+0x2c], edi
 or ecx, esi
-je 0x693950
+je off.b336
 mov edx, dword[eax+0x78]
 mov edi, dword[esp+0x28]
 mov ecx, dword[eax+0x7c]
@@ -95,14 +94,14 @@ mov ecx, dword[esp+0x2c]
 mov edi, dword[esp+0x34]
 xor ecx, edi
 or ecx, edx
-je 0x693950
+je off.b336
 mov ecx, dword[ebx+0x44]
 mov edx, dword[ebx+0x40]
 cmp edi, ecx
-jb 0x693890
-ja 0x693869
+jb off.b144
+ja off.b105
 cmp esi, edx
-jb 0x693890
+jb off.b144
 mov esi, dword[ebx+0x50]
 xor edi, edi
 add edx, esi
@@ -110,8 +109,8 @@ mov esi, dword[esp+0x30]
 adc ecx, edi
 mov edi, dword[esp+0x34]
 cmp edi, ecx
-jb 0x693950
-jbe 0x693940
+jb off.b336
+jbe off.b320
 nop
 lea esi, [esi]
 mov ecx, dword[ebx+0x54]
@@ -128,11 +127,11 @@ mov edi, ecx
 mov dword[esp+0x4c], ecx
 mov ecx, dword[esp+0x44]
 cmp ecx, edi
-jb 0x6938e0
-ja 0x693960
+jb off.b224
+ja off.b352
 mov edi, dword[esp+0x48]
 cmp edx, edi
-jae 0x693960
+jae off.b352
 nop
 lea esi, [esi]
 mov esi, eax
@@ -148,23 +147,23 @@ mov eax, dword[ebx+8]
 mov dword[esp], eax
 call ebp
 cmp eax, 0xfffffffe
-jae 0x693971
+jae off.b369
 mov edi, dword[esi+0x78]
 mov ebp, dword[esi+0x7c]
 test eax, eax
 mov dword[ebx+0x50], eax
 mov dword[ebx+0x40], edi
 mov dword[ebx+0x44], ebp
-jne 0x693950
+jne off.b336
 add ebx, 0x1c
 mov dword[esi+0xa4], 0xd
 mov dword[esp], ebx
 call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 xor eax, eax
 sub esp, 4
-jmp 0x693955
+jmp off.b341
 cmp esi, edx
-jae 0x693890
+jae off.b144
 nop
 lea esi, [esi]
 mov eax, 1
@@ -177,7 +176,7 @@ ret
 mov edx, dword[esp+0x28]
 sub edx, dword[esp+0x30]
 mov dword[esp+0x3c], edx
-jmp 0x6938e0
+jmp off.b224
 mov edx, dword[esi+0x7c]
 mov dword[esp+0x28], eax
 add ebx, 0x1c
@@ -189,7 +188,7 @@ call dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 sub esp, 4
 mov eax, dword[esp+0x28]
 cmp eax, 0xffffffff
-je 0x693a23
+je off.b547
 mov dword[esp+4], str.Closing_connection__application_reported_error_generating_data__n
 mov eax, dword[esi+0x10]
 mov dword[esp], eax
@@ -199,17 +198,17 @@ mov dword[esi+0xa4], 0x13
 mov dword[esi+0xa8], 3
 mov edi, dword[esi+0x1c]
 test byte[ebx+0xdd], 0x10
-je 0x693a73
+je off.b627
 test edi, edi
-je 0x6939ea
+je off.b490
 mov dword[esi+0x1c], 0
 mov dword[esp], edi
 call sym.xmrig.exe_MHD_destroy_response
 mov eax, dword[ebx+0x38]
 test eax, eax
-je 0x693a15
+je off.b533
 cmp byte[esi+0x94], 0
-je 0x693a15
+je off.b533
 mov dword[esp+0xc], 1
 lea edx, [esi+0x24]
 mov dword[esp+4], esi
@@ -219,37 +218,37 @@ mov dword[esp], edx
 call eax
 mov byte[esi+0x94], 0
 xor eax, eax
-jmp 0x693955
+jmp off.b341
 mov ebx, dword[esi+0x10]
 mov dword[esi+0xa4], 0x13
 mov dword[esi+0xa8], 3
 mov edi, dword[esi+0x1c]
 test byte[ebx+0xdd], 0x10
-je 0x693a92
+je off.b658
 test edi, edi
-je 0x693a59
+je off.b601
 mov dword[esi+0x1c], 0
 mov dword[esp], edi
 call sym.xmrig.exe_MHD_destroy_response
 mov eax, dword[ebx+0x38]
 test eax, eax
-je 0x693a15
+je off.b533
 cmp byte[esi+0x94], 0
-je 0x693a15
+je off.b533
 mov dword[esp+0xc], 0
-jmp 0x693a02
+jmp off.b514
 mov dword[esp+4], 1
 mov eax, dword[esi+0x98]
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_shutdown]
 sub esp, 8
-jmp 0x6939d7
+jmp off.b471
 mov dword[esp+4], 1
 mov eax, dword[esi+0x98]
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_shutdown]
 sub esp, 8
-jmp 0x693a46
+jmp off.b582
 
 {% endhighlight %}
 

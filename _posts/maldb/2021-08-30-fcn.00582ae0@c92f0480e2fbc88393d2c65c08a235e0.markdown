@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="CRYPTO">CRYPTO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-4.214987754821777, 22.341466903686523, '<b><a href="/report/fcn.00582ae0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00582ae0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-13.421404838562012, 69.98583221435547, '<b><a href="/report/fcn.00582d90@c92f0480e2fbc88393d2c65c08a235e0">fcn.00582d90</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-24.77372932434082, -21.613677978515625, '<b><a href="/report/fcn.00582350@c92f0480e2fbc88393d2c65c08a235e0">fcn.00582350</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[38.25165557861328, 45.82014846801758, '<b><a href="/report/fcn.0066ec80@c92f0480e2fbc88393d2c65c08a235e0">fcn.0066ec80</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[31.236949920654297, -10.79250717163086, '<b><a href="/report/fcn.0068d6d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068d6d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-52.37271499633789, 28.310956954956055, '<b><a href="/report/fcn.006708f0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006708f0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00582ae0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00582ae0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -80,21 +75,21 @@ mov esi, edx
 mov ebx, eax
 sub esp, 0x4c
 mov dword[esp+8], 0x5cb
-mov dword[esp+4], str.engines_e_capi.c
+mov dword[esp+4], str.engines_e_capi.c_
 mov dword[esp], 0x10
 call fcn.00517a60
 test eax, eax
 mov ebp, eax
-je 0x582c07
+je off.b295
 cmp dword[esp+0x60], 1
-je 0x582c11
+je off.b305
 test ebx, ebx
-je 0x582ba0
+je off.b192
 cmp dword[ebx], 1
-jle 0x582ba0
+jle off.b192
 mov eax, dword[ebx+4]
 test eax, eax
-je 0x582ba0
+je off.b192
 mov eax, esi
 call fcn.00582580
 mov dword[esp+0x28], eax
@@ -111,12 +106,12 @@ mov dword[esp+8], eax
 call fcn.005821d0
 mov eax, dword[esp+0x2c]
 mov dword[esp+8], 0x5df
-mov dword[esp+4], str.engines_e_capi.c
+mov dword[esp+4], str.engines_e_capi.c_
 mov dword[esp], eax
 call fcn.00517a30
 mov eax, dword[esp+0x28]
 mov dword[esp+8], 0x5e0
-mov dword[esp+4], str.engines_e_capi.c
+mov dword[esp+4], str.engines_e_capi.c_
 mov dword[esp], eax
 call fcn.00517a30
 xor eax, eax
@@ -133,7 +128,7 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptAcquireContextW]
 sub esp, 0x14
 test eax, eax
-je 0x582c50
+je off.b368
 lea eax, [ebp+8]
 mov dword[esp+8], eax
 mov eax, dword[esp+0x64]
@@ -143,7 +138,7 @@ mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptGetUserKey]
 sub esp, 0xc
 test eax, eax
-je 0x582cf0
+je off.b528
 mov eax, dword[esp+0x64]
 mov dword[ebp], 0
 mov dword[ebp+0xc], eax
@@ -156,9 +151,9 @@ pop ebp
 ret
 mov edx, dword[0x83a184]
 test edx, edx
-je 0x582b1e
+je off.b62
 mov dword[esp], edi
-mov dword[esp+4], str.Microsoft_Enhanced_Cryptographic_Provider_v1.0
+mov dword[esp+4], str.Microsoft_Enhanced_Cryptographic_Provider_v1.0_
 call sub.msvcrt.dll_wcscmp
 mov edx, 0x18
 test eax, eax
@@ -166,16 +161,16 @@ cmovne edx, dword[esp+0x60]
 mov eax, str.Microsoft_Enhanced_RSA_and_AES_Cryptographic_Provider
 cmove edi, eax
 mov dword[esp+0x60], edx
-jmp 0x582b1e
+jmp off.b62
 mov eax, dword[0x83a194]
 test eax, eax
-jne 0x582c63
+jne off.b387
 call fcn.004f8b40
 mov dword[0x83a194], eax
 lea ebx, [esp+0x36]
 mov dword[esp], eax
 mov dword[esp+0x10], 0x5e6
-mov dword[esp+0xc], str.engines_e_capi.c
+mov dword[esp+0xc], str.engines_e_capi.c_
 mov dword[esp+8], 0x68
 mov dword[esp+4], 0x67
 call fcn.004f6fb0
@@ -186,13 +181,13 @@ mov dword[esp+4], 0xa
 mov dword[esp], ebx
 call fcn.004be960
 mov dword[esp+8], ebx
-mov dword[esp+4], str.Error_code=_0x
+mov dword[esp+4], str.Error_code=_0x_
 mov dword[esp], 2
 call fcn.004f8e30
 mov dword[esp], ebp
 mov dword[esp+8], 0x5f5
 xor ebp, ebp
-mov dword[esp+4], str.engines_e_capi.c
+mov dword[esp+4], str.engines_e_capi.c_
 call fcn.00517a30
 add esp, 0x4c
 mov eax, ebp
@@ -203,13 +198,13 @@ pop ebp
 ret
 mov eax, dword[0x83a194]
 test eax, eax
-jne 0x582d03
+jne off.b547
 call fcn.004f8b40
 mov dword[0x83a194], eax
 lea ebx, [esp+0x36]
 mov dword[esp], eax
 mov dword[esp+0x10], 0x5eb
-mov dword[esp+0xc], str.engines_e_capi.c
+mov dword[esp+0xc], str.engines_e_capi.c_
 mov dword[esp+8], 0x75
 mov dword[esp+4], 0x67
 call fcn.004f6fb0
@@ -220,7 +215,7 @@ mov dword[esp+4], 0xa
 mov dword[esp], ebx
 call fcn.004be960
 mov dword[esp+8], ebx
-mov dword[esp+4], str.Error_code=_0x
+mov dword[esp+4], str.Error_code=_0x_
 mov dword[esp], 2
 call fcn.004f8e30
 mov dword[esp+4], 0
@@ -228,7 +223,7 @@ mov eax, dword[ebp+4]
 mov dword[esp], eax
 call dword[sym.imp.ADVAPI32.dll_CryptReleaseContext]
 sub esp, 8
-jmp 0x582cc9
+jmp off.b489
 
 {% endhighlight %}
 

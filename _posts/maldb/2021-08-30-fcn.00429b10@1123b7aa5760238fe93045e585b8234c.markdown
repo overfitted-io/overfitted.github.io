@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="HTTP">HTTP</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.1711504754349503</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [756.3688354492188, 16255.6962890625, '<b><a href="/report/fcn.00429b10@1123b7aa5760238fe93045e585b8234c">fcn.00429b10</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[-756.368896484375, -16255.6962890625, '<b><a href="/report/fcn.00429750@1123b7aa5760238fe93045e585b8234c">fcn.00429750</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00429b10@1123b7aa5760238fe93045e585b8234c">fcn.00429b10</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -85,7 +84,7 @@ push eax
 mov ecx, ebx
 call fcn.00429610
 test eax, eax
-jne 0x429b62
+jne off.b82
 mov eax, 0x80000001
 mov ecx, dword[esp+0x142c]
 call fcn.0041e6b7
@@ -98,14 +97,14 @@ ret 0x10
 mov ecx, ebx
 call fcn.00428c40
 test eax, eax
-je 0x429e32
+je off.b802
 mov eax, dword[ebx+0x44]
 test eax, eax
-jne 0x429da6
+jne off.b662
 mov eax, dword[ebp+0x14]
 test eax, eax
 mov ecx, 0x4400010
-jne 0x429b8d
+jne off.b125
 mov ecx, 0x4600010
 mov eax, dword[ebx+0x28]
 push 0
@@ -113,14 +112,14 @@ push ecx
 mov ecx, dword[ebx+8]
 push 0x43844c
 push 0
-push str.HTTP_1.0
+push str.HTTP_1.0_
 push eax
 push 0x431d14
 push ecx
 call dword[sym.imp.WININET.dll_HttpOpenRequestA]
 test eax, eax
 mov dword[ebx+0xc], eax
-je 0x429e22
+je off.b786
 push 0
 push 0
 push 0
@@ -128,18 +127,18 @@ push 0
 push eax
 call dword[sym.imp.WININET.dll_HttpSendRequestA]
 test eax, eax
-jne 0x429c2a
+jne off.b282
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov ecx, ebx
 mov dword[ebx+0x54], eax
 call fcn.00428b90
 mov ebx, dword[ebx+0x54]
 sub ebx, 0x2ee2
-je 0x429c10
+je off.b256
 sub ebx, 5
-je 0x429bf6
+je off.b230
 sub ebx, 0x16
-jne 0x429e32
+jne off.b802
 mov eax, reloc.OLEAUT32.dll_VariantClear
 mov ecx, dword[esp+0x142c]
 call fcn.0041e6b7
@@ -171,14 +170,14 @@ mov dword[esp+0x2c], 0
 mov dword[esp+0x28], 4
 call esi
 test eax, eax
-je 0x429e22
+je off.b786
 mov eax, dword[esp+0x18]
 cmp eax, 0xc8
-je 0x429cf1
+je off.b481
 cmp eax, 0x12c
-jbe 0x429e2b
+jbe off.b795
 cmp eax, 0x12e
-ja 0x429e2b
+ja off.b795
 xor eax, eax
 push eax
 mov byte[esp+0x24], 0
@@ -195,7 +194,7 @@ push ecx
 mov dword[esp+0x28], 0x400
 call esi
 test eax, eax
-je 0x429e22
+je off.b786
 lea edx, [esp+0x20]
 push edx
 lea ecx, [ebx+0x4c]
@@ -215,7 +214,7 @@ pop ebp
 ret 0x10
 mov eax, dword[ebx+0x44]
 test eax, eax
-jne 0x429da6
+jne off.b662
 xor eax, eax
 mov ecx, 0x400
 lea edi, [esp+0x428]
@@ -230,7 +229,7 @@ mov edi, edi
 mov eax, dword[ebx+0x44]
 test eax, eax
 mov dword[esp+0xc], 0
-jne 0x429da6
+jne off.b662
 mov ecx, dword[ebx+0xc]
 lea edx, [esp+0xc]
 push edx
@@ -240,14 +239,14 @@ push eax
 push ecx
 call dword[sym.imp.WININET.dll_InternetReadFile]
 test eax, eax
-je 0x429e22
+je off.b786
 mov ecx, dword[esp+0xc]
 test ecx, ecx
-jbe 0x429ded
+jbe off.b733
 mov edx, dword[edi]
 add edx, ecx
 cmp edx, esi
-ja 0x429dc7
+ja off.b695
 mov edi, dword[esp+0x10]
 mov eax, ecx
 shr ecx, 2
@@ -265,10 +264,10 @@ add edx, eax
 test eax, eax
 mov dword[esp+0x10], esi
 mov dword[ecx], edx
-jbe 0x429ded
+jbe off.b733
 mov esi, dword[esp+0x1c]
 mov edi, ecx
-jmp 0x429d20
+jmp off.b528
 mov ecx, ebx
 call fcn.00428b90
 mov eax, 2

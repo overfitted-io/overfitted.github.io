@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,7 +69,7 @@ index: false
 push ecx
 mov eax, dword[0x4c6ec8]
 test eax, eax
-je 0x411128
+je off.b280
 mov ecx, dword[0x4c6ecc]
 imul ecx, ecx, 0xd4
 add eax, ecx
@@ -87,7 +87,7 @@ sub edx, dword[0x4c92d4]
 mov dword[0x4c6ed0], eax
 mov dword[esp+4], edx
 fild dword[esp+4]
-jns 0x41106b
+jns off.b91
 fadd dword[0x4bd4b0]
 fdiv qword[0x4bd4a8]
 mov ecx, dword[0x4c6ecc]
@@ -100,22 +100,22 @@ fstp dword[ecx+edx+8]
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov esi, eax
 test esi, esi
-je 0x4110d8
+je off.b200
 mov eax, dword[0x4c6ecc]
 imul eax, eax, 0xd4
 cmp esi, dword[0x4c6ed4]
-je 0x4110c9
+je off.b185
 mov ecx, dword[0x4c6ec8]
 push 0x64
 lea edx, [eax+ecx+0xc]
 push edx
 push esi
 call dword[sym.imp.USER32.dll_GetWindowTextW]
-jmp 0x411104
+jmp off.b244
 mov edx, dword[0x4c6ec8]
 xor ecx, ecx
 mov word[eax+edx+0xc], cx
-jmp 0x411104
+jmp off.b244
 mov ecx, dword[0x4c6ecc]
 mov edx, dword[0x4c6ec8]
 imul ecx, ecx, 0xd4
@@ -126,14 +126,14 @@ movzx ecx, word[eax]
 mov word[edx+eax], cx
 add eax, 2
 test cx, cx
-jne 0x4110f5
+jne off.b229
 mov eax, dword[0x4c6ecc]
 inc eax
 mov dword[0x4c6ed4], esi
 mov dword[0x4c6ecc], eax
 pop esi
 cmp eax, dword[0x4c28b8]
-jl 0x411128
+jl off.b280
 mov dword[0x4c6ecc], 0
 pop ecx
 ret

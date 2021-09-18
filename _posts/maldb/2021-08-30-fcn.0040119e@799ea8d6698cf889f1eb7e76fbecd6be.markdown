@@ -12,11 +12,12 @@ index: false
 - **VirusTotal:** [virustotal.com/gui/file/799ea8d6698cf889f1eb7e76fbecd6be][virustotal_ref]
 
 # Code Tags
+<span class="tag" id="PROCESS">PROCESS</span>
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0075137570533581645</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.08408499621428982</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [43.001380920410156, -46.20124053955078, '<b><a href="/report/fcn.0040119e@799ea8d6698cf889f1eb7e76fbecd6be">fcn.0040119e</a><br>@799ea8d6698cf889f1eb7e76fbecd6be</b><br>', 'point { fill-color: #e0440e; }'],
-[15.173916816711426, -119.8716049194336, '<b><a href="/report/fcn.00403206@f616ef24fa8f527114071d9f6d523e5d">fcn.00403206</a><br>@f616ef24fa8f527114071d9f6d523e5d</b><br>', 'null'],
-[-27.828214645385742, -80.62779998779297, '<b><a href="/report/fcn.00405ecd@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00405ecd</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[71.21043395996094, -97.32449340820312, '<b><a href="/report/fcn.0041941e@8c10f6a1b7643ed6e914352ded4b58e0">fcn.0041941e</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[-10.480159759521484, -22.76997947692871, '<b><a href="/report/fcn.00406f78@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00406f78</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0040119e@799ea8d6698cf889f1eb7e76fbecd6be">fcn.0040119e</a><br>@799ea8d6698cf889f1eb7e76fbecd6be</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -82,17 +79,17 @@ cmp dword[0x405044], 0
 lea edx, [ebp-0x50]
 mov edi, edx
 rep stosd
-je 0x4011c7
+je off.b41
 mov dword[esp], edx
 call sub.kernel32.dll_GetStartupInfoA
 push edi
 mov eax, dword
 mov ebx, dword[eax+4]
-jmp 0x4011ea
+jmp off.b76
 cmp eax, ebx
-jne 0x4011dd
+jne off.b63
 mov ebx, 1
-jmp 0x40120b
+jmp off.b109
 mov dword[esp], 0x3e8
 call sub.kernel32.dll_Sleep
 push esi
@@ -102,32 +99,32 @@ mov dword[esp], 0x405420
 call sub.kernel32.dll_InterlockedCompareExchange
 sub esp, 0xc
 test eax, eax
-jne 0x4011d2
+jne off.b52
 xor ebx, ebx
 mov eax, dword[0x405430]
 dec eax
-jne 0x401222
+jne off.b132
 mov dword[esp], 0x1f
 call dword[sym.imp.msvcrt.dll__amsg_exit]
-jmp 0x401256
+jmp off.b184
 mov eax, dword[0x405430]
 test eax, eax
-jne 0x40124c
+jne off.b174
 mov dword[esp+4], 0x407018
 mov dword[esp], 0x40700c
 mov dword[0x405430], 1
 call dword[sym.imp.msvcrt.dll__initterm]
-jmp 0x401256
+jmp off.b184
 mov dword[0x405004], 1
 mov eax, dword[0x405430]
 dec eax
-jne 0x40127d
+jne off.b223
 mov dword[esp+4], 0x407008
 mov dword[esp], section..CRT
 call dword[sym.imp.msvcrt.dll__initterm]
 mov dword[0x405430], 2
 test ebx, ebx
-jne 0x401297
+jne off.b249
 mov dword[esp+4], 0
 mov dword[esp], 0x405420
 call sub.kernel32.dll_InterlockedExchange
@@ -135,7 +132,7 @@ push ecx
 push ecx
 mov eax, dword[entry1]
 test eax, eax
-je 0x4012bc
+je off.b286
 mov dword[esp+8], 0
 mov dword[esp+4], 2
 mov dword[esp], 0
@@ -146,65 +143,65 @@ mov dword[esp], 0x40148e
 call sub.kernel32.dll_SetUnhandledExceptionFilter
 push edx
 mov dword[0x405008], eax
-mov dword[esp], str.msvcr80.dll
+mov dword[esp], str.msvcr80.dll_
 call sub.kernel32.dll_GetModuleHandleA
 test eax, eax
 push edi
-jne 0x401317
-mov dword[esp], str.msvcr70.dll
+jne off.b377
+mov dword[esp], str.msvcr70.dll_
 call sub.kernel32.dll_GetModuleHandleA
 test eax, eax
 push esi
-jne 0x401317
-mov dword[esp], str.msvcrt.dll
+jne off.b377
+mov dword[esp], str.msvcrt.dll_
 call sub.kernel32.dll_GetModuleHandleA
 test eax, eax
 push ebx
-jne 0x401317
-mov dword[esp], str.msvcrt.dll
+jne off.b377
+mov dword[esp], str.msvcrt.dll_
 call sub.kernel32.dll_LoadLibraryA
 test eax, eax
 push ecx
-je 0x401336
+je off.b408
 mov dword[esp+4], str._set_invalid_parameter_handler
 mov dword[esp], eax
 call sub.kernel32.dll_GetProcAddress
 test eax, eax
 push edx
 push edx
-je 0x401336
+je off.b408
 mov dword[esp], 0x401050
 call eax
 call fcn.00401c54
 cmp dword[0x405044], 0
-je 0x401398
+je off.b506
 mov eax, dword[sym.imp.msvcrt.dll__acmdln]
 xor edx, edx
 mov eax, dword[eax]
-jmp 0x401358
+jmp off.b442
 cmp cl, 0x22
-jne 0x401357
+jne off.b441
 xor edx, 1
 inc eax
 mov cl, byte[eax]
 cmp cl, 0x20
-jg 0x40134f
+jg off.b433
 test dl, dl
-je 0x40136a
+je off.b460
 test cl, cl
-jne 0x401357
-jmp 0x40136a
+jne off.b441
+jmp off.b460
 inc eax
 mov dl, byte[eax]
 cmp dl, 0x20
-jg 0x401375
+jg off.b471
 test dl, dl
-jne 0x401369
+jne off.b459
 test byte[ebp-0x24], 1
 mov dword[0x4053a0], eax
 mov eax, 0xa
 mov dword[0x4053c0], 0x400000
-je 0x401393
+je off.b501
 movzx eax, word[ebp-0x20]
 mov dword[0x4053b0], eax
 mov eax, dword[0x405010]
@@ -215,7 +212,7 @@ mov dword[esp], eax
 call sub.msvcrt.dll_malloc
 mov edx, dword[0x405014]
 mov dword[ebp-0x54], eax
-jmp 0x4013ea
+jmp off.b588
 mov edi, dword[edx+ebx*4]
 xor eax, eax
 or ecx, 0xffffffff
@@ -234,7 +231,7 @@ mov esi, dword[edx+ebx*4]
 inc ebx
 rep movsb
 cmp ebx, dword[ebp-0x58]
-jl 0x4013bc
+jl off.b542
 mov eax, dword[ebp-0x54]
 mov dword[eax+ebx*4], 0
 mov edx, dword[0x405018]
@@ -250,11 +247,11 @@ mov dword[esp], eax
 call fcn.004015d0
 cmp dword[0x405020], 0
 mov dword[0x40500c], eax
-jne 0x401440
+jne off.b674
 mov dword[esp], eax
 call sub.msvcrt.dll_exit
 cmp dword[0x405004], 0
-jne 0x40144f
+jne off.b689
 call dword[sym.imp.msvcrt.dll__cexit]
 mov eax, dword[0x40500c]
 lea esp, [ebp-0xc]

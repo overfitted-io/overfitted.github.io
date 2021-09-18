@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.028324959791196938</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,7 +71,7 @@ sub esp, 0x10
 push edi
 mov edi, eax
 test edi, edi
-jne 0x47748f
+jne off.b15
 pop edi
 add esp, 0x10
 ret
@@ -85,21 +85,21 @@ call ebx
 mov ebp, eax
 mov dword[esp+0x1c], ebp
 cmp ebp, dword[0x4c85cc]
-je 0x4774ba
+je off.b58
 mov esi, edi
 call fcn.00478540
 test al, al
-jne 0x477652
+jne off.b466
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov esi, eax
 test esi, esi
-jne 0x4774d4
+jne off.b84
 push eax
 push str.Shell_TrayWnd
 call dword[sym.imp.USER32.dll_FindWindowW]
 mov esi, eax
 cmp edi, esi
-jne 0x4774e2
+jne off.b98
 pop esi
 pop ebp
 pop ebx
@@ -110,33 +110,33 @@ ret
 push edi
 call dword[sym.imp.USER32.dll_IsIconic]
 test eax, eax
-je 0x4774f6
+je off.b118
 push 9
 push edi
 call dword[sym.imp.USER32.dll_ShowWindow]
 cmp byte[0x4c65da], 0
-jne 0x477510
+jne off.b144
 push esi
 call fcn.00477420
 add esp, 4
 test eax, eax
-jne 0x477654
+jne off.b468
 mov byte[esp+0x12], 0
 mov byte[esp+0x13], 0
 test esi, esi
-je 0x47756d
+je off.b237
 push 0
 push esi
 call ebx
 mov ebx, eax
 mov dword[esp+0x18], ebx
 test ebx, ebx
-je 0x47756d
+je off.b237
 cmp dword[0x4c85cc], ebx
-je 0x477554
+je off.b212
 call fcn.00478540
 test al, al
-jne 0x477554
+jne off.b212
 mov eax, dword[0x4c85cc]
 push 1
 push ebx
@@ -145,9 +145,9 @@ call dword[sym.imp.USER32.dll_AttachThreadInput]
 test eax, eax
 setne byte[esp+0x12]
 test ebp, ebp
-je 0x47756d
+je off.b237
 cmp ebx, ebp
-je 0x47756d
+je off.b237
 push 1
 push ebp
 push ebx
@@ -156,7 +156,7 @@ test eax, eax
 setne byte[esp+0x13]
 mov ebx, dword[sym.imp.USER32.dll_SetForegroundWindow]
 mov dword[esp+0x14], 0
-jmp 0x477580
+jmp off.b256
 push edi
 call ebx
 push 1
@@ -168,23 +168,23 @@ mov dword[0x4c28b4], 1
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov ebp, eax
 cmp ebp, edi
-jne 0x4775b3
+jne off.b307
 mov ebp, edi
-jmp 0x4775c4
+jmp off.b324
 cmp ebp, esi
-je 0x4775c8
+je off.b328
 push 4
 push ebp
 call dword[sym.imp.USER32.dll_GetWindow]
 cmp edi, eax
-jne 0x4775c8
+jne off.b328
 test ebp, ebp
-jne 0x477609
+jne off.b393
 mov eax, dword[esp+0x14]
 inc eax
 mov dword[esp+0x14], eax
 cmp eax, 5
-jl 0x477580
+jl off.b256
 push 0xffc3d44d
 push 0
 push 0
@@ -204,7 +204,7 @@ call fcn.00477420
 add esp, 0x34
 mov ebp, eax
 cmp byte[esp+0x12], 0
-je 0x477624
+je off.b420
 mov ecx, dword[esp+0x18]
 mov edx, dword[0x4c85cc]
 push 0
@@ -212,7 +212,7 @@ push ecx
 push edx
 call dword[sym.imp.USER32.dll_AttachThreadInput]
 cmp byte[esp+0x13], 0
-je 0x47763d
+je off.b445
 mov eax, dword[esp+0x1c]
 mov ecx, dword[esp+0x18]
 push 0
@@ -220,7 +220,7 @@ push eax
 push ecx
 call dword[sym.imp.USER32.dll_AttachThreadInput]
 test ebp, ebp
-je 0x477652
+je off.b466
 push edi
 call dword[sym.imp.USER32.dll_BringWindowToTop]
 pop esi

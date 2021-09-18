@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-181.1457061767578, -182.34751892089844, '<b><a href="/report/fcn.00433010@279a61b1e76da49531f1f16fd1102a2d">fcn.00433010</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[-263.2259521484375, -118.11383819580078, '<b><a href="/report/fcn.00432af0@279a61b1e76da49531f1f16fd1102a2d">fcn.00432af0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-166.55775451660156, -79.14716339111328, '<b><a href="/report/fcn.004fe1f0@c60344b51fa39a329b92557d24ff7670">fcn.004fe1f0</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00433010@279a61b1e76da49531f1f16fd1102a2d">fcn.00433010</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -86,7 +84,7 @@ push 0
 call sub.WTSAPI32.dll_WTSEnumerateSessionsW
 mov dword[ebp-0x10], eax
 cmp dword[ebp-0x10], 0
-jne 0x4330a6
+jne off.b150
 mov dword[ebp-0x130], 0
 push 0x110
 push 0
@@ -99,29 +97,29 @@ lea eax, [ebp-0x130]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetVersionExW]
 test eax, eax
-je 0x433099
+je off.b137
 cmp dword[ebp-0x12c], 6
-jne 0x433099
+jne off.b137
 call dword[sym.imp.KERNEL32.dll_GetLastError]
-jmp 0x433111
+jmp off.b257
 mov ecx, dword[ebp+8]
 mov dword[ecx], 0
 xor eax, eax
-jmp 0x433111
+jmp off.b257
 mov dword[ebp-4], 0x490
 mov dword[ebp-0x134], 0
-jmp 0x4330c8
+jmp off.b184
 mov edx, dword[ebp-0x134]
 add edx, 1
 mov dword[ebp-0x134], edx
 mov eax, dword[ebp-0x134]
 cmp eax, dword[ebp-8]
-jae 0x433105
+jae off.b245
 mov ecx, dword[ebp-0x134]
 imul ecx, ecx, 0xc
 mov edx, dword[ebp-0xc]
 cmp dword[edx+ecx+8], 0
-jne 0x433103
+jne off.b243
 mov eax, dword[ebp-0x134]
 imul eax, eax, 0xc
 mov ecx, dword[ebp+8]
@@ -129,8 +127,8 @@ mov edx, dword[ebp-0xc]
 mov eax, dword[edx+eax]
 mov dword[ecx], eax
 mov dword[ebp-4], 0
-jmp 0x433105
-jmp 0x4330b9
+jmp off.b245
+jmp off.b169
 mov ecx, dword[ebp-0xc]
 push ecx
 call sub.WTSAPI32.dll_WTSFreeMemory

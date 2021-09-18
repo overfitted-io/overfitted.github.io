@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.024331115968759268</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.015801036452955948</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [67.98088073730469, -112.7381820678711, '<b><a href="/report/fcn.00412f38@4c2db4ba96e80258daff665d7d7a016a">fcn.00412f38</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
-[-102.33220672607422, -129.5045623779297, '<b><a href="/report/fcn.00404ba4@4c8869bb42f854640703b6ddda29ee38">fcn.00404ba4</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
-[-119.12806701660156, 40.805572509765625, '<b><a href="/report/fcn.004098a8@4c2db4ba96e80258daff665d7d7a016a">fcn.004098a8</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'null'],
-[51.18516159057617, 57.57206344604492, '<b><a href="/report/fcn.10018cb4@481b545f5c18f2fce1caac67ddc419e8">fcn.10018cb4</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00412f38@4c2db4ba96e80258daff665d7d7a016a">fcn.00412f38</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -103,7 +100,7 @@ push 0
 call dword[sym.imp.USER32.dll_MapWindowPoints]
 mov eax, dword[esi+4]
 test eax, eax
-je 0x412f9f
+je off.b103
 push eax
 call dword[sym.imp.USER32.dll_DestroyWindow]
 mov eax, dword[ebp-0x10]
@@ -133,20 +130,20 @@ push edi
 call dword[sym.imp.USER32.dll_CreateWindowExW]
 mov dword[esi+4], eax
 cmp dword[esi+0xc], edi
-jne 0x413020
+jne off.b232
 cmp dword[ebp+0xc], edi
-je 0x413043
+je off.b267
 cmp dword[esi+0x14], edi
-jne 0x413043
+jne off.b267
 mov eax, dword[esi+0x10]
 cmp eax, edi
-je 0x413043
+je off.b267
 push eax
 mov ecx, esi
 call fcn.00412bb1
 mov esi, eax
 cmp esi, edi
-je 0x413043
+je off.b267
 push 5
 push dword[ebp+0xc]
 call dword[sym.imp.USER32.dll_ShowWindow]
@@ -155,16 +152,16 @@ push dword[ebp+0xc]
 call dword[sym.imp.USER32.dll_SetWindowTextW]
 push esi
 call fcn.0040a41c
-jmp 0x413043
+jmp off.b267
 cmp eax, edi
-je 0x413036
+je off.b254
 push 5
 push eax
 call dword[sym.imp.USER32.dll_ShowWindow]
 push dword[esi+4]
 call dword[sym.imp.USER32.dll_UpdateWindow]
 cmp dword[esi+0x1c], 0x64
-jbe 0x413043
+jbe off.b267
 mov ecx, esi
 call fcn.004128c6
 pop edi

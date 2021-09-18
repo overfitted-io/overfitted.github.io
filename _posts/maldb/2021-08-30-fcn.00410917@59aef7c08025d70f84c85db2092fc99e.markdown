@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +34,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-1067.9267578125, 641.1558837890625, '<b><a href="/report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e">fcn.00410917</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
-[1067.9267578125, -641.1558837890625, '<b><a href="/report/fcn.004191be@1123b7aa5760238fe93045e585b8234c">fcn.004191be</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
+    [1371.434814453125, -1482.2000732421875, '<b><a href="/report/fcn.00410917@59aef7c08025d70f84c85db2092fc99e">fcn.00410917</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
+[-1371.434814453125, 1482.2000732421875, '<b><a href="/report/fcn.004191be@1123b7aa5760238fe93045e585b8234c">fcn.004191be</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
 
         ]);
 
@@ -70,7 +70,7 @@ index: false
 
 call fcn.0040ed85
 test eax, eax
-jne 0x410928
+jne off.b17
 call fcn.00410742
 xor eax, eax
 ret
@@ -80,7 +80,7 @@ push str.kernel32.dll
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 mov edi, eax
 test edi, edi
-je 0x4109a6
+je off.b143
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
 push str.FlsAlloc
 push edi
@@ -99,7 +99,7 @@ mov dword[0x436670], eax
 call esi
 cmp dword[0x43666c], 0
 mov dword[0x436674], eax
-jne 0x4109a6
+jne off.b143
 mov eax, dword[sym.imp.KERNEL32.dll_TlsGetValue]
 mov dword[0x43666c], eax
 mov eax, dword[sym.imp.KERNEL32.dll_TlsSetValue]
@@ -111,7 +111,7 @@ push 0x4107d0
 call dword[0x436668]
 cmp eax, 0xffffffff
 mov dword[0x433520], eax
-je 0x4109fc
+je off.b229
 xor edi, edi
 push 0x8c
 inc edi
@@ -121,19 +121,19 @@ mov esi, eax
 test esi, esi
 pop ecx
 pop ecx
-je 0x4109fc
+je off.b229
 push esi
 push dword[0x433520]
 call dword[0x436670]
 test eax, eax
-je 0x4109fc
+je off.b229
 mov dword[esi+0x54], 0x433528
 mov dword[esi+0x14], edi
 call dword[sym.imp.KERNEL32.dll_GetCurrentThreadId]
 or dword[esi+4], 0xffffffff
 mov dword[esi], eax
 mov eax, edi
-jmp 0x410a03
+jmp off.b236
 call fcn.00410742
 xor eax, eax
 pop edi

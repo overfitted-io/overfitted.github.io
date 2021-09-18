@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,9 +74,9 @@ push edi
 mov edi, ecx
 cmp dword[edi+0xc], 1
 mov esi, 0x4e20
-jne 0x405bdd
+jne off.b38
 cmp dword[ebp+0xc], esi
-jbe 0x405bd2
+jbe off.b27
 mov dword[ebp+0xc], esi
 push 0xfffffffffffffff6
 call dword[sym.imp.KERNEL32.dll_GetStdHandle]
@@ -89,27 +89,27 @@ push dword[ebp+8]
 push dword[edi+4]
 call dword[sym.imp.KERNEL32.dll_ReadFile]
 test eax, eax
-jne 0x405c2d
+jne off.b118
 mov ecx, edi
 call fcn.004058da
 test al, al
-je 0x405c13
+je off.b92
 cmp dword[ebp+0xc], esi
-jbe 0x405c13
+jbe off.b92
 push esi
 push dword[ebp+8]
 mov ecx, edi
 call fcn.00405bb7
-jmp 0x405c30
+jmp off.b121
 cmp dword[edi+0xc], 1
-jne 0x405c28
+jne off.b113
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x6d
-jne 0x405c28
+jne off.b113
 xor eax, eax
-jmp 0x405c30
+jmp off.b121
 or eax, 0xffffffff
-jmp 0x405c30
+jmp off.b121
 mov eax, dword[ebp-4]
 pop edi
 pop esi

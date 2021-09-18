@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -69,42 +69,42 @@ index: false
 push ecx
 mov ecx, dword[esi+0x1850]
 test ecx, ecx
-je 0x478b9e
+je off.b190
 mov eax, dword[esi]
 test eax, eax
-je 0x478b9e
+je off.b190
 push edi
 test al, 1
-jne 0x478b0a
+jne off.b42
 mov eax, dword[esi+0x100c]
 cmp word[eax], 0
-je 0x478b26
+je off.b70
 push 0x7fff
 lea edi, [esi+0x1858]
 push edi
 push ecx
 call dword[sym.imp.USER32.dll_GetWindowTextW]
 test eax, eax
-jne 0x478b26
+jne off.b70
 xor ecx, ecx
 mov word[edi], cx
 test byte[esi], 4
 mov edi, dword[sym.imp.USER32.dll_GetWindowThreadProcessId]
-je 0x478b41
+je off.b97
 mov eax, dword[esi+0x1850]
 lea edx, [esi+0x1854]
 push edx
 push eax
 call edi
 test byte[esi], 0x20
-je 0x478b7f
+je off.b159
 mov edx, dword[esi+0x1850]
 lea ecx, [esp+4]
 push ecx
 push edx
 call edi
 test eax, eax
-je 0x478b7f
+je off.b159
 movzx eax, byte[esi+0x1828]
 mov ecx, dword[esp+4]
 push eax
@@ -112,12 +112,12 @@ lea eax, [esi+0x11a58]
 call fcn.00450290
 add esp, 4
 test eax, eax
-jne 0x478b7f
+jne off.b159
 xor ecx, ecx
 mov word[esi+0x11a58], cx
 test byte[esi], 8
 pop edi
-je 0x478b9e
+je off.b190
 mov eax, dword[esi+0x1850]
 push 0x101
 lea edx, [esi+0x11856]

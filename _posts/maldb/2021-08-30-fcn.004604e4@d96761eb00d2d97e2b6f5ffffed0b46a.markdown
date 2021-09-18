@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,27 +70,27 @@ push ebx
 push edi
 mov edi, ecx
 cmp dword[edi+0x10], 0
-je 0x460529
+je off.b69
 push esi
 xor esi, esi
 cmp dword[edi+0x20], esi
-jne 0x460528
+jne off.b68
 push dword[edi+0x10]
 call dword[sym.imp.USER32.dll_IsWindow]
 test eax, eax
-je 0x460525
+je off.b65
 mov ebx, dword[edi+0x10]
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 cmp eax, ebx
-je 0x460528
+je off.b68
 push ebx
 call fcn.00404a35
 push 0xf
 call fcn.00461652
 inc esi
 cmp esi, 3
-jl 0x460503
-jmp 0x460528
+jl off.b31
+jmp off.b68
 mov dword[edi+0x10], esi
 pop esi
 pop edi

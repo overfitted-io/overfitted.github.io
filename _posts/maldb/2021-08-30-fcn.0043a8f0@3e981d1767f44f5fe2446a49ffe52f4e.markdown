@@ -1,0 +1,162 @@
+---
+layout: post
+title:  "fcn.0043a8f0 @ 3e981d1767f44f5fe2446a49ffe52f4e"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** fcn.0043a8f0
+- **Origin (md5):** 3e981d1767f44f5fe2446a49ffe52f4e
+- **VirusTotal:** [virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="SCREEN">SCREEN</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/fcn.0043a8f0@3e981d1767f44f5fe2446a49ffe52f4e">fcn.0043a8f0</a><br>@3e981d1767f44f5fe2446a49ffe52f4e</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+sub esp, 0x18
+push esi
+push edi
+mov edi, dword[esp+0x24]
+mov esi, ecx
+test edi, edi
+je off.b245
+mov eax, dword[esi+0x1c]
+cmp edi, eax
+je off.b42
+push edi
+push eax
+call dword[sym.imp.USER32.dll_IsChild]
+test eax, eax
+je off.b245
+cmp edi, dword[esi+0x1c]
+jne off.b114
+lea eax, [esp+8]
+push eax
+call dword[sym.imp.USER32.dll_GetCursorPos]
+mov edx, dword[esi+0x1c]
+lea ecx, [esp+0x10]
+push ecx
+push edx
+call dword[sym.imp.USER32.dll_GetClientRect]
+lea eax, [esp+0x10]
+mov ecx, esi
+push eax
+call fcn.004ba528
+mov ecx, dword[esp+0xc]
+mov edx, dword[esp+8]
+push ecx
+lea eax, [esp+0x14]
+push edx
+push eax
+call dword[sym.imp.USER32.dll_PtInRect]
+test eax, eax
+je off.b245
+push 0
+push 0
+push 0x3e9
+call fcn.00433f40
+mov edx, dword[esi+0xdc]
+lea ecx, [esp+0x24]
+push 0
+push ecx
+push edx
+mov ecx, eax
+call fcn.0042efa0
+test eax, eax
+je off.b245
+cmp edi, dword[esi+0x1c]
+jne off.b162
+xor eax, eax
+jmp off.b179
+mov ecx, dword[esp+0x24]
+push 1
+push edi
+call fcn.0042f830
+cmp eax, 0xffffffff
+je off.b245
+push 0
+push eax
+mov eax, dword[esp+0x2c]
+lea ecx, [eax+0x14]
+call fcn.0042e950
+mov esi, eax
+add esi, 0x18
+push esi
+call fcn.0049b580
+add esi, eax
+push esi
+call fcn.0049b580
+add esi, eax
+add esp, 8
+mov esi, dword[esi+0x14]
+test esi, esi
+je off.b245
+push esi
+call dword[sym.imp.USER32.dll_SetCursor]
+pop edi
+mov eax, 1
+pop esi
+add esp, 0x18
+ret 4
+pop edi
+xor eax, eax
+pop esi
+add esp, 0x18
+ret 4
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/3e981d1767f44f5fe2446a49ffe52f4e

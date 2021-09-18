@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,9 +74,9 @@ push edi
 mov edi, dword[esp+0x20]
 test edi, edi
 mov dword[esp+0x18], ebx
-je 0x405438
+je off.b24
 mov esi, dword[edi]
-jmp 0x40543a
+jmp off.b26
 xor esi, esi
 mov ebp, dword[esp+0x1c]
 mov edx, dword[esp+0x14]
@@ -90,7 +90,7 @@ push edx
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-je 0x405462
+je off.b66
 pop edi
 pop esi
 pop ebp
@@ -98,21 +98,21 @@ xor al, al
 pop ebx
 ret 0x10
 cmp dword[esp+0x18], ebx
-jne 0x405459
+jne off.b57
 cmp ebx, 1
-je 0x405472
+je off.b82
 cmp ebx, 2
-jne 0x4054b1
+jne off.b145
 test ebp, ebp
-je 0x4054b1
+je off.b145
 test edi, edi
-je 0x4054b1
+je off.b145
 cmp esi, 2
-jb 0x405459
+jb off.b57
 mov eax, dword[edi]
 lea ecx, [esi-2]
 cmp ecx, eax
-jae 0x40549f
+jae off.b127
 shr esi, 1
 sub esi, 1
 pop edi
@@ -132,21 +132,21 @@ mov al, 1
 pop ebx
 ret 0x10
 cmp ebx, 7
-jne 0x4054e8
+jne off.b200
 test ebp, ebp
-je 0x4054e8
+je off.b200
 test edi, edi
-je 0x4054e8
+je off.b200
 cmp esi, 4
-jb 0x405459
+jb off.b57
 mov eax, dword[edi]
 lea edx, [esi-4]
 cmp edx, eax
-jae 0x4054d5
+jae off.b181
 shr esi, 1
 sub esi, 1
 mov eax, esi
-jmp 0x4054da
+jmp off.b186
 shr eax, 1
 add eax, 1
 mov word[ebp+eax*2-2], 0

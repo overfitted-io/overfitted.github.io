@@ -1,0 +1,170 @@
+---
+layout: post
+title:  "sym.MFC80D.DLL_Ordinal_1927 @ ebea46c6b17785efc2ebcb24ad99656c"
+date:   2021-09-10 15:52:19 +0300
+categories: report
+index: false
+---
+
+# Generic Information
+- **Function:** sym.MFC80D.DLL\_Ordinal\_1927
+- **Origin (md5):** ebea46c6b17785efc2ebcb24ad99656c
+- **VirusTotal:** [virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c][virustotal_ref]
+
+# Code Tags
+<span class="tag" id="RESOURCE">RESOURCE</span>
+
+
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
+
+# Similar Functions
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+    var data = new google.visualization.DataTable();
+        data.addColumn('number', 'X');
+        data.addColumn('number', 'Y');
+        data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+        data.addColumn({'type': 'string', 'role': 'style'});
+        
+        data.addRows([
+    [0, 0, '<b><a href="/report/sym.MFC80D.DLL_Ordinal_1927@ebea46c6b17785efc2ebcb24ad99656c">sym.MFC80D.DLL_Ordinal_1927</a><br>@ebea46c6b17785efc2ebcb24ad99656c</b><br>', 'point { fill-color: #e0440e; }'],
+
+        ]);
+
+    var options = {
+        title: 'Similarity Plot',
+        legend: 'none',
+        colors: ['#dedbd9', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+        tooltip: {isHtml: true, trigger: 'both'},
+        explorer: {
+        actions: ["dragToZoom", "rightClickToReset"],
+        },
+        chartArea: {
+        width: '80%',
+        height: '80%'
+        },
+        width: '100%',
+        height: '100%'
+    };
+
+    var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+    }
+    
+</script>
+
+
+<div id="chart_div" style="width: 100%px; height: 100%;"></div>
+
+# Disassembled Code
+{% highlight nasm %}
+
+push ebp
+mov ebp, esp
+sub esp, 0x28
+mov dword[ebp-0x24], ecx
+mov eax, dword[ebp-0x24]
+mov ecx, dword[eax+0x60]
+mov dword[ebp-8], ecx
+mov edx, dword[ebp-0x24]
+mov eax, dword[edx+0x5c]
+mov dword[ebp-0xc], eax
+mov ecx, dword[ebp-0x24]
+cmp dword[ecx+0x58], 0
+je off.b92
+push 5
+mov edx, dword[ebp-0x24]
+mov eax, dword[edx+0x58]
+push eax
+call sym.MFC80D.DLL_Ordinal_1413
+mov dword[ebp-0x10], eax
+push 5
+mov ecx, dword[ebp-0x24]
+mov edx, dword[ecx+0x58]
+push edx
+mov eax, dword[ebp-0x10]
+push eax
+call dword[sym.imp.KERNEL32.dll_FindResourceA]
+mov dword[ebp-0x14], eax
+mov ecx, dword[ebp-0x14]
+push ecx
+mov edx, dword[ebp-0x10]
+push edx
+call dword[sym.imp.KERNEL32.dll_LoadResource]
+mov dword[ebp-0xc], eax
+cmp dword[ebp-0xc], 0
+je off.b111
+mov eax, dword[ebp-0xc]
+push eax
+call dword[sym.imp.KERNEL32.dll_LockResource]
+mov dword[ebp-8], eax
+mov dword[ebp-4], 1
+cmp dword[ebp-8], 0
+je off.b250
+mov ecx, dword[ebp-8]
+mov edx, dword[ecx]
+mov dword[ebp-0x20], edx
+mov eax, dword[ebp-8]
+movzx ecx, word[eax+2]
+cmp ecx, 0xffff
+jne off.b180
+mov edx, dword[ebp-8]
+mov eax, dword[edx+0xc]
+mov dword[ebp-0x20], eax
+mov ecx, dword[ebp-8]
+mov dx, word[ecx+0x12]
+mov word[ebp-0x1c], dx
+mov eax, dword[ebp-8]
+mov cx, word[eax+0x14]
+mov word[ebp-0x18], cx
+jmp off.b202
+mov edx, dword[ebp-8]
+mov ax, word[edx+0xa]
+mov word[ebp-0x1c], ax
+mov ecx, dword[ebp-8]
+mov dx, word[ecx+0xc]
+mov word[ebp-0x18], dx
+mov eax, dword[ebp-0x20]
+and eax, 0x1801
+jne off.b237
+movsx ecx, word[ebp-0x1c]
+test ecx, ecx
+jne off.b237
+movsx edx, word[ebp-0x18]
+test edx, edx
+jne off.b237
+mov dword[ebp-0x28], 1
+jmp off.b244
+mov dword[ebp-0x28], 0
+mov eax, dword[ebp-0x28]
+mov dword[ebp-4], eax
+mov ecx, dword[ebp-0x24]
+cmp dword[ecx+0x58], 0
+jne off.b268
+mov edx, dword[ebp-0x24]
+cmp dword[edx+0x5c], 0
+je off.b277
+mov eax, dword[ebp-0xc]
+push eax
+call fcn.78252fb0
+mov ecx, dword[ebp-0x24]
+cmp dword[ecx+0x58], 0
+je off.b296
+mov edx, dword[ebp-0xc]
+push edx
+call dword[sym.imp.KERNEL32.dll_FreeResource]
+mov eax, dword[ebp-4]
+mov esp, ebp
+pop ebp
+ret
+
+{% endhighlight %}
+
+[virustotal_ref]: https://www.virustotal.com/gui/file/ebea46c6b17785efc2ebcb24ad99656c

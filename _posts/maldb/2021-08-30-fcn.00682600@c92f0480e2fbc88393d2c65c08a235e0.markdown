@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,16 +72,16 @@ mov eax, dword[0x83c164]
 cmove eax, dword[0x83c168]
 mov dword[esp+0x38], edx
 test eax, eax
-jne 0x682644
+jne off.b68
 lea eax, [edx-1]
 cmp eax, 0xfffffffd
-ja 0x6826a0
+ja off.b160
 mov dword[esp], edx
 call dword[sym.imp.KERNEL32.dll_CancelIo]
 xor edx, edx
 sub esp, 4
 test eax, eax
-jne 0x68263e
+jne off.b62
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov edx, eax
 mov eax, edx
@@ -101,19 +101,19 @@ mov dword[esp+0x10], eax
 call dword[sym.imp.WS2_32.dll_WSAIoctl]
 sub esp, 0x24
 test eax, eax
-jne 0x6826c5
+jne off.b197
 mov edx, dword[esp+0x38]
 lea eax, [edx-1]
 cmp eax, 0xfffffffd
-jbe 0x682624
+jbe off.b36
 mov dword[esp+8], 0x551
-mov dword[esp+4], str.src_win_tcp.c
+mov dword[esp+4], str.src_win_tcp.c_
 mov dword[esp], str.socket___0__socket___INVALID_SOCKET
 call fcn.006b2490
 mov edx, dword[esp+0x38]
-jmp 0x682624
+jmp off.b36
 mov edx, 0xffffffff
-jmp 0x68263e
+jmp off.b62
 
 {% endhighlight %}
 

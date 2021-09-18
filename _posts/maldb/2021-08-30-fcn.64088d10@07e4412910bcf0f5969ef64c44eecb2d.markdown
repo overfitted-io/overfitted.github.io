@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.20866547859128848</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-70.59422302246094, 24.39594841003418, '<b><a href="/report/fcn.64088d10@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088d10</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'point { fill-color: #e0440e; }'],
-[-203.9198760986328, -153.31890869140625, '<b><a href="/report/fcn.6408aaf0@07e4412910bcf0f5969ef64c44eecb2d">fcn.6408aaf0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[85.76952362060547, 110.59000396728516, '<b><a href="/report/fcn.6404f410@07e4412910bcf0f5969ef64c44eecb2d">fcn.6404f410</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-50.37588882446289, 164.5354766845703, '<b><a href="/report/fcn.00402040@9c2b894b84f59672d8be2e984066f76f">fcn.00402040</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'null'],
-[180.1825714111328, -86.35489654541016, '<b><a href="/report/fcn.6408a540@07e4412910bcf0f5969ef64c44eecb2d">fcn.6408a540</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[19.623258590698242, 39.51710891723633, '<b><a href="/report/fcn.64073cf0@07e4412910bcf0f5969ef64c44eecb2d">fcn.64073cf0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-193.3341827392578, -43.262882232666016, '<b><a href="/report/fcn.0042ca90@3dfcfb1d918b690c00de324bcfcdc082">fcn.0042ca90</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[130.61526489257812, -159.66639709472656, '<b><a href="/report/fcn.64089910@07e4412910bcf0f5969ef64c44eecb2d">fcn.64089910</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[-11.52547550201416, -237.6469268798828, '<b><a href="/report/main@912f1d013a0d6151bc7a7cef6da1b2a0">main</a><br>@912f1d013a0d6151bc7a7cef6da1b2a0</b><br>', 'null'],
-[-90.87396240234375, -207.8040313720703, '<b><a href="/report/main@152885a790b99953ce23874f0947b7bd">main</a><br>@152885a790b99953ce23874f0947b7bd</b><br>', 'null'],
-[-13.426799774169922, -109.08895874023438, '<b><a href="/report/fcn.64088f50@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088f50</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.64088d10@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088d10</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -96,7 +86,7 @@ lea ecx, [esi+0x60]
 call sym
 mov eax, dword[esi+0x6c]
 cmp eax, 0xffffffff
-jne 0x64088d60
+jne off.b80
 pop edi
 pop esi
 xor al, al
@@ -124,7 +114,7 @@ push eax
 call dword[sym.imp.WS2_32.dll_getsockname]
 mov ebx, dword[sym.imp.WS2_32.dll_WSAGetLastError]
 test eax, eax
-jne 0x64088ef8
+jne off.b488
 push edi
 push ebp
 lea eax, [esp+0x2c]
@@ -134,9 +124,9 @@ call fcn.6408a880
 movzx eax, word[esp+0x34]
 add esp, 0x10
 sub eax, 2
-je 0x64088eec
+je off.b476
 sub eax, 0x15
-je 0x64088ee0
+je off.b464
 mov dword[esi+0x54], 0xffffffff
 push 5
 mov ecx, edi
@@ -144,10 +134,10 @@ mov dword[esp+0x1c], 0
 mov dword[esp+0x24], 4
 call sym
 test al, al
-je 0x64088e48
+je off.b312
 call dword[sym.imp.Qt5Core.dll_public:_static_enum_QSysInfo::WinVersion___cdecl_QSysInfo::windowsVersion_void_]
 cmp eax, 0x80
-jl 0x64088e48
+jl off.b312
 lea eax, [esp+0x20]
 push eax
 lea eax, [esp+0x1c]
@@ -157,9 +147,9 @@ push 0x29
 push dword[esi+0x6c]
 call dword[sym.imp.WS2_32.dll_getsockopt]
 test eax, eax
-jne 0x64088e48
+jne off.b312
 cmp dword[esp+0x18], eax
-jne 0x64088e48
+jne off.b312
 push 4
 lea ecx, [esp+0x18]
 mov dword[esi+0x54], 2
@@ -171,16 +161,16 @@ lea ecx, [esp+0x14]
 mov dword[edi], eax
 call sym
 cmp dword[esi+0x54], 1
-jne 0x64088e91
+jne off.b385
 lea eax, [esp+0x13]
 mov byte[esp+0x13], 0
 push eax
 mov ecx, edi
 call sym
 cmp byte[esp+0x13], 0
-je 0x64088e91
+je off.b385
 test eax, eax
-jne 0x64088e91
+jne off.b385
 push 4
 lea ecx, [esp+0x18]
 mov dword[esi+0x54], 2
@@ -206,7 +196,7 @@ push eax
 push dword[esi+0x6c]
 call dword[sym.imp.WS2_32.dll_getpeername]
 test eax, eax
-jne 0x64088f25
+jne off.b533
 lea eax, [esi+0x60]
 push eax
 lea eax, [esi+0x64]
@@ -216,14 +206,14 @@ push eax
 push dword[esi+0x6c]
 call fcn.6408a880
 add esp, 0x10
-jmp 0x64088f27
+jmp off.b535
 mov dword[esi+0x54], 1
-jmp 0x64088dd6
+jmp off.b198
 mov dword[esi+0x54], 0
-jmp 0x64088dd6
+jmp off.b198
 call ebx
 cmp eax, 0x2736
-jne 0x64088dd6
+jne off.b198
 push 8
 push 0xa
 mov ecx, esi

@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="SCREENSHOTS_FOREGROUND_WINDOW">SCREENSHOTS_FOREGROUND_WINDOW / 0.022030197143863017</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,9 +34,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [3124.1630859375, 960.8093872070312, '<b><a href="/report/fcn.004027d9@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004027d9</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
-[-7161.21728515625, -167.88636779785156, '<b><a href="/report/fcn.004892b0@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004892b0</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[-1933.4771728515625, -480.35357666015625, '<b><a href="/report/fcn.1007fb2b@e5d49e0823e602f2ee948ac39d32c1eb">fcn.1007fb2b</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004027d9@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.004027d9</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -78,7 +77,7 @@ push 0x1d0
 call fcn.00420ff6
 pop ecx
 test eax, eax
-je 0x402a36
+je off.b605
 mov ecx, eax
 call fcn.0040112a
 mov edi, eax
@@ -103,14 +102,14 @@ mov eax, dword[eax+esi*4]
 mov eax, dword[eax]
 mov dword[eax+4], esi
 cmp ebx, 0xffffffff
-jne 0x40284f
+jne off.b118
 mov ebx, 0x80ca0000
 or ebx, 0x4000000
 mov eax, 0x80000
 test ebx, 0x10000
-jne 0x402a3d
+jne off.b612
 test ebx, 0x40000
-jne 0x402a44
+jne off.b619
 mov eax, dword[ebp+0x20]
 inc eax
 neg eax
@@ -125,11 +124,11 @@ mov eax, dword[ebp+0xc]
 mov dword[ebp+0xc], eax
 cmp dword[ebp+0x14], 0xffffffff
 mov ecx, 0x190
-je 0x402a4b
+je off.b626
 cmp dword[ebp+0x18], 0xffffffff
-je 0x402a53
+je off.b634
 cmp eax, 0xffffffff
-jne 0x4028df
+jne off.b262
 push 0
 lea eax, [ebp-0x18]
 push eax
@@ -148,7 +147,7 @@ sub eax, edx
 sar eax, 1
 mov dword[ebp+0xc], eax
 cmp dword[ebp+0x20], 0xffffffff
-jne 0x40292b
+jne off.b338
 push 0
 lea eax, [ebp-0x18]
 push eax
@@ -167,7 +166,7 @@ sub eax, edx
 sar eax, 1
 mov dword[ebp+0x20], eax
 test ebx, 0x400000
-je 0x40292b
+je off.b338
 push 4
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
 push 0xfffffffffffffffe
@@ -240,7 +239,7 @@ push edi
 mov ecx, 0x4c67b0
 call fcn.00402344
 cmp dword[0x4c67d4], 0
-jne 0x402a07
+jne off.b558
 push 0x401256
 push 0x28
 push 0
@@ -262,26 +261,26 @@ mov esp, ebp
 pop ebp
 ret 0x20
 xor edi, edi
-jmp 0x4027fe
+jmp off.b37
 or ebx, eax
-jmp 0x402866
+jmp off.b141
 or ebx, eax
-jmp 0x402872
+jmp off.b153
 mov dword[ebp+0x14], ecx
-jmp 0x4028a3
+jmp off.b202
 mov dword[ebp+0x18], ecx
-jmp 0x4028ad
+jmp off.b212
 xor esi, esi
 test ecx, ecx
-jle 0x40282b
+jle off.b82
 mov edx, dword[0x4c6810]
 mov eax, dword[edx+esi*4]
 cmp dword[eax], 0
-je 0x40282b
+je off.b82
 inc esi
 cmp esi, ecx
 jl 0x43c31c
-jmp 0x40282b
+jmp off.b82
 mov edx, dword[ebp+0x24]
 test edx, edx
 jne 0x43c369
@@ -299,7 +298,7 @@ jmp 0x43c362
 push dword[edi]
 call fcn.0048b00f
 xor eax, eax
-jmp 0x402a2d
+jmp off.b596
 push 0x40
 pop ecx
 xor eax, ecx
@@ -345,7 +344,7 @@ push 4
 call dword[sym.imp.USER32.dll_GetSystemMetrics]
 add dword[ebp+0x20], eax
 mov eax, dword[ebp+0xc]
-jmp 0x402894
+jmp off.b187
 cmp dword[ebp+0x14], 0
 je 0x43c35b
 cmp dword[ebp+0x18], 0
@@ -353,7 +352,7 @@ je 0x43c35b
 push 0
 push 4
 call fcn.00402a5b
-jmp 0x402a2b
+jmp off.b594
 
 {% endhighlight %}
 

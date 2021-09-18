@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -80,7 +80,7 @@ mov ecx, eax
 and ecx, 0x8000
 test ah, 0x20
 mov dword[esp+0x1c], ecx
-jne 0x6991c0
+jne off.b944
 mov eax, dword[sym.imp.KERNEL32.dll_EnterCriticalSection]
 lea ebx, [esi+0x9c]
 mov dword[esp], ebx
@@ -89,15 +89,15 @@ call eax
 sub esp, 4
 mov eax, dword[esp+0x1c]
 test eax, eax
-je 0x6990d0
+je off.b704
 mov edi, dword[esi+0x14]
 test edi, edi
-jne 0x6990b3
+jne off.b675
 nop
 lea esi, [esi]
 mov ebp, dword[esi+0xc]
 test ebp, ebp
-je 0x6991d3
+je off.b963
 mov edi, dword[sym.imp.WS2_32.dll_shutdown]
 mov dword[esp+4], 2
 mov eax, dword[ebp+0x98]
@@ -105,9 +105,9 @@ mov dword[esp], eax
 call edi
 sub esp, 8
 test byte[esi+0xdc], 4
-je 0x698ee0
+je off.b208
 cmp dword[esi+0xbc], 0xffffffff
-je 0x698ee0
+je off.b208
 mov eax, dword[esi+0xc0]
 mov dword[esp+0xc], 0
 mov dword[esp+8], 1
@@ -116,27 +116,27 @@ mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_send]
 sub esp, 0x10
 test eax, eax
-jle 0x699185
+jle off.b885
 nop
 lea esi, [esi]
 mov ebp, dword[ebp+4]
 test ebp, ebp
-jne 0x698e81
+jne off.b113
 mov edi, dword[esp+0x14]
 test edi, edi
-je 0x6991f5
+je off.b997
 mov edi, dword[esi+0xc]
 mov eax, dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 test edi, edi
 mov dword[esp+0x14], eax
-je 0x698f6c
+je off.b348
 mov ebp, dword[sym.imp.KERNEL32.dll_WaitForSingleObject]
-jmp 0x698f17
+jmp off.b263
 mov edi, dword[edi+4]
 test edi, edi
-je 0x698f6c
+je off.b348
 cmp byte[edi+0x9e], 0
-jne 0x698f10
+jne off.b256
 mov dword[esp], ebx
 call dword[esp+0x14]
 sub esp, 4
@@ -146,7 +146,7 @@ mov dword[esp], eax
 call ebp
 sub esp, 8
 test eax, eax
-jne 0x69924f
+jne off.b1087
 mov eax, dword[edi+0x50]
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
@@ -157,23 +157,23 @@ mov byte[edi+0x9e], 1
 mov edi, dword[esi+0xc]
 sub esp, 4
 test edi, edi
-jne 0x698f17
+jne off.b263
 mov dword[esp], ebx
 call dword[esp+0x14]
 sub esp, 4
 mov ecx, dword[esp+0x1c]
 test ecx, ecx
-jne 0x6991e2
+jne off.b978
 mov ebx, dword[esi+0xc]
 test ebx, ebx
-je 0x699072
+je off.b610
 test byte[esi+0xdc], 4
-je 0x698fa3
+je off.b403
 cmp byte[ebx+0x9e], 0
-je 0x699203
+je off.b1011
 mov edi, dword[ebx+0x10]
 test byte[edi+0xdc], 4
-jne 0x699100
+jne off.b752
 lea ebp, [edi+0x9c]
 mov dword[esp+4], 3
 mov dword[esp], ebx
@@ -186,26 +186,26 @@ mov edx, dword[ebx+8]
 mov eax, dword[eax+0xd4]
 cmp dword[ebx+0x8c], eax
 mov eax, dword[ebx+0xc]
-je 0x699110
+je off.b768
 test eax, eax
-je 0x699170
+je off.b864
 mov dword[eax+8], edx
 mov eax, dword[ebx+8]
 mov edx, dword[ebx+0xc]
 test eax, eax
-je 0x699160
+je off.b848
 mov dword[eax+0xc], edx
 mov eax, dword[ebx+4]
 mov dword[ebx+8], 0
 mov dword[ebx+0xc], 0
 mov edx, dword[ebx]
 test eax, eax
-je 0x699150
+je off.b832
 mov dword[eax], edx
 mov eax, dword[ebx]
 mov edx, dword[ebx+4]
 test eax, eax
-je 0x699140
+je off.b816
 mov dword[eax+4], edx
 mov dword[ebx], 0
 mov dword[ebx+4], 0
@@ -213,7 +213,7 @@ mov eax, dword[edi+0x18]
 mov dword[ebx], eax
 mov edx, dword[edi+0x1c]
 test edx, edx
-je 0x699130
+je off.b800
 mov eax, dword[edi+0x18]
 mov dword[eax+4], ebx
 mov dword[edi+0x18], ebx
@@ -222,7 +222,7 @@ call dword[esp+0x14]
 mov ebx, dword[esi+0xc]
 sub esp, 4
 test ebx, ebx
-jne 0x698f8d
+jne off.b381
 add esp, 0x2c
 mov eax, esi
 pop ebx
@@ -239,64 +239,64 @@ mov byte[edi+0xdc], 1
 mov byte[esi+0xc7], 1
 mov edi, dword[edi+4]
 test edi, edi
-je 0x698e70
+je off.b96
 mov eax, dword[edi+0xd0]
 test eax, eax
-je 0x699229
+je off.b1049
 movzx edx, byte[eax+4]
 test dl, dl
-jne 0x699096
-jmp 0x699080
+jne off.b646
+jmp off.b624
 mov ebp, dword[esi+0x10]
 test ebp, ebp
-jne 0x699275
+jne off.b1125
 mov ebp, dword[esi+0xc]
 test ebp, ebp
-jne 0x698e7b
+jne off.b107
 mov eax, dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 mov dword[esp], ebx
 mov dword[esp+0x14], eax
 call eax
 sub esp, 4
-jmp 0x698f82
+jmp off.b370
 mov dword[esp], ebx
 call fcn.00693c00
-jmp 0x698f82
+jmp off.b370
 test eax, eax
-je 0x699180
+je off.b880
 mov dword[eax+8], edx
 mov eax, dword[ebx+8]
 mov edx, dword[ebx+0xc]
 test eax, eax
-jne 0x699007
+jne off.b503
 mov dword[edi+0x24], edx
-jmp 0x69900a
+jmp off.b506
 mov dword[edi+0x1c], ebx
-jmp 0x69905a
+jmp off.b586
 mov dword[edi+0xc], edx
-jmp 0x699037
+jmp off.b551
 mov dword[edi+8], edx
-jmp 0x699027
+jmp off.b535
 mov dword[edi+0x2c], edx
-jmp 0x69900a
+jmp off.b506
 mov dword[edi+0x28], edx
-jmp 0x698ff9
+jmp off.b489
 mov dword[edi+0x20], edx
-jmp 0x699117
+jmp off.b775
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 cmp eax, 0x2733
-je 0x698ee0
+je off.b208
 mov eax, dword[0x83a8a0]
-mov dword[esp+0xc], str.Failed_to_signal_shutdown_via_inter-thread_communication_channel
+mov dword[esp+0xc], str.Failed_to_signal_shutdown_via_inter-thread_communication_channel_
 mov dword[esp+8], 0x1846
-mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
 mov dword[esp], eax
 call dword[0x83a8a4]
 lea esi, [esi]
 mov byte[esi+0xc7], 1
 mov eax, esi
 call fcn.00697ca0
-jmp 0x698e3d
+jmp off.b45
 mov eax, dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 mov dword[esp], ebx
 mov dword[esp+0x14], eax
@@ -305,36 +305,32 @@ push eax
 mov byte[esi+0xc7], 1
 mov eax, esi
 call fcn.00697ca0
-jmp 0x698f82
+jmp off.b370
 mov eax, dword[sym.imp.KERNEL32.dll_LeaveCriticalSection]
 mov dword[esp+0x14], eax
-jmp 0x698f6c
+jmp off.b348
 mov eax, dword[0x83a8a0]
-mov dword[esp+0xc], str.Failed_to_join_a_thread
-
+mov dword[esp+0xc], str.Failed_to_join_a_thread_n_
 mov dword[esp+8], 0x1872
-mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
 mov dword[esp], eax
 call dword[0x83a8a4]
 mov eax, dword[0x83a8a0]
-mov dword[esp+0xc], str.MHD_stop_daemon()_called_while_we_have_suspended_connections.
-
+mov dword[esp+0xc], str.MHD_stop_daemon()_called_while_we_have_suspended_connections._n_
 mov dword[esp+8], 0x181e
-mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
 mov dword[esp], eax
 call dword[0x83a8a4]
 mov eax, dword[0x83a8a0]
-mov dword[esp+0xc], str.Failed_to_join_a_thread
-
+mov dword[esp+0xc], str.Failed_to_join_a_thread_n_
 mov dword[esp+8], 0x1854
-mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
 mov dword[esp], eax
 call dword[0x83a8a4]
 mov eax, dword[0x83a8a0]
-mov dword[esp+0xc], str.MHD_stop_daemon()_called_while_we_have_suspended_connections.
-
+mov dword[esp+0xc], str.MHD_stop_daemon()_called_while_we_have_suspended_connections._n_
 mov dword[esp+8], 0x183d
-mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c
+mov dword[esp+4], str.T:_Bin-prep_mhd_src_libmicrohttpd-0.9.58_src_microhttpd_daemon.c_
 mov dword[esp], eax
 call dword[0x83a8a4]
 nop

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.10842679112442888</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,14 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [132.2393798828125, 20.785839080810547, '<b><a href="/report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006821a0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-43.804466247558594, -121.77437591552734, '<b><a href="/report/fcn.0068d130@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068d130</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[52.87294006347656, 82.70622253417969, '<b><a href="/report/fcn.0067c4c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067c4c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-88.22291564941406, -31.54355812072754, '<b><a href="/report/fcn.006833e0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006833e0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[28.060762405395508, -30.66984748840332, '<b><a href="/report/fcn.006b7d90@c92f0480e2fbc88393d2c65c08a235e0">fcn.006b7d90</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[54.533782958984375, -143.47019958496094, '<b><a href="/report/fcn.0068c3f0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068c3f0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[132.74195861816406, -79.83451080322266, '<b><a href="/report/fcn.006b7ee0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006b7ee0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-44.93948745727539, 59.27616500854492, '<b><a href="/report/fcn.00684b50@c92f0480e2fbc88393d2c65c08a235e0">fcn.00684b50</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.006821a0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006821a0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -81,7 +74,7 @@ sub esp, 0x4c
 cmp dword[ecx], 0xffffffff
 mov esi, dword[esp+0x60]
 mov dword[esp+0x38], 1
-jne 0x682390
+jne off.b496
 mov ebp, eax
 lea eax, [esp+0x38]
 mov edi, ecx
@@ -92,14 +85,14 @@ mov dword[esp+8], eax
 call dword[sym.imp.WS2_32.dll_ioctlsocket]
 sub esp, 0xc
 cmp eax, 0xffffffff
-je 0x6822c0
+je off.b288
 mov dword[esp+8], 0
 mov dword[esp+4], 1
 mov dword[esp], esi
 call dword[sym.imp.KERNEL32.dll_SetHandleInformation]
 sub esp, 0xc
 test eax, eax
-je 0x6822b1
+je off.b273
 mov dword[esp+0xc], 0
 mov dword[esp+8], esi
 mov eax, dword[ebp+0x1c]
@@ -108,36 +101,36 @@ mov dword[esp+4], eax
 call dword[sym.imp.KERNEL32.dll_CreateIoCompletionPort]
 sub esp, 0x10
 test eax, eax
-je 0x682330
+je off.b400
 mov eax, dword[ebx]
 mov ecx, dword[0x83c110]
 cmp dword[esp+0x64], 0x17
 mov edx, dword[0x83c164]
 cmovne edx, dword[0x83c168]
 test ecx, ecx
-je 0x68225c
+je off.b188
 mov ebp, eax
 and ebp, 0x100000
 or ebp, edx
-je 0x6822d0
+je off.b304
 test eax, 0x2000000
-jne 0x682350
+jne off.b432
 test eax, 0x4000000
-jne 0x682300
+jne off.b352
 cmp dword[esp+0x64], 0x17
 mov dword[edi], esi
-je 0x682320
+je off.b384
 mov edx, dword[ebx]
 xor eax, eax
 and edx, 0x1000000
-je 0x6822b7
+je off.b279
 mov dword[esp+8], 0x96
-mov dword[esp+4], str.src_win_tcp.c
-mov dword[esp], str.!(handle-_flags_&_UV_HANDLE_IPV6)
+mov dword[esp+4], str.src_win_tcp.c_
+mov dword[esp], str.!(handle-_flags_&_UV_HANDLE_IPV6)_
 mov dword[esp+0x2c], eax
 call fcn.006b2490
 mov eax, dword[esp+0x2c]
-jmp 0x6822b7
+jmp off.b279
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 add esp, 0x4c
 pop ebx
@@ -157,28 +150,28 @@ mov dword[esp], esi
 call ecx
 sub esp, 8
 test eax, eax
-je 0x6823b0
+je off.b528
 mov eax, dword[ebx]
 or eax, 0x40000
 mov dword[ebx], eax
-jmp 0x68225c
+jmp off.b188
 mov ecx, 0x3c
 mov edx, 1
 mov eax, esi
 call fcn.00682110
 test eax, eax
-je 0x682272
-jmp 0x6822b7
+je off.b210
+jmp off.b279
 or dword[ebx], 0x1000000
 xor eax, eax
-jmp 0x6822b7
+jmp off.b279
 mov eax, dword[esp+0x68]
 test eax, eax
-je 0x6822b1
+je off.b273
 mov eax, dword[ebx]
 or eax, 0x100000
 mov dword[ebx], eax
-jmp 0x682234
+jmp off.b148
 lea eax, [esp+0x3c]
 mov dword[esp+0x3c], 1
 mov dword[esp+0x10], 4
@@ -189,23 +182,23 @@ mov dword[esp], esi
 call dword[sym.imp.WS2_32.dll_setsockopt]
 sub esp, 0x14
 cmp eax, 0xffffffff
-je 0x6823a0
+je off.b512
 mov eax, dword[ebx]
-jmp 0x682267
+jmp off.b199
 mov eax, 0xfffff00e
-jmp 0x6822b7
+jmp off.b279
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 test eax, eax
-jne 0x6822b7
-jmp 0x682389
+jne off.b279
+jmp off.b489
 mov ebp, dword[sym.imp.KERNEL32.dll_GetLastError]
 call ebp
 cmp eax, 1
-jne 0x6823c4
+jne off.b548
 mov eax, dword[ebx]
-jmp 0x68225c
+jmp off.b188
 call ebp
-jmp 0x6822b7
+jmp off.b279
 
 {% endhighlight %}
 

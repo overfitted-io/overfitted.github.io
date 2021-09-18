@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.21385335948531659</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.07028905597917388</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -86,7 +86,7 @@ push str.SOFTWARE_risingRAV
 push reloc.OLEAUT32.dll_SysReAllocString
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyA]
 test eax, eax
-jne 0x403ba6
+jne off.b154
 call fcn.004038a5
 and dword[ebp-8], 0
 lea eax, [ebp-0xc]
@@ -96,11 +96,11 @@ push eax
 lea eax, [ebp-8]
 push eax
 push 0
-push str.installpath
+push str.installpath_
 push dword[ebp-4]
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 test eax, eax
-jne 0x403ba6
+jne off.b154
 call fcn.00403961
 lea eax, [ebp-0x110]
 push str._rsmain.exe
@@ -112,10 +112,10 @@ lea eax, [ebp-0x110]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesA]
 cmp eax, 0xffffffff
-je 0x403ba6
+je off.b154
 xor esi, esi
 inc esi
-jmp 0x403bad
+jmp off.b161
 call fcn.004038a5
 xor esi, esi
 push dword[ebp-4]

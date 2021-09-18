@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,12 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-25.35297393798828, -25.863069534301758, '<b><a href="/report/fcn.00490350@279a61b1e76da49531f1f16fd1102a2d">fcn.00490350</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[18.049375534057617, -93.92066955566406, '<b><a href="/report/fcn.004180b0@279a61b1e76da49531f1f16fd1102a2d">fcn.004180b0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[96.18705749511719, -73.67269134521484, '<b><a href="/report/fcn.00416770@279a61b1e76da49531f1f16fd1102a2d">fcn.00416770</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[25.96088981628418, 36.44548034667969, '<b><a href="/report/fcn.00416cf0@279a61b1e76da49531f1f16fd1102a2d">fcn.00416cf0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[101.07710266113281, 6.897366046905518, '<b><a href="/report/fcn.00418200@279a61b1e76da49531f1f16fd1102a2d">fcn.00418200</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[43.1846809387207, -30.02288055419922, '<b><a href="/report/fcn.004168d0@279a61b1e76da49531f1f16fd1102a2d">fcn.004168d0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00490350@279a61b1e76da49531f1f16fd1102a2d">fcn.00490350</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -102,7 +97,7 @@ push ecx
 push reloc.OLEAUT32.dll_SysReAllocString
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x4904c2
+jne off.b370
 xor edx, edx
 mov word[ebp-0x910], dx
 push 0x7fe
@@ -123,7 +118,7 @@ mov eax, dword[ebp-4]
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 test eax, eax
-jne 0x4904b8
+jne off.b360
 push 3
 push 0x507998
 lea ecx, [ebp-0x910]
@@ -131,7 +126,7 @@ push ecx
 push 0
 call dword[sym.imp.SHLWAPI.dll_StrIsIntlEqualW]
 test eax, eax
-je 0x4904b8
+je off.b360
 mov dword[ebp-0x91c], 0
 mov dword[ebp-0x914], 4
 lea edx, [ebp-0x914]
@@ -146,17 +141,17 @@ push ecx
 call dword[sym.imp.ADVAPI32.dll_RegQueryValueExW]
 mov dword[ebp-0x918], eax
 cmp dword[ebp-0x918], 2
-je 0x490490
+je off.b320
 cmp dword[ebp-0x918], 0
-jne 0x49049c
+jne off.b332
 cmp dword[ebp-0x91c], 1
-jne 0x49049c
+jne off.b332
 mov dword[ebp-0x10c], 0
-jmp 0x4904b8
+jmp off.b360
 cmp dword[ebp-0x918], 0
-jne 0x4904b8
+jne off.b360
 cmp dword[ebp-0x91c], 2
-jne 0x4904b8
+jne off.b360
 mov dword[ebp-0x10c], 1
 mov edx, dword[ebp-4]
 push edx

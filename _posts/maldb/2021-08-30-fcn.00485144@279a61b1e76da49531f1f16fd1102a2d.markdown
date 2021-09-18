@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -34,8 +34,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-3607.360595703125, 569.4523315429688, '<b><a href="/report/fcn.00485144@279a61b1e76da49531f1f16fd1102a2d">fcn.00485144</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[3607.360107421875, -569.4522094726562, '<b><a href="/report/fcn.00437b71@289859175c221b107317af7727d26c17">fcn.00437b71</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
+    [-457.6575622558594, 736.1072387695312, '<b><a href="/report/fcn.00485144@279a61b1e76da49531f1f16fd1102a2d">fcn.00485144</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
+[457.6573181152344, -736.1069946289062, '<b><a href="/report/fcn.00437b71@289859175c221b107317af7727d26c17">fcn.00437b71</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
 
         ]);
 
@@ -74,11 +74,11 @@ push ecx
 push ecx
 mov eax, dword[ebp+0x10]
 cmp eax, 1
-je 0x485168
+je off.b36
 cmp eax, 2
-je 0x485168
+je off.b36
 cmp eax, 3
-je 0x485168
+je off.b36
 mov eax, dword[ebp+0x14]
 mov dword[eax], 0x10000
 xor eax, eax
@@ -94,9 +94,9 @@ mov dword[ebp-8], ebx
 mov byte[ebp-1], bl
 mov dword[esi], ebx
 cmp eax, 1
-je 0x4851b1
+je off.b109
 cmp eax, 2
-jne 0x4851ee
+jne off.b170
 push ebx
 push 0x80
 push 3
@@ -107,10 +107,10 @@ push edi
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov dword[ebp-8], eax
 cmp eax, 0xffffffff
-jne 0x4851db
+jne off.b151
 mov dword[esi], 0x200
 xor eax, eax
-jmp 0x48524b
+jmp off.b263
 mov esi, dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push 2
 push ebx
@@ -124,10 +124,10 @@ call esi
 push eax
 call dword[sym.imp.KERNEL32.dll_DuplicateHandle]
 test eax, eax
-jne 0x4851db
+jne off.b151
 mov eax, dword[ebp+0x14]
 mov dword[eax], 0x100
-jmp 0x4851aa
+jmp off.b102
 push dword[ebp-8]
 call dword[sym.imp.KERNEL32.dll_GetFileType]
 dec eax
@@ -140,9 +140,9 @@ call fcn.00495844
 cmp dword[ebp+0x10], 1
 pop ecx
 mov esi, eax
-je 0x48521b
+je off.b215
 cmp dword[ebp+0x10], 2
-je 0x48521b
+je off.b215
 mov eax, dword[ebp+0xc]
 mov byte[esi], bl
 mov byte[esi+1], 1
@@ -150,7 +150,7 @@ mov dword[esi+0x10], edi
 mov dword[esi+0x14], eax
 mov dword[esi+0x18], ebx
 mov dword[esi+0xc], ebx
-jmp 0x485244
+jmp off.b256
 mov al, byte[ebp-1]
 mov byte[esi], 1
 mov byte[esi+1], al
@@ -159,7 +159,7 @@ mov dword[esi+4], ecx
 mov byte[esi+8], bl
 mov dword[esi+0xc], ebx
 cmp al, bl
-je 0x485244
+je off.b256
 push 1
 push ebx
 push ebx

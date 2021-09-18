@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -90,18 +90,18 @@ call fcn.0040a4a0
 call dword[sym.imp.KERNEL32.dll_GetCommandLineW]
 mov dword[ebp-8], eax
 cmp eax, ebx
-je 0x40dde4
+je off.b174
 push eax
 call fcn.0040bbd3
 cmp byte[0x424959], bl
-je 0x40ddd6
+je off.b160
 push str.winrarsfxmappingfile.tmp
 push ebx
 push 4
 call dword[sym.imp.KERNEL32.dll_OpenFileMappingW]
 mov dword[ebp-8], eax
 cmp eax, ebx
-je 0x40ddcb
+je off.b149
 push esi
 push ebx
 push ebx
@@ -110,7 +110,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_MapViewOfFile]
 mov dword[ebp-4], eax
 cmp eax, ebx
-je 0x40ddc2
+je off.b140
 push esi
 push eax
 push edi
@@ -122,7 +122,7 @@ push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_UnmapViewOfFile]
 push dword[ebp-8]
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
-jmp 0x40dde4
+jmp off.b174
 push dword[ebp-8]
 push str.sfxcmd
 call dword[sym.imp.KERNEL32.dll_SetEnvironmentVariableW]
@@ -181,12 +181,12 @@ call fcn.00412685
 lea ecx, [ebp-0xc]
 call fcn.004131ff
 cmp byte[0x424950], bl
-je 0x40dec3
+je off.b397
 call fcn.0040be0d
 mov ecx, 0x42a978
 call fcn.0040aefe
 cmp dword[0x424934], ebx
-jbe 0x40dee0
+jbe off.b426
 push dword[0x424928]
 call fcn.0040a41c
 push dword[0x41e8fc]
@@ -194,31 +194,31 @@ mov esi, dword[sym.imp.GDI32.dll_DeleteObject]
 call esi
 mov eax, dword[0x41e8f8]
 cmp eax, ebx
-je 0x40defa
+je off.b452
 push eax
 call esi
 cmp dword[0x418e8c], ebx
-jne 0x40df19
+jne off.b483
 cmp byte[0x424912], bl
-je 0x40df19
+je off.b483
 push 0xff
 mov ecx, 0x418e8c
 call fcn.00403537
 mov eax, dword[0x424944]
 mov byte[0x424912], 1
 cmp eax, ebx
-je 0x40df2f
+je off.b505
 push eax
 call fcn.0040bdce
 mov eax, dword[0x424940]
 cmp eax, ebx
-je 0x40df3f
+je off.b521
 push eax
 call dword[sym.imp.KERNEL32.dll_Sleep]
 call dword[sym.imp.ole32.dll_OleUninitialize]
 mov eax, dword[0x42493c]
 cmp eax, ebx
-ja 0x40df53
+ja off.b541
 mov eax, dword[0x418e8c]
 push eax
 call dword[sym.imp.KERNEL32.dll_ExitProcess]

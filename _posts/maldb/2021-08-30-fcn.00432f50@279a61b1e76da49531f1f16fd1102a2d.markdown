@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0514576972688752</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,9 +78,9 @@ call fcn.00433010
 add esp, 4
 mov dword[ebp-8], eax
 cmp dword[ebp-8], 0
-je 0x432f85
+je off.b53
 mov eax, dword[ebp-8]
-jmp 0x433002
+jmp off.b178
 lea ecx, [ebp-0xc]
 push ecx
 push 0xa
@@ -88,9 +88,9 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 cmp dword[ebp-0xc], 0
-jne 0x432fa3
+jne off.b83
 or eax, 0xffffffff
-jmp 0x433002
+jmp off.b178
 lea edx, [ebp-0x10]
 push edx
 push 1
@@ -101,12 +101,12 @@ mov eax, dword[ebp-0xc]
 push eax
 call dword[sym.imp.ADVAPI32.dll_DuplicateTokenEx]
 cmp dword[ebp-0x10], 0
-jne 0x432fd1
+jne off.b129
 mov ecx, dword[ebp-0xc]
 push ecx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 or eax, 0xffffffff
-jmp 0x433002
+jmp off.b178
 mov edx, dword[ebp-0xc]
 push edx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
@@ -118,12 +118,12 @@ mov ecx, dword[ebp-0x10]
 push ecx
 call dword[sym.imp.ADVAPI32.dll_SetTokenInformation]
 test eax, eax
-je 0x432fff
+je off.b175
 mov edx, dword[ebp+8]
 mov eax, dword[ebp-0x10]
 mov dword[edx], eax
 xor eax, eax
-jmp 0x433002
+jmp off.b178
 or eax, 0xffffffff
 mov esp, ebp
 pop ebp

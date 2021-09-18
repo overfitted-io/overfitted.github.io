@@ -16,8 +16,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,20 +71,20 @@ push ebp
 mov ebp, esp
 sub esp, 0x14
 mov dword[ebp-4], 0
-push str.kernel32.dll
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 mov dword[ebp-8], eax
 cmp dword[ebp-8], 0
-jne 0x443135
+jne off.b37
 xor eax, eax
-jmp 0x443181
+jmp off.b113
 push str.IsWow64Process
 mov eax, dword[ebp-8]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov dword[ebp-0xc], eax
 cmp dword[ebp-0xc], 0
-je 0x44317f
+je off.b111
 lea ecx, [ebp-4]
 push ecx
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
@@ -92,14 +92,14 @@ push eax
 call dword[ebp-0xc]
 mov dword[ebp-0x10], eax
 cmp dword[ebp-0x10], 0
-je 0x443173
+je off.b99
 cmp dword[ebp-4], 0
-je 0x443173
+je off.b99
 mov dword[ebp-0x14], 1
-jmp 0x44317a
+jmp off.b106
 mov dword[ebp-0x14], 0
 mov eax, dword[ebp-0x14]
-jmp 0x443181
+jmp off.b113
 xor eax, eax
 mov esp, ebp
 pop ebp

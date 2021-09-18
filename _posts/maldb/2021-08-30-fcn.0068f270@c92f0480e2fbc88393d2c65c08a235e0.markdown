@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -72,7 +72,7 @@ push ebx
 sub esp, 0x440
 mov ebx, dword[esp+0x450]
 test ebx, ebx
-je 0x68f3e0
+je off.b368
 call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 lea edx, [esp+0x2c]
 mov dword[esp+4], 0x20008
@@ -81,7 +81,7 @@ mov dword[esp+8], edx
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 sub esp, 0xc
 test eax, eax
-je 0x68f365
+je off.b245
 mov eax, dword[esp+0x2c]
 lea esi, [esp+0x30]
 lea edi, [esp+0x238]
@@ -92,7 +92,7 @@ mov dword[esp], eax
 call dword[sym.imp.USERENV.dll_GetUserProfileDirectoryW]
 sub esp, 0xc
 test eax, eax
-jne 0x68f314
+jne off.b164
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov ebx, eax
 mov eax, dword[esp+0x2c]
@@ -100,7 +100,7 @@ mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 sub esp, 4
 cmp ebx, 0x7a
-je 0x68f408
+je off.b408
 mov dword[esp], ebx
 call fcn.0066e3a0
 add esp, 0x440
@@ -119,10 +119,10 @@ mov dword[esp], esi
 call dword[sym.imp.ADVAPI32.dll_GetUserNameW]
 sub esp, 8
 test eax, eax
-jne 0x68f380
+jne off.b272
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x7a
-je 0x68f408
+je off.b408
 mov dword[esp], eax
 call fcn.0066e3a0
 add esp, 0x440
@@ -145,28 +145,28 @@ mov dword[esp], edi
 mov dword[esp+8], eax
 call fcn.0068eb40
 test eax, eax
-jne 0x68f30a
+jne off.b154
 mov dword[ebx], 0
 mov dword[esp+8], ebx
 mov dword[esp+4], 0xffffffff
 mov dword[esp], esi
 call fcn.0068eb40
 test eax, eax
-jne 0x68f3f0
+jne off.b384
 mov dword[ebx+0xc], 0
 mov dword[ebx+4], 0xffffffff
 mov dword[ebx+8], 0xffffffff
-jmp 0x68f30a
+jmp off.b154
 mov eax, 0xfffff019
-jmp 0x68f30a
+jmp off.b154
 mov edx, dword[ebx+0x10]
 mov dword[esp+0x1c], eax
 mov dword[esp], edx
 call fcn.0066b4a0
 mov eax, dword[esp+0x1c]
-jmp 0x68f30a
+jmp off.b154
 mov eax, 0xfffff027
-jmp 0x68f30a
+jmp off.b154
 
 {% endhighlight %}
 

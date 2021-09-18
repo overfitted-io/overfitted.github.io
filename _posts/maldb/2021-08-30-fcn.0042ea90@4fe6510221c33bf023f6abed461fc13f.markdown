@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="SCREENSHOTS_FOREGROUND_WINDOW">SCREENSHOTS_FOREGROUND_WINDOW / 0.23429078179594426</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.2985847363206633</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,14 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [63.864349365234375, 54.86621856689453, '<b><a href="/report/fcn.0042ea90@4fe6510221c33bf023f6abed461fc13f">fcn.0042ea90</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
-[105.12085723876953, -26.96953773498535, '<b><a href="/report/fcn.004cfc00@279a61b1e76da49531f1f16fd1102a2d">fcn.004cfc00</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-94.27849578857422, -76.7313461303711, '<b><a href="/report/fcn.004c2530@279a61b1e76da49531f1f16fd1102a2d">fcn.004c2530</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[-21.6824893951416, -132.6723175048828, '<b><a href="/report/fcn.0043b490@4fe6510221c33bf023f6abed461fc13f">fcn.0043b490</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[67.29718017578125, -110.45258331298828, '<b><a href="/report/fcn.004102e0@4fe6510221c33bf023f6abed461fc13f">fcn.004102e0</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-25.8277645111084, 73.20043182373047, '<b><a href="/report/fcn.00464650@4fe6510221c33bf023f6abed461fc13f">fcn.00464650</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-96.61844635009766, 14.860710144042969, '<b><a href="/report/fcn.004608d0@289859175c221b107317af7727d26c17">fcn.004608d0</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
-[-0.39001449942588806, -29.152109146118164, '<b><a href="/report/fcn.00452a40@289859175c221b107317af7727d26c17">fcn.00452a40</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0042ea90@4fe6510221c33bf023f6abed461fc13f">fcn.0042ea90</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -80,13 +73,13 @@ push esi
 push edi
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 test eax, eax
-je 0x42eab7
+je off.b39
 push 0x64
 lea ecx, [esp+0x124]
 push ecx
 push eax
 call dword[sym.imp.USER32.dll_GetWindowTextW]
-jmp 0x42eac1
+jmp off.b49
 xor edx, edx
 mov word[esp+0x120], dx
 xor eax, eax
@@ -99,22 +92,22 @@ call fcn.00495c20
 mov esi, dword[0x4c90cc]
 add esp, 0xc
 test esi, esi
-je 0x42eb2f
+je off.b159
 cmp byte[esi+0x11], 0
-je 0x42eb28
+je off.b152
 mov edx, dword[esi]
 push edx
 call fcn.0046ecd0
 add esp, 4
 sub eax, 0
-je 0x42eb0c
+je off.b124
 dec eax
-je 0x42eb05
+je off.b117
 mov eax, str.Object
-jmp 0x42eb11
+jmp off.b129
 mov eax, dword[esi]
 mov eax, dword[eax+4]
-jmp 0x42eb11
+jmp off.b129
 mov ecx, dword[esi]
 mov eax, dword[ecx+4]
 push eax
@@ -125,20 +118,20 @@ call fcn.00473910
 add esp, 8
 mov esi, dword[esi+0x14]
 test esi, esi
-jne 0x42eae5
+jne off.b85
 cmp word[esp+0x20], 0
-je 0x42eb88
+je off.b248
 lea eax, [esp+0x20]
 lea edx, [eax+2]
 mov edi, edi
 mov cx, word[eax]
 add eax, 2
 test cx, cx
-jne 0x42eb40
+jne off.b176
 sub eax, edx
 sar eax, 1
 cmp eax, 0x7b
-jbe 0x42eb76
+jbe off.b230
 mov esi, 0x7f
 sub esi, eax
 push esi
@@ -149,32 +142,32 @@ call fcn.0048fa44
 add esp, 0xc
 xor edx, edx
 mov word[edi+esi*2], dx
-jmp 0x42eb88
+jmp off.b248
 cmp word[esp+eax*2+0x1e], 0x20
 lea eax, [esp+eax*2+0x20]
-jne 0x42eb88
+jne off.b248
 xor ecx, ecx
 mov word[eax-2], cx
 mov edx, dword[0x4c4fe0]
 cmp byte[edx+0xf4], 0
-je 0x42eba8
+je off.b280
 cmp byte[0x4c910d], 0
 mov dword[esp+0x14], 1
-je 0x42ebb0
+je off.b288
 mov dword[esp+0x14], 0
 mov eax, dword[0x4c6624]
-mov dword[esp+0x18], str._(preempted:_they_will_resume_when_the_current_thread_finishes)
+mov dword[esp+0x18], str._(preempted:_they_will_resume_when_the_current_thread_finishes)_
 cmp eax, 1
-jg 0x42ecce
+jg off.b574
 mov dword[esp+0x18], 0x4ab02c
 xor ebp, ebp
 cmp dword[0x4c65ec], 0
 mov edi, 0x4a2990
-je 0x42ebe3
+je off.b339
 mov edi, 0x4a2988
 cmp dword[0x4c65e8], 0
 mov esi, 0x4a2990
-je 0x42ebf6
+je off.b358
 mov esi, 0x4a2988
 push 1
 call fcn.00411940
@@ -224,13 +217,13 @@ lea edx, [eax+2]
 mov cx, word[eax]
 add eax, 2
 test cx, cx
-jne 0x42ec83
+jne off.b499
 sub eax, edx
 sar eax, 1
 cmp dword[0x4c6ec8], 0
 lea edi, [esi+eax*2]
 mov eax, str._r_nPress__F5__to_refresh.
-jne 0x42eca8
+jne off.b536
 mov eax, str._r_nKey_History_has_been_disabled_via_KeyHistory_0.
 mov ecx, edi
 sub ecx, ebx
@@ -248,7 +241,7 @@ pop ebx
 add esp, 0x3d8
 ret 4
 lea ebp, [eax-1]
-jmp 0x42ebd0
+jmp off.b320
 
 {% endhighlight %}
 

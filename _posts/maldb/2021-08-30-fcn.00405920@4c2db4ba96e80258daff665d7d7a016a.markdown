@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -76,11 +76,11 @@ xor ebx, ebx
 push edi
 mov dword[esi+0xc20], ebx
 cmp byte[esi+0x1c], bl
-jne 0x405940
+jne off.b32
 test byte[ebp+0x10], 4
-jne 0x405940
+jne off.b32
 xor al, al
-jmp 0x405942
+jmp off.b34
 mov al, 1
 mov ecx, dword[ebp+0x10]
 shr ecx, 1
@@ -91,11 +91,11 @@ sbb edi, edi
 and edi, 0xc0000000
 add edi, 0x80000000
 test byte[ebp+0x10], 1
-je 0x405969
+je off.b73
 or edi, 0x40000000
 mov dword[ebp+0x10], 1
 cmp al, bl
-je 0x40597b
+je off.b91
 mov dword[ebp+0x10], 3
 xor eax, eax
 cmp byte[esi+0x15], bl
@@ -105,12 +105,12 @@ and eax, 0x8000000
 mov dword[ebp-4], eax
 call fcn.00406a2a
 test eax, eax
-je 0x4059b5
+je off.b149
 mov eax, dword[ebp+0xc]
 cmp eax, ebx
-je 0x4059b5
+je off.b149
 cmp word[eax], bx
-je 0x4059b5
+je off.b149
 push ebx
 push dword[ebp-4]
 push 3
@@ -119,7 +119,7 @@ push dword[ebp+0x10]
 push edi
 push eax
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
-jmp 0x4059c9
+jmp off.b169
 push ebx
 push dword[ebp-4]
 push 3
@@ -130,10 +130,10 @@ push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov edi, eax
 cmp edi, 0xffffffff
-jne 0x4059e5
+jne off.b197
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 2
-jne 0x4059e5
+jne off.b197
 mov dword[esi+0xc20], 1
 cmp edi, 0xffffffff
 setne byte[ebp+0x13]
@@ -141,11 +141,11 @@ mov byte[esi+0x12], bl
 mov dword[esi+0xc], ebx
 mov byte[esi+0x10], bl
 cmp byte[ebp+0x13], bl
-je 0x405a5d
+je off.b317
 mov dword[esi+4], edi
 mov edi, dword[ebp+0xc]
 cmp edi, ebx
-je 0x405a1e
+je off.b254
 push edi
 call fcn.0040a826
 lea eax, [eax+eax+2]
@@ -154,11 +154,11 @@ push edi
 lea eax, [esi+0x41e]
 push eax
 call fcn.0040a555
-jmp 0x405a27
+jmp off.b263
 xor eax, eax
 mov word[esi+0x41e], ax
 cmp dword[ebp+8], ebx
-je 0x405a44
+je off.b292
 push dword[ebp+8]
 call fcn.0040a5a0
 inc eax
@@ -167,7 +167,7 @@ push dword[ebp+8]
 lea eax, [esi+0x1d]
 push eax
 call fcn.0040a555
-jmp 0x405a53
+jmp off.b307
 push 0x1000000
 lea eax, [esi+0x1d]
 push eax

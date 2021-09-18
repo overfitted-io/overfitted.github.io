@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -77,15 +77,15 @@ push 2
 call dword[sym.imp.KERNEL32.dll_CreateToolhelp32Snapshot]
 mov ebx, eax
 cmp ebx, 0xffffffff
-jne 0x40337a
+jne off.b45
 xor al, al
-jmp 0x4033eb
+jmp off.b158
 lea eax, [ebp-0x258]
 push eax
 push ebx
 mov dword[ebp-0x258], 0x22c
 call dword[sym.imp.KERNEL32.dll_Process32FirstW]
-jmp 0x4033de
+jmp off.b145
 and dword[ebp-0x1c], 0
 xor eax, eax
 mov word[ebp-0x2c], ax
@@ -107,7 +107,7 @@ push eax
 push ebx
 call dword[sym.imp.KERNEL32.dll_Process32NextW]
 test eax, eax
-jne 0x403394
+jne off.b71
 push ebx
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov al, 1

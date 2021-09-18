@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.2534016184528394</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.062053930530020535</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.03475175434594221</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.11379408623204973</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,8 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-467.455322265625, 763.9567260742188, '<b><a href="/report/fcn.00401339@1123b7aa5760238fe93045e585b8234c">fcn.00401339</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[467.4552001953125, -763.9567260742188, '<b><a href="/report/fcn.00403908@4c8869bb42f854640703b6ddda29ee38">fcn.00403908</a><br>@4c8869bb42f854640703b6ddda29ee38</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00401339@1123b7aa5760238fe93045e585b8234c">fcn.00401339</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,11 +72,11 @@ push ebp
 mov ebp, esp
 sub esp, 0x28
 push edi
-push str.kernel32.dll
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 mov edi, eax
 test edi, edi
-je 0x4013ef
+je off.b182
 push ebx
 push esi
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
@@ -92,19 +91,19 @@ push str.Thread32Next
 push edi
 mov ebx, eax
 call esi
-push str.CreateToolhelp32Snapshot
+push str.CreateToolhelp32Snapshot_
 push edi
 mov dword[ebp-8], eax
 call esi
 xor ecx, ecx
 cmp dword[ebp-4], ecx
-je 0x4013ed
+je off.b180
 cmp ebx, ecx
-je 0x4013ed
+je off.b180
 cmp dword[ebp-8], ecx
-je 0x4013ed
+je off.b180
 cmp eax, ecx
-je 0x4013ed
+je off.b180
 push ecx
 push 4
 call eax
@@ -118,18 +117,18 @@ push eax
 push esi
 mov dword[ebp-0x28], 0x1c
 call ebx
-jmp 0x4013e9
+jmp off.b176
 cmp dword[ebp-0x1c], edi
-jne 0x4013e1
+jne off.b168
 mov eax, dword[ebp-0x20]
 cmp eax, dword[ebp-0xc]
-je 0x4013e1
+je off.b168
 push eax
 push 0
 push 2
 call dword[ebp-4]
 test eax, eax
-je 0x4013e1
+je off.b168
 push eax
 call dword[sym.imp.KERNEL32.dll_SuspendThread]
 lea eax, [ebp-0x28]
@@ -137,7 +136,7 @@ push eax
 push esi
 call dword[ebp-8]
 test eax, eax
-jne 0x4013c1
+jne off.b136
 pop esi
 pop ebx
 pop edi

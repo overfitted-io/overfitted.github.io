@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [752.9369506835938, 4226.1806640625, '<b><a href="/report/fcn.00433e73@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00433e73</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
-[-752.9368286132812, -4226.1806640625, '<b><a href="/report/fcn.00434273@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00434273</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00433e73@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00433e73</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -93,7 +92,7 @@ pop ecx
 mov byte[ebp-4], 1
 cmp dword[ebp-0x84], 8
 mov eax, dword[ebp-0x98]
-jae 0x433ef4
+jae off.b129
 lea eax, [ebp-0x98]
 mov esi, dword[sym.imp.KERNEL32.dll_CreateFileW]
 push ebx
@@ -107,7 +106,7 @@ push eax
 call esi
 mov dword[ebp-0xa4], eax
 cmp eax, 0xffffffff
-jne 0x433fb9
+jne off.b326
 push 1
 lea ecx, [ebp-0x7c]
 call fcn.00434432
@@ -117,36 +116,36 @@ push eax
 call fcn.00434960
 pop ecx
 test al, al
-jne 0x433f84
+jne off.b273
 lea eax, [ebp-0x7c]
 push eax
 call fcn.00434960
 pop ecx
 test al, al
-je 0x433f84
+je off.b273
 cmp dword[ebp-0x84], 8
 mov ecx, dword[ebp-0x98]
-jae 0x433f58
+jae off.b229
 lea ecx, [ebp-0x98]
 cmp dword[ebp-0x68], 8
 mov eax, dword[ebp-0x7c]
-jae 0x433f64
+jae off.b241
 lea eax, [ebp-0x7c]
 push ebx
 push ecx
 push eax
 call dword[sym.imp.KERNEL32.dll_CopyFileW]
 test eax, eax
-je 0x433f84
+je off.b273
 cmp dword[ebp-0x68], 8
 mov eax, dword[ebp-0x7c]
-jae 0x433f7d
+jae off.b266
 lea eax, [ebp-0x7c]
 push eax
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 cmp dword[ebp-0x68], 8
 mov eax, dword[ebp-0x7c]
-jae 0x433f90
+jae off.b285
 lea eax, [ebp-0x7c]
 push ebx
 push ebx
@@ -162,12 +161,12 @@ lea ecx, [ebp-0x7c]
 mov dword[ebp-0xa4], eax
 call fcn.00402ec9
 cmp dword[ebp-0xa4], 0xffffffff
-je 0x4341b1
+je off.b830
 push ebx
 push dword[ebp-0xa4]
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
 cmp eax, 0x14
-jb 0x4341a5
+jb off.b818
 mov esi, dword[sym.imp.KERNEL32.dll_ReadFile]
 push ebx
 lea eax, [ebp-0xa0]
@@ -180,11 +179,11 @@ mov dword[ebp-0xa0], ebx
 mov dword[ebp-0xa8], ebx
 call esi
 test eax, eax
-je 0x4341a5
+je off.b818
 cmp dword[ebp-0xa0], 4
-jne 0x4341a5
+jne off.b818
 cmp dword[ebp-0xa8], 1
-jne 0x434053
+jne off.b480
 push ebx
 lea eax, [ebp-0xa0]
 push eax
@@ -193,14 +192,14 @@ push dword[ebp-0xac]
 push dword[ebp-0xa4]
 call esi
 test eax, eax
-je 0x4341a5
+je off.b818
 cmp dword[ebp-0xa0], 0x10
-jne 0x4341a5
+jne off.b818
 mov eax, dword[ebp-0xc0]
 mov byte[eax], 1
-jmp 0x43419e
+jmp off.b811
 cmp dword[ebp-0xa8], 2
-jne 0x4341a5
+jne off.b818
 xor eax, eax
 mov byte[ebp-0x30], bl
 lea edi, [ebp-0x2f]
@@ -218,9 +217,9 @@ push eax
 push dword[ebp-0xa4]
 call esi
 test eax, eax
-je 0x4341a5
+je off.b818
 cmp dword[ebp-0xa0], 0x10
-jne 0x4341a5
+jne off.b818
 xor eax, eax
 mov byte[ebp-0x40], bl
 lea edi, [ebp-0x3f]
@@ -238,9 +237,9 @@ push eax
 push dword[ebp-0xa4]
 call esi
 test eax, eax
-je 0x4341a5
+je off.b818
 cmp dword[ebp-0xa0], 0x10
-jne 0x4341a5
+jne off.b818
 xor eax, eax
 mov byte[ebp-0x60], bl
 lea edi, [ebp-0x5f]
@@ -258,9 +257,9 @@ push eax
 push dword[ebp-0xa4]
 call esi
 test eax, eax
-je 0x4341a5
+je off.b818
 cmp dword[ebp-0xa0], 0x10
-jne 0x4341a5
+jne off.b818
 xor eax, eax
 mov byte[ebp-0x20], bl
 lea edi, [ebp-0x1f]
@@ -272,7 +271,7 @@ stosb byte
 mov eax, dword[ebp-0xbc]
 cmp dword[eax+0x14], 0x10
 mov ecx, dword[eax+0x10]
-jb 0x43412a
+jb off.b695
 mov eax, dword[eax]
 push ecx
 push eax
@@ -291,7 +290,7 @@ cmp dword[eax+0x14], 0x10
 pop ecx
 pop ecx
 mov ecx, dword[eax+0x10]
-jb 0x434155
+jb off.b738
 mov eax, dword[eax]
 push ecx
 push eax
@@ -305,22 +304,22 @@ lea edi, [ebp-0x20]
 lea esi, [ebp-0x40]
 xor eax, eax
 repe cmpsb
-je 0x434175
+je off.b770
 sbb eax, eax
 sbb eax, 0xffffffff
 cmp eax, ebx
-je 0x434191
+je off.b798
 push 0x10
 pop ecx
 lea edi, [ebp-0x50]
 lea esi, [ebp-0x60]
 xor eax, eax
 repe cmpsb
-je 0x43418d
+je off.b794
 sbb eax, eax
 sbb eax, 0xffffffff
 cmp eax, ebx
-jne 0x4341a5
+jne off.b818
 mov edi, dword[ebp-0xac]
 lea esi, [ebp-0x30]
 movsd dword
@@ -336,7 +335,7 @@ lea ecx, [ebp-0x98]
 call fcn.00402ec9
 or dword[ebp-4], 0xffffffff
 cmp byte[ebp-0xb0], bl
-je 0x4341d6
+je off.b867
 mov ecx, dword[ebp-0xb4]
 call fcn.004053dd
 mov al, byte[ebp-0x99]

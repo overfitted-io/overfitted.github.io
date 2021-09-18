@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.1062968402713555</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -77,9 +77,9 @@ push eax
 push dword[ebp+8]
 call fcn.00402402
 test al, al
-jne 0x489a89
+jne off.b38
 xor eax, eax
-jmp 0x489bf1
+jmp off.b398
 mov ecx, dword[ebp-4]
 mov eax, dword[0x4c6810]
 push esi
@@ -95,13 +95,13 @@ mov esi, dword[eax]
 or eax, 0xffffffff
 mov dword[ebp-0xc], esi
 cmp dword[ebp+0xc], eax
-jne 0x489ac8
+jne off.b101
 cmp dword[ebp+0x10], eax
-jne 0x489ac8
+jne off.b101
 cmp edi, eax
-jne 0x489ac8
+jne off.b101
 cmp dword[ebp+0x18], eax
-je 0x489bec
+je off.b393
 mov eax, dword[esi]
 lea ecx, [ebp-0x1c]
 push ecx
@@ -110,12 +110,12 @@ mov dword[ebp+0x14], eax
 call dword[sym.imp.USER32.dll_GetWindowRect]
 mov edx, dword[ebp-0x1c]
 cmp edi, 0xffffffff
-jne 0x489ae5
+jne off.b130
 mov edi, dword[ebp-0x14]
 sub edi, edx
 cmp dword[ebp+0x18], 0xffffffff
 mov ecx, dword[ebp-0x18]
-jne 0x489af6
+jne off.b147
 mov eax, dword[ebp-0x10]
 sub eax, ecx
 mov dword[ebp+0x18], eax
@@ -128,12 +128,12 @@ push dword[eax]
 call dword[sym.imp.USER32.dll_ScreenToClient]
 mov ecx, dword[ebp+0xc]
 cmp ecx, 0xffffffff
-jne 0x489b19
+jne off.b182
 mov ecx, dword[ebp-8]
 mov dword[ebp+0xc], ecx
 mov edx, dword[ebp+0x10]
 cmp edx, 0xffffffff
-jne 0x489b24
+jne off.b193
 mov edx, dword[ebp-4]
 mov eax, dword[ebp+8]
 mov dword[eax+0x58], ecx
@@ -143,16 +143,16 @@ mov dword[eax+0x60], edi
 mov dword[eax+0x64], ecx
 movsx eax, word[esi+0x88]
 cmp eax, dword[ebp+0xc]
-jne 0x489b67
+jne off.b260
 movsx eax, word[esi+0x8a]
 cmp eax, edx
-jne 0x489b67
+jne off.b260
 movsx eax, word[esi+0x8c]
 cmp eax, edi
-jne 0x489b67
+jne off.b260
 movsx eax, word[esi+0x8e]
 cmp eax, ecx
-je 0x489bec
+je off.b393
 push 1
 push ecx
 push edi
@@ -165,26 +165,26 @@ push esi
 push dword[ebp+8]
 call fcn.00401db3
 cmp byte[esi+0x90], 3
-jne 0x489be1
+jne off.b382
 mov edx, dword[0x4c6834]
 push 3
 pop edi
 cmp edx, edi
-jl 0x489be1
+jl off.b382
 mov esi, dword[ebp+8]
 mov eax, dword[0x4c6824]
 mov eax, dword[eax+edi*4]
 mov ecx, dword[eax]
 test ecx, ecx
-je 0x489bd9
+je off.b374
 mov eax, dword[ecx+4]
 cmp eax, dword[esi+4]
-jne 0x489bd9
+jne off.b374
 cmp byte[ecx+0x90], 0x16
-jne 0x489bd9
+jne off.b374
 mov eax, dword[ebp+0x14]
 cmp dword[ecx+0x34], eax
-jne 0x489bd9
+jne off.b374
 push 0
 push eax
 push 0x469
@@ -193,7 +193,7 @@ call dword[sym.imp.USER32.dll_SendMessageW]
 mov edx, dword[0x4c6834]
 inc edi
 cmp edi, edx
-jle 0x489b9c
+jle off.b313
 mov esi, dword[ebp-0xc]
 push 1
 push esi

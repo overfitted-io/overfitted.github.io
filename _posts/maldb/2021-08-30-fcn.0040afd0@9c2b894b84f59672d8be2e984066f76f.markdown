@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -99,79 +99,79 @@ mov eax, dword[ebp+8]
 mov ecx, eax
 mov si, word[ecx]
 cmp si, word[edx]
-jne 0x40b066
+jne off.b150
 test si, si
-je 0x40b062
+je off.b146
 mov si, word[ecx+2]
 cmp si, word[edx+2]
-jne 0x40b066
+jne off.b150
 add ecx, 4
 add edx, 4
 test si, si
-jne 0x40b040
+jne off.b112
 xor ecx, ecx
-jmp 0x40b06b
+jmp off.b155
 sbb ecx, ecx
 or ecx, 1
 test ecx, ecx
 sete cl
 or esi, 0xffffffff
 test cl, cl
-je 0x40b08b
+je off.b187
 push 0x13
 push 0x5b8d40
 lea ecx, [ebp-0x14]
 call fcn.004092f0
-jmp 0x40b3ac
+jmp off.b988
 mov ecx, str.del_over
 mov dx, word[eax]
 cmp dx, word[ecx]
-jne 0x40b0b6
+jne off.b230
 test dx, dx
-je 0x40b0b2
+je off.b226
 mov dx, word[eax+2]
 cmp dx, word[ecx+2]
-jne 0x40b0b6
+jne off.b230
 add eax, 4
 add ecx, 4
 test dx, dx
-jne 0x40b090
+jne off.b192
 xor eax, eax
-jmp 0x40b0bb
+jmp off.b235
 sbb eax, eax
 or eax, 1
 test eax, eax
 sete al
 test al, al
-je 0x40b0d8
+je off.b264
 push 0x28
 push 0x5b8d68
 lea ecx, [ebp-0x14]
 call fcn.004092f0
-jmp 0x40b3ac
+jmp off.b988
 lea eax, [ebp+8]
 push str.conn
 push eax
 call fcn.00405f30
 add esp, 8
 test al, al
-je 0x40b101
+je off.b305
 push 0x14
 push 0x5b8dbc
 lea ecx, [ebp-0x14]
 call fcn.004092f0
-jmp 0x40b3ac
+jmp off.b988
 lea eax, [ebp+8]
 push str.conn_over
 push eax
 call fcn.00405f30
 add esp, 8
 test al, al
-je 0x40b128
+je off.b344
 push 0x5b8de8
 lea ecx, [ebp-0x14]
 call fcn.00409140
-jmp 0x40b3ac
+jmp off.b988
 push 1
 lea ecx, [edi+0x210]
 call fcn.0041bf0a
@@ -204,12 +204,12 @@ mov dword[ebp-0x54], 1
 call fcn.00405f30
 add esp, 0x10
 test al, al
-jne 0x40b1b2
+jne off.b482
 mov edx, 0x5b8e48
 lea ecx, [ebp-0x20]
 call fcn.00405a30
 test al, al
-je 0x40b1b9
+je off.b489
 mov dword[ebp-0x54], 0
 push ecx
 mov ecx, esp
@@ -233,12 +233,12 @@ mov dword[ebp-0x50], 1
 call fcn.00405f30
 add esp, 0x10
 test al, al
-jne 0x40b21e
+jne off.b590
 mov edx, 0x5b8e48
 lea ecx, [ebp-0x1c]
 call fcn.00405a30
 test al, al
-je 0x40b225
+je off.b597
 mov dword[ebp-0x50], 0
 push ecx
 mov ecx, esp
@@ -262,29 +262,29 @@ mov dword[ebp-0x4c], 1
 call fcn.00405f30
 add esp, 0x10
 test al, al
-jne 0x40b28a
+jne off.b698
 mov edx, 0x5b8e48
 lea ecx, [ebp-0x18]
 call fcn.00405a30
 test al, al
-je 0x40b291
+je off.b705
 mov dword[ebp-0x4c], 0
 cmp dword[ebp-0x54], 1
-jne 0x40b2ac
+jne off.b732
 push 0x5b8e4c
 push dword[ebp-0x30]
 lea ecx, [ebp-0x38]
 call fcn.0042f017
 mov edi, 1
 cmp dword[ebp-0x50], 1
-jne 0x40b2c3
+jne off.b755
 push 0x5b8e54
 push dword[ebp-0x30]
 lea ecx, [ebp-0x38]
 call fcn.0042f017
 inc edi
 cmp dword[ebp-0x4c], 1
-jne 0x40b2da
+jne off.b778
 push 0x5b8e60
 push dword[ebp-0x30]
 lea ecx, [ebp-0x38]
@@ -292,16 +292,16 @@ call fcn.0042f017
 inc edi
 lea ecx, [ebp-0x14]
 test edi, edi
-je 0x40b339
+je off.b873
 push 0x5b8e6c
 call fcn.00405be0
 xor esi, esi
 test edi, edi
-je 0x40b322
+je off.b850
 test esi, esi
-js 0x40b334
+js off.b868
 cmp esi, dword[ebp-0x30]
-jge 0x40b334
+jge off.b868
 mov eax, dword[ebp-0x34]
 lea ecx, [ebp-0x14]
 mov eax, dword[eax+esi*4]
@@ -310,17 +310,17 @@ push eax
 call fcn.004092f0
 inc esi
 cmp esi, edi
-je 0x40b322
+je off.b850
 push 0x5b8e70
 lea ecx, [ebp-0x14]
 call fcn.0040b710
 cmp esi, edi
-jl 0x40b2f1
+jl off.b801
 push 0x5b8e78
 lea ecx, [ebp-0x14]
 call fcn.0040b710
 or esi, 0xffffffff
-jmp 0x40b343
+jmp off.b883
 call fcn.0040f785
 push 0x5b8ef0
 call fcn.004044c0
@@ -331,7 +331,7 @@ add edx, 0xfffffff0
 lock xadd
 dec eax
 test eax, eax
-jg 0x40b361
+jg off.b913
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]
@@ -343,7 +343,7 @@ add edx, 0xfffffff0
 lock xadd
 dec eax
 test eax, eax
-jg 0x40b37f
+jg off.b943
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]
@@ -355,7 +355,7 @@ add edx, 0xfffffff0
 lock xadd
 dec eax
 test eax, eax
-jg 0x40b39d
+jg off.b973
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]
@@ -392,7 +392,7 @@ add edx, 0xfffffff0
 lock xadd
 dec eax
 test eax, eax
-jg 0x40b412
+jg off.b1090
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]
@@ -404,7 +404,7 @@ add edx, 0xfffffff0
 lock xadd
 dec eax
 test eax, eax
-jg 0x40b430
+jg off.b1120
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]
@@ -415,7 +415,7 @@ add edx, 0xfffffff0
 lock xadd
 dec esi
 test esi, esi
-jg 0x40b44f
+jg off.b1151
 mov ecx, dword[edx]
 push edx
 mov eax, dword[ecx]

@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.06134440465847271</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,8 +35,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [727.7616577148438, -255.2393341064453, '<b><a href="/report/loc.004083b8@de21a548b66aa6c0b17491b6a31e14fa">loc.004083b8</a><br>@de21a548b66aa6c0b17491b6a31e14fa</b><br>', 'point { fill-color: #e0440e; }'],
-[-727.7616577148438, 255.2393341064453, '<b><a href="/report/fcn.004064c1@6c5b0418e4a4c57d99cda47d2717045d">fcn.004064c1</a><br>@6c5b0418e4a4c57d99cda47d2717045d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/loc.004083b8@de21a548b66aa6c0b17491b6a31e14fa">loc.004083b8</a><br>@de21a548b66aa6c0b17491b6a31e14fa</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -102,7 +101,7 @@ mov esi, eax
 call dword[sym.imp.WININET.dll_InternetOpenW]
 cmp eax, ebx
 mov dword[ebp-0x20], eax
-jne 0x408493
+jne off.b219
 push str._Statistics__Upload__Failed_to_open_hSession_handle_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 push ebx
@@ -145,7 +144,7 @@ push eax
 call dword[sym.imp.WININET.dll_InternetConnectW]
 cmp eax, ebx
 mov dword[ebp-0x1c], eax
-jne 0x4084d0
+jne off.b280
 push str._Statistics__Upload__Failed_to_open_hConnect_handle_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 push ebx
@@ -153,7 +152,7 @@ push 1
 lea ecx, [ebp+0x17f4]
 call fcn.00401451
 lea ecx, [esi-0x10]
-jmp 0x408445
+jmp off.b141
 push ebx
 push ebx
 push ebx
@@ -165,11 +164,11 @@ push eax
 call dword[sym.imp.WININET.dll_HttpOpenRequestW]
 cmp eax, ebx
 mov dword[ebp-0x14], eax
-jne 0x408501
+jne off.b329
 push str._Statistics__Upload__Failed_to_open_request_handle_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 mov byte[ebp-0xd], bl
-jmp 0x40867f
+jmp off.b711
 mov esi, dword[sym.imp.WININET.dll_HttpAddRequestHeadersW]
 mov edi, 0xa0000000
 push edi
@@ -204,11 +203,11 @@ push edi
 call fcn.00401433
 add esp, 0x24
 cmp al, bl
-je 0x40865d
+je off.b677
 mov eax, dword[ebp+0x181c]
 cmp dword[eax-0xc], ebx
 mov byte[ebp-0xd], 1
-je 0x4085f9
+je off.b577
 push ebx
 push 0x80
 push 2
@@ -219,7 +218,7 @@ push eax
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov esi, eax
 cmp esi, 0xffffffff
-je 0x408660
+je off.b680
 mov dword[ebp-0x14], ebx
 mov dword[ebp-0x18], ebx
 push 0x3e7
@@ -237,7 +236,7 @@ push eax
 push edi
 call dword[sym.imp.WININET.dll_InternetReadFile]
 cmp eax, ebx
-je 0x4085eb
+je off.b563
 push ebx
 lea eax, [ebp-0x18]
 push eax
@@ -247,10 +246,10 @@ push eax
 push esi
 call dword[sym.imp.KERNEL32.dll_WriteFile]
 cmp dword[ebp-0x14], ebx
-jne 0x40859f
+jne off.b487
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
-jmp 0x408660
+jmp off.b680
 push 0x13ff
 lea eax, [ebp+1]
 push ebx
@@ -267,9 +266,9 @@ push eax
 push edi
 call dword[sym.imp.WININET.dll_InternetReadFile]
 cmp eax, ebx
-je 0x408660
+je off.b680
 cmp dword[ebp-0x14], ebx
-jbe 0x408660
+jbe off.b680
 lea eax, [ebp]
 push eax
 lea ecx, [ebp-0x18]
@@ -279,17 +278,17 @@ push str._s_o__s_
 lea ecx, [ebp-0x18]
 call fcn.0040139d
 cmp eax, 0xffffffff
-jne 0x408650
+jne off.b664
 mov byte[ebp-0xd], bl
 mov ecx, dword[ebp-0x18]
 add ecx, 0xfffffff0
 call fcn.00401050
-jmp 0x408660
+jmp off.b680
 mov byte[ebp-0xd], bl
 push edi
 call dword[sym.imp.WININET.dll_InternetCloseHandle]
 test eax, eax
-jne 0x408679
+jne off.b705
 push str._Statistics__Upload__Failed_to_close_Request_handle_n
 mov byte[ebp-0xd], bl
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
@@ -298,14 +297,14 @@ push dword[ebp-0x1c]
 mov esi, dword[sym.imp.WININET.dll_InternetCloseHandle]
 call esi
 test eax, eax
-jne 0x40869c
+jne off.b740
 push str._Statistics__Upload__Failed_to_close_Connect_handle_n
 mov byte[ebp-0xd], bl
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 push dword[ebp-0x20]
 call esi
 test eax, eax
-jne 0x4086fb
+jne off.b835
 push str._Statistics__Upload__Failed_to_close_Session_handle_n
 call dword[sym.imp.KERNEL32.dll_OutputDebugStringW]
 mov byte[ebp-0xd], bl
@@ -325,7 +324,7 @@ mov ecx, dword[ebp+0x181c]
 add ecx, 0xfffffff0
 call fcn.00401050
 mov al, byte[ebp-0xd]
-jmp 0x408470
+jmp off.b184
 push 0x4498ac
 lea ecx, [ebp-0x18]
 call fcn.004014a1
@@ -344,7 +343,7 @@ lea ecx, [esi-0x10]
 call fcn.00401050
 mov al, byte[ebp-0xd]
 mov byte[ebp-0xd], al
-jmp 0x4086b3
+jmp off.b763
 
 {% endhighlight %}
 

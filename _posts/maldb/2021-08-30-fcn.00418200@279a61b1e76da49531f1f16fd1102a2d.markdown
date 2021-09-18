@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [136.41041564941406, -153.0144500732422, '<b><a href="/report/fcn.00418200@279a61b1e76da49531f1f16fd1102a2d">fcn.00418200</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[135.63076782226562, -306.62628173828125, '<b><a href="/report/fcn.004180b0@279a61b1e76da49531f1f16fd1102a2d">fcn.004180b0</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[290.022216796875, -153.7971649169922, '<b><a href="/report/fcn.00416770@279a61b1e76da49531f1f16fd1102a2d">fcn.00416770</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[289.2425537109375, -307.4089660644531, '<b><a href="/report/fcn.00490350@279a61b1e76da49531f1f16fd1102a2d">fcn.00490350</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00418200@279a61b1e76da49531f1f16fd1102a2d">fcn.00418200</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -79,15 +76,15 @@ mov eax, dword[ebp+8]
 push eax
 call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
 test eax, eax
-jne 0x418226
-jmp 0x4183b8
+jne off.b38
+jmp off.b440
 mov ecx, dword[ebp+8]
 push ecx
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 mov dword[ebp-4], eax
 cmp dword[ebp-4], 0
-je 0x41823e
-jmp 0x4183b8
+je off.b62
+jmp off.b440
 xor edx, edx
 mov word[ebp-0x210], dx
 push 0x206
@@ -118,7 +115,7 @@ mov dword[ebp-0x214], 0
 mov dword[ebp-0x424], 0
 mov eax, 1
 test eax, eax
-je 0x4183b8
+je off.b440
 mov dword[ebp-0x428], 1
 xor ecx, ecx
 mov word[ebp-0x630], cx
@@ -129,7 +126,7 @@ push edx
 call fcn.00490b70
 add esp, 0xc
 cmp dword[ebp-0x424], 0
-jne 0x418318
+jne off.b280
 lea eax, [ebp-0x210]
 push eax
 lea ecx, [ebp-0x420]
@@ -139,7 +136,7 @@ lea edx, [ebp-0x630]
 push edx
 call fcn.0049148c
 add esp, 0x10
-jmp 0x418341
+jmp off.b321
 mov eax, dword[ebp-0x424]
 push eax
 lea ecx, [ebp-0x210]
@@ -155,20 +152,20 @@ lea ecx, [ebp-0x630]
 push ecx
 call dword[sym.imp.SHLWAPI.dll_PathFileExistsW]
 test eax, eax
-je 0x418365
+je off.b357
 lea edx, [ebp-0x630]
 push edx
 call dword[sym.imp.KERNEL32.dll_DeleteFileW]
 mov dword[ebp-0x428], eax
 cmp dword[ebp-0x428], 0
-jne 0x41838d
+jne off.b397
 cmp dword[ebp-0x424], 0xa
-jl 0x418379
-jmp 0x4183b8
+jl off.b377
+jmp off.b440
 mov eax, dword[ebp-0x424]
 add eax, 1
 mov dword[ebp-0x424], eax
-jmp 0x4182b5
+jmp off.b181
 lea ecx, [ebp-0x630]
 push ecx
 mov edx, dword[ebp+8]
@@ -180,7 +177,7 @@ push 0
 lea eax, [ebp-0x630]
 push eax
 call dword[sym.imp.KERNEL32.dll_MoveFileExW]
-jmp 0x4183b8
+jmp off.b440
 mov ecx, dword[ebp-8]
 xor ecx, ebp
 call fcn.00490ace

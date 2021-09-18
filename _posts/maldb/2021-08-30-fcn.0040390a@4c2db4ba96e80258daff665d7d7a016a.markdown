@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="PROCESS">PROCESS</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.0202452270088166</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.16888410296007497</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.003017075480431232</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-2405.916259765625, -1404.759033203125, '<b><a href="/report/fcn.0040390a@4c2db4ba96e80258daff665d7d7a016a">fcn.0040390a</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
-[2405.91650390625, 1404.7591552734375, '<b><a href="/report/fcn.01001760@7be42d186738ec1816397d616de2cb9d">fcn.01001760</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0040390a@4c2db4ba96e80258daff665d7d7a016a">fcn.0040390a</a><br>@4c2db4ba96e80258daff665d7d7a016a</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -73,7 +72,7 @@ sub esp, 0x14
 push ebx
 xor ebx, ebx
 cmp byte[0x418a7a], bl
-jne 0x4039b3
+jne off.b169
 lea eax, [ebp-4]
 push eax
 push 0x20
@@ -82,7 +81,7 @@ call dword[sym.imp.KERNEL32.dll_GetCurrentProcess]
 push eax
 call dword[sym.imp.ADVAPI32.dll_OpenProcessToken]
 test eax, eax
-je 0x4039b3
+je off.b169
 push esi
 mov esi, dword[sym.imp.ADVAPI32.dll_LookupPrivilegeValueW]
 push edi
@@ -95,7 +94,7 @@ mov dword[ebp-8], 2
 call esi
 mov edi, dword[sym.imp.ADVAPI32.dll_AdjustTokenPrivileges]
 test eax, eax
-je 0x40398b
+je off.b129
 push ebx
 push ebx
 push ebx
@@ -105,10 +104,10 @@ push ebx
 push dword[ebp-4]
 call edi
 test eax, eax
-je 0x40398b
+je off.b129
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 test eax, eax
-jne 0x40398b
+jne off.b129
 mov byte[0x418a79], 1
 lea eax, [ebp-0x10]
 push eax
@@ -116,7 +115,7 @@ push str.SeRestorePrivilege
 push ebx
 call esi
 test eax, eax
-je 0x4039a8
+je off.b158
 push ebx
 push ebx
 push ebx

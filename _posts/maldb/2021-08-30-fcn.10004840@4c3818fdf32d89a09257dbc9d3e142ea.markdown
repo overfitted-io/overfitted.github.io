@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="REGISTRY">REGISTRY</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.0058291242073474385</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -89,20 +89,20 @@ call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExW]
 mov ecx, dword[esp+0x10]
 mov esi, eax
 test esi, esi
-jne 0x100048ae
+jne off.b110
 test ecx, ecx
-je 0x100048a0
+je off.b96
 push ecx
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 test eax, eax
 mov ecx, dword[esp+0x18]
 mov esi, eax
 mov dword[esp+0x10], ecx
-je 0x100048bc
+je off.b124
 test ecx, ecx
-je 0x10004961
+je off.b289
 push ecx
-jmp 0x1000495b
+jmp off.b283
 mov esi, dword[sym.imp.ADVAPI32.dll_RegEnumKeyExW]
 lea edx, [esp+0x20]
 push edx
@@ -118,15 +118,15 @@ push ecx
 mov dword[esp+0x34], 0x100
 call esi
 test eax, eax
-jne 0x1000492e
-jmp 0x100048f0
+jne off.b238
+jmp off.b176
 lea eax, [esp+0x28]
 push eax
 lea ecx, [esp+0x14]
 call fcn.10004840
 mov edi, eax
 test edi, edi
-jne 0x1000497d
+jne off.b317
 lea ecx, [esp+0x20]
 push ecx
 mov ecx, dword[esp+0x14]
@@ -142,11 +142,11 @@ push ecx
 mov dword[esp+0x34], 0x100
 call esi
 test eax, eax
-je 0x100048f0
+je off.b176
 mov edi, dword[esp+0x1c]
 mov eax, dword[esp+0x10]
 test eax, eax
-je 0x10004945
+je off.b261
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 mov dword[esp+0x10], 0
@@ -157,7 +157,7 @@ call dword[sym.imp.ADVAPI32.dll_RegDeleteKeyW]
 mov esi, eax
 mov eax, dword[esp+0x10]
 test eax, eax
-je 0x10004961
+je off.b289
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 mov eax, esi
@@ -171,11 +171,11 @@ add esp, 0x224
 ret 4
 mov eax, dword[esp+0x10]
 test eax, eax
-je 0x1000498c
+je off.b332
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 mov eax, edi
-jmp 0x10004963
+jmp off.b291
 
 {% endhighlight %}
 

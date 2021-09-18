@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.07837635113574497</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,11 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-190.8673095703125, 151.89117431640625, '<b><a href="/report/fcn.004040c0@9c2b894b84f59672d8be2e984066f76f">fcn.004040c0</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
-[286.1025695800781, -42.384063720703125, '<b><a href="/report/fcn.10007b64@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10007b64</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
-[134.67404174804688, -312.6109313964844, '<b><a href="/report/loc.004024dd@de21a548b66aa6c0b17491b6a31e14fa">loc.004024dd</a><br>@de21a548b66aa6c0b17491b6a31e14fa</b><br>', 'null'],
-[114.79744720458984, 202.13864135742188, '<b><a href="/report/fcn.10001c97@481b545f5c18f2fce1caac67ddc419e8">fcn.10001c97</a><br>@481b545f5c18f2fce1caac67ddc419e8</b><br>', 'null'],
-[-106.73279571533203, -135.46527099609375, '<b><a href="/report/fcn.005ba840@52d540e8e13e0f0bbb8946b2363a382d">fcn.005ba840</a><br>@52d540e8e13e0f0bbb8946b2363a382d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004040c0@9c2b894b84f59672d8be2e984066f76f">fcn.004040c0</a><br>@9c2b894b84f59672d8be2e984066f76f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -76,7 +72,7 @@ push dword[ebp+0xc]
 push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 test eax, eax
-jne 0x4040d5
+jne off.b21
 pop ebp
 ret
 push esi
@@ -84,24 +80,24 @@ push eax
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov esi, eax
 test esi, esi
-je 0x404116
+je off.b86
 push dword[ebp+0xc]
 push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_SizeofResource]
 mov ecx, dword[ebp+0x10]
 lea edx, [esi+eax]
 and ecx, 0xf
-jbe 0x404112
+jbe off.b82
 nop word[eax+eax]
 cmp esi, edx
-jae 0x404116
+jae off.b86
 movzx eax, word[esi]
 lea esi, [esi+eax*2]
 add esi, 2
 sub ecx, 1
-jne 0x404100
+jne off.b64
 cmp esi, edx
-jb 0x40411b
+jb off.b91
 xor eax, eax
 pop esi
 pop ebp

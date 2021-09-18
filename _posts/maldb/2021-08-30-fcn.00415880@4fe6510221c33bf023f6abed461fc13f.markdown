@@ -13,10 +13,11 @@ index: false
 
 # Code Tags
 <span class="tag" id="SCREEN">SCREEN</span>
+<span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -73,9 +74,9 @@ push edi
 mov edi, dword[esp+0xc4]
 mov eax, dword[edi+0xac8]
 test eax, eax
-je 0x41596e
+je off.b238
 cmp word[eax], 0
-je 0x41596e
+je off.b238
 push 0x2c
 lea eax, [esp+0x18]
 push 0
@@ -116,7 +117,7 @@ mov dword[esp+0x34], 0x10
 mov dword[esp+0x38], 0xd3
 call esi
 test ax, ax
-jne 0x41597c
+jne off.b252
 fldz
 push 0
 sub esp, 8
@@ -134,30 +135,30 @@ add esp, 0xb4
 ret 4
 lea ecx, [esp+0x10]
 push ecx
-mov dword[esp+0x3c], str.AutoHotkey2
+mov dword[esp+0x3c], str.AutoHotkey2_
 mov dword[esp+0x38], 0
 call esi
 test ax, ax
-je 0x415950
+je off.b208
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 test eax, eax
-je 0x4159d1
+je off.b337
 push 0x40
 lea edx, [esp+0x44]
 push edx
 push eax
 call dword[sym.imp.USER32.dll_GetClassNameW]
 test eax, eax
-je 0x4159ca
+je off.b330
 lea eax, [esp+0x40]
 push str.Shell_TrayWnd
 push eax
 call fcn.0048cd49
 add esp, 8
 test eax, eax
-je 0x4159d1
+je off.b337
 mov byte[esp+0xf], 0
-jmp 0x4159d6
+jmp off.b342
 mov byte[esp+0xf], 1
 mov ecx, dword[0x4c64b0]
 movzx eax, byte[esp+0xf]
@@ -181,7 +182,7 @@ push eax
 call ebx
 mov dword[0x4c64b8], eax
 test eax, eax
-jne 0x415a43
+jne off.b451
 fldz
 push 0
 sub esp, 8
@@ -189,7 +190,7 @@ fstp qword[esp]
 push 0
 push 0x10000
 push str.CreateWindow
-jmp 0x415966
+jmp off.b230
 push eax
 call dword[sym.imp.USER32.dll_GetMenu]
 push 3
@@ -216,14 +217,14 @@ push 0
 call ebx
 mov dword[0x4c64bc], eax
 test eax, eax
-je 0x415a28
+je off.b424
 push eax
 call dword[sym.imp.USER32.dll_GetDC]
 cmp byte[0x4c92ce], 0
 mov esi, eax
-jne 0x415ab0
+jne off.b560
 push str.Lucida_Console
-jmp 0x415ab5
+jmp off.b565
 push str.Consolas
 push 0
 push 0
@@ -276,7 +277,7 @@ push 0
 push edx
 call esi
 cmp byte[esp+0xf], 0
-je 0x415b65
+je off.b741
 mov eax, dword[0x4c64b8]
 push 6
 push eax
@@ -293,12 +294,12 @@ call dword[sym.imp.USER32.dll_LoadAcceleratorsW]
 cmp byte[0x4c6609], 0
 mov esi, dword[esp+0xc4]
 mov dword[0x4c64cc], eax
-je 0x415b98
+je off.b792
 mov dword[esi+0x27a], 0
-jmp 0x415b9d
+jmp off.b797
 call fcn.00415ca0
 cmp dword[esi+0xa78], 0
-je 0x415bad
+je off.b813
 mov bl, 1
 call fcn.00415bc0
 pop edi

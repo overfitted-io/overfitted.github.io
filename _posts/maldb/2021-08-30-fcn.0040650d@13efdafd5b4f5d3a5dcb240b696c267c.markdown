@@ -17,8 +17,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.07592699699797288</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -35,15 +35,10 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-95.9487075805664, 11.029977798461914, '<b><a href="/report/fcn.0040650d@13efdafd5b4f5d3a5dcb240b696c267c">fcn.0040650d</a><br>@13efdafd5b4f5d3a5dcb240b696c267c</b><br>', 'point { fill-color: #e0440e; }'],
-[18.857908248901367, -69.92567443847656, '<b><a href="/report/fcn.004063ac@e7f0482c425f7bc9cd320f60c1cfa28c">fcn.004063ac</a><br>@e7f0482c425f7bc9cd320f60c1cfa28c</b><br>', 'null'],
-[134.05714416503906, 214.22784423828125, '<b><a href="/report/fcn.00402d24@1123b7aa5760238fe93045e585b8234c">fcn.00402d24</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
-[-125.14408874511719, -112.76122283935547, '<b><a href="/report/fcn.004063d8@999ae3491971c32d67bd4c32561ea381">fcn.004063d8</a><br>@999ae3491971c32d67bd4c32561ea381</b><br>', 'null'],
-[157.37828063964844, -92.45589447021484, '<b><a href="/report/fcn.004063ac@fc08a944a357dc216338592f13f65b60">fcn.004063ac</a><br>@fc08a944a357dc216338592f13f65b60</b><br>', 'null'],
-[91.70954895019531, -201.38070678710938, '<b><a href="/report/fcn.004063d8@5bfd33ece1aeef8bda2c7fc886262ed9">fcn.004063d8</a><br>@5bfd33ece1aeef8bda2c7fc886262ed9</b><br>', 'null'],
-[131.6622772216797, 36.993919372558594, '<b><a href="/report/fcn.00406533@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.00406533</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
-[13.294476509094238, 85.00564575195312, '<b><a href="/report/fcn.00406533@6c8b5339bada4cbd03f0f446da640707">fcn.00406533</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
-[-35.232093811035156, -202.3596649169922, '<b><a href="/report/fcn.004063ac@59b1876779e3211327c1a96e7e2c12c4">fcn.004063ac</a><br>@59b1876779e3211327c1a96e7e2c12c4</b><br>', 'null'],
+    [10.802372932434082, -470.6065673828125, '<b><a href="/report/fcn.0040650d@13efdafd5b4f5d3a5dcb240b696c267c">fcn.0040650d</a><br>@13efdafd5b4f5d3a5dcb240b696c267c</b><br>', 'point { fill-color: #e0440e; }'],
+[-272.3557434082031, 856.5661010742188, '<b><a href="/report/fcn.004063ac@e7f0482c425f7bc9cd320f60c1cfa28c">fcn.004063ac</a><br>@e7f0482c425f7bc9cd320f60c1cfa28c</b><br>', 'null'],
+[-794.7098388671875, 51.324195861816406, '<b><a href="/report/fcn.00406533@6c8b5339bada4cbd03f0f446da640707">fcn.00406533</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
+[533.1568603515625, 334.63134765625, '<b><a href="/report/fcn.004063ac@59b1876779e3211327c1a96e7e2c12c4">fcn.004063ac</a><br>@59b1876779e3211327c1a96e7e2c12c4</b><br>', 'null'],
 
         ]);
 
@@ -92,10 +87,10 @@ call dword[sym.imp.KERNEL32.dll_lstrlenW]
 mov edi, eax
 lea eax, [edi-1]
 cmp eax, 0x103
-ja 0x406877
+ja off.b874
 xor esi, esi
 test edi, edi
-jle 0x406570
+jle off.b99
 lea eax, [ebp-0x33c]
 sub ebx, eax
 lea eax, [ebx+esi*2]
@@ -106,7 +101,7 @@ mov word[ebp+esi*2-0x33c], ax
 inc esi
 pop ecx
 cmp esi, edi
-jl 0x406551
+jl off.b68
 xor eax, eax
 mov word[ebp+edi*2-0x33c], ax
 lea eax, [ebp-0x134]
@@ -114,24 +109,24 @@ push eax
 mov dword[ebp-0x134], 0x114
 call dword[sym.imp.KERNEL32.dll_GetVersionExW]
 test eax, eax
-jne 0x40659f
+jne off.b146
 mov eax, 0x25e
-jmp 0x40687c
+jmp off.b879
 cmp dword[ebp-0x124], 2
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
-je 0x4065c5
+je off.b184
 cmp dword[ebp-0x124], 1
-je 0x4066e6
+je off.b473
 mov eax, 0x25f
-jmp 0x40687c
+jmp off.b879
 push str.PSAPI.DLL
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov ebx, eax
 mov dword[ebp-0x10], ebx
 test ebx, ebx
-jne 0x4065e3
+jne off.b214
 mov eax, 0x25d
-jmp 0x40687c
+jmp off.b879
 push str.EnumProcesses
 push ebx
 call esi
@@ -145,30 +140,30 @@ mov dword[ebp-8], eax
 call esi
 mov dword[ebp-0xc], eax
 test edi, edi
-je 0x4067b1
+je off.b676
 cmp dword[ebp-8], 0
-je 0x4067b1
+je off.b676
 test eax, eax
-je 0x4067b1
+je off.b676
 lea eax, [ebp-0x14]
 push eax
 push 0x3e8
 push dword[ebp-4]
 call edi
 test eax, eax
-jne 0x40664b
+jne off.b318
 mov esi, 0x25d
 push ebx
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_GlobalFree]
 mov eax, esi
-jmp 0x40687c
+jmp off.b879
 mov ebx, dword[ebp-0x14]
 and dword[ebp+8], 0
 shr ebx, 2
 test ebx, ebx
-je 0x4066e6
+je off.b473
 push str.Unknown
 lea eax, [ebp-0x770]
 push eax
@@ -181,7 +176,7 @@ push 0x410
 call dword[sym.imp.KERNEL32.dll_OpenProcess]
 mov edi, eax
 test edi, edi
-je 0x4066b0
+je off.b419
 lea eax, [ebp-0x14]
 push eax
 push 4
@@ -190,7 +185,7 @@ push eax
 push edi
 call dword[ebp-8]
 test eax, eax
-je 0x4066b0
+je off.b419
 push 0x104
 lea eax, [ebp-0x770]
 push eax
@@ -207,21 +202,21 @@ push ecx
 push eax
 call dword[sym.imp.KERNEL32.dll_lstrcmpW]
 test eax, eax
-je 0x4067a6
+je off.b665
 inc dword[ebp+8]
 cmp dword[ebp+8], ebx
-jb 0x40665d
+jb off.b336
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_GlobalFree]
 cmp dword[ebp-0x124], 1
-jne 0x40683e
+jne off.b817
 push str.Kernel32.DLL
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov edi, eax
 xor ebx, ebx
 mov dword[ebp-0x10], edi
 cmp edi, ebx
-je 0x4065d9
+je off.b204
 push str.CreateToolhelp32Snapshot
 push edi
 call esi
@@ -243,61 +238,61 @@ mov dword[ebp-0x18], eax
 call esi
 mov dword[ebp-0x20], eax
 cmp dword[ebp-0xc], ebx
-je 0x406871
+je off.b868
 cmp dword[ebp-8], ebx
-je 0x406871
+je off.b868
 cmp eax, ebx
-je 0x406871
+je off.b868
 cmp dword[ebp-0x18], ebx
-je 0x406871
+je off.b868
 cmp dword[ebp+8], ebx
-je 0x406871
+je off.b868
 push ebx
 push 2
 call dword[ebp+8]
 mov dword[ebp-4], eax
 cmp eax, 0xffffffff
-je 0x406871
+je off.b868
 lea ecx, [ebp-0x568]
 push ecx
 mov ebx, 0x22c
 push eax
 mov dword[ebp-0x568], ebx
 call dword[ebp-8]
-jmp 0x406831
+jmp off.b804
 mov ebx, dword[ebp-0x10]
 xor esi, esi
 inc esi
-jmp 0x406634
+jmp off.b295
 push ebx
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
-jmp 0x4065d9
+jmp off.b204
 push dword[ebp-0x560]
 push 8
 call dword[ebp+8]
 mov esi, eax
 cmp esi, 0xffffffff
-je 0x40684b
+je off.b830
 lea eax, [ebp-0xb98]
 push eax
 push esi
 mov dword[ebp-0xb98], 0x428
 call dword[ebp-0x18]
-jmp 0x406813
+jmp off.b774
 lea eax, [ebp-0x33c]
 push eax
 lea eax, [ebp-0xb78]
 push eax
 call dword[sym.imp.KERNEL32.dll_lstrcmpW]
 test eax, eax
-je 0x406865
+je off.b856
 lea eax, [ebp-0xb98]
 push eax
 push esi
 mov dword[ebp-0xb98], 0x428
 call dword[ebp-0x20]
 test eax, eax
-jne 0x4067e6
+jne off.b729
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 lea eax, [ebp-0x568]
@@ -306,26 +301,26 @@ push dword[ebp-4]
 mov dword[ebp-0x568], ebx
 call dword[ebp-0xc]
 test eax, eax
-jne 0x4067bd
+jne off.b688
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push dword[ebp-0x10]
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
 xor eax, eax
-jmp 0x40687c
+jmp off.b879
 mov esi, 0x25d
 push dword[ebp-4]
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push edi
 call dword[sym.imp.KERNEL32.dll_FreeLibrary]
-jmp 0x406644
+jmp off.b311
 push esi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 xor esi, esi
 inc esi
-jmp 0x406850
+jmp off.b835
 push edi
-jmp 0x4067b2
+jmp off.b677
 mov eax, 0x278
 pop edi
 pop esi

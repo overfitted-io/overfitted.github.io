@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,8 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-67.18668365478516, -639.051513671875, '<b><a href="/report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e">fcn.00416337</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
-[67.1866226196289, 639.052001953125, '<b><a href="/report/fcn.00420db0@1123b7aa5760238fe93045e585b8234c">fcn.00420db0</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00416337@59aef7c08025d70f84c85db2092fc99e">fcn.00416337</a><br>@59aef7c08025d70f84c85db2092fc99e</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -75,45 +74,45 @@ xor ebx, ebx
 cmp dword[0x4368b4], ebx
 push esi
 push edi
-jne 0x4163b7
+jne off.b128
 push str.user32.dll
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 mov edi, eax
 cmp edi, ebx
-je 0x4163f2
+je off.b187
 mov esi, dword[sym.imp.KERNEL32.dll_GetProcAddress]
-push str.MessageBoxA
+push str.MessageBoxA_
 push edi
 call esi
 test eax, eax
 mov dword[0x4368b4], eax
-je 0x4163f2
-push str.GetActiveWindow
+je off.b187
+push str.GetActiveWindow_
 push edi
 call esi
-push str.GetLastActivePopup
+push str.GetLastActivePopup_
 push edi
 mov dword[0x4368b8], eax
 call esi
 cmp dword[0x436474], 2
 mov dword[0x4368bc], eax
-jne 0x4163b7
+jne off.b128
 push str.GetUserObjectInformationA
 push edi
 call esi
 test eax, eax
 mov dword[0x4368c4], eax
-je 0x4163b7
+je off.b128
 push str.GetProcessWindowStation
 push edi
 call esi
 mov dword[0x4368c0], eax
 mov eax, dword[0x4368c0]
 test eax, eax
-je 0x4163fc
+je off.b197
 call eax
 test eax, eax
-je 0x4163e3
+je off.b172
 lea ecx, [ebp-4]
 push ecx
 push 0xc
@@ -123,27 +122,27 @@ push 1
 push eax
 call dword[0x4368c4]
 test eax, eax
-je 0x4163e3
+je off.b172
 test byte[ebp-8], 1
-jne 0x4163fc
+jne off.b197
 cmp dword[0x436480], 4
-jb 0x4163f6
+jb off.b191
 or byte[ebp+0x12], 0x20
-jmp 0x41641b
+jmp off.b228
 xor eax, eax
-jmp 0x41642b
+jmp off.b244
 or byte[ebp+0x12], 4
-jmp 0x41641b
+jmp off.b228
 mov eax, dword[0x4368b8]
 test eax, eax
-je 0x41641b
+je off.b228
 call eax
 mov ebx, eax
 test ebx, ebx
-je 0x41641b
+je off.b228
 mov eax, dword[0x4368bc]
 test eax, eax
-je 0x41641b
+je off.b228
 push ebx
 call eax
 mov ebx, eax

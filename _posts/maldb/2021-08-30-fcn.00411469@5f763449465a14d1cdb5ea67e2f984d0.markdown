@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,12 +71,12 @@ push ebx
 xor ebx, ebx
 inc ebx
 cmp eax, ebx
-jne 0x41147a
+jne off.b17
 xor al, al
 pop ebx
 ret
 test eax, eax
-je 0x411482
+je off.b25
 mov al, bl
 pop ebx
 ret
@@ -85,33 +85,33 @@ push str.KERNEL32.DLL
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 mov esi, eax
 test esi, esi
-jne 0x411498
+jne off.b47
 mov esi, ebx
-jmp 0x4114c2
+jmp off.b89
 push str.AcquireSRWLockExclusive
 push esi
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x411494
+je off.b43
 push str.ReleaseSRWLockExclusive
 push esi
 mov dword[0x45ff64], eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x411494
+je off.b43
 mov dword[0x45ff68], eax
 mov ecx, esi
 mov edx, 0x45ff60
 xor eax, eax
 lock cmpxchg
 test eax, eax
-jne 0x4114d7
+jne off.b110
 cmp esi, ebx
-je 0x4114db
+je off.b114
 cmp eax, ebx
-jne 0x4114df
+jne off.b118
 xor al, al
-jmp 0x4114e1
+jmp off.b120
 mov al, bl
 pop esi
 pop ebx

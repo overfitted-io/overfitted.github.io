@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="SCREENSHOTS_FOREGROUND_WINDOW">SCREENSHOTS_FOREGROUND_WINDOW / 0.08814755184251015</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.16323270797845993</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-300.1211242675781, -120.43551635742188, '<b><a href="/report/fcn.00451290@4fe6510221c33bf023f6abed461fc13f">fcn.00451290</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
-[283.1483154296875, -228.9908905029297, '<b><a href="/report/fcn.004371a0@4fe6510221c33bf023f6abed461fc13f">fcn.004371a0</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-39.81825256347656, -343.088134765625, '<b><a href="/report/fcn.0043b490@4fe6510221c33bf023f6abed461fc13f">fcn.0043b490</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[345.83990478515625, 107.74644470214844, '<b><a href="/report/fcn.0046b830@4fe6510221c33bf023f6abed461fc13f">fcn.0046b830</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'null'],
-[-237.4193878173828, 216.3202667236328, '<b><a href="/report/fcn.00401765@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00401765</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[85.56068420410156, 330.4127197265625, '<b><a href="/report/fcn.64089580@07e4412910bcf0f5969ef64c44eecb2d">fcn.64089580</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[22.854656219482422, -6.336357593536377, '<b><a href="/report/fcn.64088a70@07e4412910bcf0f5969ef64c44eecb2d">fcn.64088a70</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00451290@4fe6510221c33bf023f6abed461fc13f">fcn.00451290</a><br>@4fe6510221c33bf023f6abed461fc13f</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -84,7 +78,7 @@ mov eax, str.Slow
 mov ecx, esi
 call fcn.00473c80
 test eax, eax
-je 0x4512cf
+je off.b63
 mov eax, dword[esp+0x70]
 push 1
 push 0
@@ -109,22 +103,22 @@ mov ecx, dword[0x4c28ec]
 movzx esi, word[ecx+0xec]
 and esi, 3
 cmp esi, 2
-je 0x45133c
+je off.b172
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov ebp, eax
 test ebp, ebp
-je 0x45133c
+je off.b172
 push ebp
 call dword[sym.imp.USER32.dll_IsIconic]
 test eax, eax
-jne 0x45133c
+jne off.b172
 cmp esi, eax
-jne 0x45131c
+jne off.b140
 lea edx, [esp+0x18]
 push edx
 push ebp
 call dword[sym.imp.USER32.dll_GetWindowRect]
-jmp 0x451330
+jmp off.b160
 mov dword[esp+0x18], eax
 mov dword[esp+0x1c], eax
 lea eax, [esp+0x18]
@@ -132,7 +126,7 @@ push eax
 push ebp
 call dword[sym.imp.USER32.dll_ClientToScreen]
 test eax, eax
-je 0x45133c
+je off.b172
 add edi, dword[esp+0x18]
 add ebx, dword[esp+0x1c]
 mov ebp, dword[esp+0x74]
@@ -144,19 +138,19 @@ setne al
 mov byte[esp+0x74], al
 push 0
 test al, al
-je 0x45136c
+je off.b220
 push 0
 push 0
 push str.DISPLAY
 call dword[sym.imp.GDI32.dll_CreateDCW]
-jmp 0x451372
+jmp off.b226
 call dword[sym.imp.USER32.dll_GetDC]
 mov esi, eax
 test esi, esi
-jne 0x4513c5
+jne off.b309
 mov ecx, dword[0x4c28ec]
 cmp byte[ecx+0x104], al
-jne 0x4513a6
+jne off.b278
 mov edx, dword[0x4c6cb4]
 push 1
 push eax
@@ -188,9 +182,9 @@ call dword[sym.imp.GDI32.dll_GetPixel]
 cmp byte[esp+0x74], 0
 mov ebx, eax
 push esi
-je 0x4513e0
+je off.b336
 call dword[sym.imp.GDI32.dll_DeleteDC]
-jmp 0x4513e8
+jmp off.b344
 push 0
 call dword[sym.imp.USER32.dll_ReleaseDC]
 mov eax, 0x4a9ba8
@@ -198,7 +192,7 @@ mov ecx, ebp
 call fcn.00473c80
 test eax, eax
 mov eax, ebx
-je 0x451413
+je off.b387
 shr eax, 8
 movzx ecx, bl
 movzx eax, al

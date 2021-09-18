@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.008173974642608498</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [87.5494384765625, 93.23707580566406, '<b><a href="/report/fcn.00407b10@0403abd1e9e066fc89cddd5736647282">fcn.00407b10</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>', 'point { fill-color: #e0440e; }'],
-[-55.94588088989258, 16.25632667541504, '<b><a href="/report/fcn.640d2ca0@07e4412910bcf0f5969ef64c44eecb2d">fcn.640d2ca0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[117.89305114746094, 279.6443176269531, '<b><a href="/report/fcn.100c9e60@89dc67d2f980e8488f97b1bf8cb24258">fcn.100c9e60</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[247.19444274902344, 147.5802764892578, '<b><a href="/report/fcn.00402ee0@a2475448bf4050c1583e1970984a4d00">fcn.00402ee0</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
-[28.074125289916992, 28.49544334411621, '<b><a href="/report/fcn.004046c0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004046c0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'null'],
-[-15.379088401794434, 215.4029541015625, '<b><a href="/report/fcn.004e0c20@279a61b1e76da49531f1f16fd1102a2d">fcn.004e0c20</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
-[192.1035614013672, 265.6689453125, '<b><a href="/report/fcn.100c92d0@89dc67d2f980e8488f97b1bf8cb24258">fcn.100c92d0</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[179.20193481445312, 29.593454360961914, '<b><a href="/report/fcn.0043d1c0@3dfcfb1d918b690c00de324bcfcdc082">fcn.0043d1c0</a><br>@3dfcfb1d918b690c00de324bcfcdc082</b><br>', 'null'],
-[-18.390199661254883, 149.38290405273438, '<b><a href="/report/fcn.00471be0@289859175c221b107317af7727d26c17">fcn.00471be0</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
-[102.7593002319336, 198.0702362060547, '<b><a href="/report/fcn.0045e200@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.0045e200</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
-[161.79856872558594, 156.79580688476562, '<b><a href="/report/fcn.00402250@a2475448bf4050c1583e1970984a4d00">fcn.00402250</a><br>@a2475448bf4050c1583e1970984a4d00</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00407b10@0403abd1e9e066fc89cddd5736647282">fcn.00407b10</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -81,16 +71,16 @@ sub esp, 0x524
 push ebp
 mov ebp, ecx
 cmp dword[eax-8], 2
-jge 0x407b31
+jge off.b33
 mov eax, 0x378
 pop ebp
 add esp, 0x524
 ret
-push str.RASAPI32
+push str.RASAPI32_
 call dword[sym.imp.KERNEL32.dll_LoadLibraryA]
 test eax, eax
 mov dword[esp+4], eax
-jne 0x407b5e
+jne off.b78
 push str._RASAPI32
 lea ecx, [ebp+0x64]
 call fcn.0040c0d2
@@ -145,14 +135,14 @@ mov dword[esp+0x28], 0
 call sub.RASAPI32.dll_RasDialA
 mov esi, eax
 test esi, esi
-je 0x407c4c
+je off.b316
 lea edx, [esp+0x14]
 push 0x100
 push edx
 push esi
 call sub.RASAPI32.dll_RasGetErrorStringA
 test eax, eax
-je 0x407c2c
+je off.b284
 push esi
 lea eax, [esp+0x18]
 push str.Undefined_RAS_Dial_Error___ld_.
@@ -161,7 +151,7 @@ call dword[sym.imp.USER32.dll_wsprintfA]
 add esp, 0xc
 lea edi, [ebp+0x64]
 push esi
-push str.__d_
+push str.__d__
 push edi
 call sub.MFC42.DLL_CString::Format
 add esp, 0xc
@@ -169,7 +159,7 @@ lea ecx, [esp+0x14]
 push ecx
 mov ecx, edi
 call sub.MFC42.DLL_CString::operator
-jmp 0x407c59
+jmp off.b329
 push 0x413530
 lea ecx, [ebp+0x64]
 call fcn.0040c0d2

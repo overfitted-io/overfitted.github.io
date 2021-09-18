@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,7 +78,7 @@ push 0x7fff
 push dword[ebp+8]
 call dword[sym.imp.KERNEL32.dll_GetFullPathNameW]
 test eax, eax
-je 0x46a5b7
+je off.b349
 push ebx
 lea eax, [ebp-0x20004]
 push eax
@@ -92,9 +92,9 @@ call fcn.00422e3c
 mov ebx, eax
 add esp, 0x10
 cmp word[ebp+ebx*2-0x10006], 0x5c
-jne 0x46a4d2
+jne off.b120
 cmp word[ebp+ebx*2-0x10008], 0x3a
-je 0x46a4d2
+je off.b120
 xor eax, eax
 mov word[ebp+ebx*2-0x10006], ax
 push edi
@@ -103,9 +103,9 @@ push edi
 push dword[ebp+0xc]
 call dword[sym.imp.KERNEL32.dll_CreateDirectoryW]
 test eax, eax
-jne 0x46a4ec
+jne off.b146
 cmp byte[ebp+0x10], al
-je 0x46a5a8
+je off.b334
 push edi
 push 0x2200000
 push 3
@@ -116,7 +116,7 @@ push dword[ebp+0xc]
 call dword[sym.imp.KERNEL32.dll_CreateFileW]
 mov edi, eax
 cmp edi, 0xffffffff
-je 0x46a59f
+je off.b325
 push 0x2fffa
 lea eax, [ebp-0x50000]
 push 0
@@ -154,12 +154,12 @@ push edi
 call dword[sym.imp.KERNEL32.dll_DeviceIoControl]
 push edi
 test eax, eax
-jne 0x46a5ac
+jne off.b338
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push dword[ebp+0xc]
 call dword[sym.imp.KERNEL32.dll_RemoveDirectoryW]
 xor eax, eax
-jmp 0x46a5b5
+jmp off.b347
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 xor eax, eax
 inc eax

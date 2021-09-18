@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.05021115533449946</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,7 +78,7 @@ push eax
 push 0
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
 test eax, eax
-je 0x4023c3
+je off.b211
 push 0x104
 lea ecx, [ebp-0x108]
 push ecx
@@ -86,9 +86,9 @@ mov edx, ecx
 push edx
 call dword[sym.imp.KERNEL32.dll_GetShortPathNameA]
 test eax, eax
-je 0x4023c3
+je off.b211
 push esi
-push str._c_del_
+push str._c_del__
 lea eax, [ebp-0x20c]
 push eax
 call dword[sym.imp.KERNEL32.dll_lstrcpyA]
@@ -98,18 +98,18 @@ push ecx
 lea edx, [ebp-0x20c]
 push edx
 call esi
-push str.____NUL
+push str.____NUL_
 lea eax, [ebp-0x20c]
 push eax
 call esi
 push 0x104
 lea ecx, [ebp-0x108]
 push ecx
-push str.ComSpec
+push str.ComSpec_
 call dword[sym.imp.KERNEL32.dll_GetEnvironmentVariableA]
 pop esi
 test eax, eax
-je 0x4023c3
+je off.b211
 push 0
 push 0
 lea edx, [ebp-0x20c]
@@ -120,7 +120,7 @@ push 0
 push 0
 call dword[sym.imp.SHELL32.dll_ShellExecuteA]
 cmp eax, 0x20
-jle 0x4023c3
+jle off.b211
 mov eax, 1
 mov ecx, dword[ebp-4]
 xor ecx, ebp

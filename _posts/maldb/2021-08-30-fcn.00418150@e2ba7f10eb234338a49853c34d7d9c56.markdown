@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -84,20 +84,20 @@ push 0xffff
 push edx
 call dword[sym.imp.WS2_32.dll_getsockopt]
 test eax, eax
-je 0x418198
+je off.b72
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 mov ecx, eax
-jmp 0x41819b
+jmp off.b75
 mov ecx, dword[ebp-4]
 test ecx, ecx
-je 0x4181ab
+je off.b91
 cmp ecx, 0x2748
-je 0x4181ab
+je off.b91
 xor eax, eax
-jmp 0x4181b0
+jmp off.b96
 mov eax, 1
 test esi, esi
-je 0x4181b6
+je off.b102
 mov dword[esi], ecx
 mov esp, ebp
 pop ebp

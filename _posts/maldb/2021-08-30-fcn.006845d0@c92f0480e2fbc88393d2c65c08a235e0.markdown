@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [127.29808807373047, -1.5808123350143433, '<b><a href="/report/fcn.006845d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006845d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[54.0626220703125, 114.6597900390625, '<b><a href="/report/fcn.0068bd30@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bd30</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-147.27206420898438, -12.187590599060059, '<b><a href="/report/fcn.006827a0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006827a0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-74.03802490234375, -128.43170166015625, '<b><a href="/report/fcn.0068bfa0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bfa0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-9.98780632019043, -6.885700702667236, '<b><a href="/report/fcn.00693c50@c92f0480e2fbc88393d2c65c08a235e0">fcn.00693c50</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[63.24850845336914, -123.12557220458984, '<b><a href="/report/fcn.0068db60@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068db60</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-83.22228240966797, 109.3570556640625, '<b><a href="/report/fcn.006844e0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006844e0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.006845d0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006845d0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -81,7 +75,7 @@ mov esi, dword[esp+0x24]
 mov edi, dword[esp+0x28]
 mov eax, dword[ebx+0x2c]
 test ah, 0x18
-je 0x684620
+je off.b80
 mov eax, dword[ebx+0x90]
 mov dword[esp+8], edi
 mov dword[esp+4], esi
@@ -89,7 +83,7 @@ mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_WSADuplicateSocketW]
 sub esp, 0xc
 test eax, eax
-jne 0x684660
+jne off.b144
 or dword[ebx+0x2c], 0x40000000
 add esp, 0x10
 pop ebx
@@ -97,20 +91,20 @@ pop esi
 pop edi
 ret
 test ah, 2
-je 0x684670
+je off.b160
 mov edx, dword[ebx+0x94]
 mov eax, dword[ebx+0x90]
 test edx, edx
-jne 0x6845f0
+jne off.b32
 mov dword[esp+4], 0x7fffffff
 mov dword[esp], eax
 call dword[sym.imp.WS2_32.dll_listen]
 sub esp, 8
 cmp eax, 0xffffffff
-jne 0x6845ea
+jne off.b26
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 mov dword[ebx+0x94], eax
-jmp 0x6845ea
+jmp off.b26
 add esp, 0x10
 pop ebx
 pop esi

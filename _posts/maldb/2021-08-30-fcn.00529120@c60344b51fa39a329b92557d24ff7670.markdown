@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="THREAD">THREAD</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -70,12 +70,12 @@ push edi
 mov edi, eax
 mov eax, dword[edi]
 test eax, eax
-jne 0x52912d
+jne off.b13
 xor al, al
 pop edi
 ret
 cmp dword[eax+4], 0
-je 0x529129
+je off.b9
 push esi
 lea ecx, [eax+0xc]
 push ecx
@@ -90,13 +90,13 @@ mov dword[edx+0x10], eax
 mov eax, dword[edi]
 add esp, 0x18
 cmp dword[eax+0x10], 0
-jne 0x529182
+jne off.b98
 or esi, 0xffffffff
 mov dword[eax+0x10], esi
 mov edi, dword[edi]
 mov eax, dword[edi+0x10]
 cmp eax, esi
-je 0x529172
+je off.b82
 push eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov dword[edi+0x10], esi
@@ -112,7 +112,7 @@ mov ecx, dword[eax+0x10]
 push ecx
 call dword[sym.imp.KERNEL32.dll_ResumeThread]
 cmp eax, 0xffffffff
-jne 0x5291a4
+jne off.b132
 mov esi, dword[edi]
 call fcn.00529070
 mov edx, dword[edi]

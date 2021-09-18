@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -75,27 +75,27 @@ push dword[0x48a04c]
 mov word[esi], ax
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 cmp word[esi+2], 0x3a
-jne 0x442174
+jne off.b52
 movzx eax, word[esi]
 cmp eax, 0x61
-jb 0x442174
+jb off.b52
 cmp eax, 0x7a
-ja 0x442174
+ja off.b52
 add eax, 0xffffffe0
 mov word[esi], ax
 mov eax, esi
 mov cx, word[eax]
 add eax, 2
 test cx, cx
-jne 0x442176
+jne off.b54
 sub eax, 2
 cmp eax, esi
-je 0x442190
+je off.b80
 cmp word[eax], 0x5c
-jne 0x442181
-jmp 0x442196
+jne off.b65
+jmp off.b86
 cmp word[eax], 0x5c
-jne 0x44219c
+jne off.b92
 xor ecx, ecx
 mov word[eax+2], cx
 mov ecx, esi
@@ -103,7 +103,7 @@ mov edi, edi
 mov ax, word[ecx]
 add ecx, 2
 test ax, ax
-jne 0x4421a0
+jne off.b96
 sub ecx, esi
 sar ecx, 1
 pop esi

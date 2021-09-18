@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.07531925802699295</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,13 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-16.611997604370117, 34.681678771972656, '<b><a href="/report/fcn.005be170@c92f0480e2fbc88393d2c65c08a235e0">fcn.005be170</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-52.71458435058594, -188.88543701171875, '<b><a href="/report/fcn.00402b01@8c10f6a1b7643ed6e914352ded4b58e0">fcn.00402b01</a><br>@8c10f6a1b7643ed6e914352ded4b58e0</b><br>', 'null'],
-[158.9493865966797, -108.3731918334961, '<b><a href="/report/fcn.100c9e60@89dc67d2f980e8488f97b1bf8cb24258">fcn.100c9e60</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[-228.27528381347656, -45.8278694152832, '<b><a href="/report/fcn.0043db80@e2ba7f10eb234338a49853c34d7d9c56">fcn.0043db80</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'null'],
-[19.510690689086914, 258.24176025390625, '<b><a href="/report/fcn.0069f770@c92f0480e2fbc88393d2c65c08a235e0">fcn.0069f770</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-192.16563415527344, 177.74298095703125, '<b><a href="/report/fcn.0068bda0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068bda0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[195.0648956298828, 115.18450927734375, '<b><a href="/report/fcn.00681e40@c92f0480e2fbc88393d2c65c08a235e0">fcn.00681e40</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.005be170@c92f0480e2fbc88393d2c65c08a235e0">fcn.005be170</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -80,9 +74,9 @@ push ebx
 sub esp, 0x4c
 mov eax, dword[0x83a2c0]
 test eax, eax
-je 0x5be191
+je off.b33
 cmp eax, 0xffffffff
-je 0x5be1da
+je off.b106
 call eax
 lea esp, [ebp-0xc]
 pop ebx
@@ -94,22 +88,22 @@ mov dword[esp], 0
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 sub esp, 4
 test eax, eax
-je 0x5be1bb
+je off.b75
 mov dword[esp+4], str._OPENSSL_isservice
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 sub esp, 8
 mov ebx, eax
 test ebx, ebx
-je 0x5be1d0
+je off.b96
 mov dword[0x83a2c0], ebx
 mov eax, ebx
-jmp 0x5be182
+jmp off.b18
 mov dword[0x83a2c0], 0xffffffff
 call dword[sym.imp.USER32.dll_GetProcessWindowStation]
 test eax, eax
 mov ebx, eax
-je 0x5be2ae
+je off.b318
 lea edi, [ebp-0x1c]
 mov dword[esp+0xc], 0
 mov dword[esp+8], 0
@@ -120,13 +114,13 @@ mov esi, dword[sym.imp.USER32.dll_GetUserObjectInformationW]
 call esi
 sub esp, 0x14
 test eax, eax
-jne 0x5be2ae
+jne off.b318
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x7a
-jne 0x5be2ae
+jne off.b318
 mov edx, dword[ebp-0x1c]
 cmp edx, 0x200
-ja 0x5be2ae
+ja off.b318
 add edx, 1
 and edx, 0xfffffffe
 lea eax, [edx+0x20]
@@ -146,23 +140,23 @@ mov dword[ebp-0x2c], ecx
 call esi
 sub esp, 0x14
 test eax, eax
-je 0x5be2ae
+je off.b318
 mov eax, dword[ebp-0x1c]
 mov ecx, dword[ebp-0x2c]
 xor edx, edx
 add eax, 1
 and eax, 0xfffffffe
 mov word[ecx+eax], dx
-mov dword[esp+4], str.Service-0x
+mov dword[esp+4], str.Service-0x_
 mov dword[esp], ecx
 mov dword[ebp-0x1c], eax
 call sub.msvcrt.dll_wcsstr
 test eax, eax
 setne al
 movzx eax, al
-jmp 0x5be189
+jmp off.b25
 mov eax, 0xffffffff
-jmp 0x5be189
+jmp off.b25
 
 {% endhighlight %}
 

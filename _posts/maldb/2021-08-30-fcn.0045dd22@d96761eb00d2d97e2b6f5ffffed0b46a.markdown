@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,7 +78,7 @@ push eax
 push dword[esi+0x10]
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameW]
 test eax, eax
-je 0x45ddad
+je off.b139
 lea edi, [esi+0xc]
 push edi
 push 2
@@ -86,29 +86,29 @@ lea eax, [ebp-0x20c]
 push eax
 call dword[sym.imp.OLEAUT32.dll_SystemTimeToVariantTime]
 test eax, eax
-js 0x45dda4
+js off.b130
 push 0
 lea eax, [ebp-0x20c]
 push eax
 push dword[edi]
 call dword[sym.imp.OLEAUT32.dll_QueryPathOfRegTypeLib]
 test eax, eax
-js 0x45dd7d
+js off.b91
 mov dword[esi+0x14], 2
-jmp 0x45ddb4
+jmp off.b146
 push 0
 lea eax, [ebp-0x20c]
 push eax
 push dword[edi]
 call dword[sym.imp.OLEAUT32.dll_UnRegisterTypeLibForUser]
 test eax, eax
-js 0x45dd9b
+js off.b121
 mov dword[esi+0x14], 1
-jmp 0x45ddb4
+jmp off.b146
 mov dword[esi+4], 0x8002801c
-jmp 0x45ddb4
+jmp off.b146
 mov dword[esi+4], 0x80029c4a
-jmp 0x45ddb4
+jmp off.b146
 mov dword[esi+4], 0x80004005
 mov eax, dword[esi+4]
 pop edi

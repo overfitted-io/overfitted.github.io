@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -78,7 +78,7 @@ mov edi, edx
 mov esi, ecx
 call dword[sym.imp.WSOCK32.dll_WSAStartup]
 test eax, eax
-jne 0x4649b6
+jne off.b195
 push 0x100
 lea eax, [ebp-0x108]
 push eax
@@ -87,24 +87,24 @@ lea eax, [ebp-0x108]
 push eax
 call dword[sym.imp.WSOCK32.dll_gethostbyname]
 test eax, eax
-je 0x4649b6
+je off.b195
 mov edx, dword[eax+0xc]
 xor ecx, ecx
 cmp dword[edx], ecx
-je 0x464953
+je off.b96
 mov eax, edx
 lea eax, [eax+4]
 inc ecx
 cmp dword[eax], 0
-jne 0x46494a
+jne off.b87
 cmp esi, ecx
-jle 0x464966
+jle off.b115
 push str.0.0.0.0
 push edi
 call fcn.00422ffc
 pop ecx
 pop ecx
-jmp 0x4649ae
+jmp off.b187
 push 4
 push dword[edx+esi*4-4]
 lea eax, [ebp-4]
@@ -128,7 +128,7 @@ push esi
 call fcn.0042106c
 add esp, 0x14
 call dword[sym.imp.WSOCK32.dll_WSACleanup]
-jmp 0x4649c3
+jmp off.b208
 push 0x48f910
 push edi
 call fcn.00422ffc

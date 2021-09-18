@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SOCKET">SOCKET</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.06983541601827824</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,10 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [288.3584899902344, 376.92022705078125, '<b><a href="/report/fcn.004c2a50@279a61b1e76da49531f1f16fd1102a2d">fcn.004c2a50</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
-[174.3632354736328, 404.6985778808594, '<b><a href="/report/fcn.00452f60@289859175c221b107317af7727d26c17">fcn.00452f60</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
-[146.5959014892578, 290.70050048828125, '<b><a href="/report/fcn.00453480@289859175c221b107317af7727d26c17">fcn.00453480</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
-[260.59130859375, 262.9224548339844, '<b><a href="/report/fcn.004c2f80@279a61b1e76da49531f1f16fd1102a2d">fcn.004c2f80</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'null'],
+    [11.239880561828613, 0.5794394612312317, '<b><a href="/report/fcn.004c2a50@279a61b1e76da49531f1f16fd1102a2d">fcn.004c2a50</a><br>@279a61b1e76da49531f1f16fd1102a2d</b><br>', 'point { fill-color: #e0440e; }'],
+[-11.239880561828613, -0.5796378254890442, '<b><a href="/report/fcn.00452f60@289859175c221b107317af7727d26c17">fcn.00452f60</a><br>@289859175c221b107317af7727d26c17</b><br>', 'null'],
 
         ]);
 
@@ -79,11 +77,11 @@ cmp dword[ebp+0x8c], 2
 push edi
 mov edi, dword[ebp]
 mov dword[esp+0xc], edi
-je 0x4c2bc5
+je off.b373
 cmp dword[ebp+0x1d8], 0
 push ebx
 push esi
-jne 0x4c2bba
+jne off.b362
 mov esi, dword[esp+0x124]
 lea eax, [esp+0x10]
 push eax
@@ -94,7 +92,7 @@ push esi
 mov dword[esp+0x1c], ebx
 call dword[sym.imp.WS2_32.dll_getpeername]
 test eax, eax
-je 0x4c2adc
+je off.b140
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 mov esi, eax
 push esi
@@ -106,7 +104,7 @@ push str.getpeername___failed_with_errno__d:__s
 push edi
 call fcn.004c0450
 add esp, 0x18
-jmp 0x4c2bc3
+jmp off.b371
 push ebx
 lea edx, [esp+0x1c]
 push 0
@@ -121,7 +119,7 @@ push ecx
 push esi
 call dword[sym.imp.WS2_32.dll_getsockname]
 test eax, eax
-je 0x4c2b29
+je off.b217
 call dword[sym.imp.WS2_32.dll_WSAGetLastError]
 mov esi, eax
 push esi
@@ -133,13 +131,13 @@ push str.getsockname___failed_with_errno__d:__s
 push edi
 call fcn.004c0450
 add esp, 0x18
-jmp 0x4c2bc3
+jmp off.b371
 lea edi, [ebp+0xb8]
 lea ebx, [ebp+0xe8]
 lea esi, [esp+0x98]
 call fcn.004c2a10
 test eax, eax
-jne 0x4c2b6a
+jne off.b282
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov esi, eax
 push esi
@@ -152,7 +150,7 @@ push str.ssrem_inet_ntop___failed_with_errno__d:__s
 push edx
 call fcn.004c0450
 add esp, 0x18
-jmp 0x4c2bc3
+jmp off.b371
 lea edi, [ebp+0x58]
 mov ecx, 0xb
 lea esi, [ebp+0xb8]
@@ -163,7 +161,7 @@ lea edi, [ebp+0xec]
 lea esi, [esp+0x18]
 call fcn.004c2a10
 test eax, eax
-jne 0x4c2bba
+jne off.b362
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov esi, eax
 push esi
@@ -176,7 +174,7 @@ push str.ssloc_inet_ntop___failed_with_errno__d:__s
 push eax
 call fcn.004c0450
 add esp, 0x18
-jmp 0x4c2bc3
+jmp off.b371
 push ebp
 call fcn.004c29b0
 add esp, 4

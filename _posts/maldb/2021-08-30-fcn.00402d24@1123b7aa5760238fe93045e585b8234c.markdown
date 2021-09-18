@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.05288083889473802</span><span class="bhv-tag" id="WRITES_STARTUP_REGISTRY">WRITES_STARTUP_REGISTRY / 0.25354147981009334</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [41.641807556152344, 157.6112823486328, '<b><a href="/report/fcn.00402d24@1123b7aa5760238fe93045e585b8234c">fcn.00402d24</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
-[159.49534606933594, 94.08015441894531, '<b><a href="/report/fcn.01001760@7be42d186738ec1816397d616de2cb9d">fcn.01001760</a><br>@7be42d186738ec1816397d616de2cb9d</b><br>', 'null'],
-[-281.1322021484375, 149.1178436279297, '<b><a href="/report/fcn.0040650d@13efdafd5b4f5d3a5dcb240b696c267c">fcn.0040650d</a><br>@13efdafd5b4f5d3a5dcb240b696c267c</b><br>', 'null'],
-[-288.5643310546875, -2.23038649559021, '<b><a href="/report/fcn.004063ac@e7f0482c425f7bc9cd320f60c1cfa28c">fcn.004063ac</a><br>@e7f0482c425f7bc9cd320f60c1cfa28c</b><br>', 'null'],
-[-159.7294464111328, -80.94786834716797, '<b><a href="/report/fcn.004063d8@999ae3491971c32d67bd4c32561ea381">fcn.004063d8</a><br>@999ae3491971c32d67bd4c32561ea381</b><br>', 'null'],
-[-163.12579345703125, 66.28289794921875, '<b><a href="/report/fcn.004063ac@fc08a944a357dc216338592f13f65b60">fcn.004063ac</a><br>@fc08a944a357dc216338592f13f65b60</b><br>', 'null'],
-[118.70311737060547, 373.90814208984375, '<b><a href="/report/fcn.004073d9@6c8b5339bada4cbd03f0f446da640707">fcn.004073d9</a><br>@6c8b5339bada4cbd03f0f446da640707</b><br>', 'null'],
-[214.3771514892578, 498.6448669433594, '<b><a href="/report/fcn.00403389@73677cb40830e94fbfb5483ff33e40b9">fcn.00403389</a><br>@73677cb40830e94fbfb5483ff33e40b9</b><br>', 'null'],
-[225.5318145751953, 334.3258056640625, '<b><a href="/report/fcn.004073d9@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.004073d9</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
-[-139.00628662109375, 200.26644897460938, '<b><a href="/report/fcn.004063d8@5bfd33ece1aeef8bda2c7fc886262ed9">fcn.004063d8</a><br>@5bfd33ece1aeef8bda2c7fc886262ed9</b><br>', 'null'],
-[-40.87839889526367, 10.315381050109863, '<b><a href="/report/fcn.00406533@e7582fc3dadb394a1457ab7e7fbbe9a7">fcn.00406533</a><br>@e7582fc3dadb394a1457ab7e7fbbe9a7</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00402d24@1123b7aa5760238fe93045e585b8234c">fcn.00402d24</a><br>@1123b7aa5760238fe93045e585b8234c</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -92,16 +82,16 @@ rep stosd
 mov edi, dword[ebp+0xc]
 cmp edi, ebx
 mov esi, 0x105
-je 0x402d8c
+je off.b104
 cmp byte[edi], bl
-je 0x402d8c
+je off.b104
 push 0x5c
 push edi
 call fcn.00417580
 test eax, eax
 pop ecx
 pop ecx
-jne 0x402db6
+jne off.b146
 push esi
 lea eax, [ebp-0x10c]
 push eax
@@ -114,16 +104,16 @@ call fcn.00416e2d
 cmp eax, ebx
 pop ecx
 pop ecx
-je 0x402d89
+je off.b101
 mov byte[eax+1], bl
 push edi
-jmp 0x402da0
+jmp off.b124
 push esi
 lea eax, [ebp-0x10c]
 push eax
 push ebx
 call dword[sym.imp.KERNEL32.dll_GetModuleFileNameA]
-push str..log
+push str..log_
 lea eax, [ebp-0x10c]
 push esi
 push eax
@@ -140,16 +130,16 @@ push dword[ebp+0xc]
 call dword[sym.imp.KERNEL32.dll_CreateFileA]
 mov edi, eax
 cmp edi, 0xffffffff
-je 0x402ebe
+je off.b410
 push ebx
 push edi
 call dword[sym.imp.KERNEL32.dll_GetFileSize]
 mov ecx, dword[ebp+0x10]
 shl ecx, 0xa
 cmp eax, ecx
-jbe 0x402e90
+jbe off.b364
 cmp eax, 0xffffffff
-je 0x402e90
+je off.b364
 push edi
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 push 0x41
@@ -170,9 +160,9 @@ call fcn.00416e2d
 cmp eax, ebx
 pop ecx
 pop ecx
-je 0x402e37
+je off.b275
 mov byte[eax], bl
-push str.2.log
+push str.2.log_
 push esi
 lea eax, [ebp-0x214]
 push eax

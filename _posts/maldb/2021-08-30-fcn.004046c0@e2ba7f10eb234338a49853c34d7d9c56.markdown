@@ -18,8 +18,8 @@ index: false
 <span class="tag" id="SYSTEM-INFO">SYSTEM-INFO</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.11616890673191443</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.0908197617107837</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -36,9 +36,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [474.8188171386719, -576.2844848632812, '<b><a href="/report/fcn.004046c0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004046c0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[460.399169921875, -332.67694091796875, '<b><a href="/report/fcn.00407b10@0403abd1e9e066fc89cddd5736647282">fcn.00407b10</a><br>@0403abd1e9e066fc89cddd5736647282</b><br>', 'null'],
-[678.5774536132812, -441.9942321777344, '<b><a href="/report/fcn.640d2ca0@07e4412910bcf0f5969ef64c44eecb2d">fcn.640d2ca0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.004046c0@e2ba7f10eb234338a49853c34d7d9c56">fcn.004046c0</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -83,30 +81,30 @@ mov dword[ebp-8], 0
 mov dword[ebp-0xc], 0
 lea esi, [edi+1]
 test eax, eax
-je 0x404716
-push str.GetNativeSystemInfo
-push str.kernel32.dll
+je off.b86
+push str.GetNativeSystemInfo_
+push str.kernel32.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x40470c
+je off.b76
 lea ecx, [ebp-0x30]
 push ecx
 call eax
-jmp 0x404716
+jmp off.b86
 lea edx, [ebp-0x30]
 push edx
 call dword[sym.imp.KERNEL32.dll_GetSystemInfo]
 mov ax, word[ebp-0x30]
 cmp ax, 9
-je 0x404726
+je off.b102
 cmp ax, 6
-jne 0x40472b
+jne off.b107
 mov esi, 0x101
 mov eax, dword[0x564ffc]
 test eax, eax
-je 0x40473b
+je off.b123
 push reloc.WS2_32.dll_bind
 call eax
 mov ecx, dword[ebp+8]
@@ -118,7 +116,7 @@ push ecx
 push reloc.WS2_32.dll_bind
 call dword[sym.imp.ADVAPI32.dll_RegOpenKeyExA]
 test eax, eax
-jne 0x4047c5
+jne off.b261
 mov ecx, dword[ebp-4]
 mov edi, dword[sym.imp.ADVAPI32.dll_RegQueryValueExA]
 lea edx, [ebp-8]
@@ -150,13 +148,13 @@ mov eax, dword[ebp-4]
 push eax
 call dword[sym.imp.ADVAPI32.dll_RegCloseKey]
 test edi, edi
-jne 0x4047cd
+jne off.b269
 mov ecx, dword[ebp+0xc]
 mov eax, dword[0x564ff8]
 mov dword[ecx], esi
 lea esi, [edi+1]
 test eax, eax
-je 0x4047bd
+je off.b253
 push reloc.WS2_32.dll_bind
 call eax
 pop edi

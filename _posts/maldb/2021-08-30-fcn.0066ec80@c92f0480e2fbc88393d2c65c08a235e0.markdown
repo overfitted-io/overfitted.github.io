@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="FILE">FILE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.05237606714826179</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-48.95366668701172, 70.92536926269531, '<b><a href="/report/fcn.0066ec80@c92f0480e2fbc88393d2c65c08a235e0">fcn.0066ec80</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
-[-128.43292236328125, -35.07019805908203, '<b><a href="/report/fcn.0067b010@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067b010</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[161.6085662841797, -61.825477600097656, '<b><a href="/report/fcn.0068ae70@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068ae70</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[80.35894775390625, -104.04180908203125, '<b><a href="/report/fcn.0068d130@c92f0480e2fbc88393d2c65c08a235e0">fcn.0068d130</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-130.22503662109375, 44.6176643371582, '<b><a href="/report/fcn.0067c4c0@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067c4c0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[177.7512969970703, 21.38077163696289, '<b><a href="/report/fcn.006833e0@c92f0480e2fbc88393d2c65c08a235e0">fcn.006833e0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[96.82614135742188, -22.589977264404297, '<b><a href="/report/fcn.0067c360@c92f0480e2fbc88393d2c65c08a235e0">fcn.0067c360</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[80.61737060546875, 57.59739685058594, '<b><a href="/report/fcn.006b7d90@c92f0480e2fbc88393d2c65c08a235e0">fcn.006b7d90</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-124.42302703857422, 129.818603515625, '<b><a href="/report/fcn.00691fc0@c92f0480e2fbc88393d2c65c08a235e0">fcn.00691fc0</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-52.362464904785156, -1.096868634223938, '<b><a href="/report/fcn.00678460@c92f0480e2fbc88393d2c65c08a235e0">fcn.00678460</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
-[-50.17848587036133, -75.34599304199219, '<b><a href="/report/fcn.00682940@c92f0480e2fbc88393d2c65c08a235e0">fcn.00682940</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.0066ec80@c92f0480e2fbc88393d2c65c08a235e0">fcn.0066ec80</a><br>@c92f0480e2fbc88393d2c65c08a235e0</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -84,7 +74,7 @@ sub esp, 0x23c
 mov ebx, dword[esp+0x250]
 mov dword[esp+0x24], 0
 test byte[ebx+0x2c], 0x40
-jne 0x66f0d0
+jne off.b1104
 mov eax, dword[esp+0x254]
 mov dword[ebx+0x78], eax
 mov eax, dword[esp+0x258]
@@ -92,12 +82,12 @@ mov dword[esp], eax
 call fcn.0066b3c0
 test eax, eax
 mov dword[ebx+0x30], eax
-je 0x66f0fa
+je off.b1146
 mov eax, dword[ebx+0x2c]
 test al, 1
-jne 0x66ee20
+jne off.b416
 test al, 0x40
-je 0x66ede4
+je off.b356
 mov eax, dword[esp+0x258]
 mov dword[esp+0x14], 0
 mov dword[esp+0x10], 0
@@ -114,7 +104,7 @@ mov dword[esp], eax
 call fcn.0066b490
 test eax, eax
 mov esi, eax
-je 0x66f0fa
+je off.b1146
 mov dword[esp+0x10], eax
 mov eax, dword[esp+0x258]
 and edi, 0x7fffffff
@@ -126,16 +116,16 @@ mov dword[esp+8], eax
 call ebp
 sub esp, 0x18
 test eax, eax
-je 0x66ee00
+je off.b384
 mov dword[esp], esi
 call dword[sym.imp.KERNEL32.dll_GetFileAttributesW]
 sub esp, 4
 cmp eax, 0xffffffff
-je 0x66efa1
+je off.b801
 shr eax, 4
 and eax, 1
 mov edi, eax
-jne 0x66ee44
+jne off.b452
 lea ebp, [esp+0x28]
 mov dword[esp+8], 2
 mov dword[esp], esi
@@ -146,25 +136,25 @@ test eax, eax
 lea ecx, [ebx+0x7c]
 lea edx, [esp+0x24]
 mov eax, esi
-jne 0x66ef81
+jne off.b769
 call fcn.0066e9d0
 test eax, eax
-jne 0x66efa1
+jne off.b801
 mov dword[ebx+0x80], 0
 mov ebp, dword[esp+0x24]
 mov dword[esp], esi
 call fcn.0066b4a0
 mov esi, ebp
 xor ebp, ebp
-jmp 0x66ee46
+jmp off.b454
 mov edx, eax
 or edx, 0x40
 test al, 0x20
 mov dword[ebx+0x2c], edx
-je 0x66ecda
+je off.b90
 mov eax, dword[ebx+4]
 add dword[eax+4], 1
-jmp 0x66ecda
+jmp off.b90
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov dword[esp], eax
 call fcn.0066e3a0
@@ -175,11 +165,11 @@ pop edi
 pop ebp
 ret
 mov dword[esp+8], 0xa9
-mov dword[esp+4], str.src_win_fs-event.c
-mov dword[esp], str.((handle)-_flags_&_UV__HANDLE_CLOSING)_==_0
+mov dword[esp+4], str.src_win_fs-event.c_
+mov dword[esp], str.((handle)-_flags_&_UV__HANDLE_CLOSING)_==_0_
 call fcn.006b2490
 mov eax, dword[ebx+0x2c]
-jmp 0x66ecd2
+jmp off.b82
 mov ebp, esi
 mov dword[esp+0x18], 0
 mov dword[esp+0x14], 0x42000000
@@ -193,13 +183,13 @@ sub esp, 0x1c
 mov dword[ebx+0x70], eax
 mov edx, dword[esp+0x24]
 test edx, edx
-je 0x66eea0
+je off.b544
 mov dword[esp], edx
 call fcn.0066b4a0
 mov eax, dword[ebx+0x70]
 mov dword[esp+0x24], 0
 cmp eax, 0xffffffff
-je 0x66f061
+je off.b993
 mov dword[esp+0xc], 0
 mov dword[esp+8], ebx
 mov edx, dword[ebx+4]
@@ -209,10 +199,10 @@ mov dword[esp+4], edx
 call dword[sym.imp.KERNEL32.dll_CreateIoCompletionPort]
 sub esp, 0x10
 test eax, eax
-je 0x66f061
+je off.b993
 mov eax, dword[ebx+0x88]
 test eax, eax
-je 0x66f0e0
+je off.b1120
 lea edx, [ebx+0x54]
 mov dword[ebx+0x54], 0
 mov dword[ebx+0x58], 0
@@ -234,11 +224,11 @@ mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_ReadDirectoryChangesW]
 sub esp, 0x20
 test eax, eax
-je 0x66f061
+je off.b993
 test edi, edi
-je 0x66f070
+je off.b1008
 test ebp, ebp
-je 0x66f078
+je off.b1016
 mov dword[ebx+0x84], ebp
 mov dword[ebx+0x74], 1
 add esp, 0x23c
@@ -250,30 +240,30 @@ pop ebp
 ret
 call fcn.0066e9d0
 test eax, eax
-jne 0x66efa1
+jne off.b801
 lea ecx, [ebx+0x80]
 xor edx, edx
 mov eax, ebp
 call fcn.0066e9d0
 test eax, eax
-je 0x66edd2
+je off.b338
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov edi, eax
 mov eax, dword[ebx+0x30]
 test eax, eax
-je 0x66efbf
+je off.b831
 mov dword[esp], eax
 call fcn.0066b4a0
 mov dword[ebx+0x30], 0
 mov eax, dword[ebx+0x7c]
 test eax, eax
-je 0x66efd5
+je off.b853
 mov dword[esp], eax
 call fcn.0066b4a0
 mov dword[ebx+0x7c], 0
 mov eax, dword[ebx+0x80]
 test eax, eax
-je 0x66eff1
+je off.b881
 mov dword[esp], eax
 call fcn.0066b4a0
 mov dword[ebx+0x80], 0
@@ -281,27 +271,27 @@ mov dword[esp], esi
 call fcn.0066b4a0
 mov eax, dword[ebx+0x70]
 cmp eax, 0xffffffff
-je 0x66f014
+je off.b916
 mov dword[esp], eax
 call dword[sym.imp.KERNEL32.dll_CloseHandle]
 mov dword[ebx+0x70], 0xffffffff
 sub esp, 4
 mov eax, dword[ebx+0x88]
 test eax, eax
-je 0x66f030
+je off.b944
 mov dword[esp], eax
 call fcn.0066b4a0
 mov dword[ebx+0x88], 0
 mov eax, dword[ebx+0x2c]
 test al, 0x40
-je 0x66f04e
+je off.b974
 test al, 1
-jne 0x66f0a0
+jne off.b1056
 mov edx, eax
 and edx, 0xffffffbf
 test al, 0x20
 mov dword[ebx+0x2c], edx
-je 0x66f04e
+je off.b974
 mov eax, dword[ebx+4]
 sub dword[eax+4], 1
 mov dword[esp], edi
@@ -315,30 +305,30 @@ ret
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 mov esi, ebp
 mov edi, eax
-jmp 0x66efa9
+jmp off.b809
 test ebp, ebp
-je 0x66ef67
+je off.b743
 mov dword[esp+8], 0x11d
-mov dword[esp+4], str.src_win_fs-event.c
+mov dword[esp+4], str.src_win_fs-event.c_
 mov dword[esp], str.is_path_dir___pathw___NULL_:_pathw__NULL
 call fcn.006b2490
-jmp 0x66ef67
+jmp off.b743
 mov dword[esp+8], 0x13f
-mov dword[esp+4], str.src_win_fs-event.c
-mov dword[esp], str.((handle)-_flags_&_UV__HANDLE_CLOSING)_==_0
+mov dword[esp+4], str.src_win_fs-event.c_
+mov dword[esp], str.((handle)-_flags_&_UV__HANDLE_CLOSING)_==_0_
 call fcn.006b2490
 mov eax, dword[ebx+0x2c]
 test al, 0x40
-je 0x66f04e
-jmp 0x66f03b
+je off.b974
+jmp off.b955
 mov eax, 0xfffff019
-jmp 0x66ee0e
+jmp off.b398
 mov dword[esp], 0x1000
 call fcn.0066b490
 test eax, eax
 mov dword[ebx+0x88], eax
-jne 0x66eee1
-mov dword[esp+4], str.uv__malloc
+jne off.b609
+mov dword[esp+4], str.uv__malloc_
 mov dword[esp], 0xe
 call fcn.0066e2e0
 nop

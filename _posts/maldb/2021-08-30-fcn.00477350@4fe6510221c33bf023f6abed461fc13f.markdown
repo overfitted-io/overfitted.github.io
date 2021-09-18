@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="SCREEN">SCREEN</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="na">N/A</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -71,33 +71,33 @@ push edi
 mov edi, eax
 movzx eax, word[esi]
 cmp eax, 0x41
-je 0x477361
+je off.b17
 cmp eax, 0x61
-jne 0x4773bb
+jne off.b107
 cmp word[esi+2], 0
-jne 0x4773bb
+jne off.b107
 mov eax, dword[esp+0x10]
 cmp word[eax], 0
-jne 0x4773bb
+jne off.b107
 cmp word[ebx], 0
-jne 0x4773bb
+jne off.b107
 cmp word[edi], 0
-jne 0x4773bb
+jne off.b107
 call dword[sym.imp.USER32.dll_GetForegroundWindow]
 mov ebp, eax
 test ebp, ebp
-je 0x4773bb
+je off.b107
 mov ecx, dword[esp+0xc]
 cmp byte[ecx+0xe6], 0
-jne 0x4773a2
+jne off.b82
 push ebp
 call dword[sym.imp.USER32.dll_IsWindowVisible]
 test eax, eax
-je 0x4773bb
+je off.b107
 push ebp
 call dword[sym.imp.USER32.dll_IsIconic]
 test eax, eax
-je 0x4773b6
+je off.b102
 push 9
 push ebp
 call dword[sym.imp.USER32.dll_ShowWindow]
@@ -107,20 +107,20 @@ pop ebp
 ret
 mov eax, dword[esp+0x14]
 test al, al
-jne 0x4773ef
+jne off.b159
 cmp word[esi], 0
-jne 0x4773ef
+jne off.b159
 mov edx, dword[esp+0x10]
 cmp word[edx], 0
-jne 0x4773ef
+jne off.b159
 cmp word[ebx], 0
-jne 0x4773ef
+jne off.b159
 cmp word[edi], 0
-jne 0x4773ef
+jne off.b159
 mov eax, dword[esp+0xc]
 call fcn.00477bb0
 test eax, eax
-jne 0x477414
+jne off.b196
 pop edi
 pop ebp
 ret
@@ -138,7 +138,7 @@ push eax
 mov edx, esi
 call fcn.004779b0
 add esp, 0x18
-jmp 0x4773e8
+jmp off.b152
 pop edi
 pop ebp
 jmp fcn.00477480

@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="RESOURCE">RESOURCE</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.02939270467541695</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -74,26 +74,26 @@ push dword[0x4486ec]
 call dword[sym.imp.KERNEL32.dll_FindResourceW]
 mov esi, eax
 test esi, esi
-je 0x40daa2
+je off.b246
 push ebx
 push esi
 push dword[0x4486ec]
 call dword[sym.imp.KERNEL32.dll_SizeofResource]
 mov ebx, eax
 test ebx, ebx
-je 0x40d9ff
+je off.b83
 push esi
 push dword[0x4486ec]
 call dword[sym.imp.KERNEL32.dll_LoadResource]
 test eax, eax
-je 0x40d9ff
+je off.b83
 push eax
 call dword[sym.imp.KERNEL32.dll_LockResource]
 mov esi, eax
 test esi, esi
-jne 0x40da06
+jne off.b90
 xor eax, eax
-jmp 0x40daa1
+jmp off.b245
 push ebp
 push edi
 push ebx
@@ -103,11 +103,11 @@ mov dword[esp+0x18], ebp
 call dword[sym.imp.KERNEL32.dll_GlobalAlloc]
 mov edi, eax
 test edi, edi
-je 0x40da9b
+je off.b239
 push edi
 call dword[sym.imp.KERNEL32.dll_GlobalLock]
 test eax, eax
-je 0x40da94
+je off.b232
 push ebx
 push esi
 push eax
@@ -120,7 +120,7 @@ push ebp
 push edi
 call dword[sym.imp.ole32.dll_CreateStreamOnHGlobal]
 test eax, eax
-jne 0x40da8d
+jne off.b225
 push ebp
 push dword[esp+0x1c]
 call fcn.0040d941
@@ -130,18 +130,18 @@ push ecx
 mov edx, dword[ecx]
 call dword[edx+8]
 test esi, esi
-je 0x40da8d
+je off.b225
 mov ecx, dword[esi+8]
 mov dword[esi+8], ebp
 test ecx, ecx
-jne 0x40da85
+jne off.b217
 push 0xffffff
 lea eax, [esp+0x14]
 push eax
 push dword[esi+4]
 call sub.gdiplus.dll_GdipCreateHBITMAPFromBitmap
 test eax, eax
-je 0x40da85
+je off.b217
 mov dword[esi+8], eax
 mov eax, dword[esi]
 mov ecx, esi

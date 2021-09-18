@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="TERMINATES_MANAGED_CLIENT">TERMINATES_MANAGED_CLIENT / 1.0</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="Calls CorExitProcess() to signal exit of managed context / app; this instructs managed object to call destructors">Calls CorExitProcess() to signal exit of managed context / app; this instructs managed object to call destructors (1.0)</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,8 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [-45.94845962524414, 71.86460876464844, '<b><a href="/report/fcn.004f7afe@e2ba7f10eb234338a49853c34d7d9c56">fcn.004f7afe</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[-185.765625, 251.4593505859375, '<b><a href="/report/fcn.00574a6b@c60344b51fa39a329b92557d24ff7670">fcn.00574a6b</a><br>@c60344b51fa39a329b92557d24ff7670</b><br>', 'null'],
-[264.46429443359375, -224.5451202392578, '<b><a href="/report/fcn.10109678@89dc67d2f980e8488f97b1bf8cb24258">fcn.10109678</a><br>@89dc67d2f980e8488f97b1bf8cb24258</b><br>', 'null'],
-[78.23333740234375, -106.48401641845703, '<b><a href="/report/fcn.00414576@7307643b343733b7fbd7b4b4fb482515">fcn.00414576</a><br>@7307643b343733b7fbd7b4b4fb482515</b><br>', 'null'],
-[-139.5176544189453, -130.18275451660156, '<b><a href="/report/fcn.00414716@e16f74a2849182d98050864255e902f8">fcn.00414716</a><br>@e16f74a2849182d98050864255e902f8</b><br>', 'null'],
-[3.1508066654205322, -344.9609069824219, '<b><a href="/report/fcn.00414576@c6d5547a6b11db0106596d8a93b709be">fcn.00414576</a><br>@c6d5547a6b11db0106596d8a93b709be</b><br>', 'null'],
-[-320.5711669921875, 32.917724609375, '<b><a href="/report/fcn.004148d6@96a869ae624ddb4834a1d5a829f85469">fcn.004148d6</a><br>@96a869ae624ddb4834a1d5a829f85469</b><br>', 'null'],
-[95.73590850830078, 254.28672790527344, '<b><a href="/report/fcn.00414576@b8b9cf6862b0d68d10750002e5baaf97">fcn.00414576</a><br>@b8b9cf6862b0d68d10750002e5baaf97</b><br>', 'null'],
-[-278.26287841796875, -353.417236328125, '<b><a href="/report/fcn.00414576@6e426bd8e348fab7a17ba317fb0f2d87">fcn.00414576</a><br>@6e426bd8e348fab7a17ba317fb0f2d87</b><br>', 'null'],
-[-380.4712219238281, -237.067138671875, '<b><a href="/report/fcn.00429202@9964b63070116cfb2469e51850178af1">fcn.00429202</a><br>@9964b63070116cfb2469e51850178af1</b><br>', 'null'],
-[242.28396606445312, 56.84394073486328, '<b><a href="/report/fcn.00414576@3aa98225e51cbcae2d334c8b6b4ed9fd">fcn.00414576</a><br>@3aa98225e51cbcae2d334c8b6b4ed9fd</b><br>', 'null'],
+    [58547.84765625, 3419.076904296875, '<b><a href="/report/fcn.004f7afe@e2ba7f10eb234338a49853c34d7d9c56">fcn.004f7afe</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
+[-58547.84765625, -3419.0771484375, '<b><a href="/report/fcn.00440a27@418e0921f3a9bd4f5bc0dcc59623b5a1">fcn.00440a27</a><br>@418e0921f3a9bd4f5bc0dcc59623b5a1</b><br>', 'null'],
 
         ]);
 
@@ -79,15 +70,15 @@ index: false
 mov edi, edi
 push ebp
 mov ebp, esp
-push str.mscoree.dll
+push str.mscoree.dll_
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleW]
 test eax, eax
-je 0x4f7b27
-push str.CorExitProcess
+je off.b41
+push str.CorExitProcess_
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 test eax, eax
-je 0x4f7b27
+je off.b41
 push dword[ebp+8]
 call eax
 pop ebp

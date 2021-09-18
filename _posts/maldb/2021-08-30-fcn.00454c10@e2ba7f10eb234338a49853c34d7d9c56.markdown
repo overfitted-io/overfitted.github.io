@@ -15,8 +15,8 @@ index: false
 <span class="tag" id="LINKING">LINKING</span>
 
 
-# Behaviour Tags
-<span class="bhv-tag" id="MODIFIES_DACL">MODIFIES_DACL / 0.07434769063274786</span><span class="bhv-tag" id="CONNECTS_TO_LISTENER">CONNECTS_TO_LISTENER / 0.16262853835807287</span><span class="bhv-tag" id="CHECKS_CPU_ARCHITECTURE">CHECKS_CPU_ARCHITECTURE / 0.06514381805513977</span><span class="bhv-tag" id="CREATES_SOCKET_LISTENER">CREATES_SOCKET_LISTENER / 0.012140493020466886</span><span class="bhv-tag" id="GENERATES_CANNARIES">GENERATES_CANNARIES / 0.08111182208735694</span>
+# Estimated Behaviour
+<ul><li class="bhv-desc" id="na">Not Available :(</li></ul>
 
 # Similar Functions
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,17 +33,7 @@ index: false
         data.addColumn({'type': 'string', 'role': 'style'});
         
         data.addRows([
-    [63.1125602722168, -283.2720947265625, '<b><a href="/report/fcn.00454c10@e2ba7f10eb234338a49853c34d7d9c56">fcn.00454c10</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
-[-25.086101531982422, 44.50655746459961, '<b><a href="/report/fcn.0040e5a7@c299206e1e94de2392d4dd9464d03d54">fcn.0040e5a7</a><br>@c299206e1e94de2392d4dd9464d03d54</b><br>', 'null'],
-[79.33053588867188, 105.44241333007812, '<b><a href="/report/fcn.0040d9b5@90aa43862e75a7f78f2655241632f0e5">fcn.0040d9b5</a><br>@90aa43862e75a7f78f2655241632f0e5</b><br>', 'null'],
-[-90.5140609741211, -69.44625091552734, '<b><a href="/report/fcn.0040d91f@6e195fbdf6b398dc597c28abc7c7a2ae">fcn.0040d91f</a><br>@6e195fbdf6b398dc597c28abc7c7a2ae</b><br>', 'null'],
-[-114.06047821044922, 127.31195068359375, '<b><a href="/report/fcn.0040b906@dd7278b699f8b751b4e28f3abe51fa08">fcn.0040b906</a><br>@dd7278b699f8b751b4e28f3abe51fa08</b><br>', 'null'],
-[142.2594757080078, -249.1873321533203, '<b><a href="/report/fcn.640d2ca0@07e4412910bcf0f5969ef64c44eecb2d">fcn.640d2ca0</a><br>@07e4412910bcf0f5969ef64c44eecb2d</b><br>', 'null'],
-[17.53069496154785, -59.41847229003906, '<b><a href="/report/fcn.0040a354@01be4434cc5f975da87a4b25d209e100">fcn.0040a354</a><br>@01be4434cc5f975da87a4b25d209e100</b><br>', 'null'],
-[-49.87627029418945, -304.61993408203125, '<b><a href="/report/fcn.10012a80@e5d49e0823e602f2ee948ac39d32c1eb">fcn.10012a80</a><br>@e5d49e0823e602f2ee948ac39d32c1eb</b><br>', 'null'],
-[107.95317077636719, 0.3078314960002899, '<b><a href="/report/fcn.0040e975@e5be9c1df6690f9880cc7a4e3bb82114">fcn.0040e975</a><br>@e5be9c1df6690f9880cc7a4e3bb82114</b><br>', 'null'],
-[-148.1602783203125, 23.020668029785156, '<b><a href="/report/fcn.00434d6b@d96761eb00d2d97e2b6f5ffffed0b46a">fcn.00434d6b</a><br>@d96761eb00d2d97e2b6f5ffffed0b46a</b><br>', 'null'],
-[-10.6752290725708, 167.491455078125, '<b><a href="/report/fcn.0040adc3@fec037c981b84fb9df87dac6521840c9">fcn.0040adc3</a><br>@fec037c981b84fb9df87dac6521840c9</b><br>', 'null'],
+    [0, 0, '<b><a href="/report/fcn.00454c10@e2ba7f10eb234338a49853c34d7d9c56">fcn.00454c10</a><br>@e2ba7f10eb234338a49853c34d7d9c56</b><br>', 'point { fill-color: #e0440e; }'],
 
         ]);
 
@@ -88,24 +78,24 @@ test eax, eax
 push ebx
 push esi
 push edi
-jne 0x454d14
+jne off.b260
 push eax
 call dword[sym.imp.KERNEL32.dll_GetModuleHandleA]
 test eax, eax
-je 0x454c55
+je off.b69
 push str._OPENSSL_isservice
 push eax
 call dword[sym.imp.KERNEL32.dll_GetProcAddress]
 mov dword[0x563810], eax
-jmp 0x454c5a
+jmp off.b74
 mov eax, dword[0x563810]
 test eax, eax
-jne 0x454d14
+jne off.b260
 mov dword[0x563810], 0xffffffff
 call dword[sym.imp.USER32.dll_GetProcessWindowStation]
 mov ebx, eax
 test ebx, ebx
-je 0x454d33
+je off.b291
 lea eax, [ebp-8]
 push eax
 push 0
@@ -114,13 +104,13 @@ push 2
 push ebx
 call dword[sym.imp.USER32.dll_GetUserObjectInformationW]
 test eax, eax
-jne 0x454d33
+jne off.b291
 call dword[sym.imp.KERNEL32.dll_GetLastError]
 cmp eax, 0x7a
-jne 0x454d33
+jne off.b291
 mov eax, dword[ebp-8]
 cmp eax, 0x200
-ja 0x454d33
+ja off.b291
 lea esi, [eax+1]
 and esi, 0xfffffffe
 lea eax, [esi+2]
@@ -135,7 +125,7 @@ push 2
 push ebx
 call dword[sym.imp.USER32.dll_GetUserObjectInformationW]
 test eax, eax
-je 0x454d33
+je off.b291
 mov eax, dword[ebp-8]
 add eax, 1
 and eax, 0xfffffffe
@@ -160,7 +150,7 @@ mov esp, ebp
 pop ebp
 ret
 cmp eax, 0xffffffff
-je 0x454c6c
+je off.b92
 call eax
 lea esp, [ebp-0x14]
 pop edi
