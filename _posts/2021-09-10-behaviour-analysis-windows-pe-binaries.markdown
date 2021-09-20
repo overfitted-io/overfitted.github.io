@@ -10,14 +10,9 @@ index: true
 The conducted analysis attempts to automatically identify the behaviour of binaries by evaluating the implemented methods.
 A list is presented below which includes mostly malicious samples.
 
-# List of Samples
-<ul>
-{%- for post in site.posts -%}
-    {%- if post.categories contains "report" -%}
-    {%- unless post.index -%}
-         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-    {% endunless %}
-    {%- endif -%}
-{%- endfor -%}
-</ul>
+
+
+{% include image.html url="/assets/img/emb_plot_preview.png" description="[Click to view the Complete / Interactive Chart](/assets/html/scatter.html)" size="60%" %}
+
+  
 
