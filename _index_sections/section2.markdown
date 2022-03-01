@@ -17,7 +17,7 @@ import requests
 data = {'lang' : 'en-ma'}
 files = {'img': open('some-image.png', 'rb')}
 
-response = requests.post('http://glyph-main.api.overfitted.io/process', files=files, data = data)
+response = requests.post('https://glyph-main.api.overfitted.io/process', files=files, data = data)
 
 print(response.text)
 ```
