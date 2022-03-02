@@ -37,5 +37,5 @@ We provide numeric / tabular data of the current benchmark; **best results** are
 
 # Live Demo
 
-Please find in this [Google Colab Notebook](https://colab.research.google.com/drive/1Y9kF4pjtAZX-pxZrKwVOBMr4fKyQA9CN?usp=sharing) a live demo code of Glyph which displays invovled images, recognized texts and inference times.
+Please find in this [Google Colab Notebook](https://colab.research.google.com/drive/1Y9kF4pjtAZX-pxZrKwVOBMr4fKyQA9CN?usp=sharing) a live demo code of Glyph which displays the involved images, recognized texts and inference times.
 A Google account might be required to view the results.

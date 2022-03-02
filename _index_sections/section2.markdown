@@ -9,7 +9,6 @@ The **Glyph Engine** (work in progress) is an *Optical Character Recognition* (*
 ## Example
 
 We ran Glyph on one of the more distorted images from the English benchmarking set; the recognized text is attached below the image (errors in bold).
-The result can be seen at [this address](https://colab.research.google.com/drive/1nujeV8rsAT-C2pCcSEFWHDrchjKJg1iZ?usp=sharing).
 
 {% include image.html url="/assets/img/index_sections/glyph_demo1.png" description="An excessively smart gown is made of bands of<br>white cloth cut<strong>\"</strong>with the scissors and not hemmed<br>at the edges, arabesqued upon fin<strong>c</strong> Valenciennes<br>lace. The sleev<strong>è</strong>s are rather mor<strong>c</strong> full than the" size="60%" %}
 
@@ -28,6 +27,8 @@ response = requests.post('https://glyph-main.api.overfitted.io/process', files=f
 
 print(response.text)
 ```
+
+A [Google Colab Demo](https://colab.research.google.com/drive/1nujeV8rsAT-C2pCcSEFWHDrchjKJg1iZ?usp=sharing) is also available.
 
 
 
