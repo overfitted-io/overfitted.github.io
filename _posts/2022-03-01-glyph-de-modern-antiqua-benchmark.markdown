@@ -21,10 +21,16 @@ $$ CER(\hat{text}, text) = \frac{I + S + D}{max(|\hat{text}|, |text|)} $$
 
 # CER Plot
 
-Below is an interactive CER plot (lower is better) which compares Glyph to existing products.
+Below are a few interactive CER plots (lower is better) which compare Glyph to existing products.
 
 <iframe width="851" height="526" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=890205284&amp;format=interactive"></iframe>
 {: style="display:block; margin:0 auto;"}
+
+<iframe width="851" height="526" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=660542569&amp;format=interactive"></iframe>
+{: style="display:block; margin:0 auto;"}
+
+
+
 
 
 # Statistics
@@ -33,6 +39,8 @@ We provide numeric / tabular data of the current benchmark; **best results** are
 
 <iframe width="100%" height="310px" frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=463942054&amp;single=true&amp;widget=false&amp;headers=true"></iframe>
 
+
+<iframe width="100%" height="610px" frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=116475021&amp;single=true&amp;widget=false&amp;headers=true"></iframe>
 
 
 # Live Demo
