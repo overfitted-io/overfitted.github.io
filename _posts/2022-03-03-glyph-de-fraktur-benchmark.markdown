@@ -17,7 +17,7 @@ $$ CER(\hat{text}, text) = \frac{I + S + D}{max(|\hat{text}|, |text|)} $$
 
 The presented samples, ground truth texts and results of different OCR engines are provided by a collaborating third party for performance assessment.
 
-> **Note:** in the available ground truth text for FineReader 11, the **ſ** (*long s*) is replaced by **s**; Glyph can recognize the **ſ** character but in order to achieve comparable results, we also replaced the *long s* in this experiment.   
+> **Note:** in the available ground truth text the **ſ** (*long s*) is replaced by **s**; Glyph can recognize the **ſ** character but in order to achieve relevant results it has been manually replaced in this experiment.   
 
 
 # CER Plot
