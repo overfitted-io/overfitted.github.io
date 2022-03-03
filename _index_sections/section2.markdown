@@ -35,6 +35,7 @@ A [Google Colab Demo](https://colab.research.google.com/drive/1nujeV8rsAT-C2pCcS
 ## Supported Languages
 - **English** - Modern Antiqua (lang code: *en-ma*) (25.02.2022) ([see benchmark](/benchmarks/ocr/glyph-en-modern-antiqua-benchmark))
 - **German** - Modern Antiqua (lang code: *de-ma*) (01.03.2022) ([see benchmark](/benchmarks/ocr/glyph-de-modern-antiqua-benchmark))
+- **German** - Fraktur (lang code: *de-frk*) (03.03.2022) ([see benchmark](/benchmarks/ocr/glyph-de-fraktur-benchmark))
 
 ## Supported Layouts
 - One-column text (25.02.2022)
