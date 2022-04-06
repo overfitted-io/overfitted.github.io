@@ -25,7 +25,7 @@ Once logged in, you will be redirected to a new page which contains your API key
     data-type="standard"
     data-size="large"
     data-theme="outline"
-    data-text="sign_in_with"
+    data-text="continue_with"
     data-shape="rectangular"
     data-logo_alignment="left" style="display:table; margin: 0 auto;">
 </div>
