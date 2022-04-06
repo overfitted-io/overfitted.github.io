@@ -1,16 +1,20 @@
 ---
 layout: section-tab
 icon: /assets/img/icons/ocr.svg
-title: Optical Character Recognition
+title: Text Recognition
 ---
 
-The **Glyph Engine** (work in progress) is a text recognition system (typed and handwritten) which supports text segmentation and recognition for multiple languages, given colored, grayscaled or binarized documents.
+The **Glyph Engine** (work in progress) is a text recognition system (**typed** and **handwritten**) which supports text segmentation and recognition for multiple languages, given colored, grayscaled or binarized documents. 
 
+At the moment, Glyph can handle the following languages and scripts:
+- **German - Fraktur**: (lang code: `de-frk`) (03.03.2022) ([see benchmark](/benchmarks/ocr/glyph-de-fraktur-benchmark))
+
+We mention that Glyph is designed to operate on dense-text documents structured in a single-column format.
 
 ## API
 Currently, interaction with the **Glyph API** occurs through **POST** requests which include the following parameters:
 * `api_key`: this is your API key
-* `lang`: the language and script of your submitted image; you can find below a list of supported languages
+* `lang`: the language and script of your submitted image
 * `img`: the image you're submitting for text recognition
 
 For example, the following **curl** command submits **my_image.tiff** using **de-frk** (German Fraktur) as language code. 
@@ -54,12 +58,3 @@ An example (truncated for brevity) is posted below:
     ]
 }
 ```
-
-
-
-
-## Supported Languages
-- **German** - Fraktur (lang code: *de-frk*) (03.03.2022) ([see benchmark](/benchmarks/ocr/glyph-de-fraktur-benchmark))
-
-## Supported Layouts
-- One-column text (25.02.2022)
