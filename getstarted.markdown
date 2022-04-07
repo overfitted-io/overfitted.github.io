@@ -13,7 +13,7 @@ Each new API key will include a number of free resources - and each service cons
 
 We require a Google-based authentication in order to issue a new API key for your account. You will be informed by Google in the pop-up window what information will be shared with overfitted.io.
 
-Once logged in, a popup will reveal your API key.
+Your API key will be shown in a modal -- please ensure that you are not blocking these through some of your plugins.
 
 <script>
     function handleCredentialResponse(obj) 
