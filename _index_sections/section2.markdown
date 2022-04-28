@@ -8,6 +8,7 @@ The **Glyph Engine** (work in progress) is a text recognition system (**typed** 
 
 At the moment, Glyph can handle the following languages and scripts:
 - **German - Fraktur**: (lang code: `de-frk`)
+- **German - Antiqua**: (lang code: `de-ma`)
 - **Ukrainian - Handwritten**: (lang code: `ua-hw`)
 
 Currently, Glyph is designed to operate on dense-text documents structured in a single-column format.
@@ -38,6 +39,15 @@ letzten entſtandenen Schaden mit ſeinem ganzen Vermögen.</pre>
 Старый духъ
 Гоѣда будеть- мимо пойдень,
 Вште.</pre>
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/ma-demo1.png">
+    <pre class="slide-caption">Nummern-Verzeichnis
+der in der am 23. März.1910 in Budapest in
+Gegenwart eines kön, öffentl. Notare stattgehabten
+ordentlichen Werlosund
+behufa Rückzahlung ausgelosten =</pre>
   </div>
 
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

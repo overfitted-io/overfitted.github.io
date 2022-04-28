@@ -24,4 +24,4 @@ function changeSlides() {
 
 }
 
-setInterval(changeSlides, 5000);
+setInterval(changeSlides, 10000);
