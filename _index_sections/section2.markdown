@@ -20,17 +20,13 @@ See below a set of images and texts processed using Glyph.
 <div class="slideshow-container">
   <div class="slide fade">
     <img src="/assets/img/index_sections/text_recognition/frk-demo1.png">
-    <pre class="slide-caption">Alle Perſonen ohne Unterſchied,
-insbeſondere aber alle Hausbeſiter und Miether, Dienſt—
+    <pre class="slide-caption">Alle Personen ohne Unterschied,
+insbesondere aber alle Hausbesitzer und Miether, Dienst—
 herren und Handwerker, Fabrikanten und Fuhrwerks—
-beſitzer, Aerzte, Apotheker/ Schützen und Jäger 2c. können
-durch eine Unachtſamkeit oder Fahrläſſigkeit Anlaß geben, daß
-irgend eine ihnen fremde, von ihnen nicht beſchäftigte, alſo auch in
-keinem Lohnverhältniß zu ihnen ſtehende Perſon eine körper—
-liche Berletung erleidet und infolge deſſen vorübergehend
-oder bleibend erwerbsunfähig wird. In ſolchen Fällen haftet
-derjenige, welcher den Unfall verſchuldet hat, für den dem Ver—
-letzten entſtandenen Schaden mit ſeinem ganzen Vermögen.</pre>
+besitzer, Aerzte, Apotheker, Schützen und Jäger rc. können
+durch eine Unachtsamkeit oder Fahrlässigkeit Anlaß geben, daß
+irgend eine ihnen fremde, von ihnen nicht beschäftigte, also auch in
+keinem Lohnverhältniß zu ihnen stehende Person eine körper—</pre>
   </div>
 
   <div class="slide fade">
