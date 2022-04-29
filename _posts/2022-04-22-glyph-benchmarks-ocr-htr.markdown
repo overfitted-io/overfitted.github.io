@@ -24,12 +24,12 @@ For benchmarking, we mainly use scanned documents provided by our collaborators 
 We split the provided datasets according to **language** and **font type**.
 
 
-## German Fraktur (de-frk)
+## German Fraktur
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=363789184&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
 
 
-## German Antiqua (de-ma)
+## German Antiqua
 
 <iframe width="100%" height="310" seamless frameborder="0"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=463942054&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
 
