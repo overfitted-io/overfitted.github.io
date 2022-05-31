@@ -1,10 +1,14 @@
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+var timeout;
+
 function plusSlides(n) {
   showSlides(slideIndex += n);
+  clearInterval(timeout);
 }
+
+
 
 function showSlides(n) {
   let i;
@@ -24,4 +28,4 @@ function changeSlides() {
 
 }
 
-setInterval(changeSlides, 10000);
+timeout = setInterval(changeSlides, 10000);

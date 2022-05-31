@@ -6,6 +6,7 @@ categories: glyph
 index: true
 ---
 
+NOTE: this documentation has not been updated for the latest version of Glyph. TODO.
 
 ## API
 Currently, interaction with the **Glyph API** occurs through **POST** requests which include the following parameters:
