@@ -29,6 +29,6 @@ See below a set of images and texts processed using Glyph.
     <img src="/assets/img/index_sections/text_recognition/ma-demo1.png">
   </div>
 
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+  <span class="next" onclick="plusSlides(1)">&#10095;</span>
 </div>
