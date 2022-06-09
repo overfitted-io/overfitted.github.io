@@ -22,7 +22,11 @@ See below a set of images and texts processed using Glyph.
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/cy-demo1.png">
+    <img src="/assets/img/index_sections/text_recognition/frk-demo2.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/hw-demo1.png">
   </div>
 
   <div class="slide fade">
