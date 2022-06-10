@@ -11,7 +11,9 @@ At the moment, Glyph can handle the following languages and scripts:
 - **German - Antiqua**: (lang code: `de-ma`)
 - **Ukrainian - Handwritten**: (lang code: `ua-hw`)
 
-For more information, see the available [documentation](/glyph/glyph-api-documentation). 
+For more information, see the available [documentation](/glyph/glyph-api-documentation) or the [internal benchmarks](/glyph/glyph-benchmarks-ocr-htr).
+
+A *Minimal Working Example* (Python) on how to interact with the Glyph API is also available as a [Google Colab Notebook](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing).
 
 
 <div class="slideshow-container">
