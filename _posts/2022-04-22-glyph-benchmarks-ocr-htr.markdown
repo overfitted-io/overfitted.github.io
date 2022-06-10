@@ -12,10 +12,10 @@ index: true
 We measure **Glyph**'s performance in **OCR** and **HTR** tasks using the **Character Level Accuracy** (%), computed using the **Levenshtein** distance. The following formula is employed: 
 
 $$
-ACC (\%) = 100 \cdot \Bigl[1 - min\Bigl(1, \frac{\sum_{i=1}^{i=N}{Levenshtein(\hat{text}, text)}}{\sum_{i=1}^{i=N}{|text|}}  \Bigr)\Bigr]
+ACC (\%) = 100 \cdot \Bigl[1 - min\Bigl(1, \frac{\sum_{i=1}^{i=N}{Levenshtein(\hat{text_i}, text_i)}}{\sum_{i=1}^{i=N}{|text_i|}}  \Bigr)\Bigr]
 $$
 
-where $$\hat{text}$$ represents the recognized text and $$text$$ is the ground truth, for $$N$$ images.
+where $$\hat{text}$$ represents the recognized text and $$text$$ is the ground truth, for $$N$$ available pairs of *&lt;image, text&gt;*.
 
 ## Datasets
 

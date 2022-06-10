@@ -6,7 +6,7 @@ categories: glyph
 index: true
 ---
 
-This document includes the available documentation for interacting with the **Glyph** text recognition engine through its API.
+This document includes the available documentation for interacting with the **Glyph** text recognition engine through its API. We mention that Glyph operates in a **synchronous** manner which implies a *request-response* protocol.
 
 ## Endpoint
 ```
@@ -41,7 +41,7 @@ Glyph responds with a **JSON**-formatted output which includes the following fie
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
 * `lines`: a list which presents information at line level; contains elements with the following strucutre:
     * `x0`, `y0`, `x1`, `y1`: denote the bounding rectangle coordinates for the current text line
-    * `script` : the guessed type of script used to write the line (possible values: `ANTIQUA`, `FRAKTUR`, `HANDWRITTEN`)
+    * `script` : the guessed type of script used to write the line (possible values: `TYPED`, `HANDWRITTEN`)
     * `confidence`: a value which indicates how confident is Glyph that the line is of interest and not an artifact or noise
     * `line`: a list which presents character-level information from the recognition process:
         * `x0`, `y0`, `x1`, `y1`: represent the bounding rectangle coordinates for each identified character
@@ -58,7 +58,7 @@ Below is an example of Glyph's response for the task of recognizing, for brevity
             "y0": 9,
             "x1": 837,
             "y1": 54,
-            "script": "FRAKTUR",
+            "script": "TYPED",
             "confidence": 0.8112224489450455,
             "line": [
                 {
