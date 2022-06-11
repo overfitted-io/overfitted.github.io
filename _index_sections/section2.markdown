@@ -4,7 +4,7 @@ icon: /assets/img/icons/ic_recognition.svg
 title: Text Recognition
 ---
 
-The **Glyph Engine** (work in progress) is an **OCR** / **HTR** system which supports text segmentation and recognition for multiple languages, given colored, grayscaled or binarized documents.
+**Glyph** is an **OCR** / **HTR** engine (work in progress) which supports text segmentation and recognition for multiple languages, given colored, grayscaled or binarized documents.
 
 At the moment, Glyph can handle the following languages and scripts:
 - **German - Fraktur**: (lang code: `de-frk`)
