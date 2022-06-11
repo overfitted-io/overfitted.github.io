@@ -2,6 +2,7 @@
 layout: page
 title: Get Started
 permalink: /get-started/
+emphasis: true
 ---
 
 In order to use the services hosted by overfitted.io, an API key must be included in each request. This API key is issued per account and provides access to all functionalities which are listed as available on our platform.

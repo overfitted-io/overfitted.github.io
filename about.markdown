@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+emphasis: false
 ---
 
 The **overfitted.io** platform aims to present in-house research efforts and implementations of different solutions in the fields of *Computer Vision*, *Artificial Intelligence* and *Deep Learning*.
@@ -21,4 +22,4 @@ We mention that all implementations vary in complexity and thus require differen
 To account for this, we will make efforts in balancing the infrastructure and optimizing the user-experience although a certain amount of time is required to properly stabilize new services.
 
 # Contact
-We list contact information on the bottom of the page.
+We list contact information on the bottom of the page for possible inquiries.
