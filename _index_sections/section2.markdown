@@ -26,11 +26,15 @@ A *Minimal Working Example* (Python) on how to interact with the Glyph API is al
   </div>
 
   <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/ma-demo1.png">
+  </div>
+
+  <div class="slide fade">
     <img src="/assets/img/index_sections/text_recognition/hw-demo1.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/ma-demo1.png">
+    <img src="/assets/img/index_sections/text_recognition/hw-demo2.png">
   </div>
 
   <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
