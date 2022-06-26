@@ -21,7 +21,7 @@ In POST-type requests, the following parameters are available:
     * `de-ma`: German / Antiqua 
     * `de-frk`: German / Fraktur (Gothic)
     * `ua-hw`: Ukrainian / Handwritten
-* `uniform_img` (optional; default: `false`): instructs the Glyph engine to treat the input as an uniform text image - i.e.: structured lines of text without artifacts or non-text elements nearby; to enable, set this parameter to `true`
+* `words_only` (optional; default: `false`): instructs the Glyph engine to treat each word as a line of text, which might prove useful in identifying texts from non-uniform inputs such as receipts; to enable, set this parameter to `true`
 * `api_key`: this is your API key which uniquely identifies your account; see the [Getting Started](/get-started) section for more information on this
 
 
