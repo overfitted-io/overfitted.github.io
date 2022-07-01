@@ -14,7 +14,7 @@ At the moment, Glyph can handle the following languages and scripts:
 - **Ukrainian - Handwritten**: (lang code: `ua-hw`)
 
 
-For more information, see the available [documentation](/glyph/glyph-api-documentation) or the [internal benchmarks](/glyph/glyph-benchmarks-ocr-htr).
+For more information, see the available [Documentation](/glyph/glyph-api-documentation) or a [Python-based Demo](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing).
 
 
 <div class="slideshow-container">
