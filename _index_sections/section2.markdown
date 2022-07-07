@@ -10,6 +10,7 @@ show_table: true
 At the moment, Glyph can handle the following languages and scripts:
 - **German - Fraktur**: (lang code: `de-frk`)
 - **German - Antiqua**: (lang code: `de-ma`)
+- **English - Antiqua**: (lang code: `en-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
 - **Ukrainian - Handwritten**: (lang code: `ua-hw`)
 

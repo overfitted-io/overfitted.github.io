@@ -39,7 +39,7 @@ curl -H "Content-Type: multipart/form-data" \
 
 Glyph responds with a **JSON**-formatted output which includes the following fields:
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
-* `lines`: a list which presents information at line level; contains elements with the following strucutre:
+* `lines`: a list which presents information at line level; contains elements with the following structure:
     * `x0`, `y0`, `x1`, `y1`: denote the bounding rectangle coordinates for the current text line
     * `script` : the guessed type of script used to write the line (possible values: `TYPED`, `HANDWRITTEN`)
     * `confidence`: a value which indicates how confident is Glyph that the line is of interest and not an artifact or noise
