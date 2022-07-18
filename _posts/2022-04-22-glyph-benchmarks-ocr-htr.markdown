@@ -24,6 +24,10 @@ For benchmarking, we mainly use scanned documents provided by our collaborators 
 We split the provided datasets according to **language** and **font type** and provide separate performance assessment for each.
 
 
+## English Antiqua
+
+<iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=119857532&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
 ## German Fraktur
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=363789184&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
@@ -35,8 +39,12 @@ We split the provided datasets according to **language** and **font type** and p
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1240822230&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
 
+## Romanian Antiqua
+
+<iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1002724205&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+
 ## Ukrainian Handwritten
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1810406216&amp;single=true&amp;widget=true&amp;headers=true"></iframe>
-
 
