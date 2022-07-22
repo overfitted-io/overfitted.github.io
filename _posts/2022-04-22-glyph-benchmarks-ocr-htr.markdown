@@ -26,7 +26,11 @@ We split the provided datasets according to **language** and **font type** and p
 
 ## English Antiqua
 
-<iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=119857532&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=119857532&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+## French Antiqua
+
+<iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=681592767&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 ## German Fraktur
 
@@ -41,7 +45,7 @@ We split the provided datasets according to **language** and **font type** and p
 
 ## Romanian Antiqua
 
-<iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1002724205&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1002724205&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 
 ## Ukrainian Handwritten
