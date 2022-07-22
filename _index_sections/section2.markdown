@@ -29,11 +29,7 @@ For more information, see the available [Documentation](/glyph/glyph-api-documen
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
-  </div>
-
-  <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
+    <img src="/assets/img/index_sections/text_recognition/en-ma-demo.png">
   </div>
 
   <div class="slide fade">
