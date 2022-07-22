@@ -21,27 +21,27 @@ For more information, see the available [Documentation](/glyph/glyph-api-documen
 
 <div class="slideshow-container">
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/frk-demo1.png">
+    <img src="/assets/img/index_sections/text_recognition/de-frk-demo.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/ma-demo1.png">
+    <img src="/assets/img/index_sections/text_recognition/ro-ma-demo.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/hw-demo1.png">
+    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/frk-demo2.png">
+    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/hw-demo2.png">
+    <img src="/assets/img/index_sections/text_recognition/fr-ma-demo.png">
   </div>
 
   <div class="slide fade">
-    <img src="/assets/img/index_sections/text_recognition/ma-demo2.png">
+    <img src="/assets/img/index_sections/text_recognition/de-ma-demo.png">
   </div>
 
   <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
