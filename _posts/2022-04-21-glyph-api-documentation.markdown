@@ -18,8 +18,11 @@ https://glyph.api.overfitted.io/process
 In POST-type requests, the following parameters are available:
 * `img`: the image you're submitting for text recognition
 * `lang`: the language and font type (script) of your submitted image; supported values are:
-    * `de-ma`: German / Antiqua 
+    * `en-ma`: English / Antiqua
+    * `fr-ma`: French / Antiqua
     * `de-frk`: German / Fraktur (Gothic)
+    * `de-ma`: German / Antiqua 
+    * `ro-ma`: Romanian / Antiqua
     * `ua-hw`: Ukrainian / Handwritten
 * `words_only` (optional; default: `false`): instructs the Glyph engine to treat each word as a line of text, which might prove useful in identifying texts from non-uniform inputs such as receipts; to enable, set this parameter to `true`
 * `api_key`: this is your API key which uniquely identifies your account; see the [Getting Started](/get-started) section for more information on this
