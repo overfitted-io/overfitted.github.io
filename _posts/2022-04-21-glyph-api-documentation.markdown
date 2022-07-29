@@ -40,6 +40,8 @@ curl -H "Content-Type: multipart/form-data" \
 
 ## Response
 
+> **Note:** in the event of a server overload, an **Internal Server Error(500)** will be returned; please check the **error code** returned by Glyph and **recreate the POST request** if necessary. 
+
 Glyph responds with a **JSON**-formatted output which includes the following fields:
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
 * `lines`: a list which presents information at line level; contains elements with the following structure:
