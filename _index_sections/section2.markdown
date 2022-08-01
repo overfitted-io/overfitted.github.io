@@ -5,16 +5,17 @@ title: Text Recognition
 show_table: true
 ---
 
-**Glyph** is an **OCR** / **HTR** engine (work in progress) which supports text segmentation and recognition for multiple languages, given colored, grayscaled or binarized documents.
+## The Glyph Engine
 
-At the moment, Glyph can handle the following languages and scripts:
+**Glyph** is a cloud-native **OCR** and **HTR** engine built to aid in digitizing old documents. It supports different combinations of languages and scripts (**antiqua**, **fraktur** and even **handwriting**) and assumes the inputs already underwent a layout analysis stage.
+
+## Supported Languages
 - **English - Antiqua** (lang code: `en-ma`)
 - **French - Antiqua** (lang code: `fr-ma`)
 - **German - Fraktur / Gothic** (lang code: `de-frk`)
 - **German - Antiqua** (lang code: `de-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
 - **Ukrainian - Handwritten** (lang code: `ua-hw`)
-
 
 For more information, see the available [Documentation](/glyph/glyph-api-documentation) or a minimal (8 lines) [Python Demo](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing).
 
@@ -51,3 +52,5 @@ For more information, see the available [Documentation](/glyph/glyph-api-documen
   <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
   <span class="next" onclick="plusSlides(1)">&#10095;</span>
 </div>
+
+
