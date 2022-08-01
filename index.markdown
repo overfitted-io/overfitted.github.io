@@ -4,5 +4,5 @@
 
 layout: home
 list_title: Articles
-icon: /assets/img/icons/ic_posts.svg
+list_icon: /assets/img/icons/ic_posts.svg
 ---
