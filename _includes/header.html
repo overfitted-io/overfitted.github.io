@@ -20,13 +20,22 @@
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
-              {%- if my_page.emphasis == true -%}
-                <a class="page-link color-emph" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-              {% else %}
+              {%- if my_page.emphasis != true -%}
                 <a class="page-link color-norm" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
+
+          {%- for path in page_paths -%}
+            {%- assign my_page = site.pages | where: "path", path | first -%}
+            {%- if my_page.title -%}
+              {%- if my_page.emphasis == true -%}
+                <a class="page-link color-emph" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          
         </div>
       </nav>
     {%- endif -%}
