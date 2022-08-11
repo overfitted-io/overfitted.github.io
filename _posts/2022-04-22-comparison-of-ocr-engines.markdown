@@ -44,32 +44,32 @@ where $$\hat{text}$$ represents the recognized text and $$text$$ is the ground t
 ## Datasets
 
 We received images for multiple test cases and will present them grouped by **langauge** and **font type**.
-
+For each image, the best result (lowest Levenshtein distance) is **bolded**; all results are aggregated at the bottom of each table.
 
 #### English Antiqua
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=119857532&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-## French Antiqua
+#### French Antiqua
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=681592767&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-## German Fraktur
+#### German Fraktur
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=363789184&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 
-## German Antiqua
+#### German Antiqua
 
 <iframe width="100%" height="310" seamless frameborder="0"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=463942054&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1240822230&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-## Romanian Antiqua
+#### Romanian Antiqua
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1002724205&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 
-## Ukrainian Handwritten
+#### Ukrainian Handwritten
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=555373516&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
