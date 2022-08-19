@@ -12,6 +12,6 @@ This service implements **template**-based image alignment for the task of extra
 
 {% include image.html
             description="Template Alignment for a Romanian Driving License; images from the [MIDV-500](https://arxiv.org/abs/1807.05786){:target=\"_blank\"} dataset"
-            size="40%"
+            size="70%"
             url="assets/img/index_sections/template_align/ta-demo.gif" %}
 
