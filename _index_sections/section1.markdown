@@ -6,7 +6,7 @@ logo: /assets/img/overfitted-logo.png
 ![overfitted](/assets/img/overfitted-logo.svg)
 {: style="text-align: center; user-select: none;"}
 
-# a Deep Learning API for Inference
+# an AI / ML Inference Platform
 {: style="text-align: center; color: #001551"}
 
 
