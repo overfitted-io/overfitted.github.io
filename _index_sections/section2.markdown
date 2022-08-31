@@ -17,7 +17,7 @@ show_table: true
 - **Romanian - Antiqua** (lang code: `ro-ma`)
 - **Ukrainian - Handwritten** (lang code: `ua-hw`)
 
-See the available [Documentation](/glyph/glyph-api-documentation) or a minimal (8 lines) demo - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}
+See the available [Documentation](/glyph/glyph-ocr-engine) or a minimal (8 lines) demo - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}
 
 
 <div class="slideshow-container">
