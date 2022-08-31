@@ -2,7 +2,7 @@
 layout: post
 title:  "The Glyph OCR Engine"
 date:   2022-04-21 11:52:19 +0300
-categories: glyph
+categories: ocr
 index: true
 ---
 
@@ -57,7 +57,7 @@ At the time of writing, Glyph can handle the following pairs of languages and sc
 - **Romanian - Antiqua** (lang code: `ro-ma`)
 - **Ukrainian - Handwritten** (lang code: `ua-hw`)
 
-Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/glyph/comparison-of-ocr-engines).
+Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/ocr/comparison-of-ocr-engines).
 
 ## Pricing
 
