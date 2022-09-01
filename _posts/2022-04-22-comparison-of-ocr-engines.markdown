@@ -48,42 +48,42 @@ For each image, the best result (lowest Levenshtein distance) is **bolded**; all
 
 #### English Antiqua
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=264841991&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=264841991&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=119857532&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 #### French Antiqua
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=2068077947&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=2068077947&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=681592767&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 #### German Fraktur
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1118592174&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1118592174&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=363789184&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 
 #### German Antiqua
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1734756779&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1734756779&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="310" seamless frameborder="0"  src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=463942054&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=2063816268&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=2063816268&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1240822230&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 #### Romanian Antiqua
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1977498843&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1977498843&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="310" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=1002724205&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 
 #### Ukrainian Handwritten
 
-<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1202540059&amp;format=interactive"></iframe>
+<iframe width="100%" height="371" seamless frameborder="0" scrolling="yes" style="display:block; margin: auto; border: 1px solid #ccc; max-width: 600px;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubchart?oid=1202540059&amp;format=interactive"></iframe>
 
 <iframe width="100%" height="710" seamless frameborder="0" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9j4CjdNt9WeRB1tH2D7G15YsZKUwEHVxgFgweittDverixKkqI0XKCYcDgd8qqiPmiR6hjBx9lpNv/pubhtml?gid=555373516&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
