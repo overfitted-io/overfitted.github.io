@@ -5,10 +5,10 @@ title: Template Alignment
 show_table: true
 ---
 
-## Doc Parser
+## Template Parser
 {:class="left-border-header" style="font-size: 30px"}
 
-Parses fixed-format documents and extracts **fields** of interest (*e.g., names, dates*) by relying on a provided (known) template, to account for positon-based semantics. 
+Parses fixed-format inputs (*e.g., documents, forms*) and extracts **fields** of interest (*e.g., names, dates*) by relying on a provided (known) template, to account for positon-based semantics. 
 Results are returned in **textual** (OCR-ed) format.
  
 
