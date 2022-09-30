@@ -3,15 +3,11 @@
     {{content}}
 </div>
 {%- else -%}
+{%- if page.color -%}
+<div class="section-tab" style="background-color: #{{page.color}}">
+{%- else -%}
 <div class="section-tab">
-
-    {%- if page.show_table == true -%}
-    <h2 class="section-header">
-        <img class="section-icon" src = "{{ page.icon }}" width="50">{{ page.title }}
-    </h2>
-    {%- endif -%}
-    <div class="section-content">
-        {{content}}
-    </div>
+{%- endif -%}
+    {{content}}
 </div>
 {%- endif -%}

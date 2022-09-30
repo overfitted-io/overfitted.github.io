@@ -1,18 +1,51 @@
 ---
 layout: section-tab
-icon: /assets/img/icons/ic_align.svg
-title: Template Alignment
-show_table: true
+icon: /assets/img/icons/ic_recognition.svg
+title: Text Recognition
+color: cee9ff
 ---
 
-## Template Align
 
-This service implements **template**-based image alignment for the task of extracting information from **structured formats**; *e.g., ID cards, passports, driving licenses, forms, etc.*. Given the fact that semantic meaning is assigned to each field based on its location in the document, it is important to align data to a known template before proceeding with steps such as OCR.
+## Glyph
+{:class="left-border-header" style="font-size: 30px"}
 
-See a minimal working example - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XWyxsXY23xecnkgY8cFAE2v7hloOGob6?usp=sharing){:class='no-icon'}{:target="_blank"}
+**Glyph** is a cloud-native **Optical Character Recognition** (OCR) and **Handwritten Text Recognition** (HTR) engine built to aid in digitizing old documents. 
+It supports different combinations of **languages** and **scripts** with horizontal reading order and single column formats.
 
-{% include image.html
-            description="Template Alignment for a Romanian Driving License; input from the [MIDV-500](https://arxiv.org/abs/1807.05786){:target=\"_blank\"} dataset"
-            size="70%"
-            url="assets/img/index_sections/template_align/ta-demo.gif" %}
+See the available [Documentation](/ocr/glyph-ocr-engine) or a minimal (8 lines) demo - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}
+
+
+<div class="slideshow-container">
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/de-frk-demo.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/en-ma-demo.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/fr-ma-demo.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/ro-ma-demo.png">
+  </div>
+
+  <div class="slide fade">
+    <img src="/assets/img/index_sections/text_recognition/de-ma-demo.png">
+  </div>
+
+  <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+  <span class="next" onclick="plusSlides(1)">&#10095;</span>
+</div>
+
 
