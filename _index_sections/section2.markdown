@@ -9,9 +9,8 @@ Employ convenient cloud-based inference services to solve challenging problems.
 {:style="color:gray; text-align: center"} 
 
 
-* Optical Character Recognition (OCR)
-* Handwritten Text Recognition (HTR)
-* Image Preprocessing
-* Natural Language Processing (NLP)
-* Document / Template Parsing
+* <svg><use xlink:href="{{ '/assets/img/icons/tag-icons.svg#typed-recognition' | relative_url }}"></use></svg>Optical Character Recognition (OCR)
+* <svg><use xlink:href="{{ '/assets/img/icons/tag-icons.svg#handwriting-recognition' | relative_url }}"></use></svg>Handwritten Text Recognition (HTR)
+* <svg><use xlink:href="{{ '/assets/img/icons/tag-icons.svg#template-parsing' | relative_url }}"></use></svg>Template Parsing
 {:class="tags-list"}
+
