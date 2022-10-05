@@ -7,6 +7,7 @@ index: true
 ---
 
 
+
 **Glyph** is a *work-in-progress* cloud-based **OCR engine** which was developed to provide help in digitizing scanned documents.
 Currently, it supports a number of **languages** and **font types** (antiqua, fraktur / gothic and handwritten) and moderate amounts of perturbation or artifacts in the given images. Support for additional languages will be implemented in the future.
 

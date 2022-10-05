@@ -13,7 +13,7 @@ show_table: true
 If you find overfitted.io to be matching your business requirements, feel free to drop an e-mail at: 
 {:style="color:gray; text-align: center"} 
 ### <script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script>
-{:style="color: orangered; text-align: center"}
+{:style="color: orangered; text-align: center; font-size: x-large;"}
 
 
 
