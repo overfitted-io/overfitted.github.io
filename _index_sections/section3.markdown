@@ -1,6 +1,5 @@
 ---
 layout: section-tab
-icon: /assets/img/icons/ic_recognition.svg
 title: Text Recognition
 color: dff1ff
 ---

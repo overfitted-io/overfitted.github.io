@@ -1,8 +1,7 @@
 ---
 layout: section-tab
-icon: /assets/img/icons/ic_align.svg
-title: Template Alignment
-show_table: true
+title: Document Template Parser
+color: faebd7
 ---
 
 ## Template Parser

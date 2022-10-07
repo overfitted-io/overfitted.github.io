@@ -1,5 +1,6 @@
 ---
 layout: section-tab
+title: Description
 ---
 
 ## About
