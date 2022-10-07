@@ -6,7 +6,7 @@ title: Requests Served
 <div style="text-align: center">
     <img src="{{ '/assets/img/icons/ic_req_res.svg' | relative_url }}" style="margin:auto; display: inline-block; width: 128px; height: 128px; pointer-events: none; user-select: none;">
     <div style="display: inline-block; vertical-align: middle">
-    <p id="num_requests" style="color: orangered; font-size: xxx-large; font-family: 'Dosis', sans-serif; font-weight: bold; margin-bottom: 0px;">?</p>
+    <p id="num_requests" style="color: orangered; font-size: 50px; font-family: 'Dosis', sans-serif; font-weight: bold; margin-bottom: 0px;">?</p>
     <p style="color: darkcyan; font-family: 'Dosis', sans-serif; font-weight: bold;">requests served... so far</p>
     </div>
 </div>
