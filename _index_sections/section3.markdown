@@ -1,7 +1,7 @@
 ---
 layout: section-tab
 title: Text Recognition
-color: dff1ff
+color: e6f2fb
 ---
 
 

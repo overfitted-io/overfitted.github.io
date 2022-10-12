@@ -56,14 +56,11 @@ At the time of writing, Glyph can handle the following pairs of languages and sc
 - **German - Fraktur / Gothic** (lang code: `de-frk`)
 - **German - Antiqua** (lang code: `de-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
-- **Ukrainian - Handwritten** (lang code: `ua-hw`)
+- **Romanian - Handwritten (old)** (lang code: `ro-ma`)
+- **Ukrainian - Handwritten (old)** (lang code: `ua-hw`)
 
 Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/ocr/comparison-of-ocr-engines).
 
-## Pricing
-
-Currently, and during its development, Glyph is provided **free of charge**; however, an **API key** will still required.
-Certain limitations might be introduced in the future to prevent the current infrastructure from overloading.
 
 ## API Requests
 
@@ -92,7 +89,6 @@ A successful response from Glyph includes the following fields:
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
 * `lines`: a list which presents information at line level; contains elements with the following structure:
     * `x0`, `y0`, `x1`, `y1`: denote the bounding rectangle coordinates for the current text line
-    * `script` : the guessed type of script used to write the line (possible values: `TYPED`, `HANDWRITTEN`)
     * `confidence`: a value which indicates how confident is Glyph that the line is of interest and not an artifact or noise
     * `line`: a list which presents character-level information from the recognition process:
         * `x0`, `y0`, `x1`, `y1`: represent the bounding rectangle coordinates for each identified character
@@ -114,7 +110,6 @@ Alternatively, you'll find below a JSON response from Glyph for a single image c
             "y0": 9,
             "x1": 837,
             "y1": 54,
-            "script": "TYPED",
             "confidence": 0.8112224489450455,
             "line": [
                 {
