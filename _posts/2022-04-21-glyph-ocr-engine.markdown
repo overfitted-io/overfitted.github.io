@@ -56,8 +56,8 @@ At the time of writing, Glyph can handle the following pairs of languages and sc
 - **German - Fraktur / Gothic** (lang code: `de-frk`)
 - **German - Antiqua** (lang code: `de-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
-- **Romanian - Handwritten (old)** (lang code: `ro-ma`)
-- **Ukrainian - Handwritten (old)** (lang code: `ua-hw`)
+- **Romanian - Handwritten (old documents)** (lang code: `ro-ma`)
+- **Ukrainian - Handwritten (old documents)** (lang code: `ua-hw`)
 
 Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/ocr/comparison-of-ocr-engines).
 
@@ -74,6 +74,7 @@ When interacting with Glyph, a **POST**-type **request** must be crafted and dir
     * `de-frk`: German / Fraktur (Gothic)
     * `de-ma`: German / Antiqua 
     * `ro-ma`: Romanian / Antiqua
+    * `ro-hw`: Romanian / Handwritten
     * `ua-hw`: Ukrainian / Handwritten
 * `words_only` (optional; default: `false`): instructs the Glyph engine to treat each word as a line of text, which might prove useful in identifying texts from non-uniform inputs such as receipts; to enable, set this parameter to `true`
 * `api_key`: this is your API key which uniquely identifies your account; see the [Getting Started](/get-started) section for more information on this
