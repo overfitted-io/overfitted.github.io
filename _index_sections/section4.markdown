@@ -14,7 +14,7 @@ Results are returned in **textual** (OCR-ed) format.
 > **Note:** the JSON result has been formatted to be more intuitive for this use case; please refer to the documentation for a more accurate representation of the service's response.
 
 <div style="background-color: #fff; text-align: center; overflow:auto;">
-<img src="{{ '/assets/img/index_sections/template_parser/w2_highlight.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; max-width:50%;">
+<img src="{{ '/assets/img/index_sections/template_parser/w2_highlight.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; min-width: 200px; max-width:50%;">
 <pre style="display: inline-block; vertical-align: middle; background-color: transparent; border: none; text-align: left;">
 {
     <span style="font-weight: bold">"EMPLOYEE_SSN":</span> <span style="color: orangered">"123-45-6789<strong>.</strong>"</span>, 
