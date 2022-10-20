@@ -18,7 +18,7 @@ title: Requests Served
         var req = new XMLHttpRequest()
 
         req.onreadystatechange = function() {
-            if (req.readyState == 4) {
+            if (req.readyState == 4 and req.status == 200) {
                 num_requests = req.response
 
                 suffix = ''
