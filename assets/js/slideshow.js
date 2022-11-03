@@ -1,5 +1,9 @@
 var slideIndex = 1;
-showSlides(slideIndex);
+
+window.onload = (event) => {
+  showSlides(slideIndex);
+};
+
 
 var timeout;
 
