@@ -15,31 +15,31 @@ See the available [Documentation](/ocr/glyph-ocr-engine) or a minimal (8 lines) 
 
 
 <div class="slideshow-container">
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/de-frk-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/en-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/fr-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ro-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/de-ma-demo.png">
   </div>
 

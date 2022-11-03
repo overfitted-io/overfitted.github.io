@@ -14,31 +14,31 @@ Currently, it supports a number of **languages** and **font types** (antiqua, fr
 Glyph is intended to be used mainly via its **API** (detailed below) and be embedded into projects or scripts without introducing external modules or large code snippets. Therefore, it is currently not targeted for end-users.
 
 <div class="slideshow-container">
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/de-frk-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/en-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/fr-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/ro-ma-demo.png">
   </div>
 
-  <div class="slide fade">
+  <div class="slide slide-medium fade">
     <img src="/assets/img/index_sections/text_recognition/de-ma-demo.png">
   </div>
 
