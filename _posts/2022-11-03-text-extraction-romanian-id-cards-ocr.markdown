@@ -217,9 +217,9 @@ The original images couldn't be included unless they were heavily blurred which 
 ### Notes and Further Assistance
 
 Although the results seem promising, some errors might still occur. It is highly recommended to not rely entirely on the accuracy of this approach and implement additional validation methods. Some examples include text-level checks such as:
-- character-level text correction based on a known vocabulary of words
-- RegEx-based format validation (e.g., a field should be numbers-only or should match a specific format)
-- fuzzy searching using multiple fields (i.e., if one field is not correctly recognized, others can compensate for the error)
+- character-level **text correction** based on a known **vocabulary** of words
+- RegEx-based **format validation** (e.g., a field should be numbers-only or should match a specific format)
+- **fuzzy searching** using multiple fields (i.e., if one field is not correctly recognized, others can compensate for the error)
 
 Should you have questions, feel free to reach out for further assistance with regard to this topic.
 
