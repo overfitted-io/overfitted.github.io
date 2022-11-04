@@ -44,6 +44,8 @@ title: Requests Served
         req.send(null)
     }
 
-    window.onload = get_current_requests
+    window.addEventListener('load', function() {
+        get_current_requests()
+    }, false);
 </script>
 

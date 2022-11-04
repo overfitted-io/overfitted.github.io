@@ -1,8 +1,8 @@
 var slideIndex = 1;
 
-window.onload = (event) => {
+window.addEventListener('load', function() {
   showSlides(slideIndex);
-};
+}, false);
 
 
 var timeout;
