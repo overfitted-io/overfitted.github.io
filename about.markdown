@@ -5,21 +5,30 @@ permalink: /about/
 emphasis: false
 ---
 
-The **overfitted.io** platform aims to present in-house research efforts and implementations of different solutions in the fields of *Computer Vision*, *Artificial Intelligence* and *Deep Learning*.
-The main objective of this platform is to provide either original or improved services in order to assist both end-users and developers in tackling difficult problems and achieving competitive results.  
-For each exposed service, attempts are made to provide relevant and transparent benchmarks while also ensuring REST-based API access.
 
-# Blog
-A blog can be found at this address where general information will be published along with relevant benchmarking results for our services.
-We intend to benchmark our solutions on realistic data, which is often provided by collaborators or encountered in the wild, in order to remain relevant and of interest.
+# What it is?
 
-# API
-We host and run all our solutions on our cloud infrastructure to ensure minimal implementation complexity and overhead. This permits the users to interact with any service through an active internet connection by submitting data and awaiting results in a REST-based manner without having to perform computationally expensive operations or integrate large external modules into existing projects.
+**overfitted.io** is a cloud-based platform which aims to present in-house research efforts and implementations of different solutions in the fields of: 
+* *Computer Vision*
+* *Artificial Intelligence*
+* *Deep Learning*
 
-Each available service is hosted on a different subdomain (*e.g.: service-1.api.overfitted.io*) and documentation with regard to API interactions will be detailed in the corresponding documentation. Despite this, all services will require attaching a global, account-level, **API key** in order to identify the end-user who generated the request. This key can be generated from the [Get Started](/get-started) section. 
+The main objective is to provide accessible services in order to assist end-users, developers and businesses in tackling difficult problems and achieving competitive results.
 
-We mention that all implementations vary in complexity and thus require different amounts of resources. This can cause the exposed services to become more or less responsive under certain circumstances, especially when many requests are received by our endpoint. 
-To account for this, we will make efforts in balancing the infrastructure and optimizing the user-experience although a certain amount of time is required to properly stabilize new services.
+# How to use?
+All services are hosted on our **cloud** infrastructure to ensure minimal implementation complexity and overhead. This permits any registered user to interact with any service through an active **internet connection** by **programatically** submitting data and awaiting results without having to perform computationally expensive operations or integrate large external modules into existing projects.
 
-# Contact
-We list contact information on the bottom of the page for possible inquiries.
+Each available service is hosted on a different subdomain (*e.g.: service-1.api.overfitted.io*) and documentation with regard to API interactions will be publicly available. A **request** is made to this endpoint and a **response** is synchronously returned when available.
+
+# How registration works?
+
+Registration is required to interact with the services exposed here. Each registered account receives an unique **API key** which must be included in any request made to a service. Besides the API key, each account starts with a number or **credits** (balance) which is consumed when services are used.
+
+See the [Get Started](/get-started) section for more details on this.
+
+# How can I contact you?
+
+You can reach us through:
+* **LiveChat**: if you're new here, click the bottom-right corner icon or go [here](#){:onclick="window.open('https://chat.overfitted.io/livechat?mode=popout','popup','width=400,height=600'); return false;"}
+* **Support & Dev Chat**: if you are an older collaborator with a registered chat account, contact us via our [support chat](https://chat.overfitted.io/)
+* **E-mail**: if you prefer e-mails, leave us a message at: **<script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script>**

@@ -5,16 +5,29 @@ permalink: /get-started/
 emphasis: true
 ---
 
-In order to use the services hosted by overfitted.io, an API key must be included in each request. This API key is issued per account and provides access to all functionalities which are listed as available on our platform.
+In order to use the services hosted here, an **API key** must be included in each request. This API key is issued **per account** and provides access to all functionalities which are listed as available on our platform.
 
-Each new API key will include a number of free resources - and each service consumes a predefined amount of these resources when queried using the aforementioned API key. This permits running a limited number of tests at no cost in order to decide whether the targeted service matches your needs.
+The services operate using a **credits system**: each account has a number of credits, and each service consumes a predefined amount of these credits when queried using the account's API key.
+
+# Free Testing
+
+A new account will include a number of **free credits**. These will allow you to decide whether the services are suitable for your project.
+
+These credits are available with:
+- no commitments
+- no credit card information
+- no expiration time
+
+Should you find a service to be matching your needs, please contact us for further discussions.
 
 
-# Your API Key
+# Get Your API Key
 
-We require a Google-based authentication in order to issue a new API key for your account. You will be informed by Google in the pop-up window what information will be shared with overfitted.io.
+We require a **Google**-based **authentication** in order to issue a new API key for your account. You will be informed by Google in the pop-up window **what information will be shared** with overfitted.io. 
 
-Your API key will be shown in a modal -- please ensure that you are not blocking these (and JavaScript) through some of your plugins.
+The information we collect is similar to the information supplied in any other registration form, when creating an account. We will not share this information with any other party.
+
+Once you successfully authenticate, a modal will be shown containing your account details and **API key**. Please make sure you're not blocking those or JavaScript. If you ever need your API key again, just redo the authentication step.
 
 <script>
     function handleCredentialResponse(obj) 
