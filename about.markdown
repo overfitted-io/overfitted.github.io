@@ -9,9 +9,9 @@ emphasis: false
 # What it is?
 
 **overfitted.io** is a cloud-based platform which aims to present in-house research efforts and implementations of different solutions in the fields of: 
-* *Computer Vision*
-* *Artificial Intelligence*
-* *Deep Learning*
+* Computer Vision
+* Artificial Intelligence
+* Deep Learning
 
 The main objective is to provide accessible services in order to assist end-users, developers and businesses in tackling difficult problems and achieving competitive results.
 
