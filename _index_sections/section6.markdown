@@ -6,7 +6,7 @@ title: Contact
 ## Let's talk
 {:class="lined-header"}
 
-If you find overfitted.io to be matching your business requirements, feel free to contact us:
+If you find overfitted.io to be matching your business requirements, we'd love to hear from you!
 {:style="color:gray; text-align: center"} 
 
 <div style="white-space: nowrap;">
