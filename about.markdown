@@ -29,6 +29,6 @@ See the [Get Started](/get-started) section for more details on this.
 # How can I contact you?
 
 You can reach us through:
-* **LiveChat**: if you're new here, click the bottom-right corner icon or go [here](#){:onclick="window.open('https://chat.overfitted.io/livechat?mode=popout','popup','width=400,height=600'); return false;"}
+* **Live Chat**: if you're new here, click the bottom-right corner icon or go [here](#){:onclick="window.open('https://chat.overfitted.io/livechat?mode=popout','popup','width=400,height=600'); return false;"}
 * **Support & Dev Chat**: if you are an older collaborator with a registered chat account, contact us via our [support chat](https://chat.overfitted.io/)
 * **E-mail**: if you prefer e-mails, leave us a message at: **<script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script>**

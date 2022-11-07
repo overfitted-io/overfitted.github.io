@@ -17,6 +17,59 @@ The documents presented here are **Romanian Identity (ID) Cards** discovered by 
 
 The template document is an exception to this rule and therefore includes all available information because it is classified as a sample card (**ro:** *specimen*) and publicly exposed on [OECD's Official Website](https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Romania-TIN.pdf)
 
+### Expected Results
+
+This section presents the expected results; recognized texts are added on the right side of the image and linked to their corresponding field in the image.
+
+The code is available as a [GitHub Repository](https://github.com/overfitted-io/demo-romanian-id-card-ocr) with the mention that the original images cannot be published unless heavily blurred and therefore have been replaced with alternatives.
+
+
+<div class="slideshow-container">
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/1.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/2.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/3.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/4.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/5.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/6.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/7.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/8.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/9.png">
+  </div>
+
+  <div class="slide slide-large fade">
+    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/10.png">
+  </div>
+
+  <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+  <span class="next" onclick="plusSlides(1)">&#10095;</span>
+</div>
+
+
 ## Challenges
 
 Typically, ID card scanning is performed in a controlled and ideal environment where the following favorable assumptions hold:
@@ -160,59 +213,6 @@ For example, a truncated response is presented; it corresponds to a ROI which co
     }
 }
 ```
-
-### Repository & Qualitative Results
-
-The script used to generate the images in this section is an augmented version of the one previously presented. It additionally parses the response and draws bounding polygons around the identified ROIs, as well as inserting the recognized texts in the image. 
-
-It is available as a [GitHub Repository](https://github.com/overfitted-io/demo-romanian-id-card-ocr).
-
-The original images couldn't be included unless they were heavily blurred which would mitigate some of the performance of this service; therefore, two publicly available samples are used instead with artificially introduced background noise.
-
-<div class="slideshow-container">
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/1.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/2.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/3.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/4.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/5.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/6.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/7.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/8.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/9.png">
-  </div>
-
-  <div class="slide slide-large fade">
-    <img src="/assets/img/posts/text-extraction-romanian-id-cards-ocr/slideshow/10.png">
-  </div>
-
-  <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
-  <span class="next" onclick="plusSlides(1)">&#10095;</span>
-</div>
 
 ### Notes and Further Assistance
 
