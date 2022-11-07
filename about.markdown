@@ -22,7 +22,7 @@ Each available service is hosted on a different subdomain (*e.g.: service-1.api.
 
 # How registration works?
 
-Registration is required to interact with the services exposed here. Each registered account receives an unique **API key** which must be included in any request made to a service. Besides the API key, each account starts with a number or **credits** (balance) which is consumed when services are used.
+Registration is required to interact with the services exposed here. Each registered account receives an unique **API key** which must be included in any request made to a service. Besides the API key, each account starts with a number of **credits** (balance) which is consumed when services are used.
 
 See the [Get Started](/get-started) section for more details on this.
 
@@ -30,5 +30,5 @@ See the [Get Started](/get-started) section for more details on this.
 
 You can reach us through:
 * **Live Chat**: if you're new here, click the bottom-right corner icon or go [here](#){:onclick="window.open('https://chat.overfitted.io/livechat?mode=popout','popup','width=400,height=600'); return false;"}
-* **Support & Dev Chat**: if you are an older collaborator with a registered chat account, contact us via our [support chat](https://chat.overfitted.io/)
-* **E-mail**: if you prefer e-mails, leave us a message at: **<script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script>**
+* **Support Chat**: if you are an older collaborator with a registered chat account, contact us via our [support chat](https://chat.overfitted.io/)
+* **E-mail**: if you prefer e-mails, leave us a message at: **<script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script>** and we'll get back to you
