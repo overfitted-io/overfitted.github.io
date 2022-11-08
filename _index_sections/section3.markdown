@@ -11,7 +11,7 @@ color: e6f2fb
 **Glyph** is a cloud-native **Optical Character Recognition** (OCR) and **Handwritten Text Recognition** (HTR) engine built to aid in digitizing old documents. 
 It supports different combinations of **languages** and **scripts** with horizontal reading order and single column formats.
 
-See the available [Documentation](/ocr/glyph-ocr-engine) or a minimal (8 lines) demo - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}
+See the available [Documentation](/ocr/glyph-ocr-engine) or a minimal (~4 lines) demo - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}
 
 
 <div class="slideshow-container">
