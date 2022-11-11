@@ -88,11 +88,12 @@ Glyph will issue **JSON**-strucutred **responses** to each request in a synchron
 
 A successful response from Glyph includes the following fields:
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
+* `angle`: the skew angle detected for the identified image
 * `lines`: a list which presents information at line level; contains elements with the following structure:
     * `x0`, `y0`, `x1`, `y1`: denote the bounding rectangle coordinates for the current text line
     * `confidence`: a value which indicates how confident is Glyph that the line is of interest and not an artifact or noise
     * `line`: a list which presents character-level information from the recognition process:
-        * `x0`, `y0`, `x1`, `y1`: represent the bounding rectangle coordinates for each identified character
+        * `x0`, `x1`: represent the horizontal bounds for each identified character
         * `character`: contains the identified character (unicode supported)
         * `confidence`: the confidence of Glyph for the current character recognition
 
@@ -105,6 +106,7 @@ Alternatively, you'll find below a JSON response from Glyph for a single image c
 ```json
 {
     "text": "Alle",
+    "angle": 0,
     "lines": [
         {
             "x0": 17,
@@ -118,32 +120,24 @@ Alternatively, you'll find below a JSON response from Glyph for a single image c
                     "confidence": 0.7507894039154053,
                     "x0": 74,
                     "x1": 82,
-                    "y0": 9,
-                    "y1": 54
                 },
                 {
                     "character": "l",
                     "confidence": 0.9985935091972351,
                     "x0": 119,
                     "x1": 123,
-                    "y0": 9,
-                    "y1": 54
                 },
                 {
                     "character": "l",
                     "confidence": 0.9996170997619629,
                     "x0": 130,
                     "x1": 134,
-                    "y0": 9,
-                    "y1": 54
                 },
                 {
                     "character": "e",
                     "confidence": 0.999936580657959,
                     "x0": 145,
                     "x1": 149,
-                    "y0": 9,
-                    "y1": 54
                 }
             ]
         }

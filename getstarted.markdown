@@ -11,13 +11,16 @@ The services operate using a **credits system**: each account has a number of cr
 
 # Free Testing
 
-A new account will include a number of **free credits**. These will allow you to decide whether the services are suitable for your project.
+A new account will include a number of **free credits** (currently **10**). These will allow you to run different tests and decide whether the services are suitable for your project.
+For instance, querying the OCR / HTR service consumes around **0.01 credits / 1000 characters**.
+
 
 These credits are available with:
 - no commitments
 - no credit card information
 - no expiration time
 
+You will not be charged if you run out of credits.
 Should you find a service to be matching your needs, please contact us for further discussions.
 
 
