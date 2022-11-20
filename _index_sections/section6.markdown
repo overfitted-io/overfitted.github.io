@@ -13,12 +13,12 @@ If you find overfitted.io to be matching your business requirements, we'd love t
 <div style="width:50%; display: inline-block; white-space: normal">
 <img src="{{ '/assets/img/icons/ic_email.svg' | relative_url }}" style="margin:auto; display: block; width: 96px; height: 96px; pointer-events: none; user-select: none;">
 
-<h3 style="color: orangered; text-align: center; font-size: 30px;"><script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script></h3>
+<h3 style="color: orangered; text-align: center; font-size: 25px; word-break: break-word;"><script>document.write(atob('aGVsbG9Ab3ZlcmZpdHRlZC5pbw=='))</script></h3>
 </div>
 
 <div style="width:50%; display: inline-block; white-space: normal">
 <img src="{{ '/assets/img/icons/ic_chat.svg' | relative_url }}" style="margin:auto; display: block; width: 96px; height: 96px; pointer-events: none; user-select: none;">
-<h3 style="color: orangered; text-align: center; font-size: 30px;">Live Chat</h3>
+<h3 style="color: orangered; text-align: center; font-size: 25px; word-break: break-word;">Live Chat</h3>
 </div>
 </div>
 
