@@ -15,31 +15,23 @@ Glyph is intended to be used mainly via its **API** (detailed below) and be embe
 
 <div class="slideshow-container">
   <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/de-frk-demo.png">
+    <img src="/assets/img/index_sections/text_recognition/de-frk.png">
   </div>
 
   <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo.png">
+    <img src="/assets/img/index_sections/text_recognition/ro-hw.png">
   </div>
 
   <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/en-ma-demo.png">
+    <img src="/assets/img/index_sections/text_recognition/en-ma.png">
   </div>
 
   <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/fr-ma-demo.png">
+    <img src="/assets/img/index_sections/text_recognition/fr-ma.png">
   </div>
 
   <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/ua-hw-demo2.png">
-  </div>
-
-  <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/ro-ma-demo.png">
-  </div>
-
-  <div class="slide slide-medium fade">
-    <img src="/assets/img/index_sections/text_recognition/de-ma-demo.png">
+    <img src="/assets/img/index_sections/text_recognition/ro-ma.png">
   </div>
 
   <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
@@ -56,7 +48,7 @@ At the time of writing, Glyph can handle the following pairs of languages and sc
 - **German - Fraktur / Gothic** (lang code: `de-frk`)
 - **German - Antiqua** (lang code: `de-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
-- **Romanian - Handwritten (old documents)** (lang code: `ro-ma`)
+- **Romanian - Handwritten** (lang code: `ro-ma`)
 - **Ukrainian - Handwritten (old documents)** (lang code: `ua-hw`)
 
 Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/ocr/comparison-of-ocr-engines).
