@@ -7,11 +7,13 @@ index: true
 ---
 
 
+## About
+**Glyph** is a cloud-based **OCR / HTR** engine which was developed internally to aid in extracting texts from scanned or photographed documents. It supports multiple combinations of **languages** and **scripts** and can be employed in recognizing various formats, ranging from the old **fraktur / gothic** fonts to **modern characters** and even **handwriting**.
 
-**Glyph** is a *work-in-progress* cloud-based **OCR engine** which was developed to provide help in digitizing scanned documents.
-Currently, it supports a number of **languages** and **font types** (antiqua, fraktur / gothic and handwritten) and moderate amounts of perturbation or artifacts in the given images. Support for additional languages will be implemented in the future.
+Glyph is designed to provide a verbose **feedback** for each text recognition task by including *bounding boxes* (at multiple levels), *confidence values*, *angles* and other relevant features which help improving **explainability** and **verifying the correctness** of each result. 
 
-Glyph is intended to be used mainly via its **API** (detailed below) and be embedded into projects or scripts without introducing external modules or large code snippets. Therefore, it is currently not targeted for end-users.
+It is integrated into the [ScreenOCR](/ocr/screenocr-fast-ocr-windows-keyboard-shortcut) Windows Application for quick access and testing. Programatically, Glyph can be queried through its **API** using either our [Python3 API Client](https://github.com/overfitted-io/python-api-client) or by creating web requests according to our [documentation](#api-requests).
+
 
 <div class="slideshow-container">
   <div class="slide slide-medium fade">
@@ -38,47 +40,52 @@ Glyph is intended to be used mainly via its **API** (detailed below) and be embe
   <span class="next" onclick="plusSlides(1)">&#10095;</span>
 </div>
 
-
 ## Supported Languages
 
-At the time of writing, Glyph can handle the following pairs of languages and script types:
+At the time of writing, Glyph can handle the following pairs of **languages** and **scripts**:
 
 - **English - Antiqua** (lang code: `en-ma`)
 - **French - Antiqua** (lang code: `fr-ma`)
 - **German - Fraktur / Gothic** (lang code: `de-frk`)
 - **German - Antiqua** (lang code: `de-ma`)
 - **Romanian - Antiqua** (lang code: `ro-ma`)
-- **Romanian - Handwritten** (lang code: `ro-ma`)
+- **Romanian - Handwritten** (lang code: `ro-hw`)
 - **Ukrainian - Handwritten (old documents)** (lang code: `ua-hw`)
 
-Benchmarking is performed for each available pair and the performances are compared to existing products; see more details about [Glyph's Benchmarks](/ocr/comparison-of-ocr-engines).
+At the time of writing, we prioritize languages which are actively requested by customers; please [contact us](/contact) if you need a specific language to be integrated in Glyph. 
 
+## Technical Advantages
+
+Integrating Glyph into suitable projects can provide a series of advantages:
+1. **No Hardware Requirements:** since all the CPU/GPU/RAM intensive operations take place on our cloud infrastructure, your project will not be constrained by additional hardware requirements
+2. **Minimal Footprint:** by default, Glyph does not require any particular resources, modules or libraries to be embedded into your project as long as a POST internet request can be made
+3. **Flexibility:** as a cloud-based OCR/HTR engine, Glyph is language-agnostic and therefore will not impose a specific programming language when being queried
+4. **Always @Latest Version:** because all requests are centralized on our platform, all users will benefit from the latest updates as soon as they're applied without needing to perform further actions
+5. **Programmer Friendly:** since all of Glyph's responses are presented as a JSON-formatted string which can be easily parsed and analyzed
+
+## Pricing
+
+Glyph implements a **granular pricing** scheme in which **platform credits** are consumed according to the **number of recognized characters**. This means images with small amounts of text will consume fewer credits than, e.g., a page from a book. 
+
+At the time of writing, Glyph charges **0.01 credits** per **1000 characters**, with character-level granularity.
 
 ## API Requests
 
-Glyph is exposed as a **web service** over HTTPS at the address `https://glyph.api.overfitted.io/process`.
-When interacting with Glyph, a **POST**-type **request** must be crafted and directed to the aforementioned address. Glyph accepts the following **arguments** inside the request:
+Glyph's endpoint is exposed at the following address: `https://glyph.api.overfitted.io/process`.
+When interacting with Glyph, a **POST**-type **request** must be crafted and directed to the aforementioned address.
 
-* `img`: the image you're submitting for text recognition
-* `lang`: the language and font type (script) of your submitted image; supported values are:
-    * `en-ma`: English / Antiqua
-    * `fr-ma`: French / Antiqua
-    * `de-frk`: German / Fraktur (Gothic)
-    * `de-ma`: German / Antiqua 
-    * `ro-ma`: Romanian / Antiqua
-    * `ro-hw`: Romanian / Handwritten
-    * `ua-hw`: Ukrainian / Handwritten
-* `words_only` (optional; default: `false`): instructs the Glyph engine to treat each word as a line of text, which might prove useful in identifying texts from non-uniform inputs such as receipts; to enable, set this parameter to `true`
-* `api_key`: this is your API key which uniquely identifies your account; see the [Getting Started](/get-started) section for more information on this
+### Possible Request Arguments
+* `img` (Bytes): the image you're submitting for text recognition
+* `lang` (String): the language and font type (script) of your submitted image - see the lang codes from [supported languages](#supported-languages).
+* `words_only` (String) (optional; default: `false`): instructs the Glyph engine to treat each word as a line of text, which might prove useful in identifying texts from non-uniform inputs such as receipts; to enable, set this parameter to `true`
+* `api_key` (String): this is your API key which uniquely identifies your account; see the [Getting Started](/get-started) section for more information on this
 
 
 ## API Responses
 
-Glyph will issue **JSON**-strucutred **responses** to each request in a synchronous manner.
+Glyph will issue a **JSON**-structured **response** to each request in a **synchronous** manner. It is recommended to always check the HTTP status code returned by the OCR engine before parsing the JSON response since these responses differ in structure when errors occur.
 
-> **Note:** in the event of a server overload, an **Internal Server Error(500)** will be returned; please check the **error code** returned by Glyph and recreate the POST request if necessary. 
-
-A successful response from Glyph includes the following fields:
+### Successful Response Fields
 * `text`: the entire recognized text as a multiline string (`\n` as separator)
 * `angle`: the skew angle detected for the identified image
 * `lines`: a list which presents information at line level; contains elements with the following structure:
@@ -89,12 +96,8 @@ A successful response from Glyph includes the following fields:
         * `character`: contains the identified character (unicode supported)
         * `confidence`: the confidence of Glyph for the current character recognition
 
-## Example
+### Example of a Successful Response
 
-A short Python example is provided for easier understanding [![Glyph on Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ld9f0I_Wl74EH16fUVneKmIavPept5C8?usp=sharing){:class='no-icon'}{:target="_blank"}.
-
-However, you'll still need to supply your own **API key** before running it.
-Alternatively, you'll find below a JSON response from Glyph for a single image containing only the word *"Alle"*.
 ```json
 {
     "text": "Alle",
