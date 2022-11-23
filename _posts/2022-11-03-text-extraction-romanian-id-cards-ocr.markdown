@@ -17,7 +17,7 @@ The documents presented here are **Romanian Identity (ID) Cards** discovered by 
 
 The template document is an exception to this rule and therefore includes all available information because it is classified as a sample card (**ro:** *specimen*) and publicly exposed on [OECD's Official Website](https://www.oecd.org/tax/automatic-exchange/crs-implementation-and-assistance/tax-identification-numbers/Romania-TIN.pdf)
 
-### Expected Results
+## Expected Results
 
 This section presents the expected results; recognized texts are added on the right side of the image and linked to their corresponding field in the image.
 

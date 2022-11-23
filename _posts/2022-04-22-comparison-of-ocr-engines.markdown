@@ -26,7 +26,7 @@ Besides the image, the following information is supplied (if possible):
 No assumptions are made with regard to the image's coloring, brightness, skew, resolution, font size, possible artifacts or level of distortion.
 
 {% include image.html
-            description="Image from the Testing (German Fraktur) and the text found by Glyph"
+            description="Image from the testing set (German Fraktur / de-frk) and the text found by Glyph"
             size="60%"
             url="/assets/img/index_sections/text_recognition/originals/de-frk.png" %}
 
