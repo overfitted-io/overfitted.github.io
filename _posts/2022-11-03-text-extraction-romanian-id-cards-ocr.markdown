@@ -181,38 +181,6 @@ with open('target.jpg', 'rb') as img, open('template.jpg', 'rb') as template:
     print(result)
 ```
 
-### Understanding the Response
-
-The response is **JSON**-formatted; for brevity, only the more important parts of the response are discussed here.
-
-A valid response includes the following attributes:
-- `match_score`: indicates how much the template resembles the target image
-- `fields`: is a 'dictionary' which contains multiple ROIs in the *same order* as in the request
-    - `roi<N>`: includes information for the *Nth* ROI
-        - `coords`: contains 4 points in `(X,Y)` format which indicate the location of the ROI in the target image
-        - `content`: contains various information from the **OCR** engine 
-            - `text`: contains the concatenated **text** found for the current ROI
-
-For example, a truncated response is presented; it corresponds to a ROI which contains the text *"TM"*.
-```json
-{
-    "match_score": 0.16795580110497238,
-    "fields": {
-        "roi1": {
-            "coords": {
-                "p1": [ 572, 111 ],
-                "p2": [ 623, 110 ],
-                "p3": [ 622, 139 ],
-                "p4": [ 571, 140 ]
-            },
-            "content": {
-                "text": "TM",
-                [ ... ]
-            }
-        }
-    }
-}
-```
 
 ### Notes and Further Assistance
 

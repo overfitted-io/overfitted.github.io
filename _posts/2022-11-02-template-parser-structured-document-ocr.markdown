@@ -56,10 +56,10 @@ This service generates a **JSON**-formatted **synchronous** response. In case of
 ### Successful Response Fields
 
 * `match_score`: represents how well the template can be mapped to the targeted image 
-* `fields`: is an array of ROI structures
-  * `roiN`: contains information related to the N-th ROI 
+* `fields`: is a 'dictionary' which contains multiple ROIs in the *same order* as in the request
+  * `roi<N>`: includes information for the *Nth* ROI
     * `coords`: 
-      * `p1`, `p2`, `p3`, `p4`: are the 4 points which indicate where this field is located in the targeted document 
+      * `p1`, `p2`, `p3`, `p4`: these are 4 points in `(X,Y)` format which indicate the location of the ROI in the target image 
       * `content`: is the OCR engine's response for this specific ROI; see details in [Glyph's Documentation](/ocr/glyph-ocr-engine#successful-response-fields) 
 
 ### Example of a Successful Response

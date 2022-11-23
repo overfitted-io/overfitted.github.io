@@ -18,10 +18,12 @@ On **GitHub**: [https://github.com/overfitted-io/ScreenOCR](https://github.com/o
 
 
 
-### Demo
+## Demo
 
 ![ScreenOCR Demo](/assets/img/posts/screenocr-fast-ocr-windows-keyboard-shortcut/screenocr-demo.gif)
 
+
+## Download
 
 ### Requirements
 
@@ -29,11 +31,9 @@ On **GitHub**: [https://github.com/overfitted-io/ScreenOCR](https://github.com/o
 * **Windows** (tested on **10/Home** edition)
 
 
-### Download
-
 Check the **GitHub Releases** page: [https://github.com/overfitted-io/ScreenOCR/releases](https://github.com/overfitted-io/ScreenOCR/releases).
 
-### Configuration
+## Configuration
 
 When first starting the application, the following **Configuration Window** should appear in the upper screen area.
 
@@ -55,7 +55,7 @@ Optionally, you can check the **launch at startup** box which will ensure that S
 Once you've completed the configs, hit the blue **Save** button.
 
 
-### Usage
+## Usage
 
 With **ScreenOCR**'s process actively running in background:
 
@@ -68,14 +68,14 @@ The application is designed to non-invasively run while your computer is powered
 If, for some reason, you wish to completely **close the application**, switch to **Capture Mode** (**[Win]**-**[Shift]**-**[Q]**) and then hit **[Shift]**-**[Esc]**.
 
 
-### Privacy Aspects
+## Privacy Aspects
 
 Due to the possible actions of ScreenOCR, it can be seen as a **potential threat** by certain **anti-malware** software. This happens because globally listening for specific keyboard shortcuts, implementing screenshot-taking procedures and running on startup are common **spyware** strategies. This application, however, will not track user activities outside its scope; it will look only for its specific keyboard shortcuts and will record screen regions only when instructed to do so by the end-user.
 
 For transparency reasons, the **entire source code** for this project is **published** in this [GitHub Repo](https://github.com/overfitted-io/ScreenOCR) and can be **easily verified** for any malicious activities.
 
 
-### Future Functionalities
+## Future Functionalities
 
 **ScreenOCR** serves as a more convenient interface to our cloud-based OCR engine; in this aspect, it tracks all the progress and upgrades made on our side. When support for new languages is implemented on our servers, it will also become available in the application.
 
