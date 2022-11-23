@@ -33,7 +33,7 @@ As an example, in the following **template image** the highlighted **ROI** speci
 {% include image.html
             description="In this template image we say that the **Last Name** can be found in the rectangle `(306, 194, 700, 229)`; note that the **ROI** must be large enough to cover possibly longer texts"
             size="40%"
-            url="/assets/img/posts/template-parser-structured-document-ocr/template-image-example.png.png" %}
+            url="/assets/img/posts/template-parser-structured-document-ocr/template-image-example.png" %}
 
 ## API Requests
 
