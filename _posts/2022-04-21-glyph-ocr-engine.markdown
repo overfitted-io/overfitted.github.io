@@ -14,6 +14,7 @@ Glyph is designed to provide a verbose **feedback** for each text recognition ta
 
 It is integrated into the [ScreenOCR](/ocr/screenocr-fast-ocr-windows-keyboard-shortcut) Windows Application for quick access and testing. Programatically, Glyph can be queried through its **API** using either our [Python3 API Client](https://github.com/overfitted-io/python-api-client) or by creating web requests according to our [documentation](#api-requests).
 
+We track the **accuracy** of Glyph in this article: [Glyph Accuracy Benchmarks](/ocr/comparison-of-ocr-engines)
 
 <div class="slideshow-container">
   <div class="slide slide-medium fade">
