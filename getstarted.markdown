@@ -46,7 +46,7 @@ Once you successfully authenticate, a modal will be shown containing your accoun
             }
         }
 
-        req.open('POST', 'https://db-api.api.overfitted.io/register-api-key', true)
+        req.open('POST', 'https://api.overfitted.io/register-api-key', true)
         req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         req.send('credential=' + obj.credential)
     }
