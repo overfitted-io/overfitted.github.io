@@ -11,7 +11,7 @@ Parses fixed-format images (*e.g., documents, forms*) and extracts the text from
 
 
 <div style="background-color: #fff; text-align: center; overflow:auto;">
-<img src="{{ '/assets/img/index_sections/template_parser/romanian_id_card_model.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; min-width: 200px; max-width:30%;">
+<img src="{{ '/assets/img/index_sections/template_parser/romanian_id_card_model.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; min-width: 200px; max-width:60%;">
 <pre style="display: inline-block; vertical-align: middle; background-color: transparent; border: none; text-align: left;">
 {
     <span style="font-weight: bold">"match_score":</span> 0.5011664535634441,
