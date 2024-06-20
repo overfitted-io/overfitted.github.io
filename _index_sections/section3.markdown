@@ -4,14 +4,16 @@ title: Document Parser
 color: fff6eb
 ---
 
-## Doc Parser
+## doc-parser
 {:class="left-border-header" style="font-size: 30px"}
 
-Parses fixed-format images (*e.g., documents, forms*) and extracts the text from various **fields of interest** (*e.g., names, dates, numeric IDs, etc.*) by relying on a known (provided) **template** and the defined **regions of interest** to identify positions of relevant information within the targeted document.
+Parses fixed-format images (e.g., ID cards, passports) and extracts the text from various fields of interest via OCR by relying on a known, standardized template.
+
+E.g.: a Romanian ID card (left) can be parsed into the following JSON (right):
 
 
 <div style="background-color: #fff; text-align: center; overflow:auto;">
-<img src="{{ '/assets/img/index_sections/template_parser/romanian_id_card_model.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; min-width: 200px; max-width:60%;">
+<img src="{{ '/assets/img/index_sections/template_parser/romanian_id_card_model.png' | relative_url }}" style="display: inline-block; pointer-events: none; user-select: none; min-width: 200px; max-width:60%; box-shadow: 0px 0px 15px #000">
 <pre style="display: inline-block; vertical-align: middle; background-color: transparent; border: none; text-align: left;">
 {
     <span style="font-weight: bold">"match_score":</span> 0.5011664535634441,
