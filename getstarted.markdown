@@ -11,8 +11,8 @@ The services operate using a **credits system**: each account has a number of cr
 
 # Free Testing
 
-A new account will include a number of **free credits** (currently **10**). These will allow you to run different tests and decide whether the services are suitable for your project.
-For instance, querying the OCR / HTR service consumes around **0.01 credits / 1000 characters**.
+A new account will include a number of **free credits** (currently **100**). These will allow you to run different tests and decide whether the services are suitable for your project.
+For instance, querying the document parsing service consumes 1 credit per request.
 
 
 These credits are available with:

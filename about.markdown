@@ -16,7 +16,7 @@ The main objective is to provide accessible services in order to assist end-user
 ## Usage
 All services are hosted on our **cloud** infrastructure to ensure minimal implementation complexity and overhead. This permits any registered user to interact with any service through an active **internet connection** by **programatically** submitting data and awaiting results without having to perform computationally expensive operations or integrate large external modules into existing projects.
 
-Each available service is hosted on a different subdomain (*e.g.: service-1.api.overfitted.io*) and documentation with regard to API interactions will be publicly available. A **request** is made to this endpoint and a **response** is synchronously returned when available.
+Each available service is hosted behind one main endpoint (in this case is `https://api.overfitted.io/run`); the targeted service is specified in the `service-name` parameter of the request. A **request** is made to this endpoint and a **response** is synchronously returned when available.
  
 
 ## Registration

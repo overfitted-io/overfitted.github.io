@@ -5,7 +5,7 @@ color: e6f2fb
 ---
 
 
-## Glyph
+## Doc Parser
 {:class="left-border-header" style="font-size: 30px"}
 
 **Glyph** is a cloud-native **Optical Character Recognition** (OCR) and **Handwritten Text Recognition** (HTR) engine built to aid in digitizing various documents. 
