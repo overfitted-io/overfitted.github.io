@@ -40,7 +40,7 @@ title: Requests Served
             }
         }
 
-        req.open('GET', 'https://db-api.api.overfitted.io/get-num-requests', true)
+        req.open('GET', 'https://api.overfitted.io/get-num-requests', true)
         req.send(null)
     }
 
